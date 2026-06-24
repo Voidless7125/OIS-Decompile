@@ -7,7 +7,7 @@ typedef unsigned long long GUID;
 typedef pointer32 ImageBaseOffset32;
 
 typedef long long longlong;
-typedef signed char schar;
+typedef char sbyte;
 typedef unsigned char uchar;
 typedef unsigned int uint;
 typedef unsigned long ulong;
@@ -64,85 +64,35 @@ typedef unsigned short word;
 #define BADSPACEBASE void
 #define code void
 
+typedef struct UI_Border UI_Border, *PUI_Border;
+
+struct UI_Border
+{ // PlaceHolder Class Structure
+};
+
+typedef struct ScreenElement ScreenElement, *PScreenElement;
+
+struct ScreenElement
+{ // PlaceHolder Class Structure
+};
+
 typedef struct UI_EngPanel UI_EngPanel, *PUI_EngPanel;
 
 struct UI_EngPanel
 { // PlaceHolder Class Structure
 };
 
-typedef struct ShipBehaviour ShipBehaviour, *PShipBehaviour;
+typedef struct _s__RTTIBaseClassDescriptor _s__RTTIBaseClassDescriptor, *P_s__RTTIBaseClassDescriptor;
 
-struct ShipBehaviour
-{ // PlaceHolder Class Structure
-};
-
-typedef struct _s_UnwindMapEntry _s_UnwindMapEntry, *P_s_UnwindMapEntry;
-
-typedef struct _s_UnwindMapEntry UnwindMapEntry;
-
-typedef int __ehstate_t;
-
-struct _s_UnwindMapEntry
-{
-    __ehstate_t toState;
-    void (*action)(void);
-};
-
-typedef struct UI_WeaponTubes UI_WeaponTubes, *PUI_WeaponTubes;
-
-struct UI_WeaponTubes
-{ // PlaceHolder Class Structure
-};
-
-typedef union IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryUnion IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryUnion, *PIMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryUnion;
-
-typedef struct IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryStruct IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryStruct, *PIMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryStruct;
-
-struct IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryStruct
-{
-    dword OffsetToDirectory;
-    dword DataIsDirectory;
-};
-
-union IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryUnion
-{
-    dword OffsetToData;
-    struct IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryStruct IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryStruct;
-};
-
-typedef struct Game Game, *PGame;
-
-struct Game
-{ // PlaceHolder Class Structure
-};
-
-typedef struct UI_StatusBar UI_StatusBar, *PUI_StatusBar;
-
-struct UI_StatusBar
-{ // PlaceHolder Class Structure
-};
-
-typedef struct UIRectangle UIRectangle, *PUIRectangle;
-
-struct UIRectangle
-{ // PlaceHolder Class Structure
-};
-
-typedef struct UI_SelectedObjectSummary UI_SelectedObjectSummary, *PUI_SelectedObjectSummary;
-
-struct UI_SelectedObjectSummary
-{ // PlaceHolder Class Structure
-};
-
-typedef struct _s_ESTypeList _s_ESTypeList, *P_s_ESTypeList;
-
-typedef struct _s_ESTypeList ESTypeList;
-
-typedef struct _s_HandlerType _s_HandlerType, *P_s_HandlerType;
-
-typedef struct _s_HandlerType HandlerType;
+typedef struct _s__RTTIBaseClassDescriptor RTTIBaseClassDescriptor;
 
 typedef struct TypeDescriptor TypeDescriptor, *PTypeDescriptor;
+
+typedef struct PMD PMD, *PPMD;
+
+typedef struct _s__RTTIClassHierarchyDescriptor _s__RTTIClassHierarchyDescriptor, *P_s__RTTIClassHierarchyDescriptor;
+
+typedef struct _s__RTTIClassHierarchyDescriptor RTTIClassHierarchyDescriptor;
 
 typedef int ptrdiff_t;
 
@@ -152,106 +102,6 @@ struct TypeDescriptor
     void *spare;
     char name[0];
 };
-
-struct _s_HandlerType
-{
-    uint adjectives;
-    struct TypeDescriptor *pType;
-    ptrdiff_t dispCatchObj;
-    void *addressOfHandler;
-};
-
-struct _s_ESTypeList
-{
-    int nCount;
-    HandlerType *pTypeArray;
-};
-
-typedef struct UI_Slider UI_Slider, *PUI_Slider;
-
-struct UI_Slider
-{ // PlaceHolder Class Structure
-};
-
-typedef struct SyntheticObject SyntheticObject, *PSyntheticObject;
-
-struct SyntheticObject
-{ // PlaceHolder Class Structure
-};
-
-typedef struct Screen_PC Screen_PC, *PScreen_PC;
-
-struct Screen_PC
-{ // PlaceHolder Class Structure
-};
-
-typedef ulonglong ulong64;
-
-typedef struct Screen_ContractTerminal Screen_ContractTerminal, *PScreen_ContractTerminal;
-
-struct Screen_ContractTerminal
-{ // PlaceHolder Class Structure
-};
-
-typedef struct UI_Selector UI_Selector, *PUI_Selector;
-
-struct UI_Selector
-{ // PlaceHolder Class Structure
-};
-
-typedef struct TabletOmega TabletOmega, *PTabletOmega;
-
-struct TabletOmega
-{ // PlaceHolder Class Structure
-};
-
-typedef struct Interface Interface, *PInterface;
-
-struct Interface
-{ // PlaceHolder Class Structure
-};
-
-typedef struct UI_SelectTray UI_SelectTray, *PUI_SelectTray;
-
-struct UI_SelectTray
-{ // PlaceHolder Class Structure
-};
-
-typedef struct UI_IconTray UI_IconTray, *PUI_IconTray;
-
-struct UI_IconTray
-{ // PlaceHolder Class Structure
-};
-
-typedef struct UI_Sheet UI_Sheet, *PUI_Sheet;
-
-struct UI_Sheet
-{ // PlaceHolder Class Structure
-};
-
-typedef struct ParticleEngine ParticleEngine, *PParticleEngine;
-
-struct ParticleEngine
-{ // PlaceHolder Class Structure
-};
-
-typedef struct UI_Checkbox UI_Checkbox, *PUI_Checkbox;
-
-struct UI_Checkbox
-{ // PlaceHolder Class Structure
-};
-
-typedef longlong long64;
-
-typedef struct _s__RTTIBaseClassDescriptor _s__RTTIBaseClassDescriptor, *P_s__RTTIBaseClassDescriptor;
-
-typedef struct _s__RTTIBaseClassDescriptor RTTIBaseClassDescriptor;
-
-typedef struct PMD PMD, *PPMD;
-
-typedef struct _s__RTTIClassHierarchyDescriptor _s__RTTIClassHierarchyDescriptor, *P_s__RTTIClassHierarchyDescriptor;
-
-typedef struct _s__RTTIClassHierarchyDescriptor RTTIClassHierarchyDescriptor;
 
 struct PMD
 {
@@ -276,6 +126,262 @@ struct _s__RTTIClassHierarchyDescriptor
     dword numBaseClasses;                      // number of base classes (i.e. rtti1Count)
     RTTIBaseClassDescriptor **pBaseClassArray; // ref to BaseClassArray (RTTI 2)
 };
+
+typedef struct ShipBehaviour ShipBehaviour, *PShipBehaviour;
+
+struct ShipBehaviour
+{ // PlaceHolder Class Structure
+};
+
+typedef byte __uint8;
+
+typedef struct _s_UnwindMapEntry _s_UnwindMapEntry, *P_s_UnwindMapEntry;
+
+typedef struct _s_UnwindMapEntry UnwindMapEntry;
+
+typedef int __ehstate_t;
+
+struct _s_UnwindMapEntry
+{
+    __ehstate_t toState;
+    void (*action)(void);
+};
+
+typedef struct UIRectangle UIRectangle, *PUIRectangle;
+
+struct UIRectangle
+{ // PlaceHolder Class Structure
+};
+
+typedef struct ParticleEngine ParticleEngine, *PParticleEngine;
+
+struct ParticleEngine
+{ // PlaceHolder Class Structure
+};
+
+typedef struct Screen_Terminal Screen_Terminal, *PScreen_Terminal;
+
+struct Screen_Terminal
+{ // PlaceHolder Class Structure
+};
+
+typedef struct UI_WeaponTubes UI_WeaponTubes, *PUI_WeaponTubes;
+
+struct UI_WeaponTubes
+{ // PlaceHolder Class Structure
+};
+
+typedef struct Screen_UpgradeTerminal Screen_UpgradeTerminal, *PScreen_UpgradeTerminal;
+
+struct Screen_UpgradeTerminal
+{ // PlaceHolder Class Structure
+};
+
+typedef union IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryUnion IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryUnion, *PIMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryUnion;
+
+typedef struct IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryStruct IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryStruct, *PIMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryStruct;
+
+struct IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryStruct
+{
+    dword OffsetToDirectory : 31;
+    dword DataIsDirectory : 1;
+};
+
+union IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryUnion
+{
+    dword OffsetToData;
+    struct IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryStruct IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryStruct;
+};
+
+typedef struct UI_Menu UI_Menu, *PUI_Menu;
+
+struct UI_Menu
+{ // PlaceHolder Class Structure
+};
+
+typedef struct UI_Slider UI_Slider, *PUI_Slider;
+
+struct UI_Slider
+{ // PlaceHolder Class Structure
+};
+
+typedef struct Game Game, *PGame;
+
+struct Game
+{ // PlaceHolder Class Structure
+};
+
+typedef struct UI_StatusBar UI_StatusBar, *PUI_StatusBar;
+
+struct UI_StatusBar
+{ // PlaceHolder Class Structure
+};
+
+typedef struct Beacon Beacon, *PBeacon;
+
+struct Beacon
+{ // PlaceHolder Class Structure
+};
+
+typedef struct UI_SelectedObjectSummary UI_SelectedObjectSummary, *PUI_SelectedObjectSummary;
+
+struct UI_SelectedObjectSummary
+{ // PlaceHolder Class Structure
+};
+
+typedef struct _s_ESTypeList _s_ESTypeList, *P_s_ESTypeList;
+
+typedef struct _s_ESTypeList ESTypeList;
+
+typedef struct _s_HandlerType _s_HandlerType, *P_s_HandlerType;
+
+typedef struct _s_HandlerType HandlerType;
+
+struct _s_HandlerType
+{
+    uint adjectives;
+    struct TypeDescriptor *pType;
+    ptrdiff_t dispCatchObj;
+    void *addressOfHandler;
+};
+
+struct _s_ESTypeList
+{
+    int nCount;
+    HandlerType *pTypeArray;
+};
+
+typedef struct UI_BDBar UI_BDBar, *PUI_BDBar;
+
+struct UI_BDBar
+{ // PlaceHolder Class Structure
+};
+
+typedef struct CCallbackImpl<16> CCallbackImpl<16>, *PCCallbackImpl<16>;
+
+struct CCallbackImpl<16>
+{ // PlaceHolder Class Structure
+};
+
+typedef struct TabletInterface TabletInterface, *PTabletInterface;
+
+struct TabletInterface
+{ // PlaceHolder Class Structure
+};
+
+typedef struct RoomObject RoomObject, *PRoomObject;
+
+struct RoomObject
+{ // PlaceHolder Class Structure
+};
+
+typedef struct Screen_PC Screen_PC, *PScreen_PC;
+
+struct Screen_PC
+{ // PlaceHolder Class Structure
+};
+
+typedef struct UI_SystemBar UI_SystemBar, *PUI_SystemBar;
+
+struct UI_SystemBar
+{ // PlaceHolder Class Structure
+};
+
+typedef struct AIFollow AIFollow, *PAIFollow;
+
+struct AIFollow
+{ // PlaceHolder Class Structure
+};
+
+typedef struct Screen_ContractTerminal Screen_ContractTerminal, *PScreen_ContractTerminal;
+
+struct Screen_ContractTerminal
+{ // PlaceHolder Class Structure
+};
+
+typedef struct DummyObject DummyObject, *PDummyObject;
+
+struct DummyObject
+{ // PlaceHolder Class Structure
+};
+
+typedef struct UI_Selector UI_Selector, *PUI_Selector;
+
+struct UI_Selector
+{ // PlaceHolder Class Structure
+};
+
+typedef struct UI_Image UI_Image, *PUI_Image;
+
+struct UI_Image
+{ // PlaceHolder Class Structure
+};
+
+typedef struct TabletOmega TabletOmega, *PTabletOmega;
+
+struct TabletOmega
+{ // PlaceHolder Class Structure
+};
+
+typedef struct AppDelegate AppDelegate, *PAppDelegate;
+
+struct AppDelegate
+{ // PlaceHolder Class Structure
+};
+
+typedef struct CargoManager CargoManager, *PCargoManager;
+
+struct CargoManager
+{ // PlaceHolder Class Structure
+};
+
+typedef struct Ship Ship, *PShip;
+
+struct Ship
+{ // PlaceHolder Class Structure
+};
+
+typedef struct UI_Text UI_Text, *PUI_Text;
+
+struct UI_Text
+{ // PlaceHolder Class Structure
+};
+
+typedef struct Interface Interface, *PInterface;
+
+struct Interface
+{ // PlaceHolder Class Structure
+};
+
+typedef struct UI_Multimeter UI_Multimeter, *PUI_Multimeter;
+
+struct UI_Multimeter
+{ // PlaceHolder Class Structure
+};
+
+typedef struct CLIENT_ID CLIENT_ID, *PCLIENT_ID;
+
+struct CLIENT_ID
+{
+    void *UniqueProcess;
+    void *UniqueThread;
+};
+
+typedef struct UI_Checkbox UI_Checkbox, *PUI_Checkbox;
+
+struct UI_Checkbox
+{ // PlaceHolder Class Structure
+};
+
+typedef ulonglong __uint64;
+
+typedef struct UI_IconTray UI_IconTray, *PUI_IconTray;
+
+struct UI_IconTray
+{ // PlaceHolder Class Structure
+};
+
+typedef ushort __uint32;
 
 typedef struct _s__RTTICompleteObjectLocator _s__RTTICompleteObjectLocator, *P_s__RTTICompleteObjectLocator;
 
@@ -309,6 +415,12 @@ struct _s_TryBlockMapEntry
     HandlerType *pHandlerArray;
 };
 
+typedef struct UI_ModuleRepair UI_ModuleRepair, *PUI_ModuleRepair;
+
+struct UI_ModuleRepair
+{ // PlaceHolder Class Structure
+};
+
 typedef struct AIHunt AIHunt, *PAIHunt;
 
 struct AIHunt
@@ -330,6 +442,8 @@ struct _s_FuncInfo
     int EHFlags;
 };
 
+typedef wchar_t wchar;
+
 typedef struct UI_Data UI_Data, *PUI_Data;
 
 struct UI_Data
@@ -342,275 +456,9 @@ struct UI_ComponentStorage
 { // PlaceHolder Class Structure
 };
 
-typedef struct UIText UIText, *PUIText;
+typedef struct UI_SelectTray UI_SelectTray, *PUI_SelectTray;
 
-struct UIText
-{ // PlaceHolder Class Structure
-};
-
-typedef ulonglong __uint64;
-
-typedef struct Ship Ship, *PShip;
-
-struct Ship
-{ // PlaceHolder Class Structure
-};
-
-typedef struct UI_SensorDisplay UI_SensorDisplay, *PUI_SensorDisplay;
-
-struct UI_SensorDisplay
-{ // PlaceHolder Class Structure
-};
-
-typedef struct OiSStackWalker OiSStackWalker, *POiSStackWalker;
-
-struct OiSStackWalker
-{ // PlaceHolder Class Structure
-};
-
-typedef struct UI_DockVisualisation UI_DockVisualisation, *PUI_DockVisualisation;
-
-struct UI_DockVisualisation
-{ // PlaceHolder Class Structure
-};
-
-typedef struct UI_SensorWaveform UI_SensorWaveform, *PUI_SensorWaveform;
-
-struct UI_SensorWaveform
-{ // PlaceHolder Class Structure
-};
-
-typedef struct ComputerSystemInterface ComputerSystemInterface, *PComputerSystemInterface;
-
-struct ComputerSystemInterface
-{ // PlaceHolder Class Structure
-};
-
-typedef struct UI_SensorSelect UI_SensorSelect, *PUI_SensorSelect;
-
-struct UI_SensorSelect
-{ // PlaceHolder Class Structure
-};
-
-typedef struct Screen_WeaponTerminal Screen_WeaponTerminal, *PScreen_WeaponTerminal;
-
-struct Screen_WeaponTerminal
-{ // PlaceHolder Class Structure
-};
-
-typedef struct UI_PowerScreen UI_PowerScreen, *PUI_PowerScreen;
-
-struct UI_PowerScreen
-{ // PlaceHolder Class Structure
-};
-
-typedef struct UI_Menu UI_Menu, *PUI_Menu;
-
-struct UI_Menu
-{ // PlaceHolder Class Structure
-};
-
-typedef struct Screen_Terminal Screen_Terminal, *PScreen_Terminal;
-
-struct Screen_Terminal
-{ // PlaceHolder Class Structure
-};
-
-typedef struct UI_TextField UI_TextField, *PUI_TextField;
-
-struct UI_TextField
-{ // PlaceHolder Class Structure
-};
-
-typedef struct CCallback<class_Stats, struct_UserStatsStored_t, 0> CCallback<class_Stats, struct_UserStatsStored_t, 0>, *PCCallback<class_Stats, struct_UserStatsStored_t, 0>;
-
-struct CCallback<class_Stats, struct_UserStatsStored_t, 0>
-{ // PlaceHolder Class Structure
-};
-
-typedef struct Screen_TradeTerminal Screen_TradeTerminal, *PScreen_TradeTerminal;
-
-struct Screen_TradeTerminal
-{ // PlaceHolder Class Structure
-};
-
-typedef struct Beacon Beacon, *PBeacon;
-
-struct Beacon
-{ // PlaceHolder Class Structure
-};
-
-typedef struct UI_NavMap UI_NavMap, *PUI_NavMap;
-
-struct UI_NavMap
-{ // PlaceHolder Class Structure
-};
-
-typedef struct UIAnimatedSprite UIAnimatedSprite, *PUIAnimatedSprite;
-
-struct UIAnimatedSprite
-{ // PlaceHolder Class Structure
-};
-
-typedef struct UI_IntroSequence UI_IntroSequence, *PUI_IntroSequence;
-
-struct UI_IntroSequence
-{ // PlaceHolder Class Structure
-};
-
-typedef struct GameObject GameObject, *PGameObject;
-
-struct GameObject
-{ // PlaceHolder Class Structure
-};
-
-typedef struct UI_NewsTicker UI_NewsTicker, *PUI_NewsTicker;
-
-struct UI_NewsTicker
-{ // PlaceHolder Class Structure
-};
-
-typedef struct UI_TextBox UI_TextBox, *PUI_TextBox;
-
-struct UI_TextBox
-{ // PlaceHolder Class Structure
-};
-
-typedef struct CCallback<class_Stats, struct_UserStatsReceived_t, 0> CCallback<class_Stats, struct_UserStatsReceived_t, 0>, *PCCallback<class_Stats, struct_UserStatsReceived_t, 0>;
-
-struct CCallback<class_Stats, struct_UserStatsReceived_t, 0>
-{ // PlaceHolder Class Structure
-};
-
-typedef struct AIScan AIScan, *PAIScan;
-
-struct AIScan
-{ // PlaceHolder Class Structure
-};
-
-typedef struct RoomObject RoomObject, *PRoomObject;
-
-struct RoomObject
-{ // PlaceHolder Class Structure
-};
-
-typedef struct UI_Button UI_Button, *PUI_Button;
-
-struct UI_Button
-{ // PlaceHolder Class Structure
-};
-
-typedef struct UI_Border UI_Border, *PUI_Border;
-
-struct UI_Border
-{ // PlaceHolder Class Structure
-};
-
-typedef undefined1<NoType>;
-
-typedef struct UI_HelmControl UI_HelmControl, *PUI_HelmControl;
-
-struct UI_HelmControl
-{ // PlaceHolder Class Structure
-};
-
-typedef struct Screen_UpgradeTerminal Screen_UpgradeTerminal, *PScreen_UpgradeTerminal;
-
-struct Screen_UpgradeTerminal
-{ // PlaceHolder Class Structure
-};
-
-typedef struct AIPiracy AIPiracy, *PAIPiracy;
-
-struct AIPiracy
-{ // PlaceHolder Class Structure
-};
-
-typedef ulonglong uint64;
-
-typedef struct UI_BDBar UI_BDBar, *PUI_BDBar;
-
-struct UI_BDBar
-{ // PlaceHolder Class Structure
-};
-
-typedef struct CCallbackImpl<16> CCallbackImpl<16>, *PCCallbackImpl<16>;
-
-struct CCallbackImpl<16>
-{ // PlaceHolder Class Structure
-};
-
-typedef struct TabletInterface TabletInterface, *PTabletInterface;
-
-struct TabletInterface
-{ // PlaceHolder Class Structure
-};
-
-typedef struct UI_SystemBar UI_SystemBar, *PUI_SystemBar;
-
-struct UI_SystemBar
-{ // PlaceHolder Class Structure
-};
-
-typedef struct DummyObject DummyObject, *PDummyObject;
-
-struct DummyObject
-{ // PlaceHolder Class Structure
-};
-
-typedef struct AIFollow AIFollow, *PAIFollow;
-
-struct AIFollow
-{ // PlaceHolder Class Structure
-};
-
-typedef struct UI_Image UI_Image, *PUI_Image;
-
-struct UI_Image
-{ // PlaceHolder Class Structure
-};
-
-typedef struct AppDelegate AppDelegate, *PAppDelegate;
-
-struct AppDelegate
-{ // PlaceHolder Class Structure
-};
-
-typedef struct CargoManager CargoManager, *PCargoManager;
-
-struct CargoManager
-{ // PlaceHolder Class Structure
-};
-
-typedef struct UI_Text UI_Text, *PUI_Text;
-
-struct UI_Text
-{ // PlaceHolder Class Structure
-};
-
-typedef struct UI_Multimeter UI_Multimeter, *PUI_Multimeter;
-
-struct UI_Multimeter
-{ // PlaceHolder Class Structure
-};
-
-typedef struct CLIENT_ID CLIENT_ID, *PCLIENT_ID;
-
-struct CLIENT_ID
-{
-    void *UniqueProcess;
-    void *UniqueThread;
-};
-
-typedef struct UI_DMenu UI_DMenu, *PUI_DMenu;
-
-struct UI_DMenu
-{ // PlaceHolder Class Structure
-};
-
-typedef struct UI_ModuleRepair UI_ModuleRepair, *PUI_ModuleRepair;
-
-struct UI_ModuleRepair
+struct UI_SelectTray
 { // PlaceHolder Class Structure
 };
 
@@ -620,9 +468,39 @@ struct CCallbackImpl<24>
 { // PlaceHolder Class Structure
 };
 
+typedef struct UI_SensorDisplay UI_SensorDisplay, *PUI_SensorDisplay;
+
+struct UI_SensorDisplay
+{ // PlaceHolder Class Structure
+};
+
+typedef struct CCallback<Stats, UserStatsReceived_t, 0> CCallback<Stats, UserStatsReceived_t, 0>, *PCCallback<Stats, UserStatsReceived_t, 0>;
+
+struct CCallback<Stats, UserStatsReceived_t, 0>
+{ // PlaceHolder Class Structure
+};
+
 typedef struct AIDesire AIDesire, *PAIDesire;
 
 struct AIDesire
+{ // PlaceHolder Class Structure
+};
+
+typedef struct OiSStackWalker OiSStackWalker, *POiSStackWalker;
+
+struct OiSStackWalker
+{ // PlaceHolder Class Structure
+};
+
+typedef struct AIPiracy AIPiracy, *PAIPiracy;
+
+struct AIPiracy
+{ // PlaceHolder Class Structure
+};
+
+typedef struct UI_DockVisualisation UI_DockVisualisation, *PUI_DockVisualisation;
+
+struct UI_DockVisualisation
 { // PlaceHolder Class Structure
 };
 
@@ -638,9 +516,77 @@ struct AITravel
 { // PlaceHolder Class Structure
 };
 
+typedef struct UI_SensorWaveform UI_SensorWaveform, *PUI_SensorWaveform;
+
+struct UI_SensorWaveform
+{ // PlaceHolder Class Structure
+};
+
+typedef struct UI_HelmControl UI_HelmControl, *PUI_HelmControl;
+
+struct UI_HelmControl
+{ // PlaceHolder Class Structure
+};
+
+typedef struct ComputerSystemInterface ComputerSystemInterface, *PComputerSystemInterface;
+
+struct ComputerSystemInterface
+{ // PlaceHolder Class Structure
+};
+
+typedef struct CCallback<Stats, UserStatsStored_t, 0> CCallback<Stats, UserStatsStored_t, 0>, *PCCallback<Stats, UserStatsStored_t, 0>;
+
+struct CCallback<Stats, UserStatsStored_t, 0>
+{ // PlaceHolder Class Structure
+};
+
+typedef struct UI_SensorSelect UI_SensorSelect, *PUI_SensorSelect;
+
+struct UI_SensorSelect
+{ // PlaceHolder Class Structure
+};
+
+typedef int __int32;
+
+typedef struct Screen_TradeTerminal Screen_TradeTerminal, *PScreen_TradeTerminal;
+
+struct Screen_TradeTerminal
+{ // PlaceHolder Class Structure
+};
+
+typedef struct Screen_WeaponTerminal Screen_WeaponTerminal, *PScreen_WeaponTerminal;
+
+struct Screen_WeaponTerminal
+{ // PlaceHolder Class Structure
+};
+
+typedef struct UI_DMenu UI_DMenu, *PUI_DMenu;
+
+struct UI_DMenu
+{ // PlaceHolder Class Structure
+};
+
+typedef struct UI_PowerScreen UI_PowerScreen, *PUI_PowerScreen;
+
+struct UI_PowerScreen
+{ // PlaceHolder Class Structure
+};
+
 typedef struct UI_AdShell UI_AdShell, *PUI_AdShell;
 
 struct UI_AdShell
+{ // PlaceHolder Class Structure
+};
+
+typedef struct UI_NavMap UI_NavMap, *PUI_NavMap;
+
+struct UI_NavMap
+{ // PlaceHolder Class Structure
+};
+
+typedef struct UI_TextField UI_TextField, *PUI_TextField;
+
+struct UI_TextField
 { // PlaceHolder Class Structure
 };
 
@@ -656,9 +602,31 @@ struct AIPatrol
 { // PlaceHolder Class Structure
 };
 
+typedef ushort __uint16;
+
+typedef sbyte __int8;
+
+typedef struct UIAnimatedSprite UIAnimatedSprite, *PUIAnimatedSprite;
+
+struct UIAnimatedSprite
+{ // PlaceHolder Class Structure
+};
+
+typedef struct UI_IntroSequence UI_IntroSequence, *PUI_IntroSequence;
+
+struct UI_IntroSequence
+{ // PlaceHolder Class Structure
+};
+
 typedef struct Screen_Custom Screen_Custom, *PScreen_Custom;
 
 struct Screen_Custom
+{ // PlaceHolder Class Structure
+};
+
+typedef struct GameObject GameObject, *PGameObject;
+
+struct GameObject
 { // PlaceHolder Class Structure
 };
 
@@ -668,7 +636,25 @@ struct MultiplayerTabletManager
 { // PlaceHolder Class Structure
 };
 
+typedef struct UI_Sheet UI_Sheet, *PUI_Sheet;
+
+struct UI_Sheet
+{ // PlaceHolder Class Structure
+};
+
 typedef struct _s_FuncInfo FuncInfo;
+
+typedef struct UI_NewsTicker UI_NewsTicker, *PUI_NewsTicker;
+
+struct UI_NewsTicker
+{ // PlaceHolder Class Structure
+};
+
+typedef struct UI_TextBox UI_TextBox, *PUI_TextBox;
+
+struct UI_TextBox
+{ // PlaceHolder Class Structure
+};
 
 typedef struct HardwareInterface HardwareInterface, *PHardwareInterface;
 
@@ -688,21 +674,29 @@ struct Screen_RTComms
 { // PlaceHolder Class Structure
 };
 
+typedef struct AIScan AIScan, *PAIScan;
+
+struct AIScan
+{ // PlaceHolder Class Structure
+};
+
 typedef struct UI_ShipHullState UI_ShipHullState, *PUI_ShipHullState;
 
 struct UI_ShipHullState
 { // PlaceHolder Class Structure
 };
 
-typedef struct _Func_impl_no_alloc<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _(__cdecl *)(class_Ship *, int), class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_Ship *, int> _Func_impl_no_alloc<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _(__cdecl *)(class_Ship *, int), class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_Ship *, int>, *P_Func_impl_no_alloc<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _(__cdecl *)(class_Ship *, int), class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_Ship *, int>;
+typedef short __int16;
 
-struct _Func_impl_no_alloc<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _(__cdecl *)(class_Ship *, int), class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_Ship *, int>
+typedef struct UI_Button UI_Button, *PUI_Button;
+
+struct UI_Button
 { // PlaceHolder Class Structure
 };
 
-typedef struct _Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_ComputerSystem::*)(void), class_ComputerSystem *&>, void> _Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_ComputerSystem::*)(void), class_ComputerSystem *&>, void>, *P_Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_ComputerSystem::*)(void), class_ComputerSystem *&>, void>;
+typedef struct _Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_PresentationInterface::*)(cocos2d::EventKeyboard::KeyCode, cocos2d::Event *), PresentationInterface *, std::_Ph<1> _const &, std::_Ph<2> _const &>, void, cocos2d::EventKeyboard::KeyCode, cocos2d::Event *> _Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_PresentationInterface::*)(cocos2d::EventKeyboard::KeyCode, cocos2d::Event *), PresentationInterface *, std::_Ph<1> _const &, std::_Ph<2> _const &>, void, cocos2d::EventKeyboard::KeyCode, cocos2d::Event *>, *P_Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_PresentationInterface::*)(cocos2d::EventKeyboard::KeyCode, cocos2d::Event *), PresentationInterface *, std::_Ph<1> _const &, std::_Ph<2> _const &>, void, cocos2d::EventKeyboard::KeyCode, cocos2d::Event *>;
 
-struct _Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_ComputerSystem::*)(void), class_ComputerSystem *&>, void>
+struct _Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_PresentationInterface::*)(cocos2d::EventKeyboard::KeyCode, cocos2d::Event *), PresentationInterface *, std::_Ph<1> _const &, std::_Ph<2> _const &>, void, cocos2d::EventKeyboard::KeyCode, cocos2d::Event *>
 { // PlaceHolder Class Structure
 };
 
@@ -712,213 +706,219 @@ struct _Func_impl_no_alloc<bool_(__cdecl *)(void *), bool, void *>
 { // PlaceHolder Class Structure
 };
 
-typedef struct _Func_impl_no_alloc<bool_(__cdecl *)(class_Ship *, int, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>), bool, class_Ship *, int, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _Func_impl_no_alloc<bool_(__cdecl *)(class_Ship *, int, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>), bool, class_Ship *, int, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, *P_Func_impl_no_alloc<bool_(__cdecl *)(class_Ship *, int, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>), bool, class_Ship *, int, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>;
+typedef struct _Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_Screen_ContractTerminal::*)(bool, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>), Screen_ContractTerminal *, std::_Ph<1> _const &, std::_Ph<2> _const &>, void, bool, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _> _Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_Screen_ContractTerminal::*)(bool, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>), Screen_ContractTerminal *, std::_Ph<1> _const &, std::_Ph<2> _const &>, void, bool, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _>, *P_Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_Screen_ContractTerminal::*)(bool, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>), Screen_ContractTerminal *, std::_Ph<1> _const &, std::_Ph<2> _const &>, void, bool, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _>;
 
-struct _Func_impl_no_alloc<bool_(__cdecl *)(class_Ship *, int, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>), bool, class_Ship *, int, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>
+struct _Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_Screen_ContractTerminal::*)(bool, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>), Screen_ContractTerminal *, std::_Ph<1> _const &, std::_Ph<2> _const &>, void, bool, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _>
 { // PlaceHolder Class Structure
 };
 
-typedef struct _Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_Screen_WeaponTerminal::*)(bool, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>), class_Screen_WeaponTerminal *, struct_std::_Ph<1> _const &, struct_std::_Ph<2> _const &>, void, bool, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _> _Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_Screen_WeaponTerminal::*)(bool, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>), class_Screen_WeaponTerminal *, struct_std::_Ph<1> _const &, struct_std::_Ph<2> _const &>, void, bool, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _>, *P_Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_Screen_WeaponTerminal::*)(bool, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>), class_Screen_WeaponTerminal *, struct_std::_Ph<1> _const &, struct_std::_Ph<2> _const &>, void, bool, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _>;
+typedef struct _Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_ComputerSystem::*)(void), ComputerSystem *&>, void> _Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_ComputerSystem::*)(void), ComputerSystem *&>, void>, *P_Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_ComputerSystem::*)(void), ComputerSystem *&>, void>;
 
-struct _Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_Screen_WeaponTerminal::*)(bool, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>), class_Screen_WeaponTerminal *, struct_std::_Ph<1> _const &, struct_std::_Ph<2> _const &>, void, bool, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _>
+struct _Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_ComputerSystem::*)(void), ComputerSystem *&>, void>
 { // PlaceHolder Class Structure
 };
 
-typedef struct _Func_impl_no_alloc<class_std::function<bool___cdecl(class_Ship *, double, double, double)>, bool, class_Ship *, int, int, int> _Func_impl_no_alloc<class_std::function<bool___cdecl(class_Ship *, double, double, double)>, bool, class_Ship *, int, int, int>, *P_Func_impl_no_alloc<class_std::function<bool___cdecl(class_Ship *, double, double, double)>, bool, class_Ship *, int, int, int>;
+typedef struct _Func_impl_no_alloc<bool_(__cdecl *)(Ship *, int, int, int), bool, Ship *, double, double, double> _Func_impl_no_alloc<bool_(__cdecl *)(Ship *, int, int, int), bool, Ship *, double, double, double>, *P_Func_impl_no_alloc<bool_(__cdecl *)(Ship *, int, int, int), bool, Ship *, double, double, double>;
 
-struct _Func_impl_no_alloc<class_std::function<bool___cdecl(class_Ship *, double, double, double)>, bool, class_Ship *, int, int, int>
+struct _Func_impl_no_alloc<bool_(__cdecl *)(Ship *, int, int, int), bool, Ship *, double, double, double>
 { // PlaceHolder Class Structure
 };
 
-typedef struct _Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_Screen_PC::*)(bool, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>), class_Screen_PC *, struct_std::_Ph<1> _const &, struct_std::_Ph<2> _const &>, void, bool, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _> _Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_Screen_PC::*)(bool, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>), class_Screen_PC *, struct_std::_Ph<1> _const &, struct_std::_Ph<2> _const &>, void, bool, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _>, *P_Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_Screen_PC::*)(bool, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>), class_Screen_PC *, struct_std::_Ph<1> _const &, struct_std::_Ph<2> _const &>, void, bool, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _>;
+typedef struct _Func_impl_no_alloc<std::_Binder<std::_Unforced, bool_ (__thiscall_ServerPresentationInterface::*)(int), ServerPresentationInterface *, std::_Ph<1> _const &>, bool, int> _Func_impl_no_alloc<std::_Binder<std::_Unforced, bool_ (__thiscall_ServerPresentationInterface::*)(int), ServerPresentationInterface *, std::_Ph<1> _const &>, bool, int>, *P_Func_impl_no_alloc<std::_Binder<std::_Unforced, bool_ (__thiscall_ServerPresentationInterface::*)(int), ServerPresentationInterface *, std::_Ph<1> _const &>, bool, int>;
 
-struct _Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_Screen_PC::*)(bool, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>), class_Screen_PC *, struct_std::_Ph<1> _const &, struct_std::_Ph<2> _const &>, void, bool, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _>
+struct _Func_impl_no_alloc<std::_Binder<std::_Unforced, bool_ (__thiscall_ServerPresentationInterface::*)(int), ServerPresentationInterface *, std::_Ph<1> _const &>, bool, int>
 { // PlaceHolder Class Structure
 };
 
-typedef struct _Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_Screen_Terminal::*)(class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>), class_Screen_Terminal *, struct_std::_Ph<1> _const &, struct_std::_Ph<2> _const &>, void, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _> _Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_Screen_Terminal::*)(class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>), class_Screen_Terminal *, struct_std::_Ph<1> _const &, struct_std::_Ph<2> _const &>, void, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _>, *P_Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_Screen_Terminal::*)(class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>), class_Screen_Terminal *, struct_std::_Ph<1> _const &, struct_std::_Ph<2> _const &>, void, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _>;
+typedef struct _Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_Screen_WeaponTerminal::*)(void), Screen_WeaponTerminal *>, void> _Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_Screen_WeaponTerminal::*)(void), Screen_WeaponTerminal *>, void>, *P_Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_Screen_WeaponTerminal::*)(void), Screen_WeaponTerminal *>, void>;
 
-struct _Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_Screen_Terminal::*)(class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>), class_Screen_Terminal *, struct_std::_Ph<1> _const &, struct_std::_Ph<2> _const &>, void, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _>
+struct _Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_Screen_WeaponTerminal::*)(void), Screen_WeaponTerminal *>, void>
 { // PlaceHolder Class Structure
 };
 
-typedef struct _Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_Screen_UpgradeTerminal::*)(class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>), class_Screen_UpgradeTerminal *, struct_std::_Ph<1> _const &, struct_std::_Ph<2> _const &>, void, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _> _Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_Screen_UpgradeTerminal::*)(class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>), class_Screen_UpgradeTerminal *, struct_std::_Ph<1> _const &, struct_std::_Ph<2> _const &>, void, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _>, *P_Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_Screen_UpgradeTerminal::*)(class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>), class_Screen_UpgradeTerminal *, struct_std::_Ph<1> _const &, struct_std::_Ph<2> _const &>, void, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _>;
+typedef struct _Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_ComputerSystem::*)(int), ComputerSystem *, std::_Ph<1> _const &>, void, int> _Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_ComputerSystem::*)(int), ComputerSystem *, std::_Ph<1> _const &>, void, int>, *P_Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_ComputerSystem::*)(int), ComputerSystem *, std::_Ph<1> _const &>, void, int>;
 
-struct _Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_Screen_UpgradeTerminal::*)(class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>), class_Screen_UpgradeTerminal *, struct_std::_Ph<1> _const &, struct_std::_Ph<2> _const &>, void, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _>
+struct _Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_ComputerSystem::*)(int), ComputerSystem *, std::_Ph<1> _const &>, void, int>
 { // PlaceHolder Class Structure
 };
 
-typedef struct _Func_impl_no_alloc<bool_(__cdecl *)(class_Ship *, int, int, int), bool, class_Ship *, double, double, double> _Func_impl_no_alloc<bool_(__cdecl *)(class_Ship *, int, int, int), bool, class_Ship *, double, double, double>, *P_Func_impl_no_alloc<bool_(__cdecl *)(class_Ship *, int, int, int), bool, class_Ship *, double, double, double>;
+typedef struct _Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_ServerPresentationInterface::*)(int), ServerPresentationInterface *, std::_Ph<1> _const &>, void, int> _Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_ServerPresentationInterface::*)(int), ServerPresentationInterface *, std::_Ph<1> _const &>, void, int>, *P_Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_ServerPresentationInterface::*)(int), ServerPresentationInterface *, std::_Ph<1> _const &>, void, int>;
 
-struct _Func_impl_no_alloc<bool_(__cdecl *)(class_Ship *, int, int, int), bool, class_Ship *, double, double, double>
+struct _Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_ServerPresentationInterface::*)(int), ServerPresentationInterface *, std::_Ph<1> _const &>, void, int>
 { // PlaceHolder Class Structure
 };
 
-typedef struct _Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_Screen_PC::*)(void), class_Screen_PC *>, void> _Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_Screen_PC::*)(void), class_Screen_PC *>, void>, *P_Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_Screen_PC::*)(void), class_Screen_PC *>, void>;
+typedef struct _Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_Screen_ContractTerminal::*)(void), Screen_ContractTerminal *>, void> _Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_Screen_ContractTerminal::*)(void), Screen_ContractTerminal *>, void>, *P_Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_Screen_ContractTerminal::*)(void), Screen_ContractTerminal *>, void>;
 
-struct _Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_Screen_PC::*)(void), class_Screen_PC *>, void>
+struct _Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_Screen_ContractTerminal::*)(void), Screen_ContractTerminal *>, void>
 { // PlaceHolder Class Structure
 };
 
-typedef struct _Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_Screen_TradeTerminal::*)(bool, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>), class_Screen_TradeTerminal *, struct_std::_Ph<1> _const &, struct_std::_Ph<2> _const &>, void, bool, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _> _Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_Screen_TradeTerminal::*)(bool, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>), class_Screen_TradeTerminal *, struct_std::_Ph<1> _const &, struct_std::_Ph<2> _const &>, void, bool, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _>, *P_Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_Screen_TradeTerminal::*)(bool, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>), class_Screen_TradeTerminal *, struct_std::_Ph<1> _const &, struct_std::_Ph<2> _const &>, void, bool, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _>;
+typedef struct _Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_ComputerSystem::*)(void), ComputerSystem *>, void> _Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_ComputerSystem::*)(void), ComputerSystem *>, void>, *P_Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_ComputerSystem::*)(void), ComputerSystem *>, void>;
 
-struct _Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_Screen_TradeTerminal::*)(bool, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>), class_Screen_TradeTerminal *, struct_std::_Ph<1> _const &, struct_std::_Ph<2> _const &>, void, bool, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _>
+struct _Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_ComputerSystem::*)(void), ComputerSystem *>, void>
 { // PlaceHolder Class Structure
 };
 
-typedef struct _Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_Screen_TradeTerminal::*)(void), class_Screen_TradeTerminal *>, void> _Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_Screen_TradeTerminal::*)(void), class_Screen_TradeTerminal *>, void>, *P_Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_Screen_TradeTerminal::*)(void), class_Screen_TradeTerminal *>, void>;
+typedef struct _Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_Screen_Terminal::*)(std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>), Screen_Terminal *, std::_Ph<1> _const &, std::_Ph<2> _const &>, void, std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _> _Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_Screen_Terminal::*)(std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>), Screen_Terminal *, std::_Ph<1> _const &, std::_Ph<2> _const &>, void, std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _>, *P_Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_Screen_Terminal::*)(std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>), Screen_Terminal *, std::_Ph<1> _const &, std::_Ph<2> _const &>, void, std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _>;
 
-struct _Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_Screen_TradeTerminal::*)(void), class_Screen_TradeTerminal *>, void>
+struct _Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_Screen_Terminal::*)(std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>), Screen_Terminal *, std::_Ph<1> _const &, std::_Ph<2> _const &>, void, std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _>
 { // PlaceHolder Class Structure
 };
 
-typedef struct _Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_Screen_PC::*)(class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>), class_Screen_PC *, struct_std::_Ph<1> _const &>, void, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_Screen_PC::*)(class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>), class_Screen_PC *, struct_std::_Ph<1> _const &>, void, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, *P_Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_Screen_PC::*)(class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>), class_Screen_PC *, struct_std::_Ph<1> _const &>, void, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>;
+typedef struct _Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_Screen_PC::*)(std::basic_string<char, std::char_traits<char>, std::allocator<char> _>), Screen_PC *, std::_Ph<1> _const &>, void, std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_Screen_PC::*)(std::basic_string<char, std::char_traits<char>, std::allocator<char> _>), Screen_PC *, std::_Ph<1> _const &>, void, std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _>, *P_Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_Screen_PC::*)(std::basic_string<char, std::char_traits<char>, std::allocator<char> _>), Screen_PC *, std::_Ph<1> _const &>, void, std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _>;
 
-struct _Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_Screen_PC::*)(class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>), class_Screen_PC *, struct_std::_Ph<1> _const &>, void, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>
+struct _Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_Screen_PC::*)(std::basic_string<char, std::char_traits<char>, std::allocator<char> _>), Screen_PC *, std::_Ph<1> _const &>, void, std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _>
 { // PlaceHolder Class Structure
 };
 
-typedef struct _Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_Screen_TradeTerminal::*)(class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>), class_Screen_TradeTerminal *, struct_std::_Ph<1> _const &, struct_std::_Ph<2> _const &>, void, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _> _Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_Screen_TradeTerminal::*)(class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>), class_Screen_TradeTerminal *, struct_std::_Ph<1> _const &, struct_std::_Ph<2> _const &>, void, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _>, *P_Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_Screen_TradeTerminal::*)(class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>), class_Screen_TradeTerminal *, struct_std::_Ph<1> _const &, struct_std::_Ph<2> _const &>, void, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _>;
+typedef struct _Func_impl_no_alloc<std::function<bool___cdecl(Ship *, int, int, int)>, bool, Ship *, double, double, double> _Func_impl_no_alloc<std::function<bool___cdecl(Ship *, int, int, int)>, bool, Ship *, double, double, double>, *P_Func_impl_no_alloc<std::function<bool___cdecl(Ship *, int, int, int)>, bool, Ship *, double, double, double>;
 
-struct _Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_Screen_TradeTerminal::*)(class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>), class_Screen_TradeTerminal *, struct_std::_Ph<1> _const &, struct_std::_Ph<2> _const &>, void, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _>
+struct _Func_impl_no_alloc<std::function<bool___cdecl(Ship *, int, int, int)>, bool, Ship *, double, double, double>
 { // PlaceHolder Class Structure
 };
 
-typedef struct _Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_Screen_WeaponTerminal::*)(class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>), class_Screen_WeaponTerminal *, struct_std::_Ph<1> _const &, struct_std::_Ph<2> _const &>, void, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _> _Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_Screen_WeaponTerminal::*)(class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>), class_Screen_WeaponTerminal *, struct_std::_Ph<1> _const &, struct_std::_Ph<2> _const &>, void, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _>, *P_Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_Screen_WeaponTerminal::*)(class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>), class_Screen_WeaponTerminal *, struct_std::_Ph<1> _const &, struct_std::_Ph<2> _const &>, void, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _>;
+typedef struct _Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_Screen_TradeTerminal::*)(bool, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>), Screen_TradeTerminal *, std::_Ph<1> _const &, std::_Ph<2> _const &>, void, bool, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _> _Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_Screen_TradeTerminal::*)(bool, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>), Screen_TradeTerminal *, std::_Ph<1> _const &, std::_Ph<2> _const &>, void, bool, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _>, *P_Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_Screen_TradeTerminal::*)(bool, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>), Screen_TradeTerminal *, std::_Ph<1> _const &, std::_Ph<2> _const &>, void, bool, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _>;
 
-struct _Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_Screen_WeaponTerminal::*)(class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>), class_Screen_WeaponTerminal *, struct_std::_Ph<1> _const &, struct_std::_Ph<2> _const &>, void, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _>
+struct _Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_Screen_TradeTerminal::*)(bool, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>), Screen_TradeTerminal *, std::_Ph<1> _const &, std::_Ph<2> _const &>, void, bool, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _>
 { // PlaceHolder Class Structure
 };
 
-typedef struct _Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_PresentationInterface::*)(class_cocos2d::Event *), class_PresentationInterface *, struct_std::_Ph<1> _const &>, void, class_cocos2d::EventMouse *> _Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_PresentationInterface::*)(class_cocos2d::Event *), class_PresentationInterface *, struct_std::_Ph<1> _const &>, void, class_cocos2d::EventMouse *>, *P_Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_PresentationInterface::*)(class_cocos2d::Event *), class_PresentationInterface *, struct_std::_Ph<1> _const &>, void, class_cocos2d::EventMouse *>;
+typedef struct _Func_impl_no_alloc<bool_(__cdecl *)(Ship *, int, std::basic_string<char, std::char_traits<char>, std::allocator<char> _>), bool, Ship *, int, std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _Func_impl_no_alloc<bool_(__cdecl *)(Ship *, int, std::basic_string<char, std::char_traits<char>, std::allocator<char> _>), bool, Ship *, int, std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, *P_Func_impl_no_alloc<bool_(__cdecl *)(Ship *, int, std::basic_string<char, std::char_traits<char>, std::allocator<char> _>), bool, Ship *, int, std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>;
 
-struct _Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_PresentationInterface::*)(class_cocos2d::Event *), class_PresentationInterface *, struct_std::_Ph<1> _const &>, void, class_cocos2d::EventMouse *>
+struct _Func_impl_no_alloc<bool_(__cdecl *)(Ship *, int, std::basic_string<char, std::char_traits<char>, std::allocator<char> _>), bool, Ship *, int, std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>
 { // PlaceHolder Class Structure
 };
 
-typedef struct _Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, bool_ (__thiscall_ServerPresentationInterface::*)(int), class_ServerPresentationInterface *, struct_std::_Ph<1> _const &>, bool, int> _Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, bool_ (__thiscall_ServerPresentationInterface::*)(int), class_ServerPresentationInterface *, struct_std::_Ph<1> _const &>, bool, int>, *P_Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, bool_ (__thiscall_ServerPresentationInterface::*)(int), class_ServerPresentationInterface *, struct_std::_Ph<1> _const &>, bool, int>;
+typedef struct _Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_Screen_PC::*)(std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>), Screen_PC *, std::_Ph<1> _const &, std::_Ph<2> _const &>, void, std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _> _Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_Screen_PC::*)(std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>), Screen_PC *, std::_Ph<1> _const &, std::_Ph<2> _const &>, void, std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _>, *P_Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_Screen_PC::*)(std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>), Screen_PC *, std::_Ph<1> _const &, std::_Ph<2> _const &>, void, std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _>;
 
-struct _Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, bool_ (__thiscall_ServerPresentationInterface::*)(int), class_ServerPresentationInterface *, struct_std::_Ph<1> _const &>, bool, int>
+struct _Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_Screen_PC::*)(std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>), Screen_PC *, std::_Ph<1> _const &, std::_Ph<2> _const &>, void, std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _>
 { // PlaceHolder Class Structure
 };
 
-typedef struct _Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_ComputerSystem::*)(int), class_ComputerSystem *, struct_std::_Ph<1> _const &>, void, int> _Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_ComputerSystem::*)(int), class_ComputerSystem *, struct_std::_Ph<1> _const &>, void, int>, *P_Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_ComputerSystem::*)(int), class_ComputerSystem *, struct_std::_Ph<1> _const &>, void, int>;
+typedef struct _Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_Screen_UpgradeTerminal::*)(bool, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>), Screen_UpgradeTerminal *, std::_Ph<1> _const &, std::_Ph<2> _const &>, void, bool, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _> _Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_Screen_UpgradeTerminal::*)(bool, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>), Screen_UpgradeTerminal *, std::_Ph<1> _const &, std::_Ph<2> _const &>, void, bool, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _>, *P_Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_Screen_UpgradeTerminal::*)(bool, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>), Screen_UpgradeTerminal *, std::_Ph<1> _const &, std::_Ph<2> _const &>, void, bool, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _>;
 
-struct _Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_ComputerSystem::*)(int), class_ComputerSystem *, struct_std::_Ph<1> _const &>, void, int>
+struct _Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_Screen_UpgradeTerminal::*)(bool, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>), Screen_UpgradeTerminal *, std::_Ph<1> _const &, std::_Ph<2> _const &>, void, bool, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _>
 { // PlaceHolder Class Structure
 };
 
-typedef struct function<bool___cdecl(class_Ship *, double, double, double)> function<bool___cdecl(class_Ship *, double, double, double)>, *Pfunction<bool___cdecl(class_Ship *, double, double, double)>;
+typedef struct _Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_Screen_TradeTerminal::*)(std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>), Screen_TradeTerminal *, std::_Ph<1> _const &, std::_Ph<2> _const &>, void, std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _> _Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_Screen_TradeTerminal::*)(std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>), Screen_TradeTerminal *, std::_Ph<1> _const &, std::_Ph<2> _const &>, void, std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _>, *P_Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_Screen_TradeTerminal::*)(std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>), Screen_TradeTerminal *, std::_Ph<1> _const &, std::_Ph<2> _const &>, void, std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _>;
 
-struct function<bool___cdecl(class_Ship *, double, double, double)>
+struct _Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_Screen_TradeTerminal::*)(std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>), Screen_TradeTerminal *, std::_Ph<1> _const &, std::_Ph<2> _const &>, void, std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _>
 { // PlaceHolder Class Structure
 };
 
-typedef struct _Func_impl_no_alloc<bool_(__cdecl *)(class_Ship *, int, int, int), bool, class_Ship *, int, int, int> _Func_impl_no_alloc<bool_(__cdecl *)(class_Ship *, int, int, int), bool, class_Ship *, int, int, int>, *P_Func_impl_no_alloc<bool_(__cdecl *)(class_Ship *, int, int, int), bool, class_Ship *, int, int, int>;
+typedef struct _Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_Screen_WeaponTerminal::*)(std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>), Screen_WeaponTerminal *, std::_Ph<1> _const &, std::_Ph<2> _const &>, void, std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _> _Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_Screen_WeaponTerminal::*)(std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>), Screen_WeaponTerminal *, std::_Ph<1> _const &, std::_Ph<2> _const &>, void, std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _>, *P_Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_Screen_WeaponTerminal::*)(std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>), Screen_WeaponTerminal *, std::_Ph<1> _const &, std::_Ph<2> _const &>, void, std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _>;
 
-struct _Func_impl_no_alloc<bool_(__cdecl *)(class_Ship *, int, int, int), bool, class_Ship *, int, int, int>
+struct _Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_Screen_WeaponTerminal::*)(std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>), Screen_WeaponTerminal *, std::_Ph<1> _const &, std::_Ph<2> _const &>, void, std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _>
 { // PlaceHolder Class Structure
 };
 
-typedef struct _Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_Screen_Terminal::*)(bool, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>), class_Screen_Terminal *, struct_std::_Ph<1> _const &, struct_std::_Ph<2> _const &>, void, bool, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _> _Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_Screen_Terminal::*)(bool, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>), class_Screen_Terminal *, struct_std::_Ph<1> _const &, struct_std::_Ph<2> _const &>, void, bool, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _>, *P_Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_Screen_Terminal::*)(bool, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>), class_Screen_Terminal *, struct_std::_Ph<1> _const &, struct_std::_Ph<2> _const &>, void, bool, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _>;
+typedef struct _Func_impl_no_alloc<std::function<bool___cdecl(Ship *, double, double, double)>, bool, Ship *, int, int, int> _Func_impl_no_alloc<std::function<bool___cdecl(Ship *, double, double, double)>, bool, Ship *, int, int, int>, *P_Func_impl_no_alloc<std::function<bool___cdecl(Ship *, double, double, double)>, bool, Ship *, int, int, int>;
 
-struct _Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_Screen_Terminal::*)(bool, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>), class_Screen_Terminal *, struct_std::_Ph<1> _const &, struct_std::_Ph<2> _const &>, void, bool, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _>
+struct _Func_impl_no_alloc<std::function<bool___cdecl(Ship *, double, double, double)>, bool, Ship *, int, int, int>
 { // PlaceHolder Class Structure
 };
 
-typedef struct _Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_Screen_PC::*)(class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>), class_Screen_PC *, struct_std::_Ph<1> _const &, struct_std::_Ph<2> _const &>, void, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _> _Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_Screen_PC::*)(class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>), class_Screen_PC *, struct_std::_Ph<1> _const &, struct_std::_Ph<2> _const &>, void, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _>, *P_Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_Screen_PC::*)(class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>), class_Screen_PC *, struct_std::_Ph<1> _const &, struct_std::_Ph<2> _const &>, void, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _>;
+typedef struct _Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_Screen_UpgradeTerminal::*)(void), Screen_UpgradeTerminal *>, void> _Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_Screen_UpgradeTerminal::*)(void), Screen_UpgradeTerminal *>, void>, *P_Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_Screen_UpgradeTerminal::*)(void), Screen_UpgradeTerminal *>, void>;
 
-struct _Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_Screen_PC::*)(class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>), class_Screen_PC *, struct_std::_Ph<1> _const &, struct_std::_Ph<2> _const &>, void, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _>
+struct _Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_Screen_UpgradeTerminal::*)(void), Screen_UpgradeTerminal *>, void>
 { // PlaceHolder Class Structure
 };
 
-typedef struct _Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_ComputerSystem::*)(void), class_ComputerSystem *>, void> _Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_ComputerSystem::*)(void), class_ComputerSystem *>, void>, *P_Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_ComputerSystem::*)(void), class_ComputerSystem *>, void>;
+typedef struct _Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_Screen_ContractTerminal::*)(std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>), Screen_ContractTerminal *, std::_Ph<1> _const &, std::_Ph<2> _const &>, void, std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _> _Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_Screen_ContractTerminal::*)(std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>), Screen_ContractTerminal *, std::_Ph<1> _const &, std::_Ph<2> _const &>, void, std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _>, *P_Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_Screen_ContractTerminal::*)(std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>), Screen_ContractTerminal *, std::_Ph<1> _const &, std::_Ph<2> _const &>, void, std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _>;
 
-struct _Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_ComputerSystem::*)(void), class_ComputerSystem *>, void>
+struct _Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_Screen_ContractTerminal::*)(std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>), Screen_ContractTerminal *, std::_Ph<1> _const &, std::_Ph<2> _const &>, void, std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _>
 { // PlaceHolder Class Structure
 };
 
-typedef struct _Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_Screen_WeaponTerminal::*)(void), class_Screen_WeaponTerminal *>, void> _Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_Screen_WeaponTerminal::*)(void), class_Screen_WeaponTerminal *>, void>, *P_Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_Screen_WeaponTerminal::*)(void), class_Screen_WeaponTerminal *>, void>;
+typedef struct _Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_Screen_TradeTerminal::*)(void), Screen_TradeTerminal *>, void> _Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_Screen_TradeTerminal::*)(void), Screen_TradeTerminal *>, void>, *P_Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_Screen_TradeTerminal::*)(void), Screen_TradeTerminal *>, void>;
 
-struct _Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_Screen_WeaponTerminal::*)(void), class_Screen_WeaponTerminal *>, void>
+struct _Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_Screen_TradeTerminal::*)(void), Screen_TradeTerminal *>, void>
 { // PlaceHolder Class Structure
 };
 
-typedef struct _Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_RoomObject::*)(void), class_RoomObject *>, void> _Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_RoomObject::*)(void), class_RoomObject *>, void>, *P_Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_RoomObject::*)(void), class_RoomObject *>, void>;
+typedef struct _Func_impl_no_alloc<double_(__cdecl *)(Ship *, int), double, Ship *, int> _Func_impl_no_alloc<double_(__cdecl *)(Ship *, int), double, Ship *, int>, *P_Func_impl_no_alloc<double_(__cdecl *)(Ship *, int), double, Ship *, int>;
 
-struct _Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_RoomObject::*)(void), class_RoomObject *>, void>
+struct _Func_impl_no_alloc<double_(__cdecl *)(Ship *, int), double, Ship *, int>
 { // PlaceHolder Class Structure
 };
 
-typedef struct _Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_Screen_ContractTerminal::*)(class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>), class_Screen_ContractTerminal *, struct_std::_Ph<1> _const &, struct_std::_Ph<2> _const &>, void, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _> _Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_Screen_ContractTerminal::*)(class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>), class_Screen_ContractTerminal *, struct_std::_Ph<1> _const &, struct_std::_Ph<2> _const &>, void, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _>, *P_Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_Screen_ContractTerminal::*)(class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>), class_Screen_ContractTerminal *, struct_std::_Ph<1> _const &, struct_std::_Ph<2> _const &>, void, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _>;
+typedef struct _Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_Screen_WeaponTerminal::*)(bool, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>), Screen_WeaponTerminal *, std::_Ph<1> _const &, std::_Ph<2> _const &>, void, bool, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _> _Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_Screen_WeaponTerminal::*)(bool, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>), Screen_WeaponTerminal *, std::_Ph<1> _const &, std::_Ph<2> _const &>, void, bool, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _>, *P_Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_Screen_WeaponTerminal::*)(bool, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>), Screen_WeaponTerminal *, std::_Ph<1> _const &, std::_Ph<2> _const &>, void, bool, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _>;
 
-struct _Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_Screen_ContractTerminal::*)(class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>), class_Screen_ContractTerminal *, struct_std::_Ph<1> _const &, struct_std::_Ph<2> _const &>, void, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _>
+struct _Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_Screen_WeaponTerminal::*)(bool, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>), Screen_WeaponTerminal *, std::_Ph<1> _const &, std::_Ph<2> _const &>, void, bool, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _>
 { // PlaceHolder Class Structure
 };
 
-typedef struct _Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_Screen_ContractTerminal::*)(void), class_Screen_ContractTerminal *>, void> _Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_Screen_ContractTerminal::*)(void), class_Screen_ContractTerminal *>, void>, *P_Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_Screen_ContractTerminal::*)(void), class_Screen_ContractTerminal *>, void>;
+typedef struct function<bool___cdecl(Ship *, double, double, double)> function<bool___cdecl(Ship *, double, double, double)>, *Pfunction<bool___cdecl(Ship *, double, double, double)>;
 
-struct _Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_Screen_ContractTerminal::*)(void), class_Screen_ContractTerminal *>, void>
+struct function<bool___cdecl(Ship *, double, double, double)>
 { // PlaceHolder Class Structure
 };
 
-typedef struct _Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_PresentationInterface::*)(enum_cocos2d::EventKeyboard::KeyCode, class_cocos2d::Event *), class_PresentationInterface *, struct_std::_Ph<1> _const &, struct_std::_Ph<2> _const &>, void, enum_cocos2d::EventKeyboard::KeyCode, class_cocos2d::Event *> _Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_PresentationInterface::*)(enum_cocos2d::EventKeyboard::KeyCode, class_cocos2d::Event *), class_PresentationInterface *, struct_std::_Ph<1> _const &, struct_std::_Ph<2> _const &>, void, enum_cocos2d::EventKeyboard::KeyCode, class_cocos2d::Event *>, *P_Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_PresentationInterface::*)(enum_cocos2d::EventKeyboard::KeyCode, class_cocos2d::Event *), class_PresentationInterface *, struct_std::_Ph<1> _const &, struct_std::_Ph<2> _const &>, void, enum_cocos2d::EventKeyboard::KeyCode, class_cocos2d::Event *>;
+typedef struct _Func_impl_no_alloc<void_(__cdecl *)(Menu *), void, Menu *> _Func_impl_no_alloc<void_(__cdecl *)(Menu *), void, Menu *>, *P_Func_impl_no_alloc<void_(__cdecl *)(Menu *), void, Menu *>;
 
-struct _Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_PresentationInterface::*)(enum_cocos2d::EventKeyboard::KeyCode, class_cocos2d::Event *), class_PresentationInterface *, struct_std::_Ph<1> _const &, struct_std::_Ph<2> _const &>, void, enum_cocos2d::EventKeyboard::KeyCode, class_cocos2d::Event *>
+struct _Func_impl_no_alloc<void_(__cdecl *)(Menu *), void, Menu *>
 { // PlaceHolder Class Structure
 };
 
-typedef struct _Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_ServerPresentationInterface::*)(int), class_ServerPresentationInterface *, struct_std::_Ph<1> _const &>, void, int> _Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_ServerPresentationInterface::*)(int), class_ServerPresentationInterface *, struct_std::_Ph<1> _const &>, void, int>, *P_Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_ServerPresentationInterface::*)(int), class_ServerPresentationInterface *, struct_std::_Ph<1> _const &>, void, int>;
+typedef struct _Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_Screen_PC::*)(void), Screen_PC *>, void> _Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_Screen_PC::*)(void), Screen_PC *>, void>, *P_Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_Screen_PC::*)(void), Screen_PC *>, void>;
 
-struct _Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_ServerPresentationInterface::*)(int), class_ServerPresentationInterface *, struct_std::_Ph<1> _const &>, void, int>
+struct _Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_Screen_PC::*)(void), Screen_PC *>, void>
 { // PlaceHolder Class Structure
 };
 
-typedef struct _Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_Screen_ContractTerminal::*)(bool, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>), class_Screen_ContractTerminal *, struct_std::_Ph<1> _const &, struct_std::_Ph<2> _const &>, void, bool, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _> _Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_Screen_ContractTerminal::*)(bool, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>), class_Screen_ContractTerminal *, struct_std::_Ph<1> _const &, struct_std::_Ph<2> _const &>, void, bool, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _>, *P_Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_Screen_ContractTerminal::*)(bool, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>), class_Screen_ContractTerminal *, struct_std::_Ph<1> _const &, struct_std::_Ph<2> _const &>, void, bool, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _>;
+typedef struct _Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_Screen_Terminal::*)(bool, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>), Screen_Terminal *, std::_Ph<1> _const &, std::_Ph<2> _const &>, void, bool, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _> _Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_Screen_Terminal::*)(bool, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>), Screen_Terminal *, std::_Ph<1> _const &, std::_Ph<2> _const &>, void, bool, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _>, *P_Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_Screen_Terminal::*)(bool, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>), Screen_Terminal *, std::_Ph<1> _const &, std::_Ph<2> _const &>, void, bool, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _>;
 
-struct _Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_Screen_ContractTerminal::*)(bool, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>), class_Screen_ContractTerminal *, struct_std::_Ph<1> _const &, struct_std::_Ph<2> _const &>, void, bool, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _>
+struct _Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_Screen_Terminal::*)(bool, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>), Screen_Terminal *, std::_Ph<1> _const &, std::_Ph<2> _const &>, void, bool, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _>
 { // PlaceHolder Class Structure
 };
 
-typedef struct _Func_impl_no_alloc<double_(__cdecl *)(class_Ship *, int), double, class_Ship *, int> _Func_impl_no_alloc<double_(__cdecl *)(class_Ship *, int), double, class_Ship *, int>, *P_Func_impl_no_alloc<double_(__cdecl *)(class_Ship *, int), double, class_Ship *, int>;
+typedef struct _Func_impl_no_alloc<bool_(__cdecl *)(Ship *, double, double, double), bool, Ship *, double, double, double> _Func_impl_no_alloc<bool_(__cdecl *)(Ship *, double, double, double), bool, Ship *, double, double, double>, *P_Func_impl_no_alloc<bool_(__cdecl *)(Ship *, double, double, double), bool, Ship *, double, double, double>;
 
-struct _Func_impl_no_alloc<double_(__cdecl *)(class_Ship *, int), double, class_Ship *, int>
+struct _Func_impl_no_alloc<bool_(__cdecl *)(Ship *, double, double, double), bool, Ship *, double, double, double>
 { // PlaceHolder Class Structure
 };
 
-typedef struct _Func_impl_no_alloc<bool_(__cdecl *)(class_Ship *, double, double, double), bool, class_Ship *, double, double, double> _Func_impl_no_alloc<bool_(__cdecl *)(class_Ship *, double, double, double), bool, class_Ship *, double, double, double>, *P_Func_impl_no_alloc<bool_(__cdecl *)(class_Ship *, double, double, double), bool, class_Ship *, double, double, double>;
+typedef struct _Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_PresentationInterface::*)(cocos2d::Event *), PresentationInterface *, std::_Ph<1> _const &>, void, cocos2d::EventMouse *> _Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_PresentationInterface::*)(cocos2d::Event *), PresentationInterface *, std::_Ph<1> _const &>, void, cocos2d::EventMouse *>, *P_Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_PresentationInterface::*)(cocos2d::Event *), PresentationInterface *, std::_Ph<1> _const &>, void, cocos2d::EventMouse *>;
 
-struct _Func_impl_no_alloc<bool_(__cdecl *)(class_Ship *, double, double, double), bool, class_Ship *, double, double, double>
+struct _Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_PresentationInterface::*)(cocos2d::Event *), PresentationInterface *, std::_Ph<1> _const &>, void, cocos2d::EventMouse *>
 { // PlaceHolder Class Structure
 };
 
-typedef struct _Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_Screen_Terminal::*)(void), class_Screen_Terminal *>, void> _Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_Screen_Terminal::*)(void), class_Screen_Terminal *>, void>, *P_Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_Screen_Terminal::*)(void), class_Screen_Terminal *>, void>;
+typedef struct _Func_impl_no_alloc<bool_(__cdecl *)(Ship *, int, int, int), bool, Ship *, int, int, int> _Func_impl_no_alloc<bool_(__cdecl *)(Ship *, int, int, int), bool, Ship *, int, int, int>, *P_Func_impl_no_alloc<bool_(__cdecl *)(Ship *, int, int, int), bool, Ship *, int, int, int>;
 
-struct _Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_Screen_Terminal::*)(void), class_Screen_Terminal *>, void>
+struct _Func_impl_no_alloc<bool_(__cdecl *)(Ship *, int, int, int), bool, Ship *, int, int, int>
 { // PlaceHolder Class Structure
 };
 
-typedef struct _Func_impl_no_alloc<void_(__cdecl *)(class_Menu *), void, class_Menu *> _Func_impl_no_alloc<void_(__cdecl *)(class_Menu *), void, class_Menu *>, *P_Func_impl_no_alloc<void_(__cdecl *)(class_Menu *), void, class_Menu *>;
+typedef struct _Func_impl_no_alloc<class_std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _(__cdecl *)(Ship *, int), std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, Ship *, int> _Func_impl_no_alloc<class_std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _(__cdecl *)(Ship *, int), std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, Ship *, int>, *P_Func_impl_no_alloc<class_std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _(__cdecl *)(Ship *, int), std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, Ship *, int>;
 
-struct _Func_impl_no_alloc<void_(__cdecl *)(class_Menu *), void, class_Menu *>
+struct _Func_impl_no_alloc<class_std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _(__cdecl *)(Ship *, int), std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, Ship *, int>
 { // PlaceHolder Class Structure
 };
 
-typedef struct _Func_impl_no_alloc<class_std::function<bool___cdecl(class_Ship *, int, int, int)>, bool, class_Ship *, double, double, double> _Func_impl_no_alloc<class_std::function<bool___cdecl(class_Ship *, int, int, int)>, bool, class_Ship *, double, double, double>, *P_Func_impl_no_alloc<class_std::function<bool___cdecl(class_Ship *, int, int, int)>, bool, class_Ship *, double, double, double>;
+typedef struct _Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_Screen_PC::*)(bool, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>), Screen_PC *, std::_Ph<1> _const &, std::_Ph<2> _const &>, void, bool, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _> _Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_Screen_PC::*)(bool, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>), Screen_PC *, std::_Ph<1> _const &, std::_Ph<2> _const &>, void, bool, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _>, *P_Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_Screen_PC::*)(bool, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>), Screen_PC *, std::_Ph<1> _const &, std::_Ph<2> _const &>, void, bool, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _>;
 
-struct _Func_impl_no_alloc<class_std::function<bool___cdecl(class_Ship *, int, int, int)>, bool, class_Ship *, double, double, double>
+struct _Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_Screen_PC::*)(bool, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>), Screen_PC *, std::_Ph<1> _const &, std::_Ph<2> _const &>, void, bool, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _>
 { // PlaceHolder Class Structure
 };
 
-typedef struct _Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_Screen_UpgradeTerminal::*)(void), class_Screen_UpgradeTerminal *>, void> _Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_Screen_UpgradeTerminal::*)(void), class_Screen_UpgradeTerminal *>, void>, *P_Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_Screen_UpgradeTerminal::*)(void), class_Screen_UpgradeTerminal *>, void>;
+typedef struct _Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_Screen_Terminal::*)(void), Screen_Terminal *>, void> _Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_Screen_Terminal::*)(void), Screen_Terminal *>, void>, *P_Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_Screen_Terminal::*)(void), Screen_Terminal *>, void>;
 
-struct _Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_Screen_UpgradeTerminal::*)(void), class_Screen_UpgradeTerminal *>, void>
+struct _Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_Screen_Terminal::*)(void), Screen_Terminal *>, void>
 { // PlaceHolder Class Structure
 };
 
-typedef struct _Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_Screen_UpgradeTerminal::*)(bool, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>), class_Screen_UpgradeTerminal *, struct_std::_Ph<1> _const &, struct_std::_Ph<2> _const &>, void, bool, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _> _Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_Screen_UpgradeTerminal::*)(bool, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>), class_Screen_UpgradeTerminal *, struct_std::_Ph<1> _const &, struct_std::_Ph<2> _const &>, void, bool, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _>, *P_Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_Screen_UpgradeTerminal::*)(bool, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>), class_Screen_UpgradeTerminal *, struct_std::_Ph<1> _const &, struct_std::_Ph<2> _const &>, void, bool, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _>;
+typedef struct _Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_Screen_UpgradeTerminal::*)(std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>), Screen_UpgradeTerminal *, std::_Ph<1> _const &, std::_Ph<2> _const &>, void, std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _> _Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_Screen_UpgradeTerminal::*)(std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>), Screen_UpgradeTerminal *, std::_Ph<1> _const &, std::_Ph<2> _const &>, void, std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _>, *P_Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_Screen_UpgradeTerminal::*)(std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>), Screen_UpgradeTerminal *, std::_Ph<1> _const &, std::_Ph<2> _const &>, void, std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _>;
 
-struct _Func_impl_no_alloc<class_std::_Binder<struct_std::_Unforced, void_ (__thiscall_Screen_UpgradeTerminal::*)(bool, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>), class_Screen_UpgradeTerminal *, struct_std::_Ph<1> _const &, struct_std::_Ph<2> _const &>, void, bool, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _>
+struct _Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_Screen_UpgradeTerminal::*)(std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>), Screen_UpgradeTerminal *, std::_Ph<1> _const &, std::_Ph<2> _const &>, void, std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _>
+{ // PlaceHolder Class Structure
+};
+
+typedef struct _Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_RoomObject::*)(void), RoomObject *>, void> _Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_RoomObject::*)(void), RoomObject *>, void>, *P_Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_RoomObject::*)(void), RoomObject *>, void>;
+
+struct _Func_impl_no_alloc<std::_Binder<std::_Unforced, void_ (__thiscall_RoomObject::*)(void), RoomObject *>, void>
 { // PlaceHolder Class Structure
 };
 
@@ -1495,6 +1495,13 @@ struct _ACTIVATION_CONTEXT
 {
 };
 
+typedef struct __vcrt_va_list_is_reference<charconst *const> __vcrt_va_list_is_reference<charconst *const>, *P__vcrt_va_list_is_reference<charconst *const>;
+
+struct __vcrt_va_list_is_reference<charconst *const>
+{
+    undefined field0_0x0;
+};
+
 typedef struct _RTL_CONDITION_VARIABLE _RTL_CONDITION_VARIABLE, *P_RTL_CONDITION_VARIABLE;
 
 struct _RTL_CONDITION_VARIABLE
@@ -1502,7 +1509,7 @@ struct _RTL_CONDITION_VARIABLE
     void *Ptr;
 };
 
-typedef int (*_PIFV)(void);
+typedef void *_PIFV;
 
 typedef uint *PUINT_PTR;
 
@@ -1534,7 +1541,7 @@ struct _s__CatchableType
     struct _TypeDescriptor *pType;
     struct _PMD thisDisplacement;
     int sizeOrOffset;
-    void (*copyFunction)(void *);
+    void *copyFunction;
 };
 
 struct _s__CatchableTypeArray
@@ -1545,43 +1552,13 @@ struct _s__CatchableTypeArray
 
 typedef struct _EXCEPTION_REGISTRATION_RECORD _EXCEPTION_REGISTRATION_RECORD, *P_EXCEPTION_REGISTRATION_RECORD;
 
-typedef enum _EXCEPTION_DISPOSITION
-{
-    ExceptionContinueExecution = 0,
-    ExceptionContinueSearch = 1,
-    ExceptionNestedException = 2,
-    ExceptionCollidedUnwind = 3
-} _EXCEPTION_DISPOSITION;
-
-// WARNING! conflicting data type names: /ois.pdb/_EXCEPTION_RECORD - /excpt.h/_EXCEPTION_RECORD
-
-// WARNING! conflicting data type names: /ois.pdb/_CONTEXT - /excpt.h/_CONTEXT
-
 struct _EXCEPTION_REGISTRATION_RECORD
 {
     struct _EXCEPTION_REGISTRATION_RECORD *Next;
-    _EXCEPTION_DISPOSITION (*Handler)
-    (struct _EXCEPTION_RECORD *, void *, struct _CONTEXT *, void *);
+    void *Handler;
 };
 
 // WARNING! conflicting data type names: /ois.pdb/CONTEXT - /winnt.h/CONTEXT
-
-typedef union<anonymous - tag_00001D78><anonymous - tag_00001D78>, *P<anonymous - tag_00001D78>;
-
-typedef struct<anonymous - tag_00001D76><anonymous - tag_00001D76>, *P<anonymous - tag_00001D76>;
-
-struct<anonymous - tag_00001D76>
-{
-    ulong LongFunction : 1;
-    ulong Persistent : 1;
-    ulong Private : 30;
-};
-
-union<anonymous - tag_00001D78>
-{
-    ulong Flags;
-    struct<anonymous - tag_00001D76> s;
-};
 
 // WARNING! conflicting data type names: /ois.pdb/PRTL_CRITICAL_SECTION - /winnt.h/PRTL_CRITICAL_SECTION
 
@@ -1603,27 +1580,11 @@ struct _IMAGE_LOAD_CONFIG_CODE_INTEGRITY
     ulong Reserved;
 };
 
-typedef struct _onexit_table_t _onexit_table_t, *P_onexit_table_t;
-
-struct _onexit_table_t
-{
-    void (**_first)(void);
-    void (**_last)(void);
-    void (**_end)(void);
-};
+typedef __int64 LONG64;
 
 typedef struct __scrt_narrow_argv_policy __scrt_narrow_argv_policy, *P__scrt_narrow_argv_policy;
 
 struct __scrt_narrow_argv_policy
-{
-    undefined field0_0x0;
-};
-
-typedef long64 LONG64;
-
-typedef struct __vcrt_va_list_is_reference<wchar_t_const_ * _const> __vcrt_va_list_is_reference<wchar_t_const_ * _const>, *P__vcrt_va_list_is_reference<wchar_t_const_ * _const>;
-
-struct __vcrt_va_list_is_reference<wchar_t_const_ * _const>
 {
     undefined field0_0x0;
 };
@@ -1647,8 +1608,8 @@ typedef struct _s_CatchableType _s_CatchableType, *P_s_CatchableType;
 struct _s_ThrowInfo
 {
     uint attributes;
-    void (*pmfnUnwind)(void *);
-    int (*pForwardCompat)(void);
+    void *pmfnUnwind;
+    void *pForwardCompat;
     struct _s_CatchableTypeArray *pCatchableTypeArray;
 };
 
@@ -1658,24 +1619,13 @@ struct _s_CatchableType
     struct TypeDescriptor *pType;
     struct PMD thisDisplacement;
     int sizeOrOffset;
-    void (*copyFunction)(void *);
+    void *copyFunction;
 };
 
 struct _s_CatchableTypeArray
 {
     int nCatchableTypes;
     struct _s_CatchableType *arrayOfCatchableTypes[0];
-};
-
-typedef struct hostent hostent, *Phostent;
-
-struct hostent
-{
-    char *h_name;
-    char **h_aliases;
-    short h_addrtype;
-    short h_length;
-    char **h_addr_list;
 };
 
 // WARNING! conflicting data type names: /ois.pdb/LPSECURITY_ATTRIBUTES - /winbase.h/LPSECURITY_ATTRIBUTES
@@ -1720,11 +1670,19 @@ typedef struct _lldiv_t _lldiv_t, *P_lldiv_t;
 
 struct _lldiv_t
 {
-    long64 quot;
-    long64 rem;
+    __int64 quot;
+    __int64 rem;
 };
 
 typedef struct HINSTANCE__ *HMODULE;
+
+typedef enum _EXCEPTION_DISPOSITION
+{
+    ExceptionContinueExecution = 0,
+    ExceptionContinueSearch = 1,
+    ExceptionNestedException = 2,
+    ExceptionCollidedUnwind = 3
+} _EXCEPTION_DISPOSITION;
 
 typedef enum _EXCEPTION_DISPOSITION EXCEPTION_DISPOSITION;
 
@@ -1840,18 +1798,13 @@ typedef struct _s_CatchableTypeArray CatchableTypeArray;
 
 typedef bool __vcrt_bool;
 
-typedef struct RakStringCleanup RakStringCleanup, *PRakStringCleanup;
-
-struct RakStringCleanup
-{
-    undefined field0_0x0;
-};
+// WARNING! conflicting data type names: /ois.pdb/_CONTEXT - /excpt.h/_CONTEXT
 
 typedef struct _s__CatchableTypeArray _CatchableTypeArray;
 
-// WARNING! conflicting data type names: /ois.pdb/LPCSTR - /winnt.h/LPCSTR
+typedef void *FARPROC;
 
-typedef int (*FARPROC)(void);
+// WARNING! conflicting data type names: /ois.pdb/LPCSTR - /winnt.h/LPCSTR
 
 // WARNING! conflicting data type names: /ois.pdb/SIZE_T - /basetsd.h/SIZE_T
 
@@ -1904,7 +1857,7 @@ union _EVENT_DATA_DESCRIPTOR_u_12
 
 struct _EVENT_DATA_DESCRIPTOR
 {
-    ulong64 Ptr;
+    __uint64 Ptr;
     ulong Size;
     union _EVENT_DATA_DESCRIPTOR_u_12 field2_0xc;
 };
@@ -1986,22 +1939,7 @@ struct _IMAGE_NT_HEADERS
     struct _IMAGE_OPTIONAL_HEADER OptionalHeader;
 };
 
-typedef struct sockaddr sockaddr, *Psockaddr;
-
-struct sockaddr
-{
-};
-
 typedef struct _EXCEPTION_REGISTRATION_RECORD *PEXCEPTION_REGISTRATION_RECORD;
-
-// WARNING! conflicting data type names: /ois.pdb/_exception - /math.h/_exception
-
-typedef struct __vcrt_assert_va_start_is_not_reference<wchar_t_const_ *> __vcrt_assert_va_start_is_not_reference<wchar_t_const_ *>, *P__vcrt_assert_va_start_is_not_reference<wchar_t_const_ *>;
-
-struct __vcrt_assert_va_start_is_not_reference<wchar_t_const_ *>
-{
-    undefined field0_0x0;
-};
 
 typedef struct _RS2_IMAGE_LOAD_CONFIG_DIRECTORY32 RS2_IMAGE_LOAD_CONFIG_DIRECTORY32;
 
@@ -2014,10 +1952,12 @@ typedef struct _s__ThrowInfo _s__ThrowInfo, *P_s__ThrowInfo;
 struct _s__ThrowInfo
 {
     uint attributes;
-    void (*pmfnUnwind)(void *);
-    int (*pForwardCompat)(void);
+    void *pmfnUnwind;
+    void *pForwardCompat;
     struct _s__CatchableTypeArray *pCatchableTypeArray;
 };
+
+// WARNING! conflicting data type names: /ois.pdb/_EXCEPTION_RECORD - /excpt.h/_EXCEPTION_RECORD
 
 typedef enum wrapEncodedKERNEL32Functions
 {
@@ -2071,12 +2011,6 @@ typedef enum _crt_argv_mode
     _crt_argv_expanded_arguments = 2
 } _crt_argv_mode;
 
-typedef struct _TEB _TEB, *P_TEB;
-
-struct _TEB
-{
-};
-
 typedef struct _s__RTTIBaseClassArray _s__RTTIBaseClassArray, *P_s__RTTIBaseClassArray;
 
 struct _s__RTTIBaseClassArray
@@ -2098,16 +2032,20 @@ struct __std_type_info_data
 
 struct type_info
 {
-    undefined field0_0x0;
-    undefined field1_0x1;
-    undefined field2_0x2;
-    undefined field3_0x3;
+    int _padding_;
     struct __std_type_info_data _Data;
 };
 
 typedef struct __scrt_file_policy __scrt_file_policy, *P__scrt_file_policy;
 
 struct __scrt_file_policy
+{
+    undefined field0_0x0;
+};
+
+typedef struct __vcrt_va_list_is_reference<__crt_locale_pointers *const> __vcrt_va_list_is_reference<__crt_locale_pointers *const>, *P__vcrt_va_list_is_reference<__crt_locale_pointers *const>;
+
+struct __vcrt_va_list_is_reference<__crt_locale_pointers *const>
 {
     undefined field0_0x0;
 };
@@ -2124,7 +2062,7 @@ struct _EVENT_DESCRIPTOR
     uchar Level;
     uchar Opcode;
     ushort Task;
-    ulong64 Keyword;
+    __uint64 Keyword;
 };
 
 typedef struct in6_addr in6_addr, *Pin6_addr;
@@ -2133,71 +2071,34 @@ struct in6_addr
 {
 };
 
-typedef struct __vcrt_va_list_is_reference<__crt_locale_pointers_ * _const> __vcrt_va_list_is_reference<__crt_locale_pointers_ * _const>, *P__vcrt_va_list_is_reference<__crt_locale_pointers_ * _const>;
-
-struct __vcrt_va_list_is_reference<__crt_locale_pointers_ * _const>
-{
-    undefined field0_0x0;
-};
+typedef struct _IMAGE_NT_HEADERS *PIMAGE_NT_HEADERS;
 
 typedef struct _RTL_CONDITION_VARIABLE *PCONDITION_VARIABLE;
 
-typedef struct _IMAGE_NT_HEADERS *PIMAGE_NT_HEADERS;
-
 typedef uint rsize_t;
 
-typedef uint (*_beginthreadex_proc_type)(void *);
+typedef void *_beginthreadex_proc_type;
 
 typedef struct _TP_CLEANUP_GROUP *PTP_CLEANUP_GROUP;
 
 typedef enum<unnamed - enum - DISPLAYCONFIG_SCANLINE_ORDERING_UNSPECIFIED>{
+    DISPLAYCONFIG_SCANLINE_ORDERING_FORCE_UINT32 = -1,
     DISPLAYCONFIG_SCANLINE_ORDERING_UNSPECIFIED = 0,
     DISPLAYCONFIG_SCANLINE_ORDERING_PROGRESSIVE = 1,
     DISPLAYCONFIG_SCANLINE_ORDERING_INTERLACED = 2,
     DISPLAYCONFIG_SCANLINE_ORDERING_INTERLACED_UPPERFIELDFIRST = 2,
-    DISPLAYCONFIG_SCANLINE_ORDERING_INTERLACED_LOWERFIELDFIRST = 3,
-    DISPLAYCONFIG_SCANLINE_ORDERING_FORCE_UINT32 = 4294967295} < unnamed - enum - DISPLAYCONFIG_SCANLINE_ORDERING_UNSPECIFIED >
+    DISPLAYCONFIG_SCANLINE_ORDERING_INTERLACED_LOWERFIELDFIRST = 3} < unnamed - enum - DISPLAYCONFIG_SCANLINE_ORDERING_UNSPECIFIED >
     ;
 
 typedef struct _EVENT_DATA_DESCRIPTOR *PEVENT_DATA_DESCRIPTOR;
 
-typedef struct __vcrt_assert_va_start_is_not_reference<wchar_t_const_ * _const> __vcrt_assert_va_start_is_not_reference<wchar_t_const_ * _const>, *P__vcrt_assert_va_start_is_not_reference<wchar_t_const_ * _const>;
-
-struct __vcrt_assert_va_start_is_not_reference<wchar_t_const_ * _const>
-{
-    undefined field0_0x0;
-};
-
 // WARNING! conflicting data type names: /ois.pdb/_RTL_CRITICAL_SECTION - /winnt.h/_RTL_CRITICAL_SECTION
-
-typedef union _LARGE_INTEGER.conflict _LARGE_INTEGER.conflict, *P_LARGE_INTEGER.conflict;
-
-typedef struct _LARGE_INTEGER_s_0 _LARGE_INTEGER_s_0, *P_LARGE_INTEGER_s_0;
-
-typedef struct<anonymous - tag_00001DCA><anonymous - tag_00001DCA>, *P<anonymous - tag_00001DCA>;
-
-struct<anonymous - tag_00001DCA>
-{
-    ulong LowPart;
-    long HighPart;
-};
-
-struct _LARGE_INTEGER_s_0
-{
-    ulong LowPart;
-    long HighPart;
-};
-
-union _LARGE_INTEGER.conflict
-{
-    struct _LARGE_INTEGER_s_0 _s_0;
-    struct<anonymous - tag_00001DCA> u;
-    long64 QuadPart;
-};
 
 typedef struct _TP_CALLBACK_ENVIRON_V3 _TP_CALLBACK_ENVIRON_V3, *P_TP_CALLBACK_ENVIRON_V3;
 
 typedef struct _TP_CALLBACK_ENVIRON_V3 TP_CALLBACK_ENVIRON_V3;
+
+typedef struct<anonymous - tag><anonymous - tag>, *P<anonymous - tag>;
 
 typedef enum _TP_CALLBACK_PRIORITY
 {
@@ -2208,16 +2109,23 @@ typedef enum _TP_CALLBACK_PRIORITY
     TP_CALLBACK_PRIORITY_INVALID = 3
 } _TP_CALLBACK_PRIORITY;
 
+struct<anonymous - tag>
+{
+    ulong LongFunction : 1;
+    ulong Persistent : 1;
+    ulong Private : 30;
+};
+
 struct _TP_CALLBACK_ENVIRON_V3
 {
     ulong Version;
     struct _TP_POOL *Pool;
     struct _TP_CLEANUP_GROUP *CleanupGroup;
-    void (*CleanupGroupCancelCallback)(void *, void *);
+    void *CleanupGroupCancelCallback;
     void *RaceDll;
     struct _ACTIVATION_CONTEXT *ActivationContext;
-    void (*FinalizationCallback)(struct _TP_CALLBACK_INSTANCE *, void *);
-    union<anonymous - tag_00001D78> u;
+    void *FinalizationCallback;
+    struct<anonymous - tag> u;
     enum _TP_CALLBACK_PRIORITY CallbackPriority;
     ulong Size;
 };
@@ -2232,6 +2140,8 @@ struct __scrt_winmain_policy
 typedef struct _INTERFACE_INFO _INTERFACE_INFO, *P_INTERFACE_INFO;
 
 typedef union sockaddr_gen sockaddr_gen, *Psockaddr_gen;
+
+typedef struct sockaddr sockaddr, *Psockaddr;
 
 typedef struct sockaddr_in6_old sockaddr_in6_old, *Psockaddr_in6_old;
 
@@ -2258,6 +2168,10 @@ struct sockaddr_in6_old
     undefined field18_0x17;
 };
 
+struct sockaddr
+{
+};
+
 union sockaddr_gen
 {
     struct sockaddr Address;
@@ -2273,20 +2187,27 @@ struct _INTERFACE_INFO
     union sockaddr_gen iiNetmask;
 };
 
-typedef struct __vcrt_va_list_is_reference<char_const_ * _const> __vcrt_va_list_is_reference<char_const_ * _const>, *P__vcrt_va_list_is_reference<char_const_ * _const>;
+typedef bool __crt_bool;
 
-struct __vcrt_va_list_is_reference<char_const_ * _const>
+typedef struct __vcrt_assert_va_start_is_not_reference<wchar_tconst *const> __vcrt_assert_va_start_is_not_reference<wchar_tconst *const>, *P__vcrt_assert_va_start_is_not_reference<wchar_tconst *const>;
+
+struct __vcrt_assert_va_start_is_not_reference<wchar_tconst *const>
 {
     undefined field0_0x0;
 };
 
-typedef bool __crt_bool;
-
 typedef struct _EVENT_DESCRIPTOR *PCEVENT_DESCRIPTOR;
 
-typedef wchar_t *PUWSTR;
+typedef struct RakStringCleanup RakStringCleanup, *PRakStringCleanup;
 
-typedef void (*destructor_type)(void *);
+struct RakStringCleanup
+{
+    undefined field0_0x0;
+};
+
+typedef wchar *PUWSTR;
+
+typedef void *destructor_type;
 
 typedef struct __crt_multibyte_data __crt_multibyte_data, *P__crt_multibyte_data;
 
@@ -2294,7 +2215,7 @@ struct __crt_multibyte_data
 {
 };
 
-typedef int (*__scrt_dllmain_type)(struct HINSTANCE__ *, ulong, void *);
+typedef void *__scrt_dllmain_type;
 
 typedef struct $_s__CatchableTypeArray$_extraBytes_8 $_s__CatchableTypeArray$_extraBytes_8, *P$_s__CatchableTypeArray$_extraBytes_8;
 
@@ -2304,20 +2225,20 @@ struct $_s__CatchableTypeArray$_extraBytes_8
     struct _s__CatchableType *arrayOfCatchableTypes[2];
 };
 
-typedef ulong64 DWORD64;
+typedef __uint64 DWORD64;
+
+typedef struct __vcrt_assert_va_start_is_not_reference<__crt_locale_pointers *> __vcrt_assert_va_start_is_not_reference<__crt_locale_pointers *>, *P__vcrt_assert_va_start_is_not_reference<__crt_locale_pointers *>;
+
+struct __vcrt_assert_va_start_is_not_reference<__crt_locale_pointers *>
+{
+    undefined field0_0x0;
+};
 
 typedef enum _TP_CALLBACK_PRIORITY TP_CALLBACK_PRIORITY;
 
 // WARNING! conflicting data type names: /ois.pdb/FILETIME - /WinDef.h/FILETIME
 
-typedef struct __vcrt_assert_va_start_is_not_reference<__crt_locale_pointers_ * _const> __vcrt_assert_va_start_is_not_reference<__crt_locale_pointers_ * _const>, *P__vcrt_assert_va_start_is_not_reference<__crt_locale_pointers_ * _const>;
-
-struct __vcrt_assert_va_start_is_not_reference<__crt_locale_pointers_ * _const>
-{
-    undefined field0_0x0;
-};
-
-typedef void (*PTP_CLEANUP_GROUP_CANCEL_CALLBACK)(void *, void *);
+typedef void *PTP_CLEANUP_GROUP_CANCEL_CALLBACK;
 
 typedef struct _IMAGE_TLS_DIRECTORY32 _IMAGE_TLS_DIRECTORY32, *P_IMAGE_TLS_DIRECTORY32;
 
@@ -2348,6 +2269,13 @@ struct _IMAGE_TLS_DIRECTORY32
     ulong AddressOfCallBacks;
     ulong SizeOfZeroFill;
     union _IMAGE_TLS_DIRECTORY32_u_20 field5_0x14;
+};
+
+typedef struct __vcrt_va_list_is_reference<wchar_tconst *> __vcrt_va_list_is_reference<wchar_tconst *>, *P__vcrt_va_list_is_reference<wchar_tconst *>;
+
+struct __vcrt_va_list_is_reference<wchar_tconst *>
+{
+    undefined field0_0x0;
 };
 
 typedef struct _iobuf _iobuf, *P_iobuf;
@@ -2413,34 +2341,13 @@ struct _ldiv_t
     long rem;
 };
 
-typedef void (*PTP_SIMPLE_CALLBACK)(struct _TP_CALLBACK_INSTANCE *, void *);
+typedef void *PTP_SIMPLE_CALLBACK;
 
 typedef int socklen_t;
 
 // WARNING! conflicting data type names: /ois.pdb/GUID - /GUID
 
-typedef struct EHExceptionRecord EHExceptionRecord, *PEHExceptionRecord;
-
-typedef struct EHParameters EHParameters, *PEHParameters;
-
-struct EHParameters
-{
-    ulong magicNumber;
-    void *pExceptionObject;
-    struct _s_ThrowInfo *pThrowInfo;
-};
-
-struct EHExceptionRecord
-{
-    ulong ExceptionCode;
-    ulong ExceptionFlags;
-    struct _EXCEPTION_RECORD *ExceptionRecord;
-    void *ExceptionAddress;
-    ulong NumberParameters;
-    struct EHParameters params;
-};
-
-typedef long64 *PLONG64;
+typedef __int64 *PLONG64;
 
 typedef uchar BOOLEAN;
 
@@ -2449,13 +2356,6 @@ typedef uchar BOOLEAN;
 typedef struct __scrt_nofile_policy __scrt_nofile_policy, *P__scrt_nofile_policy;
 
 struct __scrt_nofile_policy
-{
-    undefined field0_0x0;
-};
-
-typedef struct __vcrt_assert_va_start_is_not_reference<__crt_locale_pointers_ *> __vcrt_assert_va_start_is_not_reference<__crt_locale_pointers_ *>, *P__vcrt_assert_va_start_is_not_reference<__crt_locale_pointers_ *>;
-
-struct __vcrt_assert_va_start_is_not_reference<__crt_locale_pointers_ *>
 {
     undefined field0_0x0;
 };
@@ -2522,12 +2422,7 @@ typedef struct _IMAGE_TLS_DIRECTORY32 IMAGE_TLS_DIRECTORY;
 
 // WARNING! conflicting data type names: /ois.pdb/LPTOP_LEVEL_EXCEPTION_FILTER - /winbase.h/LPTOP_LEVEL_EXCEPTION_FILTER
 
-typedef struct __vcrt_va_list_is_reference<wchar_t_const_ *> __vcrt_va_list_is_reference<wchar_t_const_ *>, *P__vcrt_va_list_is_reference<wchar_t_const_ *>;
-
-struct __vcrt_va_list_is_reference<wchar_t_const_ *>
-{
-    undefined field0_0x0;
-};
+// WARNING! conflicting data type names: /ois.pdb/WCHAR - /winnt.h/WCHAR
 
 typedef long HRESULT;
 
@@ -2537,7 +2432,7 @@ typedef union FT FT, *PFT;
 
 union FT
 {
-    ulong64 ft_scalar;
+    __uint64 ft_scalar;
     struct _FILETIME ft_struct;
 };
 
@@ -2552,9 +2447,9 @@ typedef enum JOB_OBJECT_IO_RATE_CONTROL_FLAGS
 
 // WARNING! conflicting data type names: /ois.pdb/wchar_t - /wchar_t
 
-// WARNING! conflicting data type names: /ois.pdb/PCONTEXT - /winnt.h/PCONTEXT
-
 // WARNING! conflicting data type names: /ois.pdb/IMAGE_DOS_HEADER - /DOS/IMAGE_DOS_HEADER
+
+// WARNING! conflicting data type names: /ois.pdb/PCONTEXT - /winnt.h/PCONTEXT
 
 typedef struct WSAStartupSingleton WSAStartupSingleton, *PWSAStartupSingleton;
 
@@ -2563,11 +2458,11 @@ struct WSAStartupSingleton
     undefined field0_0x0;
 };
 
-typedef _EXCEPTION_DISPOSITION (*PEXCEPTION_ROUTINE)(struct _EXCEPTION_RECORD *, void *, struct _CONTEXT *, void *);
+typedef void *PEXCEPTION_ROUTINE;
 
 typedef struct _IMAGE_NT_HEADERS *PIMAGE_NT_HEADERS32;
 
-typedef void (*terminate_handler)(void);
+typedef void *terminate_handler;
 
 typedef struct _IMAGE_DOS_HEADER _IMAGE_DOS_HEADER, *P_IMAGE_DOS_HEADER;
 
@@ -2596,6 +2491,15 @@ struct _IMAGE_DOS_HEADER
 
 typedef short SHORT;
 
+typedef struct _onexit_table_t _onexit_table_t, *P_onexit_table_t;
+
+struct _onexit_table_t
+{
+    void *_first;
+    void *_last;
+    void *_end;
+};
+
 typedef enum PacketPriority
 {
     IMMEDIATE_PRIORITY = 0,
@@ -2615,11 +2519,11 @@ struct StrAndBool
 
 typedef struct _EXCEPTION_REGISTRATION_RECORD EXCEPTION_REGISTRATION_RECORD;
 
-// WARNING! conflicting data type names: /ois.pdb/PTOP_LEVEL_EXCEPTION_FILTER - /winbase.h/PTOP_LEVEL_EXCEPTION_FILTER
+typedef void *PIMAGE_TLS_CALLBACK;
 
 // WARNING! conflicting data type names: /ois.pdb/EXCEPTION_RECORD - /winnt.h/EXCEPTION_RECORD
 
-typedef void (*PIMAGE_TLS_CALLBACK)(void *, ulong, void *);
+// WARNING! conflicting data type names: /ois.pdb/PTOP_LEVEL_EXCEPTION_FILTER - /winbase.h/PTOP_LEVEL_EXCEPTION_FILTER
 
 typedef struct __crt_locale_pointers __crt_locale_pointers, *P__crt_locale_pointers;
 
@@ -2629,18 +2533,25 @@ struct __crt_locale_pointers
     struct __crt_multibyte_data *mbcinfo;
 };
 
-typedef wchar_t *PCUWSTR;
+typedef wchar *PCUWSTR;
+
+typedef struct __vcrt_va_list_is_reference<wchar_tconst *const> __vcrt_va_list_is_reference<wchar_tconst *const>, *P__vcrt_va_list_is_reference<wchar_tconst *const>;
+
+struct __vcrt_va_list_is_reference<wchar_tconst *const>
+{
+    undefined field0_0x0;
+};
 
 typedef union __m128 __m128, *P__m128;
 
 union __m128
 {
     float m128_f32[4];
-    ulong64 m128_u64[2];
+    __uint64 m128_u64[2];
     char m128_i8[16];
     short m128_i16[8];
     int m128_i32[4];
-    long64 m128_i64[2];
+    __int64 m128_i64[2];
     uchar m128_u8[16];
     ushort m128_u16[8];
     uint m128_u32[4];
@@ -2648,18 +2559,7 @@ union __m128
 
 // WARNING! conflicting data type names: /ois.pdb/PEXCEPTION_RECORD - /winnt.h/PEXCEPTION_RECORD
 
-typedef void (*_PMFN)(void *);
-
-typedef struct HuffmanEncodingTreeNode HuffmanEncodingTreeNode, *PHuffmanEncodingTreeNode;
-
-struct HuffmanEncodingTreeNode
-{
-    uchar value;
-    uint weight;
-    struct HuffmanEncodingTreeNode *left;
-    struct HuffmanEncodingTreeNode *right;
-    struct HuffmanEncodingTreeNode *parent;
-};
+typedef void *_PMFN;
 
 typedef enum JOB_OBJECT_NET_RATE_CONTROL_FLAGS
 {
@@ -2679,25 +2579,38 @@ typedef enum _RTC_ErrorNumber
     _RTC_ILLEGAL = 5
 } _RTC_ErrorNumber;
 
+typedef struct EHExceptionRecord EHExceptionRecord, *PEHExceptionRecord;
+
+typedef struct EHParameters EHParameters, *PEHParameters;
+
+struct EHParameters
+{
+    ulong magicNumber;
+    void *pExceptionObject;
+    struct _s_ThrowInfo *pThrowInfo;
+};
+
+struct EHExceptionRecord
+{
+    ulong ExceptionCode;
+    ulong ExceptionFlags;
+    struct _EXCEPTION_RECORD *ExceptionRecord;
+    void *ExceptionAddress;
+    ulong NumberParameters;
+    struct EHParameters params;
+};
+
 typedef enum DISPLAYCONFIG_SCANLINE_ORDERING
 {
+    DISPLAYCONFIG_SCANLINE_ORDERING_FORCE_UINT32 = -1,
     DISPLAYCONFIG_SCANLINE_ORDERING_UNSPECIFIED = 0,
     DISPLAYCONFIG_SCANLINE_ORDERING_PROGRESSIVE = 1,
     DISPLAYCONFIG_SCANLINE_ORDERING_INTERLACED = 2,
     DISPLAYCONFIG_SCANLINE_ORDERING_INTERLACED_UPPERFIELDFIRST = 2,
-    DISPLAYCONFIG_SCANLINE_ORDERING_INTERLACED_LOWERFIELDFIRST = 3,
-    DISPLAYCONFIG_SCANLINE_ORDERING_FORCE_UINT32 = 4294967295
+    DISPLAYCONFIG_SCANLINE_ORDERING_INTERLACED_LOWERFIELDFIRST = 3
 } DISPLAYCONFIG_SCANLINE_ORDERING;
 
 typedef ulong u_long;
-
-typedef struct __std_exception_data __std_exception_data, *P__std_exception_data;
-
-struct __std_exception_data
-{
-    char *_What;
-    bool _DoFree;
-};
 
 typedef struct _SINGLE_LIST_ENTRY SLIST_ENTRY;
 
@@ -2705,34 +2618,15 @@ typedef struct _NT_TIB *PNT_TIB;
 
 // WARNING! conflicting data type names: /ois.pdb/_s__RTTIClassHierarchyDescriptor - /_s__RTTIClassHierarchyDescriptor
 
+typedef struct _TEB _TEB, *P_TEB;
+
+struct _TEB
+{
+};
+
 typedef char *PCHAR;
 
 // WARNING! conflicting data type names: /ois.pdb/_s__RTTICompleteObjectLocator - /_s__RTTICompleteObjectLocator
-
-typedef struct _TP_CALLBACK_ENVIRON_V3.conflict _TP_CALLBACK_ENVIRON_V3.conflict, *P_TP_CALLBACK_ENVIRON_V3.conflict;
-
-typedef union<unnamed - type - u><unnamed - type - u>, *P<unnamed - type - u>;
-
-union<unnamed - type - u>
-{
-};
-
-struct _TP_CALLBACK_ENVIRON_V3.conflict
-{
-    ulong Version;
-    struct _TP_POOL *Pool;
-    struct _TP_CLEANUP_GROUP *CleanupGroup;
-    void (*CleanupGroupCancelCallback)(void *, void *);
-    void *RaceDll;
-    struct _ACTIVATION_CONTEXT *ActivationContext;
-    void (*FinalizationCallback)(struct _TP_CALLBACK_INSTANCE *, void *);
-    union<unnamed - type - u> u;
-    undefined field8_0x1d;
-    undefined field9_0x1e;
-    undefined field10_0x1f;
-    enum _TP_CALLBACK_PRIORITY CallbackPriority;
-    ulong Size;
-};
 
 typedef void *HLOCAL;
 
@@ -2747,11 +2641,28 @@ struct __scrt_no_environment_policy
 
 typedef short *PSHORT;
 
-typedef struct __vcrt_va_list_is_reference<unsigned_char_const_ *> __vcrt_va_list_is_reference<unsigned_char_const_ *>, *P__vcrt_va_list_is_reference<unsigned_char_const_ *>;
+typedef struct hostent hostent, *Phostent;
 
-struct __vcrt_va_list_is_reference<unsigned_char_const_ *>
+struct hostent
 {
-    undefined field0_0x0;
+    char *h_name;
+    char **h_aliases;
+    short h_addrtype;
+    short h_length;
+    char **h_addr_list;
+};
+
+// WARNING! conflicting data type names: /ois.pdb/_exception - /math.h/_exception
+
+typedef struct HuffmanEncodingTreeNode HuffmanEncodingTreeNode, *PHuffmanEncodingTreeNode;
+
+struct HuffmanEncodingTreeNode
+{
+    uchar value;
+    uint weight;
+    struct HuffmanEncodingTreeNode *left;
+    struct HuffmanEncodingTreeNode *right;
+    struct HuffmanEncodingTreeNode *parent;
 };
 
 // WARNING! conflicting data type names: /ois.pdb/LPSTARTUPINFOW - /winbase.h/LPSTARTUPINFOW
@@ -2897,7 +2808,7 @@ typedef enum DefaultMessageIDTypes
 
 typedef struct _s__RTTIBaseClassDescriptor __RTTIBaseClassDescriptor;
 
-typedef void (*_PVFV)(void);
+typedef void *_PVFV;
 
 typedef uint __UDPSOCKET__;
 
@@ -2922,33 +2833,39 @@ typedef struct _s__CatchableType _CatchableType;
 
 typedef struct _EXCEPTION_POINTERS *LPEXCEPTION_POINTERS;
 
-typedef struct __vcrt_va_list_is_reference<__crt_locale_pointers_ *> __vcrt_va_list_is_reference<__crt_locale_pointers_ *>, *P__vcrt_va_list_is_reference<__crt_locale_pointers_ *>;
-
-struct __vcrt_va_list_is_reference<__crt_locale_pointers_ *>
-{
-    undefined field0_0x0;
-};
-
-typedef wchar_t *LPCWCH;
-
-// WARNING! conflicting data type names: /ois.pdb/_LARGE_INTEGER - /winnt.h/_LARGE_INTEGER
+typedef wchar *LPCWCH;
 
 typedef union __m64 __m64, *P__m64;
 
 union __m64
 {
-    ulong64 m64_u64;
+    __uint64 m64_u64;
     float m64_f32[2];
     char m64_i8[8];
     short m64_i16[4];
     int m64_i32[2];
-    long64 m64_i64;
+    __int64 m64_i64;
     uchar m64_u8[8];
     ushort m64_u16[4];
     uint m64_u32[2];
 };
 
-typedef void (*PCOOKIE_CHECK)(uint);
+typedef struct __std_exception_data __std_exception_data, *P__std_exception_data;
+
+struct __std_exception_data
+{
+    char *_What;
+    bool _DoFree;
+};
+
+typedef struct __vcrt_va_list_is_reference<__crt_locale_pointers *> __vcrt_va_list_is_reference<__crt_locale_pointers *>, *P__vcrt_va_list_is_reference<__crt_locale_pointers *>;
+
+struct __vcrt_va_list_is_reference<__crt_locale_pointers *>
+{
+    undefined field0_0x0;
+};
+
+typedef void *PCOOKIE_CHECK;
 
 typedef struct _RTL_CRITICAL_SECTION RTL_CRITICAL_SECTION;
 
@@ -2964,7 +2881,9 @@ typedef enum __scrt_module_type
 
 // WARNING! conflicting data type names: /ois.pdb/ULONGLONG - /winnt.h/ULONGLONG
 
-typedef int (*_onexit_t)(void);
+typedef void *_onexit_t;
+
+// WARNING! conflicting data type names: /ois.pdb/_LARGE_INTEGER - /winnt.h/_LARGE_INTEGER
 
 typedef uint size_t;
 
@@ -3004,7 +2923,7 @@ typedef enum ISA_AVAILABILITY
 
 typedef struct WSAData WSADATA;
 
-typedef _EXCEPTION_DISPOSITION(EXCEPTION_ROUTINE)(struct _EXCEPTION_RECORD *, void *, struct _CONTEXT *, void *);
+typedef void *EXCEPTION_ROUTINE;
 
 // WARNING! conflicting data type names: /ois.pdb/LPWSTR - /winnt.h/LPWSTR
 
@@ -3012,7 +2931,7 @@ typedef long LONG_PTR;
 
 typedef struct __crt_locale_pointers *_locale_t;
 
-typedef void (*PMFN)(void *);
+typedef void *PMFN;
 
 typedef uint __TCPSOCKET__;
 
@@ -3027,9 +2946,9 @@ struct __scrt_main_policy
 
 typedef uint uintptr_t;
 
-typedef struct __vcrt_assert_va_start_is_not_reference<unsigned_char_const_ *> __vcrt_assert_va_start_is_not_reference<unsigned_char_const_ *>, *P__vcrt_assert_va_start_is_not_reference<unsigned_char_const_ *>;
+typedef struct __vcrt_va_list_is_reference<unsignedcharconst *> __vcrt_va_list_is_reference<unsignedcharconst *>, *P__vcrt_va_list_is_reference<unsignedcharconst *>;
 
-struct __vcrt_assert_va_start_is_not_reference<unsigned_char_const_ *>
+struct __vcrt_va_list_is_reference<unsignedcharconst *>
 {
     undefined field0_0x0;
 };
@@ -3040,6 +2959,13 @@ typedef enum __scrt_native_startup_state
     initializing = 1,
     initialized = 2
 } __scrt_native_startup_state;
+
+typedef struct __vcrt_assert_va_start_is_not_reference<wchar_tconst *> __vcrt_assert_va_start_is_not_reference<wchar_tconst *>, *P__vcrt_assert_va_start_is_not_reference<wchar_tconst *>;
+
+struct __vcrt_assert_va_start_is_not_reference<wchar_tconst *>
+{
+    undefined field0_0x0;
+};
 
 typedef struct _s__RTTIClassHierarchyDescriptor __RTTIClassHierarchyDescriptor;
 
@@ -3060,9 +2986,9 @@ struct $_s__CatchableTypeArray$_extraBytes_12
     struct _s__CatchableType *arrayOfCatchableTypes[3];
 };
 
-typedef char *LPCCH;
-
 typedef struct _IMAGE_DATA_DIRECTORY IMAGE_DATA_DIRECTORY;
+
+typedef char *LPCCH;
 
 typedef struct $_TypeDescriptor$_extraBytes_20 $_TypeDescriptor$_extraBytes_20, *P$_TypeDescriptor$_extraBytes_20;
 
@@ -3073,6 +2999,24 @@ struct $_TypeDescriptor$_extraBytes_20
     char name[20];
 };
 
+typedef struct __vcrt_assert_va_start_is_not_reference<charconst *const> __vcrt_assert_va_start_is_not_reference<charconst *const>, *P__vcrt_assert_va_start_is_not_reference<charconst *const>;
+
+struct __vcrt_assert_va_start_is_not_reference<charconst *const>
+{
+    undefined field0_0x0;
+};
+
+typedef struct __vcrt_assert_va_start_is_not_reference<unsignedcharconst *> __vcrt_assert_va_start_is_not_reference<unsignedcharconst *>, *P__vcrt_assert_va_start_is_not_reference<unsignedcharconst *>;
+
+struct __vcrt_assert_va_start_is_not_reference<unsignedcharconst *>
+{
+    undefined field0_0x0;
+};
+
+typedef enum<unnamed - enum - __crt_maximum_pointer_shift>{
+    __crt_maximum_pointer_shift = 32} < unnamed - enum - __crt_maximum_pointer_shift >
+    ;
+
 typedef struct $_TypeDescriptor$_extraBytes_24 $_TypeDescriptor$_extraBytes_24, *P$_TypeDescriptor$_extraBytes_24;
 
 struct $_TypeDescriptor$_extraBytes_24
@@ -3081,10 +3025,6 @@ struct $_TypeDescriptor$_extraBytes_24
     void *spare;
     char name[24];
 };
-
-typedef enum<unnamed - enum - __crt_maximum_pointer_shift>{
-    __crt_maximum_pointer_shift = 32} < unnamed - enum - __crt_maximum_pointer_shift >
-    ;
 
 typedef struct _IMAGE_DOS_HEADER *PIMAGE_DOS_HEADER;
 
@@ -3097,7 +3037,7 @@ struct $_TypeDescriptor$_extraBytes_21
     char name[21];
 };
 
-typedef void (*constructor_type)(void *, void *);
+typedef void *constructor_type;
 
 typedef struct $_TypeDescriptor$_extraBytes_27 $_TypeDescriptor$_extraBytes_27, *P$_TypeDescriptor$_extraBytes_27;
 
@@ -3117,7 +3057,7 @@ struct $_TypeDescriptor$_extraBytes_28
     char name[28];
 };
 
-typedef void (*_tls_callback_type)(void *, ulong, void *);
+typedef void *_tls_callback_type;
 
 typedef struct __scrt_wide_argv_policy __scrt_wide_argv_policy, *P__scrt_wide_argv_policy;
 
@@ -3135,6 +3075,13 @@ typedef struct _IMAGE_OPTIONAL_HEADER IMAGE_OPTIONAL_HEADER32;
 typedef struct _INTERFACE_INFO INTERFACE_INFO;
 
 // WARNING! conflicting data type names: /ois.pdb/PRTL_CRITICAL_SECTION_DEBUG - /winnt.h/PRTL_CRITICAL_SECTION_DEBUG
+
+typedef struct __vcrt_assert_va_start_is_not_reference<__crt_locale_pointers *const> __vcrt_assert_va_start_is_not_reference<__crt_locale_pointers *const>, *P__vcrt_assert_va_start_is_not_reference<__crt_locale_pointers *const>;
+
+struct __vcrt_assert_va_start_is_not_reference<__crt_locale_pointers *const>
+{
+    undefined field0_0x0;
+};
 
 typedef struct _RTL_CRITICAL_SECTION CRITICAL_SECTION;
 
@@ -3155,16 +3102,16 @@ typedef enum _crt_app_type
     _crt_gui_app = 2
 } _crt_app_type;
 
-typedef struct __scrt_narrow_environment_policy __scrt_narrow_environment_policy, *P__scrt_narrow_environment_policy;
+typedef struct __scrt_no_argv_policy __scrt_no_argv_policy, *P__scrt_no_argv_policy;
 
-struct __scrt_narrow_environment_policy
+struct __scrt_no_argv_policy
 {
     undefined field0_0x0;
 };
 
-typedef struct __scrt_no_argv_policy __scrt_no_argv_policy, *P__scrt_no_argv_policy;
+typedef struct __scrt_narrow_environment_policy __scrt_narrow_environment_policy, *P__scrt_narrow_environment_policy;
 
-struct __scrt_no_argv_policy
+struct __scrt_narrow_environment_policy
 {
     undefined field0_0x0;
 };
@@ -3176,16 +3123,9 @@ struct __crt_fast_encoded_nullptr_t
     undefined field0_0x0;
 };
 
-// WARNING! conflicting data type names: /ois.pdb/LPCRITICAL_SECTION - /winbase.h/LPCRITICAL_SECTION
-
 // WARNING! conflicting data type names: /ois.pdb/LONGLONG - /winnt.h/LONGLONG
 
-typedef struct __vcrt_assert_va_start_is_not_reference<char_const_ * _const> __vcrt_assert_va_start_is_not_reference<char_const_ * _const>, *P__vcrt_assert_va_start_is_not_reference<char_const_ * _const>;
-
-struct __vcrt_assert_va_start_is_not_reference<char_const_ * _const>
-{
-    undefined field0_0x0;
-};
+// WARNING! conflicting data type names: /ois.pdb/LPCRITICAL_SECTION - /winbase.h/LPCRITICAL_SECTION
 
 typedef struct _RTL_CONDITION_VARIABLE CONDITION_VARIABLE;
 
@@ -3196,25 +3136,42 @@ struct __scrt_enclavemain_policy
     undefined field0_0x0;
 };
 
+typedef enum<unnamed - enum - __the_value>{
+    __the_value = 0} < unnamed - enum - __the_value >
+    ;
+
 typedef union<unnamed - type - S_un><unnamed - type - S_un>, *P<unnamed - type - S_un>;
 
 union<unnamed - type - S_un>
 {
 };
 
-typedef enum<unnamed - enum - __the_value>{
-    __the_value = 0} < unnamed - enum - __the_value >
-    ;
-
 typedef struct exception exception, *Pexception;
 
 struct exception
+{
+    int _padding_;
+    struct __std_exception_data _Data;
+};
+
+typedef void *nullptr_t;
+
+typedef struct bad_alloc bad_alloc, *Pbad_alloc;
+
+struct bad_alloc
 {
     undefined field0_0x0;
     undefined field1_0x1;
     undefined field2_0x2;
     undefined field3_0x3;
-    struct __std_exception_data _Data;
+    undefined field4_0x4;
+    undefined field5_0x5;
+    undefined field6_0x6;
+    undefined field7_0x7;
+    undefined field8_0x8;
+    undefined field9_0x9;
+    undefined field10_0xa;
+    undefined field11_0xb;
 };
 
 typedef struct hash<double> hash<double>, *Phash<double>;
@@ -3249,6 +3206,13 @@ struct nothrow_t
     undefined field0_0x0;
 };
 
+typedef struct _Fnv1a_hasher _Fnv1a_hasher, *P_Fnv1a_hasher;
+
+struct _Fnv1a_hasher
+{
+    uint _Val;
+};
+
 typedef struct bad_exception bad_exception, *Pbad_exception;
 
 struct bad_exception
@@ -3274,25 +3238,6 @@ struct hash<float>
     undefined field0_0x0;
 };
 
-typedef struct nested_exception nested_exception, *Pnested_exception;
-
-typedef struct exception_ptr exception_ptr, *Pexception_ptr;
-
-struct exception_ptr
-{
-    void *_Data1;
-    void *_Data2;
-};
-
-struct nested_exception
-{
-    undefined field0_0x0;
-    undefined field1_0x1;
-    undefined field2_0x2;
-    undefined field3_0x3;
-    struct exception_ptr _Exc;
-};
-
 typedef struct bad_typeid bad_typeid, *Pbad_typeid;
 
 struct bad_typeid
@@ -3311,56 +3256,26 @@ struct bad_typeid
     undefined field11_0xb;
 };
 
-typedef struct hash<long_double> hash<long_double>, *Phash<long_double>;
+typedef struct hash<longdouble> hash<longdouble>, *Phash<longdouble>;
 
-struct hash<long_double>
+struct hash<longdouble>
 {
     undefined field0_0x0;
 };
 
-typedef struct bad_array_new_length bad_array_new_length, *Pbad_array_new_length;
+typedef struct exception_ptr exception_ptr, *Pexception_ptr;
 
-struct bad_array_new_length
+struct exception_ptr
 {
-    undefined field0_0x0;
-    undefined field1_0x1;
-    undefined field2_0x2;
-    undefined field3_0x3;
-    undefined field4_0x4;
-    undefined field5_0x5;
-    undefined field6_0x6;
-    undefined field7_0x7;
-    undefined field8_0x8;
-    undefined field9_0x9;
-    undefined field10_0xa;
-    undefined field11_0xb;
+    void *_Data1;
+    void *_Data2;
 };
 
-typedef struct bad_alloc bad_alloc, *Pbad_alloc;
+typedef struct hash<std::nullptr_t> hash<std::nullptr_t>, *Phash<std::nullptr_t>;
 
-struct bad_alloc
+struct hash<std::nullptr_t>
 {
     undefined field0_0x0;
-    undefined field1_0x1;
-    undefined field2_0x2;
-    undefined field3_0x3;
-    undefined field4_0x4;
-    undefined field5_0x5;
-    undefined field6_0x6;
-    undefined field7_0x7;
-    undefined field8_0x8;
-    undefined field9_0x9;
-    undefined field10_0xa;
-    undefined field11_0xb;
-};
-
-typedef void *nullptr_t;
-
-typedef struct _Fnv1a_hasher _Fnv1a_hasher, *P_Fnv1a_hasher;
-
-struct _Fnv1a_hasher
-{
-    uint _Val;
 };
 
 typedef struct __non_rtti_object __non_rtti_object, *P__non_rtti_object;
@@ -3381,11 +3296,30 @@ struct __non_rtti_object
     undefined field11_0xb;
 };
 
-typedef struct hash<std::nullptr_t> hash<std::nullptr_t>, *Phash<std::nullptr_t>;
+typedef struct nested_exception nested_exception, *Pnested_exception;
 
-struct hash<std::nullptr_t>
+struct nested_exception
+{
+    int _padding_;
+    struct exception_ptr _Exc;
+};
+
+typedef struct bad_array_new_length bad_array_new_length, *Pbad_array_new_length;
+
+struct bad_array_new_length
 {
     undefined field0_0x0;
+    undefined field1_0x1;
+    undefined field2_0x2;
+    undefined field3_0x3;
+    undefined field4_0x4;
+    undefined field5_0x5;
+    undefined field6_0x6;
+    undefined field7_0x7;
+    undefined field8_0x8;
+    undefined field9_0x9;
+    undefined field10_0xa;
+    undefined field11_0xb;
 };
 
 typedef struct _SLIST_HEADER_s_1 _SLIST_HEADER_s_1, *P_SLIST_HEADER_s_1;
@@ -3397,49 +3331,21 @@ struct _SLIST_HEADER_s_1
     ushort CpuId;
 };
 
-typedef struct vtshape7463 vtshape7463, *Pvtshape7463;
+typedef union<unnamed - type - u><unnamed - type - u>, *P<unnamed - type - u>;
 
-struct vtshape7463
+union<unnamed - type - u>
 {
-    pointer field0_0x0;
 };
 
-typedef struct vtshape5090 vtshape5090, *Pvtshape5090;
+typedef struct _LARGE_INTEGER_s_0 _LARGE_INTEGER_s_0, *P_LARGE_INTEGER_s_0;
 
-struct vtshape5090
+struct _LARGE_INTEGER_s_0
 {
-    pointer field0_0x0;
-    pointer field1_0x4;
-    pointer field2_0x8;
-};
-
-typedef struct vtshape6555 vtshape6555, *Pvtshape6555;
-
-struct vtshape6555
-{
-    pointer field0_0x0;
-    pointer field1_0x4;
-    pointer field2_0x8;
-    pointer field3_0xc;
-    pointer field4_0x10;
-    pointer field5_0x14;
-};
-
-typedef struct vtshape7378 vtshape7378, *Pvtshape7378;
-
-struct vtshape7378
-{
-    pointer field0_0x0;
-    pointer field1_0x4;
+    ulong LowPart;
+    long HighPart;
 };
 
 // WARNING! conflicting data type names: /ois.pdb/_LARGE_INTEGER/<unnamed-type-u> - /ois.pdb/_TP_CALLBACK_ENVIRON_V3/<unnamed-type-u>
-
-typedef struct RNS2EventHandler RNS2EventHandler, *PRNS2EventHandler;
-
-struct RNS2EventHandler
-{
-};
 
 typedef struct SocketLayerOverride SocketLayerOverride, *PSocketLayerOverride;
 
@@ -3447,83 +3353,9 @@ struct SocketLayerOverride
 {
 };
 
-typedef struct PluginInterface2 PluginInterface2, *PPluginInterface2;
-
-struct PluginInterface2
-{
-};
-
-typedef struct RakPeerInterface RakPeerInterface, *PRakPeerInterface;
-
-struct RakPeerInterface
-{
-};
-
-typedef struct RNS2_BerkleyBindParameters RNS2_BerkleyBindParameters, *PRNS2_BerkleyBindParameters;
-
-struct RNS2_BerkleyBindParameters
-{
-    ushort port;
-    char *hostAddress;
-    ushort addressFamily;
-    int type;
-    int protocol;
-    bool nonBlockingSocket;
-    int setBroadcast;
-    int setIPHdrIncl;
-    int doNotFragment;
-    int pollingThreadPriority;
-    struct RNS2EventHandler *eventHandler;
-    ushort remotePortRakNetWasStartedOn_PS3_PS4_PSP2;
-};
-
-typedef struct TCPInterface TCPInterface, *PTCPInterface;
-
-typedef struct List<RakNet::PluginInterface2_ *> List<RakNet::PluginInterface2_ *>, *PList<RakNet::PluginInterface2_ *>;
-
-typedef struct LocklessUint32_t LocklessUint32_t, *PLocklessUint32_t;
-
-typedef struct Queue<RakNet::Packet_ *> Queue<RakNet::Packet_ *>, *PQueue<RakNet::Packet_ *>;
-
-typedef struct RemoteClient RemoteClient, *PRemoteClient;
-
-typedef struct ThreadsafeAllocatingQueue<RakNet::Packet> ThreadsafeAllocatingQueue<RakNet::Packet>, *PThreadsafeAllocatingQueue<RakNet::Packet>;
-
-typedef struct ThreadsafeAllocatingQueue<RakNet::SystemAddress> ThreadsafeAllocatingQueue<RakNet::SystemAddress>, *PThreadsafeAllocatingQueue<RakNet::SystemAddress>;
-
-typedef struct ThreadsafeAllocatingQueue<RakNet::RemoteClient_ *> ThreadsafeAllocatingQueue<RakNet::RemoteClient_ *>, *PThreadsafeAllocatingQueue<RakNet::RemoteClient_ *>;
-
-typedef struct SimpleMutex SimpleMutex, *PSimpleMutex;
-
-typedef struct Queue<RakNet::SystemAddress> Queue<RakNet::SystemAddress>, *PQueue<RakNet::SystemAddress>;
-
-typedef struct List<unsigned_int> List<unsigned_int>, *PList<unsigned_int>;
-
-typedef struct Packet Packet, *PPacket;
-
 typedef struct SystemAddress SystemAddress, *PSystemAddress;
 
-typedef struct ByteQueue ByteQueue, *PByteQueue;
-
-typedef struct MemoryPool<RakNet::Packet> MemoryPool<RakNet::Packet>, *PMemoryPool<RakNet::Packet>;
-
-typedef struct MemoryPool<RakNet::SystemAddress> MemoryPool<RakNet::SystemAddress>, *PMemoryPool<RakNet::SystemAddress>;
-
-typedef struct Queue<RakNet::SystemAddress_ *> Queue<RakNet::SystemAddress_ *>, *PQueue<RakNet::SystemAddress_ *>;
-
-typedef struct MemoryPool<RakNet::RemoteClient_ *> MemoryPool<RakNet::RemoteClient_ *>, *PMemoryPool<RakNet::RemoteClient_ *>;
-
-typedef struct Queue<RakNet::RemoteClient_ * _ *> Queue<RakNet::RemoteClient_ * _ *>, *PQueue<RakNet::RemoteClient_ * _ *>;
-
 typedef union<unnamed - type - address><unnamed - type - address>, *P<unnamed - type - address>;
-
-typedef struct Page Page, *PPage;
-
-// WARNING! conflicting data type names: /ois.pdb/DataStructures/MemoryPool<RakNet::SystemAddress>/Page - /ois.pdb/DataStructures/MemoryPool<RakNet::Packet>/Page
-
-// WARNING! conflicting data type names: /ois.pdb/DataStructures/MemoryPool<RakNet::RemoteClient_*>/Page - /ois.pdb/DataStructures/MemoryPool<RakNet::Packet>/Page
-
-typedef struct MemoryWithPage MemoryWithPage, *PMemoryWithPage;
 
 union<unnamed - type - address>
 {
@@ -3551,16 +3383,122 @@ struct SystemAddress
     ushort systemIndex;
 };
 
-struct Queue<RakNet::Packet_ *>
+typedef struct RNS2EventHandler RNS2EventHandler, *PRNS2EventHandler;
+
+struct RNS2EventHandler
 {
-    struct Packet **array;
-    uint head;
-    uint tail;
-    uint allocation_size;
 };
+
+typedef struct PluginInterface2 PluginInterface2, *PPluginInterface2;
+
+struct PluginInterface2
+{
+};
+
+typedef struct RakPeerInterface RakPeerInterface, *PRakPeerInterface;
+
+struct RakPeerInterface
+{
+};
+
+typedef enum RNS2Type
+{
+    RNS2T_WINDOWS_STORE_8 = 0,
+    RNS2T_PS3 = 1,
+    RNS2T_PS4 = 2,
+    RNS2T_CHROME = 3,
+    RNS2T_VITA = 4,
+    RNS2T_XBOX_360 = 5,
+    RNS2T_XBOX_720 = 6,
+    RNS2T_WINDOWS = 7,
+    RNS2T_LINUX = 8
+} RNS2Type;
+
+typedef struct RakNetSocket2 RakNetSocket2, *PRakNetSocket2;
+
+struct RakNetSocket2
+{
+};
+
+typedef struct SocketDescriptor SocketDescriptor, *PSocketDescriptor;
+
+struct SocketDescriptor
+{
+};
+
+typedef struct RNS2_BerkleyBindParameters RNS2_BerkleyBindParameters, *PRNS2_BerkleyBindParameters;
+
+struct RNS2_BerkleyBindParameters
+{
+    ushort port;
+    char *hostAddress;
+    ushort addressFamily;
+    int type;
+    int protocol;
+    bool nonBlockingSocket;
+    int setBroadcast;
+    int setIPHdrIncl;
+    int doNotFragment;
+    int pollingThreadPriority;
+    struct RNS2EventHandler *eventHandler;
+    ushort remotePortRakNetWasStartedOn_PS3_PS4_PSP2;
+};
+
+typedef struct TCPInterface TCPInterface, *PTCPInterface;
+
+typedef struct List<RakNet::PluginInterface2 *> List<RakNet::PluginInterface2 *>, *PList<RakNet::PluginInterface2 *>;
+
+typedef struct LocklessUint32_t LocklessUint32_t, *PLocklessUint32_t;
+
+typedef struct Queue<RakNet::Packet *> Queue<RakNet::Packet *>, *PQueue<RakNet::Packet *>;
+
+typedef struct RemoteClient RemoteClient, *PRemoteClient;
+
+typedef struct ThreadsafeAllocatingQueue<RakNet::Packet> ThreadsafeAllocatingQueue<RakNet::Packet>, *PThreadsafeAllocatingQueue<RakNet::Packet>;
+
+typedef struct ThreadsafeAllocatingQueue<RakNet::SystemAddress> ThreadsafeAllocatingQueue<RakNet::SystemAddress>, *PThreadsafeAllocatingQueue<RakNet::SystemAddress>;
+
+typedef struct ThreadsafeAllocatingQueue<RakNet::RemoteClient *> ThreadsafeAllocatingQueue<RakNet::RemoteClient *>, *PThreadsafeAllocatingQueue<RakNet::RemoteClient *>;
+
+typedef struct SimpleMutex SimpleMutex, *PSimpleMutex;
+
+typedef struct Queue<RakNet::SystemAddress> Queue<RakNet::SystemAddress>, *PQueue<RakNet::SystemAddress>;
+
+typedef struct List<unsignedint> List<unsignedint>, *PList<unsignedint>;
+
+typedef struct Packet Packet, *PPacket;
+
+typedef struct ByteQueue ByteQueue, *PByteQueue;
+
+typedef struct MemoryPool<RakNet::Packet> MemoryPool<RakNet::Packet>, *PMemoryPool<RakNet::Packet>;
+
+typedef struct MemoryPool<RakNet::SystemAddress> MemoryPool<RakNet::SystemAddress>, *PMemoryPool<RakNet::SystemAddress>;
+
+typedef struct Queue<RakNet::SystemAddress *> Queue<RakNet::SystemAddress *>, *PQueue<RakNet::SystemAddress *>;
+
+typedef struct MemoryPool<RakNet::RemoteClient *> MemoryPool<RakNet::RemoteClient *>, *PMemoryPool<RakNet::RemoteClient *>;
+
+typedef struct Queue<RakNet::RemoteClient **> Queue<RakNet::RemoteClient **>, *PQueue<RakNet::RemoteClient **>;
+
+typedef struct Page Page, *PPage;
+
+// WARNING! conflicting data type names: /ois.pdb/DataStructures/MemoryPool<RakNet::SystemAddress>/Page - /ois.pdb/DataStructures/MemoryPool<RakNet::Packet>/Page
+
+// WARNING! conflicting data type names: /ois.pdb/DataStructures/MemoryPool<RakNet::RemoteClient*>/Page - /ois.pdb/DataStructures/MemoryPool<RakNet::Packet>/Page
+
+typedef struct MemoryWithPage MemoryWithPage, *PMemoryWithPage;
 
 struct Packet
 {
+};
+
+struct MemoryPool<RakNet::RemoteClient *>
+{
+    struct Page *availablePages;
+    struct Page *unavailablePages;
+    int availablePagesSize;
+    int unavailablePagesSize;
+    int memoryPoolPageSize;
 };
 
 struct ByteQueue
@@ -3569,6 +3507,14 @@ struct ByteQueue
     uint readOffset;
     uint writeOffset;
     uint lengthAllocated;
+};
+
+struct Queue<RakNet::Packet *>
+{
+    struct Packet **array;
+    uint head;
+    uint tail;
+    uint allocation_size;
 };
 
 struct SimpleMutex
@@ -3589,31 +3535,19 @@ struct ThreadsafeAllocatingQueue<RakNet::Packet>
 {
     struct MemoryPool<RakNet::Packet> memoryPool;
     struct SimpleMutex memoryPoolMutex;
-    struct Queue<RakNet::Packet_ *> queue;
+    struct Queue<RakNet::Packet *> queue;
     struct SimpleMutex queueMutex;
 };
 
-struct Queue<RakNet::SystemAddress>
-{
-    struct SystemAddress *array;
-    uint head;
-    uint tail;
-    uint allocation_size;
-};
-
-struct List<unsigned_int>
+struct List<RakNet::PluginInterface2 *>
 {
 };
 
-struct List<RakNet::PluginInterface2_ *>
+struct List<unsignedint>
 {
 };
 
-struct LocklessUint32_t
-{
-};
-
-struct Queue<RakNet::RemoteClient_ * _ *>
+struct Queue<RakNet::RemoteClient **>
 {
     struct RemoteClient ***array;
     uint head;
@@ -3621,29 +3555,16 @@ struct Queue<RakNet::RemoteClient_ * _ *>
     uint allocation_size;
 };
 
-struct MemoryPool<RakNet::RemoteClient_ *>
+struct ThreadsafeAllocatingQueue<RakNet::RemoteClient *>
 {
-    struct Page *availablePages;
-    struct Page *unavailablePages;
-    int availablePagesSize;
-    int unavailablePagesSize;
-    int memoryPoolPageSize;
-};
-
-struct ThreadsafeAllocatingQueue<RakNet::RemoteClient_ *>
-{
-    struct MemoryPool<RakNet::RemoteClient_ *> memoryPool;
+    struct MemoryPool<RakNet::RemoteClient *> memoryPool;
     struct SimpleMutex memoryPoolMutex;
-    struct Queue<RakNet::RemoteClient_ * _ *> queue;
+    struct Queue<RakNet::RemoteClient **> queue;
     struct SimpleMutex queueMutex;
 };
 
-struct Queue<RakNet::SystemAddress_ *>
+struct LocklessUint32_t
 {
-    struct SystemAddress **array;
-    uint head;
-    uint tail;
-    uint allocation_size;
 };
 
 struct MemoryPool<RakNet::SystemAddress>
@@ -3655,12 +3576,28 @@ struct MemoryPool<RakNet::SystemAddress>
     int memoryPoolPageSize;
 };
 
+struct Queue<RakNet::SystemAddress *>
+{
+    struct SystemAddress **array;
+    uint head;
+    uint tail;
+    uint allocation_size;
+};
+
 struct ThreadsafeAllocatingQueue<RakNet::SystemAddress>
 {
     struct MemoryPool<RakNet::SystemAddress> memoryPool;
     struct SimpleMutex memoryPoolMutex;
-    struct Queue<RakNet::SystemAddress_ *> queue;
+    struct Queue<RakNet::SystemAddress *> queue;
     struct SimpleMutex queueMutex;
+};
+
+struct Queue<RakNet::SystemAddress>
+{
+    struct SystemAddress *array;
+    uint head;
+    uint tail;
+    uint allocation_size;
 };
 
 struct TCPInterface
@@ -3669,7 +3606,7 @@ struct TCPInterface
     undefined field1_0x1;
     undefined field2_0x2;
     undefined field3_0x3;
-    struct List<RakNet::PluginInterface2_ *> messageHandlerList;
+    struct List<RakNet::PluginInterface2 *> messageHandlerList;
     undefined field5_0x5;
     undefined field6_0x6;
     undefined field7_0x7;
@@ -3690,21 +3627,21 @@ struct TCPInterface
     undefined field22_0x16;
     undefined field23_0x17;
     uint listenSocket;
-    struct Queue<RakNet::Packet_ *> headPush;
-    struct Queue<RakNet::Packet_ *> tailPush;
+    struct Queue<RakNet::Packet *> headPush;
+    struct Queue<RakNet::Packet *> tailPush;
     struct RemoteClient *remoteClients;
     int remoteClientsLength;
     struct ThreadsafeAllocatingQueue<RakNet::Packet> incomingMessages;
     struct ThreadsafeAllocatingQueue<RakNet::SystemAddress> newIncomingConnections;
     struct ThreadsafeAllocatingQueue<RakNet::SystemAddress> lostConnections;
     struct ThreadsafeAllocatingQueue<RakNet::SystemAddress> requestedCloseConnections;
-    struct ThreadsafeAllocatingQueue<RakNet::RemoteClient_ *> newRemoteClients;
+    struct ThreadsafeAllocatingQueue<RakNet::RemoteClient *> newRemoteClients;
     struct SimpleMutex completedConnectionAttemptMutex;
     struct SimpleMutex failedConnectionAttemptMutex;
     struct Queue<RakNet::SystemAddress> completedConnectionAttempts;
     struct Queue<RakNet::SystemAddress> failedConnectionAttempts;
     int threadPriority;
-    struct List<unsigned_int> blockingSocketList;
+    struct List<unsignedint> blockingSocketList;
     undefined field40_0x23d;
     undefined field41_0x23e;
     undefined field42_0x23f;
@@ -3803,12 +3740,34 @@ struct RemoteClient
     struct SimpleMutex isActiveMutex;
 };
 
-typedef enum PluginReceiveResult
+typedef struct RakNetStatistics RakNetStatistics, *PRakNetStatistics;
+
+struct RakNetStatistics
 {
-    RR_STOP_PROCESSING_AND_DEALLOCATE = 0,
-    RR_CONTINUE_PROCESSING = 1,
-    RR_STOP_PROCESSING = 2
-} PluginReceiveResult;
+    __uint64 valueOverLastSecond[7];
+    __uint64 runningTotal[7];
+    __uint64 connectionStartTime;
+    bool isLimitedByCongestionControl;
+    __uint64 BPSLimitByCongestionControl;
+    bool isLimitedByOutgoingBandwidthLimit;
+    __uint64 BPSLimitByOutgoingBandwidthLimit;
+    uint messageInSendBuffer[4];
+    double bytesInSendBuffer[4];
+    uint messagesInResendBuffer;
+    __uint64 bytesInResendBuffer;
+    float packetlossLastSecond;
+    float packetlossTotal;
+};
+
+typedef struct RNS2_SendParameters RNS2_SendParameters, *PRNS2_SendParameters;
+
+struct RNS2_SendParameters
+{
+    char *data;
+    int length;
+    struct SystemAddress systemAddress;
+    int ttl;
+};
 
 typedef enum RNS2BindResult
 {
@@ -3817,6 +3776,72 @@ typedef enum RNS2BindResult
     BR_FAILED_TO_BIND_SOCKET = 2,
     BR_FAILED_SEND_TEST = 3
 } RNS2BindResult;
+
+typedef enum PluginReceiveResult
+{
+    RR_STOP_PROCESSING_AND_DEALLOCATE = 0,
+    RR_CONTINUE_PROCESSING = 1,
+    RR_STOP_PROCESSING = 2
+} PluginReceiveResult;
+
+typedef struct StringCompressor StringCompressor, *PStringCompressor;
+
+typedef struct Map<int, RakNet::HuffmanEncodingTree *, &DataStructures::defaultMapKeyComparison<int>> Map<int, RakNet::HuffmanEncodingTree *, &DataStructures::defaultMapKeyComparison<int>>, *PMap<int, RakNet::HuffmanEncodingTree *, &DataStructures::defaultMapKeyComparison<int>>;
+
+typedef struct OrderedList<int, DataStructures::Map<int, RakNet::HuffmanEncodingTree *, &DataStructures::defaultMapKeyComparison<int>>::MapNode, &DataStructures::Map<int, RakNet::HuffmanEncodingTree *, &DataStructures::defaultMapKeyComparison<int>>::NodeComparisonFunc> OrderedList<int, DataStructures::Map<int, RakNet::HuffmanEncodingTree *, &DataStructures::defaultMapKeyComparison<int>>::MapNode, &DataStructures::Map<int, RakNet::HuffmanEncodingTree *, &DataStructures::defaultMapKeyComparison<int>>::NodeComparisonFunc>, *POrderedList<int, DataStructures::Map<int, RakNet::HuffmanEncodingTree *, &DataStructures::defaultMapKeyComparison<int>>::MapNode, &DataStructures::Map<int, RakNet::HuffmanEncodingTree *, &DataStructures::defaultMapKeyComparison<int>>::NodeComparisonFunc>;
+
+typedef struct List<DataStructures::Map<int, RakNet::HuffmanEncodingTree *, &DataStructures::defaultMapKeyComparison<int>>::MapNode> List<DataStructures::Map<int, RakNet::HuffmanEncodingTree *, &DataStructures::defaultMapKeyComparison<int>>::MapNode>, *PList<DataStructures::Map<int, RakNet::HuffmanEncodingTree *, &DataStructures::defaultMapKeyComparison<int>>::MapNode>;
+
+typedef struct MapNode MapNode, *PMapNode;
+
+typedef struct HuffmanEncodingTree HuffmanEncodingTree, *PHuffmanEncodingTree;
+
+typedef struct CharacterEncoding CharacterEncoding, *PCharacterEncoding;
+
+struct List<DataStructures::Map<int, RakNet::HuffmanEncodingTree *, &DataStructures::defaultMapKeyComparison<int>>::MapNode>
+{
+    struct MapNode *listArray;
+    uint list_size;
+    uint allocation_size;
+};
+
+struct OrderedList<int, DataStructures::Map<int, RakNet::HuffmanEncodingTree *, &DataStructures::defaultMapKeyComparison<int>>::MapNode, &DataStructures::Map<int, RakNet::HuffmanEncodingTree *, &DataStructures::defaultMapKeyComparison<int>>::NodeComparisonFunc>
+{
+    struct List<DataStructures::Map<int, RakNet::HuffmanEncodingTree *, &DataStructures::defaultMapKeyComparison<int>>::MapNode> orderedList;
+};
+
+struct Map<int, RakNet::HuffmanEncodingTree *, &DataStructures::defaultMapKeyComparison<int>>
+{
+    struct OrderedList<int, DataStructures::Map<int, RakNet::HuffmanEncodingTree *, &DataStructures::defaultMapKeyComparison<int>>::MapNode, &DataStructures::Map<int, RakNet::HuffmanEncodingTree *, &DataStructures::defaultMapKeyComparison<int>>::NodeComparisonFunc> mapNodeList;
+    uint lastSearchIndex;
+    int lastSearchKey;
+    bool lastSearchIndexValid;
+};
+
+struct StringCompressor
+{
+    struct Map<int, RakNet::HuffmanEncodingTree *, &DataStructures::defaultMapKeyComparison<int>> huffmanEncodingTrees;
+};
+
+struct MapNode
+{
+    int mapNodeKey;
+    struct HuffmanEncodingTree *mapNodeData;
+};
+
+struct CharacterEncoding
+{
+    uchar *encoding;
+    ushort bitLength;
+};
+
+struct HuffmanEncodingTree
+{
+    struct HuffmanEncodingTreeNode *root;
+    struct CharacterEncoding encodingTable[256];
+};
+
+typedef int RNS2Socket;
 
 typedef struct IRNS2_Berkley IRNS2_Berkley, *PIRNS2_Berkley;
 
@@ -3860,113 +3885,11 @@ struct IRNS2_Berkley
     undefined field35_0x23;
 };
 
-typedef struct RNS2_Windows RNS2_Windows, *PRNS2_Windows;
+typedef struct RNS2_Windows_Linux_360 RNS2_Windows_Linux_360, *PRNS2_Windows_Linux_360;
 
-struct RNS2_Windows
+struct RNS2_Windows_Linux_360
 {
     undefined field0_0x0;
-    undefined field1_0x1;
-    undefined field2_0x2;
-    undefined field3_0x3;
-    undefined field4_0x4;
-    undefined field5_0x5;
-    undefined field6_0x6;
-    undefined field7_0x7;
-    undefined field8_0x8;
-    undefined field9_0x9;
-    undefined field10_0xa;
-    undefined field11_0xb;
-    undefined field12_0xc;
-    undefined field13_0xd;
-    undefined field14_0xe;
-    undefined field15_0xf;
-    undefined field16_0x10;
-    undefined field17_0x11;
-    undefined field18_0x12;
-    undefined field19_0x13;
-    undefined field20_0x14;
-    undefined field21_0x15;
-    undefined field22_0x16;
-    undefined field23_0x17;
-    undefined field24_0x18;
-    undefined field25_0x19;
-    undefined field26_0x1a;
-    undefined field27_0x1b;
-    undefined field28_0x1c;
-    undefined field29_0x1d;
-    undefined field30_0x1e;
-    undefined field31_0x1f;
-    undefined field32_0x20;
-    undefined field33_0x21;
-    undefined field34_0x22;
-    undefined field35_0x23;
-    undefined field36_0x24;
-    undefined field37_0x25;
-    undefined field38_0x26;
-    undefined field39_0x27;
-    undefined field40_0x28;
-    undefined field41_0x29;
-    undefined field42_0x2a;
-    undefined field43_0x2b;
-    undefined field44_0x2c;
-    undefined field45_0x2d;
-    undefined field46_0x2e;
-    undefined field47_0x2f;
-    undefined field48_0x30;
-    undefined field49_0x31;
-    undefined field50_0x32;
-    undefined field51_0x33;
-    undefined field52_0x34;
-    undefined field53_0x35;
-    undefined field54_0x36;
-    undefined field55_0x37;
-    undefined field56_0x38;
-    undefined field57_0x39;
-    undefined field58_0x3a;
-    undefined field59_0x3b;
-    undefined field60_0x3c;
-    undefined field61_0x3d;
-    undefined field62_0x3e;
-    undefined field63_0x3f;
-    undefined field64_0x40;
-    undefined field65_0x41;
-    undefined field66_0x42;
-    undefined field67_0x43;
-    undefined field68_0x44;
-    undefined field69_0x45;
-    undefined field70_0x46;
-    undefined field71_0x47;
-    undefined field72_0x48;
-    undefined field73_0x49;
-    undefined field74_0x4a;
-    undefined field75_0x4b;
-    undefined field76_0x4c;
-    undefined field77_0x4d;
-    undefined field78_0x4e;
-    undefined field79_0x4f;
-    undefined field80_0x50;
-    undefined field81_0x51;
-    undefined field82_0x52;
-    undefined field83_0x53;
-    undefined field84_0x54;
-    undefined field85_0x55;
-    undefined field86_0x56;
-    undefined field87_0x57;
-    undefined field88_0x58;
-    undefined field89_0x59;
-    undefined field90_0x5a;
-    undefined field91_0x5b;
-    undefined field92_0x5c;
-    undefined field93_0x5d;
-    undefined field94_0x5e;
-    undefined field95_0x5f;
-    struct SocketLayerOverride *slo;
-};
-
-typedef struct RNS2RecvStruct RNS2RecvStruct, *PRNS2RecvStruct;
-
-struct RNS2RecvStruct
-{
 };
 
 typedef struct InternalPacket InternalPacket, *PInternalPacket;
@@ -3975,26 +3898,77 @@ struct InternalPacket
 {
 };
 
+typedef struct RNS2RecvStruct RNS2RecvStruct, *PRNS2RecvStruct;
+
+struct RNS2RecvStruct
+{
+};
+
+typedef struct RakThread RakThread, *PRakThread;
+
+struct RakThread
+{
+    undefined field0_0x0;
+};
+
+typedef struct RakNetRandom RakNetRandom, *PRakNetRandom;
+
+struct RakNetRandom
+{
+    uint state[625];
+    uint *next;
+    int left;
+};
+
 typedef struct InternalPacketRefCountedData InternalPacketRefCountedData, *PInternalPacketRefCountedData;
 
 struct InternalPacketRefCountedData
 {
 };
 
-typedef struct RakNetSocket2 RakNetSocket2, *PRakNetSocket2;
+typedef struct AddressOrGUID AddressOrGUID, *PAddressOrGUID;
 
-struct RakNetSocket2
+typedef struct RakNetGUID RakNetGUID, *PRakNetGUID;
+
+struct RakNetGUID
+{
+    __uint64 g;
+    ushort systemIndex;
+};
+
+struct AddressOrGUID
+{
+    struct RakNetGUID rakNetGuid;
+    struct SystemAddress systemAddress;
+};
+
+typedef struct RakString RakString, *PRakString;
+
+struct RakString
 {
 };
 
-typedef struct RNS2_SendParameters RNS2_SendParameters, *PRNS2_SendParameters;
+typedef struct StringTable StringTable, *PStringTable;
 
-struct RNS2_SendParameters
+typedef struct OrderedList<char *, StrAndBool, &RakNet::StrAndBoolComp> OrderedList<char *, StrAndBool, &RakNet::StrAndBoolComp>, *POrderedList<char *, StrAndBool, &RakNet::StrAndBoolComp>;
+
+typedef struct List<StrAndBool> List<StrAndBool>, *PList<StrAndBool>;
+
+struct List<StrAndBool>
 {
-    char *data;
-    int length;
-    struct SystemAddress systemAddress;
-    int ttl;
+    struct StrAndBool *listArray;
+    uint list_size;
+    uint allocation_size;
+};
+
+struct OrderedList<char *, StrAndBool, &RakNet::StrAndBoolComp>
+{
+    struct List<StrAndBool> orderedList;
+};
+
+struct StringTable
+{
+    struct OrderedList<char *, StrAndBool, &RakNet::StrAndBoolComp> orderedStringList;
 };
 
 typedef enum RNSPerSecondMetrics
@@ -4008,6 +3982,18 @@ typedef enum RNSPerSecondMetrics
     ACTUAL_BYTES_RECEIVED = 6,
     RNS_PER_SECOND_METRICS_COUNT = 7
 } RNSPerSecondMetrics;
+
+typedef struct PublicKey PublicKey, *PPublicKey;
+
+struct PublicKey
+{
+};
+
+typedef struct SplitPacketChannel SplitPacketChannel, *PSplitPacketChannel;
+
+struct SplitPacketChannel
+{
+};
 
 typedef struct BitStream BitStream, *PBitStream;
 
@@ -4033,285 +4019,15 @@ struct RemoteSystemIndex
 {
 };
 
-typedef struct RakPeer RakPeer, *PRakPeer;
-
-struct RakPeer
-{
-};
-
-typedef struct RNS2_Berkley RNS2_Berkley, *PRNS2_Berkley;
-
-struct RNS2_Berkley
-{
-    undefined field0_0x0;
-    undefined field1_0x1;
-    undefined field2_0x2;
-    undefined field3_0x3;
-    undefined field4_0x4;
-    undefined field5_0x5;
-    undefined field6_0x6;
-    undefined field7_0x7;
-    undefined field8_0x8;
-    undefined field9_0x9;
-    undefined field10_0xa;
-    undefined field11_0xb;
-    undefined field12_0xc;
-    undefined field13_0xd;
-    undefined field14_0xe;
-    undefined field15_0xf;
-    undefined field16_0x10;
-    undefined field17_0x11;
-    undefined field18_0x12;
-    undefined field19_0x13;
-    undefined field20_0x14;
-    undefined field21_0x15;
-    undefined field22_0x16;
-    undefined field23_0x17;
-    undefined field24_0x18;
-    undefined field25_0x19;
-    undefined field26_0x1a;
-    undefined field27_0x1b;
-    undefined field28_0x1c;
-    undefined field29_0x1d;
-    undefined field30_0x1e;
-    undefined field31_0x1f;
-    undefined field32_0x20;
-    undefined field33_0x21;
-    undefined field34_0x22;
-    undefined field35_0x23;
-    int rns2Socket;
-    struct RNS2_BerkleyBindParameters binding;
-    struct LocklessUint32_t isRecvFromLoopThreadActive;
-    undefined field39_0x59;
-    undefined field40_0x5a;
-    undefined field41_0x5b;
-    bool endThreads;
-    undefined field43_0x5d;
-    undefined field44_0x5e;
-    undefined field45_0x5f;
-};
-
-typedef struct InternalPacketFixedSizeTransmissionHeader InternalPacketFixedSizeTransmissionHeader, *PInternalPacketFixedSizeTransmissionHeader;
-
-struct InternalPacketFixedSizeTransmissionHeader
-{
-};
-
-typedef struct PublicKey PublicKey, *PPublicKey;
-
-struct PublicKey
-{
-};
-
-typedef struct RakNetRandom RakNetRandom, *PRakNetRandom;
-
-struct RakNetRandom
-{
-    uint state[625];
-    uint *next;
-    int left;
-};
-
-typedef struct CCRakNetSlidingWindow CCRakNetSlidingWindow, *PCCRakNetSlidingWindow;
-
-struct CCRakNetSlidingWindow
-{
-};
-
-typedef struct BPSTracker BPSTracker, *PBPSTracker;
-
-struct BPSTracker
-{
-};
-
-typedef struct RakNetStatistics RakNetStatistics, *PRakNetStatistics;
-
-struct RakNetStatistics
-{
-    ulong64 valueOverLastSecond[7];
-    ulong64 runningTotal[7];
-    ulong64 connectionStartTime;
-    bool isLimitedByCongestionControl;
-    ulong64 BPSLimitByCongestionControl;
-    bool isLimitedByOutgoingBandwidthLimit;
-    ulong64 BPSLimitByOutgoingBandwidthLimit;
-    uint messageInSendBuffer[4];
-    double bytesInSendBuffer[4];
-    uint messagesInResendBuffer;
-    ulong64 bytesInResendBuffer;
-    float packetlossLastSecond;
-    float packetlossTotal;
-};
-
-typedef struct SocketLayer SocketLayer, *PSocketLayer;
-
-struct SocketLayer
-{
-    undefined field0_0x0;
-};
-
-typedef struct RakString RakString, *PRakString;
-
-struct RakString
-{
-};
-
-typedef enum StartupResult
-{
-    RAKNET_STARTED = 0,
-    RAKNET_ALREADY_STARTED = 1,
-    INVALID_SOCKET_DESCRIPTORS = 2,
-    INVALID_MAX_CONNECTIONS = 3,
-    SOCKET_FAMILY_NOT_SUPPORTED = 4,
-    SOCKET_PORT_ALREADY_IN_USE = 5,
-    SOCKET_FAILED_TO_BIND = 6,
-    SOCKET_FAILED_TEST_SEND = 7,
-    PORT_CANNOT_BE_ZERO = 8,
-    FAILED_TO_CREATE_NETWORK_THREAD = 9,
-    COULD_NOT_GENERATE_GUID = 10,
-    STARTUP_OTHER_FAILURE = 11
-} StartupResult;
-
-typedef struct HuffmanEncodingTree HuffmanEncodingTree, *PHuffmanEncodingTree;
-
-typedef struct CharacterEncoding CharacterEncoding, *PCharacterEncoding;
-
-struct CharacterEncoding
-{
-    uchar *encoding;
-    ushort bitLength;
-};
-
-struct HuffmanEncodingTree
-{
-    struct HuffmanEncodingTreeNode *root;
-    struct CharacterEncoding encodingTable[256];
-};
-
-typedef struct StringTable StringTable, *PStringTable;
-
-typedef struct OrderedList<char_ *, StrAndBool, &int___cdecl_RakNet::StrAndBoolComp(char_ *_const_ &, StrAndBool_const_ &)> OrderedList<char_ *, StrAndBool, &int___cdecl_RakNet::StrAndBoolComp(char_ *_const_ &, StrAndBool_const_ &)>, *POrderedList<char_ *, StrAndBool, &int___cdecl_RakNet::StrAndBoolComp(char_ *_const_ &, StrAndBool_const_ &)>;
-
-typedef struct List<StrAndBool> List<StrAndBool>, *PList<StrAndBool>;
-
-struct List<StrAndBool>
-{
-    struct StrAndBool *listArray;
-    uint list_size;
-    uint allocation_size;
-};
-
-struct OrderedList<char_ *, StrAndBool, &int___cdecl_RakNet::StrAndBoolComp(char_ *_const_ &, StrAndBool_const_ &)>
-{
-    struct List<StrAndBool> orderedList;
-};
-
-struct StringTable
-{
-    struct OrderedList<char_ *, StrAndBool, &int___cdecl_RakNet::StrAndBoolComp(char_ *_const_ &, StrAndBool_const_ &)> orderedStringList;
-};
-
-typedef struct AddressOrGUID AddressOrGUID, *PAddressOrGUID;
-
-typedef struct RakNetGUID RakNetGUID, *PRakNetGUID;
-
-struct RakNetGUID
-{
-    ulong64 g;
-    ushort systemIndex;
-};
-
-struct AddressOrGUID
-{
-    struct RakNetGUID rakNetGuid;
-    struct SystemAddress systemAddress;
-};
-
-typedef enum RNS2Type
-{
-    RNS2T_WINDOWS_STORE_8 = 0,
-    RNS2T_PS3 = 1,
-    RNS2T_PS4 = 2,
-    RNS2T_CHROME = 3,
-    RNS2T_VITA = 4,
-    RNS2T_XBOX_360 = 5,
-    RNS2T_XBOX_720 = 6,
-    RNS2T_WINDOWS = 7,
-    RNS2T_LINUX = 8
-} RNS2Type;
-
-typedef struct SocketDescriptor SocketDescriptor, *PSocketDescriptor;
-
-struct SocketDescriptor
-{
-};
-
-typedef struct StringCompressor StringCompressor, *PStringCompressor;
-
-typedef struct Map<int, RakNet::HuffmanEncodingTree_ *, &int___cdecl_DataStructures::defaultMapKeyComparison<int>(int_const_ &, int_const_ &)> Map<int, RakNet::HuffmanEncodingTree_ *, &int___cdecl_DataStructures::defaultMapKeyComparison<int>(int_const_ &, int_const_ &)>, *PMap<int, RakNet::HuffmanEncodingTree_ *, &int___cdecl_DataStructures::defaultMapKeyComparison<int>(int_const_ &, int_const_ &)>;
-
-typedef struct OrderedList<int, DataStructures::Map<int, RakNet::HuffmanEncodingTree_ *, &int___cdecl_DataStructures::defaultMapKeyComparison<int>(int_const_ &, int_const_ &)>::MapNode, &public : _static_int___cdecl_DataStructures::Map<int, RakNet::HuffmanEncodingTree_ *, &int___cdecl_DataStructures::defaultMapKeyComparison<int>(int_const_ &, int_const_ &)>::NodeComparisonFunc(int_const_ &, DataStructures::Map<int, RakNet::HuffmanEncodingTree_ *, &int___cdecl_DataStructures::defaultMapKeyComparison<int>(int_const_ &, int_const_ &)>::MapNode_const_ &)> OrderedList<int, DataStructures::Map<int, RakNet::HuffmanEncodingTree_ *, &int___cdecl_DataStructures::defaultMapKeyComparison<int>(int_const_ &, int_const_ &)>::MapNode, &public : _static_int___cdecl_DataStructures::Map<int, RakNet::HuffmanEncodingTree_ *, &int___cdecl_DataStructures::defaultMapKeyComparison<int>(int_const_ &, int_const_ &)>::NodeComparisonFunc(int_const_ &, DataStructures::Map<int, RakNet::HuffmanEncodingTree_ *, &int___cdecl_DataStructures::defaultMapKeyComparison<int>(int_const_ &, int_const_ &)>::MapNode_const_ &)>, *POrderedList<int, DataStructures::Map<int, RakNet::HuffmanEncodingTree_ *, &int___cdecl_DataStructures::defaultMapKeyComparison<int>(int_const_ &, int_const_ &)>::MapNode, &public : _static_int___cdecl_DataStructures::Map<int, RakNet::HuffmanEncodingTree_ *, &int___cdecl_DataStructures::defaultMapKeyComparison<int>(int_const_ &, int_const_ &)>::NodeComparisonFunc(int_const_ &, DataStructures::Map<int, RakNet::HuffmanEncodingTree_ *, &int___cdecl_DataStructures::defaultMapKeyComparison<int>(int_const_ &, int_const_ &)>::MapNode_const_ &)>;
-
-typedef struct List<DataStructures::Map<int, RakNet::HuffmanEncodingTree_ *, &int___cdecl_DataStructures::defaultMapKeyComparison<int>(int_const_ &, int_const_ &)>::MapNode> List<DataStructures::Map<int, RakNet::HuffmanEncodingTree_ *, &int___cdecl_DataStructures::defaultMapKeyComparison<int>(int_const_ &, int_const_ &)>::MapNode>, *PList<DataStructures::Map<int, RakNet::HuffmanEncodingTree_ *, &int___cdecl_DataStructures::defaultMapKeyComparison<int>(int_const_ &, int_const_ &)>::MapNode>;
-
-typedef struct MapNode MapNode, *PMapNode;
-
-struct List<DataStructures::Map<int, RakNet::HuffmanEncodingTree_ *, &int___cdecl_DataStructures::defaultMapKeyComparison<int>(int_const_ &, int_const_ &)>::MapNode>
-{
-    struct MapNode *listArray;
-    uint list_size;
-    uint allocation_size;
-};
-
-struct OrderedList<int, DataStructures::Map<int, RakNet::HuffmanEncodingTree_ *, &int___cdecl_DataStructures::defaultMapKeyComparison<int>(int_const_ &, int_const_ &)>::MapNode, &public : _static_int___cdecl_DataStructures::Map<int, RakNet::HuffmanEncodingTree_ *, &int___cdecl_DataStructures::defaultMapKeyComparison<int>(int_const_ &, int_const_ &)>::NodeComparisonFunc(int_const_ &, DataStructures::Map<int, RakNet::HuffmanEncodingTree_ *, &int___cdecl_DataStructures::defaultMapKeyComparison<int>(int_const_ &, int_const_ &)>::MapNode_const_ &)>
-{
-    struct List<DataStructures::Map<int, RakNet::HuffmanEncodingTree_ *, &int___cdecl_DataStructures::defaultMapKeyComparison<int>(int_const_ &, int_const_ &)>::MapNode> orderedList;
-};
-
-struct Map<int, RakNet::HuffmanEncodingTree_ *, &int___cdecl_DataStructures::defaultMapKeyComparison<int>(int_const_ &, int_const_ &)>
-{
-    struct OrderedList<int, DataStructures::Map<int, RakNet::HuffmanEncodingTree_ *, &int___cdecl_DataStructures::defaultMapKeyComparison<int>(int_const_ &, int_const_ &)>::MapNode, &public : _static_int___cdecl_DataStructures::Map<int, RakNet::HuffmanEncodingTree_ *, &int___cdecl_DataStructures::defaultMapKeyComparison<int>(int_const_ &, int_const_ &)>::NodeComparisonFunc(int_const_ &, DataStructures::Map<int, RakNet::HuffmanEncodingTree_ *, &int___cdecl_DataStructures::defaultMapKeyComparison<int>(int_const_ &, int_const_ &)>::MapNode_const_ &)> mapNodeList;
-    uint lastSearchIndex;
-    int lastSearchKey;
-    bool lastSearchIndexValid;
-};
-
-struct StringCompressor
-{
-    struct Map<int, RakNet::HuffmanEncodingTree_ *, &int___cdecl_DataStructures::defaultMapKeyComparison<int>(int_const_ &, int_const_ &)> huffmanEncodingTrees;
-};
-
-struct MapNode
-{
-    int mapNodeKey;
-    struct HuffmanEncodingTree *mapNodeData;
-};
-
-typedef int RNS2Socket;
-
-typedef struct RNS2_Windows_Linux_360 RNS2_Windows_Linux_360, *PRNS2_Windows_Linux_360;
-
-struct RNS2_Windows_Linux_360
-{
-    undefined field0_0x0;
-};
-
-typedef struct RakThread RakThread, *PRakThread;
-
-struct RakThread
-{
-    undefined field0_0x0;
-};
-
-typedef struct SplitPacketChannel SplitPacketChannel, *PSplitPacketChannel;
-
-struct SplitPacketChannel
-{
-};
-
 typedef struct ReliabilityLayer ReliabilityLayer, *PReliabilityLayer;
 
 struct ReliabilityLayer
+{
+};
+
+typedef struct RakPeer RakPeer, *PRakPeer;
+
+struct RakPeer
 {
 };
 
@@ -4365,7 +4081,131 @@ typedef enum PI2_FailedConnectionAttemptReason
     FCAR_PUBLIC_KEY_MISMATCH = 10
 } PI2_FailedConnectionAttemptReason;
 
+typedef struct SocketLayer SocketLayer, *PSocketLayer;
+
+struct SocketLayer
+{
+    undefined field0_0x0;
+};
+
+typedef struct InternalPacketFixedSizeTransmissionHeader InternalPacketFixedSizeTransmissionHeader, *PInternalPacketFixedSizeTransmissionHeader;
+
+struct InternalPacketFixedSizeTransmissionHeader
+{
+};
+
+typedef struct CCRakNetSlidingWindow CCRakNetSlidingWindow, *PCCRakNetSlidingWindow;
+
+struct CCRakNetSlidingWindow
+{
+};
+
+typedef struct BPSTracker BPSTracker, *PBPSTracker;
+
+struct BPSTracker
+{
+};
+
 typedef uchar MessageID;
+
+typedef struct RNS2_Windows RNS2_Windows, *PRNS2_Windows;
+
+struct RNS2_Windows
+{
+    int _padding_;
+    int _padding_;
+    int _padding_;
+    int _padding_;
+    int _padding_;
+    int _padding_;
+    int _padding_;
+    int _padding_;
+    int _padding_;
+    int _padding_;
+    int _padding_;
+    int _padding_;
+    int _padding_;
+    int _padding_;
+    int _padding_;
+    int _padding_;
+    int _padding_;
+    int _padding_;
+    int _padding_;
+    int _padding_;
+    int _padding_;
+    int _padding_;
+    int _padding_;
+    int _padding_;
+    struct SocketLayerOverride *slo;
+};
+
+typedef enum StartupResult
+{
+    RAKNET_STARTED = 0,
+    RAKNET_ALREADY_STARTED = 1,
+    INVALID_SOCKET_DESCRIPTORS = 2,
+    INVALID_MAX_CONNECTIONS = 3,
+    SOCKET_FAMILY_NOT_SUPPORTED = 4,
+    SOCKET_PORT_ALREADY_IN_USE = 5,
+    SOCKET_FAILED_TO_BIND = 6,
+    SOCKET_FAILED_TEST_SEND = 7,
+    PORT_CANNOT_BE_ZERO = 8,
+    FAILED_TO_CREATE_NETWORK_THREAD = 9,
+    COULD_NOT_GENERATE_GUID = 10,
+    STARTUP_OTHER_FAILURE = 11
+} StartupResult;
+
+typedef struct RNS2_Berkley RNS2_Berkley, *PRNS2_Berkley;
+
+struct RNS2_Berkley
+{
+    undefined field0_0x0;
+    undefined field1_0x1;
+    undefined field2_0x2;
+    undefined field3_0x3;
+    undefined field4_0x4;
+    undefined field5_0x5;
+    undefined field6_0x6;
+    undefined field7_0x7;
+    undefined field8_0x8;
+    undefined field9_0x9;
+    undefined field10_0xa;
+    undefined field11_0xb;
+    undefined field12_0xc;
+    undefined field13_0xd;
+    undefined field14_0xe;
+    undefined field15_0xf;
+    undefined field16_0x10;
+    undefined field17_0x11;
+    undefined field18_0x12;
+    undefined field19_0x13;
+    undefined field20_0x14;
+    undefined field21_0x15;
+    undefined field22_0x16;
+    undefined field23_0x17;
+    undefined field24_0x18;
+    undefined field25_0x19;
+    undefined field26_0x1a;
+    undefined field27_0x1b;
+    undefined field28_0x1c;
+    undefined field29_0x1d;
+    undefined field30_0x1e;
+    undefined field31_0x1f;
+    undefined field32_0x20;
+    undefined field33_0x21;
+    undefined field34_0x22;
+    undefined field35_0x23;
+    int rns2Socket;
+    struct RNS2_BerkleyBindParameters binding;
+    struct LocklessUint32_t isRecvFromLoopThreadActive;
+    undefined field39_0x59;
+    undefined field40_0x5a;
+    undefined field41_0x5b;
+    bool endThreads;
+    undefined field43_0x5d;
+    undefined field44_0x5e;
+    undefined field45_0x5f;
+};
 
 typedef struct BanStruct BanStruct, *PBanStruct;
 
@@ -4420,12 +4260,6 @@ struct ThisPtrPlusSysAddr
     ushort socketFamily;
 };
 
-typedef struct UnreliableWithAckReceiptNode UnreliableWithAckReceiptNode, *PUnreliableWithAckReceiptNode;
-
-struct UnreliableWithAckReceiptNode
-{
-};
-
 typedef struct DatagramHistoryNode DatagramHistoryNode, *PDatagramHistoryNode;
 
 struct DatagramHistoryNode
@@ -4438,9 +4272,9 @@ struct MessageNumberNode
 {
 };
 
-typedef struct TimeAndValue2 TimeAndValue2, *PTimeAndValue2;
+typedef struct UnreliableWithAckReceiptNode UnreliableWithAckReceiptNode, *PUnreliableWithAckReceiptNode;
 
-struct TimeAndValue2
+struct UnreliableWithAckReceiptNode
 {
 };
 
@@ -4456,17 +4290,45 @@ struct SharedString
     char smallString[112];
 };
 
-typedef struct moduleAttribute moduleAttribute, *PmoduleAttribute;
+typedef struct TimeAndValue2 TimeAndValue2, *PTimeAndValue2;
+
+struct TimeAndValue2
+{
+};
+
+typedef struct event_receiverAttribute event_receiverAttribute, *Pevent_receiverAttribute;
 
 typedef enum type_e
 {
-    dll = 1,
-    EXE = 2,
-    exe = 2,
-    SERVICE = 3,
-    service = 3,
-    unspecified = 4
+    native = 0,
+    com = 1,
+    managed = 2
 } type_e;
+
+struct event_receiverAttribute
+{
+    enum type_e type;
+    bool layout_dependent;
+};
+
+typedef struct event_sourceAttribute event_sourceAttribute, *Pevent_sourceAttribute;
+
+typedef enum optimize_e
+{
+    speed = 0,
+    size = 1
+} optimize_e;
+
+struct event_sourceAttribute
+{
+    enum type_e type;
+    enum optimize_e optimize;
+    bool decorate;
+};
+
+typedef struct moduleAttribute moduleAttribute, *PmoduleAttribute;
+
+// WARNING! conflicting data type names: /ois.pdb/__vc_attributes/moduleAttribute/type_e - /ois.pdb/__vc_attributes/event_receiverAttribute/type_e
 
 struct moduleAttribute
 {
@@ -4505,38 +4367,20 @@ struct threadingAttribute
 
 typedef struct aggregatableAttribute aggregatableAttribute, *PaggregatableAttribute;
 
-// WARNING! conflicting data type names: /ois.pdb/__vc_attributes/aggregatableAttribute/type_e - /ois.pdb/__vc_attributes/moduleAttribute/type_e
+// WARNING! conflicting data type names: /ois.pdb/__vc_attributes/aggregatableAttribute/type_e - /ois.pdb/__vc_attributes/event_receiverAttribute/type_e
 
 struct aggregatableAttribute
 {
     enum type_e type;
 };
 
-typedef struct event_sourceAttribute event_sourceAttribute, *Pevent_sourceAttribute;
+typedef struct v1_alttypeAttribute v1_alttypeAttribute, *Pv1_alttypeAttribute;
 
-// WARNING! conflicting data type names: /ois.pdb/__vc_attributes/event_sourceAttribute/type_e - /ois.pdb/__vc_attributes/moduleAttribute/type_e
+// WARNING! conflicting data type names: /ois.pdb/__vc_attributes/helper_attributes/v1_alttypeAttribute/type_e - /ois.pdb/__vc_attributes/event_receiverAttribute/type_e
 
-typedef enum optimize_e
-{
-    speed = 0,
-    size = 1
-} optimize_e;
-
-struct event_sourceAttribute
+struct v1_alttypeAttribute
 {
     enum type_e type;
-    enum optimize_e optimize;
-    bool decorate;
-};
-
-typedef struct event_receiverAttribute event_receiverAttribute, *Pevent_receiverAttribute;
-
-// WARNING! conflicting data type names: /ois.pdb/__vc_attributes/event_receiverAttribute/type_e - /ois.pdb/__vc_attributes/moduleAttribute/type_e
-
-struct event_receiverAttribute
-{
-    enum type_e type;
-    bool layout_dependent;
 };
 
 typedef struct usageAttribute usageAttribute, *PusageAttribute;
@@ -4544,15 +4388,6 @@ typedef struct usageAttribute usageAttribute, *PusageAttribute;
 struct usageAttribute
 {
     uint value;
-};
-
-typedef struct v1_alttypeAttribute v1_alttypeAttribute, *Pv1_alttypeAttribute;
-
-// WARNING! conflicting data type names: /ois.pdb/__vc_attributes/helper_attributes/v1_alttypeAttribute/type_e - /ois.pdb/__vc_attributes/moduleAttribute/type_e
-
-struct v1_alttypeAttribute
-{
-    enum type_e type;
 };
 
 typedef enum usage_e
@@ -4589,12 +4424,6 @@ typedef enum usage_e
     eAsynchronousUsage = 67108864
 } usage_e;
 
-typedef struct OrderedList<RakNet::uint24_t, DataStructures::RangeNode<RakNet::uint24_t>, &int___cdecl_DataStructures::RangeNodeComp<RakNet::uint24_t>(RakNet::uint24_t_const_ &, DataStructures::RangeNode<RakNet::uint24_t> _const_ &)> OrderedList<RakNet::uint24_t, DataStructures::RangeNode<RakNet::uint24_t>, &int___cdecl_DataStructures::RangeNodeComp<RakNet::uint24_t>(RakNet::uint24_t_const_ &, DataStructures::RangeNode<RakNet::uint24_t> _const_ &)>, *POrderedList<RakNet::uint24_t, DataStructures::RangeNode<RakNet::uint24_t>, &int___cdecl_DataStructures::RangeNodeComp<RakNet::uint24_t>(RakNet::uint24_t_const_ &, DataStructures::RangeNode<RakNet::uint24_t> _const_ &)>;
-
-struct OrderedList<RakNet::uint24_t, DataStructures::RangeNode<RakNet::uint24_t>, &int___cdecl_DataStructures::RangeNodeComp<RakNet::uint24_t>(RakNet::uint24_t_const_ &, DataStructures::RangeNode<RakNet::uint24_t> _const_ &)>
-{
-};
-
 typedef struct MemoryPool<RakNet::InternalPacketRefCountedData> MemoryPool<RakNet::InternalPacketRefCountedData>, *PMemoryPool<RakNet::InternalPacketRefCountedData>;
 
 struct MemoryPool<RakNet::InternalPacketRefCountedData>
@@ -4610,73 +4439,35 @@ struct List<RakNet::SystemAddress>
     uint allocation_size;
 };
 
-typedef struct Queue<RakNet::RakPeer::BufferedCommandStruct_ *> Queue<RakNet::RakPeer::BufferedCommandStruct_ *>, *PQueue<RakNet::RakPeer::BufferedCommandStruct_ *>;
+typedef struct OrderedList<RakNet::SystemAddress, DataStructures::Map<RakNet::SystemAddress, DataStructures::ByteQueue *, &DataStructures::defaultMapKeyComparison<RakNet::SystemAddress>>::MapNode, &DataStructures::Map<RakNet::SystemAddress, DataStructures::ByteQueue *, &DataStructures::defaultMapKeyComparison<RakNet::SystemAddress>>::NodeComparisonFunc> OrderedList<RakNet::SystemAddress, DataStructures::Map<RakNet::SystemAddress, DataStructures::ByteQueue *, &DataStructures::defaultMapKeyComparison<RakNet::SystemAddress>>::MapNode, &DataStructures::Map<RakNet::SystemAddress, DataStructures::ByteQueue *, &DataStructures::defaultMapKeyComparison<RakNet::SystemAddress>>::NodeComparisonFunc>, *POrderedList<RakNet::SystemAddress, DataStructures::Map<RakNet::SystemAddress, DataStructures::ByteQueue *, &DataStructures::defaultMapKeyComparison<RakNet::SystemAddress>>::MapNode, &DataStructures::Map<RakNet::SystemAddress, DataStructures::ByteQueue *, &DataStructures::defaultMapKeyComparison<RakNet::SystemAddress>>::NodeComparisonFunc>;
 
-struct Queue<RakNet::RakPeer::BufferedCommandStruct_ *>
-{
-    struct BufferedCommandStruct **array;
-    uint head;
-    uint tail;
-    uint allocation_size;
-};
+typedef struct List<DataStructures::Map<RakNet::SystemAddress, DataStructures::ByteQueue *, &DataStructures::defaultMapKeyComparison<RakNet::SystemAddress>>::MapNode> List<DataStructures::Map<RakNet::SystemAddress, DataStructures::ByteQueue *, &DataStructures::defaultMapKeyComparison<RakNet::SystemAddress>>::MapNode>, *PList<DataStructures::Map<RakNet::SystemAddress, DataStructures::ByteQueue *, &DataStructures::defaultMapKeyComparison<RakNet::SystemAddress>>::MapNode>;
 
-typedef struct List<RakNet::ReliabilityLayer::UnreliableWithAckReceiptNode> List<RakNet::ReliabilityLayer::UnreliableWithAckReceiptNode>, *PList<RakNet::ReliabilityLayer::UnreliableWithAckReceiptNode>;
+// WARNING! conflicting data type names: /ois.pdb/DataStructures/Map<RakNet::SystemAddress,DataStructures::ByteQueue*,&DataStructures::defaultMapKeyComparison<RakNet::SystemAddress>>/MapNode - /ois.pdb/DataStructures/Map<int,RakNet::HuffmanEncodingTree*,&DataStructures::defaultMapKeyComparison<int>>/MapNode
 
-struct List<RakNet::ReliabilityLayer::UnreliableWithAckReceiptNode>
-{
-};
-
-typedef struct Map<RakNet::SystemAddress, DataStructures::ByteQueue_ *, &int___cdecl_DataStructures::defaultMapKeyComparison<RakNet::SystemAddress>(RakNet::SystemAddress_const_ &, RakNet::SystemAddress_const_ &)> Map<RakNet::SystemAddress, DataStructures::ByteQueue_ *, &int___cdecl_DataStructures::defaultMapKeyComparison<RakNet::SystemAddress>(RakNet::SystemAddress_const_ &, RakNet::SystemAddress_const_ &)>, *PMap<RakNet::SystemAddress, DataStructures::ByteQueue_ *, &int___cdecl_DataStructures::defaultMapKeyComparison<RakNet::SystemAddress>(RakNet::SystemAddress_const_ &, RakNet::SystemAddress_const_ &)>;
-
-typedef struct OrderedList<RakNet::SystemAddress, DataStructures::Map<RakNet::SystemAddress, DataStructures::ByteQueue_ *, &int___cdecl_DataStructures::defaultMapKeyComparison<RakNet::SystemAddress>(RakNet::SystemAddress_const_ &, RakNet::SystemAddress_const_ &)>::MapNode, &public : _static_int___cdecl_DataStructures::Map<RakNet::SystemAddress, DataStructures::ByteQueue_ *, &int___cdecl_DataStructures::defaultMapKeyComparison<RakNet::SystemAddress>(RakNet::SystemAddress_const_ &, RakNet::SystemAddress_const_ &)>::NodeComparisonFunc(RakNet::SystemAddress_const_ &, DataStructures::Map<RakNet::SystemAddress, DataStructures::ByteQueue_ *, &int___cdecl_DataStructures::defaultMapKeyComparison<RakNet::SystemAddress>(RakNet::SystemAddress_const_ &, RakNet::SystemAddress_const_ &)>::MapNode_const_ &)> OrderedList<RakNet::SystemAddress, DataStructures::Map<RakNet::SystemAddress, DataStructures::ByteQueue_ *, &int___cdecl_DataStructures::defaultMapKeyComparison<RakNet::SystemAddress>(RakNet::SystemAddress_const_ &, RakNet::SystemAddress_const_ &)>::MapNode, &public : _static_int___cdecl_DataStructures::Map<RakNet::SystemAddress, DataStructures::ByteQueue_ *, &int___cdecl_DataStructures::defaultMapKeyComparison<RakNet::SystemAddress>(RakNet::SystemAddress_const_ &, RakNet::SystemAddress_const_ &)>::NodeComparisonFunc(RakNet::SystemAddress_const_ &, DataStructures::Map<RakNet::SystemAddress, DataStructures::ByteQueue_ *, &int___cdecl_DataStructures::defaultMapKeyComparison<RakNet::SystemAddress>(RakNet::SystemAddress_const_ &, RakNet::SystemAddress_const_ &)>::MapNode_const_ &)>, *POrderedList<RakNet::SystemAddress, DataStructures::Map<RakNet::SystemAddress, DataStructures::ByteQueue_ *, &int___cdecl_DataStructures::defaultMapKeyComparison<RakNet::SystemAddress>(RakNet::SystemAddress_const_ &, RakNet::SystemAddress_const_ &)>::MapNode, &public : _static_int___cdecl_DataStructures::Map<RakNet::SystemAddress, DataStructures::ByteQueue_ *, &int___cdecl_DataStructures::defaultMapKeyComparison<RakNet::SystemAddress>(RakNet::SystemAddress_const_ &, RakNet::SystemAddress_const_ &)>::NodeComparisonFunc(RakNet::SystemAddress_const_ &, DataStructures::Map<RakNet::SystemAddress, DataStructures::ByteQueue_ *, &int___cdecl_DataStructures::defaultMapKeyComparison<RakNet::SystemAddress>(RakNet::SystemAddress_const_ &, RakNet::SystemAddress_const_ &)>::MapNode_const_ &)>;
-
-typedef struct List<DataStructures::Map<RakNet::SystemAddress, DataStructures::ByteQueue_ *, &int___cdecl_DataStructures::defaultMapKeyComparison<RakNet::SystemAddress>(RakNet::SystemAddress_const_ &, RakNet::SystemAddress_const_ &)>::MapNode> List<DataStructures::Map<RakNet::SystemAddress, DataStructures::ByteQueue_ *, &int___cdecl_DataStructures::defaultMapKeyComparison<RakNet::SystemAddress>(RakNet::SystemAddress_const_ &, RakNet::SystemAddress_const_ &)>::MapNode>, *PList<DataStructures::Map<RakNet::SystemAddress, DataStructures::ByteQueue_ *, &int___cdecl_DataStructures::defaultMapKeyComparison<RakNet::SystemAddress>(RakNet::SystemAddress_const_ &, RakNet::SystemAddress_const_ &)>::MapNode>;
-
-// WARNING! conflicting data type names: /ois.pdb/DataStructures/Map<RakNet::SystemAddress,DataStructures::ByteQueue_*,&int___cdecl_DataStructures::defaultMapKeyComparison<RakNet::SystemAddress>(RakNet::SystemAddress_const_&,RakNet::SystemAddress_const_&)>/MapNode - /ois.pdb/DataStructures/Map<int,RakNet::HuffmanEncodingTree_*,&int___cdecl_DataStructures::defaultMapKeyComparison<int>(int_const_&,int_const_&)>/MapNode
-
-struct List<DataStructures::Map<RakNet::SystemAddress, DataStructures::ByteQueue_ *, &int___cdecl_DataStructures::defaultMapKeyComparison<RakNet::SystemAddress>(RakNet::SystemAddress_const_ &, RakNet::SystemAddress_const_ &)>::MapNode>
+struct List<DataStructures::Map<RakNet::SystemAddress, DataStructures::ByteQueue *, &DataStructures::defaultMapKeyComparison<RakNet::SystemAddress>>::MapNode>
 {
     struct MapNode *listArray;
     uint list_size;
     uint allocation_size;
 };
 
-struct OrderedList<RakNet::SystemAddress, DataStructures::Map<RakNet::SystemAddress, DataStructures::ByteQueue_ *, &int___cdecl_DataStructures::defaultMapKeyComparison<RakNet::SystemAddress>(RakNet::SystemAddress_const_ &, RakNet::SystemAddress_const_ &)>::MapNode, &public : _static_int___cdecl_DataStructures::Map<RakNet::SystemAddress, DataStructures::ByteQueue_ *, &int___cdecl_DataStructures::defaultMapKeyComparison<RakNet::SystemAddress>(RakNet::SystemAddress_const_ &, RakNet::SystemAddress_const_ &)>::NodeComparisonFunc(RakNet::SystemAddress_const_ &, DataStructures::Map<RakNet::SystemAddress, DataStructures::ByteQueue_ *, &int___cdecl_DataStructures::defaultMapKeyComparison<RakNet::SystemAddress>(RakNet::SystemAddress_const_ &, RakNet::SystemAddress_const_ &)>::MapNode_const_ &)>
+struct OrderedList<RakNet::SystemAddress, DataStructures::Map<RakNet::SystemAddress, DataStructures::ByteQueue *, &DataStructures::defaultMapKeyComparison<RakNet::SystemAddress>>::MapNode, &DataStructures::Map<RakNet::SystemAddress, DataStructures::ByteQueue *, &DataStructures::defaultMapKeyComparison<RakNet::SystemAddress>>::NodeComparisonFunc>
 {
-    struct List<DataStructures::Map<RakNet::SystemAddress, DataStructures::ByteQueue_ *, &int___cdecl_DataStructures::defaultMapKeyComparison<RakNet::SystemAddress>(RakNet::SystemAddress_const_ &, RakNet::SystemAddress_const_ &)>::MapNode> orderedList;
+    struct List<DataStructures::Map<RakNet::SystemAddress, DataStructures::ByteQueue *, &DataStructures::defaultMapKeyComparison<RakNet::SystemAddress>>::MapNode> orderedList;
 };
 
-struct Map<RakNet::SystemAddress, DataStructures::ByteQueue_ *, &int___cdecl_DataStructures::defaultMapKeyComparison<RakNet::SystemAddress>(RakNet::SystemAddress_const_ &, RakNet::SystemAddress_const_ &)>
+typedef struct RangeList<RakNet::uint24_t> RangeList<RakNet::uint24_t>, *PRangeList<RakNet::uint24_t>;
+
+typedef struct OrderedList<RakNet::uint24_t, DataStructures::RangeNode<RakNet::uint24_t>, &DataStructures::RangeNodeComp<RakNet::uint24_t>> OrderedList<RakNet::uint24_t, DataStructures::RangeNode<RakNet::uint24_t>, &DataStructures::RangeNodeComp<RakNet::uint24_t>>, *POrderedList<RakNet::uint24_t, DataStructures::RangeNode<RakNet::uint24_t>, &DataStructures::RangeNodeComp<RakNet::uint24_t>>;
+
+struct OrderedList<RakNet::uint24_t, DataStructures::RangeNode<RakNet::uint24_t>, &DataStructures::RangeNodeComp<RakNet::uint24_t>>
 {
-    struct OrderedList<RakNet::SystemAddress, DataStructures::Map<RakNet::SystemAddress, DataStructures::ByteQueue_ *, &int___cdecl_DataStructures::defaultMapKeyComparison<RakNet::SystemAddress>(RakNet::SystemAddress_const_ &, RakNet::SystemAddress_const_ &)>::MapNode, &public : _static_int___cdecl_DataStructures::Map<RakNet::SystemAddress, DataStructures::ByteQueue_ *, &int___cdecl_DataStructures::defaultMapKeyComparison<RakNet::SystemAddress>(RakNet::SystemAddress_const_ &, RakNet::SystemAddress_const_ &)>::NodeComparisonFunc(RakNet::SystemAddress_const_ &, DataStructures::Map<RakNet::SystemAddress, DataStructures::ByteQueue_ *, &int___cdecl_DataStructures::defaultMapKeyComparison<RakNet::SystemAddress>(RakNet::SystemAddress_const_ &, RakNet::SystemAddress_const_ &)>::MapNode_const_ &)> mapNodeList;
-    uint lastSearchIndex;
-    struct SystemAddress lastSearchKey;
-    bool lastSearchIndexValid;
 };
 
-typedef struct List<RakNet::RakPeer::BanStruct_ *> List<RakNet::RakPeer::BanStruct_ *>, *PList<RakNet::RakPeer::BanStruct_ *>;
-
-struct List<RakNet::RakPeer::BanStruct_ *>
+struct RangeList<RakNet::uint24_t>
 {
-    struct BanStruct **listArray;
-    uint list_size;
-    uint allocation_size;
-};
-
-typedef struct List<RakNet::RakNetStatistics> List<RakNet::RakNetStatistics>, *PList<RakNet::RakNetStatistics>;
-
-struct List<RakNet::RakNetStatistics>
-{
-    struct RakNetStatistics *listArray;
-    uint list_size;
-    uint allocation_size;
-};
-
-typedef struct LinkedList<HuffmanEncodingTreeNode_ *> LinkedList<HuffmanEncodingTreeNode_ *>, *PLinkedList<HuffmanEncodingTreeNode_ *>;
-
-struct LinkedList<HuffmanEncodingTreeNode_ *>
-{
-    undefined field0_0x0;
+    struct OrderedList<RakNet::uint24_t, DataStructures::RangeNode<RakNet::uint24_t>, &DataStructures::RangeNodeComp<RakNet::uint24_t>> ranges;
     undefined field1_0x1;
     undefined field2_0x2;
     undefined field3_0x3;
@@ -4688,6 +4479,48 @@ struct LinkedList<HuffmanEncodingTreeNode_ *>
     undefined field9_0x9;
     undefined field10_0xa;
     undefined field11_0xb;
+};
+
+typedef struct List<RakNet::RakNetStatistics> List<RakNet::RakNetStatistics>, *PList<RakNet::RakNetStatistics>;
+
+struct List<RakNet::RakNetStatistics>
+{
+    struct RakNetStatistics *listArray;
+    uint list_size;
+    uint allocation_size;
+};
+
+typedef struct OrderedList<unsignedshort, RakNet::SplitPacketChannel *, &RakNet::SplitPacketChannelComp> OrderedList<unsignedshort, RakNet::SplitPacketChannel *, &RakNet::SplitPacketChannelComp>, *POrderedList<unsignedshort, RakNet::SplitPacketChannel *, &RakNet::SplitPacketChannelComp>;
+
+struct OrderedList<unsignedshort, RakNet::SplitPacketChannel *, &RakNet::SplitPacketChannelComp>
+{
+};
+
+typedef struct List<RakNet::ReliabilityLayer::UnreliableWithAckReceiptNode> List<RakNet::ReliabilityLayer::UnreliableWithAckReceiptNode>, *PList<RakNet::ReliabilityLayer::UnreliableWithAckReceiptNode>;
+
+struct List<RakNet::ReliabilityLayer::UnreliableWithAckReceiptNode>
+{
+};
+
+typedef struct List<RakNet::RakNetSocket2 *> List<RakNet::RakNetSocket2 *>, *PList<RakNet::RakNetSocket2 *>;
+
+struct List<RakNet::RakNetSocket2 *>
+{
+    struct RakNetSocket2 **listArray;
+    uint list_size;
+    uint allocation_size;
+};
+
+typedef struct Queue<RakNet::InternalPacket *> Queue<RakNet::InternalPacket *>, *PQueue<RakNet::InternalPacket *>;
+
+struct Queue<RakNet::InternalPacket *>
+{
+};
+
+typedef struct List<DataStructures::RangeNode<RakNet::uint24_t>> List<DataStructures::RangeNode<RakNet::uint24_t>>, *PList<DataStructures::RangeNode<RakNet::uint24_t>>;
+
+struct List<DataStructures::RangeNode<RakNet::uint24_t>>
+{
 };
 
 typedef struct MemoryPool<RakNet::RemoteSystemIndex> MemoryPool<RakNet::RemoteSystemIndex>, *PMemoryPool<RakNet::RemoteSystemIndex>;
@@ -4703,16 +4536,47 @@ struct MemoryPool<RakNet::RemoteSystemIndex>
     int memoryPoolPageSize;
 };
 
-typedef struct List<DataStructures::RangeNode<RakNet::uint24_t> _> List<DataStructures::RangeNode<RakNet::uint24_t> _>, *PList<DataStructures::RangeNode<RakNet::uint24_t> _>;
+typedef struct List<RakNet::RakNetGUID> List<RakNet::RakNetGUID>, *PList<RakNet::RakNetGUID>;
 
-struct List<DataStructures::RangeNode<RakNet::uint24_t> _>
+struct List<RakNet::RakNetGUID>
+{
+    struct RakNetGUID *listArray;
+    uint list_size;
+    uint allocation_size;
+};
+
+typedef struct List<RakNet::RakPeer::BanStruct *> List<RakNet::RakPeer::BanStruct *>, *PList<RakNet::RakPeer::BanStruct *>;
+
+struct List<RakNet::RakPeer::BanStruct *>
+{
+    struct BanStruct **listArray;
+    uint list_size;
+    uint allocation_size;
+};
+
+typedef struct Queue<bool> Queue<bool>, *PQueue<bool>;
+
+struct Queue<bool>
 {
 };
 
-typedef struct OrderedList<unsigned_short, RakNet::SplitPacketChannel_ *, &int___cdecl_RakNet::SplitPacketChannelComp(unsigned_short_const_ &, RakNet::SplitPacketChannel_ *_const_ &)> OrderedList<unsigned_short, RakNet::SplitPacketChannel_ *, &int___cdecl_RakNet::SplitPacketChannelComp(unsigned_short_const_ &, RakNet::SplitPacketChannel_ *_const_ &)>, *POrderedList<unsigned_short, RakNet::SplitPacketChannel_ *, &int___cdecl_RakNet::SplitPacketChannelComp(unsigned_short_const_ &, RakNet::SplitPacketChannel_ *_const_ &)>;
+typedef struct MemoryPool<RakNet::InternalPacket> MemoryPool<RakNet::InternalPacket>, *PMemoryPool<RakNet::InternalPacket>;
 
-struct OrderedList<unsigned_short, RakNet::SplitPacketChannel_ *, &int___cdecl_RakNet::SplitPacketChannelComp(unsigned_short_const_ &, RakNet::SplitPacketChannel_ *_const_ &)>
+struct MemoryPool<RakNet::InternalPacket>
 {
+};
+
+typedef struct MemoryPool<RakNet::RakPeer::SocketQueryOutput> MemoryPool<RakNet::RakPeer::SocketQueryOutput>, *PMemoryPool<RakNet::RakPeer::SocketQueryOutput>;
+
+// WARNING! conflicting data type names: /ois.pdb/DataStructures/MemoryPool<RakNet::RakPeer::SocketQueryOutput>/Page - /ois.pdb/DataStructures/MemoryPool<RakNet::Packet>/Page
+
+struct MemoryPool<RakNet::RakPeer::SocketQueryOutput>
+{
+    struct Page *availablePages;
+    struct Page *unavailablePages;
+    int availablePagesSize;
+    int unavailablePagesSize;
+    int memoryPoolPageSize;
 };
 
 typedef struct List<RakNet::RakString> List<RakNet::RakString>, *PList<RakNet::RakString>;
@@ -4724,95 +4588,9 @@ struct List<RakNet::RakString>
     uint allocation_size;
 };
 
-typedef struct Queue<HuffmanEncodingTreeNode_ *> Queue<HuffmanEncodingTreeNode_ *>, *PQueue<HuffmanEncodingTreeNode_ *>;
-
-struct Queue<HuffmanEncodingTreeNode_ *>
-{
-    struct HuffmanEncodingTreeNode **array;
-    uint head;
-    uint tail;
-    uint allocation_size;
-};
-
-typedef struct ThreadsafeAllocatingQueue<RakNet::RakPeer::SocketQueryOutput> ThreadsafeAllocatingQueue<RakNet::RakPeer::SocketQueryOutput>, *PThreadsafeAllocatingQueue<RakNet::RakPeer::SocketQueryOutput>;
-
-typedef struct MemoryPool<RakNet::RakPeer::SocketQueryOutput> MemoryPool<RakNet::RakPeer::SocketQueryOutput>, *PMemoryPool<RakNet::RakPeer::SocketQueryOutput>;
-
-typedef struct Queue<RakNet::RakPeer::SocketQueryOutput_ *> Queue<RakNet::RakPeer::SocketQueryOutput_ *>, *PQueue<RakNet::RakPeer::SocketQueryOutput_ *>;
-
-// WARNING! conflicting data type names: /ois.pdb/DataStructures/MemoryPool<RakNet::RakPeer::SocketQueryOutput>/Page - /ois.pdb/DataStructures/MemoryPool<RakNet::Packet>/Page
-
-struct Queue<RakNet::RakPeer::SocketQueryOutput_ *>
-{
-    struct SocketQueryOutput **array;
-    uint head;
-    uint tail;
-    uint allocation_size;
-};
-
-struct MemoryPool<RakNet::RakPeer::SocketQueryOutput>
-{
-    struct Page *availablePages;
-    struct Page *unavailablePages;
-    int availablePagesSize;
-    int unavailablePagesSize;
-    int memoryPoolPageSize;
-};
-
-struct ThreadsafeAllocatingQueue<RakNet::RakPeer::SocketQueryOutput>
-{
-    struct MemoryPool<RakNet::RakPeer::SocketQueryOutput> memoryPool;
-    struct SimpleMutex memoryPoolMutex;
-    struct Queue<RakNet::RakPeer::SocketQueryOutput_ *> queue;
-    struct SimpleMutex queueMutex;
-};
-
-typedef struct Heap<unsigned___int64, RakNet::InternalPacket_ *, 0> Heap<unsigned___int64, RakNet::InternalPacket_ *, 0>, *PHeap<unsigned___int64, RakNet::InternalPacket_ *, 0>;
-
-struct Heap<unsigned___int64, RakNet::InternalPacket_ *, 0>
-{
-};
-
-typedef struct MemoryPool<RakNet::InternalPacket> MemoryPool<RakNet::InternalPacket>, *PMemoryPool<RakNet::InternalPacket>;
-
-struct MemoryPool<RakNet::InternalPacket>
-{
-};
-
-typedef struct Queue<RakNet::RNS2RecvStruct_ *> Queue<RakNet::RNS2RecvStruct_ *>, *PQueue<RakNet::RNS2RecvStruct_ *>;
-
-struct Queue<RakNet::RNS2RecvStruct_ *>
-{
-    struct RNS2RecvStruct **array;
-    uint head;
-    uint tail;
-    uint allocation_size;
-};
-
-typedef struct List<RakNet::RakString::SharedString_ *> List<RakNet::RakString::SharedString_ *>, *PList<RakNet::RakString::SharedString_ *>;
-
-struct List<RakNet::RakString::SharedString_ *>
-{
-    struct SharedString **listArray;
-    uint list_size;
-    uint allocation_size;
-};
-
 typedef struct MemoryPool<RakNet::ReliabilityLayer::MessageNumberNode> MemoryPool<RakNet::ReliabilityLayer::MessageNumberNode>, *PMemoryPool<RakNet::ReliabilityLayer::MessageNumberNode>;
 
 struct MemoryPool<RakNet::ReliabilityLayer::MessageNumberNode>
-{
-};
-
-typedef struct List<RakNet::InternalPacket_ *> List<RakNet::InternalPacket_ *>, *PList<RakNet::InternalPacket_ *>;
-
-struct List<RakNet::InternalPacket_ *>
-{
-};
-
-typedef struct RangeNode<RakNet::uint24_t> RangeNode<RakNet::uint24_t>, *PRangeNode<RakNet::uint24_t>;
-
-struct RangeNode<RakNet::uint24_t>
 {
 };
 
@@ -4822,77 +4600,27 @@ struct List<bool>
 {
 };
 
-typedef struct Queue<RakNet::BPSTracker::TimeAndValue2> Queue<RakNet::BPSTracker::TimeAndValue2>, *PQueue<RakNet::BPSTracker::TimeAndValue2>;
+typedef struct RangeNode<RakNet::uint24_t> RangeNode<RakNet::uint24_t>, *PRangeNode<RakNet::uint24_t>;
 
-struct Queue<RakNet::BPSTracker::TimeAndValue2>
+struct RangeNode<RakNet::uint24_t>
 {
 };
 
-typedef struct List<RakNet::RakNetSocket2_ *> List<RakNet::RakNetSocket2_ *>, *PList<RakNet::RakNetSocket2_ *>;
+typedef struct Queue<RakNet::RakPeer::SocketQueryOutput *> Queue<RakNet::RakPeer::SocketQueryOutput *>, *PQueue<RakNet::RakPeer::SocketQueryOutput *>;
 
-struct List<RakNet::RakNetSocket2_ *>
+struct Queue<RakNet::RakPeer::SocketQueryOutput *>
 {
-    struct RakNetSocket2 **listArray;
-    uint list_size;
-    uint allocation_size;
-};
-
-typedef struct RangeList<RakNet::uint24_t> RangeList<RakNet::uint24_t>, *PRangeList<RakNet::uint24_t>;
-
-struct RangeList<RakNet::uint24_t>
-{
-    struct OrderedList<RakNet::uint24_t, DataStructures::RangeNode<RakNet::uint24_t>, &int___cdecl_DataStructures::RangeNodeComp<RakNet::uint24_t>(RakNet::uint24_t_const_ &, DataStructures::RangeNode<RakNet::uint24_t> _const_ &)> ranges;
-    undefined field1_0x1;
-    undefined field2_0x2;
-    undefined field3_0x3;
-    undefined field4_0x4;
-    undefined field5_0x5;
-    undefined field6_0x6;
-    undefined field7_0x7;
-    undefined field8_0x8;
-    undefined field9_0x9;
-    undefined field10_0xa;
-    undefined field11_0xb;
-};
-
-typedef struct Queue<RakNet::RakPeer::RequestedConnectionStruct_ *> Queue<RakNet::RakPeer::RequestedConnectionStruct_ *>, *PQueue<RakNet::RakPeer::RequestedConnectionStruct_ *>;
-
-struct Queue<RakNet::RakPeer::RequestedConnectionStruct_ *>
-{
-    struct RequestedConnectionStruct **array;
+    struct SocketQueryOutput **array;
     uint head;
     uint tail;
     uint allocation_size;
 };
 
-typedef struct List<RakNet::RakNetGUID> List<RakNet::RakNetGUID>, *PList<RakNet::RakNetGUID>;
+typedef struct List<RakNet::SplitPacketChannel *> List<RakNet::SplitPacketChannel *>, *PList<RakNet::SplitPacketChannel *>;
 
-struct List<RakNet::RakNetGUID>
-{
-    struct RakNetGUID *listArray;
-    uint list_size;
-    uint allocation_size;
-};
-
-typedef struct Queue<RakNet::ReliabilityLayer::DatagramHistoryNode> Queue<RakNet::ReliabilityLayer::DatagramHistoryNode>, *PQueue<RakNet::ReliabilityLayer::DatagramHistoryNode>;
-
-struct Queue<RakNet::ReliabilityLayer::DatagramHistoryNode>
+struct List<RakNet::SplitPacketChannel *>
 {
 };
-
-typedef struct List<RakNet::SplitPacketChannel_ *> List<RakNet::SplitPacketChannel_ *>, *PList<RakNet::SplitPacketChannel_ *>;
-
-struct List<RakNet::SplitPacketChannel_ *>
-{
-};
-
-typedef struct List<DataStructures::Heap<unsigned___int64, RakNet::InternalPacket_ *, 0>::HeapNode> List<DataStructures::Heap<unsigned___int64, RakNet::InternalPacket_ *, 0>::HeapNode>, *PList<DataStructures::Heap<unsigned___int64, RakNet::InternalPacket_ *, 0>::HeapNode>;
-
-struct List<DataStructures::Heap<unsigned___int64, RakNet::InternalPacket_ *, 0>::HeapNode>
-{
-};
-
-typedef struct ThreadsafeAllocatingQueue<RakNet::RakPeer::BufferedCommandStruct> ThreadsafeAllocatingQueue<RakNet::RakPeer::BufferedCommandStruct>, *PThreadsafeAllocatingQueue<RakNet::RakPeer::BufferedCommandStruct>;
 
 typedef struct MemoryPool<RakNet::RakPeer::BufferedCommandStruct> MemoryPool<RakNet::RakPeer::BufferedCommandStruct>, *PMemoryPool<RakNet::RakPeer::BufferedCommandStruct>;
 
@@ -4907,25 +4635,122 @@ struct MemoryPool<RakNet::RakPeer::BufferedCommandStruct>
     int memoryPoolPageSize;
 };
 
+typedef struct Queue<RakNet::BPSTracker::TimeAndValue2> Queue<RakNet::BPSTracker::TimeAndValue2>, *PQueue<RakNet::BPSTracker::TimeAndValue2>;
+
+struct Queue<RakNet::BPSTracker::TimeAndValue2>
+{
+};
+
+typedef struct Queue<RakNet::RNS2RecvStruct *> Queue<RakNet::RNS2RecvStruct *>, *PQueue<RakNet::RNS2RecvStruct *>;
+
+struct Queue<RakNet::RNS2RecvStruct *>
+{
+    struct RNS2RecvStruct **array;
+    uint head;
+    uint tail;
+    uint allocation_size;
+};
+
+typedef struct LinkedList<HuffmanEncodingTreeNode *> LinkedList<HuffmanEncodingTreeNode *>, *PLinkedList<HuffmanEncodingTreeNode *>;
+
+struct LinkedList<HuffmanEncodingTreeNode *>
+{
+    undefined field0_0x0;
+    undefined field1_0x1;
+    undefined field2_0x2;
+    undefined field3_0x3;
+    undefined field4_0x4;
+    undefined field5_0x5;
+    undefined field6_0x6;
+    undefined field7_0x7;
+    undefined field8_0x8;
+    undefined field9_0x9;
+    undefined field10_0xa;
+    undefined field11_0xb;
+};
+
+typedef struct ThreadsafeAllocatingQueue<RakNet::RakPeer::SocketQueryOutput> ThreadsafeAllocatingQueue<RakNet::RakPeer::SocketQueryOutput>, *PThreadsafeAllocatingQueue<RakNet::RakPeer::SocketQueryOutput>;
+
+struct ThreadsafeAllocatingQueue<RakNet::RakPeer::SocketQueryOutput>
+{
+    struct MemoryPool<RakNet::RakPeer::SocketQueryOutput> memoryPool;
+    struct SimpleMutex memoryPoolMutex;
+    struct Queue<RakNet::RakPeer::SocketQueryOutput *> queue;
+    struct SimpleMutex queueMutex;
+};
+
+typedef struct List<RakNet::RakString::SharedString *> List<RakNet::RakString::SharedString *>, *PList<RakNet::RakString::SharedString *>;
+
+struct List<RakNet::RakString::SharedString *>
+{
+    struct SharedString **listArray;
+    uint list_size;
+    uint allocation_size;
+};
+
+typedef struct Queue<RakNet::RakPeer::BufferedCommandStruct *> Queue<RakNet::RakPeer::BufferedCommandStruct *>, *PQueue<RakNet::RakPeer::BufferedCommandStruct *>;
+
+struct Queue<RakNet::RakPeer::BufferedCommandStruct *>
+{
+    struct BufferedCommandStruct **array;
+    uint head;
+    uint tail;
+    uint allocation_size;
+};
+
+typedef struct List<RakNet::InternalPacket *> List<RakNet::InternalPacket *>, *PList<RakNet::InternalPacket *>;
+
+struct List<RakNet::InternalPacket *>
+{
+};
+
+typedef struct List<DataStructures::Heap<unsigned__int64, RakNet::InternalPacket *, 0>::HeapNode> List<DataStructures::Heap<unsigned__int64, RakNet::InternalPacket *, 0>::HeapNode>, *PList<DataStructures::Heap<unsigned__int64, RakNet::InternalPacket *, 0>::HeapNode>;
+
+struct List<DataStructures::Heap<unsigned__int64, RakNet::InternalPacket *, 0>::HeapNode>
+{
+};
+
+typedef struct ThreadsafeAllocatingQueue<RakNet::RakPeer::BufferedCommandStruct> ThreadsafeAllocatingQueue<RakNet::RakPeer::BufferedCommandStruct>, *PThreadsafeAllocatingQueue<RakNet::RakPeer::BufferedCommandStruct>;
+
 struct ThreadsafeAllocatingQueue<RakNet::RakPeer::BufferedCommandStruct>
 {
     struct MemoryPool<RakNet::RakPeer::BufferedCommandStruct> memoryPool;
     struct SimpleMutex memoryPoolMutex;
-    struct Queue<RakNet::RakPeer::BufferedCommandStruct_ *> queue;
+    struct Queue<RakNet::RakPeer::BufferedCommandStruct *> queue;
     struct SimpleMutex queueMutex;
 };
 
-typedef struct Queue<bool> Queue<bool>, *PQueue<bool>;
+typedef struct Heap<unsigned__int64, RakNet::InternalPacket *, 0> Heap<unsigned__int64, RakNet::InternalPacket *, 0>, *PHeap<unsigned__int64, RakNet::InternalPacket *, 0>;
 
-struct Queue<bool>
+struct Heap<unsigned__int64, RakNet::InternalPacket *, 0>
 {
 };
 
-typedef struct CircularLinkedList<HuffmanEncodingTreeNode_ *> CircularLinkedList<HuffmanEncodingTreeNode_ *>, *PCircularLinkedList<HuffmanEncodingTreeNode_ *>;
+typedef struct Queue<HuffmanEncodingTreeNode *> Queue<HuffmanEncodingTreeNode *>, *PQueue<HuffmanEncodingTreeNode *>;
+
+struct Queue<HuffmanEncodingTreeNode *>
+{
+    struct HuffmanEncodingTreeNode **array;
+    uint head;
+    uint tail;
+    uint allocation_size;
+};
+
+typedef struct Queue<RakNet::RakPeer::RequestedConnectionStruct *> Queue<RakNet::RakPeer::RequestedConnectionStruct *>, *PQueue<RakNet::RakPeer::RequestedConnectionStruct *>;
+
+struct Queue<RakNet::RakPeer::RequestedConnectionStruct *>
+{
+    struct RequestedConnectionStruct **array;
+    uint head;
+    uint tail;
+    uint allocation_size;
+};
+
+typedef struct CircularLinkedList<HuffmanEncodingTreeNode *> CircularLinkedList<HuffmanEncodingTreeNode *>, *PCircularLinkedList<HuffmanEncodingTreeNode *>;
 
 typedef struct node node, *Pnode;
 
-struct CircularLinkedList<HuffmanEncodingTreeNode_ *>
+struct CircularLinkedList<HuffmanEncodingTreeNode *>
 {
     uint list_size;
     struct node *root;
@@ -4939,9 +4764,19 @@ struct node
     struct node *next;
 };
 
-typedef struct Queue<RakNet::InternalPacket_ *> Queue<RakNet::InternalPacket_ *>, *PQueue<RakNet::InternalPacket_ *>;
+typedef struct Map<RakNet::SystemAddress, DataStructures::ByteQueue *, &DataStructures::defaultMapKeyComparison<RakNet::SystemAddress>> Map<RakNet::SystemAddress, DataStructures::ByteQueue *, &DataStructures::defaultMapKeyComparison<RakNet::SystemAddress>>, *PMap<RakNet::SystemAddress, DataStructures::ByteQueue *, &DataStructures::defaultMapKeyComparison<RakNet::SystemAddress>>;
 
-struct Queue<RakNet::InternalPacket_ *>
+struct Map<RakNet::SystemAddress, DataStructures::ByteQueue *, &DataStructures::defaultMapKeyComparison<RakNet::SystemAddress>>
+{
+    struct OrderedList<RakNet::SystemAddress, DataStructures::Map<RakNet::SystemAddress, DataStructures::ByteQueue *, &DataStructures::defaultMapKeyComparison<RakNet::SystemAddress>>::MapNode, &DataStructures::Map<RakNet::SystemAddress, DataStructures::ByteQueue *, &DataStructures::defaultMapKeyComparison<RakNet::SystemAddress>>::NodeComparisonFunc> mapNodeList;
+    uint lastSearchIndex;
+    struct SystemAddress lastSearchKey;
+    bool lastSearchIndexValid;
+};
+
+typedef struct Queue<RakNet::ReliabilityLayer::DatagramHistoryNode> Queue<RakNet::ReliabilityLayer::DatagramHistoryNode>, *PQueue<RakNet::ReliabilityLayer::DatagramHistoryNode>;
+
+struct Queue<RakNet::ReliabilityLayer::DatagramHistoryNode>
 {
 };
 
@@ -4949,17 +4784,17 @@ struct Queue<RakNet::InternalPacket_ *>
 
 // WARNING! conflicting data type names: /ois.pdb/DataStructures/MemoryPool<RakNet::InternalPacketRefCountedData>/Page - /ois.pdb/DataStructures/MemoryPool<RakNet::Packet>/Page
 
-// WARNING! conflicting data type names: /ois.pdb/DataStructures/MemoryPool<RakNet::RakPeer::BufferedCommandStruct>/MemoryWithPage - /ois.pdb/DataStructures/MemoryPool<RakNet::Packet>/MemoryWithPage
-
 typedef struct HeapNode HeapNode, *PHeapNode;
 
 struct HeapNode
 {
-    ulong64 weight;
+    __uint64 weight;
     struct InternalPacket *data;
 };
 
-// WARNING! conflicting data type names: /ois.pdb/DataStructures/MemoryPool<RakNet::RemoteClient_*>/MemoryWithPage - /ois.pdb/DataStructures/MemoryPool<RakNet::Packet>/MemoryWithPage
+// WARNING! conflicting data type names: /ois.pdb/DataStructures/MemoryPool<RakNet::RemoteClient*>/MemoryWithPage - /ois.pdb/DataStructures/MemoryPool<RakNet::Packet>/MemoryWithPage
+
+// WARNING! conflicting data type names: /ois.pdb/DataStructures/MemoryPool<RakNet::RakPeer::BufferedCommandStruct>/MemoryWithPage - /ois.pdb/DataStructures/MemoryPool<RakNet::Packet>/MemoryWithPage
 
 // WARNING! conflicting data type names: /ois.pdb/DataStructures/MemoryPool<RakNet::InternalPacket>/MemoryWithPage - /ois.pdb/DataStructures/MemoryPool<RakNet::Packet>/MemoryWithPage
 
@@ -4974,48 +4809,6 @@ struct HeapNode
 // WARNING! conflicting data type names: /ois.pdb/DataStructures/MemoryPool<RakNet::ReliabilityLayer::MessageNumberNode>/Page - /ois.pdb/DataStructures/MemoryPool<RakNet::Packet>/Page
 
 // WARNING! conflicting data type names: /ois.pdb/DataStructures/MemoryPool<RakNet::RemoteSystemIndex>/MemoryWithPage - /ois.pdb/DataStructures/MemoryPool<RakNet::Packet>/MemoryWithPage
-
-// WARNING! conflicting data type names: /ois.pdb/!_module_typedefs_/d:\agent\_work\3\s\Intermediate\vctools\msvcrt.nativeproj_110336922\objr\x86\ehvecdtr.obj/TP_CALLBACK_ENVIRON_V3 - /ois.pdb/TP_CALLBACK_ENVIRON_V3
-
-// WARNING! conflicting data type names: /ois.pdb/!_module_typedefs_/d:\agent\_work\3\s\Intermediate\vctools\msvcrt.nativeproj_110336922\objr\x86\delete_array.obj/TP_CALLBACK_ENVIRON_V3 - /ois.pdb/TP_CALLBACK_ENVIRON_V3
-
-// WARNING! conflicting data type names: /ois.pdb/!_module_typedefs_/d:\agent\_work\3\s\Intermediate\vctools\msvcrt.nativeproj_110336922\objr\x86\ehvecctr.obj/constructor_type - /ois.pdb/constructor_type
-
-// WARNING! conflicting data type names: /ois.pdb/!_module_typedefs_/d:\agent\_work\3\s\Intermediate\vctools\msvcrt.nativeproj_110336922\objr\x86\tncleanup.obj/TP_CALLBACK_ENVIRON_V3 - /ois.pdb/TP_CALLBACK_ENVIRON_V3
-
-// WARNING! conflicting data type names: /ois.pdb/!_module_typedefs_/d:\agent\_work\3\s\Intermediate\vctools\msvcrt.nativeproj_110336922\objr\x86\exe_winmain.obj/TP_CALLBACK_ENVIRON_V3 - /ois.pdb/TP_CALLBACK_ENVIRON_V3
-
-// WARNING! conflicting data type names: /ois.pdb/!_module_typedefs_/d:\agent\_work\3\s\Intermediate\vctools\msvcrt.nativeproj_110336922\objr\x86\initializers.obj/TP_CALLBACK_ENVIRON_V3 - /ois.pdb/TP_CALLBACK_ENVIRON_V3
-
-// WARNING! conflicting data type names: /ois.pdb/!_module_typedefs_/d:\agent\_work\3\s\Intermediate\vctools\msvcrt.nativeproj_110336922\objr\x86\throw_bad_alloc.obj/TP_CALLBACK_ENVIRON_V3 - /ois.pdb/TP_CALLBACK_ENVIRON_V3
-
-// WARNING! conflicting data type names: /ois.pdb/!_module_typedefs_/d:\agent\_work\3\s\Intermediate\vctools\msvcrt.nativeproj_110336922\objr\x86\utility_desktop.obj/TP_CALLBACK_ENVIRON_V3 - /ois.pdb/TP_CALLBACK_ENVIRON_V3
-
-// WARNING! conflicting data type names: /ois.pdb/!_module_typedefs_/d:\agent\_work\3\s\Intermediate\vctools\msvcrt.nativeproj_110336922\objr\x86\delete_scalar.obj/TP_CALLBACK_ENVIRON_V3 - /ois.pdb/TP_CALLBACK_ENVIRON_V3
-
-// WARNING! conflicting data type names: /ois.pdb/!_module_typedefs_/d:\agent\_work\3\s\Intermediate\vctools\msvcrt.nativeproj_110336922\objr\x86\new_array.obj/TP_CALLBACK_ENVIRON_V3 - /ois.pdb/TP_CALLBACK_ENVIRON_V3
-
-// WARNING! conflicting data type names: /ois.pdb/!_module_typedefs_/d:\agent\_work\3\s\Intermediate\vctools\msvcrt.nativeproj_110336922\objr\x86\default_precision.obj/TP_CALLBACK_ENVIRON_V3 - /ois.pdb/TP_CALLBACK_ENVIRON_V3
-
-// WARNING! conflicting data type names: /ois.pdb/!_module_typedefs_/d:\agent\_work\3\s\Intermediate\vctools\msvcrt.nativeproj_110336922\objr\x86\new_scalar.obj/TP_CALLBACK_ENVIRON_V3 - /ois.pdb/TP_CALLBACK_ENVIRON_V3
-
-// WARNING! conflicting data type names: /ois.pdb/!_module_typedefs_/d:\agent\_work\3\s\Intermediate\vctools\msvcrt.nativeproj_110336922\objr\x86\delete_scalar_size.obj/TP_CALLBACK_ENVIRON_V3 - /ois.pdb/TP_CALLBACK_ENVIRON_V3
-
-// WARNING! conflicting data type names: /ois.pdb/!_module_typedefs_/d:\agent\_work\3\s\Intermediate\vctools\msvcrt.nativeproj_110336922\objr\x86\thread_safe_statics.obj/TP_CALLBACK_ENVIRON_V3 - /ois.pdb/TP_CALLBACK_ENVIRON_V3
-
-// WARNING! conflicting data type names: /ois.pdb/!_module_typedefs_/d:\agent\_work\3\s\Intermediate\vctools\msvcrt.nativeproj_110336922\objr\x86\new_scalar_nothrow.obj/TP_CALLBACK_ENVIRON_V3 - /ois.pdb/TP_CALLBACK_ENVIRON_V3
-
-// WARNING! conflicting data type names: /ois.pdb/!_module_typedefs_/d:\agent\_work\3\s\Intermediate\vctools\msvcrt.nativeproj_110336922\objr\x86\delete_scalar_nothrow.obj/TP_CALLBACK_ENVIRON_V3 - /ois.pdb/TP_CALLBACK_ENVIRON_V3
-
-// WARNING! conflicting data type names: /ois.pdb/!_module_typedefs_/d:\agent\_work\3\s\Intermediate\vctools\msvcrt.nativeproj_110336922\objr\x86\default_local_stdio_options.obj/TP_CALLBACK_ENVIRON_V3 - /ois.pdb/TP_CALLBACK_ENVIRON_V3
-
-// WARNING! conflicting data type names: /ois.pdb/!_module_typedefs_/d:\agent\_work\3\s\Intermediate\vctools\msvcrt.nativeproj_110336922\objr\x86\delete_array_size.obj/TP_CALLBACK_ENVIRON_V3 - /ois.pdb/TP_CALLBACK_ENVIRON_V3
-
-// WARNING! conflicting data type names: /ois.pdb/!_module_typedefs_/d:\agent\_work\3\s\Intermediate\vctools\msvcrt.nativeproj_110336922\objr\x86\tlssup.obj/TP_CALLBACK_ENVIRON_V3 - /ois.pdb/TP_CALLBACK_ENVIRON_V3
-
-// WARNING! conflicting data type names: /ois.pdb/!_module_typedefs_/d:\agent\_work\3\s\Intermediate\vctools\msvcrt.nativeproj_110336922\objr\x86\initsect.obj/TP_CALLBACK_ENVIRON_V3 - /ois.pdb/TP_CALLBACK_ENVIRON_V3
-
-// WARNING! conflicting data type names: /ois.pdb/!_module_typedefs_/d:\agent\_work\3\s\Intermediate\vctools\msvcrt.nativeproj_110336922\objr\x86\utility.obj/TP_CALLBACK_ENVIRON_V3 - /ois.pdb/TP_CALLBACK_ENVIRON_V3
 
 // WARNING! conflicting data type names: /WinDef.h/LPFILETIME - /ois.pdb/LPFILETIME
 
@@ -5063,8 +4856,6 @@ struct HWND__
 
 typedef HICON HCURSOR;
 
-// WARNING! conflicting data type names: /PE/IMAGE_OPTIONAL_HEADER32 - /ois.pdb/IMAGE_OPTIONAL_HEADER32
-
 typedef struct Var Var, *PVar;
 
 struct Var
@@ -5078,8 +4869,8 @@ typedef struct IMAGE_RESOURCE_DIRECTORY_ENTRY_NameStruct IMAGE_RESOURCE_DIRECTOR
 
 struct IMAGE_RESOURCE_DIRECTORY_ENTRY_NameStruct
 {
-    dword NameOffset;
-    dword NameIsString;
+    dword NameOffset : 31;
+    dword NameIsString : 1;
 };
 
 typedef struct IMAGE_THUNK_DATA32 IMAGE_THUNK_DATA32, *PIMAGE_THUNK_DATA32;
@@ -5110,52 +4901,7 @@ struct IMAGE_DEBUG_DIRECTORY
     dword PointerToRawData;
 };
 
-// WARNING! conflicting data type names: /PE/IMAGE_FILE_HEADER - /ois.pdb/IMAGE_FILE_HEADER
-
-typedef struct IMAGE_NT_HEADERS32 IMAGE_NT_HEADERS32, *PIMAGE_NT_HEADERS32;
-
-struct IMAGE_NT_HEADERS32
-{
-    char Signature[4];
-    struct IMAGE_FILE_HEADER FileHeader;
-    struct IMAGE_OPTIONAL_HEADER32 OptionalHeader;
-};
-
-typedef struct StringFileInfo StringFileInfo, *PStringFileInfo;
-
-struct StringFileInfo
-{
-    word wLength;
-    word wValueLength;
-    word wType;
-};
-
-typedef union IMAGE_RESOURCE_DIRECTORY_ENTRY IMAGE_RESOURCE_DIRECTORY_ENTRY, *PIMAGE_RESOURCE_DIRECTORY_ENTRY;
-
-typedef union IMAGE_RESOURCE_DIRECTORY_ENTRY_NameUnion IMAGE_RESOURCE_DIRECTORY_ENTRY_NameUnion, *PIMAGE_RESOURCE_DIRECTORY_ENTRY_NameUnion;
-
-union IMAGE_RESOURCE_DIRECTORY_ENTRY_NameUnion
-{
-    struct IMAGE_RESOURCE_DIRECTORY_ENTRY_NameStruct IMAGE_RESOURCE_DIRECTORY_ENTRY_NameStruct;
-    dword Name;
-    word Id;
-};
-
-union IMAGE_RESOURCE_DIRECTORY_ENTRY
-{
-    union IMAGE_RESOURCE_DIRECTORY_ENTRY_NameUnion NameUnion;
-    union IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryUnion DirectoryUnion;
-};
-
 // WARNING! conflicting data type names: /PE/StringTable - /ois.pdb/RakNet/StringTable
-
-typedef struct IMAGE_RESOURCE_DIR_STRING_U_18 IMAGE_RESOURCE_DIR_STRING_U_18, *PIMAGE_RESOURCE_DIR_STRING_U_18;
-
-struct IMAGE_RESOURCE_DIR_STRING_U_18
-{
-    word Length;
-    wchar16 NameString[9];
-};
 
 typedef struct IMAGE_SECTION_HEADER IMAGE_SECTION_HEADER, *PIMAGE_SECTION_HEADER;
 
@@ -5222,6 +4968,94 @@ struct IMAGE_SECTION_HEADER
     enum SectionFlags Characteristics;
 };
 
+// WARNING! conflicting data type names: /PE/IMAGE_DATA_DIRECTORY - /ois.pdb/IMAGE_DATA_DIRECTORY
+
+typedef struct IMAGE_RESOURCE_DATA_ENTRY IMAGE_RESOURCE_DATA_ENTRY, *PIMAGE_RESOURCE_DATA_ENTRY;
+
+struct IMAGE_RESOURCE_DATA_ENTRY
+{
+    dword OffsetToData;
+    dword Size;
+    dword CodePage;
+    dword Reserved;
+};
+
+typedef struct IMAGE_RESOURCE_DIRECTORY IMAGE_RESOURCE_DIRECTORY, *PIMAGE_RESOURCE_DIRECTORY;
+
+struct IMAGE_RESOURCE_DIRECTORY
+{
+    dword Characteristics;
+    dword TimeDateStamp;
+    word MajorVersion;
+    word MinorVersion;
+    word NumberOfNamedEntries;
+    word NumberOfIdEntries;
+};
+
+typedef struct IMAGE_DIRECTORY_ENTRY_EXPORT IMAGE_DIRECTORY_ENTRY_EXPORT, *PIMAGE_DIRECTORY_ENTRY_EXPORT;
+
+struct IMAGE_DIRECTORY_ENTRY_EXPORT
+{
+    dword Characteristics;
+    dword TimeDateStamp;
+    word MajorVersion;
+    word MinorVersion;
+    ImageBaseOffset32 Name;
+    dword Base;
+    dword NumberOfFunctions;
+    dword NumberOfNames;
+    ImageBaseOffset32 AddressOfFunctions;
+    ImageBaseOffset32 AddressOfNames;
+    ImageBaseOffset32 AddressOfNameOrdinals;
+};
+
+typedef union IMAGE_RESOURCE_DIRECTORY_ENTRY_NameUnion IMAGE_RESOURCE_DIRECTORY_ENTRY_NameUnion, *PIMAGE_RESOURCE_DIRECTORY_ENTRY_NameUnion;
+
+union IMAGE_RESOURCE_DIRECTORY_ENTRY_NameUnion
+{
+    struct IMAGE_RESOURCE_DIRECTORY_ENTRY_NameStruct IMAGE_RESOURCE_DIRECTORY_ENTRY_NameStruct;
+    dword Name;
+    word Id;
+};
+
+// WARNING! conflicting data type names: /PE/IMAGE_OPTIONAL_HEADER32 - /ois.pdb/IMAGE_OPTIONAL_HEADER32
+
+// WARNING! conflicting data type names: /PE/IMAGE_FILE_HEADER - /ois.pdb/IMAGE_FILE_HEADER
+
+typedef struct IMAGE_NT_HEADERS32 IMAGE_NT_HEADERS32, *PIMAGE_NT_HEADERS32;
+
+struct IMAGE_NT_HEADERS32
+{
+    char Signature[4];
+    struct IMAGE_FILE_HEADER FileHeader;
+    struct IMAGE_OPTIONAL_HEADER32 OptionalHeader;
+};
+
+typedef struct StringFileInfo StringFileInfo, *PStringFileInfo;
+
+struct StringFileInfo
+{
+    word wLength;
+    word wValueLength;
+    word wType;
+};
+
+typedef struct IMAGE_RESOURCE_DIRECTORY_ENTRY IMAGE_RESOURCE_DIRECTORY_ENTRY, *PIMAGE_RESOURCE_DIRECTORY_ENTRY;
+
+struct IMAGE_RESOURCE_DIRECTORY_ENTRY
+{
+    union IMAGE_RESOURCE_DIRECTORY_ENTRY_NameUnion NameUnion;
+    union IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryUnion DirectoryUnion;
+};
+
+typedef struct IMAGE_RESOURCE_DIR_STRING_U_18 IMAGE_RESOURCE_DIR_STRING_U_18, *PIMAGE_RESOURCE_DIR_STRING_U_18;
+
+struct IMAGE_RESOURCE_DIR_STRING_U_18
+{
+    word Length;
+    wchar16 NameString[9];
+};
+
 typedef struct VS_VERSION_INFO VS_VERSION_INFO, *PVS_VERSION_INFO;
 
 struct VS_VERSION_INFO
@@ -5243,16 +5077,12 @@ struct VS_VERSION_INFO
     dword FileTimestamp;
 };
 
-// WARNING! conflicting data type names: /PE/IMAGE_DATA_DIRECTORY - /ois.pdb/IMAGE_DATA_DIRECTORY
+typedef struct IMAGE_BASE_RELOCATION IMAGE_BASE_RELOCATION, *PIMAGE_BASE_RELOCATION;
 
-typedef struct IMAGE_RESOURCE_DATA_ENTRY IMAGE_RESOURCE_DATA_ENTRY, *PIMAGE_RESOURCE_DATA_ENTRY;
-
-struct IMAGE_RESOURCE_DATA_ENTRY
+struct IMAGE_BASE_RELOCATION
 {
-    dword OffsetToData;
-    dword Size;
-    dword CodePage;
-    dword Reserved;
+    dword VirtualAddress;
+    dword SizeOfBlock;
 };
 
 typedef struct VarFileInfo VarFileInfo, *PVarFileInfo;
@@ -5283,35 +5113,6 @@ typedef enum IMAGE_GUARD_FLAGS
     IMAGE_GUARD_CF_FUNCTION_TABLE_SIZE_MASK_4 = 1073741824,
     IMAGE_GUARD_CF_FUNCTION_TABLE_SIZE_MASK_8 = 2147483648
 } IMAGE_GUARD_FLAGS;
-
-typedef struct IMAGE_RESOURCE_DIRECTORY IMAGE_RESOURCE_DIRECTORY, *PIMAGE_RESOURCE_DIRECTORY;
-
-struct IMAGE_RESOURCE_DIRECTORY
-{
-    dword Characteristics;
-    dword TimeDateStamp;
-    word MajorVersion;
-    word MinorVersion;
-    word NumberOfNamedEntries;
-    word NumberOfIdEntries;
-};
-
-typedef struct IMAGE_DIRECTORY_ENTRY_EXPORT IMAGE_DIRECTORY_ENTRY_EXPORT, *PIMAGE_DIRECTORY_ENTRY_EXPORT;
-
-struct IMAGE_DIRECTORY_ENTRY_EXPORT
-{
-    dword Characteristics;
-    dword TimeDateStamp;
-    word MajorVersion;
-    word MinorVersion;
-    ImageBaseOffset32 Name;
-    dword Base;
-    dword NumberOfFunctions;
-    dword NumberOfNames;
-    ImageBaseOffset32 AddressOfFunctions;
-    ImageBaseOffset32 AddressOfNames;
-    ImageBaseOffset32 AddressOfNameOrdinals;
-};
 
 typedef struct StringInfo StringInfo, *PStringInfo;
 
@@ -5419,15 +5220,15 @@ struct Widget
 { // PlaceHolder Structure
 };
 
-typedef struct SystemManager SystemManager, *PSystemManager;
-
-struct SystemManager
-{ // PlaceHolder Structure
-};
-
 typedef struct PathNode PathNode, *PPathNode;
 
 struct PathNode
+{ // PlaceHolder Structure
+};
+
+typedef struct SystemManager SystemManager, *PSystemManager;
+
+struct SystemManager
 { // PlaceHolder Structure
 };
 
@@ -5503,6 +5304,12 @@ struct ButtonElement
 { // PlaceHolder Structure
 };
 
+typedef struct NSMSectorInfo NSMSectorInfo, *PNSMSectorInfo;
+
+struct NSMSectorInfo
+{ // PlaceHolder Structure
+};
+
 typedef struct ModuleSaleInstance ModuleSaleInstance, *PModuleSaleInstance;
 
 struct ModuleSaleInstance
@@ -5548,6 +5355,12 @@ struct SectorEditor
 typedef struct NavMarker NavMarker, *PNavMarker;
 
 struct NavMarker
+{ // PlaceHolder Structure
+};
+
+typedef struct InputOption InputOption, *PInputOption;
+
+struct InputOption
 { // PlaceHolder Structure
 };
 
@@ -5599,15 +5412,15 @@ struct HazardCategory
 { // PlaceHolder Structure
 };
 
-typedef struct SoundSpace SoundSpace, *PSoundSpace;
+typedef struct Menu Menu, *PMenu;
 
-struct SoundSpace
+struct Menu
 { // PlaceHolder Structure
 };
 
-typedef struct SensorData SensorData, *PSensorData;
+typedef struct SoundSpace SoundSpace, *PSoundSpace;
 
-struct SensorData
+struct SoundSpace
 { // PlaceHolder Structure
 };
 
@@ -5623,10 +5436,10 @@ struct Screen_Renderer
 { // PlaceHolder Structure
 };
 
-typedef struct bool_(__cdecl *&&)(class_Ship *, int, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>) bool_(__cdecl *&&)(class_Ship *, int, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>), *Pbool_(__cdecl *&&)(class_Ship *, int, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>);
+typedef struct SyntheticObject SyntheticObject, *PSyntheticObject;
 
-struct bool_(__cdecl *&&)(class_Ship *, int, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>){
-    // PlaceHolder Structure
+struct SyntheticObject
+{ // PlaceHolder Structure
 };
 
 typedef struct ServerShipState ServerShipState, *PServerShipState;
@@ -5671,15 +5484,9 @@ struct FlagManager
 { // PlaceHolder Structure
 };
 
-typedef struct NetworkServer NetworkServer, *PNetworkServer;
+typedef struct EmailDraft EmailDraft, *PEmailDraft;
 
-struct NetworkServer
-{ // PlaceHolder Structure
-};
-
-typedef struct NetworkData NetworkData, *PNetworkData;
-
-struct NetworkData
+struct EmailDraft
 { // PlaceHolder Structure
 };
 
@@ -5689,9 +5496,15 @@ struct BankEngine
 { // PlaceHolder Structure
 };
 
-typedef struct EmailDraft EmailDraft, *PEmailDraft;
+typedef struct NetworkData NetworkData, *PNetworkData;
 
-struct EmailDraft
+struct NetworkData
+{ // PlaceHolder Structure
+};
+
+typedef struct NetworkServer NetworkServer, *PNetworkServer;
+
+struct NetworkServer
 { // PlaceHolder Structure
 };
 
@@ -5719,6 +5532,12 @@ struct PrivateCommElement
 { // PlaceHolder Structure
 };
 
+typedef struct SensorData SensorData, *PSensorData;
+
+struct SensorData
+{ // PlaceHolder Structure
+};
+
 typedef struct Room Room, *PRoom;
 
 struct Room
@@ -5740,12 +5559,6 @@ struct ContractCommand
 typedef struct GameLogic GameLogic, *PGameLogic;
 
 struct GameLogic
-{ // PlaceHolder Structure
-};
-
-typedef struct InputOption InputOption, *PInputOption;
-
-struct InputOption
 { // PlaceHolder Structure
 };
 
@@ -5782,6 +5595,12 @@ struct GameCharacter
 typedef struct CounterMeasure CounterMeasure, *PCounterMeasure;
 
 struct CounterMeasure
+{ // PlaceHolder Structure
+};
+
+typedef struct MetaGameAction MetaGameAction, *PMetaGameAction;
+
+struct MetaGameAction
 { // PlaceHolder Structure
 };
 
@@ -5857,6 +5676,12 @@ struct Packet_SendMessage
 { // PlaceHolder Structure
 };
 
+typedef struct class_std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _(__cdecl *&&)(Ship *, int) class_std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _(__cdecl *&&)(Ship *, int), *Pclass_std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _(__cdecl *&&)(Ship *, int);
+
+struct class_std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _(__cdecl *&&)(Ship *, int)
+{ // PlaceHolder Structure
+};
+
 typedef struct WaveformPeak WaveformPeak, *PWaveformPeak;
 
 struct WaveformPeak
@@ -5881,6 +5706,12 @@ struct LiveMessage
 { // PlaceHolder Structure
 };
 
+typedef struct UIText UIText, *PUIText;
+
+struct UIText
+{ // PlaceHolder Structure
+};
+
 typedef struct Packet_HullState Packet_HullState, *PPacket_HullState;
 
 struct Packet_HullState
@@ -5899,21 +5730,9 @@ struct ContractClass
 { // PlaceHolder Structure
 };
 
-typedef struct Menu Menu, *PMenu;
-
-struct Menu
-{ // PlaceHolder Structure
-};
-
 typedef struct Packet_SyncValueNumerical Packet_SyncValueNumerical, *PPacket_SyncValueNumerical;
 
 struct Packet_SyncValueNumerical
-{ // PlaceHolder Structure
-};
-
-typedef struct Sector Sector, *PSector;
-
-struct Sector
 { // PlaceHolder Structure
 };
 
@@ -5923,21 +5742,15 @@ struct ShipSyncNode
 { // PlaceHolder Structure
 };
 
-typedef struct FogInstance FogInstance, *PFogInstance;
+typedef struct Sector Sector, *PSector;
 
-struct FogInstance
+struct Sector
 { // PlaceHolder Structure
 };
 
 typedef struct BountyClass BountyClass, *PBountyClass;
 
 struct BountyClass
-{ // PlaceHolder Structure
-};
-
-typedef struct ScreenElement ScreenElement, *PScreenElement;
-
-struct ScreenElement
 { // PlaceHolder Structure
 };
 
@@ -5953,9 +5766,9 @@ struct ConversationOption
 { // PlaceHolder Structure
 };
 
-typedef struct class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _(__cdecl *&&)(class_Ship *, int) class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _(__cdecl *&&)(class_Ship *, int), *Pclass_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _(__cdecl *&&)(class_Ship *, int);
+typedef struct Command Command, *PCommand;
 
-struct class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _(__cdecl *&&)(class_Ship *, int)
+struct Command
 { // PlaceHolder Structure
 };
 
@@ -6007,15 +5820,15 @@ struct PlayerGuidedToPort
 { // PlaceHolder Structure
 };
 
-typedef struct BootElement BootElement, *PBootElement;
-
-struct BootElement
-{ // PlaceHolder Structure
-};
-
 typedef struct SoundLet SoundLet, *PSoundLet;
 
 struct SoundLet
+{ // PlaceHolder Structure
+};
+
+typedef struct BootElement BootElement, *PBootElement;
+
+struct BootElement
 { // PlaceHolder Structure
 };
 
@@ -6046,6 +5859,12 @@ struct ConsoleDamage
 typedef struct Packet_SetClientInfo Packet_SetClientInfo, *PPacket_SetClientInfo;
 
 struct Packet_SetClientInfo
+{ // PlaceHolder Structure
+};
+
+typedef struct UpgradeCommand UpgradeCommand, *PUpgradeCommand;
+
+struct UpgradeCommand
 { // PlaceHolder Structure
 };
 
@@ -6127,12 +5946,6 @@ struct Structure
 { // PlaceHolder Structure
 };
 
-typedef struct RoomCharacter RoomCharacter, *PRoomCharacter;
-
-struct RoomCharacter
-{ // PlaceHolder Structure
-};
-
 typedef struct UserStatsStored_t UserStatsStored_t, *PUserStatsStored_t;
 
 struct UserStatsStored_t
@@ -6148,12 +5961,6 @@ struct InputCommand
 typedef struct StateModifier StateModifier, *PStateModifier;
 
 struct StateModifier
-{ // PlaceHolder Structure
-};
-
-typedef struct MetaGameAction MetaGameAction, *PMetaGameAction;
-
-struct MetaGameAction
 { // PlaceHolder Structure
 };
 
@@ -6181,9 +5988,21 @@ struct NotesManager
 { // PlaceHolder Structure
 };
 
+typedef struct FogInstance FogInstance, *PFogInstance;
+
+struct FogInstance
+{ // PlaceHolder Structure
+};
+
 typedef struct SaveMetaData SaveMetaData, *PSaveMetaData;
 
 struct SaveMetaData
+{ // PlaceHolder Structure
+};
+
+typedef struct AnimationFrames AnimationFrames, *PAnimationFrames;
+
+struct AnimationFrames
 { // PlaceHolder Structure
 };
 
@@ -6196,12 +6015,6 @@ struct ListData
 typedef struct ContractManager ContractManager, *PContractManager;
 
 struct ContractManager
-{ // PlaceHolder Structure
-};
-
-typedef struct Pool<struct_PathRequest> Pool<struct_PathRequest>, *PPool<struct_PathRequest>;
-
-struct Pool<struct_PathRequest>
 { // PlaceHolder Structure
 };
 
@@ -6345,13 +6158,25 @@ struct ShipModuleClass
 { // PlaceHolder Structure
 };
 
+typedef struct WeaponCommand WeaponCommand, *PWeaponCommand;
+
+struct WeaponCommand
+{ // PlaceHolder Structure
+};
+
+typedef struct HullDamageChance HullDamageChance, *PHullDamageChance;
+
+struct HullDamageChance
+{ // PlaceHolder Structure
+};
+
 typedef struct ConversationElement ConversationElement, *PConversationElement;
 
 struct ConversationElement
 { // PlaceHolder Structure
 };
 
-typedef dword std::nullptr_t;
+typedef undefined std::nullptr_t;
 
 typedef struct TerminalEngine TerminalEngine, *PTerminalEngine;
 
@@ -6401,6 +6226,12 @@ struct Scenario
 { // PlaceHolder Structure
 };
 
+typedef struct bool_(__cdecl *&&)(Ship *, int, std::basic_string<char, std::char_traits<char>, std::allocator<char> _>) bool_(__cdecl *&&)(Ship *, int, std::basic_string<char, std::char_traits<char>, std::allocator<char> _>), *Pbool_(__cdecl *&&)(Ship *, int, std::basic_string<char, std::char_traits<char>, std::allocator<char> _>);
+
+struct bool_(__cdecl *&&)(Ship *, int, std::basic_string<char, std::char_traits<char>, std::allocator<char> _>){
+    // PlaceHolder Structure
+};
+
 typedef struct HullStrength HullStrength, *PHullStrength;
 
 struct HullStrength
@@ -6447,6 +6278,18 @@ struct<lambda_f4fd5ca79072ce85a36b5022cfb0e6d1>
 { // PlaceHolder Structure
 };
 
+typedef struct JumpPoint JumpPoint, *PJumpPoint;
+
+struct JumpPoint
+{ // PlaceHolder Structure
+};
+
+typedef struct Pool<PathNode> Pool<PathNode>, *PPool<PathNode>;
+
+struct Pool<PathNode>
+{ // PlaceHolder Structure
+};
+
 typedef struct PrivateCommsManager PrivateCommsManager, *PPrivateCommsManager;
 
 struct PrivateCommsManager
@@ -6489,12 +6332,6 @@ struct ShipInstance
 { // PlaceHolder Structure
 };
 
-typedef struct ServerMenu ServerMenu, *PServerMenu;
-
-struct ServerMenu
-{ // PlaceHolder Structure
-};
-
 typedef struct PrivateComm PrivateComm, *PPrivateComm;
 
 struct PrivateComm
@@ -6528,6 +6365,12 @@ struct Passenger
 typedef struct CargoPod CargoPod, *PCargoPod;
 
 struct CargoPod
+{ // PlaceHolder Structure
+};
+
+typedef struct ServerMenu ServerMenu, *PServerMenu;
+
+struct ServerMenu
 { // PlaceHolder Structure
 };
 
@@ -6669,6 +6512,12 @@ struct CommsCommand
 { // PlaceHolder Structure
 };
 
+typedef struct RoomCharacter RoomCharacter, *PRoomCharacter;
+
+struct RoomCharacter
+{ // PlaceHolder Structure
+};
+
 typedef struct CharacterAnimationManager CharacterAnimationManager, *PCharacterAnimationManager;
 
 struct CharacterAnimationManager
@@ -6678,12 +6527,6 @@ struct CharacterAnimationManager
 typedef struct GLContextAttrs GLContextAttrs, *PGLContextAttrs;
 
 struct GLContextAttrs
-{ // PlaceHolder Structure
-};
-
-typedef struct Message Message, *PMessage;
-
-struct Message
 { // PlaceHolder Structure
 };
 
@@ -6699,9 +6542,9 @@ struct ScreenData
 { // PlaceHolder Structure
 };
 
-typedef struct Pool<class_PathNode> Pool<class_PathNode>, *PPool<class_PathNode>;
+typedef struct Message Message, *PMessage;
 
-struct Pool<class_PathNode>
+struct Message
 { // PlaceHolder Structure
 };
 
@@ -6789,33 +6632,45 @@ typedef enum ComponentCategory
 {
 } ComponentCategory;
 
-typedef struct _Func_base<void> _Func_base<void>, *P_Func_base<void>;
+typedef struct map<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, float, std::less<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _>, std::allocator<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, float> _> _> map<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, float, std::less<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _>, std::allocator<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, float> _> _>, *Pmap<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, float, std::less<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _>, std::allocator<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, float> _> _>;
 
-struct _Func_base<void>
+struct map<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, float, std::less<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _>, std::allocator<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, float> _> _>
 { // PlaceHolder Structure
 };
 
-typedef struct vector<class_Waypoint, class_std::allocator<class_Waypoint> _> vector<class_Waypoint, class_std::allocator<class_Waypoint> _>, *Pvector<class_Waypoint, class_std::allocator<class_Waypoint> _>;
+typedef struct allocator<InputCommand> allocator<InputCommand>, *Pallocator<InputCommand>;
 
-struct vector<class_Waypoint, class_std::allocator<class_Waypoint> _>
+struct allocator<InputCommand>
 { // PlaceHolder Structure
 };
 
-typedef struct _Tree_comp_alloc<class_std::_Tmap_traits<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, struct_std::less<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, class_std::allocator<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>, 0> _> _Tree_comp_alloc<class_std::_Tmap_traits<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, struct_std::less<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, class_std::allocator<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>, 0> _>, *P_Tree_comp_alloc<class_std::_Tmap_traits<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, struct_std::less<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, class_std::allocator<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>, 0> _>;
+typedef struct allocator<BootElement> allocator<BootElement>, *Pallocator<BootElement>;
 
-struct _Tree_comp_alloc<class_std::_Tmap_traits<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, struct_std::less<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, class_std::allocator<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>, 0> _>
+struct allocator<BootElement>
 { // PlaceHolder Structure
 };
 
-typedef struct _Binder<struct_std::_Unforced, void_ (__thiscall_Screen_TradeTerminal::*)(class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>), class_Screen_TradeTerminal *, struct_std::_Ph<1> _const &, struct_std::_Ph<2> _const &> _Binder<struct_std::_Unforced, void_ (__thiscall_Screen_TradeTerminal::*)(class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>), class_Screen_TradeTerminal *, struct_std::_Ph<1> _const &, struct_std::_Ph<2> _const &>, *P_Binder<struct_std::_Unforced, void_ (__thiscall_Screen_TradeTerminal::*)(class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>), class_Screen_TradeTerminal *, struct_std::_Ph<1> _const &, struct_std::_Ph<2> _const &>;
+typedef struct _Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, bool> _> _> _> _Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, bool> _> _> _>, *P_Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, bool> _> _> _>;
 
-struct _Binder<struct_std::_Unforced, void_ (__thiscall_Screen_TradeTerminal::*)(class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>), class_Screen_TradeTerminal *, struct_std::_Ph<1> _const &, struct_std::_Ph<2> _const &>
+struct _Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, bool> _> _> _>
 { // PlaceHolder Structure
 };
 
-typedef struct vector<struct_Destination, class_std::allocator<struct_Destination> _> vector<struct_Destination, class_std::allocator<struct_Destination> _>, *Pvector<struct_Destination, class_std::allocator<struct_Destination> _>;
+typedef struct _Func_class<bool, Ship *, double, double, double> _Func_class<bool, Ship *, double, double, double>, *P_Func_class<bool, Ship *, double, double, double>;
 
-struct vector<struct_Destination, class_std::allocator<struct_Destination> _>
+struct _Func_class<bool, Ship *, double, double, double>
+{ // PlaceHolder Structure
+};
+
+typedef struct pair<cocos2d::EventKeyboard::KeyCode_const_, char> pair<cocos2d::EventKeyboard::KeyCode_const_, char>, *Ppair<cocos2d::EventKeyboard::KeyCode_const_, char>;
+
+struct pair<cocos2d::EventKeyboard::KeyCode_const_, char>
+{ // PlaceHolder Structure
+};
+
+typedef struct pair<std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, bool> _> _> _>, bool> pair<std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, bool> _> _> _>, bool>, *Ppair<std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, bool> _> _> _>, bool>;
+
+struct pair<std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, bool> _> _> _>, bool>
 { // PlaceHolder Structure
 };
 
@@ -6825,33 +6680,1053 @@ struct _Tree_node<class_PathNode *, void *>
 { // PlaceHolder Structure
 };
 
-typedef struct allocator<class_NavMarker> allocator<class_NavMarker>, *Pallocator<class_NavMarker>;
+typedef struct vector<HullDamageChance, std::allocator<HullDamageChance> _> vector<HullDamageChance, std::allocator<HullDamageChance> _>, *Pvector<HullDamageChance, std::allocator<HullDamageChance> _>;
 
-struct allocator<class_NavMarker>
+struct vector<HullDamageChance, std::allocator<HullDamageChance> _>
 { // PlaceHolder Structure
 };
 
-typedef struct pair<enum_cocos2d::EventKeyboard::KeyCode_const_, char> pair<enum_cocos2d::EventKeyboard::KeyCode_const_, char>, *Ppair<enum_cocos2d::EventKeyboard::KeyCode_const_, char>;
+typedef struct allocator<ListData> allocator<ListData>, *Pallocator<ListData>;
 
-struct pair<enum_cocos2d::EventKeyboard::KeyCode_const_, char>
+struct allocator<ListData>
 { // PlaceHolder Structure
 };
 
-typedef struct allocator<struct_Selectable> allocator<struct_Selectable>, *Pallocator<struct_Selectable>;
+typedef struct vector<cocos2d::Touch *, std::allocator<cocos2d::Touch *> _> vector<cocos2d::Touch *, std::allocator<cocos2d::Touch *> _>, *Pvector<cocos2d::Touch *, std::allocator<cocos2d::Touch *> _>;
 
-struct allocator<struct_Selectable>
+struct vector<cocos2d::Touch *, std::allocator<cocos2d::Touch *> _>
 { // PlaceHolder Structure
 };
 
-typedef struct allocator<class_PrivateCommElement> allocator<class_PrivateCommElement>, *Pallocator<class_PrivateCommElement>;
+typedef struct tuple<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> &&> tuple<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> &&>, *Ptuple<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> &&>;
 
-struct allocator<class_PrivateCommElement>
+struct tuple<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> &&>
 { // PlaceHolder Structure
 };
 
-typedef struct allocator<struct_InputCommand> allocator<struct_InputCommand>, *Pallocator<struct_InputCommand>;
+typedef struct map<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, int, std::less<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _>, std::allocator<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, int> _> _> map<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, int, std::less<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _>, std::allocator<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, int> _> _>, *Pmap<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, int, std::less<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _>, std::allocator<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, int> _> _>;
 
-struct allocator<struct_InputCommand>
+struct map<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, int, std::less<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _>, std::allocator<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, int> _> _>
+{ // PlaceHolder Structure
+};
+
+typedef struct _Uninitialized_backout_al<CommsCommand *, std::allocator<CommsCommand> _> _Uninitialized_backout_al<CommsCommand *, std::allocator<CommsCommand> _>, *P_Uninitialized_backout_al<CommsCommand *, std::allocator<CommsCommand> _>;
+
+struct _Uninitialized_backout_al<CommsCommand *, std::allocator<CommsCommand> _>
+{ // PlaceHolder Structure
+};
+
+typedef struct vector<CommsCommand, std::allocator<CommsCommand> _> vector<CommsCommand, std::allocator<CommsCommand> _>, *Pvector<CommsCommand, std::allocator<CommsCommand> _>;
+
+struct vector<CommsCommand, std::allocator<CommsCommand> _>
+{ // PlaceHolder Structure
+};
+
+typedef struct _Func_base<void, cocos2d::EventKeyboard::KeyCode, cocos2d::Event *> _Func_base<void, cocos2d::EventKeyboard::KeyCode, cocos2d::Event *>, *P_Func_base<void, cocos2d::EventKeyboard::KeyCode, cocos2d::Event *>;
+
+struct _Func_base<void, cocos2d::EventKeyboard::KeyCode, cocos2d::Event *>
+{ // PlaceHolder Structure
+};
+
+typedef struct vector<cocos2d::Vec2, std::allocator<cocos2d::Vec2> _> vector<cocos2d::Vec2, std::allocator<cocos2d::Vec2> _>, *Pvector<cocos2d::Vec2, std::allocator<cocos2d::Vec2> _>;
+
+struct vector<cocos2d::Vec2, std::allocator<cocos2d::Vec2> _>
+{ // PlaceHolder Structure
+};
+
+typedef struct _String_iterator<std::_String_val<std::_Simple_types<char> _> _> _String_iterator<std::_String_val<std::_Simple_types<char> _> _>, *P_String_iterator<std::_String_val<std::_Simple_types<char> _> _>;
+
+struct _String_iterator<std::_String_val<std::_Simple_types<char> _> _>
+{ // PlaceHolder Structure
+};
+
+typedef struct vector<WaveformPeak, std::allocator<WaveformPeak> _> vector<WaveformPeak, std::allocator<WaveformPeak> _>, *Pvector<WaveformPeak, std::allocator<WaveformPeak> _>;
+
+struct vector<WaveformPeak, std::allocator<WaveformPeak> _>
+{ // PlaceHolder Structure
+};
+
+typedef struct _Tree_node<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _>, void *> _Tree_node<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _>, void *>, *P_Tree_node<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _>, void *>;
+
+struct _Tree_node<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _>, void *>
+{ // PlaceHolder Structure
+};
+
+typedef struct _Tree_comp_alloc<std::_Tmap_traits<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, std::less<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _>, std::allocator<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>, 0> _> _Tree_comp_alloc<std::_Tmap_traits<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, std::less<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _>, std::allocator<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>, 0> _>, *P_Tree_comp_alloc<std::_Tmap_traits<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, std::less<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _>, std::allocator<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>, 0> _>;
+
+struct _Tree_comp_alloc<std::_Tmap_traits<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, std::less<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _>, std::allocator<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>, 0> _>
+{ // PlaceHolder Structure
+};
+
+typedef struct _Func_base<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, Ship *, int> _Func_base<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, Ship *, int>, *P_Func_base<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, Ship *, int>;
+
+struct _Func_base<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, Ship *, int>
+{ // PlaceHolder Structure
+};
+
+typedef struct _Binder<std::_Unforced, void_ (__thiscall_Screen_UpgradeTerminal::*)(void), Screen_UpgradeTerminal *> _Binder<std::_Unforced, void_ (__thiscall_Screen_UpgradeTerminal::*)(void), Screen_UpgradeTerminal *>, *P_Binder<std::_Unforced, void_ (__thiscall_Screen_UpgradeTerminal::*)(void), Screen_UpgradeTerminal *>;
+
+struct _Binder<std::_Unforced, void_ (__thiscall_Screen_UpgradeTerminal::*)(void), Screen_UpgradeTerminal *>
+{ // PlaceHolder Structure
+};
+
+typedef struct _Tree_comp_alloc<std::_Tmap_traits<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, int, std::less<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _>, std::allocator<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, int> _>, 0> _> _Tree_comp_alloc<std::_Tmap_traits<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, int, std::less<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _>, std::allocator<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, int> _>, 0> _>, *P_Tree_comp_alloc<std::_Tmap_traits<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, int, std::less<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _>, std::allocator<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, int> _>, 0> _>;
+
+struct _Tree_comp_alloc<std::_Tmap_traits<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, int, std::less<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _>, std::allocator<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, int> _>, 0> _>
+{ // PlaceHolder Structure
+};
+
+typedef struct _String_iterator<class_std::_String_val<struct_std::_Simple_types<char> _> _> _String_iterator<class_std::_String_val<struct_std::_Simple_types<char> _> _>, *P_String_iterator<class_std::_String_val<struct_std::_Simple_types<char> _> _>;
+
+struct _String_iterator<class_std::_String_val<struct_std::_Simple_types<char> _> _>
+{ // PlaceHolder Structure
+};
+
+typedef struct _Vector_const_iterator<std::_Vector_val<std::_Simple_types<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _> _Vector_const_iterator<std::_Vector_val<std::_Simple_types<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _>, *P_Vector_const_iterator<std::_Vector_val<std::_Simple_types<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _>;
+
+struct _Vector_const_iterator<std::_Vector_val<std::_Simple_types<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _>
+{ // PlaceHolder Structure
+};
+
+typedef struct _Binder<std::_Unforced, void_ (__thiscall_PresentationInterface::*)(cocos2d::Event *), PresentationInterface *, std::_Ph<1> _const &> _Binder<std::_Unforced, void_ (__thiscall_PresentationInterface::*)(cocos2d::Event *), PresentationInterface *, std::_Ph<1> _const &>, *P_Binder<std::_Unforced, void_ (__thiscall_PresentationInterface::*)(cocos2d::Event *), PresentationInterface *, std::_Ph<1> _const &>;
+
+struct _Binder<std::_Unforced, void_ (__thiscall_PresentationInterface::*)(cocos2d::Event *), PresentationInterface *, std::_Ph<1> _const &>
+{ // PlaceHolder Structure
+};
+
+typedef struct _Compressed_pair<std::allocator<char>, std::_String_val<std::_Simple_types<char> _>, 1> _Compressed_pair<std::allocator<char>, std::_String_val<std::_Simple_types<char> _>, 1>, *P_Compressed_pair<std::allocator<char>, std::_String_val<std::_Simple_types<char> _>, 1>;
+
+struct _Compressed_pair<std::allocator<char>, std::_String_val<std::_Simple_types<char> _>, 1>
+{ // PlaceHolder Structure
+};
+
+typedef struct function<void___cdecl(class_cocos2d::EventMouse *)> function<void___cdecl(class_cocos2d::EventMouse *)>, *Pfunction<void___cdecl(class_cocos2d::EventMouse *)>;
+
+struct function<void___cdecl(class_cocos2d::EventMouse *)>
+{ // PlaceHolder Structure
+};
+
+typedef struct function<class_std::basic_string<char, std::char_traits<char>, std::allocator<char> _> ___cdecl(Ship *, int)> function<class_std::basic_string<char, std::char_traits<char>, std::allocator<char> _> ___cdecl(Ship *, int)>, *Pfunction<class_std::basic_string<char, std::char_traits<char>, std::allocator<char> _> ___cdecl(Ship *, int)>;
+
+struct function<class_std::basic_string<char, std::char_traits<char>, std::allocator<char> _> ___cdecl(Ship *, int)>
+{ // PlaceHolder Structure
+};
+
+typedef struct _Tree_node<PathNode *, void *> _Tree_node<PathNode *, void *>, *P_Tree_node<PathNode *, void *>;
+
+struct _Tree_node<PathNode *, void *>
+{ // PlaceHolder Structure
+};
+
+typedef struct _Binder<std::_Unforced, void_ (__thiscall_Screen_Terminal::*)(std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>), Screen_Terminal *, std::_Ph<1> _const &, std::_Ph<2> _const &> _Binder<std::_Unforced, void_ (__thiscall_Screen_Terminal::*)(std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>), Screen_Terminal *, std::_Ph<1> _const &, std::_Ph<2> _const &>, *P_Binder<std::_Unforced, void_ (__thiscall_Screen_Terminal::*)(std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>), Screen_Terminal *, std::_Ph<1> _const &, std::_Ph<2> _const &>;
+
+struct _Binder<std::_Unforced, void_ (__thiscall_Screen_Terminal::*)(std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>), Screen_Terminal *, std::_Ph<1> _const &, std::_Ph<2> _const &>
+{ // PlaceHolder Structure
+};
+
+typedef struct function<bool___cdecl(Ship *, int, std::basic_string<char, std::char_traits<char>, std::allocator<char> _>)> function<bool___cdecl(Ship *, int, std::basic_string<char, std::char_traits<char>, std::allocator<char> _>)>, *Pfunction<bool___cdecl(Ship *, int, std::basic_string<char, std::char_traits<char>, std::allocator<char> _>)>;
+
+struct function<bool___cdecl(Ship *, int, std::basic_string<char, std::char_traits<char>, std::allocator<char> _>)>
+{ // PlaceHolder Structure
+};
+
+typedef struct vector<class_MusicTrack *, class_std::allocator<class_MusicTrack *> _> vector<class_MusicTrack *, class_std::allocator<class_MusicTrack *> _>, *Pvector<class_MusicTrack *, class_std::allocator<class_MusicTrack *> _>;
+
+struct vector<class_MusicTrack *, class_std::allocator<class_MusicTrack *> _>
+{ // PlaceHolder Structure
+};
+
+typedef struct vector<EDifficultyMode::DifficultyMode, std::allocator<EDifficultyMode::DifficultyMode> _> vector<EDifficultyMode::DifficultyMode, std::allocator<EDifficultyMode::DifficultyMode> _>, *Pvector<EDifficultyMode::DifficultyMode, std::allocator<EDifficultyMode::DifficultyMode> _>;
+
+struct vector<EDifficultyMode::DifficultyMode, std::allocator<EDifficultyMode::DifficultyMode> _>
+{ // PlaceHolder Structure
+};
+
+typedef struct _Tree_node<std::pair<int_const_, int>, void *> _Tree_node<std::pair<int_const_, int>, void *>, *P_Tree_node<std::pair<int_const_, int>, void *>;
+
+struct _Tree_node<std::pair<int_const_, int>, void *>
+{ // PlaceHolder Structure
+};
+
+typedef struct allocator<Shop> allocator<Shop>, *Pallocator<Shop>;
+
+struct allocator<Shop>
+{ // PlaceHolder Structure
+};
+
+typedef struct _Binder<std::_Unforced, void_ (__thiscall_Screen_ContractTerminal::*)(void), Screen_ContractTerminal *> _Binder<std::_Unforced, void_ (__thiscall_Screen_ContractTerminal::*)(void), Screen_ContractTerminal *>, *P_Binder<std::_Unforced, void_ (__thiscall_Screen_ContractTerminal::*)(void), Screen_ContractTerminal *>;
+
+struct _Binder<std::_Unforced, void_ (__thiscall_Screen_ContractTerminal::*)(void), Screen_ContractTerminal *>
+{ // PlaceHolder Structure
+};
+
+typedef struct pair<std::_Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<int_const_, FogInstance *> _> _> _>, std::_Tree_const_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<int_const_, class_FogInstance *> _> _> _> _> pair<std::_Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<int_const_, FogInstance *> _> _> _>, std::_Tree_const_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<int_const_, class_FogInstance *> _> _> _> _>, *Ppair<std::_Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<int_const_, FogInstance *> _> _> _>, std::_Tree_const_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<int_const_, class_FogInstance *> _> _> _> _>;
+
+struct pair<std::_Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<int_const_, FogInstance *> _> _> _>, std::_Tree_const_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<int_const_, class_FogInstance *> _> _> _> _>
+{ // PlaceHolder Structure
+};
+
+typedef struct _Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<int_const_, std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _> _> _Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<int_const_, std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _> _>, *P_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<int_const_, std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _> _>;
+
+struct _Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<int_const_, std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _> _>
+{ // PlaceHolder Structure
+};
+
+typedef struct _Tree_node<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, void *> _Tree_node<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, void *>, *P_Tree_node<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, void *>;
+
+struct _Tree_node<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, void *>
+{ // PlaceHolder Structure
+};
+
+typedef struct _Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _> _> _Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _> _>, *P_Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _> _>;
+
+struct _Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _> _>
+{ // PlaceHolder Structure
+};
+
+typedef struct function<void___cdecl(enum_cocos2d::EventKeyboard::KeyCode, class_cocos2d::Event *)> function<void___cdecl(enum_cocos2d::EventKeyboard::KeyCode, class_cocos2d::Event *)>, *Pfunction<void___cdecl(enum_cocos2d::EventKeyboard::KeyCode, class_cocos2d::Event *)>;
+
+struct function<void___cdecl(enum_cocos2d::EventKeyboard::KeyCode, class_cocos2d::Event *)>
+{ // PlaceHolder Structure
+};
+
+typedef struct _Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<cocos2d::EventKeyboard::KeyCode_const_, char> _> _> _> _Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<cocos2d::EventKeyboard::KeyCode_const_, char> _> _> _>, *P_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<cocos2d::EventKeyboard::KeyCode_const_, char> _> _> _>;
+
+struct _Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<cocos2d::EventKeyboard::KeyCode_const_, char> _> _> _>
+{ // PlaceHolder Structure
+};
+
+typedef struct _Func_base<bool, Ship *, int, int, int> _Func_base<bool, Ship *, int, int, int>, *P_Func_base<bool, Ship *, int, int, int>;
+
+struct _Func_base<bool, Ship *, int, int, int>
+{ // PlaceHolder Structure
+};
+
+typedef struct _Tree<class_std::_Tmap_traits<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, struct_std::less<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, class_std::allocator<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>, 0> _> _Tree<class_std::_Tmap_traits<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, struct_std::less<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, class_std::allocator<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>, 0> _>, *P_Tree<class_std::_Tmap_traits<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, struct_std::less<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, class_std::allocator<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>, 0> _>;
+
+struct _Tree<class_std::_Tmap_traits<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, struct_std::less<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, class_std::allocator<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>, 0> _>
+{ // PlaceHolder Structure
+};
+
+typedef struct _Tree_comp_alloc<std::_Tmap_traits<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, bool, std::less<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _>, std::allocator<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, bool> _>, 0> _> _Tree_comp_alloc<std::_Tmap_traits<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, bool, std::less<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _>, std::allocator<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, bool> _>, 0> _>, *P_Tree_comp_alloc<std::_Tmap_traits<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, bool, std::less<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _>, std::allocator<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, bool> _>, 0> _>;
+
+struct _Tree_comp_alloc<std::_Tmap_traits<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, bool, std::less<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _>, std::allocator<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, bool> _>, 0> _>
+{ // PlaceHolder Structure
+};
+
+typedef struct _Tree<std::_Tmap_traits<int, FogInstance *, std::less<int>, std::allocator<std::pair<int_const_, FogInstance *> _>, 0> _> _Tree<std::_Tmap_traits<int, FogInstance *, std::less<int>, std::allocator<std::pair<int_const_, FogInstance *> _>, 0> _>, *P_Tree<std::_Tmap_traits<int, FogInstance *, std::less<int>, std::allocator<std::pair<int_const_, FogInstance *> _>, 0> _>;
+
+struct _Tree<std::_Tmap_traits<int, FogInstance *, std::less<int>, std::allocator<std::pair<int_const_, FogInstance *> _>, 0> _>
+{ // PlaceHolder Structure
+};
+
+typedef struct function<void___cdecl(class_Menu *)> function<void___cdecl(class_Menu *)>, *Pfunction<void___cdecl(class_Menu *)>;
+
+struct function<void___cdecl(class_Menu *)>
+{ // PlaceHolder Structure
+};
+
+typedef struct vector<cocos2d::Rect, std::allocator<cocos2d::Rect> _> vector<cocos2d::Rect, std::allocator<cocos2d::Rect> _>, *Pvector<cocos2d::Rect, std::allocator<cocos2d::Rect> _>;
+
+struct vector<cocos2d::Rect, std::allocator<cocos2d::Rect> _>
+{ // PlaceHolder Structure
+};
+
+typedef struct vector<ScreenTab, std::allocator<ScreenTab> _> vector<ScreenTab, std::allocator<ScreenTab> _>, *Pvector<ScreenTab, std::allocator<ScreenTab> _>;
+
+struct vector<ScreenTab, std::allocator<ScreenTab> _>
+{ // PlaceHolder Structure
+};
+
+typedef struct allocator<CameraPos> allocator<CameraPos>, *Pallocator<CameraPos>;
+
+struct allocator<CameraPos>
+{ // PlaceHolder Structure
+};
+
+typedef struct forward_iterator_tag forward_iterator_tag, *Pforward_iterator_tag;
+
+struct forward_iterator_tag
+{ // PlaceHolder Structure
+};
+
+typedef struct _Uninitialized_backout_al<Requirement *, std::allocator<Requirement> _> _Uninitialized_backout_al<Requirement *, std::allocator<Requirement> _>, *P_Uninitialized_backout_al<Requirement *, std::allocator<Requirement> _>;
+
+struct _Uninitialized_backout_al<Requirement *, std::allocator<Requirement> _>
+{ // PlaceHolder Structure
+};
+
+typedef struct pair<std::_Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _> _> _> _>, std::_Tree_const_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _> _> _> _> _> pair<std::_Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _> _> _> _>, std::_Tree_const_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _> _> _> _> _>, *Ppair<std::_Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _> _> _> _>, std::_Tree_const_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _> _> _> _> _>;
+
+struct pair<std::_Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _> _> _> _>, std::_Tree_const_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _> _> _> _> _>
+{ // PlaceHolder Structure
+};
+
+typedef struct _Uninitialized_backout_al<JumpGateRoute *, std::allocator<JumpGateRoute> _> _Uninitialized_backout_al<JumpGateRoute *, std::allocator<JumpGateRoute> _>, *P_Uninitialized_backout_al<JumpGateRoute *, std::allocator<JumpGateRoute> _>;
+
+struct _Uninitialized_backout_al<JumpGateRoute *, std::allocator<JumpGateRoute> _>
+{ // PlaceHolder Structure
+};
+
+typedef struct pair<std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, float> _> _> _>, bool> pair<std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, float> _> _> _>, bool>, *Ppair<std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, float> _> _> _>, bool>;
+
+struct pair<std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, float> _> _> _>, bool>
+{ // PlaceHolder Structure
+};
+
+typedef struct vector<EngineeringSlotLocation, std::allocator<EngineeringSlotLocation> _> vector<EngineeringSlotLocation, std::allocator<EngineeringSlotLocation> _>, *Pvector<EngineeringSlotLocation, std::allocator<EngineeringSlotLocation> _>;
+
+struct vector<EngineeringSlotLocation, std::allocator<EngineeringSlotLocation> _>
+{ // PlaceHolder Structure
+};
+
+typedef struct function<void___cdecl(Menu *)> function<void___cdecl(Menu *)>, *Pfunction<void___cdecl(Menu *)>;
+
+struct function<void___cdecl(Menu *)>
+{ // PlaceHolder Structure
+};
+
+typedef struct _Binder<std::_Unforced, void_ (__thiscall_Screen_WeaponTerminal::*)(std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>), Screen_WeaponTerminal *, std::_Ph<1> _const &, std::_Ph<2> _const &> _Binder<std::_Unforced, void_ (__thiscall_Screen_WeaponTerminal::*)(std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>), Screen_WeaponTerminal *, std::_Ph<1> _const &, std::_Ph<2> _const &>, *P_Binder<std::_Unforced, void_ (__thiscall_Screen_WeaponTerminal::*)(std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>), Screen_WeaponTerminal *, std::_Ph<1> _const &, std::_Ph<2> _const &>;
+
+struct _Binder<std::_Unforced, void_ (__thiscall_Screen_WeaponTerminal::*)(std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>), Screen_WeaponTerminal *, std::_Ph<1> _const &, std::_Ph<2> _const &>
+{ // PlaceHolder Structure
+};
+
+typedef struct _Tree<std::_Tmap_traits<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, bool, std::less<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _>, std::allocator<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, bool> _>, 0> _> _Tree<std::_Tmap_traits<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, bool, std::less<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _>, std::allocator<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, bool> _>, 0> _>, *P_Tree<std::_Tmap_traits<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, bool, std::less<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _>, std::allocator<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, bool> _>, 0> _>;
+
+struct _Tree<std::_Tmap_traits<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, bool, std::less<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _>, std::allocator<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, bool> _>, 0> _>
+{ // PlaceHolder Structure
+};
+
+typedef struct _Tree_node<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, Variable>, void *> _Tree_node<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, Variable>, void *>, *P_Tree_node<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, Variable>, void *>;
+
+struct _Tree_node<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, Variable>, void *>
+{ // PlaceHolder Structure
+};
+
+typedef struct _Uninitialized_backout_al<PrivateCommOption *, std::allocator<PrivateCommOption> _> _Uninitialized_backout_al<PrivateCommOption *, std::allocator<PrivateCommOption> _>, *P_Uninitialized_backout_al<PrivateCommOption *, std::allocator<PrivateCommOption> _>;
+
+struct _Uninitialized_backout_al<PrivateCommOption *, std::allocator<PrivateCommOption> _>
+{ // PlaceHolder Structure
+};
+
+typedef struct map<int, int, std::less<int>, std::allocator<std::pair<int_const_, int> _> _> map<int, int, std::less<int>, std::allocator<std::pair<int_const_, int> _> _>, *Pmap<int, int, std::less<int>, std::allocator<std::pair<int_const_, int> _> _>;
+
+struct map<int, int, std::less<int>, std::allocator<std::pair<int_const_, int> _> _>
+{ // PlaceHolder Structure
+};
+
+typedef struct _Tree<std::_Tmap_traits<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>, std::less<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _>, std::allocator<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _> _>, 0> _> _Tree<std::_Tmap_traits<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>, std::less<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _>, std::allocator<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _> _>, 0> _>, *P_Tree<std::_Tmap_traits<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>, std::less<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _>, std::allocator<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _> _>, 0> _>;
+
+struct _Tree<std::_Tmap_traits<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>, std::less<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _>, std::allocator<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _> _>, 0> _>
+{ // PlaceHolder Structure
+};
+
+typedef struct vector<CameraPos, std::allocator<CameraPos> _> vector<CameraPos, std::allocator<CameraPos> _>, *Pvector<CameraPos, std::allocator<CameraPos> _>;
+
+struct vector<CameraPos, std::allocator<CameraPos> _>
+{ // PlaceHolder Structure
+};
+
+typedef struct _Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _> _> _Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _> _>, *P_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _> _>;
+
+struct _Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _> _>
+{ // PlaceHolder Structure
+};
+
+typedef struct _Func_base<bool, Ship *, int, std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _Func_base<bool, Ship *, int, std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _>, *P_Func_base<bool, Ship *, int, std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _>;
+
+struct _Func_base<bool, Ship *, int, std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _>
+{ // PlaceHolder Structure
+};
+
+typedef struct _Tree<std::_Tmap_traits<cocos2d::EventKeyboard::KeyCode, char, std::less<cocos2d::EventKeyboard::KeyCode>, std::allocator<std::pair<cocos2d::EventKeyboard::KeyCode_const_, char> _>, 0> _> _Tree<std::_Tmap_traits<cocos2d::EventKeyboard::KeyCode, char, std::less<cocos2d::EventKeyboard::KeyCode>, std::allocator<std::pair<cocos2d::EventKeyboard::KeyCode_const_, char> _>, 0> _>, *P_Tree<std::_Tmap_traits<cocos2d::EventKeyboard::KeyCode, char, std::less<cocos2d::EventKeyboard::KeyCode>, std::allocator<std::pair<cocos2d::EventKeyboard::KeyCode_const_, char> _>, 0> _>;
+
+struct _Tree<std::_Tmap_traits<cocos2d::EventKeyboard::KeyCode, char, std::less<cocos2d::EventKeyboard::KeyCode>, std::allocator<std::pair<cocos2d::EventKeyboard::KeyCode_const_, char> _>, 0> _>
+{ // PlaceHolder Structure
+};
+
+typedef struct _Func_base<void, std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _> _Func_base<void, std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _>, *P_Func_base<void, std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _>;
+
+struct _Func_base<void, std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _>
+{ // PlaceHolder Structure
+};
+
+typedef struct vector<BootElement, std::allocator<BootElement> _> vector<BootElement, std::allocator<BootElement> _>, *Pvector<BootElement, std::allocator<BootElement> _>;
+
+struct vector<BootElement, std::allocator<BootElement> _>
+{ // PlaceHolder Structure
+};
+
+typedef struct _Tree_node<std::pair<int_const_, std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _>, void *> _Tree_node<std::pair<int_const_, std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _>, void *>, *P_Tree_node<std::pair<int_const_, std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _>, void *>;
+
+struct _Tree_node<std::pair<int_const_, std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _>, void *>
+{ // PlaceHolder Structure
+};
+
+typedef struct _Tree_val<std::_Tree_simple_types<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _> _Tree_val<std::_Tree_simple_types<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _>, *P_Tree_val<std::_Tree_simple_types<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _>;
+
+struct _Tree_val<std::_Tree_simple_types<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _>
+{ // PlaceHolder Structure
+};
+
+typedef struct _Binder<std::_Unforced, void_ (__thiscall_Screen_PC::*)(std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>), Screen_PC *, std::_Ph<1> _const &, std::_Ph<2> _const &> _Binder<std::_Unforced, void_ (__thiscall_Screen_PC::*)(std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>), Screen_PC *, std::_Ph<1> _const &, std::_Ph<2> _const &>, *P_Binder<std::_Unforced, void_ (__thiscall_Screen_PC::*)(std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>), Screen_PC *, std::_Ph<1> _const &, std::_Ph<2> _const &>;
+
+struct _Binder<std::_Unforced, void_ (__thiscall_Screen_PC::*)(std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>), Screen_PC *, std::_Ph<1> _const &, std::_Ph<2> _const &>
+{ // PlaceHolder Structure
+};
+
+typedef struct function<void___cdecl(class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>)> function<void___cdecl(class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>)>, *Pfunction<void___cdecl(class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>)>;
+
+struct function<void___cdecl(class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>)>
+{ // PlaceHolder Structure
+};
+
+typedef struct _Binder<std::_Unforced, void_ (__thiscall_Screen_WeaponTerminal::*)(void), Screen_WeaponTerminal *> _Binder<std::_Unforced, void_ (__thiscall_Screen_WeaponTerminal::*)(void), Screen_WeaponTerminal *>, *P_Binder<std::_Unforced, void_ (__thiscall_Screen_WeaponTerminal::*)(void), Screen_WeaponTerminal *>;
+
+struct _Binder<std::_Unforced, void_ (__thiscall_Screen_WeaponTerminal::*)(void), Screen_WeaponTerminal *>
+{ // PlaceHolder Structure
+};
+
+typedef struct map<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>, std::less<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _>, std::allocator<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _> _> _> map<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>, std::less<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _>, std::allocator<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _> _> _>, *Pmap<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>, std::less<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _>, std::allocator<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _> _> _>;
+
+struct map<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>, std::less<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _>, std::allocator<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _> _> _>
+{ // PlaceHolder Structure
+};
+
+typedef struct _Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<cocos2d::EventKeyboard::KeyCode_const_, char> _> _> _> _Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<cocos2d::EventKeyboard::KeyCode_const_, char> _> _> _>, *P_Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<cocos2d::EventKeyboard::KeyCode_const_, char> _> _> _>;
+
+struct _Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<cocos2d::EventKeyboard::KeyCode_const_, char> _> _> _>
+{ // PlaceHolder Structure
+};
+
+typedef struct _Func_class<void, std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _Func_class<void, std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _>, *P_Func_class<void, std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _>;
+
+struct _Func_class<void, std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _>
+{ // PlaceHolder Structure
+};
+
+typedef struct _Uninitialized_backout_al<Destination *, std::allocator<Destination> _> _Uninitialized_backout_al<Destination *, std::allocator<Destination> _>, *P_Uninitialized_backout_al<Destination *, std::allocator<Destination> _>;
+
+struct _Uninitialized_backout_al<Destination *, std::allocator<Destination> _>
+{ // PlaceHolder Structure
+};
+
+typedef struct _Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<int_const_, FogInstance *> _> _> _> _Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<int_const_, FogInstance *> _> _> _>, *P_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<int_const_, FogInstance *> _> _> _>;
+
+struct _Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<int_const_, FogInstance *> _> _> _>
+{ // PlaceHolder Structure
+};
+
+typedef struct _Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<int_const_, int> _> _> _> _Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<int_const_, int> _> _> _>, *P_Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<int_const_, int> _> _> _>;
+
+struct _Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<int_const_, int> _> _> _>
+{ // PlaceHolder Structure
+};
+
+typedef struct _Func_class<bool, class_Ship *, double, double, double> _Func_class<bool, class_Ship *, double, double, double>, *P_Func_class<bool, class_Ship *, double, double, double>;
+
+struct _Func_class<bool, class_Ship *, double, double, double>
+{ // PlaceHolder Structure
+};
+
+typedef struct function<void___cdecl(void)> function<void___cdecl(void)>, *Pfunction<void___cdecl(void)>;
+
+struct function<void___cdecl(void)>
+{ // PlaceHolder Structure
+};
+
+typedef struct _Binder<std::_Unforced, void_ (__thiscall_Screen_UpgradeTerminal::*)(std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>), Screen_UpgradeTerminal *, std::_Ph<1> _const &, std::_Ph<2> _const &> _Binder<std::_Unforced, void_ (__thiscall_Screen_UpgradeTerminal::*)(std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>), Screen_UpgradeTerminal *, std::_Ph<1> _const &, std::_Ph<2> _const &>, *P_Binder<std::_Unforced, void_ (__thiscall_Screen_UpgradeTerminal::*)(std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>), Screen_UpgradeTerminal *, std::_Ph<1> _const &, std::_Ph<2> _const &>;
+
+struct _Binder<std::_Unforced, void_ (__thiscall_Screen_UpgradeTerminal::*)(std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>), Screen_UpgradeTerminal *, std::_Ph<1> _const &, std::_Ph<2> _const &>
+{ // PlaceHolder Structure
+};
+
+typedef struct _Uninitialized_backout_al<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> *, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _Uninitialized_backout_al<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> *, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>, *P_Uninitialized_backout_al<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> *, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>;
+
+struct _Uninitialized_backout_al<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> *, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>
+{ // PlaceHolder Structure
+};
+
+typedef struct _Tree<std::_Tmap_traits<int, std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::less<int>, std::allocator<std::pair<int_const_, std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>, 0> _> _Tree<std::_Tmap_traits<int, std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::less<int>, std::allocator<std::pair<int_const_, std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>, 0> _>, *P_Tree<std::_Tmap_traits<int, std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::less<int>, std::allocator<std::pair<int_const_, std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>, 0> _>;
+
+struct _Tree<std::_Tmap_traits<int, std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::less<int>, std::allocator<std::pair<int_const_, std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>, 0> _>
+{ // PlaceHolder Structure
+};
+
+typedef struct _Tree<std::_Tmap_traits<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, int, std::less<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _>, std::allocator<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, int> _>, 0> _> _Tree<std::_Tmap_traits<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, int, std::less<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _>, std::allocator<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, int> _>, 0> _>, *P_Tree<std::_Tmap_traits<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, int, std::less<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _>, std::allocator<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, int> _>, 0> _>;
+
+struct _Tree<std::_Tmap_traits<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, int, std::less<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _>, std::allocator<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, int> _>, 0> _>
+{ // PlaceHolder Structure
+};
+
+typedef struct vector<Shop, std::allocator<Shop> _> vector<Shop, std::allocator<Shop> _>, *Pvector<Shop, std::allocator<Shop> _>;
+
+struct vector<Shop, std::allocator<Shop> _>
+{ // PlaceHolder Structure
+};
+
+typedef struct _One_then_variadic_args_t _One_then_variadic_args_t, *P_One_then_variadic_args_t;
+
+struct _One_then_variadic_args_t
+{ // PlaceHolder Structure
+};
+
+typedef struct _Func_base<void, std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _Func_base<void, std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _>, *P_Func_base<void, std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _>;
+
+struct _Func_base<void, std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _>
+{ // PlaceHolder Structure
+};
+
+typedef struct tuple<int &&> tuple<int &&>, *Ptuple<int &&>;
+
+struct tuple<int &&>
+{ // PlaceHolder Structure
+};
+
+typedef struct _Func_base<void, cocos2d::EventMouse *> _Func_base<void, cocos2d::EventMouse *>, *P_Func_base<void, cocos2d::EventMouse *>;
+
+struct _Func_base<void, cocos2d::EventMouse *>
+{ // PlaceHolder Structure
+};
+
+typedef struct vector<JunkContent *, std::allocator<JunkContent *> _> vector<JunkContent *, std::allocator<JunkContent *> _>, *Pvector<JunkContent *, std::allocator<JunkContent *> _>;
+
+struct vector<JunkContent *, std::allocator<JunkContent *> _>
+{ // PlaceHolder Structure
+};
+
+typedef struct vector<JumpPoint *, std::allocator<JumpPoint *> _> vector<JumpPoint *, std::allocator<JumpPoint *> _>, *Pvector<JumpPoint *, std::allocator<JumpPoint *> _>;
+
+struct vector<JumpPoint *, std::allocator<JumpPoint *> _>
+{ // PlaceHolder Structure
+};
+
+typedef struct _Uninitialized_backout_al<InputCommand *, std::allocator<InputCommand> _> _Uninitialized_backout_al<InputCommand *, std::allocator<InputCommand> _>, *P_Uninitialized_backout_al<InputCommand *, std::allocator<InputCommand> _>;
+
+struct _Uninitialized_backout_al<InputCommand *, std::allocator<InputCommand> _>
+{ // PlaceHolder Structure
+};
+
+typedef struct _Binder<std::_Unforced, void_ (__thiscall_PresentationInterface::*)(cocos2d::EventKeyboard::KeyCode, cocos2d::Event *), PresentationInterface *, std::_Ph<1> _const &, std::_Ph<2> _const &> _Binder<std::_Unforced, void_ (__thiscall_PresentationInterface::*)(cocos2d::EventKeyboard::KeyCode, cocos2d::Event *), PresentationInterface *, std::_Ph<1> _const &, std::_Ph<2> _const &>, *P_Binder<std::_Unforced, void_ (__thiscall_PresentationInterface::*)(cocos2d::EventKeyboard::KeyCode, cocos2d::Event *), PresentationInterface *, std::_Ph<1> _const &, std::_Ph<2> _const &>;
+
+struct _Binder<std::_Unforced, void_ (__thiscall_PresentationInterface::*)(cocos2d::EventKeyboard::KeyCode, cocos2d::Event *), PresentationInterface *, std::_Ph<1> _const &, std::_Ph<2> _const &>
+{ // PlaceHolder Structure
+};
+
+typedef struct allocator<word> allocator<word>, *Pallocator<word>;
+
+struct allocator<word>
+{ // PlaceHolder Structure
+};
+
+typedef struct allocator<DockProcessElement> allocator<DockProcessElement>, *Pallocator<DockProcessElement>;
+
+struct allocator<DockProcessElement>
+{ // PlaceHolder Structure
+};
+
+typedef struct _Tree_node<std::pair<int_const_, FogInstance *>, void *> _Tree_node<std::pair<int_const_, FogInstance *>, void *>, *P_Tree_node<std::pair<int_const_, FogInstance *>, void *>;
+
+struct _Tree_node<std::pair<int_const_, FogInstance *>, void *>
+{ // PlaceHolder Structure
+};
+
+typedef struct _Func_base<void> _Func_base<void>, *P_Func_base<void>;
+
+struct _Func_base<void>
+{ // PlaceHolder Structure
+};
+
+typedef struct vector<JumpGateRoute, std::allocator<JumpGateRoute> _> vector<JumpGateRoute, std::allocator<JumpGateRoute> _>, *Pvector<JumpGateRoute, std::allocator<JumpGateRoute> _>;
+
+struct vector<JumpGateRoute, std::allocator<JumpGateRoute> _>
+{ // PlaceHolder Structure
+};
+
+typedef struct vector<std::vector<word, std::allocator<word> _>, std::allocator<std::vector<word, std::allocator<word> _> _> _> vector<std::vector<word, std::allocator<word> _>, std::allocator<std::vector<word, std::allocator<word> _> _> _>, *Pvector<std::vector<word, std::allocator<word> _>, std::allocator<std::vector<word, std::allocator<word> _> _> _>;
+
+struct vector<std::vector<word, std::allocator<word> _>, std::allocator<std::vector<word, std::allocator<word> _> _> _>
+{ // PlaceHolder Structure
+};
+
+typedef struct _Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, float> _> _> _> _Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, float> _> _> _>, *P_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, float> _> _> _>;
+
+struct _Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, float> _> _> _>
+{ // PlaceHolder Structure
+};
+
+typedef struct _Vector_const_iterator<std::_Vector_val<std::_Simple_types<Waypoint> _> _> _Vector_const_iterator<std::_Vector_val<std::_Simple_types<Waypoint> _> _>, *P_Vector_const_iterator<std::_Vector_val<std::_Simple_types<Waypoint> _> _>;
+
+struct _Vector_const_iterator<std::_Vector_val<std::_Simple_types<Waypoint> _> _>
+{ // PlaceHolder Structure
+};
+
+typedef struct _Tree_node<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, int>, void *> _Tree_node<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, int>, void *>, *P_Tree_node<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, int>, void *>;
+
+struct _Tree_node<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, int>, void *>
+{ // PlaceHolder Structure
+};
+
+typedef struct _Binder<std::_Unforced, void_ (__thiscall_Screen_Terminal::*)(void), Screen_Terminal *> _Binder<std::_Unforced, void_ (__thiscall_Screen_Terminal::*)(void), Screen_Terminal *>, *P_Binder<std::_Unforced, void_ (__thiscall_Screen_Terminal::*)(void), Screen_Terminal *>;
+
+struct _Binder<std::_Unforced, void_ (__thiscall_Screen_Terminal::*)(void), Screen_Terminal *>
+{ // PlaceHolder Structure
+};
+
+typedef struct vector<word, std::allocator<word> _> vector<word, std::allocator<word> _>, *Pvector<word, std::allocator<word> _>;
+
+struct vector<word, std::allocator<word> _>
+{ // PlaceHolder Structure
+};
+
+typedef struct function<double___cdecl(class_Ship *, int)> function<double___cdecl(class_Ship *, int)>, *Pfunction<double___cdecl(class_Ship *, int)>;
+
+struct function<double___cdecl(class_Ship *, int)>
+{ // PlaceHolder Structure
+};
+
+typedef struct _Func_class<bool, Ship *, int, std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _Func_class<bool, Ship *, int, std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _>, *P_Func_class<bool, Ship *, int, std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _>;
+
+struct _Func_class<bool, Ship *, int, std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _>
+{ // PlaceHolder Structure
+};
+
+typedef struct function<void___cdecl(std::basic_string<char, std::char_traits<char>, std::allocator<char> _>)> function<void___cdecl(std::basic_string<char, std::char_traits<char>, std::allocator<char> _>)>, *Pfunction<void___cdecl(std::basic_string<char, std::char_traits<char>, std::allocator<char> _>)>;
+
+struct function<void___cdecl(std::basic_string<char, std::char_traits<char>, std::allocator<char> _>)>
+{ // PlaceHolder Structure
+};
+
+typedef struct vector<ListData, std::allocator<ListData> _> vector<ListData, std::allocator<ListData> _>, *Pvector<ListData, std::allocator<ListData> _>;
+
+struct vector<ListData, std::allocator<ListData> _>
+{ // PlaceHolder Structure
+};
+
+typedef struct vector<Widget, std::allocator<Widget> _> vector<Widget, std::allocator<Widget> _>, *Pvector<Widget, std::allocator<Widget> _>;
+
+struct vector<Widget, std::allocator<Widget> _>
+{ // PlaceHolder Structure
+};
+
+typedef struct _Func_class<bool, int> _Func_class<bool, int>, *P_Func_class<bool, int>;
+
+struct _Func_class<bool, int>
+{ // PlaceHolder Structure
+};
+
+typedef struct tuple<cocos2d::EventKeyboard::KeyCode_const &> tuple<cocos2d::EventKeyboard::KeyCode_const &>, *Ptuple<cocos2d::EventKeyboard::KeyCode_const &>;
+
+struct tuple<cocos2d::EventKeyboard::KeyCode_const &>
+{ // PlaceHolder Structure
+};
+
+typedef struct _Func_base<double, Ship *, int> _Func_base<double, Ship *, int>, *P_Func_base<double, Ship *, int>;
+
+struct _Func_base<double, Ship *, int>
+{ // PlaceHolder Structure
+};
+
+typedef struct allocator<PrivateCommElement> allocator<PrivateCommElement>, *Pallocator<PrivateCommElement>;
+
+struct allocator<PrivateCommElement>
+{ // PlaceHolder Structure
+};
+
+typedef struct tuple<> tuple<>, *Ptuple<>;
+
+struct tuple<>
+{ // PlaceHolder Structure
+};
+
+typedef struct vector<class_WaveformPeak, class_std::allocator<class_WaveformPeak> _> vector<class_WaveformPeak, class_std::allocator<class_WaveformPeak> _>, *Pvector<class_WaveformPeak, class_std::allocator<class_WaveformPeak> _>;
+
+struct vector<class_WaveformPeak, class_std::allocator<class_WaveformPeak> _>
+{ // PlaceHolder Structure
+};
+
+typedef struct _Func_base<bool, void *> _Func_base<bool, void *>, *P_Func_base<bool, void *>;
+
+struct _Func_base<bool, void *>
+{ // PlaceHolder Structure
+};
+
+typedef struct vector<Resolution, std::allocator<Resolution> _> vector<Resolution, std::allocator<Resolution> _>, *Pvector<Resolution, std::allocator<Resolution> _>;
+
+struct vector<Resolution, std::allocator<Resolution> _>
+{ // PlaceHolder Structure
+};
+
+typedef struct _String_const_iterator<std::_String_val<std::_Simple_types<char> _> _> _String_const_iterator<std::_String_val<std::_Simple_types<char> _> _>, *P_String_const_iterator<std::_String_val<std::_Simple_types<char> _> _>;
+
+struct _String_const_iterator<std::_String_val<std::_Simple_types<char> _> _>
+{ // PlaceHolder Structure
+};
+
+typedef struct pair<std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _> _> _> _>, bool> pair<std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _> _> _> _>, bool>, *Ppair<std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _> _> _> _>, bool>;
+
+struct pair<std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _> _> _> _>, bool>
+{ // PlaceHolder Structure
+};
+
+typedef struct allocator<ScreenData> allocator<ScreenData>, *Pallocator<ScreenData>;
+
+struct allocator<ScreenData>
+{ // PlaceHolder Structure
+};
+
+typedef struct function<bool___cdecl(cocos2d::Node *)> function<bool___cdecl(cocos2d::Node *)>, *Pfunction<bool___cdecl(cocos2d::Node *)>;
+
+struct function<bool___cdecl(cocos2d::Node *)>
+{ // PlaceHolder Structure
+};
+
+typedef struct vector<Destination, std::allocator<Destination> _> vector<Destination, std::allocator<Destination> _>, *Pvector<Destination, std::allocator<Destination> _>;
+
+struct vector<Destination, std::allocator<Destination> _>
+{ // PlaceHolder Structure
+};
+
+typedef struct function<bool___cdecl(class_Ship *, double, double, double)> function<bool___cdecl(class_Ship *, double, double, double)>, *Pfunction<bool___cdecl(class_Ship *, double, double, double)>;
+
+struct function<bool___cdecl(class_Ship *, double, double, double)>
+{ // PlaceHolder Structure
+};
+
+typedef struct _Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, float> _> _> _> _Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, float> _> _> _>, *P_Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, float> _> _> _>;
+
+struct _Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, float> _> _> _>
+{ // PlaceHolder Structure
+};
+
+typedef struct _Tree_unchecked_const_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, int> _> _>, std::_Iterator_base0> _Tree_unchecked_const_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, int> _> _>, std::_Iterator_base0>, *P_Tree_unchecked_const_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, int> _> _>, std::_Iterator_base0>;
+
+struct _Tree_unchecked_const_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, int> _> _>, std::_Iterator_base0>
+{ // PlaceHolder Structure
+};
+
+typedef struct _Tree_comp_alloc<std::_Tmap_traits<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, Variable, std::less<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _>, std::allocator<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, Variable> _>, 0> _> _Tree_comp_alloc<std::_Tmap_traits<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, Variable, std::less<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _>, std::allocator<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, Variable> _>, 0> _>, *P_Tree_comp_alloc<std::_Tmap_traits<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, Variable, std::less<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _>, std::allocator<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, Variable> _>, 0> _>;
+
+struct _Tree_comp_alloc<std::_Tmap_traits<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, Variable, std::less<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _>, std::allocator<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, Variable> _>, 0> _>
+{ // PlaceHolder Structure
+};
+
+typedef struct _Func_base<void, int> _Func_base<void, int>, *P_Func_base<void, int>;
+
+struct _Func_base<void, int>
+{ // PlaceHolder Structure
+};
+
+typedef struct vector<ShipChatter_Element *, std::allocator<ShipChatter_Element *> _> vector<ShipChatter_Element *, std::allocator<ShipChatter_Element *> _>, *Pvector<ShipChatter_Element *, std::allocator<ShipChatter_Element *> _>;
+
+struct vector<ShipChatter_Element *, std::allocator<ShipChatter_Element *> _>
+{ // PlaceHolder Structure
+};
+
+typedef struct vector<PrivateCommElement, std::allocator<PrivateCommElement> _> vector<PrivateCommElement, std::allocator<PrivateCommElement> _>, *Pvector<PrivateCommElement, std::allocator<PrivateCommElement> _>;
+
+struct vector<PrivateCommElement, std::allocator<PrivateCommElement> _>
+{ // PlaceHolder Structure
+};
+
+typedef struct function<void___cdecl(cocos2d::EventKeyboard::KeyCode, cocos2d::Event *)> function<void___cdecl(cocos2d::EventKeyboard::KeyCode, cocos2d::Event *)>, *Pfunction<void___cdecl(cocos2d::EventKeyboard::KeyCode, cocos2d::Event *)>;
+
+struct function<void___cdecl(cocos2d::EventKeyboard::KeyCode, cocos2d::Event *)>
+{ // PlaceHolder Structure
+};
+
+typedef struct allocator<cocos2d::Rect> allocator<cocos2d::Rect>, *Pallocator<cocos2d::Rect>;
+
+struct allocator<cocos2d::Rect>
+{ // PlaceHolder Structure
+};
+
+typedef struct allocator<std::_Tree_node<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, void *> _> allocator<std::_Tree_node<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, void *> _>, *Pallocator<std::_Tree_node<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, void *> _>;
+
+struct allocator<std::_Tree_node<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, void *> _>
+{ // PlaceHolder Structure
+};
+
+typedef struct vector<ModuleRenderData, std::allocator<ModuleRenderData> _> vector<ModuleRenderData, std::allocator<ModuleRenderData> _>, *Pvector<ModuleRenderData, std::allocator<ModuleRenderData> _>;
+
+struct vector<ModuleRenderData, std::allocator<ModuleRenderData> _>
+{ // PlaceHolder Structure
+};
+
+typedef struct pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, bool> pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, bool>, *Ppair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, bool>;
+
+struct pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, bool>
+{ // PlaceHolder Structure
+};
+
+typedef struct allocator<MouseCursor> allocator<MouseCursor>, *Pallocator<MouseCursor>;
+
+struct allocator<MouseCursor>
+{ // PlaceHolder Structure
+};
+
+typedef struct vector<Passenger *, std::allocator<Passenger *> _> vector<Passenger *, std::allocator<Passenger *> _>, *Pvector<Passenger *, std::allocator<Passenger *> _>;
+
+struct vector<Passenger *, std::allocator<Passenger *> _>
+{ // PlaceHolder Structure
+};
+
+typedef struct pair<int_const_, std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> pair<int_const_, std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _>, *Ppair<int_const_, std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _>;
+
+struct pair<int_const_, std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _>
+{ // PlaceHolder Structure
+};
+
+typedef struct _Binder<std::_Unforced, void_ (__thiscall_Screen_PC::*)(std::basic_string<char, std::char_traits<char>, std::allocator<char> _>), Screen_PC *, std::_Ph<1> _const &> _Binder<std::_Unforced, void_ (__thiscall_Screen_PC::*)(std::basic_string<char, std::char_traits<char>, std::allocator<char> _>), Screen_PC *, std::_Ph<1> _const &>, *P_Binder<std::_Unforced, void_ (__thiscall_Screen_PC::*)(std::basic_string<char, std::char_traits<char>, std::allocator<char> _>), Screen_PC *, std::_Ph<1> _const &>;
+
+struct _Binder<std::_Unforced, void_ (__thiscall_Screen_PC::*)(std::basic_string<char, std::char_traits<char>, std::allocator<char> _>), Screen_PC *, std::_Ph<1> _const &>
+{ // PlaceHolder Structure
+};
+
+typedef struct vector<Contract *, std::allocator<Contract *> _> vector<Contract *, std::allocator<Contract *> _>, *Pvector<Contract *, std::allocator<Contract *> _>;
+
+struct vector<Contract *, std::allocator<Contract *> _>
+{ // PlaceHolder Structure
+};
+
+typedef struct _Tree_node<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, void *> _Tree_node<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, void *>, *P_Tree_node<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, void *>;
+
+struct _Tree_node<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, void *>
+{ // PlaceHolder Structure
+};
+
+typedef struct _Tree_comp_alloc<std::_Tmap_traits<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>, std::less<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _>, std::allocator<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _> _>, 0> _> _Tree_comp_alloc<std::_Tmap_traits<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>, std::less<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _>, std::allocator<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _> _>, 0> _>, *P_Tree_comp_alloc<std::_Tmap_traits<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>, std::less<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _>, std::allocator<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _> _>, 0> _>;
+
+struct _Tree_comp_alloc<std::_Tmap_traits<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>, std::less<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _>, std::allocator<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _> _>, 0> _>
+{ // PlaceHolder Structure
+};
+
+typedef struct vector<PathNode *, std::allocator<PathNode *> _> vector<PathNode *, std::allocator<PathNode *> _>, *Pvector<PathNode *, std::allocator<PathNode *> _>;
+
+struct vector<PathNode *, std::allocator<PathNode *> _>
+{ // PlaceHolder Structure
+};
+
+typedef struct vector<UpgradeCommand, std::allocator<UpgradeCommand> _> vector<UpgradeCommand, std::allocator<UpgradeCommand> _>, *Pvector<UpgradeCommand, std::allocator<UpgradeCommand> _>;
+
+struct vector<UpgradeCommand, std::allocator<UpgradeCommand> _>
+{ // PlaceHolder Structure
+};
+
+typedef struct pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, int> pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, int>, *Ppair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, int>;
+
+struct pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, int>
+{ // PlaceHolder Structure
+};
+
+typedef struct _Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, int> _> _> _> _Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, int> _> _> _>, *P_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, int> _> _> _>;
+
+struct _Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, int> _> _> _>
+{ // PlaceHolder Structure
+};
+
+typedef struct _Uninitialized_backout_al<Widget *, std::allocator<Widget> _> _Uninitialized_backout_al<Widget *, std::allocator<Widget> _>, *P_Uninitialized_backout_al<Widget *, std::allocator<Widget> _>;
+
+struct _Uninitialized_backout_al<Widget *, std::allocator<Widget> _>
+{ // PlaceHolder Structure
+};
+
+typedef struct vector<double, std::allocator<double> _> vector<double, std::allocator<double> _>, *Pvector<double, std::allocator<double> _>;
+
+struct vector<double, std::allocator<double> _>
+{ // PlaceHolder Structure
+};
+
+typedef struct vector<DockProcessElement, std::allocator<DockProcessElement> _> vector<DockProcessElement, std::allocator<DockProcessElement> _>, *Pvector<DockProcessElement, std::allocator<DockProcessElement> _>;
+
+struct vector<DockProcessElement, std::allocator<DockProcessElement> _>
+{ // PlaceHolder Structure
+};
+
+typedef struct allocator<BankTransaction> allocator<BankTransaction>, *Pallocator<BankTransaction>;
+
+struct allocator<BankTransaction>
+{ // PlaceHolder Structure
+};
+
+typedef struct _Func_base<void, Menu *> _Func_base<void, Menu *>, *P_Func_base<void, Menu *>;
+
+struct _Func_base<void, Menu *>
+{ // PlaceHolder Structure
+};
+
+typedef struct vector<Selectable, std::allocator<Selectable> _> vector<Selectable, std::allocator<Selectable> _>, *Pvector<Selectable, std::allocator<Selectable> _>;
+
+struct vector<Selectable, std::allocator<Selectable> _>
+{ // PlaceHolder Structure
+};
+
+typedef struct pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _> pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _>, *Ppair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _>;
+
+struct pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _>
+{ // PlaceHolder Structure
+};
+
+typedef struct _Tree_comp_alloc<std::_Tset_traits<PathNode *, PathContext::NodeTotalWeightCompare, std::allocator<PathNode *>, 1> _> _Tree_comp_alloc<std::_Tset_traits<PathNode *, PathContext::NodeTotalWeightCompare, std::allocator<PathNode *>, 1> _>, *P_Tree_comp_alloc<std::_Tset_traits<PathNode *, PathContext::NodeTotalWeightCompare, std::allocator<PathNode *>, 1> _>;
+
+struct _Tree_comp_alloc<std::_Tset_traits<PathNode *, PathContext::NodeTotalWeightCompare, std::allocator<PathNode *>, 1> _>
+{ // PlaceHolder Structure
+};
+
+typedef struct vector<InputCommand, std::allocator<InputCommand> _> vector<InputCommand, std::allocator<InputCommand> _>, *Pvector<InputCommand, std::allocator<InputCommand> _>;
+
+struct vector<InputCommand, std::allocator<InputCommand> _>
+{ // PlaceHolder Structure
+};
+
+typedef struct vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>, *Pvector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>;
+
+struct vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>
+{ // PlaceHolder Structure
+};
+
+typedef struct _Vector_iterator<class_std::_Vector_val<struct_std::_Simple_types<class_SoundLet *> _> _> _Vector_iterator<class_std::_Vector_val<struct_std::_Simple_types<class_SoundLet *> _> _>, *P_Vector_iterator<class_std::_Vector_val<struct_std::_Simple_types<class_SoundLet *> _> _>;
+
+struct _Vector_iterator<class_std::_Vector_val<struct_std::_Simple_types<class_SoundLet *> _> _>
+{ // PlaceHolder Structure
+};
+
+typedef struct _Tree_comp_alloc<std::_Tmap_traits<int, int, std::less<int>, std::allocator<std::pair<int_const_, int> _>, 0> _> _Tree_comp_alloc<std::_Tmap_traits<int, int, std::less<int>, std::allocator<std::pair<int_const_, int> _>, 0> _>, *P_Tree_comp_alloc<std::_Tmap_traits<int, int, std::less<int>, std::allocator<std::pair<int_const_, int> _>, 0> _>;
+
+struct _Tree_comp_alloc<std::_Tmap_traits<int, int, std::less<int>, std::allocator<std::pair<int_const_, int> _>, 0> _>
+{ // PlaceHolder Structure
+};
+
+typedef struct allocator<ModuleRenderData> allocator<ModuleRenderData>, *Pallocator<ModuleRenderData>;
+
+struct allocator<ModuleRenderData>
+{ // PlaceHolder Structure
+};
+
+typedef struct _Func_base<bool, Ship *, double, double, double> _Func_base<bool, Ship *, double, double, double>, *P_Func_base<bool, Ship *, double, double, double>;
+
+struct _Func_base<bool, Ship *, double, double, double>
+{ // PlaceHolder Structure
+};
+
+typedef struct _Tree_node<std::pair<cocos2d::EventKeyboard::KeyCode_const_, char>, void *> _Tree_node<std::pair<cocos2d::EventKeyboard::KeyCode_const_, char>, void *>, *P_Tree_node<std::pair<cocos2d::EventKeyboard::KeyCode_const_, char>, void *>;
+
+struct _Tree_node<std::pair<cocos2d::EventKeyboard::KeyCode_const_, char>, void *>
+{ // PlaceHolder Structure
+};
+
+typedef struct vector<ContractCommand, std::allocator<ContractCommand> _> vector<ContractCommand, std::allocator<ContractCommand> _>, *Pvector<ContractCommand, std::allocator<ContractCommand> _>;
+
+struct vector<ContractCommand, std::allocator<ContractCommand> _>
+{ // PlaceHolder Structure
+};
+
+typedef struct tuple<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const &> tuple<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const &>, *Ptuple<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const &>;
+
+struct tuple<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const &>
+{ // PlaceHolder Structure
+};
+
+typedef struct vector<struct_word, class_std::allocator<struct_word> _> vector<struct_word, class_std::allocator<struct_word> _>, *Pvector<struct_word, class_std::allocator<struct_word> _>;
+
+struct vector<struct_word, class_std::allocator<struct_word> _>
+{ // PlaceHolder Structure
+};
+
+typedef struct allocator<char> allocator<char>, *Pallocator<char>;
+
+struct allocator<char>
+{ // PlaceHolder Structure
+};
+
+typedef struct _Tree_node<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, bool>, void *> _Tree_node<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, bool>, void *>, *P_Tree_node<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, bool>, void *>;
+
+struct _Tree_node<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, bool>, void *>
+{ // PlaceHolder Structure
+};
+
+typedef struct allocator<Destination> allocator<Destination>, *Pallocator<Destination>;
+
+struct allocator<Destination>
+{ // PlaceHolder Structure
+};
+
+typedef struct function<void___cdecl(int)> function<void___cdecl(int)>, *Pfunction<void___cdecl(int)>;
+
+struct function<void___cdecl(int)>
+{ // PlaceHolder Structure
+};
+
+typedef struct basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, *Pbasic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>;
+
+struct basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>
+{ // PlaceHolder Structure
+};
+
+typedef struct allocator<NavMarker> allocator<NavMarker>, *Pallocator<NavMarker>;
+
+struct allocator<NavMarker>
+{ // PlaceHolder Structure
+};
+
+typedef struct map<cocos2d::EventKeyboard::KeyCode, char, std::less<cocos2d::EventKeyboard::KeyCode>, std::allocator<std::pair<cocos2d::EventKeyboard::KeyCode_const_, char> _> _> map<cocos2d::EventKeyboard::KeyCode, char, std::less<cocos2d::EventKeyboard::KeyCode>, std::allocator<std::pair<cocos2d::EventKeyboard::KeyCode_const_, char> _> _>, *Pmap<cocos2d::EventKeyboard::KeyCode, char, std::less<cocos2d::EventKeyboard::KeyCode>, std::allocator<std::pair<cocos2d::EventKeyboard::KeyCode_const_, char> _> _>;
+
+struct map<cocos2d::EventKeyboard::KeyCode, char, std::less<cocos2d::EventKeyboard::KeyCode>, std::allocator<std::pair<cocos2d::EventKeyboard::KeyCode_const_, char> _> _>
+{ // PlaceHolder Structure
+};
+
+typedef struct _Binder<std::_Unforced, void_ (__thiscall_Screen_TradeTerminal::*)(std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>), Screen_TradeTerminal *, std::_Ph<1> _const &, std::_Ph<2> _const &> _Binder<std::_Unforced, void_ (__thiscall_Screen_TradeTerminal::*)(std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>), Screen_TradeTerminal *, std::_Ph<1> _const &, std::_Ph<2> _const &>, *P_Binder<std::_Unforced, void_ (__thiscall_Screen_TradeTerminal::*)(std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>), Screen_TradeTerminal *, std::_Ph<1> _const &, std::_Ph<2> _const &>;
+
+struct _Binder<std::_Unforced, void_ (__thiscall_Screen_TradeTerminal::*)(std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>), Screen_TradeTerminal *, std::_Ph<1> _const &, std::_Ph<2> _const &>
+{ // PlaceHolder Structure
+};
+
+typedef struct allocator<CommsCommand> allocator<CommsCommand>, *Pallocator<CommsCommand>;
+
+struct allocator<CommsCommand>
+{ // PlaceHolder Structure
+};
+
+typedef struct _Tree<std::_Tmap_traits<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, std::less<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _>, std::allocator<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>, 0> _> _Tree<std::_Tmap_traits<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, std::less<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _>, std::allocator<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>, 0> _>, *P_Tree<std::_Tmap_traits<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, std::less<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _>, std::allocator<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>, 0> _>;
+
+struct _Tree<std::_Tmap_traits<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, std::less<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _>, std::allocator<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>, 0> _>
+{ // PlaceHolder Structure
+};
+
+typedef struct vector<UIText *, std::allocator<UIText *> _> vector<UIText *, std::allocator<UIText *> _>, *Pvector<UIText *, std::allocator<UIText *> _>;
+
+struct vector<UIText *, std::allocator<UIText *> _>
+{ // PlaceHolder Structure
+};
+
+typedef struct vector<ComponentInterface *, std::allocator<ComponentInterface *> _> vector<ComponentInterface *, std::allocator<ComponentInterface *> _>, *Pvector<ComponentInterface *, std::allocator<ComponentInterface *> _>;
+
+struct vector<ComponentInterface *, std::allocator<ComponentInterface *> _>
+{ // PlaceHolder Structure
+};
+
+typedef struct _Uninitialized_backout_al<SensorSelectionElement *, std::allocator<SensorSelectionElement> _> _Uninitialized_backout_al<SensorSelectionElement *, std::allocator<SensorSelectionElement> _>, *P_Uninitialized_backout_al<SensorSelectionElement *, std::allocator<SensorSelectionElement> _>;
+
+struct _Uninitialized_backout_al<SensorSelectionElement *, std::allocator<SensorSelectionElement> _>
+{ // PlaceHolder Structure
+};
+
+typedef struct _Tree<std::_Tmap_traits<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, float, std::less<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _>, std::allocator<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, float> _>, 0> _> _Tree<std::_Tmap_traits<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, float, std::less<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _>, std::allocator<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, float> _>, 0> _>, *P_Tree<std::_Tmap_traits<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, float, std::less<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _>, std::allocator<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, float> _>, 0> _>;
+
+struct _Tree<std::_Tmap_traits<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, float, std::less<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _>, std::allocator<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, float> _>, 0> _>
+{ // PlaceHolder Structure
+};
+
+typedef struct function<void___cdecl(cocos2d::EventMouse *)> function<void___cdecl(cocos2d::EventMouse *)>, *Pfunction<void___cdecl(cocos2d::EventMouse *)>;
+
+struct function<void___cdecl(cocos2d::EventMouse *)>
+{ // PlaceHolder Structure
+};
+
+typedef struct allocator<SensorSelectionElement> allocator<SensorSelectionElement>, *Pallocator<SensorSelectionElement>;
+
+struct allocator<SensorSelectionElement>
 { // PlaceHolder Structure
 };
 
@@ -6867,51 +7742,21 @@ struct _Func_base<bool, int>
 { // PlaceHolder Structure
 };
 
-typedef struct tuple<int_const &> tuple<int_const &>, *Ptuple<int_const &>;
+typedef struct _Uninitialized_backout_al<word *, std::allocator<word> _> _Uninitialized_backout_al<word *, std::allocator<word> _>, *P_Uninitialized_backout_al<word *, std::allocator<word> _>;
 
-struct tuple<int_const &>
+struct _Uninitialized_backout_al<word *, std::allocator<word> _>
 { // PlaceHolder Structure
 };
 
-typedef struct _Binder<struct_std::_Unforced, void_ (__thiscall_Screen_ContractTerminal::*)(void), class_Screen_ContractTerminal *> _Binder<struct_std::_Unforced, void_ (__thiscall_Screen_ContractTerminal::*)(void), class_Screen_ContractTerminal *>, *P_Binder<struct_std::_Unforced, void_ (__thiscall_Screen_ContractTerminal::*)(void), class_Screen_ContractTerminal *>;
+typedef struct _Uninitialized_backout_al<cocos2d::Rect *, std::allocator<cocos2d::Rect> _> _Uninitialized_backout_al<cocos2d::Rect *, std::allocator<cocos2d::Rect> _>, *P_Uninitialized_backout_al<cocos2d::Rect *, std::allocator<cocos2d::Rect> _>;
 
-struct _Binder<struct_std::_Unforced, void_ (__thiscall_Screen_ContractTerminal::*)(void), class_Screen_ContractTerminal *>
+struct _Uninitialized_backout_al<cocos2d::Rect *, std::allocator<cocos2d::Rect> _>
 { // PlaceHolder Structure
 };
 
-typedef struct _Func_class<void, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _Func_class<void, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, *P_Func_class<void, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>;
+typedef struct allocator<UpgradeCommand> allocator<UpgradeCommand>, *Pallocator<UpgradeCommand>;
 
-struct _Func_class<void, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>
-{ // PlaceHolder Structure
-};
-
-typedef struct allocator<class_ListData> allocator<class_ListData>, *Pallocator<class_ListData>;
-
-struct allocator<class_ListData>
-{ // PlaceHolder Structure
-};
-
-typedef struct vector<class_ComponentInterface *, class_std::allocator<class_ComponentInterface *> _> vector<class_ComponentInterface *, class_std::allocator<class_ComponentInterface *> _>, *Pvector<class_ComponentInterface *, class_std::allocator<class_ComponentInterface *> _>;
-
-struct vector<class_ComponentInterface *, class_std::allocator<class_ComponentInterface *> _>
-{ // PlaceHolder Structure
-};
-
-typedef struct allocator<struct_std::_Tree_node<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, void *> _> allocator<struct_std::_Tree_node<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, void *> _>, *Pallocator<struct_std::_Tree_node<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, void *> _>;
-
-struct allocator<struct_std::_Tree_node<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, void *> _>
-{ // PlaceHolder Structure
-};
-
-typedef struct _Binder<struct_std::_Unforced, void_ (__thiscall_Screen_Terminal::*)(class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>), class_Screen_Terminal *, struct_std::_Ph<1> _const &, struct_std::_Ph<2> _const &> _Binder<struct_std::_Unforced, void_ (__thiscall_Screen_Terminal::*)(class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>), class_Screen_Terminal *, struct_std::_Ph<1> _const &, struct_std::_Ph<2> _const &>, *P_Binder<struct_std::_Unforced, void_ (__thiscall_Screen_Terminal::*)(class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>), class_Screen_Terminal *, struct_std::_Ph<1> _const &, struct_std::_Ph<2> _const &>;
-
-struct _Binder<struct_std::_Unforced, void_ (__thiscall_Screen_Terminal::*)(class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>), class_Screen_Terminal *, struct_std::_Ph<1> _const &, struct_std::_Ph<2> _const &>
-{ // PlaceHolder Structure
-};
-
-typedef struct vector<struct_BootElement, class_std::allocator<struct_BootElement> _> vector<struct_BootElement, class_std::allocator<struct_BootElement> _>, *Pvector<struct_BootElement, class_std::allocator<struct_BootElement> _>;
-
-struct vector<struct_BootElement, class_std::allocator<struct_BootElement> _>
+struct allocator<UpgradeCommand>
 { // PlaceHolder Structure
 };
 
@@ -6921,27 +7766,21 @@ struct _Tree_const_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<
 { // PlaceHolder Structure
 };
 
-typedef struct _Tree_val<struct_std::_Tree_simple_types<struct_std::pair<int_const_, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _> _Tree_val<struct_std::_Tree_simple_types<struct_std::pair<int_const_, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _>, *P_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<int_const_, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _>;
+typedef struct _Vector_iterator<std::_Vector_val<std::_Simple_types<Waypoint> _> _> _Vector_iterator<std::_Vector_val<std::_Simple_types<Waypoint> _> _>, *P_Vector_iterator<std::_Vector_val<std::_Simple_types<Waypoint> _> _>;
 
-struct _Tree_val<struct_std::_Tree_simple_types<struct_std::pair<int_const_, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _>
+struct _Vector_iterator<std::_Vector_val<std::_Simple_types<Waypoint> _> _>
 { // PlaceHolder Structure
 };
 
-typedef struct _Vector_iterator<class_std::_Vector_val<struct_std::_Simple_types<class_Contract *> _> _> _Vector_iterator<class_std::_Vector_val<struct_std::_Simple_types<class_Contract *> _> _>, *P_Vector_iterator<class_std::_Vector_val<struct_std::_Simple_types<class_Contract *> _> _>;
+typedef struct vector<PlayerGuidedToPort, std::allocator<PlayerGuidedToPort> _> vector<PlayerGuidedToPort, std::allocator<PlayerGuidedToPort> _>, *Pvector<PlayerGuidedToPort, std::allocator<PlayerGuidedToPort> _>;
 
-struct _Vector_iterator<class_std::_Vector_val<struct_std::_Simple_types<class_Contract *> _> _>
+struct vector<PlayerGuidedToPort, std::allocator<PlayerGuidedToPort> _>
 { // PlaceHolder Structure
 };
 
-typedef struct tuple<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> &&> tuple<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> &&>, *Ptuple<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> &&>;
+typedef struct map<int, FogInstance *, std::less<int>, std::allocator<std::pair<int_const_, FogInstance *> _> _> map<int, FogInstance *, std::less<int>, std::allocator<std::pair<int_const_, FogInstance *> _> _>, *Pmap<int, FogInstance *, std::less<int>, std::allocator<std::pair<int_const_, FogInstance *> _> _>;
 
-struct tuple<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> &&>
-{ // PlaceHolder Structure
-};
-
-typedef struct _Tree_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<int_const_, int> _> _> _> _Tree_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<int_const_, int> _> _> _>, *P_Tree_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<int_const_, int> _> _> _>;
-
-struct _Tree_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<int_const_, int> _> _> _>
+struct map<int, FogInstance *, std::less<int>, std::allocator<std::pair<int_const_, FogInstance *> _> _>
 { // PlaceHolder Structure
 };
 
@@ -6951,33 +7790,15 @@ struct function<bool___cdecl(int)>
 { // PlaceHolder Structure
 };
 
-typedef struct allocator<struct_ContractCommand> allocator<struct_ContractCommand>, *Pallocator<struct_ContractCommand>;
+typedef struct _Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<PathNode *> _> _> _Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<PathNode *> _> _>, *P_Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<PathNode *> _> _>;
 
-struct allocator<struct_ContractCommand>
+struct _Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<PathNode *> _> _>
 { // PlaceHolder Structure
 };
 
-typedef struct function<void___cdecl(void)> function<void___cdecl(void)>, *Pfunction<void___cdecl(void)>;
+typedef struct allocator<std::vector<word, std::allocator<word> _> _> allocator<std::vector<word, std::allocator<word> _> _>, *Pallocator<std::vector<word, std::allocator<word> _> _>;
 
-struct function<void___cdecl(void)>
-{ // PlaceHolder Structure
-};
-
-typedef struct tuple<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const &> tuple<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const &>, *Ptuple<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const &>;
-
-struct tuple<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const &>
-{ // PlaceHolder Structure
-};
-
-typedef struct _Uninitialized_backout_al<struct_CameraPos *, class_std::allocator<struct_CameraPos> _> _Uninitialized_backout_al<struct_CameraPos *, class_std::allocator<struct_CameraPos> _>, *P_Uninitialized_backout_al<struct_CameraPos *, class_std::allocator<struct_CameraPos> _>;
-
-struct _Uninitialized_backout_al<struct_CameraPos *, class_std::allocator<struct_CameraPos> _>
-{ // PlaceHolder Structure
-};
-
-typedef struct pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, *Ppair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>;
-
-struct pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>
+struct allocator<std::vector<word, std::allocator<word> _> _>
 { // PlaceHolder Structure
 };
 
@@ -6987,87 +7808,21 @@ struct function<void___cdecl(class_std::basic_string<char, struct_std::char_trai
 { // PlaceHolder Structure
 };
 
-typedef struct _Func_base<void, bool, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _> _Func_base<void, bool, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _>, *P_Func_base<void, bool, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _>;
+typedef struct vector<cocos2d::ui::Scale9Sprite *, std::allocator<cocos2d::ui::Scale9Sprite *> _> vector<cocos2d::ui::Scale9Sprite *, std::allocator<cocos2d::ui::Scale9Sprite *> _>, *Pvector<cocos2d::ui::Scale9Sprite *, std::allocator<cocos2d::ui::Scale9Sprite *> _>;
 
-struct _Func_base<void, bool, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _>
+struct vector<cocos2d::ui::Scale9Sprite *, std::allocator<cocos2d::ui::Scale9Sprite *> _>
 { // PlaceHolder Structure
 };
 
-typedef struct allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, *Pallocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>;
+typedef struct vector<AnimationFrames *, std::allocator<AnimationFrames *> _> vector<AnimationFrames *, std::allocator<AnimationFrames *> _>, *Pvector<AnimationFrames *, std::allocator<AnimationFrames *> _>;
 
-struct allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>
+struct vector<AnimationFrames *, std::allocator<AnimationFrames *> _>
 { // PlaceHolder Structure
 };
 
-typedef struct _String_iterator<class_std::_String_val<struct_std::_Simple_types<char> _> _> _String_iterator<class_std::_String_val<struct_std::_Simple_types<char> _> _>, *P_String_iterator<class_std::_String_val<struct_std::_Simple_types<char> _> _>;
+typedef struct vector<ServerShipState *, std::allocator<ServerShipState *> _> vector<ServerShipState *, std::allocator<ServerShipState *> _>, *Pvector<ServerShipState *, std::allocator<ServerShipState *> _>;
 
-struct _String_iterator<class_std::_String_val<struct_std::_Simple_types<char> _> _>
-{ // PlaceHolder Structure
-};
-
-typedef struct _Tree_comp_alloc<class_std::_Tmap_traits<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>, struct_std::less<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, class_std::allocator<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _> _>, 0> _> _Tree_comp_alloc<class_std::_Tmap_traits<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>, struct_std::less<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, class_std::allocator<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _> _>, 0> _>, *P_Tree_comp_alloc<class_std::_Tmap_traits<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>, struct_std::less<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, class_std::allocator<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _> _>, 0> _>;
-
-struct _Tree_comp_alloc<class_std::_Tmap_traits<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>, struct_std::less<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, class_std::allocator<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _> _>, 0> _>
-{ // PlaceHolder Structure
-};
-
-typedef struct _Binder<struct_std::_Unforced, void_ (__thiscall_Screen_UpgradeTerminal::*)(class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>), class_Screen_UpgradeTerminal *, struct_std::_Ph<1> _const &, struct_std::_Ph<2> _const &> _Binder<struct_std::_Unforced, void_ (__thiscall_Screen_UpgradeTerminal::*)(class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>), class_Screen_UpgradeTerminal *, struct_std::_Ph<1> _const &, struct_std::_Ph<2> _const &>, *P_Binder<struct_std::_Unforced, void_ (__thiscall_Screen_UpgradeTerminal::*)(class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>), class_Screen_UpgradeTerminal *, struct_std::_Ph<1> _const &, struct_std::_Ph<2> _const &>;
-
-struct _Binder<struct_std::_Unforced, void_ (__thiscall_Screen_UpgradeTerminal::*)(class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>), class_Screen_UpgradeTerminal *, struct_std::_Ph<1> _const &, struct_std::_Ph<2> _const &>
-{ // PlaceHolder Structure
-};
-
-typedef struct _Tree_node<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, float>, void *> _Tree_node<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, float>, void *>, *P_Tree_node<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, float>, void *>;
-
-struct _Tree_node<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, float>, void *>
-{ // PlaceHolder Structure
-};
-
-typedef struct allocator<struct_Destination> allocator<struct_Destination>, *Pallocator<struct_Destination>;
-
-struct allocator<struct_Destination>
-{ // PlaceHolder Structure
-};
-
-typedef struct _Tree_node<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, bool>, void *> _Tree_node<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, bool>, void *>, *P_Tree_node<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, bool>, void *>;
-
-struct _Tree_node<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, bool>, void *>
-{ // PlaceHolder Structure
-};
-
-typedef struct allocator<struct_CommsCommand> allocator<struct_CommsCommand>, *Pallocator<struct_CommsCommand>;
-
-struct allocator<struct_CommsCommand>
-{ // PlaceHolder Structure
-};
-
-typedef struct _Binder<struct_std::_Unforced, void_ (__thiscall_PresentationInterface::*)(enum_cocos2d::EventKeyboard::KeyCode, class_cocos2d::Event *), class_PresentationInterface *, struct_std::_Ph<1> _const &, struct_std::_Ph<2> _const &> _Binder<struct_std::_Unforced, void_ (__thiscall_PresentationInterface::*)(enum_cocos2d::EventKeyboard::KeyCode, class_cocos2d::Event *), class_PresentationInterface *, struct_std::_Ph<1> _const &, struct_std::_Ph<2> _const &>, *P_Binder<struct_std::_Unforced, void_ (__thiscall_PresentationInterface::*)(enum_cocos2d::EventKeyboard::KeyCode, class_cocos2d::Event *), class_PresentationInterface *, struct_std::_Ph<1> _const &, struct_std::_Ph<2> _const &>;
-
-struct _Binder<struct_std::_Unforced, void_ (__thiscall_PresentationInterface::*)(enum_cocos2d::EventKeyboard::KeyCode, class_cocos2d::Event *), class_PresentationInterface *, struct_std::_Ph<1> _const &, struct_std::_Ph<2> _const &>
-{ // PlaceHolder Structure
-};
-
-typedef struct vector<struct_ScreenTab, class_std::allocator<struct_ScreenTab> _> vector<struct_ScreenTab, class_std::allocator<struct_ScreenTab> _>, *Pvector<struct_ScreenTab, class_std::allocator<struct_ScreenTab> _>;
-
-struct vector<struct_ScreenTab, class_std::allocator<struct_ScreenTab> _>
-{ // PlaceHolder Structure
-};
-
-typedef struct vector<struct_ModuleRenderData, class_std::allocator<struct_ModuleRenderData> _> vector<struct_ModuleRenderData, class_std::allocator<struct_ModuleRenderData> _>, *Pvector<struct_ModuleRenderData, class_std::allocator<struct_ModuleRenderData> _>;
-
-struct vector<struct_ModuleRenderData, class_std::allocator<struct_ModuleRenderData> _>
-{ // PlaceHolder Structure
-};
-
-typedef struct _Tree<class_std::_Tmap_traits<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, float, struct_std::less<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, class_std::allocator<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, float> _>, 0> _> _Tree<class_std::_Tmap_traits<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, float, struct_std::less<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, class_std::allocator<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, float> _>, 0> _>, *P_Tree<class_std::_Tmap_traits<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, float, struct_std::less<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, class_std::allocator<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, float> _>, 0> _>;
-
-struct _Tree<class_std::_Tmap_traits<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, float, struct_std::less<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, class_std::allocator<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, float> _>, 0> _>
-{ // PlaceHolder Structure
-};
-
-typedef struct vector<int, class_std::allocator<int> _> vector<int, class_std::allocator<int> _>, *Pvector<int, class_std::allocator<int> _>;
-
-struct vector<int, class_std::allocator<int> _>
+struct vector<ServerShipState *, std::allocator<ServerShipState *> _>
 { // PlaceHolder Structure
 };
 
@@ -7077,213 +7832,63 @@ struct vector<class_Requirement, class_std::allocator<class_Requirement> _>
 { // PlaceHolder Structure
 };
 
-typedef struct vector<struct_word, class_std::allocator<struct_word> _> vector<struct_word, class_std::allocator<struct_word> _>, *Pvector<struct_word, class_std::allocator<struct_word> _>;
+typedef struct pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, float> pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, float>, *Ppair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, float>;
 
-struct vector<struct_word, class_std::allocator<struct_word> _>
+struct pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, float>
 { // PlaceHolder Structure
 };
 
-typedef struct map<int, class_FogInstance *, struct_std::less<int>, class_std::allocator<struct_std::pair<int_const_, class_FogInstance *> _> _> map<int, class_FogInstance *, struct_std::less<int>, class_std::allocator<struct_std::pair<int_const_, class_FogInstance *> _> _>, *Pmap<int, class_FogInstance *, struct_std::less<int>, class_std::allocator<struct_std::pair<int_const_, class_FogInstance *> _> _>;
+typedef struct _Binder<std::_Unforced, void_ (__thiscall_Screen_PC::*)(void), Screen_PC *> _Binder<std::_Unforced, void_ (__thiscall_Screen_PC::*)(void), Screen_PC *>, *P_Binder<std::_Unforced, void_ (__thiscall_Screen_PC::*)(void), Screen_PC *>;
 
-struct map<int, class_FogInstance *, struct_std::less<int>, class_std::allocator<struct_std::pair<int_const_, class_FogInstance *> _> _>
+struct _Binder<std::_Unforced, void_ (__thiscall_Screen_PC::*)(void), Screen_PC *>
 { // PlaceHolder Structure
 };
 
-typedef struct allocator<class_BankTransaction> allocator<class_BankTransaction>, *Pallocator<class_BankTransaction>;
+typedef struct allocator<Command> allocator<Command>, *Pallocator<Command>;
 
-struct allocator<class_BankTransaction>
+struct allocator<Command>
 { // PlaceHolder Structure
 };
 
-typedef struct function<void___cdecl(class_cocos2d::EventMouse *)> function<void___cdecl(class_cocos2d::EventMouse *)>, *Pfunction<void___cdecl(class_cocos2d::EventMouse *)>;
+typedef struct allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _>, *Pallocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _>;
 
-struct function<void___cdecl(class_cocos2d::EventMouse *)>
+struct allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _>
 { // PlaceHolder Structure
 };
 
-typedef struct _Uninitialized_backout_al<class_cocos2d::Rect *, class_std::allocator<class_cocos2d::Rect> _> _Uninitialized_backout_al<class_cocos2d::Rect *, class_std::allocator<class_cocos2d::Rect> _>, *P_Uninitialized_backout_al<class_cocos2d::Rect *, class_std::allocator<class_cocos2d::Rect> _>;
+typedef struct vector<ScreenData, std::allocator<ScreenData> _> vector<ScreenData, std::allocator<ScreenData> _>, *Pvector<ScreenData, std::allocator<ScreenData> _>;
 
-struct _Uninitialized_backout_al<class_cocos2d::Rect *, class_std::allocator<class_cocos2d::Rect> _>
+struct vector<ScreenData, std::allocator<ScreenData> _>
 { // PlaceHolder Structure
 };
 
-typedef struct allocator<struct_SensorSelectionElement> allocator<struct_SensorSelectionElement>, *Pallocator<struct_SensorSelectionElement>;
+typedef struct _Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<int_const_, std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _> _> _Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<int_const_, std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _> _>, *P_Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<int_const_, std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _> _>;
 
-struct allocator<struct_SensorSelectionElement>
+struct _Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<int_const_, std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _> _>
 { // PlaceHolder Structure
 };
 
-typedef struct vector<struct_MouseCursor, class_std::allocator<struct_MouseCursor> _> vector<struct_MouseCursor, class_std::allocator<struct_MouseCursor> _>, *Pvector<struct_MouseCursor, class_std::allocator<struct_MouseCursor> _>;
+typedef struct _Tree_val<std::_Tree_simple_types<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, float> _> _> _Tree_val<std::_Tree_simple_types<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, float> _> _>, *P_Tree_val<std::_Tree_simple_types<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, float> _> _>;
 
-struct vector<struct_MouseCursor, class_std::allocator<struct_MouseCursor> _>
+struct _Tree_val<std::_Tree_simple_types<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, float> _> _>
 { // PlaceHolder Structure
 };
 
-typedef struct allocator<class_std::vector<struct_word, class_std::allocator<struct_word> _> _> allocator<class_std::vector<struct_word, class_std::allocator<struct_word> _> _>, *Pallocator<class_std::vector<struct_word, class_std::allocator<struct_word> _> _>;
+typedef struct vector<NSMSectorInfo, std::allocator<NSMSectorInfo> _> vector<NSMSectorInfo, std::allocator<NSMSectorInfo> _>, *Pvector<NSMSectorInfo, std::allocator<NSMSectorInfo> _>;
 
-struct allocator<class_std::vector<struct_word, class_std::allocator<struct_word> _> _>
+struct vector<NSMSectorInfo, std::allocator<NSMSectorInfo> _>
 { // PlaceHolder Structure
 };
 
-typedef struct _Func_base<void, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _Func_base<void, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, *P_Func_base<void, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>;
+typedef struct _Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<int_const_, FogInstance *> _> _> _> _Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<int_const_, FogInstance *> _> _> _>, *P_Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<int_const_, FogInstance *> _> _> _>;
 
-struct _Func_base<void, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>
+struct _Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<int_const_, FogInstance *> _> _> _>
 { // PlaceHolder Structure
 };
 
-typedef struct allocator<struct_MouseCursor> allocator<struct_MouseCursor>, *Pallocator<struct_MouseCursor>;
+typedef struct vector<NavMarker, std::allocator<NavMarker> _> vector<NavMarker, std::allocator<NavMarker> _>, *Pvector<NavMarker, std::allocator<NavMarker> _>;
 
-struct allocator<struct_MouseCursor>
-{ // PlaceHolder Structure
-};
-
-typedef struct _Tree<class_std::_Tmap_traits<int, class_FogInstance *, struct_std::less<int>, class_std::allocator<struct_std::pair<int_const_, class_FogInstance *> _>, 0> _> _Tree<class_std::_Tmap_traits<int, class_FogInstance *, struct_std::less<int>, class_std::allocator<struct_std::pair<int_const_, class_FogInstance *> _>, 0> _>, *P_Tree<class_std::_Tmap_traits<int, class_FogInstance *, struct_std::less<int>, class_std::allocator<struct_std::pair<int_const_, class_FogInstance *> _>, 0> _>;
-
-struct _Tree<class_std::_Tmap_traits<int, class_FogInstance *, struct_std::less<int>, class_std::allocator<struct_std::pair<int_const_, class_FogInstance *> _>, 0> _>
-{ // PlaceHolder Structure
-};
-
-typedef struct map<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, float, struct_std::less<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, class_std::allocator<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, float> _> _> map<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, float, struct_std::less<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, class_std::allocator<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, float> _> _>, *Pmap<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, float, struct_std::less<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, class_std::allocator<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, float> _> _>;
-
-struct map<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, float, struct_std::less<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, class_std::allocator<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, float> _> _>
-{ // PlaceHolder Structure
-};
-
-typedef struct allocator<char> allocator<char>, *Pallocator<char>;
-
-struct allocator<char>
-{ // PlaceHolder Structure
-};
-
-typedef struct allocator<struct_ScreenTab> allocator<struct_ScreenTab>, *Pallocator<struct_ScreenTab>;
-
-struct allocator<struct_ScreenTab>
-{ // PlaceHolder Structure
-};
-
-typedef struct _Tree_node<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, void *> _Tree_node<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, void *>, *P_Tree_node<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, void *>;
-
-struct _Tree_node<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, void *>
-{ // PlaceHolder Structure
-};
-
-typedef struct _Tree<class_std::_Tmap_traits<int, int, struct_std::less<int>, class_std::allocator<struct_std::pair<int_const_, int> _>, 0> _> _Tree<class_std::_Tmap_traits<int, int, struct_std::less<int>, class_std::allocator<struct_std::pair<int_const_, int> _>, 0> _>, *P_Tree<class_std::_Tmap_traits<int, int, struct_std::less<int>, class_std::allocator<struct_std::pair<int_const_, int> _>, 0> _>;
-
-struct _Tree<class_std::_Tmap_traits<int, int, struct_std::less<int>, class_std::allocator<struct_std::pair<int_const_, int> _>, 0> _>
-{ // PlaceHolder Structure
-};
-
-typedef struct function<void___cdecl(enum_cocos2d::EventKeyboard::KeyCode, class_cocos2d::Event *)> function<void___cdecl(enum_cocos2d::EventKeyboard::KeyCode, class_cocos2d::Event *)>, *Pfunction<void___cdecl(enum_cocos2d::EventKeyboard::KeyCode, class_cocos2d::Event *)>;
-
-struct function<void___cdecl(enum_cocos2d::EventKeyboard::KeyCode, class_cocos2d::Event *)>
-{ // PlaceHolder Structure
-};
-
-typedef struct _Binder<struct_std::_Unforced, void_ (__thiscall_Screen_PC::*)(class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>), class_Screen_PC *, struct_std::_Ph<1> _const &> _Binder<struct_std::_Unforced, void_ (__thiscall_Screen_PC::*)(class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>), class_Screen_PC *, struct_std::_Ph<1> _const &>, *P_Binder<struct_std::_Unforced, void_ (__thiscall_Screen_PC::*)(class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>), class_Screen_PC *, struct_std::_Ph<1> _const &>;
-
-struct _Binder<struct_std::_Unforced, void_ (__thiscall_Screen_PC::*)(class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>), class_Screen_PC *, struct_std::_Ph<1> _const &>
-{ // PlaceHolder Structure
-};
-
-typedef struct _Uninitialized_backout_al<struct_Destination *, class_std::allocator<struct_Destination> _> _Uninitialized_backout_al<struct_Destination *, class_std::allocator<struct_Destination> _>, *P_Uninitialized_backout_al<struct_Destination *, class_std::allocator<struct_Destination> _>;
-
-struct _Uninitialized_backout_al<struct_Destination *, class_std::allocator<struct_Destination> _>
-{ // PlaceHolder Structure
-};
-
-typedef struct _Tree_comp_alloc<class_std::_Tmap_traits<int, int, struct_std::less<int>, class_std::allocator<struct_std::pair<int_const_, int> _>, 0> _> _Tree_comp_alloc<class_std::_Tmap_traits<int, int, struct_std::less<int>, class_std::allocator<struct_std::pair<int_const_, int> _>, 0> _>, *P_Tree_comp_alloc<class_std::_Tmap_traits<int, int, struct_std::less<int>, class_std::allocator<struct_std::pair<int_const_, int> _>, 0> _>;
-
-struct _Tree_comp_alloc<class_std::_Tmap_traits<int, int, struct_std::less<int>, class_std::allocator<struct_std::pair<int_const_, int> _>, 0> _>
-{ // PlaceHolder Structure
-};
-
-typedef struct _Binder<struct_std::_Unforced, void_ (__thiscall_Screen_WeaponTerminal::*)(void), class_Screen_WeaponTerminal *> _Binder<struct_std::_Unforced, void_ (__thiscall_Screen_WeaponTerminal::*)(void), class_Screen_WeaponTerminal *>, *P_Binder<struct_std::_Unforced, void_ (__thiscall_Screen_WeaponTerminal::*)(void), class_Screen_WeaponTerminal *>;
-
-struct _Binder<struct_std::_Unforced, void_ (__thiscall_Screen_WeaponTerminal::*)(void), class_Screen_WeaponTerminal *>
-{ // PlaceHolder Structure
-};
-
-typedef struct function<bool___cdecl(class_cocos2d::Node *)> function<bool___cdecl(class_cocos2d::Node *)>, *Pfunction<bool___cdecl(class_cocos2d::Node *)>;
-
-struct function<bool___cdecl(class_cocos2d::Node *)>
-{ // PlaceHolder Structure
-};
-
-typedef struct _Tree_const_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, float> _> _> _> _Tree_const_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, float> _> _> _>, *P_Tree_const_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, float> _> _> _>;
-
-struct _Tree_const_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, float> _> _> _>
-{ // PlaceHolder Structure
-};
-
-typedef struct allocator<struct_DockProcessElement> allocator<struct_DockProcessElement>, *Pallocator<struct_DockProcessElement>;
-
-struct allocator<struct_DockProcessElement>
-{ // PlaceHolder Structure
-};
-
-typedef struct _Tree<class_std::_Tmap_traits<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, struct_std::less<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, class_std::allocator<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>, 0> _> _Tree<class_std::_Tmap_traits<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, struct_std::less<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, class_std::allocator<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>, 0> _>, *P_Tree<class_std::_Tmap_traits<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, struct_std::less<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, class_std::allocator<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>, 0> _>;
-
-struct _Tree<class_std::_Tmap_traits<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, struct_std::less<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, class_std::allocator<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>, 0> _>
-{ // PlaceHolder Structure
-};
-
-typedef struct _Tree_node<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, int>, void *> _Tree_node<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, int>, void *>, *P_Tree_node<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, int>, void *>;
-
-struct _Tree_node<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, int>, void *>
-{ // PlaceHolder Structure
-};
-
-typedef struct function<void___cdecl(class_Menu *)> function<void___cdecl(class_Menu *)>, *Pfunction<void___cdecl(class_Menu *)>;
-
-struct function<void___cdecl(class_Menu *)>
-{ // PlaceHolder Structure
-};
-
-typedef struct vector<class_cocos2d::Rect, class_std::allocator<class_cocos2d::Rect> _> vector<class_cocos2d::Rect, class_std::allocator<class_cocos2d::Rect> _>, *Pvector<class_cocos2d::Rect, class_std::allocator<class_cocos2d::Rect> _>;
-
-struct vector<class_cocos2d::Rect, class_std::allocator<class_cocos2d::Rect> _>
-{ // PlaceHolder Structure
-};
-
-typedef struct _Tree_node<struct_std::pair<int_const_, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, void *> _Tree_node<struct_std::pair<int_const_, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, void *>, *P_Tree_node<struct_std::pair<int_const_, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, void *>;
-
-struct _Tree_node<struct_std::pair<int_const_, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, void *>
-{ // PlaceHolder Structure
-};
-
-typedef struct _Vector_const_iterator<class_std::_Vector_val<struct_std::_Simple_types<class_Waypoint> _> _> _Vector_const_iterator<class_std::_Vector_val<struct_std::_Simple_types<class_Waypoint> _> _>, *P_Vector_const_iterator<class_std::_Vector_val<struct_std::_Simple_types<class_Waypoint> _> _>;
-
-struct _Vector_const_iterator<class_std::_Vector_val<struct_std::_Simple_types<class_Waypoint> _> _>
-{ // PlaceHolder Structure
-};
-
-typedef struct _Tree<class_std::_Tset_traits<class_PathNode *, struct_PathContext::NodeTotalWeightCompare, class_std::allocator<class_PathNode *>, 1> _> _Tree<class_std::_Tset_traits<class_PathNode *, struct_PathContext::NodeTotalWeightCompare, class_std::allocator<class_PathNode *>, 1> _>, *P_Tree<class_std::_Tset_traits<class_PathNode *, struct_PathContext::NodeTotalWeightCompare, class_std::allocator<class_PathNode *>, 1> _>;
-
-struct _Tree<class_std::_Tset_traits<class_PathNode *, struct_PathContext::NodeTotalWeightCompare, class_std::allocator<class_PathNode *>, 1> _>
-{ // PlaceHolder Structure
-};
-
-typedef struct pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, int> pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, int>, *Ppair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, int>;
-
-struct pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, int>
-{ // PlaceHolder Structure
-};
-
-typedef struct _Func_class<void> _Func_class<void>, *P_Func_class<void>;
-
-struct _Func_class<void>
-{ // PlaceHolder Structure
-};
-
-typedef struct pair<class_std::_Tree_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<int_const_, int> _> _> _>, bool> pair<class_std::_Tree_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<int_const_, int> _> _> _>, bool>, *Ppair<class_std::_Tree_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<int_const_, int> _> _> _>, bool>;
-
-struct pair<class_std::_Tree_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<int_const_, int> _> _> _>, bool>
-{ // PlaceHolder Structure
-};
-
-typedef struct _Tree_node<struct_std::pair<int_const_, int>, void *> _Tree_node<struct_std::pair<int_const_, int>, void *>, *P_Tree_node<struct_std::pair<int_const_, int>, void *>;
-
-struct _Tree_node<struct_std::pair<int_const_, int>, void *>
+struct vector<NavMarker, std::allocator<NavMarker> _>
 { // PlaceHolder Structure
 };
 
@@ -7293,69 +7898,57 @@ struct vector<class_PrivateCommOption, class_std::allocator<class_PrivateCommOpt
 { // PlaceHolder Structure
 };
 
-typedef struct pair<class_std::_Tree_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, float> _> _> _>, bool> pair<class_std::_Tree_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, float> _> _> _>, bool>, *Ppair<class_std::_Tree_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, float> _> _> _>, bool>;
+typedef struct vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>, *Pvector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>;
 
-struct pair<class_std::_Tree_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, float> _> _> _>, bool>
+struct vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>
 { // PlaceHolder Structure
 };
 
-typedef struct forward_iterator_tag forward_iterator_tag, *Pforward_iterator_tag;
+typedef struct _Tree_val<std::_Tree_simple_types<std::pair<int_const_, std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _> _Tree_val<std::_Tree_simple_types<std::pair<int_const_, std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _>, *P_Tree_val<std::_Tree_simple_types<std::pair<int_const_, std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _>;
 
-struct forward_iterator_tag
+struct _Tree_val<std::_Tree_simple_types<std::pair<int_const_, std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _>
 { // PlaceHolder Structure
 };
 
-typedef struct vector<enum_EComponentCategory::ComponentCategory, class_std::allocator<enum_EComponentCategory::ComponentCategory> _> vector<enum_EComponentCategory::ComponentCategory, class_std::allocator<enum_EComponentCategory::ComponentCategory> _>, *Pvector<enum_EComponentCategory::ComponentCategory, class_std::allocator<enum_EComponentCategory::ComponentCategory> _>;
+typedef struct vector<MetaGameAction *, std::allocator<MetaGameAction *> _> vector<MetaGameAction *, std::allocator<MetaGameAction *> _>, *Pvector<MetaGameAction *, std::allocator<MetaGameAction *> _>;
 
-struct vector<enum_EComponentCategory::ComponentCategory, class_std::allocator<enum_EComponentCategory::ComponentCategory> _>
+struct vector<MetaGameAction *, std::allocator<MetaGameAction *> _>
 { // PlaceHolder Structure
 };
 
-typedef struct vector<class_Requirement *, class_std::allocator<class_Requirement *> _> vector<class_Requirement *, class_std::allocator<class_Requirement *> _>, *Pvector<class_Requirement *, class_std::allocator<class_Requirement *> _>;
+typedef struct vector<WeaponCommand, std::allocator<WeaponCommand> _> vector<WeaponCommand, std::allocator<WeaponCommand> _>, *Pvector<WeaponCommand, std::allocator<WeaponCommand> _>;
 
-struct vector<class_Requirement *, class_std::allocator<class_Requirement *> _>
+struct vector<WeaponCommand, std::allocator<WeaponCommand> _>
 { // PlaceHolder Structure
 };
 
-typedef struct map<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, bool, struct_std::less<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, class_std::allocator<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, bool> _> _> map<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, bool, struct_std::less<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, class_std::allocator<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, bool> _> _>, *Pmap<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, bool, struct_std::less<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, class_std::allocator<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, bool> _> _>;
+typedef struct _Tree<std::_Tset_traits<PathNode *, PathContext::NodeTotalWeightCompare, std::allocator<PathNode *>, 1> _> _Tree<std::_Tset_traits<PathNode *, PathContext::NodeTotalWeightCompare, std::allocator<PathNode *>, 1> _>, *P_Tree<std::_Tset_traits<PathNode *, PathContext::NodeTotalWeightCompare, std::allocator<PathNode *>, 1> _>;
 
-struct map<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, bool, struct_std::less<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, class_std::allocator<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, bool> _> _>
+struct _Tree<std::_Tset_traits<PathNode *, PathContext::NodeTotalWeightCompare, std::allocator<PathNode *>, 1> _>
 { // PlaceHolder Structure
 };
 
-typedef struct _Uninitialized_backout_al<struct_SensorSelectionElement *, class_std::allocator<struct_SensorSelectionElement> _> _Uninitialized_backout_al<struct_SensorSelectionElement *, class_std::allocator<struct_SensorSelectionElement> _>, *P_Uninitialized_backout_al<struct_SensorSelectionElement *, class_std::allocator<struct_SensorSelectionElement> _>;
+typedef struct pair<std::_Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, bool> _> _> _>, std::_Tree_const_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, bool> _> _> _> _> pair<std::_Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, bool> _> _> _>, std::_Tree_const_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, bool> _> _> _> _>, *Ppair<std::_Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, bool> _> _> _>, std::_Tree_const_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, bool> _> _> _> _>;
 
-struct _Uninitialized_backout_al<struct_SensorSelectionElement *, class_std::allocator<struct_SensorSelectionElement> _>
+struct pair<std::_Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, bool> _> _> _>, std::_Tree_const_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, bool> _> _> _> _>
 { // PlaceHolder Structure
 };
 
-typedef struct _Uninitialized_backout_al<struct_Selectable *, class_std::allocator<struct_Selectable> _> _Uninitialized_backout_al<struct_Selectable *, class_std::allocator<struct_Selectable> _>, *P_Uninitialized_backout_al<struct_Selectable *, class_std::allocator<struct_Selectable> _>;
+typedef struct _Vector_const_iterator<std::_Vector_val<std::_Simple_types<Contract *> _> _> _Vector_const_iterator<std::_Vector_val<std::_Simple_types<Contract *> _> _>, *P_Vector_const_iterator<std::_Vector_val<std::_Simple_types<Contract *> _> _>;
 
-struct _Uninitialized_backout_al<struct_Selectable *, class_std::allocator<struct_Selectable> _>
+struct _Vector_const_iterator<std::_Vector_val<std::_Simple_types<Contract *> _> _>
 { // PlaceHolder Structure
 };
 
-typedef struct vector<struct_JumpGateRoute, class_std::allocator<struct_JumpGateRoute> _> vector<struct_JumpGateRoute, class_std::allocator<struct_JumpGateRoute> _>, *Pvector<struct_JumpGateRoute, class_std::allocator<struct_JumpGateRoute> _>;
+typedef struct _Uninitialized_backout_al<NavMarker *, std::allocator<NavMarker> _> _Uninitialized_backout_al<NavMarker *, std::allocator<NavMarker> _>, *P_Uninitialized_backout_al<NavMarker *, std::allocator<NavMarker> _>;
 
-struct vector<struct_JumpGateRoute, class_std::allocator<struct_JumpGateRoute> _>
+struct _Uninitialized_backout_al<NavMarker *, std::allocator<NavMarker> _>
 { // PlaceHolder Structure
 };
 
-typedef struct _Uninitialized_backout_al<struct_word *, class_std::allocator<struct_word> _> _Uninitialized_backout_al<struct_word *, class_std::allocator<struct_word> _>, *P_Uninitialized_backout_al<struct_word *, class_std::allocator<struct_word> _>;
+typedef struct _Uninitialized_backout_al<MouseCursor *, std::allocator<MouseCursor> _> _Uninitialized_backout_al<MouseCursor *, std::allocator<MouseCursor> _>, *P_Uninitialized_backout_al<MouseCursor *, std::allocator<MouseCursor> _>;
 
-struct _Uninitialized_backout_al<struct_word *, class_std::allocator<struct_word> _>
-{ // PlaceHolder Structure
-};
-
-typedef struct _Binder<struct_std::_Unforced, void_ (__thiscall_Screen_PC::*)(void), class_Screen_PC *> _Binder<struct_std::_Unforced, void_ (__thiscall_Screen_PC::*)(void), class_Screen_PC *>, *P_Binder<struct_std::_Unforced, void_ (__thiscall_Screen_PC::*)(void), class_Screen_PC *>;
-
-struct _Binder<struct_std::_Unforced, void_ (__thiscall_Screen_PC::*)(void), class_Screen_PC *>
-{ // PlaceHolder Structure
-};
-
-typedef struct vector<struct_CommsCommand, class_std::allocator<struct_CommsCommand> _> vector<struct_CommsCommand, class_std::allocator<struct_CommsCommand> _>, *Pvector<struct_CommsCommand, class_std::allocator<struct_CommsCommand> _>;
-
-struct vector<struct_CommsCommand, class_std::allocator<struct_CommsCommand> _>
+struct _Uninitialized_backout_al<MouseCursor *, std::allocator<MouseCursor> _>
 { // PlaceHolder Structure
 };
 
@@ -7365,201 +7958,81 @@ struct _Func_class<void, int>
 { // PlaceHolder Structure
 };
 
-typedef struct _Tree_val<struct_std::_Tree_simple_types<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, float> _> _> _Tree_val<struct_std::_Tree_simple_types<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, float> _> _>, *P_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, float> _> _>;
+typedef struct basic_string<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t> _> basic_string<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t> _>, *Pbasic_string<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t> _>;
 
-struct _Tree_val<struct_std::_Tree_simple_types<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, float> _> _>
+struct basic_string<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t> _>
 { // PlaceHolder Structure
 };
 
-typedef struct _Tree<class_std::_Tmap_traits<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, int, struct_std::less<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, class_std::allocator<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, int> _>, 0> _> _Tree<class_std::_Tmap_traits<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, int, struct_std::less<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, class_std::allocator<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, int> _>, 0> _>, *P_Tree<class_std::_Tmap_traits<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, int, struct_std::less<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, class_std::allocator<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, int> _>, 0> _>;
+typedef struct pair<std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<int_const_, int> _> _> _>, bool> pair<std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<int_const_, int> _> _> _>, bool>, *Ppair<std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<int_const_, int> _> _> _>, bool>;
 
-struct _Tree<class_std::_Tmap_traits<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, int, struct_std::less<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, class_std::allocator<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, int> _>, 0> _>
+struct pair<std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<int_const_, int> _> _> _>, bool>
 { // PlaceHolder Structure
 };
 
-typedef struct allocator<struct_PlayerGuidedToPort> allocator<struct_PlayerGuidedToPort>, *Pallocator<struct_PlayerGuidedToPort>;
+typedef struct function<double___cdecl(Ship *, int)> function<double___cdecl(Ship *, int)>, *Pfunction<double___cdecl(Ship *, int)>;
 
-struct allocator<struct_PlayerGuidedToPort>
+struct function<double___cdecl(Ship *, int)>
 { // PlaceHolder Structure
 };
 
-typedef struct _Tree_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, float> _> _> _> _Tree_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, float> _> _> _>, *P_Tree_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, float> _> _> _>;
+typedef struct _Tree_comp_alloc<std::_Tmap_traits<int, std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::less<int>, std::allocator<std::pair<int_const_, std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>, 0> _> _Tree_comp_alloc<std::_Tmap_traits<int, std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::less<int>, std::allocator<std::pair<int_const_, std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>, 0> _>, *P_Tree_comp_alloc<std::_Tmap_traits<int, std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::less<int>, std::allocator<std::pair<int_const_, std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>, 0> _>;
 
-struct _Tree_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, float> _> _> _>
+struct _Tree_comp_alloc<std::_Tmap_traits<int, std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::less<int>, std::allocator<std::pair<int_const_, std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>, 0> _>
 { // PlaceHolder Structure
 };
 
-typedef struct _Tree_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<enum_cocos2d::EventKeyboard::KeyCode_const_, char> _> _> _> _Tree_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<enum_cocos2d::EventKeyboard::KeyCode_const_, char> _> _> _>, *P_Tree_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<enum_cocos2d::EventKeyboard::KeyCode_const_, char> _> _> _>;
+typedef struct allocator<ScreenTab> allocator<ScreenTab>, *Pallocator<ScreenTab>;
 
-struct _Tree_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<enum_cocos2d::EventKeyboard::KeyCode_const_, char> _> _> _>
+struct allocator<ScreenTab>
 { // PlaceHolder Structure
 };
 
-typedef struct _Func_class<bool, class_Ship *, double, double, double> _Func_class<bool, class_Ship *, double, double, double>, *P_Func_class<bool, class_Ship *, double, double, double>;
+typedef struct _Tree_comp_alloc<std::_Tmap_traits<cocos2d::EventKeyboard::KeyCode, char, std::less<cocos2d::EventKeyboard::KeyCode>, std::allocator<std::pair<cocos2d::EventKeyboard::KeyCode_const_, char> _>, 0> _> _Tree_comp_alloc<std::_Tmap_traits<cocos2d::EventKeyboard::KeyCode, char, std::less<cocos2d::EventKeyboard::KeyCode>, std::allocator<std::pair<cocos2d::EventKeyboard::KeyCode_const_, char> _>, 0> _>, *P_Tree_comp_alloc<std::_Tmap_traits<cocos2d::EventKeyboard::KeyCode, char, std::less<cocos2d::EventKeyboard::KeyCode>, std::allocator<std::pair<cocos2d::EventKeyboard::KeyCode_const_, char> _>, 0> _>;
 
-struct _Func_class<bool, class_Ship *, double, double, double>
+struct _Tree_comp_alloc<std::_Tmap_traits<cocos2d::EventKeyboard::KeyCode, char, std::less<cocos2d::EventKeyboard::KeyCode>, std::allocator<std::pair<cocos2d::EventKeyboard::KeyCode_const_, char> _>, 0> _>
 { // PlaceHolder Structure
 };
 
-typedef struct vector<class_BountyClass *, class_std::allocator<class_BountyClass *> _> vector<class_BountyClass *, class_std::allocator<class_BountyClass *> _>, *Pvector<class_BountyClass *, class_std::allocator<class_BountyClass *> _>;
+typedef struct map<int, std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::less<int>, std::allocator<std::pair<int_const_, std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _> map<int, std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::less<int>, std::allocator<std::pair<int_const_, std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _>, *Pmap<int, std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::less<int>, std::allocator<std::pair<int_const_, std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _>;
 
-struct vector<class_BountyClass *, class_std::allocator<class_BountyClass *> _>
+struct map<int, std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::less<int>, std::allocator<std::pair<int_const_, std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _>
 { // PlaceHolder Structure
 };
 
-typedef struct pair<class_std::_Tree_const_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _> _> _> _>, class_std::_Tree_const_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _> _> _> _> _> pair<class_std::_Tree_const_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _> _> _> _>, class_std::_Tree_const_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _> _> _> _> _>, *Ppair<class_std::_Tree_const_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _> _> _> _>, class_std::_Tree_const_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _> _> _> _> _>;
+typedef struct _Vector_iterator<std::_Vector_val<std::_Simple_types<Contract *> _> _> _Vector_iterator<std::_Vector_val<std::_Simple_types<Contract *> _> _>, *P_Vector_iterator<std::_Vector_val<std::_Simple_types<Contract *> _> _>;
 
-struct pair<class_std::_Tree_const_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _> _> _> _>, class_std::_Tree_const_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _> _> _> _> _>
+struct _Vector_iterator<std::_Vector_val<std::_Simple_types<Contract *> _> _>
 { // PlaceHolder Structure
 };
 
-typedef struct allocator<struct_JumpGateRoute> allocator<struct_JumpGateRoute>, *Pallocator<struct_JumpGateRoute>;
+typedef struct vector<UI_NavMap *, std::allocator<UI_NavMap *> _> vector<UI_NavMap *, std::allocator<UI_NavMap *> _>, *Pvector<UI_NavMap *, std::allocator<UI_NavMap *> _>;
 
-struct allocator<struct_JumpGateRoute>
+struct vector<UI_NavMap *, std::allocator<UI_NavMap *> _>
 { // PlaceHolder Structure
 };
 
-typedef struct pair<class_std::_Tree_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _> _>, bool> pair<class_std::_Tree_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _> _>, bool>, *Ppair<class_std::_Tree_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _> _>, bool>;
+typedef struct vector<MouseCursor, std::allocator<MouseCursor> _> vector<MouseCursor, std::allocator<MouseCursor> _>, *Pvector<MouseCursor, std::allocator<MouseCursor> _>;
 
-struct pair<class_std::_Tree_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _> _>, bool>
+struct vector<MouseCursor, std::allocator<MouseCursor> _>
 { // PlaceHolder Structure
 };
 
-typedef struct _Func_base<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_Ship *, int> _Func_base<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_Ship *, int>, *P_Func_base<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_Ship *, int>;
+typedef struct pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, *Ppair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>;
 
-struct _Func_base<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_Ship *, int>
+struct pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>
 { // PlaceHolder Structure
 };
 
-typedef struct pair<int_const_, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> pair<int_const_, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, *Ppair<int_const_, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>;
+typedef struct allocator<PlayerGuidedToPort> allocator<PlayerGuidedToPort>, *Pallocator<PlayerGuidedToPort>;
 
-struct pair<int_const_, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>
+struct allocator<PlayerGuidedToPort>
 { // PlaceHolder Structure
 };
 
-typedef struct vector<class_ListData, class_std::allocator<class_ListData> _> vector<class_ListData, class_std::allocator<class_ListData> _>, *Pvector<class_ListData, class_std::allocator<class_ListData> _>;
+typedef struct vector<Waypoint, std::allocator<Waypoint> _> vector<Waypoint, std::allocator<Waypoint> _>, *Pvector<Waypoint, std::allocator<Waypoint> _>;
 
-struct vector<class_ListData, class_std::allocator<class_ListData> _>
-{ // PlaceHolder Structure
-};
-
-typedef struct vector<struct_InputCommand, class_std::allocator<struct_InputCommand> _> vector<struct_InputCommand, class_std::allocator<struct_InputCommand> _>, *Pvector<struct_InputCommand, class_std::allocator<struct_InputCommand> _>;
-
-struct vector<struct_InputCommand, class_std::allocator<struct_InputCommand> _>
-{ // PlaceHolder Structure
-};
-
-typedef struct _Func_base<void, class_cocos2d::EventMouse *> _Func_base<void, class_cocos2d::EventMouse *>, *P_Func_base<void, class_cocos2d::EventMouse *>;
-
-struct _Func_base<void, class_cocos2d::EventMouse *>
-{ // PlaceHolder Structure
-};
-
-typedef struct vector<double, class_std::allocator<double> _> vector<double, class_std::allocator<double> _>, *Pvector<double, class_std::allocator<double> _>;
-
-struct vector<double, class_std::allocator<double> _>
-{ // PlaceHolder Structure
-};
-
-typedef struct _Tree_val<struct_std::_Tree_simple_types<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _> _Tree_val<struct_std::_Tree_simple_types<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _>, *P_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _>;
-
-struct _Tree_val<struct_std::_Tree_simple_types<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _>
-{ // PlaceHolder Structure
-};
-
-typedef struct allocator<struct_CameraPos> allocator<struct_CameraPos>, *Pallocator<struct_CameraPos>;
-
-struct allocator<struct_CameraPos>
-{ // PlaceHolder Structure
-};
-
-typedef struct _Tree_const_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<enum_cocos2d::EventKeyboard::KeyCode_const_, char> _> _> _> _Tree_const_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<enum_cocos2d::EventKeyboard::KeyCode_const_, char> _> _> _>, *P_Tree_const_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<enum_cocos2d::EventKeyboard::KeyCode_const_, char> _> _> _>;
-
-struct _Tree_const_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<enum_cocos2d::EventKeyboard::KeyCode_const_, char> _> _> _>
-{ // PlaceHolder Structure
-};
-
-typedef struct function<void___cdecl(bool, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>)> function<void___cdecl(bool, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>)>, *Pfunction<void___cdecl(bool, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>)>;
-
-struct function<void___cdecl(bool, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>)>
-{ // PlaceHolder Structure
-};
-
-typedef struct vector<struct_PlayerGuidedToPort, class_std::allocator<struct_PlayerGuidedToPort> _> vector<struct_PlayerGuidedToPort, class_std::allocator<struct_PlayerGuidedToPort> _>, *Pvector<struct_PlayerGuidedToPort, class_std::allocator<struct_PlayerGuidedToPort> _>;
-
-struct vector<struct_PlayerGuidedToPort, class_std::allocator<struct_PlayerGuidedToPort> _>
-{ // PlaceHolder Structure
-};
-
-typedef struct function<bool___cdecl(class_Ship *, int, int, int)> function<bool___cdecl(class_Ship *, int, int, int)>, *Pfunction<bool___cdecl(class_Ship *, int, int, int)>;
-
-struct function<bool___cdecl(class_Ship *, int, int, int)>
-{ // PlaceHolder Structure
-};
-
-typedef struct vector<struct_DockProcessElement, class_std::allocator<struct_DockProcessElement> _> vector<struct_DockProcessElement, class_std::allocator<struct_DockProcessElement> _>, *Pvector<struct_DockProcessElement, class_std::allocator<struct_DockProcessElement> _>;
-
-struct vector<struct_DockProcessElement, class_std::allocator<struct_DockProcessElement> _>
-{ // PlaceHolder Structure
-};
-
-typedef struct function<void___cdecl(class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>)> function<void___cdecl(class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>)>, *Pfunction<void___cdecl(class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>)>;
-
-struct function<void___cdecl(class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>)>
-{ // PlaceHolder Structure
-};
-
-typedef struct pair<class_std::_Tree_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<int_const_, class_FogInstance *> _> _> _>, bool> pair<class_std::_Tree_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<int_const_, class_FogInstance *> _> _> _>, bool>, *Ppair<class_std::_Tree_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<int_const_, class_FogInstance *> _> _> _>, bool>;
-
-struct pair<class_std::_Tree_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<int_const_, class_FogInstance *> _> _> _>, bool>
-{ // PlaceHolder Structure
-};
-
-typedef struct pair<class_std::_Tree_const_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, int> _> _> _>, class_std::_Tree_const_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, int> _> _> _> _> pair<class_std::_Tree_const_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, int> _> _> _>, class_std::_Tree_const_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, int> _> _> _> _>, *Ppair<class_std::_Tree_const_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, int> _> _> _>, class_std::_Tree_const_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, int> _> _> _> _>;
-
-struct pair<class_std::_Tree_const_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, int> _> _> _>, class_std::_Tree_const_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, int> _> _> _> _>
-{ // PlaceHolder Structure
-};
-
-typedef struct _Func_base<bool, class_Ship *, int, int, int> _Func_base<bool, class_Ship *, int, int, int>, *P_Func_base<bool, class_Ship *, int, int, int>;
-
-struct _Func_base<bool, class_Ship *, int, int, int>
-{ // PlaceHolder Structure
-};
-
-typedef struct allocator<class_Shop> allocator<class_Shop>, *Pallocator<class_Shop>;
-
-struct allocator<class_Shop>
-{ // PlaceHolder Structure
-};
-
-typedef struct _Tree_node<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, struct_Variable>, void *> _Tree_node<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, struct_Variable>, void *>, *P_Tree_node<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, struct_Variable>, void *>;
-
-struct _Tree_node<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, struct_Variable>, void *>
-{ // PlaceHolder Structure
-};
-
-typedef struct vector<class_ServerShipState *, class_std::allocator<class_ServerShipState *> _> vector<class_ServerShipState *, class_std::allocator<class_ServerShipState *> _>, *Pvector<class_ServerShipState *, class_std::allocator<class_ServerShipState *> _>;
-
-struct vector<class_ServerShipState *, class_std::allocator<class_ServerShipState *> _>
-{ // PlaceHolder Structure
-};
-
-typedef struct allocator<class_ExtraSpawned> allocator<class_ExtraSpawned>, *Pallocator<class_ExtraSpawned>;
-
-struct allocator<class_ExtraSpawned>
-{ // PlaceHolder Structure
-};
-
-typedef struct allocator<struct_ModuleRenderData> allocator<struct_ModuleRenderData>, *Pallocator<struct_ModuleRenderData>;
-
-struct allocator<struct_ModuleRenderData>
-{ // PlaceHolder Structure
-};
-
-typedef struct _Tree_const_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<int_const_, int> _> _> _> _Tree_const_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<int_const_, int> _> _> _>, *P_Tree_const_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<int_const_, int> _> _> _>;
-
-struct _Tree_const_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<int_const_, int> _> _> _>
+struct vector<Waypoint, std::allocator<Waypoint> _>
 { // PlaceHolder Structure
 };
 
@@ -7569,39 +8042,45 @@ struct pair<int_const_, int>
 { // PlaceHolder Structure
 };
 
-typedef struct _Binder<struct_std::_Unforced, void_ (__thiscall_Screen_Terminal::*)(void), class_Screen_Terminal *> _Binder<struct_std::_Unforced, void_ (__thiscall_Screen_Terminal::*)(void), class_Screen_Terminal *>, *P_Binder<struct_std::_Unforced, void_ (__thiscall_Screen_Terminal::*)(void), class_Screen_Terminal *>;
+typedef struct function<bool___cdecl(Ship *, int, int, int)> function<bool___cdecl(Ship *, int, int, int)>, *Pfunction<bool___cdecl(Ship *, int, int, int)>;
 
-struct _Binder<struct_std::_Unforced, void_ (__thiscall_Screen_Terminal::*)(void), class_Screen_Terminal *>
+struct function<bool___cdecl(Ship *, int, int, int)>
 { // PlaceHolder Structure
 };
 
-typedef struct _Binder<struct_std::_Unforced, void_ (__thiscall_Screen_TradeTerminal::*)(void), class_Screen_TradeTerminal *> _Binder<struct_std::_Unforced, void_ (__thiscall_Screen_TradeTerminal::*)(void), class_Screen_TradeTerminal *>, *P_Binder<struct_std::_Unforced, void_ (__thiscall_Screen_TradeTerminal::*)(void), class_Screen_TradeTerminal *>;
+typedef struct _Uninitialized_backout_al<Command *, std::allocator<Command> _> _Uninitialized_backout_al<Command *, std::allocator<Command> _>, *P_Uninitialized_backout_al<Command *, std::allocator<Command> _>;
 
-struct _Binder<struct_std::_Unforced, void_ (__thiscall_Screen_TradeTerminal::*)(void), class_Screen_TradeTerminal *>
+struct _Uninitialized_backout_al<Command *, std::allocator<Command> _>
 { // PlaceHolder Structure
 };
 
-typedef struct vector<class_NavMarker, class_std::allocator<class_NavMarker> _> vector<class_NavMarker, class_std::allocator<class_NavMarker> _>, *Pvector<class_NavMarker, class_std::allocator<class_NavMarker> _>;
+typedef struct allocator<PrivateCommOption> allocator<PrivateCommOption>, *Pallocator<PrivateCommOption>;
 
-struct vector<class_NavMarker, class_std::allocator<class_NavMarker> _>
+struct allocator<PrivateCommOption>
 { // PlaceHolder Structure
 };
 
-typedef struct _String_val<struct_std::_Simple_types<char> _> _String_val<struct_std::_Simple_types<char> _>, *P_String_val<struct_std::_Simple_types<char> _>;
+typedef struct allocator<JumpGateRoute> allocator<JumpGateRoute>, *Pallocator<JumpGateRoute>;
 
-struct _String_val<struct_std::_Simple_types<char> _>
+struct allocator<JumpGateRoute>
 { // PlaceHolder Structure
 };
 
-typedef struct vector<class_PrivateCommElement, class_std::allocator<class_PrivateCommElement> _> vector<class_PrivateCommElement, class_std::allocator<class_PrivateCommElement> _>, *Pvector<class_PrivateCommElement, class_std::allocator<class_PrivateCommElement> _>;
+typedef struct vector<MusicTrack *, std::allocator<MusicTrack *> _> vector<MusicTrack *, std::allocator<MusicTrack *> _>, *Pvector<MusicTrack *, std::allocator<MusicTrack *> _>;
 
-struct vector<class_PrivateCommElement, class_std::allocator<class_PrivateCommElement> _>
+struct vector<MusicTrack *, std::allocator<MusicTrack *> _>
 { // PlaceHolder Structure
 };
 
-typedef struct function<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> ___cdecl(class_Ship *, int)> function<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> ___cdecl(class_Ship *, int)>, *Pfunction<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> ___cdecl(class_Ship *, int)>;
+typedef struct _Binder<std::_Unforced, void_ (__thiscall_Screen_ContractTerminal::*)(std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>), Screen_ContractTerminal *, std::_Ph<1> _const &, std::_Ph<2> _const &> _Binder<std::_Unforced, void_ (__thiscall_Screen_ContractTerminal::*)(std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>), Screen_ContractTerminal *, std::_Ph<1> _const &, std::_Ph<2> _const &>, *P_Binder<std::_Unforced, void_ (__thiscall_Screen_ContractTerminal::*)(std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>), Screen_ContractTerminal *, std::_Ph<1> _const &, std::_Ph<2> _const &>;
 
-struct function<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> ___cdecl(class_Ship *, int)>
+struct _Binder<std::_Unforced, void_ (__thiscall_Screen_ContractTerminal::*)(std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>), Screen_ContractTerminal *, std::_Ph<1> _const &, std::_Ph<2> _const &>
+{ // PlaceHolder Structure
+};
+
+typedef struct _Func_base<void, bool, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _> _Func_base<void, bool, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _>, *P_Func_base<void, bool, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _>;
+
+struct _Func_base<void, bool, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _>
 { // PlaceHolder Structure
 };
 
@@ -7611,171 +8090,57 @@ struct input_iterator_tag
 { // PlaceHolder Structure
 };
 
-typedef struct _Binder<struct_std::_Unforced, void_ (__thiscall_Screen_WeaponTerminal::*)(class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>), class_Screen_WeaponTerminal *, struct_std::_Ph<1> _const &, struct_std::_Ph<2> _const &> _Binder<struct_std::_Unforced, void_ (__thiscall_Screen_WeaponTerminal::*)(class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>), class_Screen_WeaponTerminal *, struct_std::_Ph<1> _const &, struct_std::_Ph<2> _const &>, *P_Binder<struct_std::_Unforced, void_ (__thiscall_Screen_WeaponTerminal::*)(class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>), class_Screen_WeaponTerminal *, struct_std::_Ph<1> _const &, struct_std::_Ph<2> _const &>;
+typedef struct allocator<ExtraSpawned> allocator<ExtraSpawned>, *Pallocator<ExtraSpawned>;
 
-struct _Binder<struct_std::_Unforced, void_ (__thiscall_Screen_WeaponTerminal::*)(class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>), class_Screen_WeaponTerminal *, struct_std::_Ph<1> _const &, struct_std::_Ph<2> _const &>
+struct allocator<ExtraSpawned>
 { // PlaceHolder Structure
 };
 
-typedef struct _Tree<class_std::_Tmap_traits<int, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, struct_std::less<int>, class_std::allocator<struct_std::pair<int_const_, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>, 0> _> _Tree<class_std::_Tmap_traits<int, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, struct_std::less<int>, class_std::allocator<struct_std::pair<int_const_, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>, 0> _>, *P_Tree<class_std::_Tmap_traits<int, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, struct_std::less<int>, class_std::allocator<struct_std::pair<int_const_, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>, 0> _>;
+typedef struct vector<PrivateCommOption, std::allocator<PrivateCommOption> _> vector<PrivateCommOption, std::allocator<PrivateCommOption> _>, *Pvector<PrivateCommOption, std::allocator<PrivateCommOption> _>;
 
-struct _Tree<class_std::_Tmap_traits<int, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, struct_std::less<int>, class_std::allocator<struct_std::pair<int_const_, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>, 0> _>
+struct vector<PrivateCommOption, std::allocator<PrivateCommOption> _>
 { // PlaceHolder Structure
 };
 
-typedef struct vector<class_BasicLine, class_std::allocator<class_BasicLine> _> vector<class_BasicLine, class_std::allocator<class_BasicLine> _>, *Pvector<class_BasicLine, class_std::allocator<class_BasicLine> _>;
+typedef struct vector<Requirement, std::allocator<Requirement> _> vector<Requirement, std::allocator<Requirement> _>, *Pvector<Requirement, std::allocator<Requirement> _>;
 
-struct vector<class_BasicLine, class_std::allocator<class_BasicLine> _>
+struct vector<Requirement, std::allocator<Requirement> _>
 { // PlaceHolder Structure
 };
 
-typedef struct allocator<struct_word> allocator<struct_word>, *Pallocator<struct_word>;
+typedef struct _Binder<std::_Unforced, void_ (__thiscall_Screen_TradeTerminal::*)(void), Screen_TradeTerminal *> _Binder<std::_Unforced, void_ (__thiscall_Screen_TradeTerminal::*)(void), Screen_TradeTerminal *>, *P_Binder<std::_Unforced, void_ (__thiscall_Screen_TradeTerminal::*)(void), Screen_TradeTerminal *>;
 
-struct allocator<struct_word>
+struct _Binder<std::_Unforced, void_ (__thiscall_Screen_TradeTerminal::*)(void), Screen_TradeTerminal *>
 { // PlaceHolder Structure
 };
 
-typedef struct _Func_base<double, class_Ship *, int> _Func_base<double, class_Ship *, int>, *P_Func_base<double, class_Ship *, int>;
+typedef struct vector<BasicLine, std::allocator<BasicLine> _> vector<BasicLine, std::allocator<BasicLine> _>, *Pvector<BasicLine, std::allocator<BasicLine> _>;
 
-struct _Func_base<double, class_Ship *, int>
+struct vector<BasicLine, std::allocator<BasicLine> _>
 { // PlaceHolder Structure
 };
 
-typedef struct vector<class_UIText *, class_std::allocator<class_UIText *> _> vector<class_UIText *, class_std::allocator<class_UIText *> _>, *Pvector<class_UIText *, class_std::allocator<class_UIText *> _>;
+typedef struct vector<BankTransaction, std::allocator<BankTransaction> _> vector<BankTransaction, std::allocator<BankTransaction> _>, *Pvector<BankTransaction, std::allocator<BankTransaction> _>;
 
-struct vector<class_UIText *, class_std::allocator<class_UIText *> _>
+struct vector<BankTransaction, std::allocator<BankTransaction> _>
 { // PlaceHolder Structure
 };
 
-typedef struct _Binder<struct_std::_Unforced, void_ (__thiscall_Screen_ContractTerminal::*)(class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>), class_Screen_ContractTerminal *, struct_std::_Ph<1> _const &, struct_std::_Ph<2> _const &> _Binder<struct_std::_Unforced, void_ (__thiscall_Screen_ContractTerminal::*)(class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>), class_Screen_ContractTerminal *, struct_std::_Ph<1> _const &, struct_std::_Ph<2> _const &>, *P_Binder<struct_std::_Unforced, void_ (__thiscall_Screen_ContractTerminal::*)(class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>), class_Screen_ContractTerminal *, struct_std::_Ph<1> _const &, struct_std::_Ph<2> _const &>;
+typedef struct _Func_class<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, Ship *, int> _Func_class<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, Ship *, int>, *P_Func_class<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, Ship *, int>;
 
-struct _Binder<struct_std::_Unforced, void_ (__thiscall_Screen_ContractTerminal::*)(class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>), class_Screen_ContractTerminal *, struct_std::_Ph<1> _const &, struct_std::_Ph<2> _const &>
+struct _Func_class<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, Ship *, int>
 { // PlaceHolder Structure
 };
 
-typedef struct pair<class_std::_Tree_const_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<class_PathNode *> _> _>, bool> pair<class_std::_Tree_const_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<class_PathNode *> _> _>, bool>, *Ppair<class_std::_Tree_const_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<class_PathNode *> _> _>, bool>;
+typedef struct map<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, bool, std::less<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _>, std::allocator<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, bool> _> _> map<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, bool, std::less<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _>, std::allocator<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, bool> _> _>, *Pmap<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, bool, std::less<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _>, std::allocator<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, bool> _> _>;
 
-struct pair<class_std::_Tree_const_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<class_PathNode *> _> _>, bool>
+struct map<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, bool, std::less<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _>, std::allocator<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, bool> _> _>
 { // PlaceHolder Structure
 };
 
-typedef struct _Tree_comp_alloc<class_std::_Tmap_traits<int, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, struct_std::less<int>, class_std::allocator<struct_std::pair<int_const_, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>, 0> _> _Tree_comp_alloc<class_std::_Tmap_traits<int, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, struct_std::less<int>, class_std::allocator<struct_std::pair<int_const_, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>, 0> _>, *P_Tree_comp_alloc<class_std::_Tmap_traits<int, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, struct_std::less<int>, class_std::allocator<struct_std::pair<int_const_, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>, 0> _>;
+typedef struct vector<HullStrength, std::allocator<HullStrength> _> vector<HullStrength, std::allocator<HullStrength> _>, *Pvector<HullStrength, std::allocator<HullStrength> _>;
 
-struct _Tree_comp_alloc<class_std::_Tmap_traits<int, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, struct_std::less<int>, class_std::allocator<struct_std::pair<int_const_, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>, 0> _>
-{ // PlaceHolder Structure
-};
-
-typedef struct vector<struct_CameraPos, class_std::allocator<struct_CameraPos> _> vector<struct_CameraPos, class_std::allocator<struct_CameraPos> _>, *Pvector<struct_CameraPos, class_std::allocator<struct_CameraPos> _>;
-
-struct vector<struct_CameraPos, class_std::allocator<struct_CameraPos> _>
-{ // PlaceHolder Structure
-};
-
-typedef struct vector<class_cocos2d::ui::Scale9Sprite *, class_std::allocator<class_cocos2d::ui::Scale9Sprite *> _> vector<class_cocos2d::ui::Scale9Sprite *, class_std::allocator<class_cocos2d::ui::Scale9Sprite *> _>, *Pvector<class_cocos2d::ui::Scale9Sprite *, class_std::allocator<class_cocos2d::ui::Scale9Sprite *> _>;
-
-struct vector<class_cocos2d::ui::Scale9Sprite *, class_std::allocator<class_cocos2d::ui::Scale9Sprite *> _>
-{ // PlaceHolder Structure
-};
-
-typedef struct _Compressed_pair<class_std::allocator<char>, class_std::_String_val<struct_std::_Simple_types<char> _>, 1> _Compressed_pair<class_std::allocator<char>, class_std::_String_val<struct_std::_Simple_types<char> _>, 1>, *P_Compressed_pair<class_std::allocator<char>, class_std::_String_val<struct_std::_Simple_types<char> _>, 1>;
-
-struct _Compressed_pair<class_std::allocator<char>, class_std::_String_val<struct_std::_Simple_types<char> _>, 1>
-{ // PlaceHolder Structure
-};
-
-typedef struct _Tree_comp_alloc<class_std::_Tmap_traits<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, struct_Variable, struct_std::less<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, class_std::allocator<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, struct_Variable> _>, 0> _> _Tree_comp_alloc<class_std::_Tmap_traits<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, struct_Variable, struct_std::less<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, class_std::allocator<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, struct_Variable> _>, 0> _>, *P_Tree_comp_alloc<class_std::_Tmap_traits<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, struct_Variable, struct_std::less<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, class_std::allocator<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, struct_Variable> _>, 0> _>;
-
-struct _Tree_comp_alloc<class_std::_Tmap_traits<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, struct_Variable, struct_std::less<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, class_std::allocator<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, struct_Variable> _>, 0> _>
-{ // PlaceHolder Structure
-};
-
-typedef struct basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, *Pbasic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>;
-
-struct basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>
-{ // PlaceHolder Structure
-};
-
-typedef struct allocator<class_Widget> allocator<class_Widget>, *Pallocator<class_Widget>;
-
-struct allocator<class_Widget>
-{ // PlaceHolder Structure
-};
-
-typedef struct _One_then_variadic_args_t _One_then_variadic_args_t, *P_One_then_variadic_args_t;
-
-struct _One_then_variadic_args_t
-{ // PlaceHolder Structure
-};
-
-typedef struct _Tree_node<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _>, void *> _Tree_node<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _>, void *>, *P_Tree_node<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _>, void *>;
-
-struct _Tree_node<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _>, void *>
-{ // PlaceHolder Structure
-};
-
-typedef struct _Func_base<bool, class_Ship *, double, double, double> _Func_base<bool, class_Ship *, double, double, double>, *P_Func_base<bool, class_Ship *, double, double, double>;
-
-struct _Func_base<bool, class_Ship *, double, double, double>
-{ // PlaceHolder Structure
-};
-
-typedef struct _Uninitialized_backout_al<class_PrivateCommOption *, class_std::allocator<class_PrivateCommOption> _> _Uninitialized_backout_al<class_PrivateCommOption *, class_std::allocator<class_PrivateCommOption> _>, *P_Uninitialized_backout_al<class_PrivateCommOption *, class_std::allocator<class_PrivateCommOption> _>;
-
-struct _Uninitialized_backout_al<class_PrivateCommOption *, class_std::allocator<class_PrivateCommOption> _>
-{ // PlaceHolder Structure
-};
-
-typedef struct _Tree_comp_alloc<class_std::_Tmap_traits<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, int, struct_std::less<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, class_std::allocator<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, int> _>, 0> _> _Tree_comp_alloc<class_std::_Tmap_traits<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, int, struct_std::less<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, class_std::allocator<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, int> _>, 0> _>, *P_Tree_comp_alloc<class_std::_Tmap_traits<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, int, struct_std::less<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, class_std::allocator<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, int> _>, 0> _>;
-
-struct _Tree_comp_alloc<class_std::_Tmap_traits<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, int, struct_std::less<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, class_std::allocator<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, int> _>, 0> _>
-{ // PlaceHolder Structure
-};
-
-typedef struct _Tree_comp_alloc<class_std::_Tset_traits<class_PathNode *, struct_PathContext::NodeTotalWeightCompare, class_std::allocator<class_PathNode *>, 1> _> _Tree_comp_alloc<class_std::_Tset_traits<class_PathNode *, struct_PathContext::NodeTotalWeightCompare, class_std::allocator<class_PathNode *>, 1> _>, *P_Tree_comp_alloc<class_std::_Tset_traits<class_PathNode *, struct_PathContext::NodeTotalWeightCompare, class_std::allocator<class_PathNode *>, 1> _>;
-
-struct _Tree_comp_alloc<class_std::_Tset_traits<class_PathNode *, struct_PathContext::NodeTotalWeightCompare, class_std::allocator<class_PathNode *>, 1> _>
-{ // PlaceHolder Structure
-};
-
-typedef struct function<bool___cdecl(class_Ship *, int, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>)> function<bool___cdecl(class_Ship *, int, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>)>, *Pfunction<bool___cdecl(class_Ship *, int, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>)>;
-
-struct function<bool___cdecl(class_Ship *, int, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>)>
-{ // PlaceHolder Structure
-};
-
-typedef struct tuple<> tuple<>, *Ptuple<>;
-
-struct tuple<>
-{ // PlaceHolder Structure
-};
-
-typedef struct allocator<struct_BootElement> allocator<struct_BootElement>, *Pallocator<struct_BootElement>;
-
-struct allocator<struct_BootElement>
-{ // PlaceHolder Structure
-};
-
-typedef struct map<int, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, struct_std::less<int>, class_std::allocator<struct_std::pair<int_const_, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _> map<int, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, struct_std::less<int>, class_std::allocator<struct_std::pair<int_const_, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _>, *Pmap<int, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, struct_std::less<int>, class_std::allocator<struct_std::pair<int_const_, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _>;
-
-struct map<int, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, struct_std::less<int>, class_std::allocator<struct_std::pair<int_const_, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _>
-{ // PlaceHolder Structure
-};
-
-typedef struct vector<class_std::vector<struct_word, class_std::allocator<struct_word> _>, class_std::allocator<class_std::vector<struct_word, class_std::allocator<struct_word> _> _> _> vector<class_std::vector<struct_word, class_std::allocator<struct_word> _>, class_std::allocator<class_std::vector<struct_word, class_std::allocator<struct_word> _> _> _>, *Pvector<class_std::vector<struct_word, class_std::allocator<struct_word> _>, class_std::allocator<class_std::vector<struct_word, class_std::allocator<struct_word> _> _> _>;
-
-struct vector<class_std::vector<struct_word, class_std::allocator<struct_word> _>, class_std::allocator<class_std::vector<struct_word, class_std::allocator<struct_word> _> _> _>
-{ // PlaceHolder Structure
-};
-
-typedef struct _Binder<struct_std::_Unforced, void_ (__thiscall_Screen_UpgradeTerminal::*)(void), class_Screen_UpgradeTerminal *> _Binder<struct_std::_Unforced, void_ (__thiscall_Screen_UpgradeTerminal::*)(void), class_Screen_UpgradeTerminal *>, *P_Binder<struct_std::_Unforced, void_ (__thiscall_Screen_UpgradeTerminal::*)(void), class_Screen_UpgradeTerminal *>;
-
-struct _Binder<struct_std::_Unforced, void_ (__thiscall_Screen_UpgradeTerminal::*)(void), class_Screen_UpgradeTerminal *>
-{ // PlaceHolder Structure
-};
-
-typedef struct function<double___cdecl(class_Ship *, int)> function<double___cdecl(class_Ship *, int)>, *Pfunction<double___cdecl(class_Ship *, int)>;
-
-struct function<double___cdecl(class_Ship *, int)>
+struct vector<HullStrength, std::allocator<HullStrength> _>
 { // PlaceHolder Structure
 };
 
@@ -7785,213 +8150,81 @@ struct _Vector_iterator<class_std::_Vector_val<struct_std::_Simple_types<class_s
 { // PlaceHolder Structure
 };
 
-typedef struct vector<struct_ContractCommand, class_std::allocator<struct_ContractCommand> _> vector<struct_ContractCommand, class_std::allocator<struct_ContractCommand> _>, *Pvector<struct_ContractCommand, class_std::allocator<struct_ContractCommand> _>;
+typedef struct _Tree_comp_alloc<std::_Tmap_traits<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, float, std::less<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _>, std::allocator<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, float> _>, 0> _> _Tree_comp_alloc<std::_Tmap_traits<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, float, std::less<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _>, std::allocator<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, float> _>, 0> _>, *P_Tree_comp_alloc<std::_Tmap_traits<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, float, std::less<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _>, std::allocator<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, float> _>, 0> _>;
 
-struct vector<struct_ContractCommand, class_std::allocator<struct_ContractCommand> _>
+struct _Tree_comp_alloc<std::_Tmap_traits<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, float, std::less<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _>, std::allocator<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, float> _>, 0> _>
 { // PlaceHolder Structure
 };
 
-typedef struct _Tree_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<int_const_, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _> _> _Tree_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<int_const_, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _> _>, *P_Tree_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<int_const_, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _> _>;
+typedef struct _Uninitialized_backout_al<CameraPos *, std::allocator<CameraPos> _> _Uninitialized_backout_al<CameraPos *, std::allocator<CameraPos> _>, *P_Uninitialized_backout_al<CameraPos *, std::allocator<CameraPos> _>;
 
-struct _Tree_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<int_const_, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _> _>
+struct _Uninitialized_backout_al<CameraPos *, std::allocator<CameraPos> _>
 { // PlaceHolder Structure
 };
 
-typedef struct _Func_class<bool, class_Ship *, int, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _Func_class<bool, class_Ship *, int, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, *P_Func_class<bool, class_Ship *, int, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>;
+typedef struct _Vector_iterator<std::_Vector_val<std::_Simple_types<SoundLet *> _> _> _Vector_iterator<std::_Vector_val<std::_Simple_types<SoundLet *> _> _>, *P_Vector_iterator<std::_Vector_val<std::_Simple_types<SoundLet *> _> _>;
 
-struct _Func_class<bool, class_Ship *, int, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>
+struct _Vector_iterator<std::_Vector_val<std::_Simple_types<SoundLet *> _> _>
 { // PlaceHolder Structure
 };
 
-typedef struct _Func_base<bool, void *> _Func_base<bool, void *>, *P_Func_base<bool, void *>;
+typedef struct _Tree_node<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, float>, void *> _Tree_node<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, float>, void *>, *P_Tree_node<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, float>, void *>;
 
-struct _Func_base<bool, void *>
+struct _Tree_node<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, float>, void *>
 { // PlaceHolder Structure
 };
 
-typedef struct _Func_class<bool, int> _Func_class<bool, int>, *P_Func_class<bool, int>;
+typedef struct function<void___cdecl(bool, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>)> function<void___cdecl(bool, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>)>, *Pfunction<void___cdecl(bool, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>)>;
 
-struct _Func_class<bool, int>
+struct function<void___cdecl(bool, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>)>
 { // PlaceHolder Structure
 };
 
-typedef struct vector<class_Resolution, class_std::allocator<class_Resolution> _> vector<class_Resolution, class_std::allocator<class_Resolution> _>, *Pvector<class_Resolution, class_std::allocator<class_Resolution> _>;
+typedef struct basic_string<char, std::char_traits<char>, std::allocator<char> _> basic_string<char, std::char_traits<char>, std::allocator<char> _>, *Pbasic_string<char, std::char_traits<char>, std::allocator<char> _>;
 
-struct vector<class_Resolution, class_std::allocator<class_Resolution> _>
+struct basic_string<char, std::char_traits<char>, std::allocator<char> _>
 { // PlaceHolder Structure
 };
 
-typedef struct pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _> pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _>, *Ppair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _>;
+typedef struct _Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, bool> _> _> _> _Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, bool> _> _> _>, *P_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, bool> _> _> _>;
 
-struct pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _>
+struct _Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, bool> _> _> _>
 { // PlaceHolder Structure
 };
 
-typedef struct _Uninitialized_backout_al<struct_ScreenData *, class_std::allocator<struct_ScreenData> _> _Uninitialized_backout_al<struct_ScreenData *, class_std::allocator<struct_ScreenData> _>, *P_Uninitialized_backout_al<struct_ScreenData *, class_std::allocator<struct_ScreenData> _>;
+typedef struct _Tree<std::_Tmap_traits<int, int, std::less<int>, std::allocator<std::pair<int_const_, int> _>, 0> _> _Tree<std::_Tmap_traits<int, int, std::less<int>, std::allocator<std::pair<int_const_, int> _>, 0> _>, *P_Tree<std::_Tmap_traits<int, int, std::less<int>, std::allocator<std::pair<int_const_, int> _>, 0> _>;
 
-struct _Uninitialized_backout_al<struct_ScreenData *, class_std::allocator<struct_ScreenData> _>
+struct _Tree<std::_Tmap_traits<int, int, std::less<int>, std::allocator<std::pair<int_const_, int> _>, 0> _>
 { // PlaceHolder Structure
 };
 
-typedef struct vector<class_ExtraSpawned, class_std::allocator<class_ExtraSpawned> _> vector<class_ExtraSpawned, class_std::allocator<class_ExtraSpawned> _>, *Pvector<class_ExtraSpawned, class_std::allocator<class_ExtraSpawned> _>;
+typedef struct _Vector_iterator<std::_Vector_val<std::_Simple_types<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _> _Vector_iterator<std::_Vector_val<std::_Simple_types<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _>, *P_Vector_iterator<std::_Vector_val<std::_Simple_types<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _>;
 
-struct vector<class_ExtraSpawned, class_std::allocator<class_ExtraSpawned> _>
+struct _Vector_iterator<std::_Vector_val<std::_Simple_types<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _>
 { // PlaceHolder Structure
 };
 
-typedef struct _Func_base<void, enum_cocos2d::EventKeyboard::KeyCode, class_cocos2d::Event *> _Func_base<void, enum_cocos2d::EventKeyboard::KeyCode, class_cocos2d::Event *>, *P_Func_base<void, enum_cocos2d::EventKeyboard::KeyCode, class_cocos2d::Event *>;
+typedef struct vector<InputOption *, std::allocator<InputOption *> _> vector<InputOption *, std::allocator<InputOption *> _>, *Pvector<InputOption *, std::allocator<InputOption *> _>;
 
-struct _Func_base<void, enum_cocos2d::EventKeyboard::KeyCode, class_cocos2d::Event *>
+struct vector<InputOption *, std::allocator<InputOption *> _>
 { // PlaceHolder Structure
 };
 
-typedef struct vector<class_Widget, class_std::allocator<class_Widget> _> vector<class_Widget, class_std::allocator<class_Widget> _>, *Pvector<class_Widget, class_std::allocator<class_Widget> _>;
+typedef struct pair<std::_Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<PathNode *> _> _>, bool> pair<std::_Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<PathNode *> _> _>, bool>, *Ppair<std::_Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<PathNode *> _> _>, bool>;
 
-struct vector<class_Widget, class_std::allocator<class_Widget> _>
+struct pair<std::_Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<PathNode *> _> _>, bool>
 { // PlaceHolder Structure
 };
 
-typedef struct _Func_base<bool, class_Ship *, int, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _Func_base<bool, class_Ship *, int, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, *P_Func_base<bool, class_Ship *, int, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>;
+typedef struct _Uninitialized_backout_al<ScreenData *, std::allocator<ScreenData> _> _Uninitialized_backout_al<ScreenData *, std::allocator<ScreenData> _>, *P_Uninitialized_backout_al<ScreenData *, std::allocator<ScreenData> _>;
 
-struct _Func_base<bool, class_Ship *, int, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>
+struct _Uninitialized_backout_al<ScreenData *, std::allocator<ScreenData> _>
 { // PlaceHolder Structure
 };
 
-typedef struct allocator<class_cocos2d::Rect> allocator<class_cocos2d::Rect>, *Pallocator<class_cocos2d::Rect>;
+typedef struct _Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _> _> _> _> _Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _> _> _> _>, *P_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _> _> _> _>;
 
-struct allocator<class_cocos2d::Rect>
-{ // PlaceHolder Structure
-};
-
-typedef struct allocator<class_PrivateCommOption> allocator<class_PrivateCommOption>, *Pallocator<class_PrivateCommOption>;
-
-struct allocator<class_PrivateCommOption>
-{ // PlaceHolder Structure
-};
-
-typedef struct vector<class_WaveformPeak, class_std::allocator<class_WaveformPeak> _> vector<class_WaveformPeak, class_std::allocator<class_WaveformPeak> _>, *Pvector<class_WaveformPeak, class_std::allocator<class_WaveformPeak> _>;
-
-struct vector<class_WaveformPeak, class_std::allocator<class_WaveformPeak> _>
-{ // PlaceHolder Structure
-};
-
-typedef struct vector<class_Passenger *, class_std::allocator<class_Passenger *> _> vector<class_Passenger *, class_std::allocator<class_Passenger *> _>, *Pvector<class_Passenger *, class_std::allocator<class_Passenger *> _>;
-
-struct vector<class_Passenger *, class_std::allocator<class_Passenger *> _>
-{ // PlaceHolder Structure
-};
-
-typedef struct vector<struct_Selectable, class_std::allocator<struct_Selectable> _> vector<struct_Selectable, class_std::allocator<struct_Selectable> _>, *Pvector<struct_Selectable, class_std::allocator<struct_Selectable> _>;
-
-struct vector<struct_Selectable, class_std::allocator<struct_Selectable> _>
-{ // PlaceHolder Structure
-};
-
-typedef struct vector<struct_EngineeringSlotLocation, class_std::allocator<struct_EngineeringSlotLocation> _> vector<struct_EngineeringSlotLocation, class_std::allocator<struct_EngineeringSlotLocation> _>, *Pvector<struct_EngineeringSlotLocation, class_std::allocator<struct_EngineeringSlotLocation> _>;
-
-struct vector<struct_EngineeringSlotLocation, class_std::allocator<struct_EngineeringSlotLocation> _>
-{ // PlaceHolder Structure
-};
-
-typedef struct _Vector_const_iterator<class_std::_Vector_val<struct_std::_Simple_types<class_Contract *> _> _> _Vector_const_iterator<class_std::_Vector_val<struct_std::_Simple_types<class_Contract *> _> _>, *P_Vector_const_iterator<class_std::_Vector_val<struct_std::_Simple_types<class_Contract *> _> _>;
-
-struct _Vector_const_iterator<class_std::_Vector_val<struct_std::_Simple_types<class_Contract *> _> _>
-{ // PlaceHolder Structure
-};
-
-typedef struct _Uninitialized_backout_al<class_NavMarker *, class_std::allocator<class_NavMarker> _> _Uninitialized_backout_al<class_NavMarker *, class_std::allocator<class_NavMarker> _>, *P_Uninitialized_backout_al<class_NavMarker *, class_std::allocator<class_NavMarker> _>;
-
-struct _Uninitialized_backout_al<class_NavMarker *, class_std::allocator<class_NavMarker> _>
-{ // PlaceHolder Structure
-};
-
-typedef struct _Binder<struct_std::_Unforced, void_ (__thiscall_Screen_PC::*)(class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>), class_Screen_PC *, struct_std::_Ph<1> _const &, struct_std::_Ph<2> _const &> _Binder<struct_std::_Unforced, void_ (__thiscall_Screen_PC::*)(class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>), class_Screen_PC *, struct_std::_Ph<1> _const &, struct_std::_Ph<2> _const &>, *P_Binder<struct_std::_Unforced, void_ (__thiscall_Screen_PC::*)(class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>), class_Screen_PC *, struct_std::_Ph<1> _const &, struct_std::_Ph<2> _const &>;
-
-struct _Binder<struct_std::_Unforced, void_ (__thiscall_Screen_PC::*)(class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>), class_Screen_PC *, struct_std::_Ph<1> _const &, struct_std::_Ph<2> _const &>
-{ // PlaceHolder Structure
-};
-
-typedef struct _Tree<class_std::_Tmap_traits<enum_cocos2d::EventKeyboard::KeyCode, char, struct_std::less<enum_cocos2d::EventKeyboard::KeyCode>, class_std::allocator<struct_std::pair<enum_cocos2d::EventKeyboard::KeyCode_const_, char> _>, 0> _> _Tree<class_std::_Tmap_traits<enum_cocos2d::EventKeyboard::KeyCode, char, struct_std::less<enum_cocos2d::EventKeyboard::KeyCode>, class_std::allocator<struct_std::pair<enum_cocos2d::EventKeyboard::KeyCode_const_, char> _>, 0> _>, *P_Tree<class_std::_Tmap_traits<enum_cocos2d::EventKeyboard::KeyCode, char, struct_std::less<enum_cocos2d::EventKeyboard::KeyCode>, class_std::allocator<struct_std::pair<enum_cocos2d::EventKeyboard::KeyCode_const_, char> _>, 0> _>;
-
-struct _Tree<class_std::_Tmap_traits<enum_cocos2d::EventKeyboard::KeyCode, char, struct_std::less<enum_cocos2d::EventKeyboard::KeyCode>, class_std::allocator<struct_std::pair<enum_cocos2d::EventKeyboard::KeyCode_const_, char> _>, 0> _>
-{ // PlaceHolder Structure
-};
-
-typedef struct tuple<enum_cocos2d::EventKeyboard::KeyCode_const &> tuple<enum_cocos2d::EventKeyboard::KeyCode_const &>, *Ptuple<enum_cocos2d::EventKeyboard::KeyCode_const &>;
-
-struct tuple<enum_cocos2d::EventKeyboard::KeyCode_const &>
-{ // PlaceHolder Structure
-};
-
-typedef struct _Tree_comp_alloc<class_std::_Tmap_traits<enum_cocos2d::EventKeyboard::KeyCode, char, struct_std::less<enum_cocos2d::EventKeyboard::KeyCode>, class_std::allocator<struct_std::pair<enum_cocos2d::EventKeyboard::KeyCode_const_, char> _>, 0> _> _Tree_comp_alloc<class_std::_Tmap_traits<enum_cocos2d::EventKeyboard::KeyCode, char, struct_std::less<enum_cocos2d::EventKeyboard::KeyCode>, class_std::allocator<struct_std::pair<enum_cocos2d::EventKeyboard::KeyCode_const_, char> _>, 0> _>, *P_Tree_comp_alloc<class_std::_Tmap_traits<enum_cocos2d::EventKeyboard::KeyCode, char, struct_std::less<enum_cocos2d::EventKeyboard::KeyCode>, class_std::allocator<struct_std::pair<enum_cocos2d::EventKeyboard::KeyCode_const_, char> _>, 0> _>;
-
-struct _Tree_comp_alloc<class_std::_Tmap_traits<enum_cocos2d::EventKeyboard::KeyCode, char, struct_std::less<enum_cocos2d::EventKeyboard::KeyCode>, class_std::allocator<struct_std::pair<enum_cocos2d::EventKeyboard::KeyCode_const_, char> _>, 0> _>
-{ // PlaceHolder Structure
-};
-
-typedef struct vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>, *Pvector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>;
-
-struct vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>
-{ // PlaceHolder Structure
-};
-
-typedef struct pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, float> pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, float>, *Ppair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, float>;
-
-struct pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, float>
-{ // PlaceHolder Structure
-};
-
-typedef struct _Uninitialized_backout_al<struct_JumpGateRoute *, class_std::allocator<struct_JumpGateRoute> _> _Uninitialized_backout_al<struct_JumpGateRoute *, class_std::allocator<struct_JumpGateRoute> _>, *P_Uninitialized_backout_al<struct_JumpGateRoute *, class_std::allocator<struct_JumpGateRoute> _>;
-
-struct _Uninitialized_backout_al<struct_JumpGateRoute *, class_std::allocator<struct_JumpGateRoute> _>
-{ // PlaceHolder Structure
-};
-
-typedef struct vector<class_cocos2d::Vec2, class_std::allocator<class_cocos2d::Vec2> _> vector<class_cocos2d::Vec2, class_std::allocator<class_cocos2d::Vec2> _>, *Pvector<class_cocos2d::Vec2, class_std::allocator<class_cocos2d::Vec2> _>;
-
-struct vector<class_cocos2d::Vec2, class_std::allocator<class_cocos2d::Vec2> _>
-{ // PlaceHolder Structure
-};
-
-typedef struct _Func_base<void, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _> _Func_base<void, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _>, *P_Func_base<void, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _>;
-
-struct _Func_base<void, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _>
-{ // PlaceHolder Structure
-};
-
-typedef struct _Func_class<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_Ship *, int> _Func_class<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_Ship *, int>, *P_Func_class<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_Ship *, int>;
-
-struct _Func_class<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_Ship *, int>
-{ // PlaceHolder Structure
-};
-
-typedef struct _Tree_comp_alloc<class_std::_Tmap_traits<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, float, struct_std::less<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, class_std::allocator<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, float> _>, 0> _> _Tree_comp_alloc<class_std::_Tmap_traits<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, float, struct_std::less<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, class_std::allocator<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, float> _>, 0> _>, *P_Tree_comp_alloc<class_std::_Tmap_traits<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, float, struct_std::less<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, class_std::allocator<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, float> _>, 0> _>;
-
-struct _Tree_comp_alloc<class_std::_Tmap_traits<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, float, struct_std::less<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, class_std::allocator<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, float> _>, 0> _>
-{ // PlaceHolder Structure
-};
-
-typedef struct _Func_base<void, int> _Func_base<void, int>, *P_Func_base<void, int>;
-
-struct _Func_base<void, int>
-{ // PlaceHolder Structure
-};
-
-typedef struct map<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>, struct_std::less<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, class_std::allocator<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _> _> _> map<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>, struct_std::less<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, class_std::allocator<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _> _> _>, *Pmap<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>, struct_std::less<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, class_std::allocator<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _> _> _>;
-
-struct map<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>, struct_std::less<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, class_std::allocator<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _> _> _>
-{ // PlaceHolder Structure
-};
-
-typedef struct _Tree_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _> _> _Tree_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _> _>, *P_Tree_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _> _>;
-
-struct _Tree_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _> _>
-{ // PlaceHolder Structure
-};
-
-typedef struct vector<class_cocos2d::Touch *, class_std::allocator<class_cocos2d::Touch *> _> vector<class_cocos2d::Touch *, class_std::allocator<class_cocos2d::Touch *> _>, *Pvector<class_cocos2d::Touch *, class_std::allocator<class_cocos2d::Touch *> _>;
-
-struct vector<class_cocos2d::Touch *, class_std::allocator<class_cocos2d::Touch *> _>
+struct _Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _> _> _> _>
 { // PlaceHolder Structure
 };
 
@@ -8001,21 +8234,15 @@ struct _Not_a_node_tag
 { // PlaceHolder Structure
 };
 
-typedef struct _Tree<class_std::_Tmap_traits<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>, struct_std::less<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, class_std::allocator<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _> _>, 0> _> _Tree<class_std::_Tmap_traits<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>, struct_std::less<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, class_std::allocator<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _> _>, 0> _>, *P_Tree<class_std::_Tmap_traits<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>, struct_std::less<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, class_std::allocator<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _> _>, 0> _>;
+typedef struct map<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, std::less<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _>, std::allocator<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _> map<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, std::less<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _>, std::allocator<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _>, *Pmap<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, std::less<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _>, std::allocator<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _>;
 
-struct _Tree<class_std::_Tmap_traits<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>, struct_std::less<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, class_std::allocator<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _> _>, 0> _>
+struct map<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, std::less<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _>, std::allocator<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _>
 { // PlaceHolder Structure
 };
 
-typedef struct vector<struct_NSMSectorInfo, class_std::allocator<struct_NSMSectorInfo> _> vector<struct_NSMSectorInfo, class_std::allocator<struct_NSMSectorInfo> _>, *Pvector<struct_NSMSectorInfo, class_std::allocator<struct_NSMSectorInfo> _>;
+typedef struct _String_val<std::_Simple_types<char> _> _String_val<std::_Simple_types<char> _>, *P_String_val<std::_Simple_types<char> _>;
 
-struct vector<struct_NSMSectorInfo, class_std::allocator<struct_NSMSectorInfo> _>
-{ // PlaceHolder Structure
-};
-
-typedef struct _Func_base<void, class_Menu *> _Func_base<void, class_Menu *>, *P_Func_base<void, class_Menu *>;
-
-struct _Func_base<void, class_Menu *>
+struct _String_val<std::_Simple_types<char> _>
 { // PlaceHolder Structure
 };
 
@@ -8031,243 +8258,57 @@ struct piecewise_construct_t
 { // PlaceHolder Structure
 };
 
-typedef struct map<int, int, struct_std::less<int>, class_std::allocator<struct_std::pair<int_const_, int> _> _> map<int, int, struct_std::less<int>, class_std::allocator<struct_std::pair<int_const_, int> _> _>, *Pmap<int, int, struct_std::less<int>, class_std::allocator<struct_std::pair<int_const_, int> _> _>;
+typedef struct function<void___cdecl(std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>)> function<void___cdecl(std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>)>, *Pfunction<void___cdecl(std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>)>;
 
-struct map<int, int, struct_std::less<int>, class_std::allocator<struct_std::pair<int_const_, int> _> _>
+struct function<void___cdecl(std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> _>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _>)>
 { // PlaceHolder Structure
 };
 
-typedef struct vector<class_UI_NavMap *, class_std::allocator<class_UI_NavMap *> _> vector<class_UI_NavMap *, class_std::allocator<class_UI_NavMap *> _>, *Pvector<class_UI_NavMap *, class_std::allocator<class_UI_NavMap *> _>;
+typedef struct _Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<int_const_, int> _> _> _> _Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<int_const_, int> _> _> _>, *P_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<int_const_, int> _> _> _>;
 
-struct vector<class_UI_NavMap *, class_std::allocator<class_UI_NavMap *> _>
+struct _Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<int_const_, int> _> _> _>
 { // PlaceHolder Structure
 };
 
-typedef struct _Uninitialized_backout_al<struct_CommsCommand *, class_std::allocator<struct_CommsCommand> _> _Uninitialized_backout_al<struct_CommsCommand *, class_std::allocator<struct_CommsCommand> _>, *P_Uninitialized_backout_al<struct_CommsCommand *, class_std::allocator<struct_CommsCommand> _>;
+typedef struct pair<std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<int_const_, std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _> _>, bool> pair<std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<int_const_, std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _> _>, bool>, *Ppair<std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<int_const_, std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _> _>, bool>;
 
-struct _Uninitialized_backout_al<struct_CommsCommand *, class_std::allocator<struct_CommsCommand> _>
+struct pair<std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<int_const_, std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _> _> _> _>, bool>
 { // PlaceHolder Structure
 };
 
-typedef struct _Tree_const_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, int> _> _> _> _Tree_const_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, int> _> _> _>, *P_Tree_const_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, int> _> _> _>;
+typedef struct vector<SensorSelectionElement, std::allocator<SensorSelectionElement> _> vector<SensorSelectionElement, std::allocator<SensorSelectionElement> _>, *Pvector<SensorSelectionElement, std::allocator<SensorSelectionElement> _>;
 
-struct _Tree_const_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, int> _> _> _>
+struct vector<SensorSelectionElement, std::allocator<SensorSelectionElement> _>
 { // PlaceHolder Structure
 };
 
-typedef struct _Vector_iterator<class_std::_Vector_val<struct_std::_Simple_types<class_Waypoint> _> _> _Vector_iterator<class_std::_Vector_val<struct_std::_Simple_types<class_Waypoint> _> _>, *P_Vector_iterator<class_std::_Vector_val<struct_std::_Simple_types<class_Waypoint> _> _>;
+typedef struct _Uninitialized_backout_al<Selectable *, std::allocator<Selectable> _> _Uninitialized_backout_al<Selectable *, std::allocator<Selectable> _>, *P_Uninitialized_backout_al<Selectable *, std::allocator<Selectable> _>;
 
-struct _Vector_iterator<class_std::_Vector_val<struct_std::_Simple_types<class_Waypoint> _> _>
+struct _Uninitialized_backout_al<Selectable *, std::allocator<Selectable> _>
 { // PlaceHolder Structure
 };
 
-typedef struct _Tree_comp_alloc<class_std::_Tmap_traits<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, bool, struct_std::less<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, class_std::allocator<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, bool> _>, 0> _> _Tree_comp_alloc<class_std::_Tmap_traits<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, bool, struct_std::less<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, class_std::allocator<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, bool> _>, 0> _>, *P_Tree_comp_alloc<class_std::_Tmap_traits<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, bool, struct_std::less<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, class_std::allocator<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, bool> _>, 0> _>;
+typedef struct allocator<Widget> allocator<Widget>, *Pallocator<Widget>;
 
-struct _Tree_comp_alloc<class_std::_Tmap_traits<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, bool, struct_std::less<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, class_std::allocator<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, bool> _>, 0> _>
+struct allocator<Widget>
 { // PlaceHolder Structure
 };
 
-typedef struct _Vector_const_iterator<class_std::_Vector_val<struct_std::_Simple_types<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _> _Vector_const_iterator<class_std::_Vector_val<struct_std::_Simple_types<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _>, *P_Vector_const_iterator<class_std::_Vector_val<struct_std::_Simple_types<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _>;
+typedef struct pair<std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<int_const_, FogInstance *> _> _> _>, bool> pair<std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<int_const_, FogInstance *> _> _> _>, bool>, *Ppair<std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<int_const_, FogInstance *> _> _> _>, bool>;
 
-struct _Vector_const_iterator<class_std::_Vector_val<struct_std::_Simple_types<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _>
+struct pair<std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<int_const_, FogInstance *> _> _> _>, bool>
 { // PlaceHolder Structure
 };
 
-typedef struct vector<struct_SensorSelectionElement, class_std::allocator<struct_SensorSelectionElement> _> vector<struct_SensorSelectionElement, class_std::allocator<struct_SensorSelectionElement> _>, *Pvector<struct_SensorSelectionElement, class_std::allocator<struct_SensorSelectionElement> _>;
+typedef struct vector<ExtraSpawned, std::allocator<ExtraSpawned> _> vector<ExtraSpawned, std::allocator<ExtraSpawned> _>, *Pvector<ExtraSpawned, std::allocator<ExtraSpawned> _>;
 
-struct vector<struct_SensorSelectionElement, class_std::allocator<struct_SensorSelectionElement> _>
+struct vector<ExtraSpawned, std::allocator<ExtraSpawned> _>
 { // PlaceHolder Structure
 };
 
-typedef struct _String_const_iterator<class_std::_String_val<struct_std::_Simple_types<char> _> _> _String_const_iterator<class_std::_String_val<struct_std::_Simple_types<char> _> _>, *P_String_const_iterator<class_std::_String_val<struct_std::_Simple_types<char> _> _>;
+typedef struct pair<std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _> _>, bool> pair<std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _> _>, bool>, *Ppair<std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _> _>, bool>;
 
-struct _String_const_iterator<class_std::_String_val<struct_std::_Simple_types<char> _> _>
-{ // PlaceHolder Structure
-};
-
-typedef struct map<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, int, struct_std::less<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, class_std::allocator<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, int> _> _> map<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, int, struct_std::less<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, class_std::allocator<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, int> _> _>, *Pmap<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, int, struct_std::less<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, class_std::allocator<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, int> _> _>;
-
-struct map<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, int, struct_std::less<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, class_std::allocator<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, int> _> _>
-{ // PlaceHolder Structure
-};
-
-typedef struct vector<class_SensorData *, class_std::allocator<class_SensorData *> _> vector<class_SensorData *, class_std::allocator<class_SensorData *> _>, *Pvector<class_SensorData *, class_std::allocator<class_SensorData *> _>;
-
-struct vector<class_SensorData *, class_std::allocator<class_SensorData *> _>
-{ // PlaceHolder Structure
-};
-
-typedef struct vector<struct_HullStrength, class_std::allocator<struct_HullStrength> _> vector<struct_HullStrength, class_std::allocator<struct_HullStrength> _>, *Pvector<struct_HullStrength, class_std::allocator<struct_HullStrength> _>;
-
-struct vector<struct_HullStrength, class_std::allocator<struct_HullStrength> _>
-{ // PlaceHolder Structure
-};
-
-typedef struct _Uninitialized_backout_al<struct_InputCommand *, class_std::allocator<struct_InputCommand> _> _Uninitialized_backout_al<struct_InputCommand *, class_std::allocator<struct_InputCommand> _>, *P_Uninitialized_backout_al<struct_InputCommand *, class_std::allocator<struct_InputCommand> _>;
-
-struct _Uninitialized_backout_al<struct_InputCommand *, class_std::allocator<struct_InputCommand> _>
-{ // PlaceHolder Structure
-};
-
-typedef struct pair<class_std::_Tree_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<int_const_, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _> _>, bool> pair<class_std::_Tree_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<int_const_, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _> _>, bool>, *Ppair<class_std::_Tree_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<int_const_, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _> _>, bool>;
-
-struct pair<class_std::_Tree_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<int_const_, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _> _>, bool>
-{ // PlaceHolder Structure
-};
-
-typedef struct _Tree_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _> _> _> _> _Tree_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _> _> _> _>, *P_Tree_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _> _> _> _>;
-
-struct _Tree_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _> _> _> _>
-{ // PlaceHolder Structure
-};
-
-typedef struct vector<class_Contract *, class_std::allocator<class_Contract *> _> vector<class_Contract *, class_std::allocator<class_Contract *> _>, *Pvector<class_Contract *, class_std::allocator<class_Contract *> _>;
-
-struct vector<class_Contract *, class_std::allocator<class_Contract *> _>
-{ // PlaceHolder Structure
-};
-
-typedef struct _Uninitialized_backout_al<class_Requirement *, class_std::allocator<class_Requirement> _> _Uninitialized_backout_al<class_Requirement *, class_std::allocator<class_Requirement> _>, *P_Uninitialized_backout_al<class_Requirement *, class_std::allocator<class_Requirement> _>;
-
-struct _Uninitialized_backout_al<class_Requirement *, class_std::allocator<class_Requirement> _>
-{ // PlaceHolder Structure
-};
-
-typedef struct vector<class_ShipChatter_Element *, class_std::allocator<class_ShipChatter_Element *> _> vector<class_ShipChatter_Element *, class_std::allocator<class_ShipChatter_Element *> _>, *Pvector<class_ShipChatter_Element *, class_std::allocator<class_ShipChatter_Element *> _>;
-
-struct vector<class_ShipChatter_Element *, class_std::allocator<class_ShipChatter_Element *> _>
-{ // PlaceHolder Structure
-};
-
-typedef struct _Uninitialized_backout_al<class_Widget *, class_std::allocator<class_Widget> _> _Uninitialized_backout_al<class_Widget *, class_std::allocator<class_Widget> _>, *P_Uninitialized_backout_al<class_Widget *, class_std::allocator<class_Widget> _>;
-
-struct _Uninitialized_backout_al<class_Widget *, class_std::allocator<class_Widget> _>
-{ // PlaceHolder Structure
-};
-
-typedef struct pair<class_std::_Tree_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, int> _> _> _>, bool> pair<class_std::_Tree_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, int> _> _> _>, bool>, *Ppair<class_std::_Tree_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, int> _> _> _>, bool>;
-
-struct pair<class_std::_Tree_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, int> _> _> _>, bool>
-{ // PlaceHolder Structure
-};
-
-typedef struct pair<class_std::_Tree_const_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<int_const_, class_FogInstance *> _> _> _>, class_std::_Tree_const_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<int_const_, class_FogInstance *> _> _> _> _> pair<class_std::_Tree_const_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<int_const_, class_FogInstance *> _> _> _>, class_std::_Tree_const_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<int_const_, class_FogInstance *> _> _> _> _>, *Ppair<class_std::_Tree_const_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<int_const_, class_FogInstance *> _> _> _>, class_std::_Tree_const_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<int_const_, class_FogInstance *> _> _> _> _>;
-
-struct pair<class_std::_Tree_const_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<int_const_, class_FogInstance *> _> _> _>, class_std::_Tree_const_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<int_const_, class_FogInstance *> _> _> _> _>
-{ // PlaceHolder Structure
-};
-
-typedef struct _Tree_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, int> _> _> _> _Tree_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, int> _> _> _>, *P_Tree_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, int> _> _> _>;
-
-struct _Tree_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, int> _> _> _>
-{ // PlaceHolder Structure
-};
-
-typedef struct _Tree_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<int_const_, class_FogInstance *> _> _> _> _Tree_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<int_const_, class_FogInstance *> _> _> _>, *P_Tree_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<int_const_, class_FogInstance *> _> _> _>;
-
-struct _Tree_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<int_const_, class_FogInstance *> _> _> _>
-{ // PlaceHolder Structure
-};
-
-typedef struct vector<class_PathNode *, class_std::allocator<class_PathNode *> _> vector<class_PathNode *, class_std::allocator<class_PathNode *> _>, *Pvector<class_PathNode *, class_std::allocator<class_PathNode *> _>;
-
-struct vector<class_PathNode *, class_std::allocator<class_PathNode *> _>
-{ // PlaceHolder Structure
-};
-
-typedef struct vector<class_Shop, class_std::allocator<class_Shop> _> vector<class_Shop, class_std::allocator<class_Shop> _>, *Pvector<class_Shop, class_std::allocator<class_Shop> _>;
-
-struct vector<class_Shop, class_std::allocator<class_Shop> _>
-{ // PlaceHolder Structure
-};
-
-typedef struct _Binder<struct_std::_Unforced, void_ (__thiscall_PresentationInterface::*)(class_cocos2d::Event *), class_PresentationInterface *, struct_std::_Ph<1> _const &> _Binder<struct_std::_Unforced, void_ (__thiscall_PresentationInterface::*)(class_cocos2d::Event *), class_PresentationInterface *, struct_std::_Ph<1> _const &>, *P_Binder<struct_std::_Unforced, void_ (__thiscall_PresentationInterface::*)(class_cocos2d::Event *), class_PresentationInterface *, struct_std::_Ph<1> _const &>;
-
-struct _Binder<struct_std::_Unforced, void_ (__thiscall_PresentationInterface::*)(class_cocos2d::Event *), class_PresentationInterface *, struct_std::_Ph<1> _const &>
-{ // PlaceHolder Structure
-};
-
-typedef struct _Tree_node<struct_std::pair<enum_cocos2d::EventKeyboard::KeyCode_const_, char>, void *> _Tree_node<struct_std::pair<enum_cocos2d::EventKeyboard::KeyCode_const_, char>, void *>, *P_Tree_node<struct_std::pair<enum_cocos2d::EventKeyboard::KeyCode_const_, char>, void *>;
-
-struct _Tree_node<struct_std::pair<enum_cocos2d::EventKeyboard::KeyCode_const_, char>, void *>
-{ // PlaceHolder Structure
-};
-
-typedef struct function<void___cdecl(int)> function<void___cdecl(int)>, *Pfunction<void___cdecl(int)>;
-
-struct function<void___cdecl(int)>
-{ // PlaceHolder Structure
-};
-
-typedef struct _Tree_const_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _> _> _Tree_const_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _> _>, *P_Tree_const_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _> _>;
-
-struct _Tree_const_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _> _>
-{ // PlaceHolder Structure
-};
-
-typedef struct _Tree_const_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<int_const_, class_FogInstance *> _> _> _> _Tree_const_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<int_const_, class_FogInstance *> _> _> _>, *P_Tree_const_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<int_const_, class_FogInstance *> _> _> _>;
-
-struct _Tree_const_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<int_const_, class_FogInstance *> _> _> _>
-{ // PlaceHolder Structure
-};
-
-typedef struct map<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, struct_std::less<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, class_std::allocator<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _> map<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, struct_std::less<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, class_std::allocator<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _>, *Pmap<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, struct_std::less<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, class_std::allocator<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _>;
-
-struct map<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, struct_std::less<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _>, class_std::allocator<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _>
-{ // PlaceHolder Structure
-};
-
-typedef struct _Uninitialized_backout_al<struct_MouseCursor *, class_std::allocator<struct_MouseCursor> _> _Uninitialized_backout_al<struct_MouseCursor *, class_std::allocator<struct_MouseCursor> _>, *P_Uninitialized_backout_al<struct_MouseCursor *, class_std::allocator<struct_MouseCursor> _>;
-
-struct _Uninitialized_backout_al<struct_MouseCursor *, class_std::allocator<struct_MouseCursor> _>
-{ // PlaceHolder Structure
-};
-
-typedef struct map<enum_cocos2d::EventKeyboard::KeyCode, char, struct_std::less<enum_cocos2d::EventKeyboard::KeyCode>, class_std::allocator<struct_std::pair<enum_cocos2d::EventKeyboard::KeyCode_const_, char> _> _> map<enum_cocos2d::EventKeyboard::KeyCode, char, struct_std::less<enum_cocos2d::EventKeyboard::KeyCode>, class_std::allocator<struct_std::pair<enum_cocos2d::EventKeyboard::KeyCode_const_, char> _> _>, *Pmap<enum_cocos2d::EventKeyboard::KeyCode, char, struct_std::less<enum_cocos2d::EventKeyboard::KeyCode>, class_std::allocator<struct_std::pair<enum_cocos2d::EventKeyboard::KeyCode_const_, char> _> _>;
-
-struct map<enum_cocos2d::EventKeyboard::KeyCode, char, struct_std::less<enum_cocos2d::EventKeyboard::KeyCode>, class_std::allocator<struct_std::pair<enum_cocos2d::EventKeyboard::KeyCode_const_, char> _> _>
-{ // PlaceHolder Structure
-};
-
-typedef struct _Uninitialized_backout_al<struct_ContractCommand *, class_std::allocator<struct_ContractCommand> _> _Uninitialized_backout_al<struct_ContractCommand *, class_std::allocator<struct_ContractCommand> _>, *P_Uninitialized_backout_al<struct_ContractCommand *, class_std::allocator<struct_ContractCommand> _>;
-
-struct _Uninitialized_backout_al<struct_ContractCommand *, class_std::allocator<struct_ContractCommand> _>
-{ // PlaceHolder Structure
-};
-
-typedef struct _Tree_const_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<int_const_, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _> _> _Tree_const_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<int_const_, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _> _>, *P_Tree_const_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<int_const_, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _> _>;
-
-struct _Tree_const_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<int_const_, class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _> _>
-{ // PlaceHolder Structure
-};
-
-typedef struct pair<class_std::_Tree_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _> _> _> _>, bool> pair<class_std::_Tree_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _> _> _> _>, bool>, *Ppair<class_std::_Tree_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _> _> _> _>, bool>;
-
-struct pair<class_std::_Tree_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<struct_std::pair<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _const_, class_std::vector<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _>, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _> _> _> _>, bool>
-{ // PlaceHolder Structure
-};
-
-typedef struct vector<class_BankTransaction, class_std::allocator<class_BankTransaction> _> vector<class_BankTransaction, class_std::allocator<class_BankTransaction> _>, *Pvector<class_BankTransaction, class_std::allocator<class_BankTransaction> _>;
-
-struct vector<class_BankTransaction, class_std::allocator<class_BankTransaction> _>
-{ // PlaceHolder Structure
-};
-
-typedef struct _Uninitialized_backout_al<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> *, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _Uninitialized_backout_al<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> *, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>, *P_Uninitialized_backout_al<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> *, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>;
-
-struct _Uninitialized_backout_al<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> *, class_std::allocator<class_std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _>
-{ // PlaceHolder Structure
-};
-
-typedef struct allocator<struct_ScreenData> allocator<struct_ScreenData>, *Pallocator<struct_ScreenData>;
-
-struct allocator<struct_ScreenData>
-{ // PlaceHolder Structure
-};
-
-typedef struct vector<struct_ScreenData, class_std::allocator<struct_ScreenData> _> vector<struct_ScreenData, class_std::allocator<struct_ScreenData> _>, *Pvector<struct_ScreenData, class_std::allocator<struct_ScreenData> _>;
-
-struct vector<struct_ScreenData, class_std::allocator<struct_ScreenData> _>
+struct pair<std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> _> _const_, std::basic_string<char, struct_std::char_traits<char>, class_std::allocator<char> _> _> _> _> _>, bool>
 { // PlaceHolder Structure
 };
 
@@ -8462,6 +8503,12 @@ struct Mat4
 typedef struct __Double __Double, *P__Double;
 
 struct __Double
+{ // PlaceHolder Structure
+};
+
+typedef struct Vector<cocos2d::Node *> Vector<cocos2d::Node *>, *PVector<cocos2d::Node *>;
+
+struct Vector<cocos2d::Node *>
 { // PlaceHolder Structure
 };
 
@@ -8679,12 +8726,6 @@ typedef enum TextHAlignment
 {
 } TextHAlignment;
 
-typedef struct Vector<class_cocos2d::Node *> Vector<class_cocos2d::Node *>, *PVector<class_cocos2d::Node *>;
-
-struct Vector<class_cocos2d::Node *>
-{ // PlaceHolder Structure
-};
-
 typedef struct Layer Layer, *PLayer;
 
 struct Layer
@@ -8852,6 +8893,64 @@ struct Scale9Sprite
 typedef enum KeyCode
 {
 } KeyCode;
+
+typedef struct OrderedList<unsigned_short, RakNet::SplitPacketChannel *, &int___cdecl_RakNet::SplitPacketChannelComp(unsigned_short_const &, struct_RakNet::SplitPacketChannel * _const &)> OrderedList<unsigned_short, RakNet::SplitPacketChannel *, &int___cdecl_RakNet::SplitPacketChannelComp(unsigned_short_const &, struct_RakNet::SplitPacketChannel * _const &)>, *POrderedList<unsigned_short, RakNet::SplitPacketChannel *, &int___cdecl_RakNet::SplitPacketChannelComp(unsigned_short_const &, struct_RakNet::SplitPacketChannel * _const &)>;
+
+struct OrderedList<unsigned_short, RakNet::SplitPacketChannel *, &int___cdecl_RakNet::SplitPacketChannelComp(unsigned_short_const &, struct_RakNet::SplitPacketChannel * _const &)>
+{ // PlaceHolder Structure
+};
+
+typedef struct List<class_RakNet::RakNetSocket2 *> List<class_RakNet::RakNetSocket2 *>, *PList<class_RakNet::RakNetSocket2 *>;
+
+struct List<class_RakNet::RakNetSocket2 *>
+{ // PlaceHolder Structure
+};
+
+typedef struct List<unsigned_int> List<unsigned_int>, *PList<unsigned_int>;
+
+struct List<unsigned_int>
+{ // PlaceHolder Structure
+};
+
+typedef struct Heap<unsigned___int64, RakNet::InternalPacket *, 0> Heap<unsigned___int64, RakNet::InternalPacket *, 0>, *PHeap<unsigned___int64, RakNet::InternalPacket *, 0>;
+
+struct Heap<unsigned___int64, RakNet::InternalPacket *, 0>
+{ // PlaceHolder Structure
+};
+
+typedef struct List<DataStructures::RangeNode<RakNet::uint24_t> _> List<DataStructures::RangeNode<RakNet::uint24_t> _>, *PList<DataStructures::RangeNode<RakNet::uint24_t> _>;
+
+struct List<DataStructures::RangeNode<RakNet::uint24_t> _>
+{ // PlaceHolder Structure
+};
+
+typedef struct Map<int, RakNet::HuffmanEncodingTree *, &int___cdecl_DataStructures::defaultMapKeyComparison<int>(int_const &, int_const &)> Map<int, RakNet::HuffmanEncodingTree *, &int___cdecl_DataStructures::defaultMapKeyComparison<int>(int_const &, int_const &)>, *PMap<int, RakNet::HuffmanEncodingTree *, &int___cdecl_DataStructures::defaultMapKeyComparison<int>(int_const &, int_const &)>;
+
+struct Map<int, RakNet::HuffmanEncodingTree *, &int___cdecl_DataStructures::defaultMapKeyComparison<int>(int_const &, int_const &)>
+{ // PlaceHolder Structure
+};
+
+typedef struct List<DataStructures::Heap<unsigned___int64, RakNet::InternalPacket *, 0>::HeapNode> List<DataStructures::Heap<unsigned___int64, RakNet::InternalPacket *, 0>::HeapNode>, *PList<DataStructures::Heap<unsigned___int64, RakNet::InternalPacket *, 0>::HeapNode>;
+
+struct List<DataStructures::Heap<unsigned___int64, RakNet::InternalPacket *, 0>::HeapNode>
+{ // PlaceHolder Structure
+};
+
+typedef struct OrderedList<int, DataStructures::Map<int, RakNet::HuffmanEncodingTree *, &int___cdecl_DataStructures::defaultMapKeyComparison<int>(int_const &, int_const &)>::MapNode, &public : _static_int___cdecl_DataStructures::Map<int, class_RakNet::HuffmanEncodingTree *, &int___cdecl_DataStructures::defaultMapKeyComparison<int>(int_const &, int_const &)>::NodeComparisonFunc(int_const &, struct_DataStructures::Map<int, class_RakNet::HuffmanEncodingTree *, &int___cdecl_DataStructures::defaultMapKeyComparison<int>(int_const &, int_const &)>::MapNode_const &)> OrderedList<int, DataStructures::Map<int, RakNet::HuffmanEncodingTree *, &int___cdecl_DataStructures::defaultMapKeyComparison<int>(int_const &, int_const &)>::MapNode, &public : _static_int___cdecl_DataStructures::Map<int, class_RakNet::HuffmanEncodingTree *, &int___cdecl_DataStructures::defaultMapKeyComparison<int>(int_const &, int_const &)>::NodeComparisonFunc(int_const &, struct_DataStructures::Map<int, class_RakNet::HuffmanEncodingTree *, &int___cdecl_DataStructures::defaultMapKeyComparison<int>(int_const &, int_const &)>::MapNode_const &)>, *POrderedList<int, DataStructures::Map<int, RakNet::HuffmanEncodingTree *, &int___cdecl_DataStructures::defaultMapKeyComparison<int>(int_const &, int_const &)>::MapNode, &public : _static_int___cdecl_DataStructures::Map<int, class_RakNet::HuffmanEncodingTree *, &int___cdecl_DataStructures::defaultMapKeyComparison<int>(int_const &, int_const &)>::NodeComparisonFunc(int_const &, struct_DataStructures::Map<int, class_RakNet::HuffmanEncodingTree *, &int___cdecl_DataStructures::defaultMapKeyComparison<int>(int_const &, int_const &)>::MapNode_const &)>;
+
+struct OrderedList<int, DataStructures::Map<int, RakNet::HuffmanEncodingTree *, &int___cdecl_DataStructures::defaultMapKeyComparison<int>(int_const &, int_const &)>::MapNode, &public : _static_int___cdecl_DataStructures::Map<int, class_RakNet::HuffmanEncodingTree *, &int___cdecl_DataStructures::defaultMapKeyComparison<int>(int_const &, int_const &)>::NodeComparisonFunc(int_const &, struct_DataStructures::Map<int, class_RakNet::HuffmanEncodingTree *, &int___cdecl_DataStructures::defaultMapKeyComparison<int>(int_const &, int_const &)>::MapNode_const &)>
+{ // PlaceHolder Structure
+};
+
+typedef struct OrderedList<RakNet::uint24_t, DataStructures::RangeNode<RakNet::uint24_t>, &int___cdecl_DataStructures::RangeNodeComp<struct_RakNet::uint24_t>(struct_RakNet::uint24_t_const &, struct_DataStructures::RangeNode<struct_RakNet::uint24_t> _const &)> OrderedList<RakNet::uint24_t, DataStructures::RangeNode<RakNet::uint24_t>, &int___cdecl_DataStructures::RangeNodeComp<struct_RakNet::uint24_t>(struct_RakNet::uint24_t_const &, struct_DataStructures::RangeNode<struct_RakNet::uint24_t> _const &)>, *POrderedList<RakNet::uint24_t, DataStructures::RangeNode<RakNet::uint24_t>, &int___cdecl_DataStructures::RangeNodeComp<struct_RakNet::uint24_t>(struct_RakNet::uint24_t_const &, struct_DataStructures::RangeNode<struct_RakNet::uint24_t> _const &)>;
+
+struct OrderedList<RakNet::uint24_t, DataStructures::RangeNode<RakNet::uint24_t>, &int___cdecl_DataStructures::RangeNodeComp<struct_RakNet::uint24_t>(struct_RakNet::uint24_t_const &, struct_DataStructures::RangeNode<struct_RakNet::uint24_t> _const &)>
+{ // PlaceHolder Structure
+};
+
+// WARNING! conflicting data type names: /Demangler/DataStructures/Heap<unsigned___int64,RakNet::InternalPacket*,0>/HeapNode - /ois.pdb/DataStructures/Heap<unsigned__int64,RakNet::InternalPacket*,0>/HeapNode
+
+// WARNING! conflicting data type names: /Demangler/DataStructures/Map<int,RakNet::HuffmanEncodingTree*,&int___cdecl_DataStructures::defaultMapKeyComparison<int>(int_const&,int_const&)>/MapNode - /ois.pdb/DataStructures/Map<int,RakNet::HuffmanEncodingTree*,&DataStructures::defaultMapKeyComparison<int>>/MapNode
 
 typedef enum CaptainExperience
 {
@@ -9042,21 +9141,21 @@ void FUN_00401370(void);
 void FUN_004014f0(void);
 void FUN_00401760(void);
 void FUN_004019b0(void);
-void __cdecl `dynamic_initializer_for_ 'rnr''(void); void __cdecl `dynamic_initializer_for_ 'RakNet::RakString::freeList''(void); void __cdecl `dynamic_initializer_for_ 'cleanup''(void); void __cdecl std::_Adjust_manually_vector_aligned(void **param_1, uint *param_2);
-void __thiscall Analytics::logEvent(undefined4 param_1, void *param_11);
-void __thiscall std::basic_string<>::_Tidy_deallocate(basic_string<> *this);
+void `dynamic_initializer_for_ 'rnr''(void); void `dynamic_initializer_for_ 'RakNet::RakString::freeList''(void); void `dynamic_initializer_for_ 'cleanup''(void); void __cdecl std::_Adjust_manually_vector_aligned(void **param_1, uint *param_2);
+void __thiscall Analytics::logEvent(undefined4 param_1, void *param_2);
+void __thiscall word::~word(word *this);
 void __thiscall DataStructures::RangeNode<>::~RangeNode<>(RangeNode<> *this);
 void __cdecl std::_Deallocate<8, 0>(void *param_1, uint param_2);
 Clonable *__thiscall cocos2d::__Bool::clone(__Bool *this);
 Clonable *__thiscall cocos2d::__Integer::clone(__Integer *this);
 Clonable *__thiscall cocos2d::__Float::clone(__Float *this);
 Clonable *__thiscall cocos2d::__Double::clone(__Double *this);
-void *__thiscall AppDelegate::`scalar_deleting_destructor'(AppDelegate *this,uint param_1); void __thiscall AppDelegate::initGLContextAttrs(AppDelegate *this);
+void *__thiscall AppDelegate::`vector_deleting_destructor'(AppDelegate *this,uint param_1); void __thiscall AppDelegate::initGLContextAttrs(AppDelegate *this);
 bool __thiscall AppDelegate::applicationDidFinishLaunching(AppDelegate *this);
 void __thiscall AppDelegate::applicationWillClose(AppDelegate *this);
 void __thiscall AppDelegate::applicationWillEnterForeground(AppDelegate *this);
 NetworkClient *__cdecl Singleton<>::getInstance(void);
-Stats *__cdecl Singleton<>::getInstance(void);
+Stats *__cdecl Singleton<Stats>::getInstance(void);
 PresentationInterface *__cdecl Singleton<>::getInstance(void);
 basic_string<> *__thiscall std::vector<>::operator[](vector<> *this, uint param_1);
 uint __thiscall std::vector<>::size(vector<> *this);
@@ -9067,7 +9166,7 @@ basic_string<> *__thiscall std::basic_string<>::basic_string<>(basic_string<> *t
 void __thiscall std::vector<>::_Tidy(vector<> *this);
 void __thiscall std::vector<>::_Destroy(vector<> *this, basic_string<> *param_1, basic_string<> *param_2);
 void __thiscall std::basic_string<>::_Tidy_init(basic_string<> *this);
-basic_string<> *__thiscall std::basic_string<>::assign(basic_string<> *this, char *param_1);
+basic_string<> *__thiscall std::basic_string<>::operator=(basic_string<> *this, char *param_1);
 basic_string<> *__thiscall std::basic_string<>::assign(basic_string<> *this, char *param_1, uint param_2);
 void __thiscall std::basic_string<>::_Construct_lv_contents(basic_string<> *this, basic_string<> *param_1);
 void __thiscall std::allocator<>::deallocate(allocator<> *this, basic_string<> *param_1, uint param_2);
@@ -9090,7 +9189,7 @@ void __thiscall std::vector<>::~vector<>(vector<> *this);
 void __thiscall std::vector<>::push_back(vector<> *this, basic_string<> *param_1);
 void __thiscall std::vector<>::push_back(vector<> *this, basic_string<> *param_1);
 void __thiscall std::vector<>::_Emplace_back_with_unused_capacity<>(vector<> *this, basic_string<> *param_1);
-basic_string<> *__thiscall std::basic_string<>::substr(basic_string<> *this, basic_string<> *param_1, uint param_2, uint param_4);
+uint __thiscall std::basic_string<>::substr(basic_string<> *this, uint param_1, uint param_2);
 uint __thiscall RakNet::RakPeer::GetMaximumIncomingConnections(RakPeer *this);
 char *__thiscall std::basic_string<>::operator[](basic_string<> *this, uint param_1);
 basic_string<> *__thiscall std::basic_string<>::append(basic_string<> *this, char *param_1);
@@ -9108,14 +9207,14 @@ void __cdecl std::vector<>::_Xlength(void);
 void __thiscall std::vector<>::_Change_array(vector<> *this, basic_string<> *param_1, uint param_2, uint param_3);
 basic_string<> *__cdecl std::_Uninitialized_move<>(basic_string<> *param_1, basic_string<> *param_2, basic_string<> *param_3, allocator<> *param_4);
 void __thiscall std::_Uninitialized_backout_al<>::~_Uninitialized_backout_al<>(_Uninitialized_backout_al<> *this);
-void __thiscall GameObject::getLocation(GameObject *this, float *param_1);
+void __thiscall GameObject::getLocation(GameObject *this);
 bool __thiscall Ship::isSpaceShip(Ship *this);
 bool __thiscall Ship::isSpaceStation(Ship *this);
 float __thiscall Ship::getSpeed(Ship *this);
 int __thiscall Ship::getNextSensorID(Ship *this);
-bool __thiscall SyntheticObject::runLogic(SyntheticObject *this, float param_1);
-void *__thiscall Beacon::Beacon(void *this, void *param_11);
-void *__thiscall PossibleLocation::PossibleLocation(void *this, void *param_11);
+bool __thiscall ScreenElement::keyUp(ScreenElement *this, KeyCode param_1);
+Beacon *__thiscall Beacon::Beacon(Beacon *this, void *param_2);
+PossibleLocation *__thiscall PossibleLocation::PossibleLocation(PossibleLocation *this, void *param_2);
 void *__thiscall Requirement::`scalar_deleting_destructor'(Requirement *this,uint param_1); void __thiscall LocationManager::getNewLocation(LocationManager *this);
 GameLogic *__thiscall GameLogic::GameLogic(GameLogic *this);
 void __thiscall std::map<>::~map<>(map<> *this);
@@ -9143,15 +9242,15 @@ void __thiscall GameLogic::runTimeLogic(GameLogic *this, float param_1);
 void __thiscall GameLogic::runServerLogic(GameLogic *this, float param_1);
 void __thiscall GameLogic::runClientLogic(GameLogic *this, float param_1);
 void __thiscall GameLogic::dropDebrisFromShip(GameLogic *this, Ship *param_1);
-void __thiscall GameLogic::removeShipOnSettingFlag(undefined4 param_1, char *param_11);
+void __thiscall GameLogic::removeShipOnSettingFlag(undefined4 param_1, char *param_2);
 void __thiscall GameLogic::entirelyRemoveShip(GameLogic *this, Ship *param_1, bool param_2);
 int __thiscall GameLogic::convertedTimeInHours(GameLogic *this);
 void __thiscall GameLogic::setHazardState(undefined4 param_1_00, int param_1);
-float *__thiscall GameLogic::calculateJumpDestination(undefined4 param_1_00, float *param_1, int param_2, int param_4);
-Ship *__thiscall GameLogic::generateSpaceStation(undefined4 param_1, basic_string<> *param_11);
-Ship *__thiscall GameLogic::generateShip(undefined4 param_1, undefined4 param_11, int param_12, void *param_13);
+int __thiscall GameLogic::calculateJumpDestination(GameLogic *this, int param_1, int param_2);
+SpaceStation *__thiscall GameLogic::generateSpaceStation(undefined4 param_1, basic_string<> *param_2);
+Ship *__thiscall GameLogic::generateShip(undefined4 param_1, undefined4 param_2, int param_3, void *param_4);
 void __thiscall GameLogic::switchPlayerShipTo(GameLogic *this, Ship *param_1);
-int __thiscall GameLogic::getModuleTypeForIdentifier(undefined4 param_1, void *param_11);
+ModuleType __thiscall GameLogic::getModuleTypeForIdentifier(undefined4 param_1, void *param_2);
 void __thiscall GameLogic::addComponentFilter(GameLogic *this, int param_1, ComponentCategory param_2);
 void __thiscall GameLogic::addComponentFilterData(GameLogic *this, int param_1, basic_string<> *param_3);
 void __thiscall GameLogic::removeSyntheticObject(GameLogic *this, SyntheticObject *param_1);
@@ -9159,34 +9258,34 @@ void __thiscall GameLogic::removeSensorDataFor(GameLogic *this, Ship *param_1);
 void __thiscall SensorData::~SensorData(SensorData *this);
 void __thiscall WaveformData::~WaveformData(WaveformData *this);
 void __thiscall GameLogic::addCountermeasure(GameLogic *this, int param_1, float param_3, float param_4, undefined4 param_5, undefined4 param_6, basic_string<> *param_7);
-int __thiscall GameLogic::getClosestCounterMeasureTo(undefined4 param_1_00, int param_1, undefined4 param_3, undefined4 param_4, char *param_5);
-void __thiscall GameLogic::addExplosionSensorData(undefined4 param_1, undefined4 param_2, float param_11, float param_12);
+CounterMeasure *__thiscall GameLogic::getClosestCounterMeasureTo(undefined4 param_1_00, CounterMeasure *param_1, undefined4 param_3, undefined4 param_4, char *param_5);
+void __thiscall GameLogic::addExplosionSensorData(undefined4 param_1_00, undefined4 param_1, float param_3, float param_4);
 void __thiscall GameLogic::explosion(undefined4 param_1_00, int param_1, int param_2, int param_4, undefined4 param_5, float param_6, float param_7);
-int __cdecl getDifficulty(void *param_11);
+DifficultyMode __cdecl getDifficulty(void *param_1);
 void __thiscall GameLogic::clearPlayerBounties(GameLogic *this);
 void __thiscall GameLogic::clearPlayerContracts(GameLogic *this);
 void *__thiscall Contract::`scalar_deleting_destructor'(Contract *this,uint param_1); bool __thiscall GameLogic::playerHasContract(GameLogic *this);
-undefined4 __thiscall GameLogic::contractAmountLeftToDeliver(undefined4 param_1, char *param_11);
+int __thiscall GameLogic::contractAmountLeftToDeliver(undefined4 param_1, char *param_2);
 bool __thiscall GameLogic::hasPassenger(GameLogic *this);
-undefined4 __thiscall GameLogic::getDeliveringGoodValueInPlayerContracts(undefined4 param_1, char *param_11);
-void __thiscall GameLogic::getPurchaseGoodValueInPlayerContracts(undefined4 param_1, char *param_11);
-void __thiscall GameLogic::trackGoodsBought(undefined4 param_1, int param_11, char *param_12);
+int __thiscall GameLogic::getDeliveringGoodValueInPlayerContracts(undefined4 param_1, char *param_2);
+int __thiscall GameLogic::getPurchaseGoodValueInPlayerContracts(undefined4 param_1, char *param_2);
+void __thiscall GameLogic::trackGoodsBought(undefined4 param_1, int param_2, char *param_3);
 void __thiscall GameLogic::checkContracts(GameLogic *this);
 bool __thiscall GameLogic::playerHostilePiratesInSector(GameLogic *this, int param_1);
 bool __thiscall GameLogic::zoneActive(GameLogic *this, Zone *param_1);
 void __thiscall GameLogic::writeObituary(GameLogic *this);
 void __thiscall GameLogic::skipIntroSequence(GameLogic *this);
-void __thiscall GameLogic::setTimeCompressionText(undefined4 param_1, basic_string<> *param_11);
+void __thiscall GameLogic::setTimeCompressionText(undefined4 param_1, basic_string<> *param_2);
 void __thiscall GameLogic::setCombatDifficulty(GameLogic *this, int param_1);
 void __thiscall GameLogic::setEconomyDifficulty(GameLogic *this, int param_1);
 void __thiscall GameLogic::setStartBonus(GameLogic *this, int param_1);
 void __thiscall GameLogic::setStartLocation(GameLogic *this, int param_1);
 void __thiscall GameLogic::reportSmuggler(GameLogic *this);
-void __thiscall GameLogic::reportPirate(undefined4 param_1, void *param_11);
+void __thiscall GameLogic::reportPirate(undefined4 param_1, void *param_2);
 void __thiscall GameLogic::reportPirate(GameLogic *this, int param_1);
-void __thiscall GameLogic::getCurrentLocalServers(undefined4 param_1_00, vector<> *param_1);
-void __thiscall GameLogic::setLocalServer(void *this, char *param_11);
-void __thiscall GameLogic::getCurrentPlayersAndShips(GameLogic *this, undefined4 *param_1);
+void __thiscall GameLogic::getCurrentLocalServers(GameLogic *this);
+void __thiscall GameLogic::setLocalServer(GameLogic *this, char *param_2);
+void __thiscall GameLogic::getCurrentPlayersAndShips(GameLogic *this);
 bool __thiscall GameLogic::canTakeShip(GameLogic *this);
 PowerManager *__cdecl Singleton<>::getInstance(void);
 NetworkData *__cdecl Singleton<>::getInstance(void);
@@ -9195,84 +9294,84 @@ BountyManager *__cdecl Singleton<>::getInstance(void);
 NotesManager *__cdecl Singleton<>::getInstance(void);
 TabletManager *__cdecl Singleton<>::getInstance(void);
 FictionData *__cdecl Singleton<>::getInstance(void);
-Infopedia *__cdecl Singleton<>::getInstance(void);
+Infopedia *__cdecl Singleton<Infopedia>::getInstance(void);
 JunkManager *__cdecl Singleton<>::getInstance(void);
 PrivateCommsManager *__cdecl Singleton<>::getInstance(void);
 EmailManager *__cdecl Singleton<>::getInstance(void);
 SaveHandler *__cdecl Singleton<>::getInstance(void);
 ConversationManager *__cdecl Singleton<>::getInstance(void);
-void __thiscall std::vector<>::emplace_back<>(vector<> *this, SensorData **param_1);
+void __thiscall std::vector<>::push_back(vector<> *this, UIText **param_1);
 void __thiscall std::vector<>::~vector<>(vector<> *this);
 SectorEditor *__cdecl Singleton<>::getInstance(void);
-RoomEditor *__cdecl Singleton<>::getInstance(void);
+RoomEditor *__cdecl Singleton<RoomEditor>::getInstance(void);
 NPCShipManager *__cdecl Singleton<>::getInstance(void);
-void __thiscall std::vector<>::erase(void *this, undefined4 *param_11, void *param_12, void *param_13);
+void __thiscall std::vector<>::erase(vector<> *this, undefined4 *param_2, void *param_3, void *param_4);
 NameManager *__cdecl Singleton<>::getInstance(void);
 TradeEngine *__cdecl Singleton<>::getInstance(void);
 CommsManager *__cdecl Singleton<>::getInstance(void);
 FlagManager *__cdecl Singleton<>::getInstance(void);
-Pather *__cdecl Singleton<>::getInstance(void);
-int *__thiscall std::vector<>::operator[](vector<> *this, uint param_1);
+Pather *__cdecl Singleton<Pather>::getInstance(void);
+JumpPoint **__thiscall std::vector<>::operator[](vector<> *this, uint param_1);
 uint __thiscall std::vector<>::size(vector<> *this);
 int *__thiscall std::map<>::operator[](map<> *this, basic_string<> *param_1);
-void __thiscall std::vector<>::emplace_back<>(vector<> *this, Requirement **param_1);
+void __thiscall std::vector<>::push_back(vector<> *this, InputOption **param_1);
 Vec2 *__thiscall std::vector<>::operator[](vector<> *this, uint param_1);
 uint __thiscall std::vector<>::size(vector<> *this);
 basic_string<> *__thiscall std::map<>::operator[](map<> *this, int *param_1);
 basic_string<> *__thiscall std::vector<>::_Unchecked_end(vector<> *this);
 basic_string<> *__thiscall std::vector<>::_Unchecked_begin(vector<> *this);
-void __thiscall std::basic_string<>::end(basic_string<> *this, undefined4 *param_1);
-void __thiscall std::basic_string<>::begin(basic_string<> *this, undefined4 *param_1);
+void __thiscall std::basic_string<>::end(basic_string<> *this);
+void __thiscall std::basic_string<>::begin(basic_string<> *this);
 basic_string<> *__thiscall std::basic_string<>::operator=(basic_string<> *this, basic_string<> *param_1);
 basic_string<> *__thiscall std::basic_string<>::operator=(basic_string<> *this, basic_string<> *param_1);
-void __thiscall std::vector<>::_Tidy(vector<> *this);
+void __thiscall std::vector<>::~vector<>(vector<> *this);
 void __thiscall std::_Tree<>::_Erase(_Tree<> *this, _Tree_node<> *param_1);
 _Tree_unchecked_const_iterator<> *__thiscall std::_Tree_unchecked_const_iterator<>::operator++(_Tree_unchecked_const_iterator<> *this);
 void __thiscall std::_Tree<>::_Erase(_Tree<> *this, _Tree_node<> *param_1);
-int *__thiscall std::_Tree<>::erase(undefined4 param_1, int *param_11, _Tree<> *param_12, _Tree<> *param_13);
-void __thiscall std::_Tree<>::erase(void *this, int *param_11, int *param_12);
+int *__thiscall std::_Tree<>::erase(undefined4 param_1, int *param_2, _Tree<> *param_3, _Tree<> *param_4);
+void __thiscall std::_Tree<>::erase(_Tree<> *this, int *param_2, int *param_3);
 _Tree_node<> *__thiscall std::_Tree_comp_alloc<>::_Buyheadnode(_Tree_comp_alloc<> *this);
-int *__thiscall std::_Tree_val<>::_Extract(void *this, int *param_11);
-_Tree_node<> *__thiscall std::_Tree_val<>::_Extract(void *this, _Tree_node<> *param_11);
+_Tree_node<> *__thiscall std::_Tree_val<>::_Extract(_Tree_val<> *this, _Tree_node<> *param_2);
+_Tree_node<> *__thiscall std::_Tree_val<>::_Extract(_Tree_val<> *this, _Tree_node<> *param_2);
 _Tree_node<> *__cdecl std::_Tree_val<>::_Max(_Tree_node<> *param_1);
 void __thiscall std::_Tree_val<>::_Rrotate(_Tree_val<> *this, _Tree_node<> *param_1);
 void __thiscall std::_Tree_val<>::_Lrotate(_Tree_val<> *this, _Tree_node<> *param_1);
 bool __cdecl std::operator!= <>(basic_string<> *param_1, basic_string<> *param_2);
-void __cdecl std::transform<>(char *param_11, char *param_12, undefined *param_13);
-void __cdecl std::remove<>(undefined4 param_11, basic_string<> *param_12);
+void __cdecl std::transform<>(char *param_1, char *param_2, undefined1 *param_3);
+void __cdecl std::remove<>(undefined4 param_1, word *param_2);
 bool __cdecl std::operator== <>(char *param_1, basic_string<> *param_2);
-undefined4 *__cdecl std::remove<>(int *param_11, int *param_12);
-ComponentCategory *__thiscall std::vector<>::_Emplace_reallocate<>(vector<> *this, ComponentCategory *param_1, ComponentCategory *param_2);
-Requirement **__thiscall std::vector<>::_Emplace_reallocate<>(vector<> *this, Requirement **param_1, Requirement **param_2);
+undefined4 *__cdecl std::remove<>(int *param_1, int *param_2);
+AnimationFrames **__thiscall std::vector<>::_Emplace_reallocate<>(vector<> *this, AnimationFrames **param_1, AnimationFrames **param_2);
+MetaGameAction **__thiscall std::vector<>::_Emplace_reallocate<>(vector<> *this, MetaGameAction **param_1, MetaGameAction **param_2);
 basic_string<> *__cdecl std::_Move_unchecked<>(basic_string<> *param_1, basic_string<> *param_2, basic_string<> *param_3);
-void __thiscall std::_Tree<>::_Eqrange<>(_Tree<> *this, int *param_1, byte *param_3);
-void __thiscall std::vector<>::_Change_array(vector<> *this, Requirement **param_1, uint param_2, uint param_3);
+void __thiscall std::_Tree<>::_Eqrange<>(_Tree<> *this, basic_string<> *param_1);
+void __thiscall std::vector<>::_Change_array(vector<> *this, PathNode **param_1, uint param_2, uint param_3);
 bool __thiscall std::basic_string<>::_Equal(basic_string<> *this, basic_string<> *param_1);
 basic_string<> *__cdecl std::_Find_unchecked<>(basic_string<> *param_1, basic_string<> *param_2, basic_string<> *param_3);
-void __thiscall std::_Tree<>::lower_bound(_Tree<> *this, int *param_1, byte *param_3);
+void __thiscall std::_Tree<>::lower_bound(_Tree<> *this, basic_string<> *param_1);
 _Tree_node<> *__thiscall std::_Tree_comp_alloc<>::_Buynode<>(_Tree_comp_alloc<> *this, piecewise_construct_t *param_1, tuple<> *param_2, tuple<> *param_3);
 void __fastcall Catch_All @0041497c(_Tree_comp_alloc<> *param_1);
-undefined4 *__thiscall std::_Tree<>::_Insert_hint<>(void *this, undefined4 *param_11, int *param_12, byte *param_13, undefined4 param_14);
+undefined4 *__thiscall std::_Tree<>::_Insert_hint<>(_Tree<> *this, undefined4 *param_2, pair<> *param_3, _Tree_node<> *param_4);
 void __fastcall Catch_All @00414f44(_Tree<> *param_1);
-_Tree_node<> *__thiscall std::_Tree_comp_alloc<>::_Buynode<>(_Tree_comp_alloc<> *this, piecewise_construct_t *param_1, tuple<int_const &> *param_2, tuple<> *param_3);
-undefined4 *__thiscall std::_Tree<>::_Insert_hint<>(void *this, undefined4 *param_11, _Tree<> *param_12, int *param_13, undefined4 param_14);
+_Tree_node<> *__thiscall std::_Tree_comp_alloc<>::_Buynode<>(_Tree_comp_alloc<> *this, piecewise_construct_t *param_1, tuple<int &&> *param_2, tuple<> *param_3);
+undefined4 *__thiscall std::_Tree<>::_Insert_hint<>(_Tree<> *this, undefined4 *param_2, _Tree<> *param_3, _Tree_node<> *param_4);
 void __fastcall Catch_All @004151f4(_Tree<> *param_1);
 void __thiscall std::_Tree_comp_alloc<>::_Freenode0(_Tree_comp_alloc<> *this, _Tree_node<> *param_1);
 _Tree_node<> *__thiscall std::_Tree_comp_alloc<>::_Buynode0(_Tree_comp_alloc<> *this);
 void __thiscall std::_Tree<>::_Destroy_if_node(_Tree<> *this, _Tree_node<> *param_1);
 _Tree_node<> *__thiscall std::_Tree_comp_alloc<>::_Buynode0(_Tree_comp_alloc<> *this);
 void __thiscall std::_Tree<>::_Destroy_if_node(_Tree<> *this, _Tree_node<> *param_1);
-void __thiscall std::_Tree<>::_Insert_at<>(_Tree<> *this, undefined4 *param_1, char param_2, undefined4 *param_3, undefined4 param_4, _Tree_node<> *param_6);
-void __thiscall std::_Tree<>::_Insert_nohint<>(_Tree<> *this, undefined4 *param_1, undefined4 param_2, _Tree<> *param_3, _Tree_node<> *param_5);
+void __thiscall std::_Tree<>::_Insert_at<>(_Tree<> *this, bool param_1, _Tree_node<> *param_2, pair<> *param_3, _Tree_node<> *param_4);
+void __thiscall std::_Tree<>::_Insert_nohint<>(_Tree<> *this, bool param_1, pair<> *param_2, _Tree_node<> *param_3);
 void __fastcall Catch_All @004157e0(_Tree<> *param_1);
-void __thiscall std::_Tree<>::_Insert_at<>(_Tree<> *this, undefined4 *param_1, char param_2, int *param_3, undefined4 param_4, _Tree_node<> *param_6);
-void __thiscall std::_Tree<>::_Insert_nohint<>(undefined4 param_1_00, undefined4 *param_1, undefined4 param_2, _Tree<> *param_3, _Tree_node<> *param_5);
+void __thiscall std::_Tree<>::_Insert_at<>(_Tree<> *this, bool param_1, _Tree_node<> *param_2, pair<> *param_3, _Tree_node<> *param_4);
+void __thiscall std::_Tree<>::_Insert_nohint<>(_Tree<> *this, bool param_1, pair<> *param_2, _Tree_node<> *param_3);
 void __fastcall Catch_All @00415b97(_Tree<> *param_1);
 __uint64 *___local_stdio_printf_options(void);
 int __cdecl __vsnprintf_l(char *_DstBuf, size_t _MaxCount, char *_Format, _locale_t _Locale, va_list _ArgList);
 int __cdecl _sprintf(char *_Dest, char *_Format, ...);
-void __thiscall std::_Func_class<>::~_Func_class<>(_Func_class<> *this);
-void __thiscall DataRequest::DataRequest(void *this, undefined4 param_11, int param_12, void *param_13);
+void __thiscall std::function<>::~function<>(function<> *this);
+void __thiscall DataRequest::DataRequest(DataRequest *this, undefined4 param_2, int param_3, void *param_4);
 void __thiscall HardwareOutput::shutdown(HardwareOutput *this);
 void __thiscall HardwareOutput::findPorts(HardwareOutput *this);
 void __thiscall HardwareOutput::initialisePort(HardwareOutput *this, int param_1);
@@ -9285,16 +9384,16 @@ void __thiscall HardwareInterface::runActiveLogic(HardwareInterface *this, float
 void __thiscall HardwareInterface::updateDataRequests(HardwareInterface *this, float param_1);
 void __thiscall HardwareInterface::forceUpdateDataRequests(HardwareInterface *this);
 void __thiscall HardwareInterface::runLogic(HardwareInterface *this, float param_1);
-void __thiscall HardwareOutput::addPort(void *this, char *param_11);
+void __thiscall HardwareOutput::addPort(HardwareOutput *this, char *param_2);
 bool __thiscall std::function<>::operator_bool(function<> *this);
 function<> *__thiscall std::function<>::operator=(function<> *this, function<> *param_1);
-void __thiscall std::vector<>::erase(void *this, undefined4 *param_11, basic_string<> *param_12);
+void __thiscall std::vector<>::erase(vector<> *this, undefined4 *param_2, basic_string<> *param_3);
 void __thiscall std::vector<>::_Destroy(vector<> *this, InputCommand *param_1, InputCommand *param_2);
-void __thiscall std::allocator<>::deallocate(allocator<> *this, InputCommand *param_1, uint param_2);
+void __thiscall std::allocator<>::deallocate(allocator<> *this, PrivateCommElement *param_1, uint param_2);
 void __thiscall std::_Func_class<>::_Set(_Func_class<> *this, _Func_base<> *param_1);
-undefined __thiscall std::_Func_class<>::operator()(_Func_class<> *this, undefined4 param_1, undefined4 param_2, void *param_4);
+bool __thiscall std::_Func_class<>::operator()(_Func_class<> *this, undefined4 param_1, undefined4 param_2, void *param_4);
 bool __thiscall std::_Func_class<>::operator()(_Func_class<> *this, Ship * param_1, double param_2, double param_3, double param_4);
-void *__thiscall std::function<>::function<><>(void *this);
+function<> *__thiscall std::function<>::function<><>(function<> *this);
 InputCommand *__thiscall std::vector<>::_Emplace_reallocate<>(vector<> *this, InputCommand *param_1, InputCommand *param_2);
 void __fastcall Catch_All @004180b4(vector<> *param_1);
 void __cdecl std::_Destroy_range<>(InputCommand *param_1, InputCommand *param_2, allocator<> *param_3);
@@ -9313,43 +9412,43 @@ _Func_impl_no_alloc<> *__cdecl std::_Global_new<>(function<> *param_1);
 void Catch_All @0041850f(uint param_1);
 void __thiscall Interface::~Interface(Interface *this);
 void __thiscall ModManager::initialise(ModManager *this);
-void __thiscall ModManager::getModInfo(undefined4 param_1, basic_string<> *param_11);
+Mod *__thiscall ModManager::getModInfo(undefined4 param_1, basic_string<> *param_2);
 void __thiscall std::map<>::~map<>(map<> *this);
-void __thiscall ModManager::getFolders(undefined4 param_1, vector<> *param_11, char *param_12, int param_4, int param_5, int param_6, undefined8 param_13);
+void __thiscall ModManager::getFolders(undefined4 param_1, vector<> *param_2, char *param_3, int param_4, int param_5, int param_6, undefined8 param_7);
 uint __thiscall std::_Tree<>::count(_Tree<> *this, basic_string<> *param_1);
 basic_string<> *__thiscall std::map<>::operator[](map<> *this, basic_string<> *param_1);
 void __thiscall std::basic_string<>::~basic_string<>(basic_string<> *this);
 void __thiscall std::_Tree_comp_alloc<>::~_Tree_comp_alloc<>(_Tree_comp_alloc<> *this);
 void __thiscall std::_Tree<>::_Tidy(_Tree<> *this);
 void __thiscall std::basic_string<>::_Tidy_deallocate(basic_string<> *this);
-void __thiscall std::_Tree<>::erase(void *this, undefined4 *param_11, int *param_12, int *param_13);
-_Tree_node<> *__thiscall std::_Tree_val<>::_Extract(void *this, _Tree_node<> *param_11);
+void __thiscall std::_Tree<>::erase(_Tree<> *this, undefined4 *param_2, _Tree<> *param_3, _Tree<> *param_4);
+_Tree_node<> *__thiscall std::_Tree_val<>::_Extract(_Tree_val<> *this, _Tree_node<> *param_2);
 void __thiscall std::_Tree<>::_Erase(_Tree<> *this, _Tree_node<> *param_1);
-void *__thiscall std::basic_string<>::_Reallocate_grow_by<>(void *this, undefined4 param_2, undefined4 param_3, undefined2 param_11);
+basic_string<> *__thiscall std::basic_string<>::_Reallocate_grow_by<>(basic_string<> *this, undefined4 param_1, undefined4 param_3, undefined2 param_4);
 void __thiscall std::pair<>::~pair<>(pair<> *this);
-void __thiscall std::map<>::_Try_emplace<>(map<> *this, undefined4 *param_1, piecewise_construct_t *param_3);
+void __thiscall std::map<>::_Try_emplace<>(map<> *this, basic_string<> *param_1);
 void __thiscall std::basic_string<>::_Construct<char *>(basic_string<> *this, char *param_1, char *param_2);
 void Catch_All @0041a06a(void);
 basic_string<> *__thiscall std::basic_string<>::_Reallocate_grow_by<>(basic_string<> *this, uint param_1);
 _Tree_node<> *__thiscall std::_Tree_comp_alloc<>::_Buynode<>(_Tree_comp_alloc<> *this, piecewise_construct_t *param_1, tuple<> *param_2, tuple<> *param_3);
-undefined4 *__thiscall std::_Tree<>::_Insert_hint<>(void *this, undefined4 *param_11, int *param_12, byte *param_13, undefined4 param_14);
+undefined4 *__thiscall std::_Tree<>::_Insert_hint<>(_Tree<> *this, undefined4 *param_2, pair<> *param_3, _Tree_node<> *param_4);
 void __fastcall Catch_All @0041a7c4(_Tree<> *param_1);
 void __thiscall std::_Tree_comp_alloc<>::_Freenode0(_Tree_comp_alloc<> *this, _Tree_node<> *param_1);
 _Tree_node<> *__thiscall std::_Tree_comp_alloc<>::_Buynode0(_Tree_comp_alloc<> *this);
 void __thiscall std::_Tree<>::_Destroy_if_node(_Tree<> *this, _Tree_node<> *param_1);
-void __thiscall std::_Tree<>::_Insert_at<>(_Tree<> *this, undefined4 *param_1, char param_2, undefined4 *param_3, undefined4 param_4, _Tree_node<> *param_6);
-void __thiscall std::_Tree<>::_Insert_nohint<>(_Tree<> *this, undefined4 *param_1, undefined4 param_2, byte *param_3, void *param_5);
+void __thiscall std::_Tree<>::_Insert_at<>(_Tree<> *this, bool param_1, _Tree_node<> *param_2, pair<> *param_3, _Tree_node<> *param_4);
+void __thiscall std::_Tree<>::_Insert_nohint<>(_Tree<> *this, bool param_1, pair<> *param_2, _Tree_node<> *param_3);
 void __fastcall Catch_All @0041acf1(_Tree<> *param_1);
 AddressOrGUID *__thiscall RakNet::AddressOrGUID::AddressOrGUID(AddressOrGUID *this, RakNetGUID *param_1);
 void __thiscall NetworkClient::initialise(NetworkClient *this);
-undefined __thiscall NetworkClient::validServer(undefined4 param_1, void *param_11);
+bool __thiscall NetworkClient::validServer(undefined4 param_1, void *param_2);
 void __thiscall NetworkClient::connectToServer(NetworkClient *this, char *param_1, int param_2);
 void switchD_0041b083::caseD_1(void);
 void __thiscall NetworkClient::disconnectFromServer(NetworkClient *this);
 void __thiscall NetworkClient::runLogic(NetworkClient *this, float param_1);
-void __thiscall NetworkClient::addChatLogItem(void *this, void *param_11);
-void *__thiscall LogLine::LogLine(void *this, void *param_11);
-void __thiscall NetworkData::sendSetClientInfo(undefined4 param_1, void *param_11);
+void __thiscall NetworkClient::addChatLogItem(NetworkClient *this, void *param_2);
+LogLine *__thiscall LogLine::LogLine(LogLine *this, void *param_2);
+void __thiscall NetworkData::sendSetClientInfo(undefined4 param_1, void *param_2);
 void __thiscall NetworkData::sendShipCommand(NetworkData *this, int param_1, double param_2, double param_3, double param_4);
 void __thiscall NetworkData::sendAddShip(undefined4 param_1_00, undefined4 param_1, undefined4 param_3, undefined4 param_4, undefined4 param_5, void *param_6);
 void __thiscall NetworkData::sendSync(NetworkData *this, RakNetGUID param_1, SyncNode *param_2);
@@ -9366,10 +9465,10 @@ void __thiscall NetworkData::sendUpdateSensorDataBasic(NetworkData *this, RakNet
 void __thiscall NetworkData::sendUpdateSensorDataAdvanced(NetworkData *this, RakNetGUID param_1, SensorData *param_2);
 void __thiscall NetworkData::sendUpdateSensorWaveform(NetworkData *this, RakNetGUID param_1, SensorData *param_2);
 void __thiscall NetworkData::sendLog(NetworkData *this, RakNetGUID param_1, LogLine *param_2);
-void __thiscall NetworkData::sendChatLineToServer(undefined4 param_1, undefined4 *param_11);
+void __thiscall NetworkData::sendChatLineToServer(undefined4 param_1, undefined4 *param_2);
 void __thiscall NetworkData::sendPresentationCommand(NetworkData *this, RakNetGUID param_1, int param_2, float param_3, float param_4);
 void __thiscall NetworkData::unpackSetScenario(NetworkData *this, Packet_SetScenario *param_1);
-void __thiscall NetworkData::sendChatLineFromServer(undefined4 param_1, void *param_11);
+void __thiscall NetworkData::sendChatLineFromServer(undefined4 param_1, void *param_2);
 void __thiscall NetworkData::sendMessageToClient(undefined4 param_1_00, undefined4 *param_1, undefined4 *param_3);
 void __thiscall NetworkData::unpackSetScenarioState(NetworkData *this, Packet_SetScenarioState *param_1);
 void __thiscall NetworkData::unpackSetCargoComponents(NetworkData *this, Packet_CargoState *param_1);
@@ -9397,16 +9496,16 @@ uint __thiscall std::vector<>::size(vector<> *this);
 void __thiscall std::vector<>::~vector<>(vector<> *this);
 void __thiscall std::vector<>::clear(vector<> *this);
 int *__thiscall std::map<>::operator[](map<> *this, int *param_1);
-Waypoint *__thiscall std::vector<>::_Emplace_reallocate<>(vector<> *this, Waypoint *param_1, Waypoint *param_2);
-WaveformPeak *__thiscall std::vector<>::_Emplace_reallocate<>(vector<> *this, WaveformPeak *param_1, WaveformPeak *param_2);
+Waypoint *__thiscall std::vector<>::_Emplace_reallocate<Waypoint>(vector<> *this, Waypoint *param_1, Waypoint *param_2);
+HullDamageChance *__thiscall std::vector<>::_Emplace_reallocate<>(vector<> *this, HullDamageChance *param_1, HullDamageChance *param_2);
 Waypoint *__thiscall std::vector<>::_Umove(vector<> *this, Waypoint *param_1, Waypoint *param_2, Waypoint *param_3);
-_Tree_node<> *__thiscall std::_Tree_comp_alloc<>::_Buynode<>(_Tree_comp_alloc<> *this, piecewise_construct_t *param_1, tuple<int_const &> *param_2, tuple<> *param_3);
-undefined4 *__thiscall std::_Tree<>::_Insert_hint<>(void *this, undefined4 *param_11, int *param_12, int *param_13, undefined4 param_14);
+_Tree_node<> *__thiscall std::_Tree_comp_alloc<>::_Buynode<>(_Tree_comp_alloc<> *this, piecewise_construct_t *param_1, tuple<int &&> *param_2, tuple<> *param_3);
+undefined4 *__thiscall std::_Tree<>::_Insert_hint<>(_Tree<> *this, undefined4 *param_2, pair<> *param_3, _Tree_node<> *param_4);
 void __fastcall Catch_All @004217bb(_Tree<> *param_1);
 _Tree_node<> *__thiscall std::_Tree_comp_alloc<>::_Buynode0(_Tree_comp_alloc<> *this);
 void __thiscall std::_Tree<>::_Destroy_if_node(_Tree<> *this, _Tree_node<> *param_1);
-void __thiscall std::_Tree<>::_Insert_at<>(_Tree<> *this, undefined4 *param_1, char param_2, undefined4 *param_3, undefined4 param_4, _Tree_node<> *param_6);
-void __thiscall std::_Tree<>::_Insert_nohint<>(_Tree<> *this, undefined4 *param_1, undefined4 param_2, _Tree<> *param_3, void *param_5);
+void __thiscall std::_Tree<>::_Insert_at<>(_Tree<> *this, bool param_1, _Tree_node<> *param_2, pair<> *param_3, _Tree_node<> *param_4);
+void __thiscall std::_Tree<>::_Insert_nohint<>(_Tree<> *this, bool param_1, pair<> *param_2, _Tree_node<> *param_3);
 void __fastcall Catch_All @00421b8f(_Tree<> *param_1);
 int __cdecl __vfprintf_l(FILE *_File, char *_Format, _locale_t _Locale, va_list _ArgList);
 int __cdecl _printf(char *_Format, ...);
@@ -9418,16 +9517,16 @@ bool __thiscall WeaponState::checkState(WeaponState *this);
 bool __thiscall SensorDataStates::checkWaveform(SensorDataStates *this);
 bool __thiscall SensorDataStates::checkAdvancedDetails(SensorDataStates *this);
 bool __thiscall ServerInfoState::checkAdvancedDetails(ServerInfoState *this);
-void *__thiscall ClientInfo::`scalar_deleting_destructor'(ClientInfo *this,uint param_1); undefined __thiscall NetworkServer::shipHasConnectedClient(void *this, char *param_11);
-void __thiscall NetworkServer::sendSound(void *this, undefined4 param_11, undefined4 param_12, char *param_13);
-void __thiscall NetworkServer::sendLog(void *this, LogLine *param_11, char *param_12);
+void *__thiscall ClientInfo::`scalar_deleting_destructor'(ClientInfo *this,uint param_1); bool __thiscall NetworkServer::shipHasConnectedClient(NetworkServer *this, char *param_2);
+void __thiscall NetworkServer::sendSound(NetworkServer *this, undefined4 param_2, undefined4 param_3, char *param_4);
+void __thiscall NetworkServer::sendLog(NetworkServer *this, LogLine *param_2, char *param_3);
 void __thiscall NetworkServer::sendShipDetailsToClient(NetworkServer *this, int param_1, int param_3, undefined4 param_4, int param_5, void *param_6);
 void __thiscall NetworkServer::recheckShipsToSync(NetworkServer *this);
 void __thiscall ShipSyncNode::~ShipSyncNode(ShipSyncNode *this);
-ShipSyncNode *__thiscall NetworkServer::startSyncingShip(void *this, basic_string<> *param_11);
-void __thiscall NetworkServer::addOrRemoveComponent(void *this, char *param_11);
-void __thiscall NetworkServer::removeWeapon(void *this, int param_11, char *param_12);
-void __thiscall NetworkServer::stopSyncingModule(void *this, int param_11, char *param_12);
+ShipSyncNode *__thiscall NetworkServer::startSyncingShip(NetworkServer *this, basic_string<> *param_2);
+void __thiscall NetworkServer::addOrRemoveComponent(NetworkServer *this, char *param_2);
+void __thiscall NetworkServer::removeWeapon(NetworkServer *this, int param_2, char *param_3);
+void __thiscall NetworkServer::stopSyncingModule(NetworkServer *this, int param_2, char *param_3);
 void __thiscall NetworkServer::startSyncingCargoState(NetworkServer *this, ShipSyncNode *param_1);
 void __thiscall NetworkServer::startSyncingWaypoints(NetworkServer *this, ShipSyncNode *param_1);
 void __thiscall NetworkServer::startSyncingModuleState(NetworkServer *this, ShipSyncNode *param_1, ShipModule *param_2);
@@ -9438,9 +9537,9 @@ void __thiscall NetworkServer::startSyncingSensorDataState(NetworkServer *this, 
 void __thiscall NetworkServer::runLogic(NetworkServer *this, float param_1);
 void __thiscall NetworkServer::runSyncCheck(NetworkServer *this, float param_1, bool param_2);
 void __thiscall SensorDataStates::~SensorDataStates(SensorDataStates *this);
-NetworkServer *__thiscall NetworkServer::addClientInfo(NetworkServer *this, int param_1, int param_3, undefined4 param_4, undefined4 param_5, basic_string<> *param_6);
+ClientInfo *__thiscall NetworkServer::addClientInfo(NetworkServer *this, int param_1, int param_3, undefined4 param_4, undefined4 param_5, basic_string<> *param_6);
 void __thiscall NetworkServer::removeClientInfo(NetworkServer *this, RakNetGUID param_1);
-void __thiscall NetworkServer::parseRemoteCommand(undefined4 param_1_00, undefined *param_1, void *param_3);
+void __thiscall NetworkServer::parseRemoteCommand(undefined4 param_1_00, undefined1 *param_1, void *param_3);
 void __thiscall NetworkServer::forceSessionToBegin(NetworkServer *this);
 vector<> *__thiscall std::vector<>::vector<>(vector<> *this, vector<> *param_1);
 HullStrength *__thiscall std::vector<>::operator[](vector<> *this, uint param_1);
@@ -9456,55 +9555,55 @@ void __thiscall TerminalEngine::renderNextChunkOfFile(TerminalEngine *this);
 vector<> *__thiscall std::vector<>::operator=(vector<> *this, vector<> *param_1);
 vector<> *__thiscall std::vector<>::vector<>(vector<> *this, vector<> *param_1);
 void Catch_All @0042bb65(void);
-void __thiscall std::basic_string<>::erase(void *this, int *param_11, int param_12);
+void __thiscall std::basic_string<>::erase(basic_string<> *this, int *param_2, int param_3);
 bool __thiscall std::vector<>::_Buy(vector<> *this, uint param_1);
-void __thiscall std::_Func_class<>::operator()(void *this, void *param_11);
+void __thiscall std::_Func_class<>::operator()(_Func_class<> *this, void *param_2);
 basic_string<> *__thiscall std::vector<>::_Ucopy<>(vector<> *this, basic_string<> *param_1, basic_string<> *param_2, basic_string<> *param_3);
 int __cdecl _vsnprintf(char *_Dest, size_t _Count, char *_Format, va_list _Args);
 TextEngine *__thiscall TextEngine::TextEngine(TextEngine *this, TextField *param_1, int param_2, int param_3, int param_4, vector<> *param_5);
-void __thiscall TextEngine::showDocument(void *this, undefined4 *param_11);
+void __thiscall TextEngine::showDocument(TextEngine *this, undefined4 *param_2);
 void __thiscall TextEngine::finishShowingDocument(TextEngine *this);
 void __thiscall TextEngine::renderDocument(TextEngine *this);
 void __thiscall TextEngine::renderDocumentFooter(TextEngine *this);
-void __thiscall TextEngine::showList(void *this, undefined4 param_11, undefined4 param_12, undefined4 param_4, int param_13, basic_string<> *param_14);
+void __thiscall TextEngine::showList(TextEngine *this, undefined4 param_2, undefined4 param_3, undefined4 param_4, int param_5, basic_string<> *param_6);
 void __thiscall TextEngine::renderList(TextEngine *this);
 void __thiscall TextEngine::finishShowingList(TextEngine *this, bool param_1);
 void __thiscall TextEngine::render(TextEngine *this);
-undefined __thiscall TextEngine::lineIsNull(undefined4 param_1, undefined4 *param_11);
-bool __thiscall TextEngine::lineEndsWithSpace(undefined4 param_1, undefined4 *param_11);
-void __thiscall TextEngine::addLineWithWrap(void *this, uint param_11, undefined4 *param_12);
+bool __thiscall TextEngine::lineIsNull(undefined4 param_1, undefined4 *param_2);
+bool __thiscall TextEngine::lineEndsWithSpace(undefined4 param_1, undefined4 *param_2);
+void __thiscall TextEngine::addLineWithWrap(TextEngine *this, uint param_2, undefined4 *param_3);
 void __thiscall TextEngine::addBlankLine(TextEngine *this);
-void __thiscall TextEngine::addLine(void *this, void *param_11);
+void __thiscall TextEngine::addLine(TextEngine *this, void *param_2);
 void __thiscall TextEngine::addLinef(TextEngine *this, char *param_1, ...);
-void __thiscall TextEngine::setBottomText(void *this, basic_string<> *param_11);
+void __thiscall TextEngine::setBottomText(TextEngine *this, basic_string<> *param_2);
 function<> *__thiscall std::function<>::operator=(function<> *this, function<> *param_1);
 basic_string<> *__thiscall std::basic_string<>::operator=(basic_string<> *this, char param_1);
-void __thiscall std::_Func_class<void>::_Swap(_Func_class<void> *this, _Func_class<void> *param_1);
+void __thiscall std::_Func_class<>::_Swap(_Func_class<> *this, _Func_class<> *param_1);
 void __thiscall std::_Func_class<void, int>::operator()(_Func_class<void, int> *this, int param_1);
 void __thiscall std::vector<>::_Assign_range<>(vector<> *this, basic_string<> *param_1, basic_string<> *param_2);
 basic_string<> *__cdecl std::_Copy_unchecked<>(basic_string<> *param_1, basic_string<> *param_2, basic_string<> *param_3);
-void __thiscall CharacterAnimationManager::addAnimation(void *this, basic_string<> *param_11);
-basic_string<> *__thiscall CharacterAnimationManager::getRandomAnimation(void *this, basic_string<> *param_11, void *param_12);
-undefined4 __thiscall CharacterAnimationManager::getSet(void *this, char *param_11);
-basic_string<> *__thiscall CharacterLocation::CharacterLocation(void *this, void *param_11);
-void __thiscall GameCharacter::addAddition(void *this, undefined4 *param_11);
+void __thiscall CharacterAnimationManager::addAnimation(CharacterAnimationManager *this, basic_string<> *param_2);
+basic_string<> *__thiscall CharacterAnimationManager::getRandomAnimation(CharacterAnimationManager *this, basic_string<> *param_2, void *param_3);
+AnimationSet *__thiscall CharacterAnimationManager::getSet(CharacterAnimationManager *this, char *param_2);
+basic_string<> *__thiscall CharacterLocation::CharacterLocation(CharacterLocation *this, void *param_2);
+void __thiscall GameCharacter::addAddition(GameCharacter *this, undefined4 *param_2);
 uint __thiscall std::basic_string<>::find(basic_string<> *this, char *param_1, uint param_2);
 uint __cdecl std::_Traits_find<>(char *param_1, uint param_2, uint param_3, char *param_4, uint param_5);
 void __thiscall LiveMessage::generateRealMessage(LiveMessage *this);
 void __thiscall CommsManager::reset(CommsManager *this);
 void *__thiscall LiveMessage::`scalar_deleting_destructor'(LiveMessage *this,uint param_1); void __thiscall CommsManager::addLiveMessage(CommsManager *this, undefined4 param_1, basic_string<> *param_3);
 PrivateCommOption *__thiscall PrivateCommOption::PrivateCommOption(PrivateCommOption *this, undefined4 param_1, undefined4 param_2, void *param_4);
-void __thiscall PrivateCommOption::setActionFunction(void *this, void *param_11);
-void __thiscall PrivateCommOption::setExistFunction(void *this, void *param_11);
+void __thiscall PrivateCommOption::setActionFunction(PrivateCommOption *this, void *param_2);
+void __thiscall PrivateCommOption::setExistFunction(PrivateCommOption *this, void *param_2);
 void __thiscall PrivateComm::reset(PrivateComm *this);
-basic_string<> *__thiscall PrivateComm::describeSource(PrivateComm *this, basic_string<> *param_1);
+basic_string<> *__thiscall PrivateComm::describeSource(PrivateComm *this);
 void __thiscall PrivateComm::render(PrivateComm *this, basic_string<> *param_1, basic_string<> *param_2);
 void __thiscall PrivateComm::changeElement(PrivateComm *this, int param_1);
 int __thiscall PrivateComm::getNextValidElement(PrivateComm *this);
 int __thiscall PrivateComm::getValidatedElement(PrivateComm *this);
 int __thiscall PrivateComm::selectElement(PrivateComm *this);
 void __thiscall std::vector<>::~vector<>(vector<> *this);
-function<> *__thiscall std::function<>::function<>(function<> *this, std::nullptr_t param_1);
+function<> *__thiscall std::function<>::function<>(function<> *this);
 void __thiscall std::vector<>::_Destroy(vector<> *this, PrivateCommElement *param_1, PrivateCommElement *param_2);
 void __thiscall std::vector<>::_Tidy(vector<> *this);
 void __thiscall std::vector<>::_Tidy(vector<> *this);
@@ -9558,7 +9657,7 @@ void __thiscall std::_Uninitialized_backout_al<>::~_Uninitialized_backout_al<>(_
 void __thiscall std::_Uninitialized_backout_al<>::~_Uninitialized_backout_al<>(_Uninitialized_backout_al<> *this);
 float __thiscall ShipComponent::getDamageAsModifier(ShipComponent *this);
 bool __thiscall ComponentClass::isAddon(ComponentClass *this);
-undefined4 __cdecl ComponentInterface::getInterface(char *param_11);
+ComponentInterface *__cdecl ComponentInterface::getInterface(char *param_1);
 int __thiscall ComponentInterfaceInstance::getComponentCount(ComponentInterfaceInstance *this);
 void __thiscall ComponentInterfaceInstance::applyConfiguration(ComponentInterfaceInstance *this, ModuleConfiguration *param_1);
 bool __thiscall ComponentInterfaceInstance::setActive(ComponentInterfaceInstance *this, int param_1);
@@ -9571,34 +9670,34 @@ float __thiscall ComponentInterfaceInstance::getPowerModifier(ComponentInterface
 void __thiscall CargoManager::render(CargoManager *this, TabletScreenType param_1);
 void __thiscall CargoManager::keyHit(CargoManager *this, KeyCode param_1);
 void __thiscall ComputerSystemInterface::setScreenSize(ComputerSystemInterface *this, int param_1, int param_2);
-ComponentCategory __thiscall ConversationManager::addConversationElement(void *this, void *param_11);
-void __thiscall ConversationManager::addConversationReq(void *this, void *param_11);
-ComponentCategory __thiscall ConversationManager::addConversationOption(void *this, void *param_11);
-void __thiscall ConversationManager::addConversationOptionReq(void *this, void *param_11);
-void __thiscall ConversationManager::addConversationOptionAction(void *this, void *param_11);
-void __thiscall ConversationManager::addConversationElementAction(void *this, void *param_11);
-undefined4 __thiscall ConversationManager::getConversation(void *this, int param_11, char param_12, char *param_13);
-undefined4 __thiscall ConversationManager::hasConversationToForce(void *this, char *param_11);
-void __thiscall ConversationManager::render(ConversationManager *this, TabletScreenType param_1);
+ConversationElement *__thiscall ConversationManager::addConversationElement(ConversationManager *this, void *param_2);
+void __thiscall ConversationManager::addConversationReq(ConversationManager *this, void *param_2);
+ConversationOption *__thiscall ConversationManager::addConversationOption(ConversationManager *this, void *param_2);
+void __thiscall ConversationManager::addConversationOptionReq(ConversationManager *this, void *param_2);
+void __thiscall ConversationManager::addConversationOptionAction(ConversationManager *this, void *param_2);
+void __thiscall ConversationManager::addConversationElementAction(ConversationManager *this, void *param_2);
+Conversation *__thiscall ConversationManager::getConversation(ConversationManager *this, int param_2, char param_3, char *param_4);
+int __thiscall ConversationManager::hasConversationToForce(ConversationManager *this, char *param_2);
+void __thiscall Ship::shipDocking(Ship *this, Ship *param_1);
 void __thiscall ConversationManager::keyHit(ConversationManager *this, KeyCode param_1);
 void __thiscall ConversationManager::performElementActions(ConversationManager *this, ConversationElement *param_1);
-void *__thiscall Message::Message(void *this, undefined4 param_2, void *param_11);
-void *__thiscall Email::Email(void *this, void *param_11);
-void __thiscall Message::~Message(Message *this);
+Message *__thiscall Message::Message(Message *this, undefined4 param_1, void *param_3);
+Email *__thiscall Email::Email(Email *this, void *param_2);
+void __thiscall MenuItem::~MenuItem(MenuItem *this);
 EmailInstance *__thiscall EmailInstance::EmailInstance(EmailInstance *this);
 void *__thiscall EmailInstance::`scalar_deleting_destructor'(EmailInstance *this,uint param_1); void __thiscall EmailManager::resetState(EmailManager *this);
-undefined4 __thiscall EmailManager::getEmail(void *this, char *param_11);
-undefined4 __thiscall EmailManager::getDraftSet(void *this, char *param_11);
-void __thiscall EmailManager::markEmailSent(void *this, char *param_11);
+Email *__thiscall EmailManager::getEmail(EmailManager *this, char *param_2);
+EmailDraftSet *__thiscall EmailManager::getDraftSet(EmailManager *this, char *param_2);
+void __thiscall EmailManager::markEmailSent(EmailManager *this, char *param_2);
 void __thiscall EmailManager::sendEmail(EmailManager *this, CommsData *param_1, Email *param_2);
-void __thiscall EmailManager::getEmailStateText(EmailManager *this, basic_string<> *param_1);
+void __thiscall EmailManager::getEmailStateText(EmailManager *this);
 void __thiscall EmailManager::runLogic(EmailManager *this, CommsData *param_1, float param_2, bool param_3);
 int __thiscall EmailManager::getUnsentEmailCount(EmailManager *this);
 int __thiscall EmailManager::getUnreadEmailCount(EmailManager *this);
 int __thiscall EmailManager::getUnreadNewsArticleCount(EmailManager *this);
 int __thiscall EmailManager::getDraftCount(EmailManager *this);
 void __thiscall EmailManager::syncEmails(EmailManager *this, CommsData *param_1);
-void __thiscall EmailManager::addCustomEmail(void *this, basic_string<> *param_11);
+void __thiscall EmailManager::addCustomEmail(EmailManager *this, basic_string<> *param_2);
 void __thiscall MultiplayerTabletManager::render(MultiplayerTabletManager *this, TabletScreenType param_1);
 void __thiscall MultiplayerTabletManager::keyHit(MultiplayerTabletManager *this, KeyCode param_1);
 void __thiscall MultiplayerTabletManager::renderStatus(MultiplayerTabletManager *this);
@@ -9606,12 +9705,12 @@ void __thiscall MultiplayerTabletManager::renderScenario(MultiplayerTabletManage
 ListData *__thiscall ListData::ListData(ListData *this, undefined4 param_1, void *param_3);
 void __thiscall NotesManager::populateNotes(NotesManager *this, vector<> *param_1);
 void __thiscall ListData::~ListData(ListData *this);
-void __thiscall NotesManager::getSelectedNotesText(NotesManager *this, basic_string<> *param_1);
-void __cdecl std::_Default_allocator_traits<>::construct<>(allocator<> *param_1, ListData *param_2, ListData *param_3);
-ListData *__thiscall std::vector<>::_Emplace_reallocate<>(vector<> *this, ListData *param_1, ListData *param_2);
+void __thiscall NotesManager::getSelectedNotesText(NotesManager *this);
+void __cdecl std::_Default_allocator_traits<>::construct<>(allocator<ListData> *param_1, ListData *param_2, ListData *param_3);
+ListData *__thiscall std::vector<>::_Emplace_reallocate<ListData>(vector<> *this, ListData *param_1, ListData *param_2);
 void __thiscall std::vector<>::_Change_array(vector<> *this, ListData *param_1, uint param_2, uint param_3);
 void __thiscall std::vector<>::_Destroy(vector<> *this, ListData *param_1, ListData *param_2);
-void __thiscall std::allocator<>::deallocate(allocator<> *this, ListData *param_1, uint param_2);
+void __thiscall std::allocator<ListData>::deallocate(allocator<ListData> *this, ListData *param_1, uint param_2);
 void __thiscall SensorManager::down(SensorManager *this, Ship *param_1);
 void __thiscall SensorManager::up(SensorManager *this, Ship *param_1);
 void __thiscall SensorManager::left(SensorManager *this, Ship *param_1);
@@ -9624,15 +9723,15 @@ Widget *__thiscall Widget::Widget(Widget *this);
 Zone *__thiscall Zone::Zone(Zone *this);
 IllegalGood *__thiscall IllegalGood::IllegalGood(IllegalGood *this);
 EngineeringSlotLocation *__thiscall EngineeringSlotLocation::EngineeringSlotLocation(EngineeringSlotLocation *this, undefined4 param_1, undefined4 param_2, undefined4 param_3, undefined4 param_5, undefined4 param_6, undefined4 param_7);
-void __thiscall NavMarker::~NavMarker(NavMarker *this);
+void __thiscall ModuleRenderData::~ModuleRenderData(ModuleRenderData *this);
 ScreenData *__thiscall ScreenData::ScreenData(ScreenData *this);
 FlagTimeToSet *__thiscall FlagTimeToSet::FlagTimeToSet(FlagTimeToSet *this);
-void *__thiscall PlayerGuidedToPort::PlayerGuidedToPort(void *this, void *param_11);
+PlayerGuidedToPort *__thiscall PlayerGuidedToPort::PlayerGuidedToPort(PlayerGuidedToPort *this, void *param_2);
 bool __cdecl stringStartsWith(uchar *param_1, char *param_2);
 LineData *__thiscall LineData::LineData(LineData *this, uchar *param_1);
 void __cdecl parseLines(char *param_1, _func_void_uchar_ptr *param_2, bool param_3);
-void __cdecl DataLoader::loadNewsArticle(undefined4 *param_11);
-void __cdecl DataLoader::loadInfoArticle(void *param_11);
+bool __cdecl DataLoader::loadNewsArticle(undefined4 *param_1);
+bool __cdecl DataLoader::loadInfoArticle(void *param_1);
 void __cdecl DataLoader::loadChatter(void *param_1);
 void __cdecl DataLoader::loadAllChatter(void);
 void __cdecl DataLoader::createSector(void);
@@ -9644,7 +9743,7 @@ void __cdecl DataLoader::createNebula(void);
 void __cdecl DataLoader::createAsteroidField(void);
 void __cdecl DataLoader::createMoon(void);
 void __cdecl DataLoader::createPassengerQuirk(void);
-void __cdecl DataLoader::createPassenger(void *param_11);
+void __cdecl DataLoader::createPassenger(void *param_1);
 void __cdecl DataLoader::createPassengers(void);
 void __cdecl DataLoader::createJunk(void);
 void __cdecl DataLoader::createJumpPoint(void);
@@ -9730,16 +9829,16 @@ basic_string<> *__thiscall std::map<>::operator[](map<> *this, basic_string<> *p
 void __thiscall std::_Tree<>::_Erase(_Tree<> *this, _Tree_node<> *param_1);
 void __thiscall std::vector<>::_Tidy(vector<> *this);
 void __thiscall std::vector<>::_Destroy(vector<> *this, MouseCursor *param_1, MouseCursor *param_2);
-void __thiscall std::allocator<>::deallocate(allocator<> *this, NavMarker *param_1, uint param_2);
+void __thiscall std::allocator<NavMarker>::deallocate(allocator<NavMarker> *this, NavMarker *param_1, uint param_2);
 void __thiscall std::vector<>::_Destroy(vector<> *this, Widget *param_1, Widget *param_2);
-void __thiscall std::allocator<>::deallocate(allocator<> *this, Widget *param_1, uint param_2);
+void __thiscall std::allocator<Widget>::deallocate(allocator<Widget> *this, Widget *param_1, uint param_2);
 _Tree_node<> *__thiscall std::_Tree_comp_alloc<>::_Buyheadnode(_Tree_comp_alloc<> *this);
 _Tree_node<> *__thiscall std::_Tree_comp_alloc<>::_Buyheadnode(_Tree_comp_alloc<> *this);
 NavMarker *__thiscall std::vector<>::_Emplace_reallocate<>(vector<> *this, NavMarker *param_1, NavMarker *param_2);
 void __fastcall Catch_All @0047dde4(vector<> *param_1);
 void __cdecl std::_Default_allocator_traits<>::construct<>(allocator<> *param_1, PlayerGuidedToPort *param_2, PlayerGuidedToPort *param_3);
 PlayerGuidedToPort *__thiscall std::vector<>::_Emplace_reallocate<>(vector<> *this, PlayerGuidedToPort *param_1, PlayerGuidedToPort *param_2);
-HullStrength *__thiscall std::vector<>::_Emplace_reallocate<>(vector<> *this, HullStrength *param_1, HullStrength *param_2);
+NSMSectorInfo *__thiscall std::vector<>::_Emplace_reallocate<>(vector<> *this, NSMSectorInfo *param_1, NSMSectorInfo *param_2);
 ScreenData *__thiscall std::vector<>::_Emplace_reallocate<>(vector<> *this, ScreenData *param_1, ScreenData *param_2);
 void __fastcall Catch_All @0047e4bc(vector<> *param_1);
 ComponentInterface **__thiscall std::vector<>::_Emplace_reallocate<>(vector<> *this, ComponentInterface **param_1, ComponentInterface **param_2);
@@ -9754,8 +9853,8 @@ Widget *__thiscall std::vector<>::_Emplace_reallocate<>(vector<> *this, Widget *
 void __fastcall Catch_All @0047f0dc(vector<> *param_1);
 BootElement *__thiscall std::vector<>::_Emplace_reallocate<>(vector<> *this, BootElement *param_1, BootElement *param_2);
 void __fastcall Catch_All @0047f2b0(vector<> *param_1);
-void *__thiscall std::basic_string<>::_Reallocate_grow_by<>(void *this);
-void __thiscall std::_Tree<>::_Eqrange<>(undefined4 param_1_00, undefined4 *param_1, byte *param_3);
+basic_string<> *__thiscall std::basic_string<>::_Reallocate_grow_by<>(basic_string<> *this);
+void __thiscall std::_Tree<>::_Eqrange<>(_Tree<> *this, basic_string<> *param_1);
 ScreenData *__thiscall ScreenData::ScreenData(ScreenData *this, ScreenData *param_1);
 Widget *__thiscall Widget::Widget(Widget *this, Widget *param_1);
 void __thiscall std::pair<>::~pair<>(pair<> *this);
@@ -9764,7 +9863,7 @@ NavMarker *__thiscall std::vector<>::_Umove(vector<> *this, NavMarker *param_1, 
 uint __thiscall std::vector<>::size(vector<> *this);
 void __thiscall std::vector<>::_Destroy(vector<> *this, ScreenData *param_1, ScreenData *param_2);
 ScreenData *__thiscall std::vector<>::_Umove(vector<> *this, ScreenData *param_1, ScreenData *param_2, ScreenData *param_3);
-void __thiscall std::allocator<>::deallocate(allocator<> *this, ScreenData *param_1, uint param_2);
+void __thiscall std::allocator<ScreenData>::deallocate(allocator<ScreenData> *this, ScreenData *param_1, uint param_2);
 void __thiscall std::vector<>::_Change_array(vector<> *this, Destination *param_1, uint param_2, uint param_3);
 void __thiscall std::vector<>::_Destroy(vector<> *this, Destination *param_1, Destination *param_2);
 void __thiscall std::vector<>::_Umove_if_noexcept(vector<> *this, Destination *param_1, Destination *param_2, Destination *param_3);
@@ -9776,9 +9875,9 @@ EngineeringSlotLocation *__thiscall std::vector<>::_Umove(vector<> *this, Engine
 MouseCursor *__thiscall std::vector<>::_Umove(vector<> *this, MouseCursor *param_1, MouseCursor *param_2, MouseCursor *param_3);
 Widget *__thiscall std::vector<>::_Umove(vector<> *this, Widget *param_1, Widget *param_2, Widget *param_3);
 void __thiscall std::vector<>::_Destroy(vector<> *this, BootElement *param_1, BootElement *param_2);
-void __thiscall std::allocator<>::deallocate(allocator<> *this, BootElement *param_1, uint param_2);
-void __thiscall std::map<>::_Try_emplace<>(map<> *this, undefined4 *param_1, _Tree_comp_alloc<> *param_3);
-void __cdecl std::_Destroy_range<>(NavMarker *param_1, NavMarker *param_2, allocator<> *param_3);
+void __thiscall std::allocator<word>::deallocate(allocator<word> *this, word *param_1, uint param_2);
+void __thiscall std::map<>::_Try_emplace<>(map<> *this, basic_string<> *param_1);
+void __cdecl std::_Destroy_range<>(NavMarker *param_1, NavMarker *param_2, allocator<NavMarker> *param_3);
 void __cdecl std::_Destroy_range<>(Destination *param_1, Destination *param_2, allocator<> *param_3);
 void __cdecl std::_Destroy_range<>(DockProcessElement *param_1, DockProcessElement *param_2, allocator<> *param_3);
 DockProcessElement *__cdecl std::_Uninitialized_move<>(DockProcessElement *param_1, DockProcessElement *param_2, DockProcessElement *param_3, allocator<> *param_4);
@@ -9787,14 +9886,14 @@ BootElement *__cdecl std::_Uninitialized_move<>(BootElement *param_1, BootElemen
 _Tree<> *__thiscall std::_Tree<>::_Tree<><>(_Tree<> *this, _Tree<> *param_1, allocator<> *param_2);
 void Catch_All @0048054d(void);
 MouseCursor *__cdecl std::_Uninitialized_copy<>(MouseCursor *param_1, MouseCursor *param_2, MouseCursor *param_3, allocator<> *param_4);
-void __thiscall std::_Tree<>::lower_bound(undefined4 param_1_00, undefined4 *param_1, byte *param_3);
+void __thiscall std::_Tree<>::lower_bound(_Tree<> *this, basic_string<> *param_1);
 void __thiscall std::_Uninitialized_backout_al<>::~_Uninitialized_backout_al<>(_Uninitialized_backout_al<> *this);
 void __thiscall std::_Uninitialized_backout_al<>::~_Uninitialized_backout_al<>(_Uninitialized_backout_al<> *this);
 void __thiscall std::_Uninitialized_backout_al<>::~_Uninitialized_backout_al<>(_Uninitialized_backout_al<> *this);
 void __thiscall std::_Uninitialized_backout_al<>::~_Uninitialized_backout_al<>(_Uninitialized_backout_al<> *this);
 void __thiscall std::_Uninitialized_backout_al<>::~_Uninitialized_backout_al<>(_Uninitialized_backout_al<> *this);
 _Tree_node<> *__thiscall std::_Tree_comp_alloc<>::_Buynode<>(_Tree_comp_alloc<> *this, piecewise_construct_t *param_1, tuple<> *param_2, tuple<> *param_3);
-undefined4 *__thiscall FUN_004807e0(_Tree<> *param_1_00, undefined4 *param_1, _Tree<> *param_2, _Tree<> *param_3, undefined4 param_4);
+undefined4 *__thiscall FUN_004807e0(void *this, undefined4 *param_1, pair<> *param_2, _Tree_node<> *param_3);
 void __fastcall Catch_All @00480dab(_Tree<> *param_1);
 _Tree_node<> *__thiscall std::_Tree_comp_alloc<>::_Buynode<>(_Tree_comp_alloc<> *this, piecewise_construct_t *param_1, tuple<> *param_2, tuple<> *param_3);
 void __fastcall Catch_All @00480e3a(_Tree_comp_alloc<> *param_1);
@@ -9805,43 +9904,43 @@ void Catch_All @00480f7f(void);
 void __thiscall std::_Tree_comp_alloc<>::_Freenode0(_Tree_comp_alloc<> *this, _Tree_node<> *param_1);
 _Tree_node<> *__thiscall std::_Tree_comp_alloc<>::_Buynode0(_Tree_comp_alloc<> *this);
 void __thiscall std::_Tree<>::_Destroy_if_node(_Tree<> *this, _Tree_node<> *param_1);
-void __thiscall std::_Tree<>::_Insert_at<>(_Tree<> *this, undefined4 *param_1, char param_2, int *param_3, undefined4 param_4, _Tree_node<> *param_6);
-void __thiscall std::_Tree<>::_Insert_nohint<>(undefined4 param_1_00, undefined4 *param_1, undefined4 param_2, _Tree<> *param_3, void *param_5);
+void __thiscall std::_Tree<>::_Insert_at<>(_Tree<> *this, bool param_1, _Tree_node<> *param_2, pair<> *param_3, _Tree_node<> *param_4);
+void __thiscall std::_Tree<>::_Insert_nohint<>(_Tree<> *this, bool param_1, pair<> *param_2, _Tree_node<> *param_3);
 void __fastcall Catch_All @004814e1(_Tree<> *param_1);
 Widget *__thiscall Widget::Widget(Widget *this, Widget *param_1);
 _Tree_node<> *__thiscall std::_Tree_comp_alloc<>::_Buynode<>(_Tree_comp_alloc<> *this, pair<> *param_1);
 void __fastcall Catch_All @00481999(_Tree_comp_alloc<> *param_1);
-void __thiscall BankAccount::addTransaction(BankAccount *this, undefined4 param_1, int param_2, void *param_4);
+bool __thiscall BankAccount::addTransaction(BankAccount *this, undefined4 param_1, int param_2, void *param_4);
 void __thiscall BankTransaction::~BankTransaction(BankTransaction *this);
-int *__thiscall BankEngine::openAccount(void *this, void *param_11);
+BankAccount *__thiscall BankEngine::openAccount(BankEngine *this, void *param_2);
 BankTransaction *__thiscall std::vector<>::_Emplace_reallocate<>(vector<> *this, BankTransaction *param_1, BankTransaction *param_2);
 void __cdecl std::_Destroy_range<>(BankTransaction *param_1, BankTransaction *param_2, allocator<> *param_3);
 BankTransaction *__cdecl std::_Uninitialized_move<>(BankTransaction *param_1, BankTransaction *param_2, BankTransaction *param_3, allocator<> *param_4);
-void __thiscall Bounty::describeThreeLines(Bounty *this, basic_string<> *param_1);
+void __thiscall Bounty::describeThreeLines(Bounty *this);
 BountyClass *__thiscall BountyClass::BountyClass(BountyClass *this);
 void __thiscall BountyManager::completeBounty(BountyManager *this, Bounty *param_1);
 void *__thiscall ContractCargoInstance::`scalar_deleting_destructor'(ContractCargoInstance *this,uint param_1); int __thiscall Contract::hoursLeft(Contract *this);
-void __thiscall Contract::describeThreeLines(Contract *this, basic_string<> *param_1, undefined4 param_2, char param_4);
-void __thiscall Contract::describeShort(Contract *this, basic_string<> *param_1);
-void __thiscall Contract::describeShortToVector(Contract *this, vector<> *param_1);
+void __thiscall Contract::describeThreeLines(Contract *this, bool param_1, bool param_2);
+void __thiscall Contract::describeShort(Contract *this);
+void __thiscall Contract::describeShortToVector(Contract *this);
 void __thiscall Contract::performContractCompletion(Contract *this);
 void __thiscall Contract::performContractFailure(Contract *this);
 void __thiscall ContractClass::~ContractClass(ContractClass *this);
-undefined4 __thiscall ContractManager::getRandomContractClassForLocation(undefined4 param_1_00, uint param_1, int param_3, int param_4, undefined4 param_5, void *param_6);
-undefined4 __thiscall ContractManager::getContractClassForIdentifier(undefined4 param_1, char *param_11);
-basic_string<> *__thiscall ContractManager::generateContract(void);
+ContractClass *__thiscall ContractManager::getRandomContractClassForLocation(undefined4 param_1_00, uint param_1, int param_3, int param_4, undefined4 param_5, void *param_6);
+ContractClass *__thiscall ContractManager::getContractClassForIdentifier(undefined4 param_1, char *param_2);
+Contract *__thiscall ContractManager::generateContract(void);
 Passenger *__thiscall Passenger::Passenger(Passenger *this);
-void __thiscall Passenger::addQuirk(undefined4 param_1, undefined4 *param_11);
+void __thiscall Passenger::addQuirk(undefined4 param_1, undefined4 *param_2);
 void __thiscall PassengerInstance::PassengerInstance(PassengerInstance *this, Passenger *param_1);
 void __thiscall PassengerInstance::pickup(PassengerInstance *this);
 void __thiscall PassengerInstance::leaveAngry(PassengerInstance *this);
 void __thiscall PassengerInstance::leave(PassengerInstance *this);
-vector<> *__thiscall PassengerManager::getValidPassengersForLocation(void *this, vector<> *param_11, char *param_12);
+vector<> *__thiscall PassengerManager::getValidPassengersForLocation(PassengerManager *this, vector<> *param_2, char *param_3);
 void __thiscall TradeEngine::TradeEngine(TradeEngine *this);
 void __thiscall Shop::~Shop(Shop *this);
-basic_string<> *__thiscall TradeEngine::getTradeLocation(void *this, char param_11, char *param_12);
+TradeLocation *__thiscall TradeEngine::getTradeLocation(TradeEngine *this, char param_2, char *param_3);
 void __thiscall TradeEngine::repopulateCurrentContracts(TradeEngine *this);
-void __thiscall TradeEngine::getShopHeader(undefined4 param_1_00, basic_string<> *param_1, int param_3);
+void __thiscall TradeEngine::getShopHeader(TradeEngine *this, Shop param_1);
 void __thiscall TradeEngine::populateCargoItems(TradeEngine *this, vector<> *param_1, bool param_2);
 bool __thiscall TradeEngine::checkCargoItems(TradeEngine *this, vector<> *param_1, bool param_2);
 void __thiscall TradeEngine::populateCargoComponentItems(TradeEngine *this, vector<> *param_1);
@@ -9872,8 +9971,8 @@ int __thiscall TradeEngine::maxForCurrentTrade(TradeEngine *this, Shop param_1);
 void __thiscall TradeEngine::selectRightSide(TradeEngine *this, Shop param_1);
 void __thiscall TradeEngine::selectLeftSide(TradeEngine *this, Shop param_1);
 int __thiscall TradeEngine::getBestAmountToSellOf(TradeEngine *this, int param_1);
-void __thiscall TradeEngine::getCurrentTopStr(TradeEngine *this, basic_string<> *param_1, int param_3);
-basic_string<> *__thiscall TradeEngine::getCurrentIcon(TradeEngine *this, basic_string<> *param_1, int param_3);
+void __thiscall TradeEngine::getCurrentTopStr(TradeEngine *this, Shop param_1);
+Shop __thiscall TradeEngine::getCurrentIcon(TradeEngine *this, Shop param_1);
 void __thiscall TradeEngine::performCommodityTrade(TradeEngine *this, TextEngine *param_1);
 void __thiscall TradeEngine::performBlackMarketTrade(TradeEngine *this, TextEngine *param_1);
 void __thiscall TradeEngine::performComponentTrade(TradeEngine *this, TextEngine *param_1);
@@ -9881,34 +9980,34 @@ void __thiscall TradeEngine::performTrade(TradeEngine *this, Shop param_1, TextE
 int __thiscall TradeEngine::getMaxLoanSize(TradeEngine *this);
 void __thiscall TradeEngine::populateCommerceMenu(TradeEngine *this, vector<> *param_1);
 void __thiscall TradeEngine::populateCompanies(TradeEngine *this, vector<> *param_1);
-void __thiscall TradeEngine::getCompanyStr(TradeEngine *this, basic_string<> *param_1);
+void __thiscall TradeEngine::getCompanyStr(TradeEngine *this);
 bool __thiscall TradeEngine::performPurchaseLicense(TradeEngine *this);
 bool __thiscall TradeEngine::canPurchaseLicense(TradeEngine *this);
 void __thiscall TradeEngine::populateContracts(TradeEngine *this, vector<> *param_1);
 bool __thiscall TradeEngine::canTakeCurrentContract(TradeEngine *this);
-void __thiscall TradeEngine::getContractStr(TradeEngine *this, basic_string<> *param_1);
+void __thiscall TradeEngine::getContractStr(TradeEngine *this);
 bool __thiscall TradeEngine::canDeliverContract(TradeEngine *this);
 bool __thiscall TradeEngine::deliverContract(TradeEngine *this);
 bool __thiscall TradeEngine::canTakeContract(TradeEngine *this);
 bool __thiscall TradeEngine::takeContract(TradeEngine *this);
 void __thiscall TradeEngine::populateBanks(TradeEngine *this, vector<> *param_1);
 bool __thiscall TradeEngine::checkBanks(TradeEngine *this, vector<> *param_1);
-void __thiscall TradeEngine::getLoanStr(TradeEngine *this, basic_string<> *param_1);
+void __thiscall TradeEngine::getLoanStr(TradeEngine *this);
 bool __thiscall TradeEngine::currentLoanValid(TradeEngine *this);
 bool __thiscall TradeEngine::currentRepaymentValid(TradeEngine *this);
 void __thiscall TradeEngine::takeLoan(TradeEngine *this);
 void __thiscall TradeEngine::repayLoan(TradeEngine *this);
 bool __thiscall TradeEngine::mechanicCanUpgradePod(TradeEngine *this, int param_1);
 bool __thiscall TradeEngine::mechanicCanBuyModule(TradeEngine *this);
-void __thiscall TradeEngine::getMechanicStatus(undefined4 param_1_00, basic_string<> *param_1);
-void __thiscall TradeEngine::getPodStatus(TradeEngine *this, basic_string<> *param_1);
-void __thiscall TradeEngine::getModuleStatus(TradeEngine *this, basic_string<> *param_1);
-void __thiscall TradeEngine::getHullSectionStatus(TradeEngine *this, basic_string<> *param_1);
+void __thiscall TradeEngine::getMechanicStatus(TradeEngine *this);
+void __thiscall TradeEngine::getPodStatus(TradeEngine *this);
+void __thiscall TradeEngine::getModuleStatus(TradeEngine *this);
+void __thiscall TradeEngine::getHullSectionStatus(TradeEngine *this);
 bool __thiscall TradeEngine::canBuyArmament(TradeEngine *this, Ship *param_1, int param_2);
 bool __thiscall TradeEngine::canSellArmament(TradeEngine *this, Ship *param_1, int param_2);
 bool __thiscall TradeEngine::performSellArmament(TradeEngine *this);
 void __thiscall Weapon::~Weapon(Weapon *this);
-void __thiscall TradeEngine::getArmamentStatus(TradeEngine *this, basic_string<> *param_1);
+void __thiscall TradeEngine::getArmamentStatus(TradeEngine *this);
 bool __thiscall TradeEngine::performRepair(TradeEngine *this);
 bool __thiscall TradeEngine::performSellPod(TradeEngine *this);
 bool __thiscall TradeEngine::performModuleTransaction(TradeEngine *this);
@@ -9922,34 +10021,34 @@ void __thiscall TradeEngine::populateMechanicModules(TradeEngine *this, vector<>
 bool __thiscall TradeEngine::checkMechanicModules(TradeEngine *this, vector<> *param_1);
 void __thiscall TradeEngine::populateMechanicArmaments(TradeEngine *this, vector<> *param_1);
 void __thiscall TradeEngine::populateShips(TradeEngine *this, vector<> *param_1);
-void __thiscall TradeEngine::getShipSelectedText(TradeEngine *this, basic_string<> *param_1);
+void __thiscall TradeEngine::getShipSelectedText(TradeEngine *this);
 bool __thiscall TradeEngine::shipCanBuy(TradeEngine *this);
 void __thiscall TradeEngine::performBuyShip(TradeEngine *this);
 void __thiscall TradeEngine::populatePassengers(TradeEngine *this, vector<> *param_1);
 bool __thiscall TradeEngine::checkPassengers(TradeEngine *this, vector<> *param_1);
-void __thiscall TradeEngine::getPassengerInfo(TradeEngine *this, basic_string<> *param_1);
-void __thiscall TradeEngine::getCargoViewText(TradeEngine *this, basic_string<> *param_1);
+void __thiscall TradeEngine::getPassengerInfo(TradeEngine *this);
+void __thiscall TradeEngine::getCargoViewText(TradeEngine *this);
 void __thiscall TradeEngine::populateBountyItems(TradeEngine *this, vector<> *param_1);
 bool __thiscall TradeEngine::checkBountyItems(TradeEngine *this, vector<> *param_1);
-void __thiscall TradeEngine::getBountyStr(TradeEngine *this, basic_string<> *param_1);
+void __thiscall TradeEngine::getBountyStr(TradeEngine *this);
 bool __thiscall TradeEngine::performTakeBounty(TradeEngine *this);
 ShipMechanics *__cdecl Singleton<>::getInstance(void);
 void __thiscall std::vector<>::~vector<>(vector<> *this);
-void __cdecl std::_Default_allocator_traits<>::construct<>(allocator<class_Shop> *param_1, Shop *param_2, Shop *param_3);
-Shop *__thiscall std::vector<>::_Emplace_reallocate<class_Shop>(vector<> *this, Shop *param_1, Shop *param_2);
-void __cdecl std::_Destroy_range<>(Shop *param_1, Shop *param_2, allocator<class_Shop> *param_3);
-void __thiscall std::map<>::_Try_emplace<int_const &>(map<> *this, undefined4 *param_1, piecewise_construct_t *param_3);
+void __cdecl std::_Default_allocator_traits<>::construct<Shop, Shop>(allocator<Shop> *param_1, Shop *param_2, Shop *param_3);
+Shop *__thiscall std::vector<>::_Emplace_reallocate<Shop>(vector<> *this, Shop *param_1, Shop *param_2);
+void __cdecl std::_Destroy_range<>(Shop *param_1, Shop *param_2, allocator<Shop> *param_3);
+void __thiscall std::map<>::_Try_emplace<int_const &>(map<> *this, int *param_1);
 TradeItemInstance *__thiscall TradeItemInstance::TradeItemInstance(TradeItemInstance *this, int param_1);
 void __thiscall TradeLocation::~TradeLocation(TradeLocation *this);
 void *__thiscall TradeItemInstance::`scalar_deleting_destructor'(TradeItemInstance *this,uint param_1); void __thiscall Faction::~Faction(Faction *this);
 void __thiscall TradeLocation::addTradeItemInstance(TradeLocation *this, TradeItemInstance *param_1, bool param_2);
-void __thiscall TradeLocation::addContractGoods(void *this, char *param_11);
+void __thiscall TradeLocation::addContractGoods(TradeLocation *this, char *param_2);
 void __thiscall TradeLocation::removeGoods(TradeLocation *this, int param_1, int param_2);
 void __thiscall TradeLocation::soldGood(TradeLocation *this, int param_1, int param_2);
 int __thiscall TradeLocation::goodAmountWire(TradeLocation *this, int param_1);
 bool __thiscall TradeLocation::doesBuyWire(TradeLocation *this, int param_1);
-void __thiscall TradeLocation::itemiseSaleDetailsWire(TradeLocation *this, basic_string<> *param_1, int param_2, int param_4);
-undefined4 __thiscall TradeLocation::goodAmount(void *this, char *param_11);
+void __thiscall TradeLocation::itemiseSaleDetailsWire(TradeLocation *this, int param_1, int param_2);
+int __thiscall TradeLocation::goodAmount(TradeLocation *this, char *param_2);
 int __thiscall TradeLocation::goodAmount(TradeLocation *this, int param_1);
 void __thiscall TradeLocation::clearGoods(TradeLocation *this, bool param_1);
 int __thiscall TradeLocation::singleBaseGoodCost(TradeLocation *this, int param_1, bool param_2);
@@ -9957,11 +10056,11 @@ int __thiscall TradeLocation::singleGoodCost(TradeLocation *this, int param_1, b
 int __thiscall TradeLocation::goodCost(TradeLocation *this, int param_1, int param_2, bool param_3);
 int __thiscall TradeLocation::singleGoodCostWire(TradeLocation *this, int param_1, bool param_2);
 int __thiscall TradeLocation::goodCostWire(TradeLocation *this, int param_1, int param_2, bool param_3);
-void __thiscall TradeLocation::itemiseSaleDetails(TradeLocation *this, basic_string<> *param_1, int param_2, int param_4);
-void __thiscall TradeLocation::getCurrentTradeSummary(TradeLocation *this, basic_string<> *param_1);
-void __thiscall TradeLocation::getCurrentBuyPrices(TradeLocation *this, vector<> *param_1);
-void __thiscall TradeLocation::getCurrentContractSummary(TradeLocation *this, basic_string<> *param_1);
-void __thiscall TradeLocation::getCurrentPassengerSummary(TradeLocation *this, basic_string<> *param_1);
+void __thiscall TradeLocation::itemiseSaleDetails(TradeLocation *this, int param_1, int param_2);
+void __thiscall TradeLocation::getCurrentTradeSummary(TradeLocation *this);
+void __thiscall TradeLocation::getCurrentBuyPrices(TradeLocation *this);
+void __thiscall TradeLocation::getCurrentContractSummary(TradeLocation *this);
+void __thiscall TradeLocation::getCurrentPassengerSummary(TradeLocation *this);
 bool __thiscall TradeLocation::doesBuy(TradeLocation *this, int param_1);
 void __thiscall TradeLocation::resetAndRepopulate(TradeLocation *this);
 void __thiscall TradeLocation::resetContracts(TradeLocation *this);
@@ -9979,84 +10078,84 @@ Conversation *__thiscall Conversation::Conversation(Conversation *this, undefine
 ConversationElement *__thiscall Conversation::getElement(Conversation *this, int param_1);
 ConversationOption *__thiscall ConversationElement::getOption(ConversationElement *this, int param_1);
 void __thiscall Faction::getAccess(Faction *this);
-void __thiscall Faction::officeAtLocation(void *this, char *param_11);
+bool __thiscall Faction::officeAtLocation(Faction *this, char *param_2);
 void __thiscall Faction::modifyState(Faction *this, int param_1);
 int __thiscall Faction::getCurrentTier(Faction *this);
 int __thiscall Faction::amountCanBorrow(Faction *this);
 void __thiscall Faction::runDayEndLogic(Faction *this);
 void __thiscall Faction::repay(Faction *this, int param_1);
 Faction *__thiscall FictionData::getFactionForNumber(FictionData *this, int param_1);
-undefined4 __thiscall FictionData::getFactionForID(void *this, char *param_11);
-undefined4 __cdecl comparisonFromString(void *param_11);
-void __thiscall FlagManager::setFlag(void *this, char *param_11);
-undefined __thiscall FlagManager::flagSet(void *this, void *param_11);
+Faction *__thiscall FictionData::getFactionForID(FictionData *this, char *param_2);
+ComparisonCheckType __cdecl comparisonFromString(void *param_1);
+void __thiscall FlagManager::setFlag(FlagManager *this, char *param_2);
+bool __thiscall FlagManager::flagSet(FlagManager *this, void *param_2);
 void __thiscall FlagManager::reset(FlagManager *this);
 void __thiscall FlagManager::runFlagLogic(FlagManager *this, float param_1, FlagTimeToSet *param_2);
 void __thiscall FlagManager::runLogic(FlagManager *this, float param_1);
 FlagTimeToSet *__thiscall FlagManager::addFlagToSet(FlagManager *this);
-void __thiscall Requirement::Requirement(void *this, undefined4 *param_11);
+void __thiscall Requirement::Requirement(Requirement *this, undefined4 *param_2);
 bool __thiscall Requirement::checkReq(Requirement *this, CargoHold *param_1, BankAccount *param_2);
 float *__thiscall std::map<>::operator[](map<> *this, basic_string<> *param_1);
 bool *__thiscall std::map<>::operator[](map<> *this, basic_string<> *param_1);
-undefined4 *__thiscall std::_Tree<>::_Insert_hint<>(void *this, undefined4 *param_11, byte *param_12, byte *param_13, undefined4 param_14);
+undefined4 *__thiscall std::_Tree<>::_Insert_hint<>(_Tree<> *this, undefined4 *param_2, pair<> *param_3, _Tree_node<> *param_4);
 void __fastcall Catch_All @004a34cf(_Tree<> *param_1);
 _Tree_node<> *__thiscall std::_Tree_comp_alloc<>::_Buynode<>(_Tree_comp_alloc<> *this, piecewise_construct_t *param_1, tuple<> *param_2, tuple<> *param_3);
 void __fastcall Catch_All @004a3559(_Tree_comp_alloc<> *param_1);
-void __thiscall std::_Tree<>::_Insert_at<>(_Tree<> *this, undefined4 *param_1, char param_2, undefined4 *param_3, undefined4 param_4, _Tree_node<> *param_6);
-void __thiscall std::_Tree<>::_Insert_nohint<>(_Tree<> *this, undefined4 *param_1, undefined4 param_2, _Tree<> *param_3, _Tree_node<> *param_5);
+void __thiscall std::_Tree<>::_Insert_at<>(_Tree<> *this, bool param_1, _Tree_node<> *param_2, pair<> *param_3, _Tree_node<> *param_4);
+void __thiscall std::_Tree<>::_Insert_nohint<>(_Tree<> *this, bool param_1, pair<> *param_2, _Tree_node<> *param_3);
 void __fastcall Catch_All @004a3900(_Tree<> *param_1);
-void __thiscall Infopedia::setArticle(void *this, void *param_11);
+void __thiscall Infopedia::setArticle(Infopedia *this, void *param_2);
 void __thiscall Infopedia::setArticle(Infopedia *this, int param_1);
 void __thiscall Infopedia::refilterArticles(Infopedia *this);
 MetaGameAction *__thiscall MetaGameAction::MetaGameAction(MetaGameAction *this, int param_1, basic_string<> *param_3);
 void __thiscall MetaGameAction::perform(MetaGameAction *this);
 void __thiscall NameManager::loadNames(NameManager *this);
-void __thiscall NameManager::generateFreighterName(NameManager *this, basic_string<> *param_1);
-void __thiscall NameManager::generatePirateName(NameManager *this, basic_string<> *param_1);
-void __thiscall NameManager::generatePoliceName(NameManager *this, basic_string<> *param_1);
-void __thiscall NameManager::loadLinesFromFile(undefined4 param_1, undefined4 *param_11, void *param_12);
-void __thiscall NameManager::generateBuyableName(NameManager *this, basic_string<> *param_1);
-void __thiscall NameManager::addRego(void *this, void *param_11);
-void __thiscall NameManager::generateGeneralRego(NameManager *this, basic_string<> *param_1);
-void __thiscall NameManager::getLocationForRego(undefined4 param_1, basic_string<> *param_11, char *param_12);
-void __thiscall NameManager::generatePoliceRego(NameManager *this, basic_string<> *param_1);
-undefined __thiscall NameManager::regoExists(void *this, char *param_11);
+void __thiscall NameManager::generateFreighterName(NameManager *this);
+void __thiscall NameManager::generatePirateName(NameManager *this);
+void __thiscall NameManager::generatePoliceName(NameManager *this);
+void __thiscall NameManager::loadLinesFromFile(undefined4 param_1, undefined4 *param_2, void *param_3);
+void __thiscall NameManager::generateBuyableName(NameManager *this);
+void __thiscall NameManager::addRego(NameManager *this, void *param_2);
+void __thiscall NameManager::generateGeneralRego(NameManager *this);
+void __thiscall NameManager::getLocationForRego(undefined4 param_1, basic_string<> *param_2, char *param_3);
+void __thiscall NameManager::generatePoliceRego(NameManager *this);
+bool __thiscall NameManager::regoExists(NameManager *this, char *param_2);
 GameData *__thiscall GameData::GameData(GameData *this);
 void __thiscall GameData::<>::~<>(<> *this);
 void __thiscall GameData::<>::~<>(<> *this);
-undefined4 __thiscall GameData::getShipWithinDistance(undefined4 param_1_00, int param_1, int param_3, char param_4);
+Ship *__thiscall GameData::getShipWithinDistance(undefined4 param_1_00, int param_1, int param_3, char param_4);
 Ship *__thiscall GameData::getShipWithID(GameData *this, int param_1);
-undefined4 __thiscall GameData::getSpaceStation(undefined4 param_1, char *param_11);
-int __thiscall GameData::getSectorOfShip(undefined4 param_1, char *param_11);
-undefined4 __thiscall GameData::getShipWithRego(undefined4 param_1, char *param_11);
+SpaceStation *__thiscall GameData::getSpaceStation(undefined4 param_1, char *param_2);
+Sector *__thiscall GameData::getSectorOfShip(undefined4 param_1, char *param_2);
+Ship *__thiscall GameData::getShipWithRego(undefined4 param_1, char *param_2);
 Sector *__thiscall GameData::getSectorWithID(GameData *this, int param_1);
-undefined4 __thiscall GameData::getSectorWithShortName(undefined4 param_1, char *param_11);
+Sector *__thiscall GameData::getSectorWithShortName(undefined4 param_1, char *param_2);
 HazardCategory *__thiscall GameData::getNebulaHazardCategory(GameData *this, int param_1);
 HazardCategory *__thiscall GameData::getAsteroidHazardCategory(GameData *this, int param_1);
-basic_string<> *__thiscall GameData::getStructure(void *this, char param_11, char *param_12);
-Room *__thiscall GameData::getRoom(undefined4 param_1, void *param_11);
-void __thiscall GameData::getCharacter(undefined4 param_1, char *param_11);
-int __thiscall GameData::getExtraWithTag(undefined4 param_1, void *param_11);
-void __thiscall GameData::setUniqueObjects(undefined4 param_1, int param_11, byte param_12, void *param_13);
-int __thiscall GameData::getCharacterAtSpawnPoint(undefined4 param_1, char *param_11);
-int __thiscall GameData::getCharacterLocationAtSpawnPoint(undefined4 param_1, char *param_11);
-undefined4 __thiscall GameData::getModuleClassWithIdentifier(undefined4 param_1, char *param_11);
-undefined4 __thiscall GameData::getShipClassWithIdentifier(undefined4 param_1, char *param_11);
-undefined4 __thiscall GameData::getWeaponClassWithIdentifier(undefined4 param_1, char *param_11);
-undefined4 __thiscall GameData::getScreenLayout(undefined4 param_1, char *param_11);
-undefined4 __thiscall GameData::getScenario(undefined4 param_1, char *param_11);
-undefined4 __thiscall GameData::getGoodWithShortName(undefined4 param_1, char *param_11);
+Structure *__thiscall GameData::getStructure(GameData *this, char param_2, char *param_3);
+Room *__thiscall GameData::getRoom(undefined4 param_1, void *param_2);
+GameCharacter *__thiscall GameData::getCharacter(undefined4 param_1, char *param_2);
+GameCharacter *__thiscall GameData::getExtraWithTag(undefined4 param_1, void *param_2);
+void __thiscall GameData::setUniqueObjects(undefined4 param_1, int param_2, byte param_3, void *param_4);
+GameCharacter *__thiscall GameData::getCharacterAtSpawnPoint(undefined4 param_1, char *param_2);
+CharacterLocation *__thiscall GameData::getCharacterLocationAtSpawnPoint(undefined4 param_1, char *param_2);
+ShipModuleClass *__thiscall GameData::getModuleClassWithIdentifier(undefined4 param_1, char *param_2);
+ShipClass *__thiscall GameData::getShipClassWithIdentifier(undefined4 param_1, char *param_2);
+WeaponClass *__thiscall GameData::getWeaponClassWithIdentifier(undefined4 param_1, char *param_2);
+ScreenLayout *__thiscall GameData::getScreenLayout(undefined4 param_1, char *param_2);
+Scenario *__thiscall GameData::getScenario(undefined4 param_1, char *param_2);
+Good *__thiscall GameData::getGoodWithShortName(undefined4 param_1, char *param_2);
 Good *__thiscall GameData::getGood(GameData *this, int param_1);
-undefined4 __thiscall GameData::getStellarObjectWithinDistance(undefined4 param_1_00, int param_1, undefined4 param_3, undefined4 param_4, float param_5);
-undefined4 __thiscall GameData::getStateModifier(undefined4 param_1, char *param_11);
+StellarObject *__thiscall GameData::getStellarObjectWithinDistance(undefined4 param_1_00, int param_1, undefined4 param_3, undefined4 param_4, float param_5);
+StateModifier *__thiscall GameData::getStateModifier(undefined4 param_1, char *param_2);
 void __thiscall GameData::resetStateModifiers(GameData *this);
-undefined4 __cdecl quadrantFor(float param_11, float param_12);
-int __cdecl getQuadrant(void *param_11);
+Quadrant __cdecl quadrantFor(float param_1, float param_2);
+Quadrant __cdecl getQuadrant(void *param_1);
 Quadrant __cdecl invertQuadrant(Quadrant param_1);
-void __thiscall GameObject::setLocation(void *this, float param_11, float param_12);
-undefined __thiscall AuthorityManager::shipHasBeenScanned(void *this, void *param_11);
-void __thiscall AuthorityManager::haveScannedShip(void *this, void *param_11);
-void __thiscall AuthorityManager::reportBelligerant(void *this, char param_11, void *param_12);
+void __thiscall GameObject::setLocation(GameObject *this, float param_2, float param_3);
+bool __thiscall AuthorityManager::shipHasBeenScanned(AuthorityManager *this, void *param_2);
+void __thiscall AuthorityManager::haveScannedShip(AuthorityManager *this, void *param_2);
+void __thiscall AuthorityManager::reportBelligerant(AuthorityManager *this, char param_2, void *param_3);
 uint __thiscall std::_Tree<>::count(_Tree<> *this, basic_string<> *param_1);
 Junk *__thiscall JunkManager::getRandomJunkForSector(JunkManager *this, Sector *param_1);
 void __thiscall JunkManager::generateJunkForSector(JunkManager *this, Sector *param_1, undefined4 param_3, undefined4 param_4);
@@ -10074,8 +10173,8 @@ void __thiscall NPCShipManager::runPoliceVesselLogic(NPCShipManager *this, Ship 
 void __thiscall std::vector<>::~vector<>(vector<> *this);
 bool __thiscall ShipModule::isAtHighPower(ShipModule *this);
 void __thiscall PowerManager::populateListData(PowerManager *this, vector<> *param_1);
-void __thiscall PowerManager::getDetailInformation(undefined4 param_1_00, basic_string<> *param_1);
-void __cdecl std::_Default_allocator_traits<>::construct<>(allocator<> *param_1, ListData *param_2, ListData *param_3);
+void __thiscall PowerManager::getDetailInformation(PowerManager *this);
+void __cdecl std::_Default_allocator_traits<>::construct<>(allocator<ListData> *param_1, ListData *param_2, ListData *param_3);
 ListData *__thiscall std::vector<>::_Emplace_reallocate<>(vector<> *this, ListData *param_1, ListData *param_2);
 void __fastcall Catch_All @004adf8f(vector<> *param_1);
 bool __thiscall ShipModule::hasBooted(ShipModule *this);
@@ -10104,14 +10203,14 @@ bool __thiscall ShipModule::isFunctional(ShipModule *this, bool param_1);
 void __thiscall ShipModule::disconnect(ShipModule *this, Ship *param_1);
 void __thiscall ShipModule::connect(ShipModule *this, Ship *param_1);
 float __thiscall ShipModule::runLogic(ShipModule *this, float param_1, Ship *param_2);
-int __cdecl getModuleSlotTypeForString(void *param_11);
+ModuleSlotType __cdecl getModuleSlotTypeForString(void *param_1);
 ShipModuleClass *__thiscall ShipModuleClass::ShipModuleClass(ShipModuleClass *this, undefined4 param_1, undefined4 param_2, void *param_4);
 ModuleSlotType __cdecl ShipModuleClass::getSlotTypeForModuleType(ModuleType param_1);
 ModuleConfiguration *__thiscall ShipModuleClass::getRandomConfigurationOfType(ShipModuleClass *this, int param_1);
 void __thiscall std::vector<>::~vector<>(vector<> *this);
 void __cdecl writeTextToFile(undefined4 *param_1);
 void __cdecl writeString(undefined4 *param_1);
-void __cdecl writeBoolean(undefined4 param_1, undefined4 *param_11);
+void __cdecl writeBoolean(undefined4 param_1, undefined4 *param_2);
 void __cdecl OISConfiguration::configure(void);
 void __cdecl OISConfiguration::setOptimalResolution(void);
 void __cdecl OISConfiguration::setRes(void);
@@ -10119,13 +10218,13 @@ void __cdecl OISConfiguration::dumpCommands(void);
 void __cdecl OISConfiguration::load(void);
 void __cdecl OISConfiguration::save(void);
 InputConfiguration *__cdecl Singleton<>::getInstance(void);
-Resolution *__thiscall std::vector<>::_Emplace_reallocate<>(vector<> *this, Resolution *param_1, Resolution *param_2);
-void __thiscall DateTime::setFromString(void *this, void *param_11);
-void __thiscall DateTime::parseDate(void *this, void *param_11);
+Resolution *__thiscall std::vector<>::_Emplace_reallocate<Resolution>(vector<> *this, Resolution *param_1, Resolution *param_2);
+void __thiscall DateTime::setFromString(DateTime *this, void *param_2);
+void __thiscall DateTime::parseDate(DateTime *this, void *param_2);
 void __thiscall DateTime::decrement(DateTime *this, int param_1);
 void __thiscall CommsData::clearState(CommsData *this);
 int __thiscall CommsData::getDraftCount(CommsData *this);
-undefined __thiscall CommsData::articleRead(void *this, void *param_11);
+bool __thiscall CommsData::articleRead(CommsData *this, void *param_2);
 void __thiscall ComputerSystem::renderArticle(ComputerSystem *this, CommsData *param_1, int param_2);
 void __thiscall ComputerSystem::sendCurrentDraft(ComputerSystem *this);
 void __thiscall EmailDraft::~EmailDraft(EmailDraft *this);
@@ -10136,9 +10235,9 @@ void __thiscall ComputerSystem::showEmails(ComputerSystem *this);
 void __thiscall ComputerSystem::doneWithArticle(ComputerSystem *this);
 void __thiscall ComputerSystem::showArticles(ComputerSystem *this);
 void __thiscall ComputerSystem::doneWithFile(ComputerSystem *this);
-undefined4 __thiscall ComputerSystem::getArticle(void *this, char *param_11);
+Article *__thiscall ComputerSystem::getArticle(ComputerSystem *this, char *param_2);
 void __thiscall ComputerSystem::renderEmail(ComputerSystem *this, CommsData *param_1, int param_2);
-vector<> *__thiscall ComputerSystem::getMostRecentArticles(ComputerSystem *this, vector<> *param_1);
+int __thiscall ComputerSystem::getMostRecentArticles(ComputerSystem *this, int param_1, bool param_2);
 void __thiscall ComputerSystem::renderArticles(ComputerSystem *this, CommsData *param_1);
 void __thiscall ComputerSystem::selectedArticle(ComputerSystem *this, int param_1);
 void __thiscall ComputerSystem::renderEmails(ComputerSystem *this, CommsData *param_1);
@@ -10147,12 +10246,12 @@ void __thiscall ComputerSystem::renderDrafts(ComputerSystem *this, int param_1, 
 void __thiscall ComputerSystem::selectedEmail(ComputerSystem *this, int param_1);
 void __thiscall ComputerSystem::selectedDraft(ComputerSystem *this, int param_1);
 void __thiscall ComputerSystem::runArticleLogic(ComputerSystem *this, float param_1);
-void __thiscall ComputerSystem::syncArticles(ComputerSystem *this, int param_1, uint param_2);
+void __thiscall ComputerSystem::syncArticles(ComputerSystem *this, CommsData *param_1, uint param_2);
 void __thiscall ComputerSystem::renderFiles(ComputerSystem *this, int param_1);
 void __thiscall std::_Func_impl_no_alloc<>::_Delete_this(_Func_impl_no_alloc<> *this, bool param_1);
 void *__thiscall std::_Func_impl_no_alloc<>::_Get(_Func_impl_no_alloc<> *this);
 type_info *__thiscall std::_Func_impl_no_alloc<>::_Target_type(_Func_impl_no_alloc<> *this);
-_Func_base<void, int> *__thiscall std::_Func_impl_no_alloc<>::_Copy(_Func_impl_no_alloc<> *this, void *param_1);
+_Func_base<void, int> *__thiscall std::_Func_impl_no_alloc<>::_Move(_Func_impl_no_alloc<> *this, void *param_1);
 void __thiscall std::_Func_impl_no_alloc<>::_Delete_this(_Func_impl_no_alloc<> *this, bool param_1);
 type_info *__thiscall std::_Func_impl_no_alloc<>::_Target_type(_Func_impl_no_alloc<> *this);
 _Func_base<void> *__thiscall std::_Func_impl_no_alloc<>::_Copy(_Func_impl_no_alloc<> *this, void *param_1);
@@ -10161,7 +10260,7 @@ void __thiscall std::_Func_impl_no_alloc<>::_Do_call(_Func_impl_no_alloc<> *this
 bool __thiscall Article::readyToPublish(Article *this, bool param_1);
 bool __thiscall Article::runLogic(Article *this, float param_1);
 SaveMetaData *__thiscall SaveMetaData::SaveMetaData(SaveMetaData *this);
-void *__thiscall ConsoleDamage::ConsoleDamage(void *this, void *param_11);
+ConsoleDamage *__thiscall ConsoleDamage::ConsoleDamage(ConsoleDamage *this, void *param_2);
 void __thiscall SaveMetaData::~SaveMetaData(SaveMetaData *this);
 void __thiscall SaveHandler::loadLocalStats(SaveHandler *this);
 void __thiscall SaveHandler::saveLocalStats(SaveHandler *this);
@@ -10173,55 +10272,55 @@ SaveMetaData *__thiscall SaveHandler::metadataForSave(SaveHandler *this, int par
 void __thiscall SaveHandler::loadGame(SaveHandler *this);
 void __thiscall SaveHandler::saveGame(SaveHandler *this);
 void __cdecl SaveHandler::writeLengthString(undefined4 *param_1);
-void __cdecl SaveHandler::readLengthString(void);
+void __cdecl SaveHandler::readLengthString(_iobuf *param_1);
 void __thiscall SaveHandler::saveGameV12(SaveHandler *this, _iobuf *param_1);
 void __thiscall SaveHandler::loadGameV12(SaveHandler *this, _iobuf *param_1);
 void *__thiscall CargoHold::`scalar_deleting_destructor'(CargoHold *this,uint param_1); void __cdecl V12::saveStats(_iobuf *param_1);
-void __cdecl V12::loadStats(_iobuf *param_1);
+void __cdecl V8::loadStats(_iobuf *param_1);
 void __cdecl V12::saveFogOfWarState(_iobuf *param_1);
-void __cdecl V12::loadFogOfWarState(_iobuf *param_1);
+void __cdecl V9::loadFogOfWarState(_iobuf *param_1);
 void __cdecl V12::saveEmails(_iobuf *param_1);
-void __cdecl V12::loadEmails(_iobuf *param_1);
+void __cdecl V9::loadEmails(_iobuf *param_1);
 void __cdecl V12::saveFlags(_iobuf *param_1);
-void __cdecl V12::loadFlags(_iobuf *param_1);
-void __cdecl V12::loadStatesActive(_iobuf *param_1);
+void __cdecl V7::loadFlags(_iobuf *param_1);
+void __cdecl V10::loadStatesActive(_iobuf *param_1);
 void __cdecl V12::saveFactionStates(_iobuf *param_1);
 void __cdecl V12::savePlayerContracts(_iobuf *param_1);
 void __cdecl V12::loadPlayerContracts(_iobuf *param_1);
 void __cdecl V12::writeBounty(_iobuf *param_1, Bounty *param_2);
-Bounty *__cdecl V12::readBounty(_iobuf *param_1);
+Bounty *__cdecl V8::readBounty(_iobuf *param_1);
 void __cdecl V12::saveSpaceStationStates(_iobuf *param_1);
 void __cdecl V12::loadSpaceStationStates(_iobuf *param_1);
 void __cdecl V12::writeTradeItem(_iobuf *param_1, TradeItemInstance *param_2);
-TradeItemInstance *__cdecl V12::readTradeItem(_iobuf *param_1);
+TradeItemInstance *__cdecl V11::readTradeItem(_iobuf *param_1);
 void __cdecl V12::writeContract(_iobuf *param_1, Contract *param_2);
-Contract *__cdecl V12::readContract(_iobuf *param_1);
+Contract *__cdecl V11::readContract(_iobuf *param_1);
 void __cdecl V12::writeCargo(_iobuf *param_1, CargoHold *param_2);
 CargoHold *__cdecl V12::readCargo(_iobuf *param_1);
 void __cdecl V12::saveShip(_iobuf *param_1, Ship *param_2);
 Ship *__cdecl V12::loadShip(_iobuf *param_1);
 void __cdecl V12::savePassenger(_iobuf *param_1);
-void __cdecl V12::loadPassenger(_iobuf *param_1);
+void __cdecl V11::loadPassenger(_iobuf *param_1);
 void __cdecl V12::writeShipModule(_iobuf *param_1, ShipModule *param_2);
 ShipModule *__cdecl V12::readShipModule(_iobuf *param_1);
 void __thiscall SaveHandler::loadGameV6(SaveHandler *this, _iobuf *param_1);
 void __cdecl V6::loadEmails(_iobuf *param_1);
 void __cdecl V6::loadStatesActive(_iobuf *param_1);
-Bounty *__cdecl V7::readBounty(_iobuf *param_1);
+Bounty *__cdecl V6::readBounty(_iobuf *param_1);
 void __cdecl V6::loadSpaceStationStates(_iobuf *param_1);
 Contract *__cdecl V8::readContract(_iobuf *param_1);
 CargoHold *__cdecl V11::readCargo(_iobuf *param_1);
 void __cdecl V7::loadShips(_iobuf *param_1);
-ShipModule *__cdecl V7::readShipModule(_iobuf *param_1);
+ShipModule *__cdecl V6::readShipModule(_iobuf *param_1);
 void __thiscall SaveHandler::loadGameV7(SaveHandler *this, _iobuf *param_1);
 void __cdecl V7::loadEmails(_iobuf *param_1);
 void __cdecl V8::loadSpaceStationStates(_iobuf *param_1);
 void __thiscall SaveHandler::loadGameV8(SaveHandler *this, _iobuf *param_1);
 void __cdecl V8::loadEmails(_iobuf *param_1);
 void __cdecl V8::loadShips(_iobuf *param_1);
-ShipModule *__cdecl V9::readShipModule(_iobuf *param_1);
+ShipModule *__cdecl V8::readShipModule(_iobuf *param_1);
 void __thiscall SaveHandler::loadGameV9(SaveHandler *this, _iobuf *param_1);
-void __cdecl V11::loadPlayerContracts(_iobuf *param_1);
+void __cdecl V9::loadPlayerContracts(_iobuf *param_1);
 void __cdecl V9::loadSpaceStationStates(_iobuf *param_1);
 void __cdecl V9::loadShips(_iobuf *param_1);
 void __thiscall SaveHandler::loadGameV10(SaveHandler *this, _iobuf *param_1);
@@ -10232,8 +10331,8 @@ void __cdecl V11::loadSpaceStationStates(_iobuf *param_1);
 ShipInstance *__thiscall ShipInstance::ShipInstance(ShipInstance *this, Scenario *param_1);
 void __thiscall std::map<>::~map<>(map<> *this);
 bool __thiscall ShipInstance::readyToSpawn(ShipInstance *this);
-int __cdecl getScenarioCategory(void *param_11);
-int __cdecl getScenarioType(void *param_11);
+ScenarioCategory __cdecl getScenarioCategory(void *param_1);
+ScenarioType __cdecl getScenarioType(void *param_1);
 Scenario *__thiscall Scenario::Scenario(Scenario *this);
 <> *__thiscall Scenario::<>::<>(<> *this);
 void __thiscall Scenario::<>::~<>(<> *this);
@@ -10245,246 +10344,246 @@ _Tree_node<> *__thiscall std::_Tree_comp_alloc<>::_Buyheadnode(_Tree_comp_alloc<
 void __thiscall std::_Tree<>::_Erase(_Tree<> *this, _Tree_node<> *param_1);
 Quadrant __thiscall GameObject::getQuadrant(GameObject *this);
 bool __thiscall Ship::isJumpGate(Ship *this);
-undefined __cdecl ShipData::checkResolutionChanged(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkResolutionChanged(int param_1, undefined4 param_2, void *param_3);
 bool __cdecl ShipData::checkSOSActive(int param_1, undefined4 param_2, void *param_3);
 bool __cdecl ShipData::checkShipDisabled(Ship *param_1, undefined4 param_2, void *param_3);
 bool __cdecl ShipData::checkSOSCanBeActivated(Ship *param_1, undefined4 param_2, void *param_3);
 bool __cdecl ShipData::checkClusterMode(int param_1, int param_2, void *param_3);
-undefined __cdecl ShipData::checkPCEAlarm(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkPCEAlarm(int param_1, undefined4 param_2, void *param_3);
 bool __cdecl ShipData::checkIsEMCONMode(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkNominal(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkWarning(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkInDanger(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkInAsteroidField(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkInNebula(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkNavTargetSelected(Ship *param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkCanAddWaypoint(int param_1, undefined4 param_2, void *param_3);
-void __cdecl ShipData::checkValidTravelTargetSelected(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkMainEngineBurning(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkHasSelectedDestination(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkEngCurrentModuleCanOpen(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkNominal(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkWarning(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkInDanger(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkInAsteroidField(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkInNebula(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkNavTargetSelected(Ship *param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkCanAddWaypoint(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkValidTravelTargetSelected(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkMainEngineBurning(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkHasSelectedDestination(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkEngCurrentModuleCanOpen(int param_1, undefined4 param_2, void *param_3);
 bool __cdecl ShipData::checkEngNoTrayItemSelected(int param_1, undefined4 param_2, void *param_3);
-void *__cdecl ShipData::checkCanTeleport(undefined4 param_1, undefined4 param_2, void *param_11);
+bool __cdecl ShipData::checkCanTeleport(undefined4 param_1, undefined4 param_2, void *param_3);
 bool __cdecl ShipData::checkEngIsRepairing(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkEngModuleCanBeConnected(int param_1, undefined4 param_2, void *param_3);
-bool __cdecl ShipData::checkIsDocked(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkEngModuleCanBeConnected(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkIsDockedOrDocking(int param_1, undefined4 param_2, void *param_3);
 bool __cdecl ShipData::checkNotDocked(int param_1, undefined4 param_2, void *param_3);
 bool __cdecl ShipData::checkNotDockedOrMultiplayer(int param_1, undefined4 param_2, void *param_3);
 bool __cdecl ShipData::checkNotDockedOrMultiplayerOrTutorial(int param_1, undefined4 param_2, void *param_3);
 bool __cdecl ShipData::checkNotDockedWithStation(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkIsDockedWithStation(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkIsDockedWithDepot(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkNeedToPayForJumpgate(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkCanActivateJumpgate(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkIsDockedWithJumpgate(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkDockedWithEarthgate(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkCanChangeDetails(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkIsDocking(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkIsUndocking(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkIsFullyDocked(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkShowSpaceDisc(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkDontShowSpaceDisc(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkTube1Selected(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkTube2Selected(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkTube3Selected(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkTube4Selected(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkTube5Selected(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkTube6Selected(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkTube7Selected(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkTube8Selected(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkNotDocking(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkNotUndocking(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkCanOpenAirlock(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkIsDockedWithStation(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkIsDockedWithDepot(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkNeedToPayForJumpgate(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkCanActivateJumpgate(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkIsDockedWithJumpgate(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkDockedWithEarthgate(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkCanChangeDetails(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkIsDocking(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkIsUndocking(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkIsFullyDocked(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkShowSpaceDisc(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkDontShowSpaceDisc(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkTube1Selected(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkTube2Selected(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkTube3Selected(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkTube4Selected(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkTube5Selected(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkTube6Selected(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkTube7Selected(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkTube8Selected(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkNotDocking(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkNotUndocking(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkCanOpenAirlock(int param_1, undefined4 param_2, void *param_3);
 bool __cdecl ShipData::checkNavMapInSectorMode(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkIsInFreeSpace(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkIsInFreeSpace(int param_1, undefined4 param_2, void *param_3);
 bool __cdecl ShipData::checkIsInOrbit(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkIsInStandardOrbit(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkIsInHighOrbit(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkIsInPolarOrbit(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkNotInStandardOrbit(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkNotInHighOrbit(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkNotInPolarOrbit(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkIsInStandardOrbit(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkIsInHighOrbit(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkIsInPolarOrbit(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkNotInStandardOrbit(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkNotInHighOrbit(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkNotInPolarOrbit(int param_1, undefined4 param_2, void *param_3);
 bool __cdecl ShipData::checkIsChangingOrbit(int param_1, undefined4 param_2, void *param_3);
 bool __cdecl ShipData::checkIsLeavingOrbit(int param_1, undefined4 param_2, void *param_3);
 bool __cdecl ShipData::checkIsEnteringOrbit(int param_1, undefined4 param_2, void *param_3);
 bool __cdecl ShipData::checkIsCorrectingOrbit(int param_1, undefined4 param_2, void *param_3);
 bool __cdecl ShipData::checkIsInStableOrbit(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkCanRepairHullAtDepot(Ship *param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkCannotRepairHullAtDepot(Ship *param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkCanRepairModulesAtDepot(Ship *param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkCannotRepairModulesAtDepot(Ship *param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkCanRepairHullAtDepot(Ship *param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkCannotRepairHullAtDepot(Ship *param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkCanRepairModulesAtDepot(Ship *param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkCannotRepairModulesAtDepot(Ship *param_1, undefined4 param_2, void *param_3);
 bool __cdecl ShipData::checkCanRearmAtDepot(int param_1, undefined4 param_2, void *param_3);
 bool __cdecl ShipData::checkCannotRearmAtDepot(int param_1, undefined4 param_2, void *param_3);
 bool __cdecl ShipData::checkCanBuyCMAtDepot(int param_1, undefined4 param_2, void *param_3);
 bool __cdecl ShipData::checkCannotBuyCMAtDepot(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkHasDockingPermission(Ship *param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkNeedsDockingPermission(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkHasUndockingPermission(Ship *param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkNeedsUndockingPermission(Ship *param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkCanGetUndockingPermission(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkCannotGetUndockingPermission(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkAnyAirlockOpen(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkAllAirlocksSealed(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkCanUndock(Ship *param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkHasDockingPermission(Ship *param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkNeedsDockingPermission(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkHasUndockingPermission(Ship *param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkNeedsUndockingPermission(Ship *param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkCanGetUndockingPermission(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkCannotGetUndockingPermission(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkAnyAirlockOpen(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkAllAirlocksSealed(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkCanUndock(Ship *param_1, undefined4 param_2, void *param_3);
 bool __cdecl ShipData::checkDockedButCannotUndock(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkIFFActive(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkSelectedNavObjectCanCommunicate(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkOwesMoneyToDockedStation(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkOwesMoneyToDockedStationAndCanPay(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkOwesMoneyToDockedStationAndCannotPay(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkAirlocksClosedButNeedsUndockPermission(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkCanJumpInTutorial(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkCanDetectCassandraInTutorial(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkIsMoving(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkIFFActive(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkSelectedNavObjectCanCommunicate(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkOwesMoneyToDockedStation(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkOwesMoneyToDockedStationAndCanPay(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkOwesMoneyToDockedStationAndCannotPay(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkAirlocksClosedButNeedsUndockPermission(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkCanJumpInTutorial(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkCanDetectCassandraInTutorial(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkIsMoving(int param_1, undefined4 param_2, void *param_3);
 bool __cdecl ShipData::checkHasCoursePlotted(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkCoursePlottedNotEngaged(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkCoursePlottedNotEngaged(int param_1, undefined4 param_2, void *param_3);
 bool __cdecl ShipData::checkAutoPilotEngaged(int param_1, undefined4 param_2, void *param_3);
 bool __cdecl ShipData::checkAutoPilotNotEngaged(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkDockedWithJumpgate(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkDockedWithJumpgate(int param_1, undefined4 param_2, void *param_3);
 bool __cdecl ShipData::checkPwrReactorOff(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkPwrReactorOn(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkCanRotate(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkRCSBurning(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkRCSBurningCW(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkRCSBurningCCW(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkIsStationary(Ship *param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkPwrReactorOn(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkCanRotate(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkRCSBurning(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkRCSBurningCW(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkRCSBurningCCW(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkIsStationary(Ship *param_1, undefined4 param_2, void *param_3);
 bool __cdecl ShipData::checkCanComeToFullStop(Ship *param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkCanSetTarget(Ship *param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkCanChangeTarget(Ship *param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkCannotSetOrChangeTarget(Ship *param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkTubeHasExp(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkTubeHasEmp(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkTubeCanBeArmed(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkTubeCanBePoweredDown(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkTubeCanBeDisabled(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkTubeHasTorpedo(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkTubeHasMine(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkTubeHasProbe(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkTubeCanSpinUp(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkTubeLinked(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkTubeSpinningUp(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkTubeEmpty(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkTubeLaunched(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkTubeCanFire(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkTubeCanLaunch(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkModuleReactorUndamaged(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkModuleReactorDamaged(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkModuleReactorDestroyed(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkModuleReactorConnected(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkModuleReactorFunctioning(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkModuleMainDriveUndamaged(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkModuleMainDriveDamaged(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkModuleMainDriveDestroyed(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkModuleMainDriveConnected(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkModuleRCSUndamaged(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkModuleRCSDamaged(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkModuleRCSDestroyed(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkModuleRCSConnected(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkModuleCommsUndamaged(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkModuleCommsDamaged(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkModuleCommsDestroyed(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkModuleCommsConnected(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkModuleBatt1Undamaged(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkModuleBatt2Damaged(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkModuleBatt2Destroyed(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkModuleBatt2Connected(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkModuleBatt2Undamaged(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkModuleBatt3Undamaged(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkModuleBatt3Damaged(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkModuleBatt3Destroyed(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkModuleBatt3Connected(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkModuleHelmUndamaged(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkModuleHelmDamaged(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkModuleHelmDestroyed(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkModuleHelmConnected(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkModuleSensorsUndamaged(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkModuleSensorsDamaged(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkModuleSensorsDestroyed(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkModuleSensorsConnected(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkModuleNavComUndamaged(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkModuleNavComDamaged(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkModuleNavComDestroyed(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkModuleNavComConnected(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkModuleWeaponUndamaged(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkModuleWeaponDamaged(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkModuleWeaponDestroyed(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkModuleWeaponConnected(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkModuleJumpDriveUndamaged(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkModuleJumpDriveDamaged(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkModuleJumpDriveDestroyed(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkModuleJumpDriveConnected(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkModuleBooting(int param_1, int param_2, void *param_3);
-undefined __cdecl ShipData::checkModuleDisconnected(int param_1, int param_2, void *param_3);
-undefined __cdecl ShipData::checkCanSetJumpDestination(Ship *param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkCanNotSetJumpDestination(Ship *param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkCanSpinUpJumpDrive(Ship *param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkCanNotSpinUpJumpDrive(Ship *param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkCanDischargeJumpDrive(Ship *param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkCanNotDischargeJumpDrive(Ship *param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkCanSetTarget(Ship *param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkCanChangeTarget(Ship *param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkCannotSetOrChangeTarget(Ship *param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkTubeHasExp(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkTubeHasEmp(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkTubeCanBeArmed(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkTubeCanBePoweredDown(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkTubeCanBeDisabled(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkTubeHasTorpedo(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkTubeHasMine(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkTubeHasProbe(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkTubeCanSpinUp(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkTubeLinked(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkTubeSpinningUp(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkTubeEmpty(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkTubeLaunched(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkTubeCanFire(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkTubeCanLaunch(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkModuleReactorUndamaged(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkModuleReactorDamaged(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkModuleReactorDestroyed(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkModuleReactorConnected(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkModuleReactorFunctioning(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkModuleMainDriveUndamaged(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkModuleMainDriveDamaged(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkModuleMainDriveDestroyed(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkModuleMainDriveConnected(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkModuleRCSUndamaged(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkModuleRCSDamaged(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkModuleRCSDestroyed(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkModuleRCSConnected(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkModuleCommsUndamaged(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkModuleCommsDamaged(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkModuleCommsDestroyed(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkModuleCommsConnected(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkModuleBatt1Undamaged(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkModuleBatt1Damaged(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkModuleBatt1Destroyed(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkModuleBatt1Connected(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkModuleBatt2Undamaged(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkModuleBatt3Undamaged(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkModuleBatt3Damaged(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkModuleBatt3Destroyed(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkModuleBatt3Connected(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkModuleHelmUndamaged(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkModuleHelmDamaged(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkModuleHelmDestroyed(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkModuleHelmConnected(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkModuleSensorsUndamaged(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkModuleSensorsDamaged(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkModuleSensorsDestroyed(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkModuleSensorsConnected(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkModuleNavComUndamaged(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkModuleNavComDamaged(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkModuleNavComDestroyed(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkModuleNavComConnected(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkModuleWeaponUndamaged(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkModuleWeaponDamaged(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkModuleWeaponDestroyed(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkModuleWeaponConnected(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkModuleJumpDriveUndamaged(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkModuleJumpDriveDamaged(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkModuleJumpDriveDestroyed(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkModuleJumpDriveConnected(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkModuleBooting(int param_1, int param_2, void *param_3);
+bool __cdecl ShipData::checkModuleDisconnected(int param_1, int param_2, void *param_3);
+bool __cdecl ShipData::checkCanSetJumpDestination(Ship *param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkCanNotSetJumpDestination(Ship *param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkCanSpinUpJumpDrive(Ship *param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkCanNotSpinUpJumpDrive(Ship *param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkCanDischargeJumpDrive(Ship *param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkCanNotDischargeJumpDrive(Ship *param_1, undefined4 param_2, void *param_3);
 bool __cdecl ShipData::checkHasJumpDrive(int param_1, undefined4 param_2, void *param_3);
 bool __cdecl ShipData::checkHasNoJumpDrive(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkJumpDriveSpinningUp(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkJumpDriveCalculating(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkJumpDriveCalculated(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkJumpDriveSpunUp(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkCanCalculateJump(Ship *param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkCanNotCalculateJump(Ship *param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkCanJump(Ship *param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkCanNotJump(Ship *param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkJumpDriveSpinningUp(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkJumpDriveCalculating(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkJumpDriveCalculated(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkJumpDriveSpunUp(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkCanCalculateJump(Ship *param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkCanNotCalculateJump(Ship *param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkCanJump(Ship *param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkCanNotJump(Ship *param_1, undefined4 param_2, void *param_3);
 bool __cdecl ShipData::checkPwrLowPowerWarning(int param_1, undefined4 param_2, void *param_3);
 bool __cdecl ShipData::checkPwrIsDraining(int param_1, undefined4 param_2, void *param_3);
 bool __cdecl ShipData::checkPwrIsGenerating(int param_1, undefined4 param_2, void *param_3);
 bool __cdecl ShipData::checkIsTurnedOff(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkIsTurnedOn(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkSensorsHistoryLocked(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkSensorsNavLinked(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkSensorsAuto(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkLADARFunctional(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkMainDriveFunctional(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkLADARActive(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkLADARInActive(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkIsTurnedOn(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkSensorsHistoryLocked(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkSensorsNavLinked(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkSensorsAuto(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkLADARFunctional(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkMainDriveFunctional(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkLADARActive(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkLADARInActive(int param_1, undefined4 param_2, void *param_3);
 bool __cdecl ShipData::checkModuleOpen(int param_1, undefined4 param_2, void *param_3);
 bool __cdecl ShipData::checkNoModuleOpen(int param_1, undefined4 param_2, void *param_3);
-ShipModule __cdecl ShipData::checkEngCurrentModuleOn(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkEngCurrentModuleOn(int param_1, undefined4 param_2, void *param_3);
 bool __cdecl ShipData::checkEngCurrentModuleOff(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkPwrHasModuleSelected(int param_1, undefined4 param_2, void *param_3);
-ShipModule __cdecl ShipData::checkPwrCurrentModuleOn(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkPwrHasModuleSelected(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkPwrCurrentModuleOn(int param_1, undefined4 param_2, void *param_3);
 bool __cdecl ShipData::checkPwrCurrentModuleOff(int param_1, undefined4 param_2, void *param_3);
-ShipModule __cdecl ShipData::checkPwrCurrentModuleEmconOn(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkPwrCurrentModuleEmconOn(int param_1, undefined4 param_2, void *param_3);
 bool __cdecl ShipData::checkPwrCurrentModuleEmconOff(int param_1, undefined4 param_2, void *param_3);
 bool __cdecl ShipData::checkPwrCanRaisePriority(int param_1, undefined4 param_2, void *param_3);
 bool __cdecl ShipData::checkPwrCanLowerPriority(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkCounterMeasureExists(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkCounterMeasureCanLaunch(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkCounterMeasureCannotLaunch(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkPDSExists(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkPDSActive(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkPDSInactive(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkCommsAutosyncOn(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkPDLActive(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkJumpDriveActive(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkLADARDetected(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkMenuMain(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkSubmenuOptions(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkSubmenuInput(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkSubmenuNews(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkSubmenuCredits(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkSubmenuGameOver(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkCounterMeasureExists(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkCounterMeasureCanLaunch(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkCounterMeasureCannotLaunch(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkPDSExists(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkPDSActive(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkPDSInactive(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkCommsAutosyncOn(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkPDLActive(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkJumpDriveActive(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkLADARDetected(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkMenuMain(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkSubmenuOptions(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkSubmenuInput(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkSubmenuNews(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkSubmenuCredits(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkSubmenuGameOver(int param_1, undefined4 param_2, void *param_3);
 bool __cdecl ShipData::checkHasPurchase(int param_1, int param_2, void *param_3);
 bool __cdecl ShipData::checkValidPurchase(int param_1, Shop param_2, void *param_3);
-undefined __cdecl ShipData::checkInvalidPurchase(int param_1, Shop param_2, void *param_3);
+bool __cdecl ShipData::checkInvalidPurchase(int param_1, Shop param_2, void *param_3);
 bool __cdecl ShipData::checkHasSale(int param_1, int param_2, void *param_3);
 bool __cdecl ShipData::checkValidSale(int param_1, Shop param_2, void *param_3);
-undefined __cdecl ShipData::checkInvalidSale(int param_1, Shop param_2, void *param_3);
-undefined __cdecl ShipData::checkHasPurchaseOrSale(int param_1, int param_2, void *param_3);
+bool __cdecl ShipData::checkInvalidSale(int param_1, Shop param_2, void *param_3);
+bool __cdecl ShipData::checkHasPurchaseOrSale(int param_1, int param_2, void *param_3);
 bool __cdecl ShipData::checkCommerceAtMenu(int param_1, undefined4 param_2, void *param_3);
 bool __cdecl ShipData::checkCommerceNotAtMenu(int param_1, undefined4 param_2, void *param_3);
 bool __cdecl ShipData::checkCommerceMenuIs(int param_1, int param_2, void *param_3);
 bool __cdecl ShipData::checkCommerceTermCanPurchaseLicense(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkCommerceTermCannotPurchaseLicense(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkCommerceTermLoanGiverSelected(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkCommerceTermLoanGiverNotSelected(int param_1, undefined4 param_2, void *param_3);
-TradeEngine __cdecl ShipData::checkCommerceTermRepayingLoan(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkCommerceTermCannotPurchaseLicense(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkCommerceTermLoanGiverSelected(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkCommerceTermLoanGiverNotSelected(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkCommerceTermRepayingLoan(int param_1, undefined4 param_2, void *param_3);
 bool __cdecl ShipData::checkCommerceTermCanDeliverContract(int param_1, undefined4 param_2, void *param_3);
 bool __cdecl ShipData::checkCommerceTermCannotDeliverContract(int param_1, undefined4 param_2, void *param_3);
 bool __cdecl ShipData::checkCommerceTermCanTakeContract(int param_1, undefined4 param_2, void *param_3);
@@ -10494,102 +10593,102 @@ bool __cdecl ShipData::checkCommerceTermCannotTakePassenger(int param_1, undefin
 bool __cdecl ShipData::checkCommerceTermCanTakeBounty(int param_1, undefined4 param_2, void *param_3);
 bool __cdecl ShipData::checkCommerceTermCannotTakeBounty(int param_1, undefined4 param_2, void *param_3);
 bool __cdecl ShipData::checkCommerceTermLoanValid(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkCommerceTermLoanInvalid(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkCommerceTermLoanInvalid(int param_1, undefined4 param_2, void *param_3);
 bool __cdecl ShipData::checkCommerceTermRepaymentValid(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkCommerceTermRepaymentInvalid(int param_1, undefined4 param_2, void *param_3);
-TradeEngine __cdecl ShipData::checkWireVisible(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkCommerceTermRepaymentInvalid(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkWireVisible(int param_1, undefined4 param_2, void *param_3);
 bool __cdecl ShipData::checkMechanicAtMenu(int param_1, undefined4 param_2, void *param_3);
 bool __cdecl ShipData::checkMechanicAt(int param_1, int param_2, void *param_3);
-undefined __cdecl ShipData::checkMechanicCanRepair(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkMechanicCannotRepair(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkMechanicCanBuyPod(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkMechanicCanRepair(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkMechanicCannotRepair(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkMechanicCanBuyPod(int param_1, undefined4 param_2, void *param_3);
 bool __cdecl ShipData::checkMechanicCannotBuyPod(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkMechanicCanSellPod(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkMechanicCanSellPod(int param_1, undefined4 param_2, void *param_3);
 bool __cdecl ShipData::checkMechanicCannotSellPod(int param_1, undefined4 param_2, void *param_3);
 bool __cdecl ShipData::checkMechanicCanUpgradePod(int param_1, int param_2, void *param_3);
 bool __cdecl ShipData::checkMechanicCannotUpgradePod(int param_1, GoodContainmentOption param_2, void *param_3);
 bool __cdecl ShipData::checkMechanicCanBuyModule(int param_1, undefined4 param_2, void *param_3);
 bool __cdecl ShipData::checkMechanicCannotBuyModule(int param_1, undefined4 param_2, void *param_3);
 bool __cdecl ShipData::checkMechanicCanSellModule(int param_1, undefined4 param_2, void *param_3);
-uint __cdecl ShipData::checkMechanicCannotSellModule(int param_1, undefined4 param_2, TradeEngine *param_3);
+bool __cdecl ShipData::checkMechanicCannotSellModule(int param_1, undefined4 param_2, void *param_3);
 bool __cdecl ShipData::checkBuyingModules(int param_1, undefined4 param_2, void *param_3);
 bool __cdecl ShipData::checkShipCanBuy(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkShipCannotBuy(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkShipCannotBuy(int param_1, undefined4 param_2, void *param_3);
 bool __cdecl ShipData::checkMechanicCanBuyArmament(Ship *param_1, int param_2, void *param_3);
 bool __cdecl ShipData::checkMechanicCannotBuyArmament(int param_1, int param_2, void *param_3);
 bool __cdecl ShipData::checkMechanicCanSellArmament(Ship *param_1, undefined4 param_2, void *param_3);
 bool __cdecl ShipData::checkMechanicCannotSellArmament(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkCanHack(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkCannotHack(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkIsHacking(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkHackUnitFunctional(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkBeingHailed(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkShouldShowCargoScreen(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkCanHack(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkCannotHack(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkIsHacking(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkHackUnitFunctional(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkBeingHailed(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkShouldShowCargoScreen(int param_1, undefined4 param_2, void *param_3);
 bool __cdecl ShipData::checkIsMoored(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkIsMooredToCargo(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkHasGrapplingArm(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkGrapplingArmInUse(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkCanGrappleFromMoored(Ship *param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkCanGrappleFromShip(int param_1, undefined4 param_2, void *param_3);
-void __cdecl ShipData::checkMooredWreckHasNotDownloadedData(int param_1, undefined4 param_2, void *param_3);
-void __cdecl ShipData::checkMooredWreckHasDownloadedData(int param_1, undefined4 param_2, void *param_3);
-void __cdecl ShipData::checkMooredWreckHasUnclampedCargo(int param_1, undefined4 param_2, void *param_3);
-void __cdecl ShipData::checkMooredWreckHasNotUnclampedCargo(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkCanBoardBrokerShip(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkCannotBoardBrokerShip(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkIsViewingSelectedShip(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkIsNotViewingSelectedShip(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkIsMooredToCargo(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkHasGrapplingArm(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkGrapplingArmInUse(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkCanGrappleFromMoored(Ship *param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkCanGrappleFromShip(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkMooredWreckHasNotDownloadedData(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkMooredWreckHasDownloadedData(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkMooredWreckHasUnclampedCargo(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkMooredWreckHasNotUnclampedCargo(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkCanBoardBrokerShip(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkCannotBoardBrokerShip(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkIsViewingSelectedShip(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkIsNotViewingSelectedShip(int param_1, undefined4 param_2, void *param_3);
 bool __cdecl ShipData::checkHasEmailsToDownload(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkStartingNewGame(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkNewGameOptions(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkStartingNewGame(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkNewGameOptions(int param_1, undefined4 param_2, void *param_3);
 bool __cdecl ShipData::checkConversationActive(int param_1, undefined4 param_2, void *param_3);
-SoundEngine __cdecl ShipData::checkMusicPlaying(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkMusicPlaying(int param_1, undefined4 param_2, void *param_3);
 bool __cdecl ShipData::checkMusicNotPlaying(int param_1, undefined4 param_2, void *param_3);
 bool __cdecl ShipData::checkCanUseMusic(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkCanJettisonComponent(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkCanJettisonCargo(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkCanJettisonAllCargo(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkCanBeginDock(Ship *param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkCannotBeginDock(Ship *param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkFlagSet(undefined4 param_1, undefined4 param_2, void *param_11);
-bool __cdecl ShipData::checkFlagNotSet(undefined4 param_1, undefined4 param_2, void *param_11);
-undefined __cdecl ShipData::checkMenuCanBeginGame(undefined4 param_1, undefined4 param_2, void *param_11);
-undefined __cdecl ShipData::checkMenuCanBeginStory(undefined4 param_1, undefined4 param_2, void *param_11);
-undefined __cdecl ShipData::checkMenuCanDeleteSave(undefined4 param_1, undefined4 param_2, void *param_11);
-undefined __cdecl ShipData::checkMenuCanConfirmDelete(undefined4 param_1, undefined4 param_2, void *param_11);
-uint __cdecl ShipData::checkConnectedToServer(undefined4 param_1, undefined4 param_2, void *param_11);
-undefined __cdecl ShipData::checkCanConnectToServer(undefined4 param_1, undefined4 param_2, void *param_11);
-undefined __cdecl ShipData::checkCannotConnectToServer(undefined4 param_1, undefined4 param_2, void *param_11);
-undefined __cdecl ShipData::checkCanDisconnectFromServer(undefined4 param_1, undefined4 param_2, void *param_11);
-undefined __cdecl ShipData::checkCannotSendReadyState(undefined4 param_1, undefined4 param_2, void *param_11);
-undefined __cdecl ShipData::checkCanSendReadyStateToServer(undefined4 param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkCanRemoveReadyStateFromServer(undefined4 param_1, undefined4 param_2, void *param_3);
-undefined __cdecl ShipData::checkCanSendChatMessage(undefined4 param_1, undefined4 param_2, void *param_11);
-undefined __cdecl ShipData::checkCannotSendChatMessage(undefined4 param_1, undefined4 param_2, void *param_11);
-bool __cdecl ShipData::checkSmugglerDetected(undefined4 param_1, undefined4 param_2, void *param_11);
-undefined __cdecl ShipData::checkCanTakeShip(undefined4 param_1, undefined4 param_2, void *param_11);
-undefined __cdecl ShipData::checkCannotTakeShip(undefined4 param_1, undefined4 param_2, void *param_11);
+bool __cdecl ShipData::checkCanJettisonComponent(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkCanJettisonCargo(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkCanJettisonAllCargo(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkCanBeginDock(Ship *param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkCannotBeginDock(Ship *param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkFlagSet(undefined4 param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkFlagNotSet(undefined4 param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkMenuCanBeginGame(undefined4 param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkMenuCanBeginStory(undefined4 param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkMenuCanDeleteSave(undefined4 param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkMenuCanConfirmDelete(undefined4 param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkConnectedToServer(undefined4 param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkCanConnectToServer(undefined4 param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkCannotConnectToServer(undefined4 param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkCanDisconnectFromServer(undefined4 param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkCannotSendReadyState(undefined4 param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkCanSendReadyStateToServer(undefined4 param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkCanRemoveReadyStateFromServer(undefined4 param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkCanSendChatMessage(undefined4 param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkCannotSendChatMessage(undefined4 param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkSmugglerDetected(undefined4 param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkCanTakeShip(undefined4 param_1, undefined4 param_2, void *param_3);
+bool __cdecl ShipData::checkCannotTakeShip(undefined4 param_1, undefined4 param_2, void *param_3);
 bool __cdecl ShipData::checkNothing(int param_1, undefined4 param_2, void *param_3);
-void __cdecl ShipData::getCheckFunction(void);
-undefined __cdecl isShipDataType(void *param_11);
-int __cdecl getShipDataType(void *param_11);
-int __cdecl getShipCheckDataType(void *param_11);
-int __cdecl getShipTextDataType(void *param_11);
-undefined __cdecl isShipTextDataType(void *param_11);
-uint *__cdecl ShipData::replaceSubstring(uint param_11, uint param_2, uint param_3, uint param_4, undefined4 param_12, undefined4 param_6, undefined4 *param_13);
-void __cdecl ShipData::stringWithVars(int param_11, int param_12, void *param_13);
+void __cdecl ShipData::getCheckFunction(ShipDataCheckType param_1);
+bool __cdecl isShipDataType(void *param_1);
+ShipDataType __cdecl getShipDataType(void *param_1);
+ShipDataCheckType __cdecl getShipCheckDataType(void *param_1);
+ShipTextDataType __cdecl getShipTextDataType(void *param_1);
+bool __cdecl isShipTextDataType(void *param_1);
+uint *__cdecl ShipData::replaceSubstring(uint param_1, uint param_2, uint param_3, uint param_4, undefined4 param_5, undefined4 param_6, undefined4 *param_7);
+void __cdecl ShipData::stringWithVars(int param_1, int param_2, void *param_3);
 basic_string<> *__thiscall std::basic_string<>::replace(basic_string<> *this, uint param_1, uint param_2, char *param_3, uint param_4);
 function<> *__thiscall std::function<>::function<><>(function<> *this, _func_bool_Ship_ptr_int_basic_string<> *param_1);
 basic_string<> *__thiscall std::basic_string<>::_Reallocate_grow_by<>(basic_string<> *this, uint param_1, undefined4 param_3, size_t param_4, int param_5, void *param_6, size_t param_7);
-RangeNode<> *__thiscall DataStructures::RangeNode<>::RangeNode<>(RangeNode<> *this);
-void __thiscall std::_Func_class<>::_Reset<>(_Func_class<> *this, bool_(__cdecl *&&)(class_Ship *, int, class_std::basic_string<>) * param_1);
+bool_(__cdecl *&&)(Ship *, int, std::basic_string<>) * __cdecl std::move<>(_func_bool_Ship_ptr_int_basic_string<> **param_1);
+void __thiscall std::_Func_class<>::_Reset<>(_Func_class<> *this, bool_(__cdecl *&&)(Ship *, int, std::basic_string<>) * param_1);
 void __thiscall std::_Func_impl_no_alloc<>::_Delete_this(_Func_impl_no_alloc<> *this, bool param_1);
 type_info *__thiscall std::_Func_impl_no_alloc<>::_Target_type(_Func_impl_no_alloc<> *this);
 _Func_base<> *__thiscall std::_Func_impl_no_alloc<>::_Copy(_Func_impl_no_alloc<> *this, void *param_1);
 bool __thiscall std::_Func_impl_no_alloc<>::_Do_call(_Func_impl_no_alloc<> *this, Ship **param_1, int *param_2, basic_string<> *param_3);
-int __cdecl getShipDataInputType(undefined4 *param_11);
+ShipDataInputType __cdecl getShipDataInputType(undefined4 *param_1);
 void *__cdecl getShipCheckDataPointer(ShipDataInputType param_1);
-void __cdecl getShipCheckDataPossibleValues(void);
+void __cdecl getShipCheckDataPossibleValues(ShipDataInputType param_1);
 void __cdecl runDataInputSync(ShipDataInputType param_1);
 bool __cdecl shipDataCanPrev(ShipDataInputType param_1);
 bool __cdecl shipDataCanNext(ShipDataInputType param_1);
@@ -10645,7 +10744,7 @@ bool __cdecl ShipInterface::doSelectComponent(Ship *param_1, int param_2, int pa
 bool __cdecl ShipInterface::doEngSelectComponent(Ship *param_1, int param_2, int param_3, int param_4);
 bool __cdecl ShipInterface::doEngToggleScrew(Ship *param_1, int param_2, int param_3, int param_4);
 bool __cdecl ShipInterface::doEngToggleShield(Ship *param_1, int param_2, int param_3, int param_4);
-bool __cdecl _should_initialize_environment(void);
+bool __cdecl ShipInterface::doAlterServerSetting(Ship *param_1, int param_2, int param_3, int param_4);
 bool __cdecl ShipInterface::doJmpSetJumpDestination(Ship *param_1, int param_2, int param_3, int param_4);
 bool __cdecl ShipInterface::doJmpSpinUpJumpDrive(Ship *param_1, int param_2, int param_3, int param_4);
 bool __cdecl ShipInterface::doJmpDischargeJumpDrive(Ship *param_1, int param_2, int param_3, int param_4);
@@ -10801,21 +10900,21 @@ bool __cdecl ShipInterface::doSendChatMessage(Ship *param_1, int param_2, int pa
 bool __cdecl ShipInterface::doSendReadyCommand(Ship *param_1, int param_2, int param_3, int param_4);
 bool __cdecl ShipInterface::doMoveCargo(Ship *param_1, int param_2, int param_3, int param_4);
 bool __cdecl ShipInterface::doSendServerCommand(Ship *param_1, int param_2, int param_3, int param_4);
-void __cdecl ShipInterface::getShipCommandFunction(void);
-int __cdecl getShipCommandType(void *param_11);
+void __cdecl ShipInterface::getShipCommandFunction(ShipCommand param_1);
+ShipCommand __cdecl getShipCommandType(void *param_1);
 void __cdecl ShipInterface::stationBeepHigh(Ship *param_1);
 void __cdecl ShipInterface::commerceBeep(Ship *param_1);
 void __cdecl ShipInterface::soundHigh(Ship *param_1);
 void __cdecl ShipInterface::soundLow(Ship *param_1);
 void __cdecl ShipInterface::soundError(Ship *param_1);
-void __thiscall std::vector<>::erase(void *this, undefined4 *param_11, undefined4 *param_12);
+void __thiscall std::vector<>::erase(vector<> *this, undefined4 *param_2, undefined4 *param_3);
 function<> *__thiscall std::function<>::function<><>(function<> *this, _func_bool_Ship_ptr_int_int_int *param_1);
-void *__thiscall std::function<>::function<><>(void *this);
+function<> *__thiscall std::function<>::function<><>(function<> *this);
 type_info *__thiscall std::_Func_impl_no_alloc<>::_Target_type(_Func_impl_no_alloc<> *this);
 _Func_base<> *__thiscall std::_Func_impl_no_alloc<>::_Move(_Func_impl_no_alloc<> *this, void *param_1);
 _Func_base<> *__thiscall std::_Func_impl_no_alloc<>::_Copy(_Func_impl_no_alloc<> *this, void *param_1);
 type_info *__thiscall std::_Func_impl_no_alloc<>::_Target_type(_Func_impl_no_alloc<> *this);
-_Func_base<> *__thiscall std::_Func_impl_no_alloc<>::_Copy(_Func_impl_no_alloc<> *this, void *param_1);
+_Func_base<> *__thiscall std::_Func_impl_no_alloc<>::_Move(_Func_impl_no_alloc<> *this, void *param_1);
 bool __thiscall std::_Func_impl_no_alloc<>::_Do_call(_Func_impl_no_alloc<> *this, Ship **param_1, int *param_2, int *param_3, int *param_4);
 bool __thiscall std::_Func_impl_no_alloc<>::_Do_call(_Func_impl_no_alloc<> *this, Ship **param_1, int *param_2, int *param_3, int *param_4);
 _Func_impl_no_alloc<> *__thiscall std::_Func_impl_no_alloc<>::_Func_impl_no_alloc<><>(_Func_impl_no_alloc<> *this, function<> *param_1);
@@ -10823,7 +10922,7 @@ _Func_impl_no_alloc<> *__cdecl std::_Global_new<>(function<> *param_1);
 void Catch_All @004ebecd(uint param_1);
 _Func_impl_no_alloc<> *__cdecl std::_Global_new<>(function<> *param_1);
 void Catch_All @004ebf4f(uint param_1);
-void __cdecl ShipNumericalData::getDataFunction(void);
+void __cdecl ShipNumericalData::getDataFunction(ShipDataType param_1);
 double __cdecl ShipNumericalData::getPowerFlow(Ship *param_1, int param_2);
 double __cdecl ShipNumericalData::getPowerFlowPercent(Ship *param_1, int param_2);
 double __cdecl ShipNumericalData::getPowerLevel(Ship *param_1, int param_2);
@@ -10865,108 +10964,108 @@ type_info *__thiscall std::_Func_impl_no_alloc<>::_Target_type(_Func_impl_no_all
 _Func_base<> *__thiscall std::_Func_impl_no_alloc<>::_Copy(_Func_impl_no_alloc<> *this, void *param_1);
 double __thiscall std::_Func_impl_no_alloc<>::_Do_call(_Func_impl_no_alloc<> *this, Ship **param_1, int *param_2);
 bool __thiscall Weapon::isWeapon(Weapon *this);
-_Func_class<> *__cdecl ShipTextData::getTextDataFunction(void);
-undefined4 __cdecl ShipTextData::getCopyrightText(undefined4 param_1);
-undefined4 __cdecl ShipTextData::getVersionNotes(undefined4 param_1);
-basic_string<> *__cdecl ShipTextData::returnNoString(basic_string<> *param_1);
-basic_string<> *__cdecl ShipTextData::getShipName(basic_string<> *param_1, int param_2);
-basic_string<> *__cdecl ShipTextData::getOwnshipCorpLogo(basic_string<> *param_1, int param_2);
-basic_string<> *__cdecl ShipTextData::getDesiredOrbit(basic_string<> *param_1, int param_2);
-basic_string<> *__cdecl ShipTextData::getOrbit(basic_string<> *param_1, int param_2);
-void __cdecl ShipTextData::getEngComponentFilename(basic_string<> *param_1, int param_2);
-void __cdecl ShipTextData::getEngAddonFilename(basic_string<> *param_1, int param_2);
-void __cdecl ShipTextData::getEngComponentData(basic_string<> *param_1, int param_2);
-void __cdecl ShipTextData::getEngAddonData(basic_string<> *param_1, int param_2);
-void __cdecl ShipTextData::getComponentInfo(basic_string<> *param_1, int param_2);
-void __cdecl ShipTextData::getEngModuleName(basic_string<> *param_1, int param_2);
-basic_string<> *__cdecl ShipTextData::getJmpDestination(basic_string<> *param_1, int param_2);
-basic_string<> *__cdecl ShipTextData::getJmpSolState(basic_string<> *param_1, int param_2);
-basic_string<> *__cdecl ShipTextData::getJmpSpinState(basic_string<> *param_1, int param_2);
-void __cdecl ShipTextData::getHullCondition(undefined4 param_1, Ship *param_2);
-void __cdecl ShipTextData::getEngComponentRepair(basic_string<> *param_1, int param_2);
-void __cdecl ShipTextData::getEngModuleRepair(basic_string<> *param_1, int param_2);
-void __cdecl ShipTextData::getEngModuleStats(basic_string<> *param_1, int param_2);
-void __cdecl ShipTextData::getEngModuleData(basic_string<> *param_1, int param_2);
-void __cdecl ShipTextData::getEngineeringSummary(basic_string<> *param_1, int param_2);
-void __cdecl ShipTextData::getStealthRating(basic_string<> *param_1, int param_2);
-void __cdecl ShipTextData::getTubeSummary(basic_string<> *param_1, int param_2);
-void __cdecl ShipTextData::getTubeAdvancedSummary(basic_string<> *param_1, int param_2);
-undefined4 __cdecl ShipTextData::getSSName(undefined4 param_1, int param_2);
-void __cdecl ShipTextData::getSSDockingBayString(basic_string<> *param_1, int param_2);
-void __cdecl ShipTextData::getSSDockingPermit(basic_string<> *param_1, Ship *param_2);
-void __cdecl ShipTextData::getSSRegistration(basic_string<> *param_1, int param_2);
-void __cdecl ShipTextData::getSSChangeDetails(basic_string<> *param_1, int param_2);
-void __cdecl ShipTextData::getDockingProcessString(basic_string<> *param_1, Ship *param_2);
-void __cdecl ShipTextData::getUndockingProcessString(basic_string<> *param_1, Ship *param_2);
-void __cdecl ShipTextData::getJumpgateState(basic_string<> *param_1, int param_2);
-basic_string<> *__cdecl ShipTextData::getRTCommsScreen(basic_string<> *param_1);
-basic_string<> *__cdecl ShipTextData::getPrivateCommsScreen(basic_string<> *param_1);
-void __cdecl ShipTextData::getSpaceReadings(basic_string<> *param_1, int param_2);
-void __cdecl ShipTextData::getSensorWaveformSummary(basic_string<> *param_1, int param_2);
-void __cdecl ShipTextData::getSensorFilterState(basic_string<> *param_1, int param_2);
-void __cdecl ShipTextData::getCMState(basic_string<> *param_1, int param_2);
-void __cdecl ShipTextData::getCommsSyncData(basic_string<> *param_1, int param_2);
-basic_string<> *__cdecl ShipTextData::getCommsSyncState(basic_string<> *param_1, int param_2);
-basic_string<> *__cdecl ShipTextData::getCommsDamageState(basic_string<> *param_1, int param_2);
-basic_string<> *__cdecl ShipTextData::getCommsModel(basic_string<> *param_1, int param_2);
-basic_string<> *__cdecl ShipTextData::getCommsEmailState(basic_string<> *param_1, int param_2);
-void __cdecl ShipTextData::getMooringState(basic_string<> *param_1, int param_2);
-void __cdecl ShipTextData::getMooredObjectState(basic_string<> *param_1, int param_2);
-void __cdecl ShipTextData::getMooredCargoState(basic_string<> *param_1, int param_2);
-void __cdecl ShipTextData::getShipCargoState(basic_string<> *param_1, int param_2);
-void __cdecl ShipTextData::getShipCargoDetails(basic_string<> *param_1, int param_2);
-void __cdecl ShipTextData::getDepotState(basic_string<> *param_1, Ship *param_2);
-void __cdecl ShipTextData::getCassandraDetails(basic_string<> *param_1, int param_2);
-void __cdecl ShipTextData::getRemoraDockDetails(basic_string<> *param_1, int param_2);
-basic_string<> *__cdecl ShipTextData::getInfopediaArticleDetails(basic_string<> *param_1);
-void __cdecl ShipTextData::getCassandraDockingBay(basic_string<> *param_1, int param_2);
-void __cdecl ShipTextData::getMooredCargoDetails(basic_string<> *param_1, int param_2);
-void __cdecl ShipTextData::getPDSState(basic_string<> *param_1, int param_2);
-void __cdecl ShipTextData::getSensorSummary(basic_string<> *param_1, Ship *param_2);
-void __cdecl ShipTextData::getSensorAdditional(basic_string<> *param_1, Ship *param_2);
-basic_string<> *__cdecl ShipTextData::getTabletSummary(basic_string<> *param_1, int param_2);
-basic_string<> *__cdecl ShipTextData::getTabletTranslate(basic_string<> *param_1, int param_2);
-basic_string<> *__cdecl ShipTextData::getTabletNotes(basic_string<> *param_1, int param_2);
-basic_string<> *__cdecl ShipTextData::getOmegaTabletHeader(basic_string<> *param_1, int param_2);
-basic_string<> *__cdecl ShipTextData::getCargoViewText(basic_string<> *param_1, int param_2);
-basic_string<> *__cdecl ShipTextData::getEmailStateText(basic_string<> *param_1, int param_2);
-basic_string<> *__cdecl ShipTextData::getPlayerNote(basic_string<> *param_1, int param_2);
-basic_string<> *__cdecl ShipTextData::getMusicPlayer(basic_string<> *param_1, int param_2);
-basic_string<> *__cdecl ShipTextData::getOmegaTabletScreen(basic_string<> *param_1, int param_2);
-basic_string<> *__cdecl ShipTextData::getOmegaTabletFooter(basic_string<> *param_1, int param_2);
-basic_string<> *__cdecl ShipTextData::getShopStr(basic_string<> *param_1, int param_2);
-basic_string<> *__cdecl ShipTextData::getTradeStrBottom(basic_string<> *param_1, int param_2, int param_3);
-basic_string<> *__cdecl ShipTextData::getTradeStrTop(basic_string<> *param_1, int param_2, undefined4 param_3);
-basic_string<> *__cdecl ShipTextData::getTradeStrFull(basic_string<> *param_1, int param_2, int param_3);
-basic_string<> *__cdecl ShipTextData::getTradeCommodityIcon(basic_string<> *param_1, int param_2, undefined4 param_3);
-basic_string<> *__cdecl ShipTextData::getCompanyStr(basic_string<> *param_1, int param_2);
-basic_string<> *__cdecl ShipTextData::getLoanStr(basic_string<> *param_1, int param_2);
-basic_string<> *__cdecl ShipTextData::getContractStr(basic_string<> *param_1, int param_2);
-basic_string<> *__cdecl ShipTextData::getBountyStr(basic_string<> *param_1, int param_2);
-basic_string<> *__cdecl ShipTextData::getPassengerInfo(basic_string<> *param_1, int param_2);
-basic_string<> *__cdecl ShipTextData::getMechanicStatusStr(basic_string<> *param_1, int param_2);
-basic_string<> *__cdecl ShipTextData::getMechanicPodStatusStr(basic_string<> *param_1, int param_2);
-basic_string<> *__cdecl ShipTextData::getMechanicModuleStatusStr(basic_string<> *param_1, int param_2);
-basic_string<> *__cdecl ShipTextData::getMechanicHullSectionStatusStr(basic_string<> *param_1, int param_2);
-basic_string<> *__cdecl ShipTextData::getMechanicArmamentStatusStr(basic_string<> *param_1, int param_2);
-basic_string<> *__cdecl ShipTextData::getSelectedPodIcon(basic_string<> *param_1, int param_2);
-basic_string<> *__cdecl ShipTextData::getShipSelectedText(basic_string<> *param_1, int param_2);
-void __cdecl ShipTextData::getWreckStatusText(basic_string<> *param_1, int param_2);
-basic_string<> *__cdecl ShipTextData::getCredits(basic_string<> *param_1);
-basic_string<> *__cdecl ShipTextData::getGameOverText(basic_string<> *param_1);
-void __cdecl ShipTextData::getLogStr(undefined4 *param_1, int param_2);
-void __cdecl ShipTextData::getSelectedScenarioStr(basic_string<> *param_1);
-undefined4 __cdecl ShipTextData::getPowerRoomDetail(undefined4 param_1);
-basic_string<> *__cdecl ShipTextData::getMultiplayerChat(basic_string<> *param_1);
-void __cdecl ShipTextData::getWaypointETA(basic_string<> *param_1, Ship *param_2);
-void __cdecl ShipTextData::getNavCurrentState(basic_string<> *param_1, Ship *param_2);
-basic_string<> *__cdecl ShipTextData::getLocalServerStr(basic_string<> *param_1);
-void __cdecl ShipTextData::getCurrentServerDetails(undefined4 *param_1);
+_Func_class<> *__cdecl ShipTextData::getTextDataFunction(ShipTextDataType param_1);
+Ship *__cdecl ShipTextData::getCopyrightText(Ship *param_1, int param_2);
+Ship *__cdecl ShipTextData::getVersionNotes(Ship *param_1, int param_2);
+Ship *__cdecl ShipTextData::returnNoString(Ship *param_1, int param_2);
+Ship *__cdecl ShipTextData::getShipName(Ship *param_1, int param_2);
+Ship *__cdecl ShipTextData::getOwnshipCorpLogo(Ship *param_1, int param_2);
+Ship *__cdecl ShipTextData::getDesiredOrbit(Ship *param_1, int param_2);
+Ship *__cdecl ShipTextData::getOrbit(Ship *param_1, int param_2);
+void __cdecl ShipTextData::getEngComponentFilename(Ship *param_1, int param_2);
+void __cdecl ShipTextData::getEngAddonFilename(Ship *param_1, int param_2);
+void __cdecl ShipTextData::getEngComponentData(Ship *param_1, int param_2);
+void __cdecl ShipTextData::getEngAddonData(Ship *param_1, int param_2);
+void __cdecl ShipTextData::getComponentInfo(Ship *param_1, int param_2);
+void __cdecl ShipTextData::getEngModuleName(Ship *param_1, int param_2);
+Ship *__cdecl ShipTextData::getJmpDestination(Ship *param_1, int param_2);
+Ship *__cdecl ShipTextData::getJmpSolState(Ship *param_1, int param_2);
+Ship *__cdecl ShipTextData::getJmpSpinState(Ship *param_1, int param_2);
+void __cdecl ShipTextData::getHullCondition(Ship *param_1, int param_2);
+void __cdecl ShipTextData::getEngComponentRepair(Ship *param_1, int param_2);
+void __cdecl ShipTextData::getEngModuleRepair(Ship *param_1, int param_2);
+void __cdecl ShipTextData::getEngModuleStats(Ship *param_1, int param_2);
+void __cdecl ShipTextData::getEngModuleData(Ship *param_1, int param_2);
+void __cdecl ShipTextData::getEngineeringSummary(Ship *param_1, int param_2);
+void __cdecl ShipTextData::getStealthRating(Ship *param_1, int param_2);
+void __cdecl ShipTextData::getTubeSummary(Ship *param_1, int param_2);
+void __cdecl ShipTextData::getTubeAdvancedSummary(Ship *param_1, int param_2);
+Ship *__cdecl ShipTextData::getSSName(Ship *param_1, int param_2);
+void __cdecl ShipTextData::getSSDockingBayString(Ship *param_1, int param_2);
+void __cdecl ShipTextData::getSSDockingPermit(Ship *param_1, int param_2);
+void __cdecl ShipTextData::getSSRegistration(Ship *param_1, int param_2);
+void __cdecl ShipTextData::getSSChangeDetails(Ship *param_1, int param_2);
+void __cdecl ShipTextData::getDockingProcessString(Ship *param_1, int param_2);
+void __cdecl ShipTextData::getUndockingProcessString(Ship *param_1, int param_2);
+void __cdecl ShipTextData::getJumpgateState(Ship *param_1, int param_2);
+Ship *__cdecl ShipTextData::getRTCommsScreen(Ship *param_1, int param_2);
+Ship *__cdecl ShipTextData::getPrivateCommsScreen(Ship *param_1, int param_2);
+void __cdecl ShipTextData::getSpaceReadings(Ship *param_1, int param_2);
+void __cdecl ShipTextData::getSensorWaveformSummary(Ship *param_1, int param_2);
+void __cdecl ShipTextData::getSensorFilterState(Ship *param_1, int param_2);
+void __cdecl ShipTextData::getCMState(Ship *param_1, int param_2);
+void __cdecl ShipTextData::getCommsSyncData(Ship *param_1, int param_2);
+Ship *__cdecl ShipTextData::getCommsSyncState(Ship *param_1, int param_2);
+Ship *__cdecl ShipTextData::getCommsDamageState(Ship *param_1, int param_2);
+Ship *__cdecl ShipTextData::getCommsModel(Ship *param_1, int param_2);
+Ship *__cdecl ShipTextData::getCommsEmailState(Ship *param_1, int param_2);
+void __cdecl ShipTextData::getMooringState(Ship *param_1, int param_2);
+void __cdecl ShipTextData::getMooredObjectState(Ship *param_1, int param_2);
+void __cdecl ShipTextData::getMooredCargoState(Ship *param_1, int param_2);
+void __cdecl ShipTextData::getShipCargoState(Ship *param_1, int param_2);
+void __cdecl ShipTextData::getShipCargoDetails(Ship *param_1, int param_2);
+void __cdecl ShipTextData::getDepotState(Ship *param_1, int param_2);
+void __cdecl ShipTextData::getCassandraDetails(Ship *param_1, int param_2);
+void __cdecl ShipTextData::getRemoraDockDetails(Ship *param_1, int param_2);
+Ship *__cdecl ShipTextData::getInfopediaArticleDetails(Ship *param_1, int param_2);
+void __cdecl ShipTextData::getCassandraDockingBay(Ship *param_1, int param_2);
+void __cdecl ShipTextData::getMooredCargoDetails(Ship *param_1, int param_2);
+void __cdecl ShipTextData::getPDSState(Ship *param_1, int param_2);
+void __cdecl ShipTextData::getSensorSummary(Ship *param_1, int param_2);
+void __cdecl ShipTextData::getSensorAdditional(Ship *param_1, int param_2);
+Ship *__cdecl ShipTextData::getTabletSummary(Ship *param_1, int param_2);
+Ship *__cdecl ShipTextData::getTabletTranslate(Ship *param_1, int param_2);
+Ship *__cdecl ShipTextData::getTabletNotes(Ship *param_1, int param_2);
+Ship *__cdecl ShipTextData::getOmegaTabletHeader(Ship *param_1, int param_2);
+Ship *__cdecl ShipTextData::getCargoViewText(Ship *param_1, int param_2);
+Ship *__cdecl ShipTextData::getEmailStateText(Ship *param_1, int param_2);
+Ship *__cdecl ShipTextData::getPlayerNote(Ship *param_1, int param_2);
+Ship *__cdecl ShipTextData::getMusicPlayer(Ship *param_1, int param_2);
+Ship *__cdecl ShipTextData::getOmegaTabletScreen(Ship *param_1, int param_2);
+Ship *__cdecl ShipTextData::getOmegaTabletFooter(Ship *param_1, int param_2);
+Ship *__cdecl ShipTextData::getShopStr(Ship *param_1, int param_2);
+Ship *__cdecl ShipTextData::getTradeStrBottom(Ship *param_1, int param_2);
+Ship *__cdecl ShipTextData::getTradeStrTop(Ship *param_1, int param_2);
+Ship *__cdecl ShipTextData::getTradeStrFull(Ship *param_1, int param_2);
+Ship *__cdecl ShipTextData::getTradeCommodityIcon(Ship *param_1, int param_2);
+Ship *__cdecl ShipTextData::getCompanyStr(Ship *param_1, int param_2);
+Ship *__cdecl ShipTextData::getLoanStr(Ship *param_1, int param_2);
+Ship *__cdecl ShipTextData::getContractStr(Ship *param_1, int param_2);
+Ship *__cdecl ShipTextData::getBountyStr(Ship *param_1, int param_2);
+Ship *__cdecl ShipTextData::getPassengerInfo(Ship *param_1, int param_2);
+Ship *__cdecl ShipTextData::getMechanicStatusStr(Ship *param_1, int param_2);
+Ship *__cdecl ShipTextData::getMechanicPodStatusStr(Ship *param_1, int param_2);
+Ship *__cdecl ShipTextData::getMechanicModuleStatusStr(Ship *param_1, int param_2);
+Ship *__cdecl ShipTextData::getMechanicHullSectionStatusStr(Ship *param_1, int param_2);
+Ship *__cdecl ShipTextData::getMechanicArmamentStatusStr(Ship *param_1, int param_2);
+Ship *__cdecl ShipTextData::getSelectedPodIcon(Ship *param_1, int param_2);
+Ship *__cdecl ShipTextData::getShipSelectedText(Ship *param_1, int param_2);
+void __cdecl ShipTextData::getWreckStatusText(Ship *param_1, int param_2);
+Ship *__cdecl ShipTextData::getCredits(Ship *param_1, int param_2);
+Ship *__cdecl ShipTextData::getGameOverText(Ship *param_1, int param_2);
+void __cdecl ShipTextData::getLogStr(Ship *param_1, int param_2);
+void __cdecl ShipTextData::getSelectedScenarioStr(Ship *param_1, int param_2);
+Ship *__cdecl ShipTextData::getPowerRoomDetail(Ship *param_1, int param_2);
+Ship *__cdecl ShipTextData::getMultiplayerChat(Ship *param_1, int param_2);
+void __cdecl ShipTextData::getWaypointETA(Ship *param_1, int param_2);
+void __cdecl ShipTextData::getNavCurrentState(Ship *param_1, int param_2);
+Ship *__cdecl ShipTextData::getLocalServerStr(Ship *param_1, int param_2);
+void __cdecl ShipTextData::getCurrentServerDetails(Ship *param_1, int param_2);
 function<> *__thiscall std::function<>::function<><>(function<> *this, _func_basic_string<> _Ship_ptr_int *param_1);
-void __thiscall std::_Func_class<>::_Reset<>(_Func_class<> *this, class_std::basic_string<> _(__cdecl *&&)(class_Ship *, int) * param_1);
+void __thiscall std::_Func_class<>::_Reset<>(_Func_class<> *this, class_std::basic_string<> _(__cdecl *&&)(Ship *, int) * param_1);
 type_info *__thiscall std::_Func_impl_no_alloc<>::_Target_type(_Func_impl_no_alloc<> *this);
 _Func_base<> *__thiscall std::_Func_impl_no_alloc<>::_Copy(_Func_impl_no_alloc<> *this, void *param_1);
-void __thiscall std::_Func_impl_no_alloc<>::_Do_call(_Func_impl_no_alloc<> *this, undefined4 *param_1, undefined4 *param_2, undefined4 *param_4);
+void __thiscall std::_Func_impl_no_alloc<>::_Do_call(_Func_impl_no_alloc<> *this, Ship **param_1, int *param_2);
 void __thiscall AIAttack::recalculateLogic(AIAttack *this);
 void __thiscall AIAttack::runLogic(AIAttack *this, float param_1);
 void __thiscall AIAttack::enterState(AIAttack *this);
@@ -10974,8 +11073,8 @@ void __thiscall AIAttack::leaveState(AIAttack *this);
 void __thiscall AIDesire::removeDesireTarget(AIDesire *this, GameObject *param_1);
 void __thiscall AIDesire::removeSensorObject(AIDesire *this, SensorData *param_1);
 void __thiscall AIDesire::~AIDesire(AIDesire *this);
-basic_string<> *__thiscall AIDesire::describe(AIDesire *this, basic_string<> *param_1);
-void *__thiscall AIDesire::`scalar_deleting_destructor'(AIDesire *this,uint param_1); void *__thiscall AIFollow::`scalar_deleting_destructor'(AIFollow *this,uint param_1); void __thiscall AIFollow::recalculateLogic(AIFollow *this);
+basic_string<> *__thiscall AIDesire::describe(AIDesire *this);
+void *__thiscall AIDesire::`vector_deleting_destructor'(AIDesire *this,uint param_1); void *__thiscall AIFollow::`scalar_deleting_destructor'(AIFollow *this,uint param_1); void __thiscall AIFollow::recalculateLogic(AIFollow *this);
 void __thiscall AIFollow::runLogic(AIFollow *this, float param_1);
 void __thiscall AIFollow::removeDesireTarget(AIFollow *this, GameObject *param_1);
 void __thiscall AIFollow::enterState(AIFollow *this);
@@ -10993,11 +11092,11 @@ void __thiscall AIPatrol::leaveState(AIPatrol *this);
 void __thiscall AIPatrol::runLogic(AIPatrol *this, float param_1);
 void __thiscall AIPatrol::runZoneBreachLogic(AIPatrol *this, float param_1);
 void __thiscall AIPatrol::removeDesireTarget(AIPatrol *this, GameObject *param_1);
-bool __thiscall AIPatrol::hasBeenWarned(void *this, void *param_11);
+bool __thiscall AIPatrol::hasBeenWarned(AIPatrol *this, void *param_2);
 void __thiscall AIPatrol::vesselFailedHackingMe(AIPatrol *this, Ship *param_1);
 void __thiscall AIPatrol::vesselHackedMe(AIPatrol *this, Ship *param_1);
 int __thiscall AIPiracy::shipWeight(AIPiracy *this, SensorData *param_1);
-void __thiscall AIPiracy::ignoreVessel(void *this, void *param_11);
+void __thiscall AIPiracy::ignoreVessel(AIPiracy *this, void *param_2);
 void __thiscall AIPiracy::recalculateLogic(AIPiracy *this);
 void __thiscall AIPiracy::runLogic(AIPiracy *this, float param_1);
 void __thiscall AIPiracy::enterState(AIPiracy *this);
@@ -11005,25 +11104,25 @@ void __thiscall AIPiracy::leaveState(AIPiracy *this);
 void __thiscall AIPiracy::runApproachTargetLogic(AIPiracy *this, float param_1);
 void __thiscall AIPiracy::removeDesireTarget(AIPiracy *this, GameObject *param_1);
 void __thiscall AIPiracy::removeSensorObject(AIPiracy *this, SensorData *param_1);
-undefined4 __thiscall AIPiracy::describe(AIPiracy *this, undefined4 param_1);
+char *__thiscall AIPiracy::describe(AIPiracy *this);
 void __thiscall AIScan::recalculateLogic(AIScan *this);
 void __thiscall AIScan::runLogic(AIScan *this, float param_1);
 void __thiscall AIScan::enterState(AIScan *this);
 void __thiscall AIScan::leaveState(AIScan *this);
-basic_string<> *__thiscall AIScan::describe(AIScan *this, basic_string<> *param_1);
+basic_string<> *__thiscall AIScan::describe(AIScan *this);
 void __thiscall AIScavenge::recalculateLogic(AIScavenge *this);
 void __thiscall AIScavenge::enterState(AIScavenge *this);
 void __thiscall AIScavenge::leaveState(AIScavenge *this);
 void __thiscall AIScavenge::runLogic(AIScavenge *this, float param_1);
 void __thiscall AIScavenge::removeDesireTarget(AIScavenge *this, GameObject *param_1);
 void __thiscall AITravel::runLogic(AITravel *this, float param_1);
-undefined __thiscall Destination::operator==(void *this, float param_11, float param_12, char *param_13);
+bool __thiscall Destination::operator==(Destination *this, float param_2, float param_3, char *param_4);
 AIDesire *__thiscall AIDesire::AIDesire(AIDesire *this, undefined4 param_1, void *param_3);
 AITravel *__thiscall AITravel::AITravel(AITravel *this, Ship *param_1);
-void *__thiscall AITravel::`scalar_deleting_destructor'(AITravel *this,uint param_1); void *__thiscall AIScan::`scalar_deleting_destructor'(AIScan *this,uint param_1); void *__thiscall AIPatrol::`scalar_deleting_destructor'(AIPatrol *this,uint param_1); void *__thiscall AIHunt::`scalar_deleting_destructor'(AIHunt *this,uint param_1); void *__thiscall AIScavenge::`scalar_deleting_destructor'(AIScavenge *this,uint param_1); AIAttack *__thiscall AIAttack::AIAttack(AIAttack *this, Ship *param_1);
-int __cdecl getCaptainStyle(void *param_11);
-int __cdecl getCaptainExperience(void *param_11);
-int __cdecl getShipLookup(void *param_11);
+void *__thiscall AITravel::`vector_deleting_destructor'(AITravel *this,uint param_1); void *__thiscall AIScan::`scalar_deleting_destructor'(AIScan *this,uint param_1); void *__thiscall AIPiracy::`vector_deleting_destructor'(AIPiracy *this,uint param_1); void *__thiscall AIHunt::`vector_deleting_destructor'(AIHunt *this,uint param_1); void *__thiscall AIScavenge::`vector_deleting_destructor'(AIScavenge *this,uint param_1); AIAttack *__thiscall AIAttack::AIAttack(AIAttack *this, Ship *param_1);
+CaptainStyle __cdecl getCaptainStyle(void *param_1);
+CaptainExperience __cdecl getCaptainExperience(void *param_1);
+ShipLook __cdecl getShipLookup(void *param_1);
 ShipBehaviour *__thiscall ShipBehaviour::ShipBehaviour(ShipBehaviour *this, Ship *param_1, CraftPurpose param_2);
 void __thiscall ShipBehaviour::<>::~<>(<> *this);
 void __thiscall ShipBehaviour::~ShipBehaviour(ShipBehaviour *this);
@@ -11031,7 +11130,7 @@ void __thiscall ShipBehaviour::configureShipDesires(ShipBehaviour *this);
 void __thiscall ShipBehaviour::detectWeaponLaunch(ShipBehaviour *this, Ship *param_1, Weapon *param_2);
 void __thiscall ShipBehaviour::forgetPiracyTarget(ShipBehaviour *this, Ship *param_1);
 void __thiscall ShipBehaviour::runLogic(ShipBehaviour *this, float param_1);
-void __thiscall ShipBehaviour::hasSentMessageForFlag(void *this, char *param_11);
+bool __thiscall ShipBehaviour::hasSentMessageForFlag(ShipBehaviour *this, char *param_2);
 void __thiscall ShipBehaviour::updateSurroundingData(ShipBehaviour *this);
 void __thiscall ShipBehaviour::giveTravelTask(ShipBehaviour *this, GameObject *param_1, bool param_2);
 void __thiscall ShipBehaviour::merchant_runLogic(ShipBehaviour *this, float param_1);
@@ -11045,11 +11144,11 @@ void __fastcall Catch_All @00506f2b(vector<> *param_1);
 bool __thiscall CargoPod::hasAllOptions(CargoPod *this);
 bool __thiscall CargoPod::hasNoOptions(CargoPod *this);
 bool __thiscall CargoPod::hasOption(CargoPod *this, GoodContainmentOption param_1);
-basic_string<> *__thiscall CargoPod::describeAddons(CargoPod *this, basic_string<> *param_1);
-void __thiscall CargoHold::describePod(CargoHold *this, basic_string<> *param_1, uint param_2, char param_4);
+basic_string<> *__thiscall CargoPod::describeAddons(CargoPod *this);
+void __thiscall CargoHold::describePod(CargoHold *this, int param_1, bool param_2);
 void __thiscall CargoHold::configureSlots(CargoHold *this, int param_1, int param_2);
 int __thiscall CargoHold::totalUnitsFree(CargoHold *this);
-basic_string<> *__thiscall CargoHold::describeCargo(CargoHold *this, basic_string<> *param_1, char param_3);
+basic_string<> *__thiscall CargoHold::describeCargo(CargoHold *this, bool param_1);
 bool __thiscall CargoHold::addToHold(CargoHold *this, int param_1, int param_2, int param_3);
 void __thiscall CargoHold::removeFromHold(CargoHold *this, int param_1, int param_2, int param_3);
 void __thiscall CargoHold::removeFromHold(CargoHold *this, Good *param_1, int param_2, int param_3);
@@ -11066,47 +11165,47 @@ int __thiscall CargoHold::amountHeld(CargoHold *this, GoodContainmentOption para
 void __thiscall CargoHold::addComponent(CargoHold *this, ShipComponent *param_1);
 bool __thiscall CargoHold::hasComponent(CargoHold *this, int param_1);
 void __thiscall CargoHold::removeComponent(CargoHold *this, ShipComponent *param_1);
-int __cdecl getContainmentOption(void *param_11);
+GoodContainmentOption __cdecl getContainmentOption(void *param_1);
 void __thiscall HackEngine::failHack(HackEngine *this, Ship *param_1);
 void __thiscall HackEngine::performHack(HackEngine *this, Ship *param_1, CommsData *param_2, BankAccount *param_3);
 void __thiscall WaveformData::addPeak(WaveformData *this, float param_1, int param_2);
 SensorData *__thiscall SensorData::SensorData(SensorData *this, int param_1, int param_2, float param_3);
-void __thiscall SensorData::getSolutionString(SensorData *this, basic_string<> *param_1);
-float *__thiscall SensorData::getPresumedLocation(SensorData *this, float *param_1);
-void __thiscall SensorData::describeDetail(SensorData *this, undefined4 param_1);
-void __thiscall SensorData::describe(SensorData *this, undefined4 param_1, char param_2, char param_4);
+void __thiscall SensorData::getSolutionString(SensorData *this);
+Vec2 *__thiscall SensorData::getPresumedLocation(SensorData *this);
+void __thiscall SensorData::describeDetail(SensorData *this, bool param_1);
+void __thiscall SensorData::describe(SensorData *this, bool param_1, char param_2);
 bool __thiscall SensorData::canBeMooredWith(SensorData *this);
 bool __thiscall SensorData::isSynthetic(SensorData *this);
 bool __thiscall SensorData::analysed(SensorData *this);
 float __thiscall WaveformData::getStrength(WaveformData *this);
-void *__thiscall Ship::Ship(void *this, int param_11, int param_12, basic_string<> *param_13);
+Ship *__thiscall Ship::Ship(Ship *this, int param_2, int param_3, basic_string<> *param_4);
 void __thiscall std::map<>::~map<>(map<> *this);
 void __thiscall Ship::~Ship(Ship *this);
 void __thiscall Conversation::~Conversation(Conversation *this);
 void __thiscall Ship::initialiseBehaviour(Ship *this, CraftPurpose param_1, int param_2, int param_3);
-void __thiscall Ship::log(undefined4 param_1, int param_11, char *param_12, ...);
+void __thiscall Ship::log(undefined4 param_1, int param_2, char *param_3, ...);
 void __thiscall Ship::setNoFog(Ship *this);
 void __thiscall Ship::setFullFog(Ship *this);
 void __thiscall Ship::removeAllFog(Ship *this);
-void __thiscall Ship::relativeAngleToLocation(void *this, undefined4 param_11, undefined4 param_12);
+double __thiscall Ship::relativeAngleToLocation(Ship *this, undefined4 param_2, undefined4 param_3);
 double __thiscall Ship::relativeAngleToObject(Ship *this, GameObject *param_1);
-void __thiscall Ship::trueAngleToPosition(void *this, float param_11);
+double __thiscall Ship::trueAngleToPosition(Ship *this, float param_2);
 double __thiscall Ship::trueAngleToObject(Ship *this, GameObject *param_1);
 SensorData *__thiscall Ship::getMostDangerousSensorObject(Ship *this);
 void __thiscall Ship::selectNextValidSensorObject(Ship *this);
 void __thiscall Ship::selectPrevValidSensorObject(Ship *this);
 void __thiscall Ship::setEmcon(Ship *this, bool param_1);
-bool __thiscall Ship::isDamaged(Ship *this);
+bool __thiscall Ship::hullDamaged(Ship *this);
 bool __thiscall Ship::isDestroyed(Ship *this);
 HullDamageState __thiscall Ship::getDamageStateForHullSection(Ship *this, HullLocation param_1);
 int __thiscall Ship::getHullDamagePercent(Ship *this);
 int __thiscall Ship::getDamageAmountForHullSection(Ship *this, HullLocation param_1);
 void __thiscall Ship::setSector(Ship *this, int param_1);
 void __thiscall Ship::giveFullPower(Ship *this);
-void __thiscall Ship::addModulesWithConfig(void *this, void *param_11);
+void __thiscall Ship::addModulesWithConfig(Ship *this, void *param_2);
 void __thiscall Ship::setDefaultEMCONSettings(Ship *this);
 bool __thiscall Ship::reactorOnline(Ship *this);
-undefined4 __thiscall Ship::getSensorDataNear(void *this);
+SensorData *__thiscall Ship::getSensorDataNear(Ship *this);
 SensorData *__thiscall Ship::getSensorDataForShipID(Ship *this, int param_1);
 SensorData *__thiscall Ship::getSensorDataForSyntheticObjectID(Ship *this, int param_1);
 SensorData *__thiscall Ship::getSensorData(Ship *this, int param_1);
@@ -11117,14 +11216,14 @@ void __thiscall Ship::removeSensorData(Ship *this, SensorData *param_1);
 void __thiscall Ship::clearSensorData(Ship *this);
 bool __thiscall Ship::alwaysKnown(Ship *this, Ship *param_1);
 void __thiscall Ship::runPassiveSensorLogic(Ship *this, float param_1);
-WaveformData *__thiscall Ship::getWaveform(Ship *this, WaveformData *param_1);
+float __thiscall Ship::getWaveform(Ship *this, float param_1);
 bool __thiscall Ship::isDisabled(Ship *this, bool param_1);
 Ship *__thiscall Ship::performSensorScan(Ship *this, float param_1);
 bool __thiscall Ship::canUseWeapons(Ship *this);
 void __thiscall Ship::removeWeapon(Ship *this, Weapon *param_1);
 int __thiscall Ship::maxWeapons(Ship *this);
 bool __thiscall Ship::weaponSpunUp(Ship *this);
-undefined __thiscall Ship::hasWeaponFired(void *this, char *param_11);
+bool __thiscall Ship::hasWeaponFired(Ship *this, char *param_2);
 int __thiscall Ship::addWeapon(Ship *this, WeaponClass *param_1, int param_2);
 void __thiscall Ship::fireWeapon(Ship *this, int param_1);
 HullLocation __thiscall Ship::getDamageLocationForAngle(Ship *this, DamageAngle param_1);
@@ -11132,7 +11231,7 @@ void __thiscall Ship::destroy(Ship *this);
 bool __thiscall Ship::damage(Ship *this, int param_1, float param_2, DamageType param_3, Ship *param_4);
 void __thiscall Ship::repairConsoleDamage(Ship *this);
 void __thiscall Ship::damageConsole(Ship *this);
-undefined4 __thiscall Ship::getConsoleDamage(void *this, char *param_11);
+ConsoleDamage *__thiscall Ship::getConsoleDamage(Ship *this, char *param_2);
 int __thiscall Ship::getValue(Ship *this);
 bool __thiscall Ship::hasCargo(Ship *this);
 bool __thiscall Ship::hasEmptyPodSlot(Ship *this);
@@ -11167,17 +11266,17 @@ float __thiscall Ship::getMotionAngle(Ship *this);
 void __thiscall Ship::cancelAutopilot(Ship *this);
 float __thiscall Ship::distanceToDecelerateFromFull(Ship *this);
 void __thiscall Ship::rotateTo(Ship *this, float param_1);
-void __thiscall Ship::addWaypoint(void *this, undefined4 param_11, undefined4 param_12);
+void __thiscall Ship::addWaypoint(Ship *this, undefined4 param_2, undefined4 param_3);
 void __thiscall Ship::addWaypoint(Ship *this, GameObject *param_1);
-void __thiscall Ship::getNextWaypointLocation(Ship *this, undefined4 *param_1);
-void __thiscall Ship::getFinalWaypointLocation(Ship *this, undefined4 *param_1);
+void __thiscall Ship::getNextWaypointLocation(Ship *this);
+void __thiscall Ship::getFinalWaypointLocation(Ship *this);
 GameObject *__thiscall Ship::getFinalWaypointObject(Ship *this);
 Waypoint *__thiscall Ship::getFinalWaypoint(Ship *this);
 void __thiscall Ship::setWaypointFlags(Ship *this);
 void __thiscall Ship::clearWaypointFlags(Ship *this);
 void __thiscall Ship::travelTo(Ship *this, NavPoint *param_1);
 void __thiscall Ship::cancelTravel(Ship *this);
-void __thiscall Ship::mapCourseTo(void *this, undefined4 param_11, undefined4 param_12);
+void __thiscall Ship::mapCourseTo(Ship *this, undefined4 param_2, undefined4 param_3);
 void __thiscall Ship::mapCourseTo(Ship *this, NavPoint *param_1);
 void __thiscall Ship::mapCourseTo(Ship *this, Ship *param_1);
 void __thiscall Ship::executeCourse(Ship *this, int param_1, int param_2);
@@ -11190,23 +11289,23 @@ void __thiscall Ship::allStop(Ship *this);
 Conversation *__thiscall Ship::getForcedConversation(Ship *this, bool param_1);
 Conversation *__thiscall Ship::getConversation(Ship *this, bool param_1, bool param_2);
 void __thiscall Ship::generateSaleDescription(Ship *this, ModuleType param_1, ModuleType param_2);
-undefined4 *__thiscall std::vector<>::insert(void *this, undefined4 *param_11, Waypoint *param_12, Waypoint *param_13);
+undefined4 *__thiscall std::vector<>::insert(vector<> *this, undefined4 *param_2, Waypoint *param_3, Waypoint *param_4);
 void __thiscall std::vector<>::~vector<>(vector<> *this);
 vector<> *__thiscall std::vector<>::operator=(vector<> *this, vector<> *param_1);
 vector<> *__thiscall std::vector<>::operator=(vector<> *this, vector<> *param_1);
-void __thiscall std::_Tree<>::erase(void *this, undefined4 *param_11, int *param_12, int *param_13);
-void __thiscall std::_Tree<>::_Eqrange<int>(_Tree<> *this, int *param_1, int *param_3);
+void __thiscall std::_Tree<>::erase(_Tree<> *this, undefined4 *param_2, int *param_3, int *param_4);
+void __thiscall std::_Tree<>::_Eqrange<int>(_Tree<> *this, int *param_1);
 void __thiscall std::vector<>::_Assign_range<>(vector<> *this, undefined4 *param_1, undefined4 *param_2);
 void __thiscall ShipChatter::runLogic(ShipChatter *this, float param_1);
 int __thiscall ShipChatter::getCurrentTransmissionQuality(ShipChatter *this);
 void __thiscall ShipChatter::addMessage(ShipChatter *this, undefined4 param_1, basic_string<> *param_3);
-int __cdecl getHullLocationForString(undefined4 *param_11);
+HullLocation __cdecl getHullLocationForString(undefined4 *param_1);
 ShipClass *__thiscall ShipClass::ShipClass(ShipClass *this, VesselType param_1);
-undefined4 __thiscall ShipClass::getShipConfiguration(void *this, char *param_11);
-void __thiscall ShipClass::unpackAndAddConfiguration(void *this, char *param_11, undefined4 param_3, undefined4 param_4, char *param_5, undefined8 param_12);
-void __thiscall ShipClass::hullStrengthForSection(ShipClass *this, undefined8 *param_1, int param_3);
+ShipConfiguration *__thiscall ShipClass::getShipConfiguration(ShipClass *this, char *param_2);
+void __thiscall ShipClass::unpackAndAddConfiguration(ShipClass *this, char *param_2, undefined4 param_3, undefined4 param_4, char *param_5, undefined8 param_6);
+void __thiscall ShipClass::hullStrengthForSection(ShipClass *this, HullLocation param_1);
 bool __thiscall ShipClass::canBeDockedWith(ShipClass *this);
-void __thiscall Destination::Destination(void *this, undefined4 param_11, undefined4 param_12, void *param_13);
+void __thiscall Destination::Destination(Destination *this, undefined4 param_2, undefined4 param_3, void *param_4);
 int __thiscall ShipMechanics::hullRepairCost(ShipMechanics *this, Ship *param_1, HullLocation param_2);
 int __thiscall ShipMechanics::getRepairPoints(ShipMechanics *this, Ship *param_1);
 void __thiscall ShipMechanics::performHullRepairAll(ShipMechanics *this, Ship *param_1);
@@ -11215,11 +11314,11 @@ int __thiscall ShipMechanics::moduleRepairCost(ShipMechanics *this, Ship *param_
 SpaceStation *__thiscall SpaceStation::SpaceStation(SpaceStation *this, undefined4 param_1, void *param_3);
 void __thiscall SpaceStation::shipUndocking(SpaceStation *this, Ship *param_1);
 void __thiscall SpaceStation::shipDocking(SpaceStation *this, Ship *param_1);
-undefined __thiscall SpaceStation::shipHasPaidForUse(void *this, char *param_11);
+bool __thiscall SpaceStation::shipHasPaidForUse(SpaceStation *this, char *param_2);
 bool __thiscall SpaceStation::requestUndockingClearance(SpaceStation *this, Ship *param_1, bool param_2);
 void __thiscall SpaceStation::regenerateExtras(SpaceStation *this);
 void __thiscall ExtraSpawned::~ExtraSpawned(ExtraSpawned *this);
-basic_string<> *__thiscall SpaceStation::getTagFor(void *this, basic_string<> *param_11, char *param_12);
+basic_string<> *__thiscall SpaceStation::getTagFor(SpaceStation *this, basic_string<> *param_2, char *param_3);
 void __thiscall SpaceStation::dockShip(SpaceStation *this, Ship *param_1);
 bool __thiscall SpaceStation::shipHasDockingClearance(SpaceStation *this, Ship *param_1);
 bool __thiscall SpaceStation::shipHasUndockingClearance(SpaceStation *this, Ship *param_1);
@@ -11235,12 +11334,12 @@ ExtraSpawned *__thiscall std::vector<>::_Emplace_reallocate<>(vector<> *this, Ex
 void __cdecl std::_Destroy_range<>(ExtraSpawned *param_1, ExtraSpawned *param_2, allocator<> *param_3);
 ExtraSpawned *__cdecl std::_Uninitialized_move<>(ExtraSpawned *param_1, ExtraSpawned *param_2, ExtraSpawned *param_3, allocator<> *param_4);
 Weapon *__thiscall Weapon::Weapon(Weapon *this, Ship *param_1, WeaponClass *param_2);
-void __thiscall Weapon::getSolutionString(Weapon *this, basic_string<> *param_1);
+void __thiscall Weapon::getSolutionString(Weapon *this);
 bool __thiscall Weapon::alwaysKnown(Weapon *this, Ship *param_1);
 int __thiscall Weapon::getSpinUpPercent(Weapon *this, int param_1);
 int __thiscall Weapon::getCurrentCalculatedPowerPercantage(Weapon *this, int param_1);
 bool __thiscall Weapon::canFire(Weapon *this);
-bool __thiscall Weapon::hullDamaged(Weapon *this);
+bool __thiscall Weapon::isDestroyed(Weapon *this);
 bool __thiscall Weapon::damage(Weapon *this, int param_1, float param_2, DamageType param_3);
 void __thiscall Weapon::destroy(Weapon *this);
 void __thiscall Weapon::runHomeLogic(Weapon *this, float param_1);
@@ -11259,51 +11358,51 @@ bool __thiscall CSteamAPIContext::Init(CSteamAPIContext *this);
 void __thiscall Stats::Stats(Stats *this);
 void __thiscall CCallback<>::~CCallback<>(CCallback<> *this);
 void __thiscall CCallback<>::~CCallback<>(CCallback<> *this);
-void __thiscall Stats::setBinaryStat(void *this, void *param_11);
-void __thiscall Stats::setStat(void *this, void *param_11);
-void __thiscall Stats::addStat(void *this, int param_11, void *param_12);
+void __thiscall Stats::setBinaryStat(Stats *this, void *param_2);
+void __thiscall Stats::setStat(Stats *this, void *param_2);
+void __thiscall Stats::addStat(Stats *this, int param_2, void *param_3);
 bool __thiscall Stats::storeStats(Stats *this);
 void __thiscall Stats::onUserStatsReceived(Stats *this, UserStatsReceived_t *param_1);
 void __thiscall Stats::onUserStatsStored(Stats *this, UserStatsStored_t *param_1);
-bool __thiscall Stats::hasCustomStat(void *this, void *param_11);
-void __thiscall Stats::getCustomStat(void *this, void *param_11);
-void __thiscall Stats::setCustomStat(void *this, void *param_11);
+bool __thiscall Stats::hasCustomStat(Stats *this, void *param_2);
+float __thiscall Stats::getCustomStat(Stats *this, void *param_2);
+void __thiscall Stats::setCustomStat(Stats *this, void *param_2);
 int *__thiscall std::map<>::operator[](map<> *this, basic_string<> *param_1);
 int __thiscall CCallbackImpl<16>::GetCallbackSizeBytes(CCallbackImpl<16> *this);
-void __thiscall CCallbackImpl<24>::Run(CCallbackImpl<24> *this, void *param_1, bool param_2, __uint64 param_3);
+void __thiscall CCallbackImpl<16>::Run(CCallbackImpl<16> *this, void *param_1, bool param_2, __uint64 param_3);
 int __thiscall CCallbackImpl<24>::GetCallbackSizeBytes(CCallbackImpl<24> *this);
 void __thiscall CCallback<>::Run(CCallback<> *this, void *param_1);
 _Tree_node<> *__thiscall std::_Tree_comp_alloc<>::_Buynode<>(_Tree_comp_alloc<> *this, piecewise_construct_t *param_1, tuple<> *param_2, tuple<> *param_3);
 void __thiscall FogInstance::resetFog(FogInstance *this);
 int __cdecl FogInstance::getChunk(float param_1);
-undefined __thiscall FogInstance::removeFogInRadius(FogInstance *this, int param_1, int param_2, undefined4 param_4, undefined4 param_5, float param_6);
-uint __thiscall FogInstance::fogObscuresPoint(void *this, float param_11, float param_12);
+bool __thiscall FogInstance::removeFogInRadius(FogInstance *this, int param_1, int param_2, undefined4 param_4, undefined4 param_5, float param_6);
+bool __thiscall FogInstance::fogObscuresPoint(FogInstance *this, float param_2, float param_3);
 void __thiscall NavPoint::removeAdjacentNavpoint(NavPoint *this, int param_1);
 Faction *__thiscall Sector::getMainFaction(Sector *this);
-Zone *__thiscall Sector::getZone(void *this, float param_11, float param_12, char param_13);
+Zone *__thiscall Sector::getZone(Sector *this, float param_2, float param_3, char param_4);
 SyntheticObject *__thiscall Sector::getSyntheticObjectWithID(Sector *this, int param_1);
 SyntheticObject *__thiscall Sector::addSyntheticObject(Sector *this, int param_1);
 void __thiscall Sector::removeSyntheticObject(Sector *this, SyntheticObject *param_1);
 void __thiscall Sector::addStellarObject(Sector *this, StellarObject *param_1);
-int __thiscall Sector::getStellarObjectNear(void *this);
+StellarObject *__thiscall Sector::getStellarObjectNear(Sector *this);
 void __thiscall Sector::removeWeapon(Sector *this, Weapon *param_1);
 void __thiscall Sector::removeAllWeapons(Sector *this);
 void __thiscall Sector::removeShip(Sector *this, Ship *param_1);
 Ship *__thiscall Sector::getShip(Sector *this, int param_1);
-undefined4 __thiscall Sector::getShip(void *this, char *param_11);
-int __thiscall Sector::getShipClosestTo(void *this, int param_11);
-int __thiscall Sector::getSpaceStationClosestTo(void *this);
-void __thiscall Sector::getAngleToNearestStar(void *this, undefined4 param_11, undefined4 param_12);
-void __thiscall Sector::getSolarRadiationAt(void *this);
+Ship *__thiscall Sector::getShip(Sector *this, char *param_2);
+Ship *__thiscall Sector::getShipClosestTo(Sector *this, int param_2);
+Ship *__thiscall Sector::getSpaceStationClosestTo(Sector *this);
+float __thiscall Sector::getAngleToNearestStar(Sector *this, undefined4 param_2, undefined4 param_3);
+float __thiscall Sector::getSolarRadiationAt(Sector *this);
 void __thiscall Sector::clearBounties(Sector *this);
 void __thiscall Sector::setNewBounties(Sector *this);
-int __thiscall Sector::getNavPointNear(void *this);
-ComponentCategory *__thiscall Sector::getNavPointNearZoneSet(void *this, char *param_11);
-uint __thiscall Sector::getNavMeshIDClosestTo(void *this, undefined4 param_11, undefined4 param_3, char param_12);
+NavPoint *__thiscall Sector::getNavPointNear(Sector *this);
+NavPoint *__thiscall Sector::getNavPointNearZoneSet(Sector *this, char *param_2);
+int __thiscall Sector::getNavMeshIDClosestTo(Sector *this, undefined4 param_2, undefined4 param_3, char param_4);
 NavPoint *__thiscall Sector::getNavPoint(Sector *this, int param_1, NavPointType param_2);
 NavPoint *__thiscall Sector::getNavPoint(Sector *this, int param_1);
 NavPoint *__thiscall Sector::getRandomNavPoint(Sector *this, MeshCategory param_1);
-ComponentCategory *__thiscall Sector::getRandomNavPointNotNear(Sector *this, int param_1);
+NavPoint *__thiscall Sector::getRandomNavPointNotNear(Sector *this, int param_1);
 void __thiscall Sector::repopulateTradeLocations(Sector *this);
 StellarObject *__thiscall StellarObject::StellarObject(StellarObject *this, int param_1, StellarCategory param_2);
 SyntheticObjectCargoInstance *__thiscall SyntheticObjectCargoInstance::SyntheticObjectCargoInstance(SyntheticObjectCargoInstance *this, undefined4 param_1, void *param_3);
@@ -11334,14 +11433,14 @@ float __thiscall SystemManager::totalPowerGeneration(SystemManager *this);
 void __thiscall SystemManager::runAttritionLogic(SystemManager *this, float param_1);
 void __thiscall SystemManager::newDamage(SystemManager *this, HullLocation param_1, float param_2, DamageType param_3);
 void __thiscall SystemManager::damage(SystemManager *this, HullLocation param_1, float param_2, DamageType param_3);
-void *__thiscall RoomEditor::`scalar_deleting_destructor'(RoomEditor *this,uint param_1); void __thiscall RoomEditor::describeCurrentState(RoomEditor *this);
+void *__thiscall RoomEditor::`vector_deleting_destructor'(RoomEditor *this,uint param_1); void __thiscall RoomEditor::describeCurrentState(RoomEditor *this);
 void __thiscall RoomEditor::setLightObjectsVisible(RoomEditor *this, bool param_1);
 void *__thiscall SectorEditor::`scalar_deleting_destructor'(SectorEditor *this,uint param_1); void __thiscall SectorEditor::disable(SectorEditor *this);
-void __thiscall SectorEditor::linkNavPoint(void *this, undefined4 param_11, undefined4 param_12);
+void __thiscall SectorEditor::linkNavPoint(SectorEditor *this, undefined4 param_2, undefined4 param_3);
 void __thiscall SectorEditor::addAsteroid(SectorEditor *this);
 void __thiscall SectorEditor::describeCurrentState(SectorEditor *this);
 Key *__thiscall Key::Key(Key *this, undefined4 param_1, void *param_3);
-void *__thiscall InputOption::InputOption(void *this, void *param_11);
+InputOption *__thiscall InputOption::InputOption(InputOption *this, void *param_2);
 InputConfiguration *__thiscall InputConfiguration::InputConfiguration(InputConfiguration *this);
 void __thiscall InputConfiguration::setOption(InputConfiguration *this, ShipCommand param_1, KeyCode param_2);
 void __thiscall InputConfiguration::populateInputConfig(InputConfiguration *this, vector<> *param_1);
@@ -11350,7 +11449,7 @@ void __thiscall LogSystem::renderWarning(LogSystem *this);
 void __thiscall LogSystem::addLogLine(LogSystem *this, LogPriority param_1, char *param_2, ...);
 void *__thiscall LogLine::`scalar_deleting_destructor'(LogLine *this,uint param_1); void __thiscall LogSystem::cleanupWarning(LogSystem *this);
 void __thiscall LogSystem::setHistoryItem(LogSystem *this, int param_1);
-basic_string<> *__thiscall LogSystem::getLogAsStr(LogSystem *this, basic_string<> *param_1);
+basic_string<> *__thiscall LogSystem::getLogAsStr(LogSystem *this);
 void __cdecl MenuConfiguration::configureMenus(void);
 bool __cdecl MenuConfiguration::saveSlotIsSelected(void *param_1);
 void __cdecl MenuConfiguration::updateWithSaveSlots(Menu *param_1);
@@ -11360,21 +11459,21 @@ bool __cdecl MenuConfiguration::scenarioIsSelected(void *param_1);
 MenuManager *__cdecl Singleton<>::getInstance(void);
 function<> *__thiscall std::function<>::operator= <>(function<> *this, _func_void_Menu_ptr *param_1);
 type_info *__thiscall std::_Func_impl_no_alloc<>::_Target_type(_Func_impl_no_alloc<> *this);
-_Func_base<bool, void *> *__thiscall std::_Func_impl_no_alloc<>::_Copy(_Func_impl_no_alloc<> *this, void *param_1);
+_Func_base<bool, void *> *__thiscall std::_Func_impl_no_alloc<>::_Move(_Func_impl_no_alloc<> *this, void *param_1);
 type_info *__thiscall std::_Func_impl_no_alloc<>::_Target_type(_Func_impl_no_alloc<> *this);
-_Func_base<> *__thiscall std::_Func_impl_no_alloc<>::_Copy(_Func_impl_no_alloc<> *this, void *param_1);
-bool __thiscall std::_Func_impl_no_alloc<>::_Do_call(_Func_impl_no_alloc<> *this, void **param_1);
+_Func_base<void, Menu *> *__thiscall std::_Func_impl_no_alloc<>::_Move(_Func_impl_no_alloc<> *this, void *param_1);
+void __thiscall std::_Func_impl_no_alloc<>::_Do_call(_Func_impl_no_alloc<> *this, Menu **param_1);
 MenuItem *__thiscall MenuItem::MenuItem(MenuItem *this, undefined4 param_1, void *param_3);
 Menu *__thiscall Menu::Menu(Menu *this, undefined4 param_1, void *param_3);
 void *__thiscall Menu::`scalar_deleting_destructor'(Menu *this,uint param_1); void __thiscall Menu::~Menu(Menu *this);
 void __thiscall Menu::removeAllItems(Menu *this);
-undefined __thiscall Menu::triggerValid(undefined4 param_1, void *param_11);
+bool __thiscall Menu::triggerValid(undefined4 param_1, void *param_2);
 Menu *__thiscall MenuManager::getMenu(MenuManager *this, int param_1);
 void __thiscall MenuManager::resetGame(MenuManager *this);
 void *__thiscall ParticleEngine::`scalar_deleting_destructor'(ParticleEngine *this,uint param_1); void __thiscall ParticleEngine::runlogic(ParticleEngine *this, float param_1);
-undefined __cdecl PresentationData::checkRoomObjectState(int param_1, int param_2, void *param_3);
-undefined __cdecl PresentationData::checkHasSelectedDirection(int param_1, undefined4 param_2, void *param_3);
-undefined __cdecl PresentationData::checkNavMapLockedToShip(int param_1, int param_2, void *param_3);
+bool __cdecl PresentationData::checkRoomObjectState(int param_1, int param_2, void *param_3);
+bool __cdecl PresentationData::checkHasSelectedDirection(int param_1, undefined4 param_2, void *param_3);
+bool __cdecl PresentationData::checkNavMapLockedToShip(int param_1, int param_2, void *param_3);
 bool __cdecl PresentationData::doMoveMapLeft(Ship *param_1, double param_2, double param_3, double param_4);
 bool __cdecl PresentationData::doMoveMapRight(Ship *param_1, double param_2, double param_3, double param_4);
 bool __cdecl PresentationData::doMoveMapUp(Ship *param_1, double param_2, double param_3, double param_4);
@@ -11382,12 +11481,12 @@ bool __cdecl PresentationData::doMoveMapDown(Ship *param_1, double param_2, doub
 bool __cdecl PresentationData::doMapZoomIn(Ship *param_1, double param_2, double param_3, double param_4);
 bool __cdecl PresentationData::doMapZoomOut(Ship *param_1, double param_2, double param_3, double param_4);
 bool __cdecl PresentationData::doRecenterMapOnShip(Ship *param_1, double param_2, double param_3, double param_4);
-void __cdecl PresentationData::moveMap(float param_11, float param_12);
+void __cdecl PresentationData::moveMap(float param_1, float param_2);
 bool __cdecl PresentationData::isLocalCommand(int param_1);
-void __cdecl PresentationData::getShipCommandFunction(void);
-_Func_base<> *__thiscall std::_Func_impl_no_alloc<>::_Copy(_Func_impl_no_alloc<> *this, void *param_1);
+void __cdecl PresentationData::getShipCommandFunction(int param_1);
+_Func_base<> *__thiscall std::_Func_impl_no_alloc<>::_Move(_Func_impl_no_alloc<> *this, void *param_1);
 type_info *__thiscall std::_Func_impl_no_alloc<>::_Target_type(_Func_impl_no_alloc<> *this);
-_Func_base<> *__thiscall std::_Func_impl_no_alloc<>::_Copy(_Func_impl_no_alloc<> *this, void *param_1);
+_Func_base<> *__thiscall std::_Func_impl_no_alloc<>::_Move(_Func_impl_no_alloc<> *this, void *param_1);
 bool __thiscall std::_Func_impl_no_alloc<>::_Do_call(_Func_impl_no_alloc<> *this, Ship **param_1, double *param_2, double *param_3, double *param_4);
 bool __thiscall std::_Func_impl_no_alloc<>::_Do_call(_Func_impl_no_alloc<> *this, Ship **param_1, double *param_2, double *param_3, double *param_4);
 bool __thiscall RoomObject::isCharacter(RoomObject *this);
@@ -11418,21 +11517,21 @@ void __thiscall PresentationInterface::setMessageFocus(PresentationInterface *th
 void __thiscall PresentationInterface::switchToHelmControlAfterUndocking(PresentationInterface *this);
 void __thiscall PresentationInterface::moveToRTCommsStation(PresentationInterface *this);
 char __thiscall PresentationInterface::keycodeToChar(PresentationInterface *this, KeyCode param_1, bool param_2, bool param_3);
-void __thiscall PresentationInterface::eventLocationToLocation(PresentationInterface *this, float *param_1, int param_3);
+void __thiscall PresentationInterface::eventLocationToLocation(PresentationInterface *this, EventMouse *param_1);
 void __thiscall PresentationInterface::onMouseMove(PresentationInterface *this, Event *param_1);
 void __thiscall PresentationInterface::onMouseUp(PresentationInterface *this, Event *param_1);
 void __thiscall PresentationInterface::onMouseDown(PresentationInterface *this, Event *param_1);
 void __thiscall PresentationInterface::onMouseScroll(PresentationInterface *this, Event *param_1);
 bool __cdecl PresentationInterface::doToggleRoomObject(Ship *param_1, double param_2, double param_3, double param_4);
 void __thiscall PresentationInterface::moveToCameraPos(PresentationInterface *this, int param_1, float param_2);
-basic_string<> *__thiscall PresentationInterface::getConsoleToDamage(undefined4 param_1_00, basic_string<> *param_1);
-void __thiscall PresentationInterface::addShake(void *this, char *param_11);
+basic_string<> *__thiscall PresentationInterface::getConsoleToDamage(PresentationInterface *this);
+void __thiscall PresentationInterface::addShake(PresentationInterface *this, char *param_2);
 void __thiscall PresentationInterface::switchJumpMode(PresentationInterface *this, bool param_1);
 void __thiscall PresentationInterface::switchEmconMode(PresentationInterface *this, bool param_1);
 void __thiscall PresentationInterface::runCameraLogic(PresentationInterface *this, float param_1);
 void __thiscall PresentationInterface::runLightLogic(PresentationInterface *this, float param_1);
-void __thiscall PresentationInterface::giveEmoteToCharacter(void *this, char *param_11);
-undefined __thiscall PresentationInterface::talkToCharacter(void *this, undefined4 param_11, char *param_12);
+void __thiscall PresentationInterface::giveEmoteToCharacter(PresentationInterface *this, char *param_2);
+bool __thiscall PresentationInterface::talkToCharacter(PresentationInterface *this, undefined4 param_2, char *param_3);
 void __thiscall PresentationInterface::flicker(PresentationInterface *this, int param_1);
 void __thiscall PresentationInterface::exitGame(PresentationInterface *this);
 bool __thiscall PresentationInterface::hasForcedConversationPending(PresentationInterface *this);
@@ -11440,14 +11539,14 @@ void *__thiscall ServerPresentationInterface::`scalar_deleting_destructor'(Serve
 void __thiscall ServerPresentationInterface::renderOutlines(ServerPresentationInterface *this);
 void __thiscall ServerPresentationInterface::update(ServerPresentationInterface *this, float param_1);
 void __thiscall ServerPresentationInterface::configureMenus(ServerPresentationInterface *this);
-void __thiscall ServerPresentationInterface::renderServerMenu(ServerPresentationInterface *this, basic_string<> *param_1);
+void __thiscall ServerPresentationInterface::renderServerMenu(ServerPresentationInterface *this);
 void __thiscall ServerPresentationInterface::quit(ServerPresentationInterface *this, int param_1);
 void __thiscall ServerPresentationInterface::forceStart(ServerPresentationInterface *this, int param_1);
 void __thiscall ServerPresentationInterface::setScenario(ServerPresentationInterface *this, int param_1);
 bool __thiscall ServerPresentationInterface::difficultySelected(ServerPresentationInterface *this, int param_1);
 void __thiscall ServerPresentationInterface::setDifficulty(ServerPresentationInterface *this, int param_1);
 ServerMenuItem *__thiscall ServerMenuItem::ServerMenuItem(ServerMenuItem *this, undefined4 param_1, void *param_3);
-void *__thiscall ServerMenu::ServerMenu(void *this, void *param_11);
+ServerMenu *__thiscall ServerMenu::ServerMenu(ServerMenu *this, void *param_2);
 void __thiscall ServerMenu::~ServerMenu(ServerMenu *this);
 char *__thiscall std::map<>::operator[](map<> *this, KeyCode * param_1);
 bool __thiscall std::_Func_class<bool, int>::operator()(_Func_class<bool, int> *this, int param_1);
@@ -11455,17 +11554,17 @@ function<> *__thiscall std::function<>::operator= <>(function<> *this, _Binder<>
 function<> *__thiscall std::function<>::operator= <>(function<> *this, _Binder<> *param_1);
 void __thiscall std::_Func_impl_no_alloc<>::_Delete_this(_Func_impl_no_alloc<> *this, bool param_1);
 type_info *__thiscall std::_Func_impl_no_alloc<>::_Target_type(_Func_impl_no_alloc<> *this);
-_Func_base<bool, int> *__thiscall std::_Func_impl_no_alloc<>::_Copy(_Func_impl_no_alloc<> *this, void *param_1);
+_Func_base<bool, int> *__thiscall std::_Func_impl_no_alloc<>::_Move(_Func_impl_no_alloc<> *this, void *param_1);
 type_info *__thiscall std::_Func_impl_no_alloc<>::_Target_type(_Func_impl_no_alloc<> *this);
 _Func_base<void, int> *__thiscall std::_Func_impl_no_alloc<>::_Copy(_Func_impl_no_alloc<> *this, void *param_1);
-void __thiscall std::_Func_impl_no_alloc<>::_Do_call(_Func_impl_no_alloc<> *this, EventMouse **param_1);
+void __thiscall std::_Func_impl_no_alloc<>::_Do_call(_Func_impl_no_alloc<> *this, int *param_1);
 type_info *__thiscall std::_Func_impl_no_alloc<>::_Target_type(_Func_impl_no_alloc<> *this);
 _Func_base<> *__thiscall std::_Func_impl_no_alloc<>::_Copy(_Func_impl_no_alloc<> *this, void *param_1);
 type_info *__thiscall std::_Func_impl_no_alloc<>::_Target_type(_Func_impl_no_alloc<> *this);
-_Func_base<> *__thiscall std::_Func_impl_no_alloc<>::_Copy(_Func_impl_no_alloc<> *this, void *param_1);
+_Func_base<> *__thiscall std::_Func_impl_no_alloc<>::_Move(_Func_impl_no_alloc<> *this, void *param_1);
 void __thiscall std::_Func_impl_no_alloc<>::_Do_call(_Func_impl_no_alloc<> *this, KeyCode *param_1, Event **param_2);
 _Tree_node<> *__thiscall std::_Tree_comp_alloc<>::_Buynode<>(_Tree_comp_alloc<> *this, piecewise_construct_t *param_1, tuple<> *param_2, tuple<> *param_3);
-undefined4 *__thiscall std::_Tree<>::_Insert_hint<>(void *this, undefined4 *param_11, int *param_12, int *param_13, undefined4 param_14);
+undefined4 *__thiscall std::_Tree<>::_Insert_hint<>(_Tree<> *this, undefined4 *param_2, pair<> *param_3, _Tree_node<> *param_4);
 void __fastcall Catch_All @0053664d(_Tree<> *param_1);
 void __thiscall PresentationInterface::`vcall '{776,{flat}}'_
 }
@@ -11481,24 +11580,24 @@ ScreenInterface *__thiscall Room::getConsoleInterface(Room *this, int param_1);
 Screen_Renderer *__thiscall Room::getConsole(Room *this, int param_1);
 RoomObject *__thiscall Room::getObjectForScreenID(Room *this, int param_1);
 RoomObject *__thiscall Room::getObject(Room *this, int param_1);
-undefined4 __thiscall Room::getObjectClickedOn(void *this, float param_11, float param_12);
-basic_string<> *__thiscall Room::getObjectTooltipText(undefined4 param_1, basic_string<> *param_11, float param_12, float param_13);
+RoomObject *__thiscall Room::getObjectClickedOn(Room *this, float param_2, float param_3);
+basic_string<> *__thiscall Room::getObjectTooltipText(undefined4 param_1, basic_string<> *param_2, float param_3, float param_4);
 void __thiscall std::vector<>::_Destroy(vector<> *this, CameraPos *param_1, CameraPos *param_2);
-void __thiscall std::allocator<>::deallocate(allocator<> *this, CameraPos *param_1, uint param_2);
-CameraPos *__thiscall std::vector<>::_Emplace_reallocate<>(vector<> *this, CameraPos *param_1, CameraPos *param_2);
+void __thiscall std::allocator<CameraPos>::deallocate(allocator<CameraPos> *this, CameraPos *param_1, uint param_2);
+CameraPos *__thiscall std::vector<>::_Emplace_reallocate<CameraPos>(vector<> *this, CameraPos *param_1, CameraPos *param_2);
 void __fastcall Catch_All @005378a8(vector<> *param_1);
 CameraPos *__thiscall std::vector<>::_Umove(vector<> *this, CameraPos *param_1, CameraPos *param_2, CameraPos *param_3);
 void __thiscall std::_Uninitialized_backout_al<>::~_Uninitialized_backout_al<>(_Uninitialized_backout_al<> *this);
-int __cdecl getCharacterMouthState(void *param_11);
-int __cdecl getCharacterEyeState(void *param_11);
-int __cdecl getOverlaySegment(void *param_11);
-void *__thiscall RoomCharacter::RoomCharacter(void *this, void *param_11);
+CharacterMouthState __cdecl getCharacterMouthState(void *param_1);
+CharacterEyeState __cdecl getCharacterEyeState(void *param_1);
+OverlaySegment __cdecl getOverlaySegment(void *param_1);
+RoomCharacter *__thiscall RoomCharacter::RoomCharacter(RoomCharacter *this, void *param_2);
 void __thiscall RoomCharacter::renderHeadOverlays(RoomCharacter *this, RoomObject *param_1);
 void __thiscall RoomCharacter::renderOverlay(RoomCharacter *this, RoomObject *param_1, int param_2);
 void __thiscall RoomCharacter::renderCharacterOverlays(RoomCharacter *this, RoomObject *param_1);
 void __thiscall RoomCharacter::renderCharacter(RoomCharacter *this, RoomObject *param_1);
 void __thiscall RoomCharacter::setTextures(RoomCharacter *this, RoomObject *param_1);
-int __cdecl getCharacterPosition(void *param_11);
+CharacterPosition __cdecl getCharacterPosition(void *param_1);
 RoomObject *__thiscall RoomObject::RoomObject(RoomObject *this);
 void __thiscall RoomObject::cleanupObject(RoomObject *this);
 bool __thiscall RoomObject::spawnPointCheck(RoomObject *this);
@@ -11506,8 +11605,8 @@ void __thiscall RoomObject::updateRotationForCamera(RoomObject *this);
 void __thiscall RoomObject::render(RoomObject *this, Node *param_1);
 undefined *Catch @0053bf4c(void);
 void FUN_0053bf8e(void);
-void __thiscall RoomObject::setMesh(void *this, bool param_11, Texture2D *param_12, char *param_13);
-void __thiscall RoomObject::setMesh(void *this, bool param_11, void *param_12);
+void __thiscall RoomObject::setMesh(RoomObject *this, bool param_2, Texture2D *param_3, char *param_4);
+void __thiscall RoomObject::setMesh(RoomObject *this, bool param_2, void *param_3);
 void __thiscall RoomObject::runAnimation(RoomObject *this);
 void __thiscall RoomObject::animationDoneCallback(RoomObject *this);
 void __thiscall RoomObject::switchToScreen(RoomObject *this, int param_1);
@@ -11519,28 +11618,28 @@ bool __thiscall RoomObject::isInteractAble(RoomObject *this);
 void __thiscall RoomObject::resetScreen(RoomObject *this, bool param_1);
 void __thiscall RoomObject::resetTopBars(RoomObject *this, bool param_1);
 void __thiscall RoomObject::resetTopBar(RoomObject *this, bool param_1);
-basic_string<> *__thiscall RoomObject::describe(RoomObject *this, basic_string<> *param_1);
+basic_string<> *__thiscall RoomObject::describe(RoomObject *this);
 void __thiscall RoomObject::resetPosition(RoomObject *this);
 void __thiscall RoomObject::movePosition(RoomObject *this);
 void __thiscall RoomObject::updatePosition(RoomObject *this);
 void __thiscall RoomObject::recheckTabs(RoomObject *this);
 void __thiscall RoomObject::runLogic(RoomObject *this, float param_1);
 void __thiscall RoomObject::clearTextureElements(RoomObject *this);
-void __thiscall RoomObject::addTextureElement(void *this, undefined4 param_11, undefined4 *param_12);
-undefined4 __thiscall RoomObject::getTextureElement(void *this, char *param_11);
+void __thiscall RoomObject::addTextureElement(RoomObject *this, undefined4 param_2, undefined4 *param_3);
+Sprite *__thiscall RoomObject::getTextureElement(RoomObject *this, char *param_2);
 void __thiscall RoomObject::unsetCharacter(RoomObject *this);
-void __thiscall RoomObject::setCharacter(void *this, int param_11, void *param_12);
+void __thiscall RoomObject::setCharacter(RoomObject *this, int param_2, void *param_3);
 void __thiscall std::vector<>::~vector<>(vector<> *this);
 type_info *__thiscall std::_Func_impl_no_alloc<>::_Target_type(_Func_impl_no_alloc<> *this);
 _Func_base<void> *__thiscall std::_Func_impl_no_alloc<>::_Copy(_Func_impl_no_alloc<> *this, void *param_1);
-basic_string<> *__thiscall Screen_Renderer::getCurrentBootString(undefined4 param_1_00, basic_string<> *param_1);
-void *__thiscall ContractCommand::ContractCommand(void *this, void *param_11);
+basic_string<> *__thiscall Screen_Renderer::getCurrentBootString(Screen_Renderer *this);
+UpgradeCommand *__thiscall UpgradeCommand::UpgradeCommand(UpgradeCommand *this, void *param_2);
 void *__thiscall Screen_ContractTerminal::`scalar_deleting_destructor'(Screen_ContractTerminal *this,uint param_1); void *__thiscall TerminalEngine::`scalar_deleting_destructor'(TerminalEngine *this,uint param_1); void __thiscall Screen_ContractTerminal::configure(Screen_ContractTerminal *this);
-void __thiscall ContractCommand::~ContractCommand(ContractCommand *this);
+void __thiscall Command::~Command(Command *this);
 void __thiscall Screen_ContractTerminal::cmd_Cargo(Screen_ContractTerminal *this, char param_1);
-bool __thiscall Screen_ContractTerminal::onKeyPressed(Screen_ContractTerminal *this, KeyCode param_1, Event *param_2);
+bool __thiscall Screen_Renderer::onKeyReleased(Screen_Renderer *this, KeyCode param_1, Event *param_2);
 bool __thiscall Screen_ContractTerminal::onKeyReleased(Screen_ContractTerminal *this, KeyCode param_1, Event *param_2);
-void __thiscall Screen_ContractTerminal::executeCommand(void *this, char *param_11);
+void __thiscall Screen_ContractTerminal::executeCommand(Screen_ContractTerminal *this, char *param_2);
 void __thiscall Screen_ContractTerminal::renderWelcomeMessage(Screen_ContractTerminal *this);
 void __thiscall Screen_ContractTerminal::updateScreenCall(Screen_ContractTerminal *this);
 void __thiscall Screen_ContractTerminal::renderBottomLine(Screen_ContractTerminal *this);
@@ -11551,28 +11650,28 @@ void __thiscall Screen_ContractTerminal::cmd_Drop(Screen_ContractTerminal *this,
 void __thiscall Screen_ContractTerminal::cmd_Faction(Screen_ContractTerminal *this, char param_1, basic_string<> *param_3, int param_4);
 void __thiscall Screen_ContractTerminal::cmd_License(Screen_ContractTerminal *this, char param_1, int param_3, int param_4);
 void FUN_0054098f(void);
-void __thiscall Screen_ContractTerminal::cmd_Take(Screen_ContractTerminal *this, Requirement *param_1, char *param_3, int param_4);
+void __thiscall Screen_ContractTerminal::cmd_Take(Screen_ContractTerminal *this, MetaGameAction *param_1, char *param_3, int param_4);
 void __thiscall Screen_ContractTerminal::cmd_Current(Screen_ContractTerminal *this, char param_1);
 void __thiscall Screen_ContractTerminal::cmd_Info(Screen_ContractTerminal *this, char param_1, char *param_3, int param_4);
 void __thiscall std::vector<>::~vector<>(vector<> *this);
 void __thiscall std::vector<>::_Destroy(vector<> *this, ContractCommand *param_1, ContractCommand *param_2);
-void __thiscall std::allocator<>::deallocate(allocator<> *this, ContractCommand *param_1, uint param_2);
+void __thiscall std::allocator<>::deallocate(allocator<> *this, UpgradeCommand *param_1, uint param_2);
 function<> *__thiscall std::function<>::operator= <>(function<> *this, _Binder<> *param_1);
 function<> *__thiscall std::function<>::operator= <>(function<> *this, _Binder<> *param_1);
-void __cdecl std::_Default_allocator_traits<>::construct<>(allocator<> *param_1, ContractCommand *param_2, ContractCommand *param_3);
-ContractCommand *__thiscall std::vector<>::_Emplace_reallocate<>(vector<> *this, ContractCommand *param_1, ContractCommand *param_2);
+void __cdecl std::_Default_allocator_traits<>::construct<>(allocator<Command> *param_1, Command *param_2, Command *param_3);
+WeaponCommand *__thiscall std::vector<>::_Emplace_reallocate<>(vector<> *this, WeaponCommand *param_1, WeaponCommand *param_2);
 void __fastcall Catch_All @00541d02(vector<> *param_1);
 ContractCommand *__thiscall std::vector<>::_Umove(vector<> *this, ContractCommand *param_1, ContractCommand *param_2, ContractCommand *param_3);
 type_info *__thiscall std::_Func_impl_no_alloc<>::_Target_type(_Func_impl_no_alloc<> *this);
-_Func_base<> *__thiscall std::_Func_impl_no_alloc<>::_Copy(_Func_impl_no_alloc<> *this, void *param_1);
+_Func_base<> *__thiscall std::_Func_impl_no_alloc<>::_Move(_Func_impl_no_alloc<> *this, void *param_1);
 void __thiscall std::_Func_impl_no_alloc<>::_Do_call(_Func_impl_no_alloc<> *this, bool *param_1, vector<> *param_2);
 void __thiscall std::_Uninitialized_backout_al<>::~_Uninitialized_backout_al<>(_Uninitialized_backout_al<> *this);
 type_info *__thiscall std::_Func_impl_no_alloc<>::_Target_type(_Func_impl_no_alloc<> *this);
-_Func_base<void> *__thiscall std::_Func_impl_no_alloc<>::_Copy(_Func_impl_no_alloc<> *this, void *param_1);
+_Func_base<void> *__thiscall std::_Func_impl_no_alloc<>::_Move(_Func_impl_no_alloc<> *this, void *param_1);
 type_info *__thiscall std::_Func_impl_no_alloc<>::_Target_type(_Func_impl_no_alloc<> *this);
-_Func_base<> *__thiscall std::_Func_impl_no_alloc<>::_Copy(_Func_impl_no_alloc<> *this, void *param_1);
+_Func_base<> *__thiscall std::_Func_impl_no_alloc<>::_Move(_Func_impl_no_alloc<> *this, void *param_1);
 void __thiscall std::_Func_impl_no_alloc<>::_Do_call(_Func_impl_no_alloc<> *this, basic_string<> *param_1, vector<> *param_2);
-void *__thiscall Screen_Custom::`scalar_deleting_destructor'(Screen_Custom *this,uint param_1); void __thiscall Screen_Custom::cleanup(Screen_Custom *this);
+void *__thiscall Screen_Custom::`vector_deleting_destructor'(Screen_Custom *this,uint param_1); void __thiscall Screen_Custom::cleanup(Screen_Custom *this);
 void __thiscall Screen_Custom::configure(Screen_Custom *this);
 void __thiscall Screen_Custom::configureElements(Screen_Custom *this);
 void __thiscall Screen_Custom::render(Screen_Custom *this);
@@ -11604,25 +11703,25 @@ void __thiscall Screen_Custom::update(Screen_Custom *this, float param_1);
 bool __thiscall Screen_Custom::onKeyPressed(Screen_Custom *this, KeyCode param_1, Event *param_2);
 bool __thiscall Screen_Custom::onKeyReleased(Screen_Custom *this, KeyCode param_1, Event *param_2);
 void __thiscall Screen_Custom::cancelAllKeys(Screen_Custom *this);
-double *__thiscall std::vector<>::_Emplace_reallocate<>(vector<> *this, double *param_1, double *param_2);
+double *__thiscall std::vector<>::_Emplace_reallocate<double>(vector<> *this, double *param_1, double *param_2);
 void __thiscall std::vector<>::_Assign_range<>(vector<> *this, int param_1, int param_2);
 MouseCursor *__cdecl std::_Copy_unchecked<>(MouseCursor *param_1, MouseCursor *param_2, MouseCursor *param_3);
-void *__thiscall CommsCommand::CommsCommand(void *this, void *param_11);
+CommsCommand *__thiscall CommsCommand::CommsCommand(CommsCommand *this, void *param_2);
 void __thiscall Screen_PC::Screen_PC(Screen_PC *this, ScreenInterface *param_1, int param_2, int param_3);
-void *__thiscall Screen_PC::`scalar_deleting_destructor'(Screen_PC *this,uint param_1); void __thiscall CommsCommand::~CommsCommand(CommsCommand *this);
+void *__thiscall Screen_PC::`vector_deleting_destructor'(Screen_PC *this,uint param_1); void __thiscall CommsCommand::~CommsCommand(CommsCommand *this);
 void __thiscall Screen_PC::configure(Screen_PC *this);
-void __thiscall Screen_PC::update(Screen_PC *this, float param_1);
+void __thiscall Screen_TradeTerminal::update(Screen_TradeTerminal *this, float param_1);
 bool __thiscall Screen_PC::onKeyReleased(Screen_PC *this, KeyCode param_1, Event *param_2);
 void __thiscall Screen_PC::renderBottomLine(Screen_PC *this);
-void __thiscall Screen_PC::executeCommand(void *this, char *param_11);
+void __thiscall Screen_PC::executeCommand(Screen_PC *this, char *param_2);
 void __thiscall Screen_PC::updateScreenCall(Screen_PC *this);
-void __thiscall Screen_PC::addString(void *this, void *param_11);
-void __thiscall Screen_PC::cmd_DIR(void *this);
+void __thiscall Screen_PC::addString(Screen_PC *this, void *param_2);
+void __thiscall Screen_PC::cmd_DIR(Screen_PC *this);
 void __thiscall Screen_PC::cmd_VIEW(Screen_PC *this, char param_1, basic_string<> *param_3, int param_4);
 void __thiscall Screen_PC::cmd_DEL(Screen_PC *this, char param_1, basic_string<> *param_3, int param_4);
 void __thiscall Screen_PC::cmd_News(Screen_PC *this, char param_1);
 void __thiscall Screen_PC::cmd_Email(Screen_PC *this, char param_1);
-basic_string<> *__thiscall Screen_PC::getCurrentBootString(undefined4 param_1_00, basic_string<> *param_1);
+basic_string<> *__thiscall Screen_PC::getCurrentBootString(Screen_PC *this);
 void __thiscall std::vector<>::~vector<>(vector<> *this);
 void __thiscall std::vector<>::_Destroy(vector<> *this, CommsCommand *param_1, CommsCommand *param_2);
 void __thiscall std::allocator<>::deallocate(allocator<> *this, CommsCommand *param_1, uint param_2);
@@ -11636,7 +11735,7 @@ CommsCommand *__thiscall std::vector<>::_Umove(vector<> *this, CommsCommand *par
 type_info *__thiscall std::_Func_impl_no_alloc<>::_Target_type(_Func_impl_no_alloc<> *this);
 _Func_base<void> *__thiscall std::_Func_impl_no_alloc<>::_Copy(_Func_impl_no_alloc<> *this, void *param_1);
 type_info *__thiscall std::_Func_impl_no_alloc<>::_Target_type(_Func_impl_no_alloc<> *this);
-_Func_base<> *__thiscall std::_Func_impl_no_alloc<>::_Copy(_Func_impl_no_alloc<> *this, void *param_1);
+_Func_base<> *__thiscall std::_Func_impl_no_alloc<>::_Move(_Func_impl_no_alloc<> *this, void *param_1);
 void __thiscall std::_Uninitialized_backout_al<>::~_Uninitialized_backout_al<>(_Uninitialized_backout_al<> *this);
 type_info *__thiscall std::_Func_impl_no_alloc<>::_Target_type(_Func_impl_no_alloc<> *this);
 _Func_base<> *__thiscall std::_Func_impl_no_alloc<>::_Copy(_Func_impl_no_alloc<> *this, void *param_1);
@@ -11654,7 +11753,7 @@ bool __thiscall Screen_RTComms::onKeyReleased(Screen_RTComms *this, KeyCode para
 void __thiscall Screen_RTComms::render(Screen_RTComms *this);
 void *__thiscall Screen_Terminal::`scalar_deleting_destructor'(Screen_Terminal *this,uint param_1); void __thiscall Screen_Terminal::configure(Screen_Terminal *this);
 bool __thiscall Screen_Terminal::onKeyReleased(Screen_Terminal *this, KeyCode param_1, Event *param_2);
-void __thiscall Screen_Terminal::executeCommand(void *this, char *param_11);
+void __thiscall Screen_Terminal::executeCommand(Screen_Terminal *this, char *param_2);
 void __thiscall Screen_Terminal::updateScreenCall(Screen_Terminal *this);
 void __thiscall Screen_Terminal::cmd_Status(Screen_Terminal *this, char param_1);
 void __thiscall Screen_Terminal::cmd_Power(Screen_Terminal *this, char param_1, int param_3, int param_4);
@@ -11673,15 +11772,15 @@ _Func_base<void> *__thiscall std::_Func_impl_no_alloc<>::_Copy(_Func_impl_no_all
 type_info *__thiscall std::_Func_impl_no_alloc<>::_Target_type(_Func_impl_no_alloc<> *this);
 _Func_base<> *__thiscall std::_Func_impl_no_alloc<>::_Copy(_Func_impl_no_alloc<> *this, void *param_1);
 void *__thiscall Screen_TradeTerminal::`scalar_deleting_destructor'(Screen_TradeTerminal *this,uint param_1); void __thiscall Screen_TradeTerminal::configure(Screen_TradeTerminal *this);
-void __thiscall Screen_TradeTerminal::executeCommand(void *this, char *param_11);
+void __thiscall Screen_TradeTerminal::executeCommand(Screen_TradeTerminal *this, char *param_2);
 void __thiscall Screen_TradeTerminal::renderWelcomeMessage(Screen_TradeTerminal *this);
 void __thiscall Screen_TradeTerminal::updateScreenCall(Screen_TradeTerminal *this);
 void __thiscall Screen_TradeTerminal::renderBottomLine(Screen_TradeTerminal *this);
 void __thiscall Screen_TradeTerminal::cmd_List(Screen_TradeTerminal *this, char param_1, int param_3, int param_4);
 void __thiscall Screen_TradeTerminal::cmd_Info(Screen_TradeTerminal *this, char param_1, basic_string<> *param_3, int param_4);
 void __thiscall Screen_TradeTerminal::cmd_Buy(Screen_TradeTerminal *this, char param_1, char *param_3, int param_4);
-void __thiscall Screen_TradeTerminal::cmd_Confirm(void *this);
-void __thiscall Screen_TradeTerminal::cmd_Cancel(void *this);
+void __thiscall Screen_TradeTerminal::cmd_Confirm(Screen_TradeTerminal *this);
+void __thiscall Screen_TradeTerminal::cmd_Cancel(Screen_TradeTerminal *this);
 void __thiscall Screen_TradeTerminal::cmd_Weapons(Screen_TradeTerminal *this, char param_1, int param_3, int param_4);
 void __thiscall Screen_TradeTerminal::cmd_Sell(Screen_TradeTerminal *this, char param_1, char *param_3, int param_4);
 void __thiscall Screen_TradeTerminal::cmd_Cargo(Screen_TradeTerminal *this, char param_1);
@@ -11697,9 +11796,9 @@ type_info *__thiscall std::_Func_impl_no_alloc<>::_Target_type(_Func_impl_no_all
 _Func_base<void> *__thiscall std::_Func_impl_no_alloc<>::_Copy(_Func_impl_no_alloc<> *this, void *param_1);
 type_info *__thiscall std::_Func_impl_no_alloc<>::_Target_type(_Func_impl_no_alloc<> *this);
 _Func_base<> *__thiscall std::_Func_impl_no_alloc<>::_Copy(_Func_impl_no_alloc<> *this, void *param_1);
-void *__thiscall Screen_UpgradeTerminal::`scalar_deleting_destructor'(Screen_UpgradeTerminal *this,uint param_1); void __thiscall Screen_UpgradeTerminal::cleanup(Screen_UpgradeTerminal *this);
+void *__thiscall Screen_UpgradeTerminal::`vector_deleting_destructor'(Screen_UpgradeTerminal *this,uint param_1); void __thiscall Screen_UpgradeTerminal::cleanup(Screen_UpgradeTerminal *this);
 void __thiscall Screen_UpgradeTerminal::configure(Screen_UpgradeTerminal *this);
-void __thiscall Screen_UpgradeTerminal::executeCommand(void *this, char *param_11);
+void __thiscall Screen_UpgradeTerminal::executeCommand(Screen_UpgradeTerminal *this, char *param_2);
 void __thiscall Screen_UpgradeTerminal::renderWelcomeMessage(Screen_UpgradeTerminal *this);
 void __thiscall Screen_UpgradeTerminal::updateScreenCall(Screen_UpgradeTerminal *this);
 void __thiscall Screen_UpgradeTerminal::renderBottomLine(Screen_UpgradeTerminal *this);
@@ -11719,18 +11818,18 @@ void __thiscall Screen_UpgradeTerminal::cmd_Modules(Screen_UpgradeTerminal *this
 function<> *__thiscall std::function<>::operator= <>(function<> *this, _Binder<> *param_1);
 function<> *__thiscall std::function<>::operator= <>(function<> *this, _Binder<> *param_1);
 type_info *__thiscall std::_Func_impl_no_alloc<>::_Target_type(_Func_impl_no_alloc<> *this);
-_Func_base<> *__thiscall std::_Func_impl_no_alloc<>::_Copy(_Func_impl_no_alloc<> *this, void *param_1);
+_Func_base<> *__thiscall std::_Func_impl_no_alloc<>::_Move(_Func_impl_no_alloc<> *this, void *param_1);
 type_info *__thiscall std::_Func_impl_no_alloc<>::_Target_type(_Func_impl_no_alloc<> *this);
-_Func_base<void> *__thiscall std::_Func_impl_no_alloc<>::_Copy(_Func_impl_no_alloc<> *this, void *param_1);
+_Func_base<void> *__thiscall std::_Func_impl_no_alloc<>::_Move(_Func_impl_no_alloc<> *this, void *param_1);
 type_info *__thiscall std::_Func_impl_no_alloc<>::_Target_type(_Func_impl_no_alloc<> *this);
-_Func_base<> *__thiscall std::_Func_impl_no_alloc<>::_Copy(_Func_impl_no_alloc<> *this, void *param_1);
-void *__thiscall Screen_WeaponTerminal::`scalar_deleting_destructor'(Screen_WeaponTerminal *this,uint param_1); void __thiscall Screen_WeaponTerminal::configure(Screen_WeaponTerminal *this);
-void __thiscall Screen_WeaponTerminal::executeCommand(void *this, char *param_11);
+_Func_base<> *__thiscall std::_Func_impl_no_alloc<>::_Move(_Func_impl_no_alloc<> *this, void *param_1);
+void *__thiscall Screen_WeaponTerminal::`vector_deleting_destructor'(Screen_WeaponTerminal *this,uint param_1); void __thiscall Screen_WeaponTerminal::configure(Screen_WeaponTerminal *this);
+void __thiscall Screen_WeaponTerminal::executeCommand(Screen_WeaponTerminal *this, char *param_2);
 void __thiscall Screen_WeaponTerminal::renderWelcomeMessage(Screen_WeaponTerminal *this);
 void __thiscall Screen_WeaponTerminal::updateScreenCall(Screen_WeaponTerminal *this);
 void __thiscall Screen_WeaponTerminal::renderBottomLine(Screen_WeaponTerminal *this);
 void __thiscall Screen_WeaponTerminal::cmd_List(Screen_WeaponTerminal *this, char param_1);
-void __thiscall Screen_WeaponTerminal::cmd_Inventory(void *this);
+void __thiscall Screen_WeaponTerminal::cmd_Inventory(Screen_WeaponTerminal *this);
 void __thiscall Screen_WeaponTerminal::cmd_Buy(Screen_WeaponTerminal *this, char param_1, int param_3, int param_4);
 void __thiscall Screen_WeaponTerminal::cmd_Info(Screen_WeaponTerminal *this, char param_1, basic_string<> *param_3, int param_4);
 void __thiscall Screen_WeaponTerminal::showCommandList(Screen_WeaponTerminal *this);
@@ -11740,39 +11839,39 @@ function<> *__thiscall std::function<>::operator= <>(function<> *this, _Binder<>
 type_info *__thiscall std::_Func_impl_no_alloc<>::_Target_type(_Func_impl_no_alloc<> *this);
 _Func_base<> *__thiscall std::_Func_impl_no_alloc<>::_Copy(_Func_impl_no_alloc<> *this, void *param_1);
 type_info *__thiscall std::_Func_impl_no_alloc<>::_Target_type(_Func_impl_no_alloc<> *this);
-_Func_base<void> *__thiscall std::_Func_impl_no_alloc<>::_Copy(_Func_impl_no_alloc<> *this, void *param_1);
+_Func_base<void> *__thiscall std::_Func_impl_no_alloc<>::_Move(_Func_impl_no_alloc<> *this, void *param_1);
 type_info *__thiscall std::_Func_impl_no_alloc<>::_Target_type(_Func_impl_no_alloc<> *this);
-_Func_base<> *__thiscall std::_Func_impl_no_alloc<>::_Copy(_Func_impl_no_alloc<> *this, void *param_1);
-void __thiscall ScreenElement::mouseHoverUpdate(void);
+_Func_base<> *__thiscall std::_Func_impl_no_alloc<>::_Move(_Func_impl_no_alloc<> *this, void *param_1);
+void __thiscall ScreenElement::mouseDown(void);
 bool __thiscall ScreenElement::canDrag(ScreenElement *this);
 int __thiscall ScreenElement::getDragID(ScreenElement *this);
-basic_string<> *__thiscall ScreenElement::getDragLook(undefined4 param_1, basic_string<> *param_11);
-undefined4 __thiscall ScreenElement::getDragValue(ScreenElement *this);
+basic_string<> *__thiscall ScreenElement::getDragLook(undefined4 param_1, basic_string<> *param_2);
+int __thiscall ScreenElement::getDragValue(ScreenElement *this);
 void __thiscall ScreenElement::dragOnto(void);
 ScreenElement *__thiscall ScreenElement::ScreenElement(ScreenElement *this, ScreenInterface *param_1, Widget *param_2, bool *param_3);
-void *__thiscall ScreenElement::`scalar_deleting_destructor'(ScreenElement *this,uint param_1); void __thiscall ScreenElement::~ScreenElement(ScreenElement *this);
+void *__thiscall ScreenElement::`vector_deleting_destructor'(ScreenElement *this,uint param_1); void __thiscall ScreenElement::~ScreenElement(ScreenElement *this);
 void __thiscall ScreenElement::setActive(ScreenElement *this, bool param_1);
-undefined4 __thiscall ScreenElement::containsPoint(void *this);
+bool __thiscall ScreenElement::containsPoint(ScreenElement *this);
 ScreenInterface *__thiscall ScreenInterface::ScreenInterface(ScreenInterface *this, RoomObject *param_1, ScreenType param_2, bool param_3, Sprite3D *param_4, int param_5, int param_6, ScreenLayout *param_7);
 void __thiscall ScreenInterface::~ScreenInterface(ScreenInterface *this);
-void __thiscall ScreenInterface::setToolTip(void *this, basic_string<> *param_11);
+void __thiscall ScreenInterface::setToolTip(ScreenInterface *this, basic_string<> *param_2);
 void __thiscall ScreenInterface::clearToolTip(ScreenInterface *this);
 void __thiscall ScreenInterface::cleanupScreen(ScreenInterface *this);
-void __thiscall ScreenInterface::setMouseCursor(void *this, basic_string<> *param_11);
-void __thiscall ScreenInterface::setMouseOverlay(void *this, void *param_11);
-void __thiscall ScreenInterface::updateMouseCursor(void *this);
-void __thiscall ScreenInterface::onMouseMove(void *this, float param_11, float param_12);
-void __thiscall ScreenInterface::onMouseUp(void *this, float param_11, float param_12);
-void __thiscall ScreenInterface::onMouseDown(void *this, float param_11, float param_12);
+void __thiscall ScreenInterface::setMouseCursor(ScreenInterface *this, basic_string<> *param_2);
+void __thiscall ScreenInterface::setMouseOverlay(ScreenInterface *this, void *param_2);
+void __thiscall ScreenInterface::updateMouseCursor(ScreenInterface *this);
+void __thiscall ScreenInterface::onMouseMove(ScreenInterface *this, float param_2, float param_3);
+void __thiscall ScreenInterface::onMouseUp(ScreenInterface *this, float param_2, float param_3);
+void __thiscall ScreenInterface::onMouseDown(ScreenInterface *this, float param_2, float param_3);
 void __thiscall ScreenInterface::updateMousePosition(ScreenInterface *this, bool param_1, bool param_2);
-undefined4 __thiscall ScreenInterface::getElementAtPosition(void *this, undefined4 param_11, undefined4 param_12);
+ScreenElement *__thiscall ScreenInterface::getElementAtPosition(ScreenInterface *this, undefined4 param_2, undefined4 param_3);
 void __thiscall ScreenInterface::update(ScreenInterface *this, float param_1, bool param_2);
-void __thiscall Widget::unpackExistFunction(void *this, void *param_11);
-void __thiscall Widget::unpackOptions(void *this, int param_11, int param_12, undefined4 param_4, uint param_13);
-bool __thiscall Widget::getOptionAsBool(void *this, void *param_11);
-bool __thiscall Widget::hasOption(void *this, void *param_11);
-basic_string<> *__thiscall Widget::getOption(void *this, basic_string<> *param_11, void *param_12);
-int __cdecl getSound(void *param_11);
+void __thiscall Widget::unpackExistFunction(Widget *this, void *param_2);
+void __thiscall Widget::unpackOptions(Widget *this, int param_2, int param_3, undefined4 param_4, uint param_5);
+bool __thiscall Widget::getOptionAsBool(Widget *this, void *param_2);
+bool __thiscall Widget::hasOption(Widget *this, void *param_2);
+basic_string<> *__thiscall Widget::getOption(Widget *this, basic_string<> *param_2, void *param_3);
+Sound __cdecl getSound(void *param_1);
 SoundLet *__thiscall SoundLet::SoundLet(SoundLet *this, int param_1, char *param_2, bool param_3, float param_4);
 void __thiscall SoundEngine::shutdown(SoundEngine *this);
 int __thiscall SoundEngine::addSound(SoundEngine *this, int param_1, Sound param_2, int param_3, bool param_4, bool param_5, float param_6);
@@ -11789,9 +11888,9 @@ void __thiscall SoundEngine::setMusicVolume(SoundEngine *this, float param_1);
 void __thiscall SoundEngine::runLogic(SoundEngine *this, float param_1);
 void __thiscall SoundEngine::playRandomKeyPress(SoundEngine *this, Ship *param_1);
 Room *__thiscall Structure::getRoom(Structure *this, int param_1);
-void __thiscall TabletManager::getTabletSummary(undefined4 param_1_00, basic_string<> *param_1);
-void __thiscall TabletManager::getNotes(undefined4 param_1_00, basic_string<> *param_1);
-void __thiscall TabletManager::getTranslateString(TabletManager *this, basic_string<> *param_1);
+void __thiscall TabletManager::getTabletSummary(TabletManager *this);
+void __thiscall TabletManager::getNotes(TabletManager *this);
+void __thiscall TabletManager::getTranslateString(TabletManager *this);
 void __thiscall TabletManager::selectElement(TabletManager *this);
 void __thiscall TabletManager::runLogic(TabletManager *this, float param_1);
 bool __thiscall TabletManager::keyPressed(TabletManager *this, KeyCode param_1);
@@ -11807,19 +11906,19 @@ void __thiscall TabletOmega::renderHeader(TabletOmega *this);
 void __thiscall TabletOmega::renderFooter(TabletOmega *this);
 TabletTab *__thiscall TabletOmega::getTab(TabletOmega *this, int param_1);
 bool __thiscall TabletOmega::keyPressed(TabletOmega *this, KeyCode param_1);
-void *__thiscall DummyObject::`scalar_deleting_destructor'(DummyObject *this,uint param_1); void __thiscall UIText::UIText(UIText *this, int param_1, undefined4 param_2, UIText param_4, void *param_5);
-void *__thiscall UIText::`scalar_deleting_destructor'(UIText *this,uint param_1); Ref *__cdecl UIText::create(undefined param_1, void *param_2);
-Ref *__cdecl UIText::create(void *param_11);
+void *__thiscall DummyObject::`vector_deleting_destructor'(DummyObject *this,uint param_1); void __thiscall UIText::UIText(UIText *this, int param_1, undefined4 param_2, UIText param_4, void *param_5);
+void *__thiscall UIText::`scalar_deleting_destructor'(UIText *this,uint param_1); UIText *__cdecl UIText::create(undefined1 param_1, void *param_2);
+UIText *__cdecl UIText::create(void *param_1);
 void __thiscall UIText::~UIText(UIText *this);
-void __cdecl UIText::translateColour(void);
-void __thiscall UIText::setText(void *this, char param_11, char param_12, basic_string<> *param_13);
+void __cdecl UIText::translateColour(char param_1);
+void __thiscall UIText::setText(UIText *this, char param_2, char param_3, basic_string<> *param_4);
 void __thiscall UIText::cleanup(UIText *this);
 void __thiscall UIText::cleanupRender(UIText *this);
-void __cdecl UIText::generateLines(undefined4 *param_1);
+int __cdecl UIText::generateLines(undefined4 *param_1);
 void __thiscall UIText::update(UIText *this);
-uint __cdecl UIText::getRealWidthWithoutMacros(void *param_11);
-void __cdecl UIText::getTextWithoutMacros(undefined4 *param_11);
-int __cdecl UIText::getActualTextWidth(void *param_11);
+int __cdecl UIText::getRealWidthWithoutMacros(void *param_1);
+void __cdecl UIText::getTextWithoutMacros(undefined4 *param_1);
+int __cdecl UIText::getActualTextWidth(void *param_1);
 void __thiscall UIText::setOpacity(UIText *this, uchar param_1);
 void __thiscall std::vector<>::~vector<>(vector<> *this);
 void __thiscall std::vector<>::~vector<>(vector<> *this);
@@ -11831,18 +11930,18 @@ vector<> *__thiscall std::vector<>::_Emplace_reallocate<>(vector<> *this, vector
 void __fastcall Catch_All @00560d56(vector<> *param_1);
 word *__thiscall std::vector<>::_Emplace_reallocate<>(vector<> *this, word *param_1, word *param_2);
 void __fastcall Catch_All @00560f1c(vector<> *param_1);
-void __cdecl std::_Destroy_range<>(word *param_1, word *param_2, allocator<> *param_3);
+void __cdecl std::_Destroy_range<>(word *param_1, word *param_2, allocator<word> *param_3);
 vector<> *__thiscall std::vector<>::vector<>(vector<> *this, vector<> *param_1);
 void Catch_All @005610e1(void);
 vector<> *__cdecl std::_Uninitialized_move<>(vector<> *param_1, vector<> *param_2, vector<> *param_3, allocator<> *param_4);
-word *__cdecl std::_Uninitialized_move<>(word *param_1, word *param_2, word *param_3, allocator<> *param_4);
+word *__cdecl std::_Uninitialized_move<>(word *param_1, word *param_2, word *param_3, allocator<word> *param_4);
 void __thiscall std::_Uninitialized_backout_al<>::~_Uninitialized_backout_al<>(_Uninitialized_backout_al<> *this);
 void *__thiscall DummyObject::`vector_deleting_destructor '`adjustor{632}'(DummyObject *this, uint param_1);
 void __thiscall TextField::TextField(TextField *this, ScreenInterface *param_1, Widget *param_2, bool *param_3, int param_4, int param_5, void *param_7);
 void *__thiscall TextField::`scalar_deleting_destructor'(TextField *this,uint param_1); void __thiscall TextField::cleanupRender(TextField *this);
 void __thiscall TextField::setText(TextField *this, undefined4 param_1, int param_2, undefined4 *param_4);
 void __thiscall TextField::update(TextField *this);
-void __thiscall TextField::paintBackground(void *this, undefined4 param_11, undefined4 param_3, int param_13, int param_14);
+void __thiscall TextField::paintBackground(TextField *this, undefined4 param_2, undefined4 param_3, int param_4, int param_5);
 TopBar *__thiscall TopBar::TopBar(TopBar *this, bool param_1, bool param_2);
 void __thiscall TopBar::~TopBar(TopBar *this);
 void __thiscall TopBar::cleanupRender(TopBar *this);
@@ -11856,13 +11955,13 @@ ScreenTab *__thiscall std::vector<>::_Emplace_reallocate<>(vector<> *this, Scree
 void __fastcall Catch_All @00563a7a(vector<> *param_1);
 void __thiscall std::vector<>::_Range_construct_or_tidy<>(vector<> *this, basic_string<> *param_1, basic_string<> *param_2);
 void Catch_All @00563b4e(void);
-void __cdecl std::_Destroy_range<>(ScreenTab *param_1, ScreenTab *param_2, allocator<> *param_3);
-ScreenTab *__cdecl std::_Uninitialized_move<>(ScreenTab *param_1, ScreenTab *param_2, ScreenTab *param_3, allocator<> *param_4);
-void *__thiscall UIAnimatedSprite::`scalar_deleting_destructor'(UIAnimatedSprite *this,uint param_1); void __thiscall UIAnimatedSprite::render(UIAnimatedSprite *this);
+void __cdecl std::_Destroy_range<>(ScreenTab *param_1, ScreenTab *param_2, allocator<ScreenTab> *param_3);
+ScreenTab *__cdecl std::_Uninitialized_move<>(ScreenTab *param_1, ScreenTab *param_2, ScreenTab *param_3, allocator<ScreenTab> *param_4);
+void *__thiscall UIAnimatedSprite::`vector_deleting_destructor'(UIAnimatedSprite *this,uint param_1); void __thiscall UIAnimatedSprite::render(UIAnimatedSprite *this);
 Node *__thiscall UIRectangle::UIRectangle(UIRectangle *this, int param_1, int param_2);
-void *__thiscall UIRectangle::`scalar_deleting_destructor'(UIRectangle *this,uint param_1); void __thiscall UIRectangle::cleanupAll(UIRectangle *this);
-void __thiscall UIRectangle::setColour(void *this, undefined4 param_11);
-void *__thiscall UI_AdShell::`scalar_deleting_destructor'(UI_AdShell *this,uint param_1); void __thiscall UI_AdShell::cleanup(UI_AdShell *this);
+void *__thiscall UIRectangle::`vector_deleting_destructor'(UIRectangle *this,uint param_1); void __thiscall UIRectangle::cleanupAll(UIRectangle *this);
+void __thiscall UIRectangle::setColour(UIRectangle *this, undefined4 param_2);
+void *__thiscall UI_AdShell::`vector_deleting_destructor'(UI_AdShell *this,uint param_1); void __thiscall UI_TextField::cleanup(UI_TextField *this);
 void __thiscall UI_AdShell::cleanupRender(UI_AdShell *this);
 void __thiscall UI_AdShell::render(UI_AdShell *this);
 void __thiscall UI_AdShell::specialDataCheckFunction(UI_AdShell *this, float param_1);
@@ -11870,37 +11969,37 @@ void __thiscall UI_BDBar::setValue(UI_BDBar *this, double param_1);
 void __thiscall UI_BDBar::UI_BDBar(UI_BDBar *this, ScreenInterface *param_1, Widget *param_2, bool *param_3, float param_4, int param_5, int param_6);
 void *__thiscall UI_BDBar::`scalar_deleting_destructor'(UI_BDBar *this,uint param_1); void __thiscall UI_BDBar::cleanupRender(UI_BDBar *this);
 void __thiscall UI_BDBar::render(UI_BDBar *this);
-void *__thiscall UI_Border::`scalar_deleting_destructor'(UI_Border *this,uint param_1); void __thiscall UI_Border::cleanupRender(UI_Border *this);
+void *__thiscall UI_Border::`scalar_deleting_destructor'(UI_Border *this,uint param_1); void __thiscall UI_DockVisualisation::cleanupRender(UI_DockVisualisation *this);
 void __thiscall UI_Border::render(UI_Border *this);
 void __thiscall UI_Button::setValue(UI_Button *this, double param_1);
-void *__thiscall UI_Button::`scalar_deleting_destructor'(UI_Button *this,uint param_1); void __thiscall UI_Button::cleanupRender(UI_Button *this);
+void *__thiscall UI_Button::`vector_deleting_destructor'(UI_Button *this,uint param_1); void __thiscall UI_Button::cleanupRender(UI_Button *this);
 void __thiscall UI_Button::render(UI_Button *this);
 bool __thiscall UI_Button::keyUp(UI_Button *this, KeyCode param_1);
 void *__thiscall UI_Checkbox::`scalar_deleting_destructor'(UI_Checkbox *this,uint param_1); void __thiscall UI_Checkbox::cleanupRender(UI_Checkbox *this);
 void __thiscall UI_Checkbox::render(UI_Checkbox *this);
 void __thiscall UI_Checkbox::specialDataCheckFunction(UI_Checkbox *this, float param_1);
 void __thiscall UI_Checkbox::mouseUp(UI_Checkbox *this);
-void *__thiscall UI_ComponentStorage::`scalar_deleting_destructor'(UI_ComponentStorage *this,uint param_1); void __thiscall UI_ComponentStorage::cleanupRender(UI_ComponentStorage *this);
-basic_string<> *__thiscall UI_ComponentStorage::getDragLook(void *this, basic_string<> *param_11, undefined4 param_12, undefined4 param_13);
-undefined4 __thiscall UI_ComponentStorage::getDragValue(void *this, undefined4 param_11, undefined4 param_12);
+void *__thiscall UI_ComponentStorage::`vector_deleting_destructor'(UI_ComponentStorage *this,uint param_1); void __thiscall UI_ComponentStorage::cleanupRender(UI_ComponentStorage *this);
+basic_string<> *__thiscall UI_ComponentStorage::getDragLook(UI_ComponentStorage *this, basic_string<> *param_2, undefined4 param_3, undefined4 param_4);
+int __thiscall UI_ComponentStorage::getDragValue(UI_ComponentStorage *this, undefined4 param_2, undefined4 param_3);
 void __thiscall UI_ComponentStorage::dragOnto(undefined4 param_1_00, int param_1, int param_2);
 void __thiscall UI_ComponentStorage::specialDataCheckFunction(UI_ComponentStorage *this, float param_1);
 void __thiscall UI_ComponentStorage::render(UI_ComponentStorage *this);
-void __thiscall UI_ComponentStorage::mouseUp(void *this, float param_11, float param_12);
+void __thiscall UI_ComponentStorage::mouseUp(UI_ComponentStorage *this, float param_2, float param_3);
 void FUN_0056720f(double param_1, double param_2);
-uint __thiscall UI_ComponentStorage::getElement(void *this, float param_11, float param_12);
+int __thiscall UI_ComponentStorage::getElement(UI_ComponentStorage *this, float param_2, float param_3);
 void *__thiscall UI_Data::`scalar_deleting_destructor'(UI_Data *this,uint param_1); void __thiscall UI_Data::cleanupRender(UI_Data *this);
 void __thiscall UI_Data::render(UI_Data *this);
 void __thiscall UI_Data::specialDataCheckFunction(UI_Data *this, float param_1);
 void __thiscall UI_DMenu::UI_DMenu(UI_DMenu *this, ScreenInterface *param_1, Widget *param_2, bool *param_3);
-void *__thiscall UI_DMenu::`scalar_deleting_destructor'(UI_DMenu *this,uint param_1); void __thiscall UI_DMenu::~UI_DMenu(UI_DMenu *this);
+void *__thiscall UI_DMenu::`vector_deleting_destructor'(UI_DMenu *this,uint param_1); void __thiscall UI_DMenu::~UI_DMenu(UI_DMenu *this);
 void __thiscall UI_DMenu::cleanupRender(UI_DMenu *this);
 void __thiscall UI_DMenu::render(UI_DMenu *this);
-int __thiscall UI_DMenu::updatePressedButton(void *this, float param_11, float param_12);
+bool __thiscall UI_DMenu::updatePressedButton(UI_DMenu *this, float param_2, float param_3);
 void __thiscall UI_DMenu::specialDataCheckFunction(UI_DMenu *this, float param_1);
-void __thiscall UI_DMenu::mouseMove(void *this, undefined4 param_11, undefined4 param_12);
-void __thiscall UI_DMenu::mouseUp(void *this, undefined4 param_11, undefined4 param_12);
-void __thiscall UI_DMenu::mouseCancel(UI_DMenu *this);
+void __thiscall UI_DMenu::mouseMove(UI_DMenu *this, undefined4 param_2, undefined4 param_3);
+void __thiscall UI_DMenu::mouseUp(UI_DMenu *this, undefined4 param_2, undefined4 param_3);
+void __thiscall UI_DMenu::mouseHoverCancel(UI_DMenu *this);
 void __thiscall std::vector<>::~vector<>(vector<> *this);
 void __thiscall std::vector<>::~vector<>(vector<> *this);
 void __thiscall std::vector<>::_Destroy(vector<> *this, Rect *param_1, Rect *param_2);
@@ -11908,42 +12007,42 @@ void __thiscall std::allocator<>::deallocate(allocator<> *this, Rect *param_1, u
 Rect *__thiscall std::vector<>::_Emplace_reallocate<>(vector<> *this, Rect *param_1, Rect *param_2);
 void __fastcall Catch_All @00568ee5(vector<> *param_1);
 void __thiscall std::_Uninitialized_backout_al<>::~_Uninitialized_backout_al<>(_Uninitialized_backout_al<> *this);
-void *__thiscall UI_DockVisualisation::`scalar_deleting_destructor'(UI_DockVisualisation *this,uint param_1); void __thiscall UI_DockVisualisation::render(UI_DockVisualisation *this);
+void *__thiscall UI_DockVisualisation::`vector_deleting_destructor'(UI_DockVisualisation *this,uint param_1); void __thiscall UI_DockVisualisation::render(UI_DockVisualisation *this);
 void *__thiscall UI_EngPanel::`scalar_deleting_destructor'(UI_EngPanel *this,uint param_1); void __thiscall UI_EngPanel::~UI_EngPanel(UI_EngPanel *this);
 void __thiscall UI_EngPanel::cleanupRender(UI_EngPanel *this);
 bool __thiscall UI_EngPanel::keyUp(UI_EngPanel *this, KeyCode param_1);
 void __thiscall UI_EngPanel::render(UI_EngPanel *this);
-void __thiscall UI_EngPanel::mouseUp(void *this, float param_11, float param_12);
-void __thiscall UI_EngPanel::mouseHoverUpdate(void *this, float param_11, float param_12);
+void __thiscall UI_EngPanel::mouseUp(UI_EngPanel *this, float param_2, float param_3);
+void __thiscall UI_EngPanel::mouseHoverUpdate(UI_EngPanel *this, float param_2, float param_3);
 void __thiscall UI_EngPanel::specialDataCheckFunction(UI_EngPanel *this, float param_1);
-basic_string<> *__thiscall UI_EngPanel::getDragLook(void *this, basic_string<> *param_11, float param_12, float param_13);
-int __thiscall UI_EngPanel::getDragValue(void *this, float param_11, float param_12);
+basic_string<> *__thiscall UI_EngPanel::getDragLook(UI_EngPanel *this, basic_string<> *param_2, float param_3, float param_4);
+int __thiscall UI_EngPanel::getDragValue(UI_EngPanel *this, float param_2, float param_3);
 void __thiscall UI_EngPanel::dragOnto(UI_EngPanel *this, int param_1, int param_2, float param_4, float param_5);
 void *__thiscall UI_HelmControl::`scalar_deleting_destructor'(UI_HelmControl *this,uint param_1); void __thiscall UI_HelmControl::cleanupRender(UI_HelmControl *this);
 void __thiscall UI_HelmControl::render(UI_HelmControl *this);
 void __thiscall UI_HelmControl::specialDataCheckFunction(UI_HelmControl *this, float param_1);
-void __thiscall UI_HelmControl::mouseUp(void *this, float param_11, float param_12);
+void __thiscall UI_HelmControl::mouseUp(UI_HelmControl *this, float param_2, float param_3);
 void __thiscall UI_IconTray::UI_IconTray(UI_IconTray *this, ScreenInterface *param_1, Widget *param_2, bool *param_3);
 void *__thiscall UI_IconTray::`scalar_deleting_destructor'(UI_IconTray *this,uint param_1); void __thiscall UI_IconTray::~UI_IconTray(UI_IconTray *this);
 void __thiscall UI_IconTray::cleanupRender(UI_IconTray *this);
 void __thiscall UI_IconTray::render(UI_IconTray *this);
 void __thiscall UI_IconTray::specialDataCheckFunction(UI_IconTray *this, float param_1);
-void __thiscall UI_IconTray::mouseHoverUpdate(void *this, float param_11, float param_12);
+void __thiscall UI_IconTray::mouseHoverUpdate(UI_IconTray *this, float param_2, float param_3);
 void __thiscall UI_IconTray::mouseHoverCancel(UI_IconTray *this);
-void __thiscall UI_IconTray::mouseMove(void *this, float param_11, float param_12);
-void __thiscall UI_IconTray::mouseUp(void *this, float param_11, float param_12);
-void __thiscall UI_IconTray::mouseCancel(UI_IconTray *this);
+void __thiscall UI_IconTray::mouseMove(UI_IconTray *this, float param_2, float param_3);
+void __thiscall UI_IconTray::mouseUp(UI_IconTray *this, float param_2, float param_3);
+void __thiscall UI_Sheet::mouseCancel(UI_Sheet *this);
 bool __thiscall UI_IconTray::canNext(UI_IconTray *this);
-basic_string<> *__thiscall UI_IconTray::getDragLook(void *this, basic_string<> *param_11, float param_12, float param_13);
-int __thiscall UI_IconTray::getDragValue(void *this, float param_11, float param_12);
+basic_string<> *__thiscall UI_IconTray::getDragLook(UI_IconTray *this, basic_string<> *param_2, float param_3, float param_4);
+int __thiscall UI_IconTray::getDragValue(UI_IconTray *this, float param_2, float param_3);
 void __thiscall UI_IconTray::dragOnto(UI_IconTray *this, undefined4 param_1, int param_2, float param_4, float param_5);
 UI_Image *__thiscall UI_Image::UI_Image(UI_Image *this, ScreenInterface *param_1, Widget *param_2, bool *param_3, undefined4 param_5, undefined4 param_6, void *param_7);
-void *__thiscall UI_Image::`scalar_deleting_destructor'(UI_Image *this,uint param_1); void __thiscall UI_Image::~UI_Image(UI_Image *this);
+void *__thiscall UI_Image::`vector_deleting_destructor'(UI_Image *this,uint param_1); void __thiscall UI_Image::~UI_Image(UI_Image *this);
 void __thiscall UI_Image::cleanupRender(UI_Image *this);
 void __thiscall UI_Image::render(UI_Image *this);
 void __thiscall UI_Image::cacheFrames(UI_Image *this);
 void __thiscall UI_Image::specialDataCheckFunction(UI_Image *this, float param_1);
-void *__thiscall UI_IntroSequence::`scalar_deleting_destructor'(UI_IntroSequence *this,uint param_1); void __thiscall UI_IntroSequence::cleanupRender(UI_IntroSequence *this);
+void *__thiscall UI_IntroSequence::`vector_deleting_destructor'(UI_IntroSequence *this,uint param_1); void __thiscall UI_IntroSequence::cleanupRender(UI_IntroSequence *this);
 void __thiscall UI_IntroSequence::render(UI_IntroSequence *this);
 void __thiscall UI_IntroSequence::specialDataCheckFunction(UI_IntroSequence *this, float param_1);
 bool __thiscall UI_IntroSequence::keyUp(UI_IntroSequence *this, KeyCode param_1);
@@ -11952,14 +12051,14 @@ void __thiscall ButtonElement::render(ButtonElement *this, int param_1, vector<>
 UI_Menu *__thiscall UI_Menu::UI_Menu(UI_Menu *this, ScreenInterface *param_1, Widget *param_2, bool *param_3);
 void *__thiscall UI_Menu::`scalar_deleting_destructor'(UI_Menu *this,uint param_1); void __thiscall UI_Menu::~UI_Menu(UI_Menu *this);
 void __thiscall UI_Menu::cleanupRender(UI_Menu *this);
-undefined4 __thiscall UI_Menu::recheckButtonPressed(void *this, float param_11, float param_12);
+bool __thiscall UI_Menu::recheckButtonPressed(UI_Menu *this, float param_2, float param_3);
 void __thiscall UI_Menu::render(UI_Menu *this);
 void __thiscall UI_Menu::specialDataCheckFunction(UI_Menu *this, float param_1);
-void __thiscall UI_Menu::mouseMove(void *this, undefined4 param_11, float param_12);
-void __thiscall UI_Menu::mouseUp(void *this, undefined4 param_11, float param_12);
+void __thiscall UI_Menu::mouseMove(UI_Menu *this, undefined4 param_2, float param_3);
+void __thiscall UI_Menu::mouseUp(UI_Menu *this, undefined4 param_2, float param_3);
 void __thiscall UI_Menu::mouseHoverCancel(UI_Menu *this);
 bool __thiscall UI_Menu::triggerButton(UI_Menu *this, ButtonElement *param_1);
-void __thiscall UI_Menu::runTrigger(void *this, void *param_11);
+void __thiscall UI_Menu::runTrigger(UI_Menu *this, void *param_2);
 void __thiscall UI_Menu::clearMenu(UI_Menu *this);
 void __thiscall UI_Menu::removeButtonData(UI_Menu *this);
 void __thiscall UI_Menu::changedMenu(UI_Menu *this);
@@ -11969,11 +12068,11 @@ void __thiscall UI_Menu::performPrev(UI_Menu *this);
 void __thiscall UI_Menu::performNext(UI_Menu *this);
 bool __thiscall UI_Menu::keyDown(UI_Menu *this, KeyCode param_1);
 bool __thiscall UI_Menu::keyUp(UI_Menu *this, KeyCode param_1);
-undefined4 __thiscall UI_Menu::containsPoint(void *this, undefined4 param_11, undefined4 param_12);
+bool __thiscall UI_Menu::containsPoint(UI_Menu *this, undefined4 param_2, undefined4 param_3);
 UI_ModuleRepair *__thiscall UI_ModuleRepair::UI_ModuleRepair(UI_ModuleRepair *this, ScreenInterface *param_1, Widget *param_2, bool *param_3);
-void *__thiscall UI_ModuleRepair::`scalar_deleting_destructor'(UI_ModuleRepair *this,uint param_1); void __thiscall UI_ModuleRepair::~UI_ModuleRepair(UI_ModuleRepair *this);
+void *__thiscall UI_ModuleRepair::`vector_deleting_destructor'(UI_ModuleRepair *this,uint param_1); void __thiscall UI_ModuleRepair::~UI_ModuleRepair(UI_ModuleRepair *this);
 void __thiscall UI_ModuleRepair::cleanupRender(UI_ModuleRepair *this);
-void __thiscall UI_ModuleRepair::renderLine(void *this, undefined4 param_11, undefined4 param_12, undefined4 param_13, undefined4 param_14, char param_15);
+void __thiscall UI_ModuleRepair::renderLine(UI_ModuleRepair *this, undefined4 param_2, undefined4 param_3, undefined4 param_4, undefined4 param_5, char param_6);
 void __thiscall UI_ModuleRepair::renderComponent(UI_ModuleRepair *this, int param_1, ShipModule *param_2, bool param_3);
 void __thiscall Selectable::~Selectable(Selectable *this);
 void __thiscall UI_ModuleRepair::renderButton(UI_ModuleRepair *this);
@@ -11984,15 +12083,15 @@ void __thiscall UI_ModuleRepair::syncAddonAndComponentStates(UI_ModuleRepair *th
 void __thiscall UI_ModuleRepair::setCoverState(UI_ModuleRepair *this);
 bool __thiscall UI_ModuleRepair::runAnimations(UI_ModuleRepair *this, float param_1);
 bool __thiscall UI_ModuleRepair::anyScrews(UI_ModuleRepair *this);
-void __thiscall UI_ModuleRepair::mouseHoverUpdate(void *this, undefined4 param_11, float param_12);
-void __thiscall UI_ModuleRepair::mouseUp(void *this, float param_11, float param_12);
-undefined4 __thiscall UI_ModuleRepair::getComponentSlot(void *this);
+void __thiscall UI_ModuleRepair::mouseHoverUpdate(UI_ModuleRepair *this, undefined4 param_2, float param_3);
+void __thiscall UI_ModuleRepair::mouseUp(UI_ModuleRepair *this, float param_2, float param_3);
+int __thiscall UI_ModuleRepair::getComponentSlot(UI_ModuleRepair *this);
 void __thiscall UI_ModuleRepair::dragOnto(UI_ModuleRepair *this, int param_1, int param_2, undefined4 param_4, float param_5);
-basic_string<> *__thiscall UI_ModuleRepair::getDragLook(void *this, basic_string<> *param_11, undefined4 param_12, float param_13);
-undefined4 __thiscall UI_ModuleRepair::getDragValue(void *this, undefined4 param_11, float param_12);
+basic_string<> *__thiscall UI_ModuleRepair::getDragLook(UI_ModuleRepair *this, basic_string<> *param_2, undefined4 param_3, float param_4);
+int __thiscall UI_ModuleRepair::getDragValue(UI_ModuleRepair *this, undefined4 param_2, float param_3);
 void __thiscall std::vector<>::~vector<>(vector<> *this);
 void __thiscall std::vector<>::_Destroy(vector<> *this, Selectable *param_1, Selectable *param_2);
-void __thiscall std::allocator<>::deallocate(allocator<> *this, Selectable *param_1, uint param_2);
+void __thiscall std::allocator<>::deallocate(allocator<> *this, JumpGateRoute *param_1, uint param_2);
 Selectable *__thiscall std::vector<>::_Emplace_reallocate<>(vector<> *this, Selectable *param_1, Selectable *param_2);
 void __fastcall Catch_All @00574ae5(vector<> *param_1);
 void __thiscall std::_Uninitialized_backout_al<>::~_Uninitialized_backout_al<>(_Uninitialized_backout_al<> *this);
@@ -12007,17 +12106,17 @@ float __thiscall UI_NavMap::getIconScale(UI_NavMap *this);
 float __thiscall UI_NavMap::getStellarScale(UI_NavMap *this);
 void __thiscall UI_NavMap::render(UI_NavMap *this);
 void __thiscall UI_NavMap::renderMiniMap(UI_NavMap *this);
-void __thiscall UI_NavMap::sectorModeClick(void *this, float param_11, float param_12);
-void __thiscall UI_NavMap::editorModeClick(void *this);
-void __thiscall UI_NavMap::mouseHoverUpdate(void *this, undefined4 param_11, undefined4 param_12);
-void __thiscall UI_NavMap::mouseUp(void *this, undefined4 param_11, undefined4 param_12);
+void __thiscall UI_NavMap::sectorModeClick(UI_NavMap *this, float param_2, float param_3);
+void __thiscall UI_NavMap::editorModeClick(UI_NavMap *this);
+void __thiscall UI_NavMap::mouseHoverUpdate(UI_NavMap *this, undefined4 param_2, undefined4 param_3);
+void __thiscall UI_NavMap::mouseUp(UI_NavMap *this, undefined4 param_2, undefined4 param_3);
 void __thiscall UI_NavMap::specialDataCheckFunction(UI_NavMap *this, float param_1);
-basic_string<> *__thiscall UI_NavMap::getStellarObjectLook(undefined4 param_1_00, basic_string<> *param_1, int param_3);
-basic_string<> *__thiscall UI_NavMap::getShipLook(undefined4 param_1_00, basic_string<> *param_1, SensorData *param_2, char param_4);
-basic_string<> *__thiscall UI_NavMap::getShipLook(undefined4 param_1_00, basic_string<> *param_1, int param_2);
-void __thiscall UI_NavMap::centreOfMap(undefined4 param_1_00, float *param_1);
-float *__thiscall UI_NavMap::positionForWorldPosition(void *this, float *param_11, float param_12, float param_13);
-float *__thiscall UI_NavMap::worldPositionForPosition(void *this, float *param_11, float param_12, float param_13);
+StellarObject *__thiscall UI_NavMap::getStellarObjectLook(UI_NavMap *this, StellarObject *param_1);
+SensorData *__thiscall UI_NavMap::getShipLook(UI_NavMap *this, SensorData *param_1, bool param_2);
+Ship *__thiscall UI_NavMap::getShipLook(UI_NavMap *this, Ship *param_1, bool param_2);
+void __thiscall UI_NavMap::centreOfMap(UI_NavMap *this);
+float *__thiscall UI_NavMap::positionForWorldPosition(UI_NavMap *this, float *param_2, float param_3, float param_4);
+float *__thiscall UI_NavMap::worldPositionForPosition(UI_NavMap *this, float *param_2, float param_3, float param_4);
 void __thiscall UI_NavMap::renderDetectionCone(UI_NavMap *this, SensorData *param_1, NM_MapObject *param_2, float param_3);
 void __thiscall UI_NavMap::renderSensorObject(UI_NavMap *this, SensorData *param_1, float param_2);
 void __thiscall UI_NavMap::renderCraft(UI_NavMap *this, Ship *param_1, SensorData *param_2, float param_3);
@@ -12030,7 +12129,7 @@ void __thiscall UI_NavMap::cancelAllKeys(UI_NavMap *this);
 NavMarker *__thiscall std::vector<>::operator[](vector<> *this, uint param_1);
 void __thiscall std::vector<>::~vector<>(vector<> *this);
 void __thiscall std::vector<>::_Destroy(vector<> *this, JumpGateRoute *param_1, JumpGateRoute *param_2);
-UI_NavMap **__thiscall std::vector<>::_Emplace_reallocate<>(vector<> *this, UI_NavMap **param_1, UI_NavMap **param_2);
+UI_NavMap **__thiscall std::vector<>::_Emplace_reallocate<UI_NavMap *>(vector<> *this, UI_NavMap **param_1, UI_NavMap **param_2);
 JumpGateRoute *__thiscall std::vector<>::_Emplace_reallocate<>(vector<> *this, JumpGateRoute *param_1, JumpGateRoute *param_2);
 void __fastcall Catch_All @0057f08d(vector<> *param_1);
 void __cdecl std::_Destroy_range<>(JumpGateRoute *param_1, JumpGateRoute *param_2, allocator<> *param_3);
@@ -12040,48 +12139,48 @@ void *__thiscall UI_NewsTicker::`scalar_deleting_destructor'(UI_NewsTicker *this
 void __thiscall UI_NewsTicker::cleanupRender(UI_NewsTicker *this);
 void __thiscall UI_NewsTicker::render(UI_NewsTicker *this);
 void __thiscall UI_NewsTicker::specialDataCheckFunction(UI_NewsTicker *this, float param_1);
-void *__thiscall UI_PowerDetailScreen::`scalar_deleting_destructor'(UI_PowerDetailScreen *this,uint param_1); void __thiscall UI_PowerDetailScreen::cleanupRender(UI_PowerDetailScreen *this);
+void *__thiscall UI_PowerDetailScreen::`vector_deleting_destructor'(UI_PowerDetailScreen *this,uint param_1); void __thiscall UI_PowerDetailScreen::cleanupRender(UI_PowerDetailScreen *this);
 void __thiscall UI_PowerDetailScreen::render(UI_PowerDetailScreen *this);
 void __thiscall UI_PowerDetailScreen::specialDataCheckFunction(UI_PowerDetailScreen *this, float param_1);
 void __thiscall UI_PowerDetailScreen::updateText(UI_PowerDetailScreen *this);
 void __thiscall UI_PowerDetailScreen::updateRender(UI_PowerDetailScreen *this);
-void *__thiscall UI_PowerScreen::`scalar_deleting_destructor'(UI_PowerScreen *this,uint param_1); void __thiscall UI_PowerScreen::~UI_PowerScreen(UI_PowerScreen *this);
+void *__thiscall UI_PowerScreen::`vector_deleting_destructor'(UI_PowerScreen *this,uint param_1); void __thiscall UI_PowerScreen::~UI_PowerScreen(UI_PowerScreen *this);
 void __thiscall UI_PowerScreen::cleanupRender(UI_PowerScreen *this);
 void __thiscall UI_PowerScreen::render(UI_PowerScreen *this);
 void __thiscall UI_PowerScreen::renderModule(UI_PowerScreen *this, ShipModule *param_1, int param_2, int param_3);
 void __thiscall UI_PowerScreen::updateRender(UI_PowerScreen *this);
 bool __thiscall UI_PowerScreen::updateEmissionState(UI_PowerScreen *this, Sprite *param_1, ShipModule *param_2);
 void __thiscall UI_PowerScreen::specialDataCheckFunction(UI_PowerScreen *this, float param_1);
-void __thiscall UI_PowerScreen::mouseUp(void *this, float param_11, float param_12);
-void __thiscall UI_PowerScreen::mouseHoverUpdate(void *this, float param_11, float param_12);
+void __thiscall UI_PowerScreen::mouseUp(UI_PowerScreen *this, float param_2, float param_3);
+void __thiscall UI_PowerScreen::mouseHoverUpdate(UI_PowerScreen *this, float param_2, float param_3);
 Sprite *__thiscall UI_PowerScreen::renderEmcon(UI_PowerScreen *this, bool param_1);
 void __thiscall std::vector<>::_Destroy(vector<> *this, ModuleRenderData *param_1, ModuleRenderData *param_2);
 ModuleRenderData *__thiscall std::vector<>::_Emplace_reallocate<>(vector<> *this, ModuleRenderData *param_1, ModuleRenderData *param_2);
 void __fastcall Catch_All @00582418(vector<> *param_1);
 void __cdecl std::_Destroy_range<>(ModuleRenderData *param_1, ModuleRenderData *param_2, allocator<> *param_3);
 ModuleRenderData *__cdecl std::_Uninitialized_move<>(ModuleRenderData *param_1, ModuleRenderData *param_2, ModuleRenderData *param_3, allocator<> *param_4);
-void *__thiscall UI_SelectedObjectSummary::`scalar_deleting_destructor'(UI_SelectedObjectSummary *this,uint param_1); void __thiscall UI_SelectedObjectSummary::cleanupRender(UI_SelectedObjectSummary *this);
+void *__thiscall UI_SelectedObjectSummary::`vector_deleting_destructor'(UI_SelectedObjectSummary *this,uint param_1); void __thiscall UI_SelectedObjectSummary::cleanupRender(UI_SelectedObjectSummary *this);
 void __thiscall UI_SelectedObjectSummary::render(UI_SelectedObjectSummary *this);
 void __thiscall UI_SelectedObjectSummary::specialDataCheckFunction(UI_SelectedObjectSummary *this, float param_1);
 void *__thiscall UI_Selector::`scalar_deleting_destructor'(UI_Selector *this,uint param_1); void __thiscall UI_Selector::cleanupRender(UI_Selector *this);
 void __thiscall UI_Selector::render(UI_Selector *this);
 void __thiscall UI_Selector::specialDataCheckFunction(UI_Selector *this, float param_1);
-void __thiscall UI_Selector::mouseMove(void *this, undefined4 param_11, undefined4 param_12);
-void __thiscall UI_Selector::mouseUp(void *this, undefined4 param_11, undefined4 param_12);
+void __thiscall UI_Selector::mouseMove(UI_Selector *this, undefined4 param_2, undefined4 param_3);
+void __thiscall UI_Selector::mouseUp(UI_Selector *this, undefined4 param_2, undefined4 param_3);
 void __thiscall UI_Selector::mouseCancel(UI_Selector *this);
-int __thiscall UI_Selector::checkButtonStates(void *this, float param_11);
-void *__thiscall UI_SelectTray::`scalar_deleting_destructor'(UI_SelectTray *this,uint param_1); void __thiscall UI_SelectTray::~UI_SelectTray(UI_SelectTray *this);
+bool __thiscall UI_Selector::checkButtonStates(UI_Selector *this, float param_2);
+void *__thiscall UI_SelectTray::`vector_deleting_destructor'(UI_SelectTray *this,uint param_1); void __thiscall UI_SelectTray::~UI_SelectTray(UI_SelectTray *this);
 void __thiscall UI_SelectTray::cleanupRender(UI_SelectTray *this);
 void __thiscall UI_SelectTray::render(UI_SelectTray *this);
-void __thiscall UI_SelectTray::mouseMove(void *this, undefined4 param_11, undefined4 param_12);
-void __thiscall UI_SelectTray::mouseUp(void *this, float param_11, float param_12);
+void __thiscall UI_SelectTray::mouseMove(UI_SelectTray *this, undefined4 param_2, undefined4 param_3);
+void __thiscall UI_SelectTray::mouseUp(UI_SelectTray *this, float param_2, float param_3);
 void __thiscall UI_SelectTray::mouseCancel(UI_SelectTray *this);
-int __thiscall UI_SelectTray::checkButtonStates(void *this, float param_11, float param_12);
+bool __thiscall UI_SelectTray::checkButtonStates(UI_SelectTray *this, float param_2, float param_3);
 void *__thiscall UI_SensorDisplay::`scalar_deleting_destructor'(UI_SensorDisplay *this,uint param_1); void __thiscall UI_SensorDisplay::cleanupRender(UI_SensorDisplay *this);
 void __thiscall UI_SensorDisplay::render(UI_SensorDisplay *this);
 void __thiscall UI_SensorDisplay::specialDataCheckFunction(UI_SensorDisplay *this, float param_1);
-void __thiscall UI_SensorDisplay::getText(undefined4 param_1_00, basic_string<> *param_1);
-void *__thiscall UI_SensorSelect::`scalar_deleting_destructor'(UI_SensorSelect *this,uint param_1); bool __thiscall UI_SensorSelect::renderDesiredText(UI_SensorSelect *this);
+void __thiscall UI_SensorDisplay::getText(UI_SensorDisplay *this);
+void *__thiscall UI_SensorSelect::`vector_deleting_destructor'(UI_SensorSelect *this,uint param_1); bool __thiscall UI_SensorSelect::renderDesiredText(UI_SensorSelect *this);
 void __thiscall UI_SensorSelect::render(UI_SensorSelect *this);
 void __thiscall UI_SensorSelect::specialDataCheckFunction(UI_SensorSelect *this, float param_1);
 void __thiscall std::vector<>::~vector<>(vector<> *this);
@@ -12103,25 +12202,25 @@ void *__thiscall UI_Sheet::`scalar_deleting_destructor'(UI_Sheet *this,uint para
 void __thiscall UI_Sheet::cleanupRender(UI_Sheet *this);
 void __thiscall UI_Sheet::render(UI_Sheet *this);
 void __thiscall UI_Sheet::specialDataCheckFunction(UI_Sheet *this, float param_1);
-void __thiscall UI_Sheet::mouseMove(void *this, float param_11, float param_12);
-uint __thiscall UI_Sheet::mouseUp(void *this, float param_11, float param_12);
+void __thiscall UI_Sheet::mouseMove(UI_Sheet *this, float param_2, float param_3);
+void __thiscall UI_Sheet::mouseUp(UI_Sheet *this, float param_2, float param_3);
 bool __thiscall UI_Sheet::keyUp(UI_Sheet *this, KeyCode param_1);
 UI_ShipHullState *__thiscall UI_ShipHullState::UI_ShipHullState(UI_ShipHullState *this, ScreenInterface *param_1, Widget *param_2, bool *param_3);
-void *__thiscall UI_ShipHullState::`scalar_deleting_destructor'(UI_ShipHullState *this,uint param_1); void __thiscall UI_ShipHullState::cleanupRender(UI_ShipHullState *this);
+void *__thiscall UI_ShipHullState::`vector_deleting_destructor'(UI_ShipHullState *this,uint param_1); void __thiscall UI_ShipHullState::cleanupRender(UI_ShipHullState *this);
 void __thiscall UI_ShipHullState::render(UI_ShipHullState *this);
 bool __thiscall UI_ShipHullState::checkState(UI_ShipHullState *this, float param_1);
 void __thiscall UI_ShipHullState::specialDataCheckFunction(UI_ShipHullState *this, float param_1);
-void *__thiscall UI_Slider::`scalar_deleting_destructor'(UI_Slider *this,uint param_1); void __thiscall UI_Slider::cleanupRender(UI_Slider *this);
+void *__thiscall UI_Slider::`vector_deleting_destructor'(UI_Slider *this,uint param_1); void __thiscall UI_Slider::cleanupRender(UI_Slider *this);
 void __thiscall UI_Slider::render(UI_Slider *this);
 void __thiscall UI_Slider::specialDataCheckFunction(UI_Slider *this, float param_1);
-void __thiscall UI_Slider::mouseMove(void *this, undefined4 param_11, undefined4 param_12);
-void __thiscall UI_Slider::mouseUp(void *this, float param_11);
+void __thiscall UI_Slider::mouseMove(UI_Slider *this, undefined4 param_2, undefined4 param_3);
+void __thiscall UI_Slider::mouseUp(UI_Slider *this, float param_2);
 void __thiscall UI_StatusBar::setValue(UI_StatusBar *this, double param_1);
 UI_StatusBar *__thiscall UI_StatusBar::UI_StatusBar(UI_StatusBar *this, ScreenInterface *param_1, Widget *param_2, bool *param_3, float param_4, float param_5, int param_6, int param_7);
-void *__thiscall UI_StatusBar::`scalar_deleting_destructor'(UI_StatusBar *this,uint param_1); void __thiscall UI_StatusBar::render(UI_StatusBar *this);
+void *__thiscall UI_StatusBar::`vector_deleting_destructor'(UI_StatusBar *this,uint param_1); void __thiscall UI_StatusBar::render(UI_StatusBar *this);
 void *__thiscall UI_SystemBar::`scalar_deleting_destructor'(UI_SystemBar *this,uint param_1); void __thiscall UI_SystemBar::render(UI_SystemBar *this);
 void __thiscall UI_Text::setValue(UI_Text *this, double param_1);
-void *__thiscall UI_Text::`scalar_deleting_destructor'(UI_Text *this,uint param_1); void __thiscall UI_Text::cleanupRender(UI_Text *this);
+void *__thiscall UI_Text::`vector_deleting_destructor'(UI_Text *this,uint param_1); void __thiscall UI_Text::cleanupRender(UI_Text *this);
 void __thiscall UI_Text::render(UI_Text *this);
 void *__thiscall UI_TextBox::`scalar_deleting_destructor'(UI_TextBox *this,uint param_1); void __thiscall UI_TextBox::cleanupRender(UI_TextBox *this);
 void __thiscall UI_TextBox::render(UI_TextBox *this);
@@ -12131,32 +12230,32 @@ void __thiscall UI_TextBox::loseFocus(UI_TextBox *this);
 bool __thiscall UI_TextBox::keyDown(UI_TextBox *this, KeyCode param_1);
 bool __thiscall UI_TextBox::keyUp(UI_TextBox *this, KeyCode param_1);
 void __thiscall UI_TextField::UI_TextField(UI_TextField *this, ScreenInterface *param_1, Widget *param_2, bool *param_3);
-void *__thiscall UI_TextField::`scalar_deleting_destructor'(UI_TextField *this,uint param_1); void __thiscall UI_TextField::~UI_TextField(UI_TextField *this);
+void *__thiscall UI_TextField::`vector_deleting_destructor'(UI_TextField *this,uint param_1); void __thiscall UI_TextField::~UI_TextField(UI_TextField *this);
 void __thiscall UI_TextField::cleanupRender(UI_TextField *this);
 void __thiscall UI_TextField::render(UI_TextField *this);
 void __thiscall UI_TextField::specialDataCheckFunction(UI_TextField *this, float param_1);
-void __thiscall UI_TextField::mouseMove(void *this, undefined4 param_11, undefined4 param_12);
-void __thiscall UI_TextField::mouseUp(void *this, undefined4 param_11, undefined4 param_12);
-void __thiscall UI_TextField::mouseHoverCancel(UI_TextField *this);
+void __thiscall UI_TextField::mouseDown(UI_TextField *this, undefined4 param_2, undefined4 param_3);
+void __thiscall UI_TextField::mouseUp(UI_TextField *this, undefined4 param_2, undefined4 param_3);
+void __thiscall UI_TextField::mouseCancel(UI_TextField *this);
 void __thiscall UI_TextField::resetButtonsValid(UI_TextField *this);
-void __thiscall UI_TextField::updatePressedStates(void *this, float param_11, float param_12);
+void __thiscall UI_TextField::updatePressedStates(UI_TextField *this, float param_2, float param_3);
 void *__thiscall UI_WeaponTubes::`scalar_deleting_destructor'(UI_WeaponTubes *this,uint param_1); void __thiscall UI_WeaponTubes::~UI_WeaponTubes(UI_WeaponTubes *this);
 void __thiscall UI_WeaponTubes::cleanupRender(UI_WeaponTubes *this);
 void __thiscall UI_WeaponTubes::render(UI_WeaponTubes *this);
 void __thiscall UI_WeaponTubes::specialDataCheckFunction(UI_WeaponTubes *this, float param_1);
-void __thiscall UI_WeaponTubes::mouseHoverUpdate(void *this, float param_11);
-void __thiscall UI_WeaponTubes::mouseUp(undefined4 param_1, float param_11);
+void __thiscall UI_WeaponTubes::mouseHoverUpdate(UI_WeaponTubes *this, float param_2);
+void __thiscall UI_WeaponTubes::mouseUp(undefined4 param_1, float param_2);
 void __cdecl OSInterface::initialiseOSFunctions(void);
-void __cdecl OSInterface::getSoundLocationForAsset(char *param_11);
-void __cdecl OSInterface::getLocationForAsset(char *param_11);
-void __cdecl OSInterface::getDataFromFile(basic_string<> *param_11);
+void __cdecl OSInterface::getSoundLocationForAsset(char *param_1);
+void __cdecl OSInterface::getLocationForAsset(char *param_1);
+uchar *__cdecl OSInterface::getDataFromFile(basic_string<> *param_1);
 void __cdecl OSInterface::getBaseDirectory(void);
 void __cdecl OSInterface::getModDirectory(void);
 void __cdecl OSInterface::getSaveDirectory(void);
-void __cdecl OSInterface::listFiles(void *param_11);
+void __cdecl OSInterface::listFiles(void *param_1);
 void __cdecl OSInterface::getCorrectedWorldPosition(void);
 Pather *__thiscall Pather::Pather(Pather *this);
-void *__thiscall Pather::`scalar_deleting_destructor'(Pather *this,uint param_1); void __thiscall Pather::runLogic(Pather *this, float param_1);
+void *__thiscall Pather::`vector_deleting_destructor'(Pather *this,uint param_1); void __thiscall Pather::runLogic(Pather *this, float param_1);
 void __thiscall Pather::resetSector(Pather *this);
 PathNode *__thiscall Pather::calculatePath(Pather *this, PathContext *param_1, uint param_2, bool param_3);
 void __thiscall PathContext::~PathContext(PathContext *this);
@@ -12164,11 +12263,11 @@ void __thiscall PathContext::reset(PathContext *this);
 void __thiscall std::_Tree<>::clear(_Tree<> *this);
 void __thiscall std::vector<>::_Reallocate_exactly(vector<> *this, uint param_1);
 void __thiscall std::_Tree<>::_Erase(_Tree<> *this, _Tree_node<> *param_1);
-undefined4 *__thiscall std::_Tree<>::erase(void *this, undefined4 *param_11, int *param_12, int *param_13);
+undefined4 *__thiscall std::_Tree<>::erase(_Tree<> *this, undefined4 *param_2, int *param_3, int *param_4);
 _Tree_node<> *__thiscall std::_Tree_comp_alloc<>::_Buyheadnode(_Tree_comp_alloc<> *this);
-void __thiscall Pool<>::~Pool<>(Pool<> *this);
-PathNode *__thiscall Pool<>::TakeObject(Pool<> *this);
-undefined4 *__thiscall std::_Tree<>::_Insert_hint<>(void *this, undefined4 *param_11, int *param_12, int *param_13, undefined4 param_14);
+void __thiscall Pool<PathNode>::~Pool<PathNode>(Pool<PathNode> *this);
+PathNode *__thiscall Pool<PathNode>::TakeObject(Pool<PathNode> *this);
+undefined4 *__thiscall std::_Tree<>::_Insert_hint<>(_Tree<> *this, undefined4 *param_2, int *param_3, int *param_4, undefined4 param_5);
 void Catch_All @005929e3(void);
 void __thiscall std::_Tree<>::_Insert_nohint<>(_Tree<> *this, undefined4 *param_1, char param_2, int *param_4, undefined4 param_5);
 void Catch_All @00592aa3(void);
@@ -12181,35 +12280,35 @@ void __cdecl debugPrint(char *param_1, char *param_2, ...);
 int __cdecl random(int param_1);
 int __cdecl diceRoll(Dice *param_1);
 int __cdecl diceRoll(int param_1, int param_2, int param_3);
-void __cdecl unpackDiceFromString(void *param_11);
+void __cdecl unpackDiceFromString(void *param_1);
 void __cdecl safeStrCpy(char *param_1);
-void __cdecl strWithMaxLength(basic_string<> *param_11);
-void __cdecl loadSprite(void *param_11);
-void __cdecl loadSprite(void *param_11);
+void __cdecl strWithMaxLength(word *param_1);
+Sprite *__cdecl loadSprite(void *param_1);
+Sprite *__cdecl loadSprite(void *param_1);
 void __cdecl setTexParams(Texture2D *param_1);
-void __cdecl strUsingArgs(basic_string<> *param_1, char *param_2, ...);
-void __cdecl stripWhiteSpaceFromBeginning(char *param_11);
-void __cdecl loadMapFromFile(void *param_11);
-void __cdecl loadLinesFromFile(void *param_11);
-void __cdecl unpackDiceString(void *param_11);
-void __cdecl unpackReadableDiceString(void *param_11);
-bool __cdecl stringContains(void *param_11);
-void __cdecl replaceCharactersInString(undefined4 *param_11);
-void __cdecl firstWordSeparated(char *param_11);
-void __cdecl splitStringBy(undefined4 *param_11);
-void __cdecl angleInDegreesFrom(float param_11, undefined4 param_12, float param_13);
+void __cdecl strUsingArgs(char *param_1, ...);
+void __cdecl stripWhiteSpaceFromBeginning(char *param_1);
+void __cdecl loadMapFromFile(void *param_1);
+void __cdecl loadLinesFromFile(void *param_1);
+void __cdecl unpackDiceString(void *param_1);
+void __cdecl unpackReadableDiceString(void *param_1);
+bool __cdecl stringContains(void *param_1);
+void __cdecl replaceCharactersInString(undefined4 *param_1);
+void __cdecl firstWordSeparated(char *param_1);
+void __cdecl splitStringBy(undefined4 *param_1);
+float __cdecl angleInDegreesFrom(float param_1, undefined4 param_2, float param_3);
 void __cdecl positionFromPoint(void);
-void __cdecl positionDelta(void);
-void __cdecl randomPositionWithinRadius(undefined4 param_11, undefined4 param_12);
+void __cdecl positionDelta(float param_1, float param_2);
+void __cdecl randomPositionWithinRadius(undefined4 param_1, undefined4 param_2);
 float __cdecl differenceBetweenAngles(float param_1, float param_2);
-void __cdecl printFloatAsMinsAndSeconds(void);
-void __fastcall FUN_00595000(char *param_1_00, uint param_2, char *param_1);
+void __cdecl printFloatAsMinsAndSeconds(float param_1);
+void __fastcall FUN_00595000(char *param_1, uint param_2, char *param_3);
 StackWalkerInternal *__thiscall StackWalkerInternal::StackWalkerInternal(StackWalkerInternal *this, StackWalker *param_1, void *param_2);
 int __thiscall StackWalkerInternal::Init(StackWalkerInternal *this, char *param_1);
 int __thiscall StackWalkerInternal::GetModuleListPSAPI(StackWalkerInternal *this, void *param_1);
 ulong __thiscall StackWalkerInternal::LoadModule(StackWalkerInternal *this, void *param_1, char *param_2, char *param_3, __uint64 param_4, ulong param_5);
 int __thiscall StackWalkerInternal::GetModuleInfo(StackWalkerInternal *this, void *param_1, __uint64 param_2, IMAGEHLP_MODULE64_V3 *param_3);
-void *__thiscall StackWalker::`scalar_deleting_destructor'(StackWalker *this,uint param_1); void __thiscall StackWalker::~StackWalker(StackWalker *this);
+void *__thiscall OiSStackWalker::`scalar_deleting_destructor'(OiSStackWalker *this,uint param_1); void __thiscall StackWalker::~StackWalker(StackWalker *this);
 int __thiscall StackWalker::LoadModules(StackWalker *this);
 int __thiscall StackWalker::ShowCallstack(StackWalker *this, void *param_1, _CONTEXT *param_2, _func_int_void_ptr___uint64_void_ptr_ulong_ulong_ptr_void_ptr *param_3, void *param_4);
 int StackWalker::myReadProcMem(void *param_1, __uint64 param_2, void *param_3, ulong param_4, ulong *param_5);
@@ -12226,7 +12325,7 @@ void _WinMain @16(void);
 void __thiscall RakNet::BitStream::Write<>(BitStream *this, uint24_t *param_1);
 bool __thiscall RakNet::BitStream::Read<>(BitStream *this, uint24_t *param_1);
 RNS2_SendParameters *__thiscall RakNet::RNS2_SendParameters::RNS2_SendParameters(RNS2_SendParameters *this);
-void __thiscall RakNet::BPSTracker::Push1(BPSTracker *this, ulong64 param_1, ulong64 param_2);
+void __thiscall RakNet::BPSTracker::Push1(BPSTracker *this, __uint64 param_1, __uint64 param_2);
 BPSTracker *__thiscall RakNet::BPSTracker::BPSTracker(BPSTracker *this);
 void __thiscall RakNet::BPSTracker::~BPSTracker(BPSTracker *this);
 void __thiscall RakNet::BPSTracker::Reset(BPSTracker *this, char *param_1, uint param_2);
@@ -12238,43 +12337,43 @@ void __thiscall RakNet::ReliabilityLayer::~ReliabilityLayer(ReliabilityLayer *th
 void __thiscall RakNet::ReliabilityLayer::Reset(ReliabilityLayer *this, bool param_1, int param_2, bool param_3);
 void __thiscall RakNet::ReliabilityLayer::InitializeVariables(ReliabilityLayer *this);
 void __thiscall RakNet::ReliabilityLayer::FreeThreadSafeMemory(ReliabilityLayer *this);
-bool __thiscall RakNet::ReliabilityLayer::HandleSocketReceiveFromConnectedPlayer(ReliabilityLayer *this, char *param_1, uint param_2, SystemAddress *param_3, List<> *param_4, int param_5, RakNetSocket2 *param_6, RakNetRandom *param_7, ulong64 param_8, BitStream *param_9);
-bool __thiscall RakNet::ReliabilityLayer::Send(ReliabilityLayer *this, char *param_1, uint param_2, PacketPriority param_3, PacketReliability param_4, uchar param_5, bool param_6, int param_7, ulong64 param_8, uint param_9);
-void __thiscall RakNet::ReliabilityLayer::Update(ReliabilityLayer *this, RakNetSocket2 *param_1, SystemAddress *param_2, int param_3, ulong64 param_4, uint param_5, List<> *param_6, RakNetRandom *param_7, BitStream *param_8);
-uint __thiscall RakNet::ReliabilityLayer::RemovePacketFromResendListAndDeleteOlderReliableSequenced(ReliabilityLayer *this, uint24_t param_1, ulong64 param_2, List<> *param_3, SystemAddress *param_4);
-uint __thiscall RakNet::ReliabilityLayer::WriteToBitStreamFromInternalPacket(ReliabilityLayer *this, BitStream *param_1, InternalPacket *param_2, ulong64 param_3);
-InternalPacket *__thiscall RakNet::ReliabilityLayer::CreateInternalPacketFromBitStream(ReliabilityLayer *this, BitStream *param_1, ulong64 param_2);
+bool __thiscall RakNet::ReliabilityLayer::HandleSocketReceiveFromConnectedPlayer(ReliabilityLayer *this, char *param_1, uint param_2, SystemAddress *param_3, List<> *param_4, int param_5, RakNetSocket2 *param_6, RakNetRandom *param_7, __uint64 param_8, BitStream *param_9);
+bool __thiscall RakNet::ReliabilityLayer::Send(ReliabilityLayer *this, char *param_1, uint param_2, PacketPriority param_3, PacketReliability param_4, uchar param_5, bool param_6, int param_7, __uint64 param_8, uint param_9);
+void __thiscall RakNet::ReliabilityLayer::Update(ReliabilityLayer *this, RakNetSocket2 *param_1, SystemAddress *param_2, int param_3, __uint64 param_4, uint param_5, List<> *param_6, RakNetRandom *param_7, BitStream *param_8);
+uint __thiscall RakNet::ReliabilityLayer::RemovePacketFromResendListAndDeleteOlderReliableSequenced(ReliabilityLayer *this, uint24_t param_1, __uint64 param_2, List<> *param_3, SystemAddress *param_4);
+uint __thiscall RakNet::ReliabilityLayer::WriteToBitStreamFromInternalPacket(ReliabilityLayer *this, BitStream *param_1, InternalPacket *param_2, __uint64 param_3);
+InternalPacket *__thiscall RakNet::ReliabilityLayer::CreateInternalPacketFromBitStream(ReliabilityLayer *this, BitStream *param_1, __uint64 param_2);
 void __thiscall RakNet::ReliabilityLayer::SplitPacket(ReliabilityLayer *this, InternalPacket *param_1);
-void __thiscall RakNet::ReliabilityLayer::InsertIntoSplitPacketList(ReliabilityLayer *this, InternalPacket *param_1, ulong64 param_2);
-InternalPacket *__thiscall RakNet::ReliabilityLayer::BuildPacketFromSplitPacketList(ReliabilityLayer *this, ushort param_1, ulong64 param_2, RakNetSocket2 *param_3, SystemAddress *param_4, RakNetRandom *param_5, BitStream *param_6);
+void __thiscall RakNet::ReliabilityLayer::InsertIntoSplitPacketList(ReliabilityLayer *this, InternalPacket *param_1, __uint64 param_2);
+InternalPacket *__thiscall RakNet::ReliabilityLayer::BuildPacketFromSplitPacketList(ReliabilityLayer *this, ushort param_1, __uint64 param_2, RakNetSocket2 *param_3, SystemAddress *param_4, RakNetRandom *param_5, BitStream *param_6);
 RakNetStatistics *__thiscall RakNet::ReliabilityLayer::GetStatistics(ReliabilityLayer *this, RakNetStatistics *param_1);
 void __thiscall RakNet::ReliabilityLayer::ClearPacketsAndDatagrams(ReliabilityLayer *this);
-void __thiscall RakNet::ReliabilityLayer::SendACKs(ReliabilityLayer *this, RakNetSocket2 *param_1, SystemAddress *param_2, ulong64 param_3, RakNetRandom *param_4, BitStream *param_5);
+void __thiscall RakNet::ReliabilityLayer::SendACKs(ReliabilityLayer *this, RakNetSocket2 *param_1, SystemAddress *param_2, __uint64 param_3, RakNetRandom *param_4, BitStream *param_5);
 InternalPacket *__thiscall RakNet::ReliabilityLayer::AllocateFromInternalPacketPool(ReliabilityLayer *this);
 void __thiscall RakNet::ReliabilityLayer::ReleaseToInternalPacketPool(ReliabilityLayer *this, InternalPacket *param_1);
-MessageNumberNode *__thiscall RakNet::ReliabilityLayer::GetMessageNumberNodeByDatagramIndex(ReliabilityLayer *this, uint24_t param_1, ulong64 *param_2);
+MessageNumberNode *__thiscall RakNet::ReliabilityLayer::GetMessageNumberNodeByDatagramIndex(ReliabilityLayer *this, uint24_t param_1, __uint64 *param_2);
 void __thiscall RakNet::ReliabilityLayer::RemoveFromDatagramHistory(ReliabilityLayer *this, uint24_t param_1);
 void __thiscall RakNet::ReliabilityLayer::AllocInternalPacketData(ReliabilityLayer *this, InternalPacket *param_1, InternalPacketRefCountedData **param_2, uchar *param_3, uchar *param_4);
 void __thiscall RakNet::ReliabilityLayer::FreeInternalPacketData(ReliabilityLayer *this, InternalPacket *param_1, char *param_2, uint param_3);
-ulong64 __thiscall RakNet::ReliabilityLayer::GetNextWeight(ReliabilityLayer *this, int param_1);
+__uint64 __thiscall RakNet::ReliabilityLayer::GetNextWeight(ReliabilityLayer *this, int param_1);
 void __thiscall RakNet::BitStream::Write<>(BitStream *this, ushort *param_1);
 bool __thiscall RakNet::BitStream::Read<>(BitStream *this, ushort *param_1);
 void __thiscall DataStructures::Heap<>::~Heap<>(Heap<> *this);
 void __thiscall DataStructures::List<>::Insert(List<> *this, uint *param_1, char *param_2, uint param_3);
 void __thiscall DataStructures::List<>::Preallocate(List<> *this, uint param_1, char *param_2, uint param_3);
 void __thiscall DataStructures::Queue<>::~Queue<>(Queue<> *this);
-void __thiscall DataStructures::Queue<>::Push(Queue<> *this, InternalPacket **param_1, char *param_2, uint param_3);
+void __thiscall DataStructures::Queue<>::Push(Queue<> *this, HuffmanEncodingTreeNode **param_1, char *param_2, uint param_3);
 void __thiscall DataStructures::Queue<>::Push(Queue<> *this, DatagramHistoryNode *param_1, char *param_2, uint param_3);
 void __thiscall DataStructures::MemoryPool<>::~MemoryPool<>(MemoryPool<> *this);
 MessageNumberNode *__thiscall DataStructures::MemoryPool<>::Allocate(MemoryPool<> *this, char *param_1, uint param_2);
 void __thiscall DataStructures::MemoryPool<>::Clear(MemoryPool<> *this, char *param_1, uint param_2);
 void __thiscall DataStructures::List<>::RemoveAtIndex(List<> *this, uint param_1);
 Heap<> *__thiscall DataStructures::Heap<>::Heap<>(Heap<> *this);
-void __thiscall DataStructures::Heap<>::Push(Heap<> *this, ulong64 *param_1, InternalPacket **param_2, char *param_3, uint param_4);
+void __thiscall DataStructures::Heap<>::Push(Heap<> *this, __uint64 *param_1, InternalPacket **param_2, char *param_3, uint param_4);
 InternalPacket *__thiscall DataStructures::Heap<>::Pop(Heap<> *this, uint param_1);
-void __thiscall DataStructures::OrderedList<>::~OrderedList<>(void *this);
-uint __thiscall DataStructures::OrderedList<>::GetIndexFromKey(void *this, ushort *param_1, bool *param_2, _func___cdecl_int_ushort_ptr_SplitPacketChannel_ptr_ptr *param_3);
-uint __thiscall DataStructures::OrderedList<>::Insert(void *this, ushort *param_1, SplitPacketChannel **param_2, bool param_3, char *param_4, uint param_5, _func___cdecl_int_ushort_ptr_SplitPacketChannel_ptr_ptr *param_6);
+void __thiscall DataStructures::OrderedList<>::~OrderedList<>(OrderedList<> *this);
+uint __thiscall DataStructures::OrderedList<>::GetIndexFromKey(OrderedList<> *this, ushort *param_1, bool *param_2, _func_int_ushort_ptr_SplitPacketChannel_ptr_ptr *param_3);
+uint __thiscall DataStructures::OrderedList<>::Insert(OrderedList<> *this, ushort *param_1, SplitPacketChannel **param_2, bool param_3, char *param_4, uint param_5, _func_int_ushort_ptr_SplitPacketChannel_ptr_ptr *param_6);
 void __thiscall DataStructures::Queue<bool>::Push(Queue<bool> *this, bool *param_1, char *param_2, uint param_3);
 uint __thiscall DataStructures::Queue<bool>::Size(Queue<bool> *this);
 void __thiscall DataStructures::List<bool>::Push(List<bool> *this, bool *param_1, char *param_2, uint param_3);
@@ -12285,8 +12384,8 @@ void __thiscall DataStructures::RangeList<>::Clear(RangeList<> *this);
 uint __thiscall DataStructures::RangeList<>::Serialize(RangeList<> *this, BitStream *param_1, uint param_2, bool param_3);
 bool __thiscall DataStructures::RangeList<>::Deserialize(RangeList<> *this, BitStream *param_1);
 void __thiscall DataStructures::List<>::Insert(List<> *this, HeapNode *param_1, char *param_2, uint param_3);
-void __thiscall DataStructures::OrderedList<>::~OrderedList<>(void *this);
-uint __thiscall DataStructures::OrderedList<>::GetIndexFromKey(void *this, uint24_t *param_1, bool *param_2, _func___cdecl_int_uint24_t_ptr_RangeNode<> _ptr *param_3);
+void __thiscall DataStructures::OrderedList<>::~OrderedList<>(OrderedList<> *this);
+uint __thiscall DataStructures::OrderedList<>::GetIndexFromKey(OrderedList<> *this, uint24_t *param_1, bool *param_2, _func_int_uint24_t_ptr_RangeNode<> _ptr *param_3);
 TimeAndValue2 *__cdecl RakNet::OP_NEW_ARRAY<>(int param_1, char *param_2, uint param_3);
 void __thiscall DataStructures::List<>::Insert(List<> *this, RangeNode<> *param_1, char *param_2, uint param_3);
 void __thiscall DataStructures::List<>::Insert(List<> *this, RangeNode<> *param_1, uint param_2, char *param_3, uint param_4);
@@ -12303,11 +12402,11 @@ AddressOrGUID *__thiscall RakNet::AddressOrGUID::AddressOrGUID(AddressOrGUID *th
 AddressOrGUID *__thiscall RakNet::AddressOrGUID::AddressOrGUID(AddressOrGUID *this, SystemAddress *param_1);
 AddressOrGUID *__thiscall RakNet::AddressOrGUID::operator=(AddressOrGUID *this, SystemAddress * param_1);
 void __thiscall RakNet::RNS2EventHandler::~RNS2EventHandler(RNS2EventHandler *this);
-void *__thiscall RakNet::RNS2EventHandler::`scalar_deleting_destructor'(RNS2EventHandler *this,uint param_1); void __thiscall RakNet::RakPeerInterface::~RakPeerInterface(RakPeerInterface *this);
-void *__thiscall RakNet::RakPeerInterface::`scalar_deleting_destructor'(RakPeerInterface *this,uint param_1); Packet *__thiscall RakNet::RakPeer::AllocPacket(RakPeer *this, uint param_1, char *param_2, uint param_3);
+void *__thiscall RakNet::RNS2EventHandler::`vector_deleting_destructor'(RNS2EventHandler *this,uint param_1); void __thiscall RakNet::RakPeerInterface::~RakPeerInterface(RakPeerInterface *this);
+void *__thiscall RakNet::RakPeerInterface::`vector_deleting_destructor'(RakPeerInterface *this,uint param_1); Packet *__thiscall RakNet::RakPeer::AllocPacket(RakPeer *this, uint param_1, char *param_2, uint param_3);
 Packet *__thiscall RakNet::RakPeer::AllocPacket(RakPeer *this, uint param_1, uchar *param_2, char *param_3, uint param_4);
 RakPeer *__thiscall RakNet::RakPeer::RakPeer(RakPeer *this);
-void *__thiscall RakNet::RakPeer::`scalar_deleting_destructor'(RakPeer *this,uint param_1); void __thiscall DataStructures::ThreadsafeAllocatingQueue<>::~ThreadsafeAllocatingQueue<>(ThreadsafeAllocatingQueue<> *this);
+void *__thiscall RakNet::RakPeer::`vector_deleting_destructor'(RakPeer *this,uint param_1); void __thiscall DataStructures::ThreadsafeAllocatingQueue<>::~ThreadsafeAllocatingQueue<>(ThreadsafeAllocatingQueue<> *this);
 void __thiscall RakNet::RakPeer::~RakPeer(RakPeer *this);
 StartupResult __thiscall RakNet::RakPeer::Startup(RakPeer *this, uint param_1, SocketDescriptor *param_2, uint param_3, int param_4);
 bool __thiscall RakNet::RakPeer::InitializeSecurity(RakPeer *this, char *param_1, char *param_2, bool param_3);
@@ -12350,8 +12449,8 @@ int __thiscall RakNet::RakPeer::GetAveragePing(RakPeer *this, AddressOrGUID para
 int __thiscall RakNet::RakPeer::GetLastPing(RakPeer *this, AddressOrGUID param_1);
 int __thiscall RakNet::RakPeer::GetLowestPing(RakPeer *this, AddressOrGUID param_1);
 void __thiscall RakNet::RakPeer::SetOccasionalPing(RakPeer *this, bool param_1);
-ulong64 __thiscall RakNet::RakPeer::GetClockDifferential(RakPeer *this, AddressOrGUID param_1);
-ulong64 __thiscall RakNet::RakPeer::GetClockDifferentialInt(RakPeer *this, RemoteSystemStruct *param_1);
+__uint64 __thiscall RakNet::RakPeer::GetClockDifferential(RakPeer *this, AddressOrGUID param_1);
+__uint64 __thiscall RakNet::RakPeer::GetClockDifferentialInt(RakPeer *this, RemoteSystemStruct *param_1);
 void __thiscall RakNet::RakPeer::SetOfflinePingResponse(RakPeer *this, char *param_1, uint param_2);
 void __thiscall RakNet::RakPeer::GetOfflinePingResponse(RakPeer *this, char **param_1, uint *param_2);
 SystemAddress *__thiscall RakNet::RakPeer::GetInternalID(RakPeer *this, SystemAddress *__return_storage_ptr__, SystemAddress param_1, int param_2);
@@ -12384,8 +12483,8 @@ void __thiscall RakNet::RakPeer::GetSockets(RakPeer *this, List<> *param_1);
 void __thiscall RakNet::RakPeer::ReleaseSockets(RakPeer *this, List<> *param_1);
 void __thiscall RakNet::RakPeer::SetPerConnectionOutgoingBandwidthLimit(RakPeer *this, uint param_1);
 void __thiscall RakNet::RakPeer::WriteOutOfBandHeader(RakPeer *this, BitStream *param_1);
-void __thiscall RakNet::RakPeer::SetUserUpdateThread(RakPeer *this, _func___cdecl_void_RakPeerInterface_ptr_void_ptr *param_1, void *param_2);
-void __thiscall RakNet::RakPeer::SetIncomingDatagramEventHandler(RakPeer *this, _func___cdecl_bool_RNS2RecvStruct_ptr *param_1);
+void __thiscall RakNet::RakPeer::SetUserUpdateThread(RakPeer *this, _func_void_RakPeerInterface_ptr_void_ptr *param_1, void *param_2);
+void __thiscall RakNet::RakPeer::SetIncomingDatagramEventHandler(RakPeer *this, _func_bool_RNS2RecvStruct_ptr *param_1);
 bool __thiscall RakNet::RakPeer::SendOutOfBand(RakPeer *this, char *param_1, ushort param_2, char *param_3, uint param_4, uint param_5);
 RakNetStatistics *__thiscall RakNet::RakPeer::GetStatistics(RakPeer *this, SystemAddress param_1, RakNetStatistics *param_2);
 void __thiscall RakNet::RakPeer::GetStatisticsList(RakPeer *this, List<> *param_1, List<> *param_2, List<> *param_3);
@@ -12398,7 +12497,7 @@ RemoteSystemStruct *__thiscall RakNet::RakPeer::GetRemoteSystem(RakPeer *this, A
 RemoteSystemStruct *__thiscall RakNet::RakPeer::GetRemoteSystemFromSystemAddress(RakPeer *this, SystemAddress param_1, bool param_2, bool param_3);
 RemoteSystemStruct *__thiscall RakNet::RakPeer::GetRemoteSystemFromGUID(RakPeer *this, RakNetGUID param_1, bool param_2);
 void __thiscall RakNet::RakPeer::ParseConnectionRequestPacket(RakPeer *this, RemoteSystemStruct *param_1, SystemAddress *param_2, char *param_3, int param_4);
-void __thiscall RakNet::RakPeer::OnConnectionRequest(RakPeer *this, RemoteSystemStruct *param_1, ulong64 param_2);
+void __thiscall RakNet::RakPeer::OnConnectionRequest(RakPeer *this, RemoteSystemStruct *param_1, __uint64 param_2);
 void __thiscall RakNet::RakPeer::NotifyAndFlagForShutdown(RakPeer *this, SystemAddress param_1, bool param_2, uchar param_3, PacketPriority param_4);
 RemoteSystemStruct *__thiscall RakNet::RakPeer::AssignSystemAddressToRemoteSystemList(RakPeer *this, SystemAddress param_1, ConnectMode param_2, RakNetSocket2 *param_3, bool *param_4, SystemAddress param_5, int param_6, RakNetGUID param_7, bool param_8);
 void __thiscall RakNet::RakPeer::ReferenceRemoteSystem(RakPeer *this, SystemAddress *param_1, uint param_2);
@@ -12413,24 +12512,24 @@ void __thiscall RakNet::RakPeer::PingInternal(RakPeer *this, SystemAddress param
 void __thiscall RakNet::RakPeer::CloseConnectionInternal(RakPeer *this, AddressOrGUID *param_1, bool param_2, bool param_3, uchar param_4, PacketPriority param_5);
 void __thiscall RakNet::RakPeer::SendBuffered(RakPeer *this, char *param_1, uint param_2, PacketPriority param_3, PacketReliability param_4, char param_5, AddressOrGUID param_6, bool param_7, ConnectMode param_8, uint param_9);
 void __thiscall RakNet::RakPeer::SendBufferedList(RakPeer *this, char **param_1, int *param_2, int param_3, PacketPriority param_4, PacketReliability param_5, char param_6, AddressOrGUID param_7, bool param_8, ConnectMode param_9, uint param_10);
-bool __thiscall RakNet::RakPeer::SendImmediate(RakPeer *this, char *param_1, uint param_2, PacketPriority param_3, PacketReliability param_4, char param_5, AddressOrGUID param_6, bool param_7, bool param_8, ulong64 param_9, uint param_10);
-void __thiscall RakNet::RakPeer::OnConnectedPong(RakPeer *this, ulong64 param_1, ulong64 param_2, RemoteSystemStruct *param_3);
+bool __thiscall RakNet::RakPeer::SendImmediate(RakPeer *this, char *param_1, uint param_2, PacketPriority param_3, PacketReliability param_4, char param_5, AddressOrGUID param_6, bool param_7, bool param_8, __uint64 param_9, uint param_10);
+void __thiscall RakNet::RakPeer::OnConnectedPong(RakPeer *this, __uint64 param_1, __uint64 param_2, RemoteSystemStruct *param_3);
 void __thiscall RakNet::RakPeer::ClearBufferedCommands(RakPeer *this);
 void __thiscall RakNet::RakPeer::ClearSocketQueryOutput(RakPeer *this);
 void __thiscall RakNet::RakPeer::AddPacketToProducer(RakPeer *this, Packet *param_1);
-ulong64 __cdecl RakNet::RakPeerInterface::Get64BitUniqueRandomNumber(void);
-bool __cdecl RakNet::ProcessOfflineNetworkPacket(SystemAddress param_1, char *param_2, int param_3, RakPeer *param_4, RakNetSocket2 *param_5, bool *param_6, ulong64 param_7);
-void __cdecl RakNet::ProcessNetworkPacket(SystemAddress param_1, char *param_2, int param_3, RakPeer *param_4, RakNetSocket2 *param_5, ulong64 param_6, BitStream *param_7);
+__uint64 __cdecl RakNet::RakPeerInterface::Get64BitUniqueRandomNumber(void);
+bool __cdecl RakNet::ProcessOfflineNetworkPacket(SystemAddress param_1, char *param_2, int param_3, RakPeer *param_4, RakNetSocket2 *param_5, bool *param_6, __uint64 param_7);
+void __cdecl RakNet::ProcessNetworkPacket(SystemAddress param_1, char *param_2, int param_3, RakPeer *param_4, RakNetSocket2 *param_5, __uint64 param_6, BitStream *param_7);
 void __thiscall RakNet::RakPeer::DerefAllSockets(RakPeer *this);
 uint __thiscall RakNet::RakPeer::GetRakNetSocketFromUserConnectionSocketIndex(RakPeer *this, uint param_1);
 bool __thiscall RakNet::RakPeer::RunUpdateCycle(RakPeer *this, BitStream *param_1);
 void __thiscall RakNet::RakPeer::OnRNS2Recv(RakPeer *this, RNS2RecvStruct *param_1);
-uint __cdecl RakNet::UpdateNetworkLoop(void *param_1);
+uint RakNet::UpdateNetworkLoop(void *param_1);
 void __thiscall RakNet::RakPeer::CallPluginCallbacks(RakPeer *this, List<> *param_1, Packet *param_2);
 void __thiscall RakNet::RakPeer::FillIPList(RakPeer *this);
-void __thiscall RakNet::BitStream::Write<>(BitStream *this, ulong64 *param_1);
+void __thiscall RakNet::BitStream::Write<>(BitStream *this, __uint64 *param_1);
 void __thiscall RakNet::BitStream::Write<>(BitStream *this, uint *param_1);
-bool __thiscall RakNet::BitStream::Read<>(BitStream *this, ulong64 *param_1);
+bool __thiscall RakNet::BitStream::Read<>(BitStream *this, __uint64 *param_1);
 void __thiscall DataStructures::List<>::Push(List<> *this, SystemAddress *param_1, char *param_2, uint param_3);
 void __thiscall DataStructures::List<>::Push(List<> *this, RakNetGUID *param_1, char *param_2, uint param_3);
 List<> *__thiscall DataStructures::List<>::operator=(List<> *this, List<> *param_1);
@@ -12448,10 +12547,11 @@ void __thiscall RakNet::RakPeer::RemoteSystemStruct::~RemoteSystemStruct(RemoteS
 void __thiscall DataStructures::MemoryPool<>::Release(MemoryPool<> *this, BufferedCommandStruct *param_1, char *param_2, uint param_3);
 void __thiscall DataStructures::MemoryPool<>::Release(MemoryPool<> *this, SocketQueryOutput *param_1, char *param_2, uint param_3);
 SystemAddress *__cdecl RakNet::OP_NEW_ARRAY<>(int param_1, char *param_2, uint param_3);
-void __thiscall[thunk] : RakNet::RakPeer::`vector_deleting_destructor'(int param_1,uint param_2); void *__cdecl RakNet::_RakMalloc_Ex(uint param_1, char *param_2, uint param_3);
+void *__thiscall RakNet::RakPeer::`vector_deleting_destructor '`adjustor{4}'(RakPeer *this, uint param_1);
+void *__cdecl RakNet::_RakMalloc_Ex(uint param_1, char *param_2, uint param_3);
 void *__cdecl RakNet::_RakRealloc_Ex(void *param_1, uint param_2, char *param_3, uint param_4);
 void __cdecl RakNet::_RakFree_Ex(void *param_1, char *param_2, uint param_3);
-ulong64 __cdecl GetTimeUS_Windows(void);
+__uint64 __cdecl GetTimeUS_Windows(void);
 BitStream *__thiscall RakNet::BitStream::BitStream(BitStream *this);
 void __thiscall RakNet::BitStream::~BitStream(BitStream *this);
 void __thiscall RakNet::BitStream::Write(BitStream *this, char *param_1, uint param_2);
@@ -12464,18 +12564,18 @@ void __thiscall RakNet::BitStream::WriteAlignedVar16(BitStream *this, char *para
 bool __thiscall RakNet::BitStream::ReadAlignedVar16(BitStream *this, char *param_1);
 void __thiscall RakNet::BitStream::WriteAlignedVar32(BitStream *this, char *param_1);
 bool __thiscall RakNet::BitStream::ReadAlignedVar32(BitStream *this, char *param_1);
-char *__cdecl Itoa(int param_1, char *param_2, int param_3);
+char *__fastcall _Itoa(int param_1, char *param_2);
 RNS2BindResult __thiscall RakNet::RNS2_Berkley::BindSharedIPV4(RNS2_Berkley *this, RNS2_BerkleyBindParameters *param_1, char *param_2, uint param_3);
-void *__thiscall RakNet::RakNetSocket2::`scalar_deleting_destructor'(RakNetSocket2 *this,uint param_1); RNS2BindResult __thiscall RakNet::RNS2_Berkley::BindShared(RNS2_Berkley *this, RNS2_BerkleyBindParameters *param_1, char *param_2, uint param_3);
-uint __cdecl RakNet::RNS2_Berkley::RecvFromLoop(void *param_1);
-void *__thiscall RakNet::RNS2_Berkley::`scalar_deleting_destructor'(RNS2_Berkley *this,uint param_1); void __thiscall RakNet::RNS2_Berkley::BlockOnStopRecvPollingThread(RNS2_Berkley *this);
-void *__thiscall RakNet::RNS2_Windows::`scalar_deleting_destructor'(RNS2_Windows *this,uint param_1); RNS2BindResult __thiscall RakNet::RNS2_Windows::Bind(RNS2_Windows *this, RNS2_BerkleyBindParameters *param_1, char *param_2, uint param_3);
+void *__thiscall RakNet::RakNetSocket2::`vector_deleting_destructor'(RakNetSocket2 *this,uint param_1); RNS2BindResult __thiscall RakNet::RNS2_Berkley::BindShared(RNS2_Berkley *this, RNS2_BerkleyBindParameters *param_1, char *param_2, uint param_3);
+uint RakNet::RNS2_Berkley::RecvFromLoop(void *param_1);
+void *__thiscall RakNet::RNS2_Berkley::`vector_deleting_destructor'(RNS2_Berkley *this,uint param_1); void __thiscall RakNet::RNS2_Berkley::BlockOnStopRecvPollingThread(RNS2_Berkley *this);
+void *__thiscall RakNet::RNS2_Windows::`vector_deleting_destructor'(RNS2_Windows *this,uint param_1); RNS2BindResult __thiscall RakNet::RNS2_Windows::Bind(RNS2_Windows *this, RNS2_BerkleyBindParameters *param_1, char *param_2, uint param_3);
 int __thiscall RakNet::RNS2_Windows::Send(RNS2_Windows *this, RNS2_SendParameters *param_1, char *param_2, uint param_3);
 uint __cdecl SuperFastHashIncremental(char *param_1, int param_2, uint param_3);
 void __cdecl WSAStartupSingleton::AddRef(void);
 SimpleMutex *__cdecl GetPoolMutex(void);
 RakString *__thiscall RakNet::RakString::RakString(RakString *this);
-char *__thiscall RakNet::RakString::RakString(RakString *this, char *param_1);
+char *__thiscall RakNet::RakString::RakString(RakString *this, char *param_1, ...);
 void __thiscall RakNet::RakString::~RakString(RakString *this);
 bool __thiscall RakNet::RakString::IPAddressMatch(RakString *this, char *param_1);
 void __cdecl RakNet::RakString::FreeMemoryNoMutex(void);
@@ -12488,9 +12588,9 @@ SimpleMutex *__thiscall RakNet::SimpleMutex::SimpleMutex(SimpleMutex *this);
 void __thiscall RakNet::SimpleMutex::~SimpleMutex(SimpleMutex *this);
 void __cdecl RakNet::StringCompressor::AddReference(void);
 void __cdecl RakNet::StringCompressor::RemoveReference(void);
-void __thiscall DataStructures::Map<>::~Map<>(void *this);
-uint __thiscall DataStructures::OrderedList<>::GetIndexFromKey(void *this, int *param_1, bool *param_2, _func___cdecl_int_int_ptr_MapNode_ptr *param_3);
-uint __thiscall DataStructures::OrderedList<>::Insert(void *this, int *param_1, MapNode *param_2, bool param_3, char *param_4, uint param_5, _func___cdecl_int_int_ptr_MapNode_ptr *param_6);
+void __thiscall DataStructures::Map<>::~Map<>(Map<> *this);
+uint __thiscall DataStructures::OrderedList<>::GetIndexFromKey(OrderedList<> *this, int *param_1, bool *param_2, _func_int_int_ptr_MapNode_ptr *param_3);
+uint __thiscall DataStructures::OrderedList<>::Insert(OrderedList<> *this, int *param_1, MapNode *param_2, bool param_3, char *param_4, uint param_5, _func_int_int_ptr_MapNode_ptr *param_6);
 void __cdecl RakNet::StringTable::RemoveReference(void);
 void __thiscall RakNet::HuffmanEncodingTree::FreeMemory(HuffmanEncodingTree *this);
 void __thiscall RakNet::HuffmanEncodingTree::GenerateFromFrequencyTable(HuffmanEncodingTree *this, uint *param_1);
@@ -12499,7 +12599,7 @@ void __thiscall DataStructures::LinkedList<>::~LinkedList<>(LinkedList<> *this);
 void __thiscall DataStructures::CircularLinkedList<>::Insert(CircularLinkedList<> *this, HuffmanEncodingTreeNode **param_1);
 void __thiscall DataStructures::CircularLinkedList<>::Clear(CircularLinkedList<> *this);
 bool __thiscall cocos2d::Application::openURL(Application *this, basic_string<> *param_1);
-void __thiscall cocos2d::Application::getVersion(void);
+void __thiscall cocos2d::Application::getVersion(Application *this);
 Platform __thiscall cocos2d::Application::getTargetPlatform(Application *this);
 char *__thiscall cocos2d::Application::getCurrentLanguageCode(Application *this);
 LanguageType __thiscall cocos2d::Application::getCurrentLanguage(Application *this);
@@ -12528,17 +12628,17 @@ void __thiscall cocos2d::Node::removeAllComponents(Node *this);
 bool __thiscall cocos2d::Node::removeComponent(Node *this, basic_string<> *param_1);
 bool __thiscall cocos2d::Node::removeComponent(Node *this, Component *param_1);
 bool __thiscall cocos2d::Node::addComponent(Node *this, Component *param_1);
-void __thiscall cocos2d::Node::getWorldToNodeAffineTransform(void);
-void __thiscall cocos2d::Node::getWorldToNodeTransform(void);
-void __thiscall cocos2d::Node::getNodeToWorldAffineTransform(void);
-void __thiscall cocos2d::Node::getNodeToWorldTransform(void);
-void __thiscall cocos2d::Node::getParentToNodeAffineTransform(void);
+void __thiscall cocos2d::Node::getWorldToNodeAffineTransform(Node *this);
+void __thiscall cocos2d::Node::getWorldToNodeTransform(Node *this);
+void __thiscall cocos2d::Node::getNodeToWorldAffineTransform(Node *this);
+void __thiscall cocos2d::Node::getNodeToWorldTransform(Node *this);
+void __thiscall cocos2d::Node::getParentToNodeAffineTransform(Node *this);
 Mat4 *__thiscall cocos2d::Node::getParentToNodeTransform(Node *this);
 void __thiscall cocos2d::Node::setNodeToParentTransform(Node *this, Mat4 *param_1);
-void __thiscall cocos2d::Node::getNodeToParentAffineTransform(void);
-void __thiscall cocos2d::Node::getNodeToParentAffineTransform(void);
+void __thiscall cocos2d::Node::getNodeToParentAffineTransform(Node *this);
+void __thiscall cocos2d::Node::getNodeToParentAffineTransform(Node *this, Node *param_1);
 Mat4 *__thiscall cocos2d::Node::getNodeToParentTransform(Node *this);
-void __thiscall cocos2d::Node::getNodeToParentTransform(void);
+void __thiscall cocos2d::Node::getNodeToParentTransform(Node *this, Node *param_1);
 void __thiscall cocos2d::Node::updateTransform(Node *this);
 void __thiscall cocos2d::Node::pause(Node *this);
 void __thiscall cocos2d::Node::resume(Node *this);
@@ -12546,7 +12646,7 @@ void __thiscall cocos2d::Node::setScheduler(Node *this, Scheduler *param_1);
 Action *__thiscall cocos2d::Node::runAction(Node *this, Action *param_1);
 void __thiscall cocos2d::Node::setActionManager(Node *this, ActionManager *param_1);
 void __thiscall cocos2d::Node::setEventDispatcher(Node *this, EventDispatcher *param_1);
-void __thiscall cocos2d::Node::getBoundingBox(void);
+void __thiscall cocos2d::Node::getBoundingBox(Node *this);
 Scene *__thiscall cocos2d::Node::getScene(Node *this);
 void __thiscall cocos2d::Node::visit(Node *this, Renderer *param_1, Mat4 *param_2, uint param_3);
 void __thiscall cocos2d::Node::visit(Node *this);
@@ -12590,9 +12690,9 @@ float __thiscall cocos2d::Node::getRotationSkewY(Node *this);
 void __thiscall cocos2d::Node::setRotationSkewY(Node *this, float param_1);
 float __thiscall cocos2d::Node::getRotationSkewX(Node *this);
 void __thiscall cocos2d::Node::setRotationSkewX(Node *this, float param_1);
-void __thiscall cocos2d::Node::getRotationQuat(void);
+void __thiscall cocos2d::Node::getRotationQuat(Node *this);
 void __thiscall cocos2d::Node::setRotationQuat(Node *this, Quaternion *param_1);
-void __thiscall cocos2d::Node::getRotation3D(void);
+void __thiscall cocos2d::Node::getRotation3D(Node *this);
 void __thiscall cocos2d::Node::setRotation3D(Node *this, Vec3 *param_1);
 float __thiscall cocos2d::Node::getRotation(Node *this);
 void __thiscall cocos2d::Node::setRotation(Node *this, float param_1);
@@ -12609,7 +12709,7 @@ float __thiscall cocos2d::Node::getSkewX(Node *this);
 void __thiscall cocos2d::Node::setSkewX(Node *this, float param_1);
 float __thiscall cocos2d::Node::getPositionZ(Node *this);
 void __thiscall cocos2d::Node::setPositionZ(Node *this, float param_1);
-void __thiscall cocos2d::Node::getPosition3D(void);
+void __thiscall cocos2d::Node::getPosition3D(Node *this);
 void __thiscall cocos2d::Node::setPosition3D(Node *this, Vec3 *param_1);
 float __thiscall cocos2d::Node::getPositionY(Node *this);
 void __thiscall cocos2d::Node::setPositionY(Node *this, float param_1);
@@ -12634,7 +12734,7 @@ void __thiscall cocos2d::Node::setGlobalZOrder(Node *this, float param_1);
 void __thiscall cocos2d::Node::_setLocalZOrder(Node *this, int param_1);
 void __thiscall cocos2d::Node::setLocalZOrder(Node *this, int param_1);
 bool __thiscall cocos2d::Layer::init(Layer *this);
-void __thiscall cocos2d::Layer::getDescription(void);
+void __thiscall cocos2d::Layer::getDescription(Layer *this);
 void __thiscall cocos2d::Layer::setKeypadEnabled(Layer *this, bool param_1);
 void __thiscall cocos2d::Layer::onKeyReleased(Layer *this, KeyCode param_1, Event *param_2);
 void __thiscall cocos2d::Layer::onKeyPressed(Layer *this, KeyCode param_1, Event *param_2);
@@ -12672,16 +12772,16 @@ void __thiscall cocos2d::Layer::keyPressed(Layer *this, int param_1);
 void __thiscall cocos2d::Layer::registerWithTouchDispatcher(Layer *this);
 void __thiscall cocos2d::Layer::didAccelerate(Layer *this, Acceleration *param_1);
 void __thiscall cocos2d::Node::updateColor(Node *this);
-void __thiscall cocos2d::Node::worldToNodeTransform(void);
-void __thiscall cocos2d::Node::nodeToWorldTransform(void);
-void __thiscall cocos2d::Node::parentToNodeTransform(void);
-void __thiscall cocos2d::Node::nodeToParentTransform(void);
+void __thiscall cocos2d::Node::worldToNodeTransform(Node *this);
+void __thiscall cocos2d::Node::nodeToWorldTransform(Node *this);
+void __thiscall cocos2d::Node::parentToNodeTransform(Node *this);
+void __thiscall cocos2d::Node::nodeToParentTransform(Node *this);
 Scheduler *__thiscall cocos2d::Node::getScheduler(Node *this);
 Scheduler *__thiscall cocos2d::Node::getScheduler(Node *this);
 ActionManager *__thiscall cocos2d::Node::getActionManager(Node *this);
 ActionManager *__thiscall cocos2d::Node::getActionManager(Node *this);
 EventDispatcher *__thiscall cocos2d::Node::getEventDispatcher(Node *this);
-void __thiscall cocos2d::Node::boundingBox(void);
+void __thiscall cocos2d::Node::boundingBox(Node *this);
 Ref *__thiscall cocos2d::Node::getUserObject(Node *this);
 Ref *__thiscall cocos2d::Node::getUserObject(Node *this);
 void *__thiscall cocos2d::Node::getUserData(Node *this);
@@ -12705,7 +12805,7 @@ int __thiscall cocos2d::Node::getLocalZOrder(Node *this);
 void __thiscall cocos2d::Node::setZOrder(Node *this, int param_1);
 bool __thiscall cocos2d::Node::init(Node *this);
 void __thiscall cocos2d::Node::update(Node *this, float param_1);
-void __thiscall cocos2d::Node::getDescription(void);
+void __thiscall cocos2d::Node::getDescription(Node *this);
 void __thiscall cocos2d::Sprite::setDirtyRecursively(Sprite *this, bool param_1);
 void __thiscall cocos2d::Sprite::setReorderChildDirtyRecursively(Sprite *this);
 void __thiscall cocos2d::Sprite::updateBlendFunc(Sprite *this);
@@ -12747,15 +12847,15 @@ void __thiscall cocos2d::Sprite::setScale(Sprite *this, float param_1, float par
 void __thiscall cocos2d::Sprite::setScale(Sprite *this, float param_1);
 void __thiscall cocos2d::Sprite::setScaleY(Sprite *this, float param_1);
 void __thiscall cocos2d::Sprite::setScaleX(Sprite *this, float param_1);
-void __thiscall cocos2d::Sprite::getDescription(void);
+void __thiscall cocos2d::Sprite::getDescription(Sprite *this);
 void __thiscall cocos2d::Sprite::setDisplayFrameWithAnimationName(Sprite *this, basic_string<> *param_1, long param_2);
 SpriteFrame *__thiscall cocos2d::Sprite::getSpriteFrame(Sprite *this);
 bool __thiscall cocos2d::Sprite::isFrameDisplayed(Sprite *this, SpriteFrame *param_1);
 void __thiscall cocos2d::Sprite::setSpriteFrame(Sprite *this, basic_string<> *param_1);
 void __thiscall cocos2d::Sprite::setSpriteFrame(Sprite *this, SpriteFrame *param_1);
-void __thiscall cocos2d::Sprite::getCenterRect(void);
+void __thiscall cocos2d::Sprite::getCenterRect(Sprite *this);
 void __thiscall cocos2d::Sprite::setCenterRect(Sprite *this, Rect *param_1);
-void __thiscall cocos2d::Sprite::getCenterRectNormalized(void);
+void __thiscall cocos2d::Sprite::getCenterRectNormalized(Sprite *this);
 void __thiscall cocos2d::Sprite::setCenterRectNormalized(Sprite *this, Rect *param_1);
 void __thiscall cocos2d::Sprite::setVertexRect(Sprite *this, Rect *param_1);
 void __thiscall cocos2d::Sprite::setTextureRect(Sprite *this, Rect *param_1);
@@ -12773,149 +12873,146 @@ bool __thiscall cocos2d::Sprite::isDirty(Sprite *this);
 SpriteFrame *__thiscall cocos2d::Sprite::displayFrame(Sprite *this);
 SpriteFrame *__thiscall cocos2d::Sprite::getDisplayFrame(Sprite *this);
 void __thiscall cocos2d::Sprite::setDisplayFrame(Sprite *this, SpriteFrame *param_1);
-void __fastcall __security_check_cookie(uintptr_t _StackCookie);
+void __fastcall __security_check_cookie(int param_1);
 void *__cdecl operator_new(uint param_1);
 void __cdecl operator_delete(void *param_1, nothrow_t *param_2);
 void __cdecl operator_delete[](void *param_1, uint param_2);
-void __cdecl`eh_vector_destructor_iterator'(void *param_1,uint param_2,uint param_3,_func___thiscall_void_void_ptr *param_4); void FUN_005af900(void);
-void __cdecl __ArrayUnwind(void *param_1, uint param_2, uint param_3, _func___thiscall_void_void_ptr *param_4);
-void *__thiscall type_info::`scalar_deleting_destructor'(type_info *this,uint param_1); void *__cdecl operator_new(uint param_1, nothrow_t *param_2);
+void `eh_vector_destructor_iterator'(void *param_1,uint param_2,uint param_3,_func_void_void_ptr *param_4); void FUN_005af900(void);
+void __ArrayUnwind(void *param_1, uint param_2, uint param_3, _func_void_void_ptr *param_4);
+void *__thiscall type_info::`vector_deleting_destructor'(type_info *this,uint param_1); void *__cdecl operator_new(uint param_1, nothrow_t *param_2);
 undefined *Catch_All @005af9e4(void);
 void FUN_005af9ec(void);
-int __cdecl __scrt_initialize_thread_safe_statics(void);
-_func___cdecl_int__RTL_CONDITION_VARIABLE_ptr__RTL_CRITICAL_SECTION_ptr_ulong *__cdecl __crt_fast_encode_pointer<>(_func___cdecl_int__RTL_CONDITION_VARIABLE_ptr__RTL_CRITICAL_SECTION_ptr_ulong *param_1);
-void __cdecl __scrt_initialize_thread_safe_statics_platform_specific(void);
-void __cdecl __scrt_uninitialize_thread_safe_statics(void);
-void __cdecl _Init_thread_abort(int *param_1);
-void __cdecl _Init_thread_footer(int *param_1);
-void __cdecl _Init_thread_header(int *param_1);
-void __cdecl _Init_thread_notify(void);
-void __cdecl _Init_thread_wait(ulong param_1);
-_IMAGE_SECTION_HEADER *__cdecl find_pe_section(uchar *param_1, uint param_2);
-bool __cdecl __scrt_acquire_startup_lock(void);
-bool __cdecl __scrt_initialize_crt(__scrt_module_type param_1);
-bool __cdecl __scrt_initialize_onexit_tables(__scrt_module_type param_1);
-bool __cdecl __scrt_is_nonwritable_in_current_image(void *param_1);
-void __cdecl __scrt_release_startup_lock(bool param_1);
-bool __cdecl __scrt_uninitialize_crt(bool param_1, bool param_2);
-_onexit_t __cdecl _onexit(_onexit_t _Func);
-int __cdecl atexit(_func_4879 *param_1);
-void __cdecl __raise_securityfailure(_EXCEPTION_POINTERS *param_1);
-void __cdecl __report_gsfailure(void);
-void __cdecl __report_rangecheckfailure(void);
-void __cdecl __report_securityfailure(ulong param_1);
-void __cdecl`eh_vector_constructor_iterator'(void *param_1,uint param_2,uint param_3,_func___thiscall_void_void_ptr *param_4,_func___thiscall_void_void_ptr *param_5); void FUN_005b0188(void);
-void __cdecl`eh_vector_copy_constructor_iterator'(void *param_1,void *param_2,uint param_3,uint param_4,_func___thiscall_void_void_ptr_void_ptr *param_5,_func___thiscall_void_void_ptr *param_6); void FUN_005b0202(void);
+undefined4 __scrt_initialize_thread_safe_statics(void);
+_func_int__RTL_CONDITION_VARIABLE_ptr__RTL_CRITICAL_SECTION_ptr_ulong *__cdecl __crt_fast_encode_pointer<>(_func_int__RTL_CONDITION_VARIABLE_ptr__RTL_CRITICAL_SECTION_ptr_ulong *param_1);
+void __scrt_initialize_thread_safe_statics_platform_specific(void);
+void __scrt_uninitialize_thread_safe_statics(void);
+void __Init_thread_abort(undefined4 *param_1);
+void __Init_thread_footer(int *param_1);
+void __cdecl __Init_thread_header(int *param_1);
+void __Init_thread_notify(void);
+void __cdecl __Init_thread_wait(DWORD param_1);
+int __cdecl find_pe_section(int param_1, uint param_2);
+undefined4 ___scrt_acquire_startup_lock(void);
+int __cdecl ___scrt_initialize_crt(int param_1, int param_2);
+undefined4 __cdecl ___scrt_initialize_onexit_tables(int param_1);
+uint __cdecl ___scrt_is_nonwritable_in_current_image(int param_1);
+int __cdecl ___scrt_release_startup_lock(char param_1);
+undefined1 __cdecl ___scrt_uninitialize_crt(Ship *param_1, char param_2);
+_onexit_t __cdecl __onexit(_onexit_t _Func);
+int __cdecl _atexit(_func_4879 *param_1);
+void __cdecl ___raise_securityfailure(_EXCEPTION_POINTERS *param_1);
+void __cdecl ___report_gsfailure(void);
+void ___report_rangecheckfailure(void);
+void __cdecl ___report_securityfailure(undefined4 param_1);
+void `eh_vector_constructor_iterator'(void *param_1,uint param_2,uint param_3,_func_void_void_ptr *param_4,_func_void_void_ptr *param_5); void FUN_005b0188(void);
+void `eh_vector_copy_constructor_iterator'(void *param_1,void *param_2,uint param_3,uint param_4,_func_void_void_ptr_void_ptr *param_5,_func_void_void_ptr *param_6); void FUN_005b0202(void);
 void __cdecl operator_delete[](void *param_1);
 void *__cdecl operator_new[](uint param_1);
-int __cdecl pre_c_initialization(void);
-int __cdecl post_pgo_initialization(void);
-void __cdecl pre_cpp_initialization(void);
-int __cdecl __scrt_common_main_seh(void);
-int __cdecl WinMainCRTStartup(void);
+void __cdecl pre_c_initialization(int param_1, int param_2, int param_3);
+undefined4 post_pgo_initialization(void);
+void pre_cpp_initialization(void);
+int __scrt_common_main_seh(void);
+void _WinMainCRTStartup(void);
 bad_alloc *__thiscall std::bad_alloc::bad_alloc(bad_alloc *this, bad_alloc *param_1);
 bad_alloc *__thiscall std::bad_alloc::bad_alloc(bad_alloc *this);
 bad_array_new_length *__thiscall std::bad_array_new_length::bad_array_new_length(bad_array_new_length *this, bad_array_new_length *param_1);
 bad_array_new_length *__thiscall std::bad_array_new_length::bad_array_new_length(bad_array_new_length *this);
 exception *__thiscall std::exception::exception(exception *this, exception *param_1);
 void __thiscall std::bad_alloc::~bad_alloc(bad_alloc *this);
-void *__thiscall std::bad_alloc::`scalar_deleting_destructor'(bad_alloc *this,uint param_1); void __cdecl __scrt_throw_std_bad_alloc(void);
+void *__thiscall std::bad_alloc::`vector_deleting_destructor'(bad_alloc *this,uint param_1); void __cdecl __scrt_throw_std_bad_alloc(void);
 void __cdecl __scrt_throw_std_bad_array_new_length(void);
 char *__thiscall std::exception::what(exception *this);
 void __cdecl operator_delete(void *param_1);
-void __cdecl __SEH_prolog4(void);
-void __cdecl __SEH_epilog4(void);
-_EXCEPTION_DISPOSITION __cdecl _except_handler4(_EXCEPTION_RECORD *param_1, _EXCEPTION_REGISTRATION_RECORD *param_2, _CONTEXT *param_3, void *param_4);
-void __cdecl __scrt_fastfail(uint param_1);
-ushort __cdecl __scrt_get_show_window_mode(void);
-int __cdecl __scrt_initialize_mta(void);
-int __cdecl _get_startup_commit_mode(_exception *_Except);
-bool __cdecl __scrt_is_managed_app(void);
-void __cdecl __scrt_set_unhandled_exception_filter(void);
-long __cdecl __scrt_unhandled_exception_filter(_EXCEPTION_POINTERS *param_1);
-void __cdecl _crt_debugger_hook(int param_1);
-int __cdecl __isa_available_init(void);
-_crt_argv_mode __cdecl _get_startup_argv_mode(void);
-int __cdecl __scrt_is_ucrt_dll_in_use(void);
-uint __cdecl __get_entropy(void);
-void __cdecl __security_init_cookie(void);
-int __cdecl _get_startup_file_mode(void);
+void __cdecl __SEH_prolog4(undefined4 param_1, int param_2);
+void __SEH_epilog4(void);
+void __cdecl __except_handler4(undefined4 param_1, undefined4 param_2, undefined4 param_3, undefined4 param_4);
+void ___scrt_fastfail(void);
+ushort ___scrt_get_show_window_mode(void);
+int __cdecl ___scrt_initialize_mta(_exception *_Except);
+int __cdecl ___scrt_exe_initialize_mta(_exception *_Except);
+uint ___scrt_is_managed_app(void);
+void ___scrt_set_unhandled_exception_filter(void);
+undefined4 ___scrt_unhandled_exception_filter @4(int *param_1);
+void __cdecl __crt_debugger_hook(int param_1);
+undefined4 ___isa_available_init(void);
+undefined4 __get_startup_argv_mode(void);
+bool ___scrt_is_ucrt_dll_in_use(void);
+uint __get_entropy(void);
+void __cdecl ___security_init_cookie(void);
+undefined4 __get_startup_file_mode(void);
 void __cdecl __scrt_initialize_type_info(void);
-void __cdecl _initialize_default_precision(void);
-ulong64 *__cdecl __local_stdio_scanf_options(void);
-void __cdecl __scrt_initialize_default_local_stdio_options(void);
-int __cdecl __scrt_is_user_matherr_present(void);
-_func___cdecl_void_void_ptr_ulong_void_ptr **__cdecl __scrt_get_dyn_tls_init_callback(void);
-_func___cdecl_void_void_ptr_ulong_void_ptr **__cdecl __scrt_get_dyn_tls_dtor_callback(void);
-void __cdecl _RTC_Initialize(void);
-void __cdecl _RTC_Terminate(void);
-void ___CxxFrameHandler3(void);
+void __initialize_default_precision(void);
+__uint64 *___local_stdio_scanf_options(void);
+void ___scrt_initialize_default_local_stdio_options(void);
+bool ___scrt_is_user_matherr_present(void);
+undefined *___scrt_get_dyn_tls_init_callback(void);
+undefined *___scrt_get_dyn_tls_dtor_callback(void);
+void __RTC_Initialize(void);
+void __RTC_Terminate(void);
 void ___std_terminate(void);
-void __purecall(void);
+void __cdecl __purecall(void);
 void ___std_exception_copy(void);
 void ___std_exception_destroy(void);
 void __CxxThrowException @8(void *pExceptionObject, ThrowInfo *pThrowInfo);
-void __except_handler4_common(void);
-void *__cdecl _memset(void *_Dst, int _Val, size_t _Size);
-void __cdecl _free(void *_Memory);
-void *__cdecl _malloc(size_t _Size);
+void __cdecl __except_handler4_common(void);
+void __cdecl memset(void *param_1, int param_2, size_t param_3);
+void __cdecl free(void *param_1);
+void __cdecl malloc(size_t param_1);
 int __cdecl __callnewh(size_t _Size);
-void _terminate(void);
-void __configure_narrow_argv(void);
-void __initialize_narrow_environment(void);
-void __initialize_onexit_table(void);
-void __register_onexit_function(void);
-void __crt_atexit(void);
+void __cdecl terminate(void);
+void __cdecl __configure_narrow_argv(void);
+void __cdecl __initialize_narrow_environment(void);
+void __cdecl __initialize_onexit_table(void);
+void __cdecl __register_onexit_function(void);
+void __cdecl __crt_atexit(void);
 void __cdecl __cexit(void);
-void __seh_filter_exe(void);
-void __set_app_type(void);
+void __cdecl __set_app_type(void);
 void ___setusermatherr(void);
-void __get_narrow_winmain_command_line(void);
-void __initterm(void);
-void __initterm_e(void);
-void __cdecl _exit(int _Code);
+void __cdecl __get_narrow_winmain_command_line(void);
+void __cdecl __initterm(void);
+void __cdecl __initterm_e(void);
+void __cdecl exit(int param_1);
 void __cdecl __exit(int _Code);
 errno_t __cdecl __set_fmode(int _Mode);
-void __cdecl __c_exit(void);
-void __register_thread_local_exe_atexit_callback(void);
+void __cdecl __register_thread_local_exe_atexit_callback(void);
 int __cdecl __configthreadlocale(int _Flag);
-void __set_new_mode(void);
+void __cdecl __set_new_mode(void);
 void ___p__commode(void);
 errno_t __cdecl __controlfp_s(uint *_CurrentState, uint _NewValue, uint _Mask);
 BOOL _IsProcessorFeaturePresent @4(DWORD ProcessorFeature);
-void __cdecl _alldvrm(void);
-void __cdecl _chkstk(void);
-void __cdecl _alloca_probe_16(void);
+undefined8 __alldvrm(uint param_1, uint param_2, uint param_3, uint param_4);
+void __alloca_probe(void);
+uint __alloca_probe_16(void);
 uint __alloca_probe_8(void);
-void __cdecl _aulldiv(void);
-void __cdecl _ftoui3(void);
-void __cdecl _ftoul3(void);
-void __cdecl _ftol3(void);
-void __cdecl _ftol3_NaN(void);
-void __cdecl _ftol3_work(void);
-void __cdecl _ftol3_common(void);
-void __cdecl _ftol3_arg_error(void);
-void __cdecl _ftol3_except(void);
-void __cdecl _dtoui3(void);
-void __cdecl _dtoul3(void);
-void __cdecl _dtol3(void);
-void __cdecl _dtol3_NaN(void);
-void __cdecl _dtol3_work(void);
-void __cdecl _ultod3(void);
-void __cdecl _ltod3(void);
-void __cdecl _ftol2_sse(void);
-void __cdecl _ftol2_pentium4(void);
-void __cdecl _ftol2_sse_excpt(void);
-void __cdecl _ftol2(void);
-void *__cdecl _memchr(void *_Buf, int _Val, size_t _MaxCount);
-void *__cdecl _memcpy(void *_Dst, void *_Src, size_t _Size);
-void *__cdecl _memmove(void *_Dst, void *_Src, size_t _Size);
+undefined8 __aulldiv(uint param_1, uint param_2, uint param_3, uint param_4);
+ulonglong __ftoui3(void);
+ulonglong __ftoul3(void);
+ulonglong __ftol3(void);
+ulonglong __fastcall __ftol3_NaN(int param_1);
+ulonglong __fastcall __ftol3_work(int param_1);
+ulonglong __fastcall __ftol3_common(undefined4 param_1);
+undefined8 __fastcall __ftol3_arg_error(undefined4 param_1);
+void __fastcall __ftol3_except(undefined4 param_1, int param_2);
+void __dtoui3(void);
+void __dtoul3(void);
+uint __dtol3(void);
+uint __fastcall __dtol3_NaN(int param_1);
+ulonglong __fastcall __dtol3_work(int param_1);
+void __ultod3(void);
+void __ltod3(void);
+ulonglong __fastcall __ftol2_sse(undefined4 param_1, undefined4 param_2);
+int __ftol2_pentium4(void);
+ulonglong __fastcall __ftol2_sse_excpt(undefined4 param_1, undefined4 param_2);
+ulonglong __ftol2(void);
+void __cdecl memchr(void *param_1, int param_2, size_t param_3);
+void __cdecl memcpy(void *param_1, void *param_2, size_t param_3);
+void __cdecl memmove(void *param_1, void *param_2, size_t param_3);
 void __CIatan2(void);
 void __CIfmod(void);
-void __libm_sse2_cos_precise(void);
-void __libm_sse2_sin_precise(void);
-void __except1(void);
-void.text$x(void);
+void __cdecl __libm_sse2_cos_precise(void);
+void __cdecl __libm_sse2_sin_precise(void);
+void __cdecl __except1(void);
+void Unwind @005b11f0(void);
 void Unwind @005b11f8(void);
 void Unwind @005b1207(void);
 void Unwind @005b120f(void);
@@ -18941,10 +19038,10 @@ void Unwind @005c8dc0(void);
 void Unwind @005c8dcb(void);
 void Unwind @005c8de0(void);
 void Unwind @005c8dec(void);
-
 void Unwind @005c8e01(void);
 void Unwind @005c8e0c(void);
 void Unwind @005c8e14(void);
+
 void Unwind @005c8e1f(void);
 void Unwind @005c8e27(void);
 void Unwind @005c8e32(void);
@@ -19911,105 +20008,102 @@ void Unwind @005cd1d0(void);
 void Unwind @005cd1d8(void);
 void Unwind @005cd1ea(void);
 void Unwind @005cd1fc(void);
-void __unwindfunclet$ ? Push1 @BPSTracker @RakNet @ @QAEX_K0 @Z$0(void);
-void __unwindfunclet$ ? ? 0ReliabilityLayer @RakNet @ @QAE @XZ$0(void);
-void __unwindfunclet$ ? ? 0ReliabilityLayer @RakNet @ @QAE @XZ$1(void);
-void __unwindfunclet$ ? ? 0ReliabilityLayer @RakNet @ @QAE @XZ$2(void);
-void __unwindfunclet$ ? ? 0ReliabilityLayer @RakNet @ @QAE @XZ$3(void);
-void __unwindfunclet$ ? ? 0ReliabilityLayer @RakNet @ @QAE @XZ$4(void);
-void __unwindfunclet$ ? ? 0ReliabilityLayer @RakNet @ @QAE @XZ$5(void);
-void __unwindfunclet$ ? ? 0ReliabilityLayer @RakNet @ @QAE @XZ$6(void);
-void __unwindfunclet$ ? ? 0ReliabilityLayer @RakNet @ @QAE @XZ$7(void);
-void __unwindfunclet$ ? ? 0ReliabilityLayer @RakNet @ @QAE @XZ$8(void);
-void __unwindfunclet$ ? ? 0ReliabilityLayer @RakNet @ @QAE @XZ$9(void);
-void __unwindfunclet$ ? ? 0ReliabilityLayer @RakNet @ @QAE @XZ$10(void);
-void __unwindfunclet$ ? ? 0ReliabilityLayer @RakNet @ @QAE @XZ$11(void);
-void __unwindfunclet$ ? ? 0ReliabilityLayer @RakNet @ @QAE @XZ$12(void);
-void __unwindfunclet$ ? ? 0ReliabilityLayer @RakNet @ @QAE @XZ$13(void);
-void __unwindfunclet$ ? ? 0ReliabilityLayer @RakNet @ @QAE @XZ$14(void);
-void __unwindfunclet$ ? ? 0ReliabilityLayer @RakNet @ @QAE @XZ$15(void);
-void __unwindfunclet$ ? ? 0ReliabilityLayer @RakNet @ @QAE @XZ$16(void);
-void __unwindfunclet$ ? ? 0ReliabilityLayer @RakNet @ @QAE @XZ$17(void);
-void __unwindfunclet$ ? HandleSocketReceiveFromConnectedPlayer @ReliabilityLayer @RakNet @ @QAE_NPBDIAAUSystemAddress @2 @AAV ? $List @PAVPluginInterface2 @RakNet @ @ @DataStructures @ @HPAVRakNetSocket2 @2 @PAVRakNetRandom @2 @_KAAVBitStream @2 @ @Z$9(void);
-void __unwindfunclet$ ? HandleSocketReceiveFromConnectedPlayer @ReliabilityLayer @RakNet @ @QAE_NPBDIAAUSystemAddress @2 @AAV ? $List @PAVPluginInterface2 @RakNet @ @ @DataStructures @ @HPAVRakNetSocket2 @2 @PAVRakNetRandom @2 @_KAAVBitStream @2 @ @Z$10(void);
-void __unwindfunclet$ ? ? $OP_NEW_ARRAY @UTimeAndValue2 @BPSTracker @RakNet @ @ @RakNet @ @YAPAUTimeAndValue2 @BPSTracker @0 @HPBDI @Z$0(void);
-void __unwindfunclet$ ? ? $OP_NEW_ARRAY @U ? $RangeNode @Uuint24_t @RakNet @ @ @DataStructures @ @ @RakNet @ @YAPAU ? $RangeNode @Uuint24_t @RakNet @ @ @DataStructures @ @HPBDI @Z$0(void);
-void __unwindfunclet$ ? ? 0RakPeer @RakNet @ @QAE @XZ$0(void);
-void __unwindfunclet$ ? ? 0RakPeer @RakNet @ @QAE @XZ$1(void);
-void __unwindfunclet$ ? ? 0RakPeer @RakNet @ @QAE @XZ$2(void);
-void __unwindfunclet$ ? ? 0RakPeer @RakNet @ @QAE @XZ$3(void);
-void __unwindfunclet$ ? ? 0RakPeer @RakNet @ @QAE @XZ$4(void);
-void __unwindfunclet$ ? ? 0RakPeer @RakNet @ @QAE @XZ$5(void);
-void __unwindfunclet$ ? ? 0RakPeer @RakNet @ @QAE @XZ$6(void);
-void __unwindfunclet$ ? ? 0RakPeer @RakNet @ @QAE @XZ$7(void);
-void __unwindfunclet$ ? ? 0RakPeer @RakNet @ @QAE @XZ$8(void);
-void __unwindfunclet$ ? ? 0RakPeer @RakNet @ @QAE @XZ$9(void);
-void __unwindfunclet$ ? ? 0RakPeer @RakNet @ @QAE @XZ$10(void);
-void __unwindfunclet$ ? ? 0RakPeer @RakNet @ @QAE @XZ$11(void);
-void __unwindfunclet$ ? ? 0RakPeer @RakNet @ @QAE @XZ$12(void);
-void __unwindfunclet$ ? ? 0RakPeer @RakNet @ @QAE @XZ$13(void);
-void __unwindfunclet$ ? ? 0RakPeer @RakNet @ @QAE @XZ$14(void);
-void __unwindfunclet$ ? ? 0RakPeer @RakNet @ @QAE @XZ$15(void);
-void __unwindfunclet$ ? ? 0RakPeer @RakNet @ @QAE @XZ$16(void);
-void __unwindfunclet$ ? ? 0RakPeer @RakNet @ @QAE @XZ$17(void);
-void __unwindfunclet$ ? ? 0RakPeer @RakNet @ @QAE @XZ$18(void);
-void __unwindfunclet$ ? ? 0RakPeer @RakNet @ @QAE @XZ$19(void);
-void __unwindfunclet$ ? ? 0RakPeer @RakNet @ @QAE @XZ$20(void);
-void __unwindfunclet$ ? ? 0RakPeer @RakNet @ @QAE @XZ$21(void);
-void __unwindfunclet$ ? ? 0RakPeer @RakNet @ @QAE @XZ$22(void);
-void __unwindfunclet$ ? ? 0RakPeer @RakNet @ @QAE @XZ$23(void);
-void __unwindfunclet$ ? ? 0RakPeer @RakNet @ @QAE @XZ$24(void);
-void __unwindfunclet$ ? ? 0RakPeer @RakNet @ @QAE @XZ$25(void);
-void __unwindfunclet$ ? Startup @RakPeer @RakNet @ @UAE ? AW4StartupResult @2 @IPAUSocketDescriptor @2 @IH @Z$1(void);
-void __unwindfunclet$                                   ? AddToSecurityExceptionList @RakPeer @RakNet @ @UAEXPBD @Z$0(void);
-void __unwindfunclet$                                   ? NumberOfConnections @RakPeer @RakNet @ @UBEGXZ$0(void);
-void __unwindfunclet$                                   ? NumberOfConnections @RakPeer @RakNet @ @UBEGXZ$1(void);
-void __unwindfunclet$                                   ? Shutdown @RakPeer @RakNet @ @UAEXIEW4PacketPriority @ @ @Z$0(void);
-void __unwindfunclet$                                   ? GetConnectionList @RakPeer @RakNet @ @UBE_NPAUSystemAddress @2 @PAG @Z$0(void);
-void __unwindfunclet$                                   ? GetConnectionList @RakPeer @RakNet @ @UBE_NPAUSystemAddress @2 @PAG @Z$1(void);
-void __unwindfunclet$                                   ? Ping @RakPeer @RakNet @ @UAE_NPBDG_NI @Z$0(void);
-void __unwindfunclet$ ? GetMyBoundAddress @RakPeer @RakNet @ @UAE ? AUSystemAddress @2 @H @Z$0(void);
-void __unwindfunclet$                                             ? AdvertiseSystem @RakPeer @RakNet @ @UAE_NPBDG0HI @Z$0(void);
-void __unwindfunclet$                                             ? GetSocket @RakPeer @RakNet @ @UAEPAVRakNetSocket2 @2 @USystemAddress @2 @ @Z$0(void);
-void __unwindfunclet$                                             ? SendOutOfBand @RakPeer @RakNet @ @UAE_NPBDG0II @Z$0(void);
-void __unwindfunclet$                                             ? ParseConnectionRequestPacket @RakPeer @RakNet @ @IAEXPAURemoteSystemStruct @12 @ABUSystemAddress @2 @PBDH @Z$0(void);
-void __unwindfunclet$                                             ? ParseConnectionRequestPacket @RakPeer @RakNet @ @IAEXPAURemoteSystemStruct @12 @ABUSystemAddress @2 @PBDH @Z$1(void);
-void __unwindfunclet$                                             ? OnConnectionRequest @RakPeer @RakNet @ @IAEXPAURemoteSystemStruct @12 @_K @Z$0(void);
-void __unwindfunclet$                                             ? NotifyAndFlagForShutdown @RakPeer @RakNet @ @IAEXUSystemAddress @2 @_NEW4PacketPriority @ @ @Z$0(void);
-void __unwindfunclet$                                             ? PingInternal @RakPeer @RakNet @ @IAEXUSystemAddress @2 @_NW4PacketReliability @ @ @Z$0(void);
-void __unwindfunclet$                                             ? ProcessOfflineNetworkPacket @RakNet @ @YA_NUSystemAddress @1 @PBDHPAVRakPeer @1 @PAVRakNetSocket2 @1 @PA_N_K @Z$0(void);
-void __unwindfunclet$                                             ? ProcessOfflineNetworkPacket @RakNet @ @YA_NUSystemAddress @1 @PBDHPAVRakPeer @1 @PAVRakNetSocket2 @1 @PA_N_K @Z$1(void);
-void __unwindfunclet$                                             ? ProcessOfflineNetworkPacket @RakNet @ @YA_NUSystemAddress @1 @PBDHPAVRakPeer @1 @PAVRakNetSocket2 @1 @PA_N_K @Z$2(void);
-void __unwindfunclet$                                             ? ProcessOfflineNetworkPacket @RakNet @ @YA_NUSystemAddress @1 @PBDHPAVRakPeer @1 @PAVRakNetSocket2 @1 @PA_N_K @Z$3(void);
-void __unwindfunclet$                                             ? ProcessOfflineNetworkPacket @RakNet @ @YA_NUSystemAddress @1 @PBDHPAVRakPeer @1 @PAVRakNetSocket2 @1 @PA_N_K @Z$4(void);
-void __unwindfunclet$                                             ? ProcessOfflineNetworkPacket @RakNet @ @YA_NUSystemAddress @1 @PBDHPAVRakPeer @1 @PAVRakNetSocket2 @1 @PA_N_K @Z$5(void);
-void __unwindfunclet$                                             ? ProcessOfflineNetworkPacket @RakNet @ @YA_NUSystemAddress @1 @PBDHPAVRakPeer @1 @PAVRakNetSocket2 @1 @PA_N_K @Z$6(void);
-void __unwindfunclet$                                             ? ProcessOfflineNetworkPacket @RakNet @ @YA_NUSystemAddress @1 @PBDHPAVRakPeer @1 @PAVRakNetSocket2 @1 @PA_N_K @Z$7(void);
-void __unwindfunclet$                                             ? ProcessOfflineNetworkPacket @RakNet @ @YA_NUSystemAddress @1 @PBDHPAVRakPeer @1 @PAVRakNetSocket2 @1 @PA_N_K @Z$8(void);
-void __unwindfunclet$                                             ? ProcessOfflineNetworkPacket @RakNet @ @YA_NUSystemAddress @1 @PBDHPAVRakPeer @1 @PAVRakNetSocket2 @1 @PA_N_K @Z$9(void);
-void __unwindfunclet$                                             ? ProcessOfflineNetworkPacket @RakNet @ @YA_NUSystemAddress @1 @PBDHPAVRakPeer @1 @PAVRakNetSocket2 @1 @PA_N_K @Z$11(void);
-void __unwindfunclet$                                             ? ProcessOfflineNetworkPacket @RakNet @ @YA_NUSystemAddress @1 @PBDHPAVRakPeer @1 @PAVRakNetSocket2 @1 @PA_N_K @Z$12(void);
-void __unwindfunclet$                                             ? ProcessOfflineNetworkPacket @RakNet @ @YA_NUSystemAddress @1 @PBDHPAVRakPeer @1 @PAVRakNetSocket2 @1 @PA_N_K @Z$13(void);
-void __unwindfunclet$                                             ? ProcessOfflineNetworkPacket @RakNet @ @YA_NUSystemAddress @1 @PBDHPAVRakPeer @1 @PAVRakNetSocket2 @1 @PA_N_K @Z$14(void);
-void __unwindfunclet$                                             ? ProcessOfflineNetworkPacket @RakNet @ @YA_NUSystemAddress @1 @PBDHPAVRakPeer @1 @PAVRakNetSocket2 @1 @PA_N_K @Z$15(void);
-void __unwindfunclet$                                             ? ProcessOfflineNetworkPacket @RakNet @ @YA_NUSystemAddress @1 @PBDHPAVRakPeer @1 @PAVRakNetSocket2 @1 @PA_N_K @Z$10(void);
-void __unwindfunclet$                                             ? RunUpdateCycle @RakPeer @RakNet @ @UAE_NAAVBitStream @2 @ @Z$0(void);
-void __unwindfunclet$                                             ? RunUpdateCycle @RakPeer @RakNet @ @UAE_NAAVBitStream @2 @ @Z$1(void);
-void __unwindfunclet$                                             ? RunUpdateCycle @RakPeer @RakNet @ @UAE_NAAVBitStream @2 @ @Z$2(void);
-void __unwindfunclet$                                             ? RunUpdateCycle @RakPeer @RakNet @ @UAE_NAAVBitStream @2 @ @Z$4(void);
-void __unwindfunclet$                                             ? RunUpdateCycle @RakPeer @RakNet @ @UAE_NAAVBitStream @2 @ @Z$5(void);
-void __unwindfunclet$                                             ? RunUpdateCycle @RakPeer @RakNet @ @UAE_NAAVBitStream @2 @ @Z$6(void);
-void __unwindfunclet$                                             ? RunUpdateCycle @RakPeer @RakNet @ @UAE_NAAVBitStream @2 @ @Z$7(void);
-void __unwindfunclet$                                             ? UpdateNetworkLoop @RakNet @ @YGIPAX @Z$0(void);
-void __unwindfunclet$ ? Insert @ ? $List @VRakString @RakNet @ @ @DataStructures @ @QAEXABVRakString @RakNet @ @PBDI @Z$0(void);
-void __unwindfunclet$            ? AddReference @StringCompressor @RakNet @ @SAXXZ$0(void);
-void __unwindfunclet$            ? AddReference @StringCompressor @RakNet @ @SAXXZ$1(void);
-void __unwindfunclet$            ? FreeMemory @HuffmanEncodingTree @RakNet @ @QAEXXZ$0(void);
-void __unwindfunclet$            ? GenerateFromFrequencyTable @HuffmanEncodingTree @RakNet @ @QAEXQAI @Z$0(void);
-void.text$yd(void);
-void FUN_005cdcf0(void);
-void FUN_005cdd10(void);
-void __fastcall FUN_005cdd30(undefined4 param_1);
+void Unwind @005cd240(void);
+void Unwind @005cd290(void);
+void Unwind @005cd298(void);
+void Unwind @005cd2a3(void);
+void Unwind @005cd2ae(void);
+void Unwind @005cd2b9(void);
+void Unwind @005cd2c4(void);
+void Unwind @005cd2d2(void);
+void Unwind @005cd2e0(void);
+void Unwind @005cd2f8(void);
+void Unwind @005cd306(void);
+void Unwind @005cd314(void);
+void Unwind @005cd322(void);
+void Unwind @005cd330(void);
+void Unwind @005cd33e(void);
+void Unwind @005cd34c(void);
+void Unwind @005cd35a(void);
+void Unwind @005cd368(void);
+void Unwind @005cd376(void);
+void Unwind @005cd3c0(void);
+void Unwind @005cd3cb(void);
+void Unwind @005cd430(void);
+void Unwind @005cd480(void);
+void Unwind @005cd4d0(void);
+void Unwind @005cd4d8(void);
+void Unwind @005cd4e3(void);
+void Unwind @005cd4ee(void);
+void Unwind @005cd4fc(void);
+void Unwind @005cd514(void);
+void Unwind @005cd522(void);
+void Unwind @005cd530(void);
+void Unwind @005cd53e(void);
+void Unwind @005cd54c(void);
+void Unwind @005cd55a(void);
+void Unwind @005cd568(void);
+void Unwind @005cd576(void);
+void Unwind @005cd584(void);
+void Unwind @005cd592(void);
+void Unwind @005cd5a0(void);
+void Unwind @005cd5ae(void);
+void Unwind @005cd5bc(void);
+void Unwind @005cd5ca(void);
+void Unwind @005cd5d8(void);
+void Unwind @005cd5e6(void);
+void Unwind @005cd5f4(void);
+void Unwind @005cd602(void);
+void Unwind @005cd610(void);
+void Unwind @005cd61e(void);
+void Unwind @005cd62c(void);
+void Unwind @005cd680(void);
+void Unwind @005cd6e0(void);
+void Unwind @005cd730(void);
+void Unwind @005cd738(void);
+void Unwind @005cd770(void);
+void Unwind @005cd7a0(void);
+void Unwind @005cd7a8(void);
+void Unwind @005cd7e0(void);
+void Unwind @005cd820(void);
+void Unwind @005cd850(void);
+void Unwind @005cd890(void);
+void Unwind @005cd8c0(void);
+void Unwind @005cd900(void);
+void Unwind @005cd90b(void);
+void Unwind @005cd940(void);
+void Unwind @005cd980(void);
+void Unwind @005cd9c0(void);
+void Unwind @005cda00(void);
+void Unwind @005cda0b(void);
+void Unwind @005cda16(void);
+void Unwind @005cda21(void);
+void Unwind @005cda2c(void);
+void Unwind @005cda37(void);
+void Unwind @005cda42(void);
+void Unwind @005cda4d(void);
+void Unwind @005cda58(void);
+void Unwind @005cda63(void);
+void Unwind @005cda6e(void);
+void Unwind @005cda79(void);
+void Unwind @005cda84(void);
+void Unwind @005cda8f(void);
+void Unwind @005cda9a(void);
+void Unwind @005cdaa5(void);
+void Unwind @005cdae0(void);
+void Unwind @005cdaeb(void);
+void Unwind @005cdaf6(void);
+void Unwind @005cdb01(void);
+void Unwind @005cdb0c(void);
+void Unwind @005cdb17(void);
+void Unwind @005cdb22(void);
+void Unwind @005cdb60(void);
+void Unwind @005cdbc0(void);
+void Unwind @005cdc10(void);
+void Unwind @005cdc1f(void);
+void Unwind @005cdc50(void);
+void Unwind @005cdc80(void);
+void __fastcall FUN_005cdd30(_Tree<> *param_1);
 void FUN_005cdd60(void);
 void FUN_005cddc0(void);
 void FUN_005cde20(void);
@@ -20042,6 +20136,5 @@ void FUN_005ce6e0(void);
 void FUN_005ce740(void);
 void FUN_005ce7a0(void);
 void FUN_005ce7b0(void);
-void FUN_005ce810(void);
 void FUN_005ce820(void);
-void __cdecl `dynamic_atexit_destructor_for_ 'rnr''(void); void __cdecl `dynamic_atexit_destructor_for_ 'RakNet::RakString::freeList''(void); void __cdecl `dynamic_atexit_destructor_for_ 'cleanup''(void); void __cdecl `GetPoolMutex '::__l2::`dynamic_atexit_destructor_for_' poolMutex''(void);
+void `dynamic_atexit_destructor_for_ 'rnr''(void); void `dynamic_atexit_destructor_for_ 'RakNet::RakString::freeList''(void); void __cdecl RakNet::RakString::`dynamic_atexit_destructor_for_ 'cleanup''(void); void `GetPoolMutex '::`2' ::`dynamic_atexit_destructor_for_ 'poolMutex''(void);
