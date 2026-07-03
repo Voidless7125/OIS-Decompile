@@ -1,0 +1,21 @@
+name: Copilot Automation Fix
+
+on:
+  push:
+    branches:
+      - 'copilot/**'  # Triggers when you push to your copilot branches
+
+jobs:
+  copilot-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run Copilot Action
+        # This forces the runtime engine to use a model available to your tier
+        uses: github/copilot-action@v3
+        with:
+          model: 'auto' # or 'gpt-4o' if auto fails
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
