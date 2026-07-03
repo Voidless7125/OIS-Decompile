@@ -1,0 +1,131 @@
+name: Create issues for FUN_* symbols
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  create-fun-issues:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Create issues from FUN_* symbols in OIS.exe files
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const path = require('path');
+
+            const targetFiles = ['OIS.exe.c', 'OIS.exe.h'];
+            const serverNamePattern = /server/i;
+            const funPattern = /\bFUN_[A-Za-z0-9_]+\b/g;
+
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+
+            const existingTitles = new Set();
+            let page = 1;
+
+            core.info('Loading existing issues (open + closed) for idempotency checks...');
+            while (true) {
+              const { data: issues } = await github.rest.issues.listForRepo({
+                owner,
+                repo,
+                state: 'all',
+                per_page: 100,
+                page,
+              });
+
+              if (!issues.length) break;
+
+              for (const issue of issues) {
+                if (!issue.pull_request && issue.title) {
+                  existingTitles.add(issue.title.trim());
+                }
+              }
+
+              if (issues.length < 100) break;
+              page += 1;
+            }
+
+            let filesScanned = 0;
+            const scannedFiles = [];
+            const funNames = new Set();
+
+            for (const file of targetFiles) {
+              if (serverNamePattern.test(file)) {
+                core.info(`Skipping server-related file by name rule: ${file}`);
+                continue;
+              }
+
+              const filePath = path.join(process.env.GITHUB_WORKSPACE || '.', file);
+
+              if (!fs.existsSync(filePath)) {
+                core.info(`File not found, skipping: ${file}`);
+                continue;
+              }
+
+              filesScanned += 1;
+              scannedFiles.push(file);
+              core.info(`Scanning file: ${file}`);
+
+              const content = fs.readFileSync(filePath, 'utf8');
+              const matches = content.match(funPattern) || [];
+              for (const m of matches) {
+                funNames.add(m);
+              }
+            }
+
+            const sortedFunNames = [...funNames].sort((a, b) => a.localeCompare(b));
+
+            core.info(`Files scanned: ${filesScanned}`);
+            core.info(`Scanned file list: ${scannedFiles.length ? scannedFiles.join(', ') : '(none)'}`);
+            core.info(`Unique FUN_* symbols found: ${sortedFunNames.length}`);
+
+            let skippedDuplicates = 0;
+            let createdCount = 0;
+
+            for (const funName of sortedFunNames) {
+              const title = `Decompile: ${funName}`;
+
+              if (existingTitles.has(title)) {
+                skippedDuplicates += 1;
+                core.info(`Skipping existing issue: ${title}`);
+                continue;
+              }
+
+              const body = [
+                `Auto-generated decompilation tracking issue for \`${funName}\`.`,
+                '',
+                '### Source',
+                '- Detected in `OIS.exe.c` / `OIS.exe.h`',
+                '',
+                '### Tasks',
+                '- [ ] Rename and map purpose',
+                '- [ ] Verify parameters and return type',
+                '- [ ] Add notes/comments from analysis',
+              ].join('\n');
+
+              await github.rest.issues.create({
+                owner,
+                repo,
+                title,
+                body,
+              });
+
+              existingTitles.add(title);
+              createdCount += 1;
+              core.info(`Created issue: ${title}`);
+            }
+
+            core.info(`Skipped duplicates: ${skippedDuplicates}`);
+            core.info(`Issues created: ${createdCount}`);
+
+            if (sortedFunNames.length === 0) {
+              core.info('No FUN_* symbols were found. Exiting successfully.');
+            }
