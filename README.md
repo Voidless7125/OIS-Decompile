@@ -14,6 +14,29 @@ It needs improvement. There are over 5k undefined functions, but that's about it
 
 ---
 
+<!-- TRACKER_START -->
+<table>
+  <tbody>
+    <tr>
+      <td>
+<pre>
+╔══════════════════════════════════════╗
+║   OIS DECOMPILATION PROGRESS TRACKER ║
+╠══════════════════════════════════════╣
+║  Total Symbols  : 38910               ║
+║  Resolved       : 33107               ║
+║  Unresolved     : 5803                ║
+║  Accuracy       : 85.09%              ║
+╠══════════════════════════════════════╣
+║  Progress  [███████████████████░░░]  85.1% ║
+╚══════════════════════════════════════╝
+</pre>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<!-- TRACKER_END -->
+
 <table>
   <tbody>
     <tr>
