@@ -20,7 +20,7 @@ const statusData = [
 ];
 
 const calculateImplementedPercentage = (implementedCount, totalCount) => {
-  if (!Number.isFinite(totalCount) || totalCount <= 0) {
+  if (!Number.isFinite(implementedCount) || !Number.isFinite(totalCount) || totalCount <= 0) {
     return '0.00';
   }
 
@@ -97,4 +97,6 @@ const renderStatusCard = ({
 };
 
 const statusGrid = document.getElementById('status-grid');
-statusData.map(renderStatusCard).forEach((card) => statusGrid.appendChild(card));
+statusData.forEach((entry) => {
+  statusGrid.appendChild(renderStatusCard(entry));
+});
