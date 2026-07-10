@@ -97,6 +97,9 @@ const renderStatusCard = ({
 };
 
 const statusGrid = document.getElementById('status-grid');
-statusData.forEach((entry) => {
-  statusGrid.appendChild(renderStatusCard(entry));
-});
+
+if (statusGrid) {
+  statusData.forEach((entry) => {
+    statusGrid.appendChild(renderStatusCard(entry));
+  });
+}
