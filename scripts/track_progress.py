@@ -42,8 +42,11 @@ C_KEYWORDS = {
     "include", "define", "ifdef", "ifndef", "endif", "pragma",
 }
 
-BAR_WIDTH = 16
+BAR_WIDTH = 22
 BOX_INNER_WIDTH = 59
+OIS_EXE_IMPLEMENTED = 150
+OIS_EXE_TOTAL = 150
+OIS_EXE_ACCURACY = 99.10
 
 
 # ---------------------------------------------------------------------------
@@ -111,7 +114,7 @@ def build_tracker_block(stats: dict) -> str:
     accuracy = (resolved / total * 100) if total > 0 else 0.0
     bar = build_progress_bar(accuracy)
 
-    module_accuracy = 99.10
+    module_accuracy = OIS_EXE_ACCURACY
     module_bar = build_progress_bar(module_accuracy)
 
     lines = [
@@ -126,7 +129,10 @@ def build_tracker_block(stats: dict) -> str:
         format_box_line(f" PROGRESS      {bar} {accuracy:5.1f}%"),
         "╠" + "═" * BOX_INNER_WIDTH + "╣",
         format_box_line(" MODULE: OIS.EXE"),
-        format_box_line(" IMPLEMENTED   : 100.00% (150/150)"),
+        format_box_line(
+            f" IMPLEMENTED   : {OIS_EXE_IMPLEMENTED / OIS_EXE_TOTAL * 100:.2f}%"
+            f" ({OIS_EXE_IMPLEMENTED}/{OIS_EXE_TOTAL})"
+        ),
         format_box_line(f" ACCURACY      : {module_accuracy:.2f}%"),
         format_box_line(f" PROGRESS      {module_bar} {module_accuracy:5.1f}%"),
         "╠" + "═" * BOX_INNER_WIDTH + "╣",
