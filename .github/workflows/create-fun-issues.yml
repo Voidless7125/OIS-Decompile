@@ -9,6 +9,9 @@ permissions:
 
 jobs:
   create-fun-issues:
+    concurrency:
+      group: create-fun-issues
+      cancel-in-progress: false
     runs-on: ubuntu-latest
 
     steps:
