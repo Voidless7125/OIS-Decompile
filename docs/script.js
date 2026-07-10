@@ -1,21 +1,9 @@
-const toBase64 = (value) => {
-  if (typeof btoa === 'function') {
-    return btoa(value);
-  }
-
-  return Buffer.from(value, 'utf8').toString('base64');
-};
-
-const svgPlaceholder = (label, bgColor) => {
-  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" role="img" aria-label="${label} icon"><rect width="64" height="64" rx="8" fill="${bgColor}"/><text x="32" y="38" text-anchor="middle" font-family="Consolas, Courier New, monospace" font-size="14" fill="#f5f7ff">${label}</text></svg>`;
-  return `data:image/svg+xml;base64,${toBase64(svg)}`;
-};
-
 const statusData = [
   {
     id: 'ois_dll',
     filename: 'OIS.DLL',
-    iconUrl: svgPlaceholder('DLL', '#2f3f77'),
+    iconUrl:
+      'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCIgdmlld0JveD0iMCAwIDY0IDY0IiByb2xlPSJpbWciIGFyaWEtbGFiZWw9IkRMTCBpY29uIj48cmVjdCB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHJ4PSI4IiBmaWxsPSIjMmYzZjc3Ii8+PHRleHQgeD0iMzIiIHk9IjM4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iQ29uc29sYXMsIENvdXJpZXIgTmV3LCBtb25vc3BhY2UiIGZvbnQtc2l6ZT0iMTQiIGZpbGw9IiNmNWY3ZmYiPkRMTDwvdGV4dD48L3N2Zz4=',
     implementedCount: 3500,
     totalCount: 4200,
     accuracyPercentage: 85.5,
@@ -23,7 +11,8 @@ const statusData = [
   {
     id: 'ois_exe',
     filename: 'OIS.EXE',
-    iconUrl: svgPlaceholder('EXE', '#7a4730'),
+    iconUrl:
+      'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCIgdmlld0JveD0iMCAwIDY0IDY0IiByb2xlPSJpbWciIGFyaWEtbGFiZWw9IkVYRSBpY29uIj48cmVjdCB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHJ4PSI4IiBmaWxsPSIjN2E0NzMwIi8+PHRleHQgeD0iMzIiIHk9IjM4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iQ29uc29sYXMsIENvdXJpZXIgTmV3LCBtb25vc3BhY2UiIGZvbnQtc2l6ZT0iMTQiIGZpbGw9IiNmNWY3ZmYiPkVYRTwvdGV4dD48L3N2Zz4=',
     implementedCount: 150,
     totalCount: 150,
     accuracyPercentage: 99.1,
@@ -36,6 +25,22 @@ const calculateImplementedPercentage = (implementedCount, totalCount) => {
   }
 
   return ((implementedCount / totalCount) * 100).toFixed(2);
+};
+
+const makeStatRow = (label, value) => {
+  const row = document.createElement('div');
+  row.className = 'stat-row';
+
+  const labelNode = document.createElement('span');
+  labelNode.className = 'stat-label';
+  labelNode.textContent = label;
+
+  const valueNode = document.createElement('span');
+  valueNode.className = 'stat-value';
+  valueNode.textContent = value;
+
+  row.append(labelNode, valueNode);
+  return row;
 };
 
 const renderStatusCard = ({
@@ -52,26 +57,39 @@ const renderStatusCard = ({
 
   const implementedPercentage = calculateImplementedPercentage(implementedCount, totalCount);
   const accuracyDisplay = Number(accuracyPercentage).toFixed(2);
+  const boundedAccuracy = Math.max(0, Math.min(100, Number(accuracyPercentage) || 0));
 
-  card.innerHTML = `
-    <img class="status-icon" src="${iconUrl}" alt="${filename} icon" />
-    <h2 class="status-filename">${filename}</h2>
-    <div class="status-stats">
-      <div class="stat-row">
-        <span class="stat-label">Implemented:</span>
-        <span class="stat-value">${implementedPercentage}% (${implementedCount}/${totalCount})</span>
-      </div>
-      <div class="stat-row">
-        <span class="stat-label">Accuracy:</span>
-        <span class="stat-value">${accuracyDisplay}%</span>
-      </div>
-    </div>
-    <div class="progress-bar" role="img" aria-label="${filename} accuracy ${accuracyDisplay}%">
-      <div class="progress-fill" style="width: ${Math.max(0, Math.min(100, accuracyPercentage))}%;"></div>
-      <span class="progress-text">${accuracyDisplay}%</span>
-    </div>
-  `;
+  const icon = document.createElement('img');
+  icon.className = 'status-icon';
+  icon.src = iconUrl;
+  icon.alt = `${filename} icon`;
 
+  const title = document.createElement('h2');
+  title.className = 'status-filename';
+  title.textContent = filename;
+
+  const stats = document.createElement('div');
+  stats.className = 'status-stats';
+  stats.append(
+    makeStatRow('Implemented:', `${implementedPercentage}% (${implementedCount}/${totalCount})`),
+    makeStatRow('Accuracy:', `${accuracyDisplay}%`),
+  );
+
+  const progressBar = document.createElement('div');
+  progressBar.className = 'progress-bar';
+  progressBar.setAttribute('role', 'img');
+  progressBar.setAttribute('aria-label', `${filename} accuracy ${accuracyDisplay}%`);
+
+  const progressFill = document.createElement('div');
+  progressFill.className = 'progress-fill';
+  progressFill.style.width = `${boundedAccuracy}%`;
+
+  const progressText = document.createElement('span');
+  progressText.className = 'progress-text';
+  progressText.textContent = `${accuracyDisplay}%`;
+
+  progressBar.append(progressFill, progressText);
+  card.append(icon, title, stats, progressBar);
   return card;
 };
 
