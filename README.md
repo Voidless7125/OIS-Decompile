@@ -24,12 +24,12 @@ It needs improvement. There are over 5k undefined functions, but that's about it
 ║ RESOLVED      : 33107                                     ║
 ║ UNRESOLVED    : 5803                                      ║
 ║ ACCURACY      : 85.09%                                    ║
-║ PROGRESS      [██████████████░░]  85.1%                   ║
+║ PROGRESS      [███████████████████░░░]  85.1%             ║
 ╠═══════════════════════════════════════════════════════════╣
 ║ MODULE: OIS.EXE                                           ║
 ║ IMPLEMENTED   : 100.00% (150/150)                         ║
 ║ ACCURACY      : 99.10%                                    ║
-║ PROGRESS      [████████████████]  99.1%                   ║
+║ PROGRESS      [██████████████████████]  99.1%             ║
 ╠═══════════════════════════════════════════════════════════╣
 ║ MODULE: OIS_SERVER.EXE                                    ║
 ║ [ SYSTEM OFFLINE / PENDING SCAN ]                         ║
