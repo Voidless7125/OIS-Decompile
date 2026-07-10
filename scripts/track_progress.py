@@ -44,9 +44,17 @@ C_KEYWORDS = {
 
 BAR_WIDTH = 22
 BOX_INNER_WIDTH = 59
-OIS_EXE_IMPLEMENTED = 150
-OIS_EXE_TOTAL = 150
-OIS_EXE_ACCURACY = 99.10
+
+MODULE_STATUS = {
+    "ois.exe": {
+        "implemented": 150,
+        "total": 150,
+        "accuracy": 99.10,
+    },
+    "ois_server.exe": {
+        "offline_message": "[ SYSTEM OFFLINE / PENDING SCAN ]",
+    },
+}
 
 
 # ---------------------------------------------------------------------------
@@ -114,7 +122,11 @@ def build_tracker_block(stats: dict) -> str:
     accuracy = (resolved / total * 100) if total > 0 else 0.0
     bar = build_progress_bar(accuracy)
 
-    module_accuracy = OIS_EXE_ACCURACY
+    ois_exe = MODULE_STATUS["ois.exe"]
+    module_implemented = ois_exe["implemented"]
+    module_total = ois_exe["total"]
+    module_implemented_pct = (module_implemented / module_total * 100) if module_total else 0.0
+    module_accuracy = ois_exe["accuracy"]
     module_bar = build_progress_bar(module_accuracy)
 
     lines = [
@@ -130,14 +142,14 @@ def build_tracker_block(stats: dict) -> str:
         "╠" + "═" * BOX_INNER_WIDTH + "╣",
         format_box_line(" MODULE: OIS.EXE"),
         format_box_line(
-            f" IMPLEMENTED   : {OIS_EXE_IMPLEMENTED / OIS_EXE_TOTAL * 100:.2f}%"
-            f" ({OIS_EXE_IMPLEMENTED}/{OIS_EXE_TOTAL})"
+            f" IMPLEMENTED   : {module_implemented_pct:.2f}%"
+            f" ({module_implemented}/{module_total})"
         ),
         format_box_line(f" ACCURACY      : {module_accuracy:.2f}%"),
         format_box_line(f" PROGRESS      {module_bar} {module_accuracy:5.1f}%"),
         "╠" + "═" * BOX_INNER_WIDTH + "╣",
         format_box_line(" MODULE: OIS_SERVER.EXE"),
-        format_box_line(" [ SYSTEM OFFLINE / PENDING SCAN ]"),
+        format_box_line(f" {MODULE_STATUS['ois_server.exe']['offline_message']}"),
         "╚" + "═" * BOX_INNER_WIDTH + "╝",
     ]
 
