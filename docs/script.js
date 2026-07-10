@@ -77,8 +77,11 @@ const renderStatusCard = ({
 
   const progressBar = document.createElement('div');
   progressBar.className = 'progress-bar';
-  progressBar.setAttribute('role', 'img');
-  progressBar.setAttribute('aria-label', `${filename} accuracy ${accuracyDisplay}%`);
+  progressBar.setAttribute('role', 'progressbar');
+  progressBar.setAttribute('aria-label', `${filename} accuracy`);
+  progressBar.setAttribute('aria-valuemin', '0');
+  progressBar.setAttribute('aria-valuemax', '100');
+  progressBar.setAttribute('aria-valuenow', String(boundedAccuracy));
 
   const progressFill = document.createElement('div');
   progressFill.className = 'progress-fill';
