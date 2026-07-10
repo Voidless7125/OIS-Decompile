@@ -19,7 +19,7 @@ const statusData = [
   },
 ];
 
-const calculateImplementedPercentage = (implementedCount, totalCount) => {
+const formatImplementedPercentage = (implementedCount, totalCount) => {
   if (!Number.isFinite(implementedCount) || !Number.isFinite(totalCount) || totalCount <= 0) {
     return '0.00';
   }
@@ -55,9 +55,10 @@ const renderStatusCard = ({
   card.className = 'status-card';
   card.id = id;
 
-  const implementedPercentage = calculateImplementedPercentage(implementedCount, totalCount);
-  const accuracyDisplay = Number(accuracyPercentage).toFixed(2);
-  const boundedAccuracy = Math.max(0, Math.min(100, Number(accuracyPercentage) || 0));
+  const implementedPercentage = formatImplementedPercentage(implementedCount, totalCount);
+  const numericAccuracy = Number(accuracyPercentage) || 0;
+  const accuracyDisplay = numericAccuracy.toFixed(2);
+  const boundedAccuracy = Math.max(0, Math.min(100, numericAccuracy));
 
   const icon = document.createElement('img');
   icon.className = 'status-icon';
