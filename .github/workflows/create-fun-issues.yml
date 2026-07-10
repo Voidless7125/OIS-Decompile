@@ -1,0 +1,136 @@
+name: Create Issues for FUN_ Targets
+
+on:
+  workflow_dispatch:
+
+permissions:
+  issues: write
+  contents: read
+
+jobs:
+  create-fun-issues:
+    concurrency:
+      group: create-fun-issues
+      cancel-in-progress: false
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Scan files and create issues
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const path = require('path');
+
+            // Only scan these specific client files; ignore server variants
+            const targetFiles = [
+              'Decompile C/ois.exe.c',
+              'Decompile C/ois.exe.h',
+            ];
+
+            const funNames = new Set();
+
+            for (const filePath of targetFiles) {
+              if (!fs.existsSync(filePath)) {
+                core.info(`Skipping (not found): ${filePath}`);
+                continue;
+              }
+              core.info(`Scanning: ${filePath}`);
+              const content = fs.readFileSync(filePath, 'utf8');
+              const matches = content.match(/FUN_[A-Za-z0-9][A-Za-z0-9_]*/g) || [];
+              for (const m of matches) {
+                funNames.add(m);
+              }
+              core.info(`  → ${matches.length} raw matches in ${path.basename(filePath)}`);
+            }
+
+            const unique = [...funNames].sort();
+            core.info(`\nTotal unique FUN_* names found: ${unique.length}`);
+
+            if (unique.length === 0) {
+              core.info('No FUN_* names found. Exiting.');
+              return;
+            }
+
+            // Ensure the 'decompile' label exists before creating issues
+            const LABEL_NAME = 'decompile';
+            try {
+              await github.rest.issues.getLabel({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                name: LABEL_NAME,
+              });
+              core.info(`Label '${LABEL_NAME}' already exists.`);
+            } catch (err) {
+              if (err.status === 404) {
+                await github.rest.issues.createLabel({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  name: LABEL_NAME,
+                  color: '0075ca',
+                  description: 'Function decompilation tracking',
+                });
+                core.info(`Label '${LABEL_NAME}' created.`);
+              } else {
+                throw err;
+              }
+            }
+
+            // Fetch all existing issues (open + closed) with pagination
+            // Cap at 200 pages (20,000 issues) as a safety limit
+            core.info('Fetching existing issues to check for duplicates...');
+            const existingTitles = new Set();
+            const MAX_PAGES = 200;
+            let reachedPageCap = false;
+            for (let page = 1; page <= MAX_PAGES; page++) {
+              const { data: issues } = await github.rest.issues.listForRepo({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                state: 'all',
+                per_page: 100,
+                page,
+              });
+              if (issues.length === 0) break;
+              for (const issue of issues) {
+                existingTitles.add(issue.title);
+              }
+              if (page === MAX_PAGES && issues.length === 100) {
+                reachedPageCap = true;
+              }
+            }
+            if (reachedPageCap) {
+              core.warning(`Reached the ${MAX_PAGES}-page limit when fetching existing issues. Some issues may not have been checked for duplicates.`);
+            }
+            core.info(`Found ${existingTitles.size} existing issues.`);
+
+            let created = 0;
+            let skipped = 0;
+
+            for (const name of unique) {
+              const title = `Decompile: ${name}`;
+              if (existingTitles.has(title)) {
+                core.info(`  SKIP (exists): ${title}`);
+                skipped++;
+                continue;
+              }
+              await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title,
+                body: `This issue tracks the decompilation of \`${name}\`.\n\nFound in the OIS client decompile files.`,
+                labels: [LABEL_NAME],
+              });
+              core.info(`  CREATED: ${title}`);
+              created++;
+              // Small delay to stay within GitHub API rate limits
+              await new Promise(r => setTimeout(r, 300));
+            }
+
+            core.info(`\nSummary:`);
+            core.info(`  Files scanned : ${targetFiles.length}`);
+            core.info(`  Unique FUN_*  : ${unique.length}`);
+            core.info(`  Skipped       : ${skipped}`);
+            core.info(`  Created       : ${created}`);
