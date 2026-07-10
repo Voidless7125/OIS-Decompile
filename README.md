@@ -15,47 +15,24 @@ It needs improvement. There are over 5k undefined functions, but that's about it
 ---
 
 <!-- TRACKER_START -->
-<table>
-  <tbody>
-    <tr>
-      <td>
 <pre>
-╔══════════════════════════════════════╗
-║   OIS DECOMPILATION PROGRESS TRACKER ║
-╠══════════════════════════════════════╣
-║  Total Symbols  : 38910               ║
-║  Resolved       : 33107               ║
-║  Unresolved     : 5803                ║
-║  Accuracy       : 85.09%              ║
-╠══════════════════════════════════════╣
-║  Progress  [███████████████████░░░]  85.1% ║
-╚══════════════════════════════════════╝
+╔═══════════════════════════════════════════════════════════╗
+║ SYSTEM DIAGNOSTIC: DECOMPILATION PROGRESS                 ║
+╠═══════════════════════════════════════════════════════════╣
+║ OVERALL SYSTEM                                            ║
+║ TOTAL SYMBOLS : 38910                                     ║
+║ RESOLVED      : 33107                                     ║
+║ UNRESOLVED    : 5803                                      ║
+║ ACCURACY      : 85.09%                                    ║
+║ PROGRESS      [██████████████░░]  85.1%                   ║
+╠═══════════════════════════════════════════════════════════╣
+║ MODULE: OIS.EXE                                           ║
+║ IMPLEMENTED   : 100.00% (150/150)                         ║
+║ ACCURACY      : 99.10%                                    ║
+║ PROGRESS      [████████████████]  99.1%                   ║
+╠═══════════════════════════════════════════════════════════╣
+║ MODULE: OIS_SERVER.EXE                                    ║
+║ [ SYSTEM OFFLINE / PENDING SCAN ]                         ║
+╚═══════════════════════════════════════════════════════════╝
 </pre>
-      </td>
-    </tr>
-  </tbody>
-</table>
 <!-- TRACKER_END -->
-
-<table>
-  <tbody>
-    <tr>
-      <td align="center">
-        <img src="./assets/ois-icon.png" width="100px" alt="OIS executable icon"><br>
-        <h2><code>OIS.EXE</code></h2>
-        <pre>Implemented: 100.00% (150/150)
-Accuracy:    99.10%</pre>
-        <code>[█████████████████████░]</code><br>
-        <b>99.10%</b>
-      </td>
-      <td align="center">
-        <img src="./assets/ois-server-icon.png" width="100px" alt="OIS Server executable icon"><br>
-        <h2><code>OIS_SERVER.EXE</code></h2>
-        <pre>Implemented: N/A
-Accuracy:    N/A</pre>
-        <code>[░░░░░░░░░░░░░░░░░░░░░░]</code><br>
-        <b>N/A</b>
-      </td>
-    </tr>
-  </tbody>
-</table>

@@ -42,7 +42,8 @@ C_KEYWORDS = {
     "include", "define", "ifdef", "ifndef", "endif", "pragma",
 }
 
-BAR_WIDTH = 22
+BAR_WIDTH = 16
+BOX_INNER_WIDTH = 59
 
 
 # ---------------------------------------------------------------------------
@@ -95,6 +96,10 @@ def build_progress_bar(percentage: float, width: int = BAR_WIDTH) -> str:
     return "[" + "█" * filled + "░" * (width - filled) + "]"
 
 
+def format_box_line(content: str = "") -> str:
+    return f"║{content:<{BOX_INNER_WIDTH}}║"
+
+
 # ---------------------------------------------------------------------------
 # README block generation
 # ---------------------------------------------------------------------------
@@ -106,28 +111,35 @@ def build_tracker_block(stats: dict) -> str:
     accuracy = (resolved / total * 100) if total > 0 else 0.0
     bar = build_progress_bar(accuracy)
 
+    module_accuracy = 99.10
+    module_bar = build_progress_bar(module_accuracy)
+
+    lines = [
+        "╔" + "═" * BOX_INNER_WIDTH + "╗",
+        format_box_line(" SYSTEM DIAGNOSTIC: DECOMPILATION PROGRESS"),
+        "╠" + "═" * BOX_INNER_WIDTH + "╣",
+        format_box_line(" OVERALL SYSTEM"),
+        format_box_line(f" TOTAL SYMBOLS : {total}"),
+        format_box_line(f" RESOLVED      : {resolved}"),
+        format_box_line(f" UNRESOLVED    : {unresolved}"),
+        format_box_line(f" ACCURACY      : {accuracy:.2f}%"),
+        format_box_line(f" PROGRESS      {bar} {accuracy:5.1f}%"),
+        "╠" + "═" * BOX_INNER_WIDTH + "╣",
+        format_box_line(" MODULE: OIS.EXE"),
+        format_box_line(" IMPLEMENTED   : 100.00% (150/150)"),
+        format_box_line(f" ACCURACY      : {module_accuracy:.2f}%"),
+        format_box_line(f" PROGRESS      {module_bar} {module_accuracy:5.1f}%"),
+        "╠" + "═" * BOX_INNER_WIDTH + "╣",
+        format_box_line(" MODULE: OIS_SERVER.EXE"),
+        format_box_line(" [ SYSTEM OFFLINE / PENDING SCAN ]"),
+        "╚" + "═" * BOX_INNER_WIDTH + "╝",
+    ]
+
     return (
         f"{TRACKER_START}\n"
-        "<table>\n"
-        "  <tbody>\n"
-        "    <tr>\n"
-        "      <td>\n"
         "<pre>\n"
-        "╔══════════════════════════════════════╗\n"
-        "║   OIS DECOMPILATION PROGRESS TRACKER ║\n"
-        "╠══════════════════════════════════════╣\n"
-        f"║  Total Symbols  : {total:<20}║\n"
-        f"║  Resolved       : {resolved:<20}║\n"
-        f"║  Unresolved     : {unresolved:<20}║\n"
-        f"║  Accuracy       : {f'{accuracy:.2f}%':<20}║\n"
-        "╠══════════════════════════════════════╣\n"
-        f"║  Progress  {bar} {accuracy:5.1f}% ║\n"
-        "╚══════════════════════════════════════╝\n"
-        "</pre>\n"
-        "      </td>\n"
-        "    </tr>\n"
-        "  </tbody>\n"
-        "</table>\n"
+        + "\n".join(lines)
+        + "\n</pre>\n"
         f"{TRACKER_END}"
     )
 
