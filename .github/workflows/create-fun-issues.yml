@@ -21,7 +21,7 @@ jobs:
             const fs = require('fs');
             const path = require('path');
 
-            const targetFiles = ['OIS.exe.c', 'OIS.exe.h'];
+            const targetFiles = ['Decompile C/ois.exe.c', 'Decompile C/ois.exe.h'];
             const serverNamePattern = /server/i;
             const funPattern = /\bFUN_[A-Za-z0-9_]+\b/g;
 
