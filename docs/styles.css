@@ -1,0 +1,129 @@
+:root {
+  --bg: #0f1115;
+  --panel: #161a22;
+  --text: #eef1f7;
+  --muted-line: #2a303c;
+  --bar-border: #050607;
+  --bar-fill: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 24px;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.dashboard {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.dashboard-header h1 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.dashboard-header hr {
+  margin: 10px 0 20px;
+  border: 0;
+  border-top: 1px solid var(--muted-line);
+}
+
+.status-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.status-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 260px;
+  padding: 18px;
+  border: 1px solid #252b35;
+  background: var(--panel);
+}
+
+.status-icon {
+  width: 64px;
+  height: 64px;
+  margin: 2px auto 12px;
+}
+
+.status-filename {
+  margin: 0 0 14px;
+  text-align: center;
+  font-family: Consolas, 'Courier New', monospace;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.status-stats {
+  margin: 0;
+  display: grid;
+  row-gap: 6px;
+  font-family: Consolas, 'Courier New', monospace;
+  font-size: 0.96rem;
+}
+
+.stat-row {
+  display: grid;
+  grid-template-columns: 12ch 1fr;
+  column-gap: 8px;
+  align-items: baseline;
+}
+
+.stat-label {
+  text-align: left;
+}
+
+.stat-value {
+  text-align: left;
+}
+
+.progress-bar {
+  margin-top: auto;
+  position: relative;
+  height: 28px;
+  border: 3px solid var(--bar-border);
+  background: #12161d;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0;
+  background: var(--bar-fill);
+}
+
+.progress-text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Consolas, 'Courier New', monospace;
+  font-size: 0.8rem;
+  color: #ffffff;
+  mix-blend-mode: difference;
+  font-weight: 700;
+  pointer-events: none;
+}
+
+@media (max-width: 700px) {
+  body {
+    padding: 16px;
+  }
+
+  .status-grid {
+    grid-template-columns: 1fr;
+  }
+}
