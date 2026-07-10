@@ -126,12 +126,9 @@ def build_tracker_block(stats: dict) -> str:
     module_implemented = ois_exe["implemented"]
     module_total = ois_exe["total"]
     module_implemented_pct = (module_implemented / module_total * 100) if module_total else 0.0
-    module_accuracy = ois_exe["accuracy"]
-    module_bar = build_progress_bar(module_accuracy)
-
     lines = [
         "╔" + "═" * BOX_INNER_WIDTH + "╗",
-        format_box_line(" SYSTEM DIAGNOSTIC: DECOMPILATION PROGRESS"),
+        format_box_line(" SHIP COMPUTER: DECOMPILATION DIAGNOSTIC"),
         "╠" + "═" * BOX_INNER_WIDTH + "╣",
         format_box_line(" OVERALL SYSTEM"),
         format_box_line(f" TOTAL SYMBOLS : {total}"),
@@ -145,8 +142,8 @@ def build_tracker_block(stats: dict) -> str:
             f" IMPLEMENTED   : {module_implemented_pct:.2f}%"
             f" ({module_implemented}/{module_total})"
         ),
-        format_box_line(f" ACCURACY      : {module_accuracy:.2f}%"),
-        format_box_line(f" PROGRESS      {module_bar} {module_accuracy:5.1f}%"),
+        format_box_line(f" ACCURACY      : {ois_exe['accuracy']:.2f}%"),
+        format_box_line(f" STATUS        [ ONLINE ]"),
         "╠" + "═" * BOX_INNER_WIDTH + "╣",
         format_box_line(" MODULE: OIS_SERVER.EXE"),
         format_box_line(f" {MODULE_STATUS['ois_server.exe']['offline_message']}"),
