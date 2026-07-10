@@ -1,23 +1,24 @@
 # OIS-Decompile
 
 ## What is this?
-This is an attempt (and successful so far) of decompiling the game Objects in Space. 
-The assets folder won't be provided; you will need to get your own copy. (Either take it from a downloaded copy of the game from Steam or get it another way)
+- A community attempt to decompile *Objects in Space*.
+- The project is progressing, but still has unresolved and partially reconstructed code paths.
+- Assets are not included; use your own legitimate copy of the game files.
 
 ## How clean is the code?
-It needs improvement. There are over 5k undefined functions, but that's about it. We don't have comments, and lots of code needs to be fixed.
+- Still rough in many areas.
+- There are thousands of undefined functions remaining.
+- Comments and cleanup are ongoing.
 
 ## What version is this game from?
-# I got this from STEAM, not gog so there may be a difference in assets folders, but I have not checked.
+Source dump used here comes from the Steam release (not GOG), so asset folder differences may exist.
 
 ## Status
-
----
 
 <!-- TRACKER_START -->
 <pre>
 ╔═══════════════════════════════════════════════════════════╗
-║ SYSTEM DIAGNOSTIC: DECOMPILATION PROGRESS                 ║
+║ SHIP COMPUTER: DECOMPILATION DIAGNOSTIC                   ║
 ╠═══════════════════════════════════════════════════════════╣
 ║ OVERALL SYSTEM                                            ║
 ║ TOTAL SYMBOLS : 38910                                     ║
@@ -29,7 +30,7 @@ It needs improvement. There are over 5k undefined functions, but that's about it
 ║ MODULE: OIS.EXE                                           ║
 ║ IMPLEMENTED   : 100.00% (150/150)                         ║
 ║ ACCURACY      : 99.10%                                    ║
-║ PROGRESS      [██████████████████████]  99.1%             ║
+║ STATUS        [ ONLINE ]                                  ║
 ╠═══════════════════════════════════════════════════════════╣
 ║ MODULE: OIS_SERVER.EXE                                    ║
 ║ [ SYSTEM OFFLINE / PENDING SCAN ]                         ║
