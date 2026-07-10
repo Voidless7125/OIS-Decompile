@@ -112,7 +112,8 @@ body {
   justify-content: center;
   font-family: Consolas, 'Courier New', monospace;
   font-size: 0.8rem;
-  color: #14161c;
+  color: #ffffff;
+  mix-blend-mode: difference;
   font-weight: 700;
   pointer-events: none;
 }
