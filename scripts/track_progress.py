@@ -147,10 +147,9 @@ def format_dual_line(left: str, right: str) -> str:
 def build_module_status_line(
     label: str, module_name: str, resolved: int, total: int
 ) -> str:
-    label_field = f"{label:<17}"
     if total > 0:
-        return f"{label_field} : {module_name} ({resolved}/{total}) [ONLINE]"
-    return f"{label_field} : {module_name} [OFFLINE / PENDING SCAN]"
+        return f"{label} : {module_name} ({resolved}/{total}) [ONLINE]"
+    return f"{label} : {module_name} [OFFLINE / PENDING SCAN]"
 
 
 # ---------------------------------------------------------------------------
@@ -190,9 +189,7 @@ def build_tracker_block(stats: dict) -> str:
         ),
         format_screen_line(f"Global Progress: {bar}"),
         format_screen_line(),
-        format_screen_line(
-            ois_status
-        ),
+        format_screen_line(ois_status),
         format_screen_line(server_status),
         format_screen_line(),
         format_screen_line("Press ISSUE to report bugs, PULL_REQUEST to submit code"),
