@@ -17,23 +17,20 @@ Source dump used here comes from the Steam release (not GOG), so asset folder di
 
 <!-- TRACKER_START -->
 <pre>
-╔═══════════════════════════════════════════════════════════╗
-║ SHIP COMPUTER: DECOMPILATION DIAGNOSTIC                   ║
-╠═══════════════════════════════════════════════════════════╣
-║ OVERALL SYSTEM                                            ║
-║ TOTAL SYMBOLS : 38910                                     ║
-║ RESOLVED      : 33107                                     ║
-║ UNRESOLVED    : 5803                                      ║
-║ ACCURACY      : 85.09%                                    ║
-║ PROGRESS      [███████████████████---]  85.1%             ║
-╠═══════════════════════════════════════════════════════════╣
-║ MODULE: OIS.EXE                                           ║
-║ IMPLEMENTED   : 100.00% (150/150)                         ║
-║ ACCURACY      : 99.10%                                    ║
-║ STATUS        [ ONLINE ]                                  ║
-╠═══════════════════════════════════════════════════════════╣
-║ MODULE: OIS_SERVER.EXE                                    ║
-║ [ SYSTEM OFFLINE / PENDING SCAN ]                         ║
-╚═══════════════════════════════════════════════════════════╝
+Flat Earth Modular BIOS v6.00PG                                        .-'''-.
+(C) 2019-2026 by Decomp Community                                    (  o o  )
+                                                                       `-._.-'
+                                                                              
+Main Processor : Decompilation Target (OIS)                                   
+Memory Testing : 33107/38910 Symbols OK (85.09%)                              
+Unresolved     : 5803 ERRORS                                                  
+Integrity Check  : [807] WARNINGS DETECTED (TODO/Placeholder)                 
+Global Progress: [████████████████████████████████------]                     
+                                                                              
+Primary Master   : OIS.EXE (150/150) [ONLINE]                                 
+Secondary Master : OIS_SERVER.EXE [OFFLINE / PENDING SCAN]                    
+                                                                              
+Press ISSUE to report bugs, PULL_REQUEST to submit code                       
+23/06/2017-i902-FL183500-8A3410-00                                            
 </pre>
 <!-- TRACKER_END -->
