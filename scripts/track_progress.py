@@ -46,7 +46,9 @@ BAR_WIDTH = 22
 SCREEN_WIDTH = 62
 
 COMMENT_PATTERN = re.compile(r"//[^\n]*|/\*.*?\*/", re.DOTALL)
-STRING_LITERAL_PATTERN = re.compile(r'"(?:\\.|[^"\\\r\n])*"')
+STRING_LITERAL_PATTERN = re.compile(
+    r'"(?:\\.|[^"\\\r\n])*"|\'(?:\\.|[^\'\\\r\n])*\''
+)
 WARNING_MARKER_PATTERN = re.compile(r"\b(?:Placeholder|TODO|FIXME)\b", re.IGNORECASE)
 MODULE_OIS = "ois.exe"
 MODULE_SERVER = "ois_server.exe"
