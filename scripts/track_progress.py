@@ -145,7 +145,7 @@ def build_progress_bar(percentage: float, width: int = BAR_WIDTH) -> str:
 
 
 def format_screen_line(content: str = "") -> str:
-    return content[:SCREEN_WIDTH]
+    return f"{content[:SCREEN_WIDTH]:<{SCREEN_WIDTH}}"
 
 
 def format_dual_line(left: str, right: str) -> str:

@@ -4,20 +4,20 @@
 
 <!-- TRACKER_START -->
 <pre>
-Flat Earth Modular BIOS v6.00PG
-(C) 2019-2026 by Decomp Community
-
-Main Processor : Decompilation Target (OIS)
-Memory Testing : 29255/35058 Symbols OK (83.45%)
-Unresolved     : 5803 ERRORS
-Static Analysis  : [807] PENDING TASKS
-Global Progress: [████████████████████████████████------]
-
-Primary Master   : OIS.EXE (18726/20262) [ONLINE]
-Secondary Master : OIS_SERVER.EXE (14616/18908) [ONLINE]
-
-Press ISSUE to report bugs, PULL_REQUEST to submit code
-23/06/2017-i902-FL183500-8A3410-00
+Flat Earth Modular BIOS v6.00PG                               
+(C) 2019-2026 by Decomp Community                             
+                                                              
+Main Processor : Decompilation Target (OIS)                   
+Memory Testing : 29255/35058 Symbols OK (83.45%)              
+Unresolved     : 5803 ERRORS                                  
+Static Analysis  : [807] PENDING TASKS                        
+Global Progress: [████████████████████████████████------]     
+                                                              
+Primary Master   : OIS.EXE (18726/20262) [ONLINE]             
+Secondary Master : OIS_SERVER.EXE (14616/18908) [ONLINE]      
+                                                              
+Press ISSUE to report bugs, PULL_REQUEST to submit code       
+23/06/2017-i902-FL183500-8A3410-00                            
 </pre>
 <!-- TRACKER_END -->
 
