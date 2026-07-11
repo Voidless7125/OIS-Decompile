@@ -43,7 +43,7 @@ C_KEYWORDS = {
 }
 
 BAR_WIDTH = 22
-SCREEN_WIDTH = 78
+SCREEN_WIDTH = 62
 
 COMMENT_PATTERN = re.compile(r"//[^\n]*|/\*.*?\*/", re.DOTALL)
 WARNING_MARKER_PATTERN = re.compile(r"\b(?:Placeholder|TODO|FIXME)\b", re.IGNORECASE)
@@ -146,9 +146,8 @@ def build_tracker_block(stats: dict) -> str:
     module_implemented = ois_exe["implemented"]
     module_total = ois_exe["total"]
     lines = [
-        format_dual_line("Flat Earth Modular BIOS v6.00PG", ".-'''-."),
-        format_dual_line("(C) 2019-2026 by Decomp Community", "(  o o  )"),
-        format_dual_line("", "`-._.-'"),
+        format_screen_line("Flat Earth Modular BIOS v6.00PG"),
+        format_screen_line("(C) 2019-2026 by Decomp Community"),
         format_screen_line(),
         format_screen_line("Main Processor : Decompilation Target (OIS)"),
         format_screen_line(
@@ -156,8 +155,7 @@ def build_tracker_block(stats: dict) -> str:
         ),
         format_screen_line(f"Unresolved     : {unresolved} ERRORS"),
         format_screen_line(
-            "Integrity Check  : "
-            f"[{warnings_count}] WARNINGS DETECTED (TODO/Placeholder)"
+            f"Static Analysis  : [{warnings_count}] PENDING TASKS"
         ),
         format_screen_line(f"Global Progress: {bar}"),
         format_screen_line(),
