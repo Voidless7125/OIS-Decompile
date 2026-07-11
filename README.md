@@ -25,7 +25,7 @@ Source dump used here comes from the Steam release (not GOG), so asset folder di
 ║ RESOLVED      : 33107                                     ║
 ║ UNRESOLVED    : 5803                                      ║
 ║ ACCURACY      : 85.09%                                    ║
-║ PROGRESS      [███████████████████░░░]  85.1%             ║
+║ PROGRESS      [███████████████████---]  85.1%             ║
 ╠═══════════════════════════════════════════════════════════╣
 ║ MODULE: OIS.EXE                                           ║
 ║ IMPLEMENTED   : 100.00% (150/150)                         ║
