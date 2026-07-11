@@ -104,7 +104,7 @@ def scan_source_files(source_dir: Path) -> dict:
 def build_progress_bar(percentage: float, width: int = BAR_WIDTH) -> str:
     filled = round(percentage / 100 * width)
     filled = max(0, min(width, filled))
-    return "[" + "█" * filled + "░" * (width - filled) + "]"
+    return "[" + "█" * filled + "-" * (width - filled) + "]"
 
 
 def format_box_line(content: str = "") -> str:
