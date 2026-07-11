@@ -145,9 +145,10 @@ def format_dual_line(left: str, right: str) -> str:
 def build_module_status_line(
     label: str, module_name: str, resolved: int, total: int
 ) -> str:
+    label_field = f"{label:<17}"
     if total > 0:
-        return f"{label} : {module_name} ({resolved}/{total}) [ONLINE]"
-    return f"{label} : {module_name} [OFFLINE / PENDING SCAN]"
+        return f"{label_field} : {module_name} ({resolved}/{total}) [ONLINE]"
+    return f"{label_field} : {module_name} [OFFLINE / PENDING SCAN]"
 
 
 # ---------------------------------------------------------------------------
@@ -168,7 +169,7 @@ def build_tracker_block(stats: dict) -> str:
     server_resolved = server_module.get("resolved", 0)
     server_total = server_module.get("total", 0)
     ois_status = build_module_status_line(
-        label="Primary Master  ", module_name="OIS.EXE", resolved=ois_resolved, total=ois_total
+        label="Primary Master", module_name="OIS.EXE", resolved=ois_resolved, total=ois_total
     )
     server_status = build_module_status_line(
         label="Secondary Master", module_name="OIS_SERVER.EXE", resolved=server_resolved, total=server_total
