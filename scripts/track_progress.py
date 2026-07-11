@@ -47,6 +47,7 @@ SCREEN_WIDTH = 62
 
 COMMENT_PATTERN = re.compile(r"//[^\n]*|/\*.*?\*/", re.DOTALL)
 WARNING_MARKER_PATTERN = re.compile(r"\b(?:Placeholder|TODO|FIXME)\b", re.IGNORECASE)
+MODULE_FILE_PATTERN = re.compile(r"^(?P<name>.+\.exe)\.(?:c|h)$", re.IGNORECASE)
 
 
 # ---------------------------------------------------------------------------
@@ -78,10 +79,14 @@ def scan_source_files(source_dir: Path) -> dict:
         for comment in COMMENT_PATTERN.findall(text):
             warnings_count += len(WARNING_MARKER_PATTERN.findall(comment))
 
-        module_name = path.name.rsplit(".", 1)[0].lower()
-        module_bucket = module_stats.setdefault(
-            module_name, {"resolved": set(), "unresolved": set()}
-        )
+        module_match = MODULE_FILE_PATTERN.match(path.name)
+        module_bucket = None
+        if module_match:
+            # Preserve the ".exe" suffix as part of the module key.
+            module_name = module_match.group("name").lower()
+            module_bucket = module_stats.setdefault(
+                module_name, {"resolved": set(), "unresolved": set()}
+            )
 
         for match in IDENTIFIER_PATTERN.finditer(text):
             name = match.group()
@@ -89,10 +94,12 @@ def scan_source_files(source_dir: Path) -> dict:
                 continue
             if name.startswith(("FUN_", "DAT_", "PTR_")):
                 unresolved_symbols.add(name)
-                module_bucket["unresolved"].add(name)
+                if module_bucket is not None:
+                    module_bucket["unresolved"].add(name)
             else:
                 resolved_symbols.add(name)
-                module_bucket["resolved"].add(name)
+                if module_bucket is not None:
+                    module_bucket["resolved"].add(name)
 
     return {
         "resolved": len(resolved_symbols),
