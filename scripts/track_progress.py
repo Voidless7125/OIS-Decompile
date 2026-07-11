@@ -58,8 +58,8 @@ GHIDRA_PLACEHOLDER_PREFIXES = (
     "local_", "param_",
 )
 
-# Ghidra typed temporaries: e.g. iVar1, uVar2, bVar3, auVar4, puVar5, llVar6
-GHIDRA_TYPED_VAR_RE = re.compile(r"^[a-z]{1,4}(?:Var|Stack)\d")
+# Ghidra typed temporaries: e.g. iVar1, uVar2, bVar3, auVar4, puVar5, llVar6, iVar10
+GHIDRA_TYPED_VAR_RE = re.compile(r"^[a-z]{1,4}(?:Var|Stack)\d+")
 MODULE_OIS = "ois.exe"
 MODULE_SERVER = "ois_server.exe"
 
@@ -98,7 +98,8 @@ def strip_comments_and_strings(text: str) -> tuple[str, int]:
             i += 2
             while i < n and not (text[i] == "*" and i + 1 < n and text[i + 1] == "/"):
                 i += 1
-            i += 2  # consume closing */
+            if i + 1 < n:
+                i += 2  # consume closing */
             warnings += len(WARNING_MARKER_PATTERN.findall(text[start:i]))
         # --- double-quoted string literal ---
         elif ch == '"':
@@ -107,7 +108,8 @@ def strip_comments_and_strings(text: str) -> tuple[str, int]:
                 if text[i] == "\\" and i + 1 < n:
                     i += 1  # skip escaped character
                 i += 1
-            i += 1  # consume closing "
+            if i < n:
+                i += 1  # consume closing "
         # --- single-quoted character literal ---
         elif ch == "'":
             i += 1
@@ -115,7 +117,8 @@ def strip_comments_and_strings(text: str) -> tuple[str, int]:
                 if text[i] == "\\" and i + 1 < n:
                     i += 1  # skip escaped character
                 i += 1
-            i += 1  # consume closing '
+            if i < n:
+                i += 1  # consume closing '
         else:
             result.append(ch)
             i += 1
