@@ -142,6 +142,14 @@ def format_dual_line(left: str, right: str) -> str:
     return f"{left}{' ' * spacing}{right}"
 
 
+def build_module_status_line(
+    label: str, module_name: str, resolved: int, total: int
+) -> str:
+    if total > 0:
+        return f"{label} : {module_name} ({resolved}/{total}) [ONLINE]"
+    return f"{label} : {module_name} [OFFLINE / PENDING SCAN]"
+
+
 # ---------------------------------------------------------------------------
 # README block generation
 # ---------------------------------------------------------------------------
@@ -159,15 +167,11 @@ def build_tracker_block(stats: dict) -> str:
     ois_total = ois_module.get("total", 0)
     server_resolved = server_module.get("resolved", 0)
     server_total = server_module.get("total", 0)
-    ois_status = (
-        f"Primary Master   : OIS.EXE ({ois_resolved}/{ois_total}) [ONLINE]"
-        if ois_total > 0
-        else "Primary Master   : OIS.EXE [OFFLINE / PENDING SCAN]"
+    ois_status = build_module_status_line(
+        label="Primary Master  ", module_name="OIS.EXE", resolved=ois_resolved, total=ois_total
     )
-    server_status = (
-        f"Secondary Master : OIS_SERVER.EXE ({server_resolved}/{server_total}) [ONLINE]"
-        if server_total > 0
-        else "Secondary Master : OIS_SERVER.EXE [OFFLINE / PENDING SCAN]"
+    server_status = build_module_status_line(
+        label="Secondary Master", module_name="OIS_SERVER.EXE", resolved=server_resolved, total=server_total
     )
     lines = [
         format_screen_line("Flat Earth Modular BIOS v6.00PG"),
