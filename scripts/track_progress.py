@@ -43,7 +43,11 @@ C_KEYWORDS = {
 }
 
 BAR_WIDTH = 22
-BOX_INNER_WIDTH = 59
+SCREEN_WIDTH = 78
+
+LINE_COMMENT_PATTERN = re.compile(r"//[^\n]*")
+BLOCK_COMMENT_PATTERN = re.compile(r"/\*.*?\*/", re.DOTALL)
+WARNING_MARKER_PATTERN = re.compile(r"\b(?:Placeholder|TODO|FIXME)\b", re.IGNORECASE)
 
 MODULE_STATUS = {
     "ois.exe": {
@@ -71,6 +75,7 @@ def scan_source_files(source_dir: Path) -> dict:
     """
     unresolved_symbols: set[str] = set()
     resolved_symbols: set[str] = set()
+    warnings_count = 0
 
     for path in sorted(source_dir.rglob("*")):
         if path.suffix.lower() not in (".c", ".h"):
@@ -80,6 +85,11 @@ def scan_source_files(source_dir: Path) -> dict:
             text = path.read_text(encoding="utf-8", errors="replace")
         except OSError:
             continue
+
+        for comment in LINE_COMMENT_PATTERN.findall(text):
+            warnings_count += len(WARNING_MARKER_PATTERN.findall(comment))
+        for comment in BLOCK_COMMENT_PATTERN.findall(text):
+            warnings_count += len(WARNING_MARKER_PATTERN.findall(comment))
 
         for match in IDENTIFIER_PATTERN.finditer(text):
             name = match.group()
@@ -94,6 +104,7 @@ def scan_source_files(source_dir: Path) -> dict:
         "resolved": len(resolved_symbols),
         "unresolved": len(unresolved_symbols),
         "total": len(resolved_symbols) + len(unresolved_symbols),
+        "warnings_count": warnings_count,
     }
 
 
@@ -107,8 +118,19 @@ def build_progress_bar(percentage: float, width: int = BAR_WIDTH) -> str:
     return "[" + "█" * filled + "-" * (width - filled) + "]"
 
 
-def format_box_line(content: str = "") -> str:
-    return f"║{content:<{BOX_INNER_WIDTH}}║"
+def format_screen_line(content: str = "") -> str:
+    return f"{content[:SCREEN_WIDTH]:<{SCREEN_WIDTH}}"
+
+
+def format_dual_line(left: str, right: str) -> str:
+    left = left.strip()
+    right = right.strip()
+    if not right:
+        return format_screen_line(left)
+    spacing = SCREEN_WIDTH - len(left) - len(right)
+    if spacing < 1:
+        return format_screen_line(f"{left} {right}")
+    return f"{left}{' ' * spacing}{right}"
 
 
 # ---------------------------------------------------------------------------
@@ -119,35 +141,36 @@ def build_tracker_block(stats: dict) -> str:
     resolved = stats["resolved"]
     unresolved = stats["unresolved"]
     total = stats["total"]
+    warnings_count = stats["warnings_count"]
     accuracy = (resolved / total * 100) if total > 0 else 0.0
-    bar = build_progress_bar(accuracy)
+    bar = build_progress_bar(accuracy, width=38)
 
     ois_exe = MODULE_STATUS["ois.exe"]
     module_implemented = ois_exe["implemented"]
     module_total = ois_exe["total"]
-    module_implemented_pct = (module_implemented / module_total * 100) if module_total else 0.0
     lines = [
-        "╔" + "═" * BOX_INNER_WIDTH + "╗",
-        format_box_line(" SHIP COMPUTER: DECOMPILATION DIAGNOSTIC"),
-        "╠" + "═" * BOX_INNER_WIDTH + "╣",
-        format_box_line(" OVERALL SYSTEM"),
-        format_box_line(f" TOTAL SYMBOLS : {total}"),
-        format_box_line(f" RESOLVED      : {resolved}"),
-        format_box_line(f" UNRESOLVED    : {unresolved}"),
-        format_box_line(f" ACCURACY      : {accuracy:.2f}%"),
-        format_box_line(f" PROGRESS      {bar} {accuracy:5.1f}%"),
-        "╠" + "═" * BOX_INNER_WIDTH + "╣",
-        format_box_line(" MODULE: OIS.EXE"),
-        format_box_line(
-            f" IMPLEMENTED   : {module_implemented_pct:.2f}%"
-            f" ({module_implemented}/{module_total})"
+        format_dual_line("Flat Earth Modular BIOS v6.00PG", ".-'''-."),
+        format_dual_line("(C) 2019-2026 by Decomp Community", "(  o o  )"),
+        format_dual_line("", "`-._.-'"),
+        format_screen_line(),
+        format_screen_line("Main Processor : Decompilation Target (OIS)"),
+        format_screen_line(
+            f"Memory Testing : {resolved}/{total} Symbols OK ({accuracy:.2f}%)"
         ),
-        format_box_line(f" ACCURACY      : {ois_exe['accuracy']:.2f}%"),
-        format_box_line(f" STATUS        [ ONLINE ]"),
-        "╠" + "═" * BOX_INNER_WIDTH + "╣",
-        format_box_line(" MODULE: OIS_SERVER.EXE"),
-        format_box_line(f" {MODULE_STATUS['ois_server.exe']['offline_message']}"),
-        "╚" + "═" * BOX_INNER_WIDTH + "╝",
+        format_screen_line(f"Unresolved     : {unresolved} ERRORS"),
+        format_screen_line(
+            "Integrity Check  : "
+            f"[{warnings_count}] WARNINGS DETECTED (TODO/Placeholder)"
+        ),
+        format_screen_line(f"Global Progress: {bar}"),
+        format_screen_line(),
+        format_screen_line(
+            f"Primary Master   : OIS.EXE ({module_implemented}/{module_total}) [ONLINE]"
+        ),
+        format_screen_line("Secondary Master : OIS_SERVER.EXE [OFFLINE / PENDING SCAN]"),
+        format_screen_line(),
+        format_screen_line("Press ISSUE to report bugs, PULL_REQUEST to submit code"),
+        format_screen_line("23/06/2017-i902-FL183500-8A3410-00"),
     ]
 
     return (
