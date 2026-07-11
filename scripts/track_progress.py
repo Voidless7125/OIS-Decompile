@@ -159,6 +159,16 @@ def build_tracker_block(stats: dict) -> str:
     ois_total = ois_module.get("total", 0)
     server_resolved = server_module.get("resolved", 0)
     server_total = server_module.get("total", 0)
+    ois_status = (
+        f"Primary Master   : OIS.EXE ({ois_resolved}/{ois_total}) [ONLINE]"
+        if ois_total > 0
+        else "Primary Master   : OIS.EXE [OFFLINE / PENDING SCAN]"
+    )
+    server_status = (
+        f"Secondary Master : OIS_SERVER.EXE ({server_resolved}/{server_total}) [ONLINE]"
+        if server_total > 0
+        else "Secondary Master : OIS_SERVER.EXE [OFFLINE / PENDING SCAN]"
+    )
     lines = [
         format_screen_line("Flat Earth Modular BIOS v6.00PG"),
         format_screen_line("(C) 2019-2026 by Decomp Community"),
@@ -174,11 +184,9 @@ def build_tracker_block(stats: dict) -> str:
         format_screen_line(f"Global Progress: {bar}"),
         format_screen_line(),
         format_screen_line(
-            f"Primary Master   : OIS.EXE ({ois_resolved}/{ois_total}) [ONLINE]"
+            ois_status
         ),
-        format_screen_line(
-            f"Secondary Master : OIS_SERVER.EXE ({server_resolved}/{server_total}) [ONLINE]"
-        ),
+        format_screen_line(server_status),
         format_screen_line(),
         format_screen_line("Press ISSUE to report bugs, PULL_REQUEST to submit code"),
         format_screen_line("23/06/2017-i902-FL183500-8A3410-00"),
