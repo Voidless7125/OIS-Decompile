@@ -11,7 +11,7 @@ Main Processor : Decompilation Target (OIS)
 Memory Testing : 29229/35032 Symbols OK (83.44%)              
 Unresolved     : 5803 ERRORS                                  
 Static Analysis  : [807] PENDING TASKS                        
-Global Progress: [████████████████████████████████------]     
+Global Progress: [██████████████████████████████------] 83.44%
                                                               
 Primary Master   : OIS.EXE (18700/20236) [ONLINE]             
 Secondary Master : OIS_SERVER.EXE (14597/18889) [ONLINE]      

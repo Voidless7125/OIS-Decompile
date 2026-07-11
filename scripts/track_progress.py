@@ -180,7 +180,7 @@ def build_tracker_block(stats: dict) -> str:
     total = stats["total"]
     warnings_count = stats["warnings_count"]
     accuracy = (resolved / total * 100) if total > 0 else 0.0
-    bar = build_progress_bar(accuracy, width=38)
+    bar = build_progress_bar(accuracy, width=36)
     ois_module = stats.get("modules", {}).get(MODULE_OIS, {})
     server_module = stats.get("modules", {}).get(MODULE_SERVER, {})
     ois_resolved = ois_module.get("resolved", 0)
@@ -205,7 +205,7 @@ def build_tracker_block(stats: dict) -> str:
         format_screen_line(
             f"Static Analysis  : [{warnings_count}] PENDING TASKS"
         ),
-        format_screen_line(f"Global Progress: {bar}"),
+        format_screen_line(f"Global Progress: {bar} {accuracy:.2f}%"),
         format_screen_line(),
         format_screen_line(ois_status),
         format_screen_line(server_status),
