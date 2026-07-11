@@ -28,6 +28,19 @@ Press ISSUE to report bugs, PULL_REQUEST to submit code
 - **Static Analysis (PENDING TASKS)** counts `// TODO`, `// FIXME`, and `// Placeholder` comments marking partially reconstructed logic.
 - **Primary/Secondary Master** report decompilation completion ratios isolated to the client (`OIS.EXE`) and server (`OIS_SERVER.EXE`) binaries.
 
+## What is this?
+
+This is an attempt (and successful so far) of decompiling the game Objects in Space.
+The assets folder won't be provided; you will need to get your own copy. (Either take it from a downloaded copy of the game from Steam or get it another way)
+
+## How clean is the code?
+
+It needs improvement. There are over 5k undefined functions, but that's about it. We don't have comments, and lots of code needs to be fixed.
+
+## What version is this game from?
+
+This was decompiled from the Steam version of Objects in Space; GOG asset structures may differ.
+
 ## Project Manifest
 
 This is a community reverse-engineering effort focused on the *Objects in Space* client and server binaries.
