@@ -1,38 +1,59 @@
 # OIS-Decompile
 
+## SYSTEM DIAGNOSTIC: DECOMPILATION PROGRESS
+
+<!-- TRACKER_START -->
+<pre>
+Flat Earth Modular BIOS v6.00PG                               
+(C) 2019-2026 by Decomp Community                             
+                                                              
+Main Processor : Decompilation Target (OIS)                   
+Memory Testing : 29229/35032 Symbols OK (83.44%)              
+Unresolved     : 5803 ERRORS                                  
+Static Analysis  : [807] PENDING TASKS                        
+Global Progress: [██████████████████████████████------] 83.44%
+                                                              
+Primary Master   : OIS.EXE (18700/20236) [ONLINE]             
+Secondary Master : OIS_SERVER.EXE (14597/18889) [ONLINE]      
+                                                              
+Press ISSUE to report bugs, PULL_REQUEST to submit code       
+23/06/2017-i902-FL183500-8A3410-00                            
+</pre>
+<!-- TRACKER_END -->
+
+## Telemetry Legend
+
+- **Memory Testing** reports the overall percentage of successfully identified and named C/C++ symbols across the repository.
+- **Unresolved ERRORS** is the raw count of Ghidra-generated placeholder names, such as `FUN_`, `DAT_`, and `PTR_`, still awaiting reverse engineering.
+- **Static Analysis (PENDING TASKS)** counts `// TODO`, `// FIXME`, and `// Placeholder` comments marking partially reconstructed logic.
+- **Primary/Secondary Master** report decompilation completion ratios isolated to the client (`OIS.EXE`) and server (`OIS_SERVER.EXE`) binaries.
+
 ## What is this?
-This is an attempt (and successful so far) of decompiling the game Objects in Space. 
+
+This is an attempt (and successful so far) of decompiling the game Objects in Space.
 The assets folder won't be provided; you will need to get your own copy. (Either take it from a downloaded copy of the game from Steam or get it another way)
 
 ## How clean is the code?
+
 It needs improvement. There are over 5k undefined functions, but that's about it. We don't have comments, and lots of code needs to be fixed.
 
 ## What version is this game from?
-# I got this from STEAM, not gog so there may be a difference in assets folders, but I have not checked.
 
-## Status
+This was decompiled from the Steam version of Objects in Space; GOG asset structures may differ.
 
----
+## Project Manifest
 
-<table>
-  <tbody>
-    <tr>
-      <td align="center">
-        <img src="./assets/ois-icon.png" width="100px" alt="OIS executable icon"><br>
-        <h2><code>OIS.EXE</code></h2>
-        <pre>Implemented: 100.00% (150/150)
-Accuracy:    99.10%</pre>
-        <code>[█████████████████████░]</code><br>
-        <b>99.10%</b>
-      </td>
-      <td align="center">
-        <img src="./assets/ois-server-icon.png" width="100px" alt="OIS Server executable icon"><br>
-        <h2><code>OIS_SERVER.EXE</code></h2>
-        <pre>Implemented: N/A
-Accuracy:    N/A</pre>
-        <code>[░░░░░░░░░░░░░░░░░░░░░░]</code><br>
-        <b>N/A</b>
-      </td>
-    </tr>
-  </tbody>
-</table>
+This is a community reverse-engineering effort focused on the *Objects in Space* client and server binaries.
+
+> **CRITICAL LEGAL NOTE:** No game assets—including audio, models, or textures—are provided. Extract assets only from a legally purchased Steam copy of *Objects in Space*. GOG asset structures may differ.
+
+## Codebase Integrity
+
+The C source is generated through Ghidra and remains an in-progress reconstruction. The broad program structure is forming, but significant manual cleanup, refactoring, and data-structure mapping are ongoing.
+
+## Engineering Directives
+
+- Map and document structures, enums, and global data.
+- Rename Ghidra-generated functions and data symbols using verified behavior.
+- Reconstruct and simplify incomplete control flow without changing observed behavior.
+- Test logic paths against a legally obtained game installation and record findings in focused changes.
