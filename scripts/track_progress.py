@@ -147,9 +147,10 @@ def format_dual_line(left: str, right: str) -> str:
 def build_module_status_line(
     label: str, module_name: str, resolved: int, total: int
 ) -> str:
+    label_field = f"{label:<17}"
     if total > 0:
-        return f"{label} : {module_name} ({resolved}/{total}) [ONLINE]"
-    return f"{label} : {module_name} [OFFLINE / PENDING SCAN]"
+        return f"{label_field}: {module_name} ({resolved}/{total}) [ONLINE]"
+    return f"{label_field}: {module_name} [OFFLINE / PENDING SCAN]"
 
 
 # ---------------------------------------------------------------------------
