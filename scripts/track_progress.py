@@ -45,13 +45,81 @@ C_KEYWORDS = {
 BAR_WIDTH = 22
 SCREEN_WIDTH = 62
 
-COMMENT_PATTERN = re.compile(r"//[^\n]*|/\*.*?\*/", re.DOTALL)
-STRING_LITERAL_PATTERN = re.compile(
-    r'"(?:\\.|[^"\\\r\n])*"|\'(?:\\.|[^\'\\\r\n])*\''
-)
 WARNING_MARKER_PATTERN = re.compile(r"\b(?:Placeholder|TODO|FIXME)\b", re.IGNORECASE)
+
+# Ghidra-generated placeholder prefixes that indicate an un-renamed symbol.
+# Symbols matching any of these are counted as unresolved regardless of context.
+GHIDRA_PLACEHOLDER_PREFIXES = (
+    # Address-derived symbols
+    "FUN_", "DAT_", "PTR_", "LAB_", "UNK_",
+    # Thunks and leading-underscore aliases (e.g. thunk_FUN_*, _DAT_*)
+    "thunk_", "_FUN_", "_DAT_", "_PTR_", "_LAB_", "_UNK_",
+    # Ghidra-generated local variables and parameters
+    "local_", "param_",
+)
+
+# Ghidra typed temporaries: e.g. iVar1, uVar2, bVar3, auVar4, puVar5, llVar6
+GHIDRA_TYPED_VAR_RE = re.compile(r"^[a-z]{1,4}(?:Var|Stack)\d")
 MODULE_OIS = "ois.exe"
 MODULE_SERVER = "ois_server.exe"
+
+
+# ---------------------------------------------------------------------------
+# Source text cleaning
+# ---------------------------------------------------------------------------
+
+def strip_comments_and_strings(text: str) -> tuple[str, int]:
+    """Strip C comments and string/character literals in one contextual pass.
+
+    Processing comments and literals together ensures that ``//`` or ``/*``
+    inside a string literal is never mistaken for a comment delimiter — the
+    previous two-step approach (regex comment removal followed by string
+    removal) caused URL literals such as ``"http://..."`` to bleed identifiers
+    like ``http`` into the symbol counts.
+
+    Returns a (clean_text, warnings_count) tuple where ``warnings_count`` is
+    the number of TODO/FIXME/Placeholder markers found inside comments.
+    """
+    result: list[str] = []
+    warnings = 0
+    i = 0
+    n = len(text)
+    while i < n:
+        ch = text[i]
+        # --- single-line comment ---
+        if ch == "/" and i + 1 < n and text[i + 1] == "/":
+            start = i
+            while i < n and text[i] != "\n":
+                i += 1
+            warnings += len(WARNING_MARKER_PATTERN.findall(text[start:i]))
+        # --- block comment ---
+        elif ch == "/" and i + 1 < n and text[i + 1] == "*":
+            start = i
+            i += 2
+            while i < n and not (text[i] == "*" and i + 1 < n and text[i + 1] == "/"):
+                i += 1
+            i += 2  # consume closing */
+            warnings += len(WARNING_MARKER_PATTERN.findall(text[start:i]))
+        # --- double-quoted string literal ---
+        elif ch == '"':
+            i += 1
+            while i < n and text[i] != '"':
+                if text[i] == "\\" and i + 1 < n:
+                    i += 1  # skip escaped character
+                i += 1
+            i += 1  # consume closing "
+        # --- single-quoted character literal ---
+        elif ch == "'":
+            i += 1
+            while i < n and text[i] != "'":
+                if text[i] == "\\" and i + 1 < n:
+                    i += 1  # skip escaped character
+                i += 1
+            i += 1  # consume closing '
+        else:
+            result.append(ch)
+            i += 1
+    return "".join(result), warnings
 
 
 # ---------------------------------------------------------------------------
@@ -95,8 +163,8 @@ def scan_source_files(source_dir: Path) -> dict:
         except OSError as exc:
             raise OSError(f"Could not read source file {path}: {exc}") from exc
 
-        for comment in COMMENT_PATTERN.findall(text):
-            warnings_count += len(WARNING_MARKER_PATTERN.findall(comment))
+        clean_text, file_warnings = strip_comments_and_strings(text)
+        warnings_count += file_warnings
 
         module_bucket = None
         module_name = module_name_for_path(path, source_dir)
@@ -105,13 +173,11 @@ def scan_source_files(source_dir: Path) -> dict:
                 module_name, {"resolved": set(), "unresolved": set()}
             )
 
-        clean_text = COMMENT_PATTERN.sub("", text)
-        clean_text = STRING_LITERAL_PATTERN.sub("", clean_text)
         for match in IDENTIFIER_PATTERN.finditer(clean_text):
             name = match.group()
             if name in C_KEYWORDS:
                 continue
-            if name.startswith(("FUN_", "DAT_", "PTR_")):
+            if name.startswith(GHIDRA_PLACEHOLDER_PREFIXES) or GHIDRA_TYPED_VAR_RE.match(name):
                 unresolved_symbols.add(name)
                 if module_bucket is not None:
                     module_bucket["unresolved"].add(name)
