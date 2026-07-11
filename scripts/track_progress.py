@@ -93,7 +93,7 @@ def scan_source_files(source_dir: Path) -> dict:
         try:
             text = path.read_text(encoding="utf-8", errors="replace")
         except OSError as exc:
-            raise OSError(f"Could not read source file: {path}") from exc
+            raise OSError(f"Could not read source file {path}: {exc}") from exc
 
         for comment in COMMENT_PATTERN.findall(text):
             warnings_count += len(WARNING_MARKER_PATTERN.findall(comment))
