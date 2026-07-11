@@ -48,6 +48,8 @@ SCREEN_WIDTH = 62
 COMMENT_PATTERN = re.compile(r"//[^\n]*|/\*.*?\*/", re.DOTALL)
 WARNING_MARKER_PATTERN = re.compile(r"\b(?:Placeholder|TODO|FIXME)\b", re.IGNORECASE)
 MODULE_FILE_PATTERN = re.compile(r"^(?P<name>.+\.exe)\.(?:c|h)$", re.IGNORECASE)
+MODULE_OIS = "ois.exe"
+MODULE_SERVER = "ois_server.exe"
 
 
 # ---------------------------------------------------------------------------
@@ -162,8 +164,8 @@ def build_tracker_block(stats: dict) -> str:
     warnings_count = stats["warnings_count"]
     accuracy = (resolved / total * 100) if total > 0 else 0.0
     bar = build_progress_bar(accuracy, width=38)
-    ois_module = stats.get("modules", {}).get("ois.exe", {})
-    server_module = stats.get("modules", {}).get("ois_server.exe", {})
+    ois_module = stats.get("modules", {}).get(MODULE_OIS, {})
+    server_module = stats.get("modules", {}).get(MODULE_SERVER, {})
     ois_resolved = ois_module.get("resolved", 0)
     ois_total = ois_module.get("total", 0)
     server_resolved = server_module.get("resolved", 0)
