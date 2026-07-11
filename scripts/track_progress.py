@@ -46,8 +46,8 @@ BAR_WIDTH = 22
 SCREEN_WIDTH = 62
 
 COMMENT_PATTERN = re.compile(r"//[^\n]*|/\*.*?\*/", re.DOTALL)
+STRING_LITERAL_PATTERN = re.compile(r'"(?:\\.|[^"\\\r\n])*"')
 WARNING_MARKER_PATTERN = re.compile(r"\b(?:Placeholder|TODO|FIXME)\b", re.IGNORECASE)
-MODULE_FILE_PATTERN = re.compile(r"^(?P<name>.+\.exe)\.(?:c|h)$", re.IGNORECASE)
 MODULE_OIS = "ois.exe"
 MODULE_SERVER = "ois_server.exe"
 
@@ -55,6 +55,21 @@ MODULE_SERVER = "ois_server.exe"
 # ---------------------------------------------------------------------------
 # Scanning
 # ---------------------------------------------------------------------------
+
+def module_name_for_path(path: Path, source_dir: Path) -> str | None:
+    """Return the module directory containing a source file, if tracked."""
+    relative_parts = tuple(part.lower() for part in path.relative_to(source_dir).parts)
+    parent_parts = relative_parts[:-1]
+    for module_name in (MODULE_OIS, MODULE_SERVER):
+        if module_name in parent_parts:
+            return module_name
+
+    filename = relative_parts[-1]
+    for module_name in (MODULE_OIS, MODULE_SERVER):
+        if filename.startswith(f"{module_name}."):
+            return module_name
+    return None
+
 
 def scan_source_files(source_dir: Path) -> dict:
     """Recursively scan .c and .h files; return symbol counts.
@@ -75,22 +90,22 @@ def scan_source_files(source_dir: Path) -> dict:
 
         try:
             text = path.read_text(encoding="utf-8", errors="replace")
-        except OSError:
-            continue
+        except OSError as exc:
+            raise OSError(f"Could not read source file: {path}") from exc
 
         for comment in COMMENT_PATTERN.findall(text):
             warnings_count += len(WARNING_MARKER_PATTERN.findall(comment))
 
-        module_match = MODULE_FILE_PATTERN.match(path.name)
         module_bucket = None
-        if module_match:
-            # Preserve the ".exe" suffix as part of the module key.
-            module_name = module_match.group("name").lower()
+        module_name = module_name_for_path(path, source_dir)
+        if module_name is not None:
             module_bucket = module_stats.setdefault(
                 module_name, {"resolved": set(), "unresolved": set()}
             )
 
-        for match in IDENTIFIER_PATTERN.finditer(text):
+        clean_text = COMMENT_PATTERN.sub("", text)
+        clean_text = STRING_LITERAL_PATTERN.sub("", clean_text)
+        for match in IDENTIFIER_PATTERN.finditer(clean_text):
             name = match.group()
             if name in C_KEYWORDS:
                 continue
@@ -130,7 +145,7 @@ def build_progress_bar(percentage: float, width: int = BAR_WIDTH) -> str:
 
 
 def format_screen_line(content: str = "") -> str:
-    return f"{content[:SCREEN_WIDTH]:<{SCREEN_WIDTH}}"
+    return content[:SCREEN_WIDTH]
 
 
 def format_dual_line(left: str, right: str) -> str:
