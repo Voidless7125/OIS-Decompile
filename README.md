@@ -26,7 +26,7 @@ Unresolved     : 5803 ERRORS
 Static Analysis  : [807] PENDING TASKS                        
 Global Progress: [████████████████████████████████------]     
                                                               
-Primary Master : OIS.EXE (22311/23847) [ONLINE]               
+Primary Master   : OIS.EXE (22311/23847) [ONLINE]             
 Secondary Master : OIS_SERVER.EXE (18419/22711) [ONLINE]      
                                                               
 Press ISSUE to report bugs, PULL_REQUEST to submit code       
