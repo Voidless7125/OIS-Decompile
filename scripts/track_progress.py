@@ -45,8 +45,7 @@ C_KEYWORDS = {
 BAR_WIDTH = 22
 SCREEN_WIDTH = 78
 
-LINE_COMMENT_PATTERN = re.compile(r"//[^\n]*")
-BLOCK_COMMENT_PATTERN = re.compile(r"/\*.*?\*/", re.DOTALL)
+COMMENT_PATTERN = re.compile(r"//[^\n]*|/\*.*?\*/", re.DOTALL)
 WARNING_MARKER_PATTERN = re.compile(r"\b(?:Placeholder|TODO|FIXME)\b", re.IGNORECASE)
 
 MODULE_STATUS = {
@@ -86,9 +85,7 @@ def scan_source_files(source_dir: Path) -> dict:
         except OSError:
             continue
 
-        for comment in LINE_COMMENT_PATTERN.findall(text):
-            warnings_count += len(WARNING_MARKER_PATTERN.findall(comment))
-        for comment in BLOCK_COMMENT_PATTERN.findall(text):
+        for comment in COMMENT_PATTERN.findall(text):
             warnings_count += len(WARNING_MARKER_PATTERN.findall(comment))
 
         for match in IDENTIFIER_PATTERN.finditer(text):
