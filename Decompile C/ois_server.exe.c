@@ -1,10 +1,1684 @@
-#include "ois_server.exe.h"
+typedef unsigned char   undefined;
+
+typedef unsigned char    bool;
+typedef unsigned char    byte;
+typedef unsigned int    dword;
+float10
+typedef unsigned long long    GUID;
+typedef pointer32 ImageBaseOffset32;
+
+typedef long long    longlong;
+typedef unsigned char    uchar;
+typedef unsigned int    uint;
+typedef unsigned long    ulong;
+typedef unsigned long long    ulonglong;
+typedef unsigned char    undefined1;
+typedef unsigned short    undefined2;
+typedef unsigned int    undefined3;
+typedef unsigned int    undefined4;
+typedef unsigned long long    undefined8;
+typedef unsigned short    ushort;
+typedef unsigned short    wchar16;
+typedef short    wchar_t;
+typedef unsigned short    word;
+typedef struct _s__RTTIBaseClassDescriptor _s__RTTIBaseClassDescriptor, *P_s__RTTIBaseClassDescriptor;
+
+typedef struct _s__RTTIBaseClassDescriptor RTTIBaseClassDescriptor;
+
+typedef struct TypeDescriptor TypeDescriptor, *PTypeDescriptor;
+
+typedef struct PMD PMD, *PPMD;
+
+typedef struct _s__RTTIClassHierarchyDescriptor _s__RTTIClassHierarchyDescriptor, *P_s__RTTIClassHierarchyDescriptor;
+
+typedef struct _s__RTTIClassHierarchyDescriptor RTTIClassHierarchyDescriptor;
+
+typedef int ptrdiff_t;
+
+struct TypeDescriptor {
+    void *pVFTable;
+    void *spare;
+    char name[0];
+};
+
+struct PMD {
+    ptrdiff_t mdisp;
+    ptrdiff_t pdisp;
+    ptrdiff_t vdisp;
+};
+
+struct _s__RTTIBaseClassDescriptor {
+    struct TypeDescriptor *pTypeDescriptor; // ref to TypeDescriptor (RTTI 0) for class
+    dword numContainedBases; // count of extended classes in BaseClassArray (RTTI 2)
+    struct PMD where; // member displacement structure
+    dword attributes; // bit flags
+    RTTIClassHierarchyDescriptor *pClassHierarchyDescriptor; // ref to ClassHierarchyDescriptor (RTTI 3) for class
+};
+
+struct _s__RTTIClassHierarchyDescriptor {
+    dword signature;
+    dword attributes; // bit flags
+    dword numBaseClasses; // number of base classes (i.e. rtti1Count)
+    RTTIBaseClassDescriptor **pBaseClassArray; // ref to BaseClassArray (RTTI 2)
+};
+
+typedef struct _s_UnwindMapEntry _s_UnwindMapEntry, *P_s_UnwindMapEntry;
+
+typedef struct _s_UnwindMapEntry UnwindMapEntry;
+
+typedef int __ehstate_t;
+
+struct _s_UnwindMapEntry {
+    __ehstate_t toState;
+    void (*action)(void);
+};
+
+typedef union IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryUnion IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryUnion, *PIMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryUnion;
+
+typedef struct IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryStruct IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryStruct, *PIMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryStruct;
+
+struct IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryStruct {
+    dword OffsetToDirectory:31;
+    dword DataIsDirectory:1;
+};
+
+union IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryUnion {
+    dword OffsetToData;
+    struct IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryStruct IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryStruct;
+};
+
+typedef struct _s_ESTypeList _s_ESTypeList, *P_s_ESTypeList;
+
+typedef struct _s_ESTypeList ESTypeList;
+
+typedef struct _s_HandlerType _s_HandlerType, *P_s_HandlerType;
+
+typedef struct _s_HandlerType HandlerType;
+
+struct _s_HandlerType {
+    uint adjectives;
+    struct TypeDescriptor *pType;
+    ptrdiff_t dispCatchObj;
+    void *addressOfHandler;
+};
+
+struct _s_ESTypeList {
+    int nCount;
+    HandlerType *pTypeArray;
+};
+
+typedef struct CLIENT_ID CLIENT_ID, *PCLIENT_ID;
+
+struct CLIENT_ID {
+    void *UniqueProcess;
+    void *UniqueThread;
+};
+
+typedef struct _s__RTTICompleteObjectLocator _s__RTTICompleteObjectLocator, *P_s__RTTICompleteObjectLocator;
+
+typedef struct _s__RTTICompleteObjectLocator RTTICompleteObjectLocator;
+
+struct _s__RTTICompleteObjectLocator {
+    dword signature;
+    dword offset; // offset of vbtable within class
+    dword cdOffset; // constructor displacement offset
+    struct TypeDescriptor *pTypeDescriptor; // ref to TypeDescriptor (RTTI 0) for class
+    RTTIClassHierarchyDescriptor *pClassDescriptor; // ref to ClassHierarchyDescriptor (RTTI 3)
+};
+
+typedef struct _s_TryBlockMapEntry _s_TryBlockMapEntry, *P_s_TryBlockMapEntry;
+
+typedef struct _s_TryBlockMapEntry TryBlockMapEntry;
+
+struct _s_TryBlockMapEntry {
+    __ehstate_t tryLow;
+    __ehstate_t tryHigh;
+    __ehstate_t catchHigh;
+    int nCatches;
+    HandlerType *pHandlerArray;
+};
+
+typedef struct _s_FuncInfo _s_FuncInfo, *P_s_FuncInfo;
+
+struct _s_FuncInfo {
+    uint magicNumber_and_bbtFlags;
+    __ehstate_t maxState;
+    UnwindMapEntry *pUnwindMap;
+    uint nTryBlocks;
+    TryBlockMapEntry *pTryBlockMap;
+    uint nIPMapEntries;
+    void *pIPToStateMap;
+    ESTypeList *pESTypeList;
+    int EHFlags;
+};
+
+typedef struct _s_FuncInfo FuncInfo;
+
+typedef struct exception exception, *Pexception;
+
+struct exception { // PlaceHolder Class Structure
+};
+
+typedef struct _devicemodeW _devicemodeW, *P_devicemodeW;
+
+typedef wchar_t WCHAR;
+
+typedef ushort WORD;
+
+typedef ulong DWORD;
+
+typedef union _union_660 _union_660, *P_union_660;
+
+typedef union _union_663 _union_663, *P_union_663;
+
+typedef struct _struct_661 _struct_661, *P_struct_661;
+
+typedef struct _struct_662 _struct_662, *P_struct_662;
+
+typedef struct _POINTL _POINTL, *P_POINTL;
+
+typedef struct _POINTL POINTL;
+
+typedef long LONG;
+
+struct _POINTL {
+    LONG x;
+    LONG y;
+};
+
+union _union_663 {
+    DWORD dmDisplayFlags;
+    DWORD dmNup;
+};
+
+struct _struct_662 {
+    POINTL dmPosition;
+    DWORD dmDisplayOrientation;
+    DWORD dmDisplayFixedOutput;
+};
+
+struct _struct_661 {
+    short dmOrientation;
+    short dmPaperSize;
+    short dmPaperLength;
+    short dmPaperWidth;
+    short dmScale;
+    short dmCopies;
+    short dmDefaultSource;
+    short dmPrintQuality;
+};
+
+union _union_660 {
+    struct _struct_661 field0;
+    struct _struct_662 field1;
+};
+
+struct _devicemodeW {
+    WCHAR dmDeviceName[32];
+    WORD dmSpecVersion;
+    WORD dmDriverVersion;
+    WORD dmSize;
+    WORD dmDriverExtra;
+    DWORD dmFields;
+    union _union_660 field6_0x4c;
+    short dmColor;
+    short dmDuplex;
+    short dmYResolution;
+    short dmTTOption;
+    short dmCollate;
+    WCHAR dmFormName[32];
+    WORD dmLogPixels;
+    DWORD dmBitsPerPel;
+    DWORD dmPelsWidth;
+    DWORD dmPelsHeight;
+    union _union_663 field17_0xb4;
+    DWORD dmDisplayFrequency;
+    DWORD dmICMMethod;
+    DWORD dmICMIntent;
+    DWORD dmMediaType;
+    DWORD dmDitherType;
+    DWORD dmReserved1;
+    DWORD dmReserved2;
+    DWORD dmPanningWidth;
+    DWORD dmPanningHeight;
+};
+
+typedef struct _devicemodeW DEVMODEW;
+
+typedef struct _COMSTAT _COMSTAT, *P_COMSTAT;
+
+struct _COMSTAT {
+    DWORD fCtsHold:1;
+    DWORD fDsrHold:1;
+    DWORD fRlsdHold:1;
+    DWORD fXoffHold:1;
+    DWORD fXoffSent:1;
+    DWORD fEof:1;
+    DWORD fTxim:1;
+    DWORD fReserved:25;
+    DWORD cbInQue;
+    DWORD cbOutQue;
+};
+
+typedef struct _OVERLAPPED _OVERLAPPED, *P_OVERLAPPED;
+
+typedef ulong ULONG_PTR;
+
+typedef union _union_518 _union_518, *P_union_518;
+
+typedef void *HANDLE;
+
+typedef struct _struct_519 _struct_519, *P_struct_519;
+
+typedef void *PVOID;
+
+struct _struct_519 {
+    DWORD Offset;
+    DWORD OffsetHigh;
+};
+
+union _union_518 {
+    struct _struct_519 s;
+    PVOID Pointer;
+};
+
+struct _OVERLAPPED {
+    ULONG_PTR Internal;
+    ULONG_PTR InternalHigh;
+    union _union_518 u;
+    HANDLE hEvent;
+};
+
+typedef struct _SECURITY_ATTRIBUTES _SECURITY_ATTRIBUTES, *P_SECURITY_ATTRIBUTES;
+
+typedef void *LPVOID;
+
+typedef int BOOL;
+
+struct _SECURITY_ATTRIBUTES {
+    DWORD nLength;
+    LPVOID lpSecurityDescriptor;
+    BOOL bInheritHandle;
+};
+
+typedef struct _DCB _DCB, *P_DCB;
+
+typedef uchar BYTE;
+
+struct _DCB {
+    DWORD DCBlength;
+    DWORD BaudRate;
+    DWORD fBinary:1;
+    DWORD fParity:1;
+    DWORD fOutxCtsFlow:1;
+    DWORD fOutxDsrFlow:1;
+    DWORD fDtrControl:2;
+    DWORD fDsrSensitivity:1;
+    DWORD fTXContinueOnXoff:1;
+    DWORD fOutX:1;
+    DWORD fInX:1;
+    DWORD fErrorChar:1;
+    DWORD fNull:1;
+    DWORD fRtsControl:2;
+    DWORD fAbortOnError:1;
+    DWORD fDummy2:17;
+    WORD wReserved;
+    WORD XonLim;
+    WORD XoffLim;
+    BYTE ByteSize;
+    BYTE Parity;
+    BYTE StopBits;
+    char XonChar;
+    char XoffChar;
+    char ErrorChar;
+    char EofChar;
+    char EvtChar;
+    WORD wReserved1;
+};
+
+typedef struct _STARTUPINFOW _STARTUPINFOW, *P_STARTUPINFOW;
+
+typedef WCHAR *LPWSTR;
+
+typedef BYTE *LPBYTE;
+
+struct _STARTUPINFOW {
+    DWORD cb;
+    LPWSTR lpReserved;
+    LPWSTR lpDesktop;
+    LPWSTR lpTitle;
+    DWORD dwX;
+    DWORD dwY;
+    DWORD dwXSize;
+    DWORD dwYSize;
+    DWORD dwXCountChars;
+    DWORD dwYCountChars;
+    DWORD dwFillAttribute;
+    DWORD dwFlags;
+    WORD wShowWindow;
+    WORD cbReserved2;
+    LPBYTE lpReserved2;
+    HANDLE hStdInput;
+    HANDLE hStdOutput;
+    HANDLE hStdError;
+};
+
+typedef struct _DCB *LPDCB;
+
+typedef struct _STARTUPINFOW *LPSTARTUPINFOW;
+
+typedef struct _COMSTAT *LPCOMSTAT;
+
+typedef struct _WIN32_FIND_DATAW _WIN32_FIND_DATAW, *P_WIN32_FIND_DATAW;
+
+typedef struct _WIN32_FIND_DATAW *LPWIN32_FIND_DATAW;
+
+typedef struct _FILETIME _FILETIME, *P_FILETIME;
+
+typedef struct _FILETIME FILETIME;
+
+struct _FILETIME {
+    DWORD dwLowDateTime;
+    DWORD dwHighDateTime;
+};
+
+struct _WIN32_FIND_DATAW {
+    DWORD dwFileAttributes;
+    FILETIME ftCreationTime;
+    FILETIME ftLastAccessTime;
+    FILETIME ftLastWriteTime;
+    DWORD nFileSizeHigh;
+    DWORD nFileSizeLow;
+    DWORD dwReserved0;
+    DWORD dwReserved1;
+    WCHAR cFileName[260];
+    WCHAR cAlternateFileName[14];
+};
+
+typedef struct _OVERLAPPED *LPOVERLAPPED;
+
+typedef struct _SECURITY_ATTRIBUTES *LPSECURITY_ATTRIBUTES;
+
+typedef struct _RTL_CRITICAL_SECTION _RTL_CRITICAL_SECTION, *P_RTL_CRITICAL_SECTION;
+
+typedef struct _RTL_CRITICAL_SECTION *PRTL_CRITICAL_SECTION;
+
+typedef PRTL_CRITICAL_SECTION LPCRITICAL_SECTION;
+
+typedef struct _RTL_CRITICAL_SECTION_DEBUG _RTL_CRITICAL_SECTION_DEBUG, *P_RTL_CRITICAL_SECTION_DEBUG;
+
+typedef struct _RTL_CRITICAL_SECTION_DEBUG *PRTL_CRITICAL_SECTION_DEBUG;
+
+typedef struct _LIST_ENTRY _LIST_ENTRY, *P_LIST_ENTRY;
+
+typedef struct _LIST_ENTRY LIST_ENTRY;
+
+struct _RTL_CRITICAL_SECTION {
+    PRTL_CRITICAL_SECTION_DEBUG DebugInfo;
+    LONG LockCount;
+    LONG RecursionCount;
+    HANDLE OwningThread;
+    HANDLE LockSemaphore;
+    ULONG_PTR SpinCount;
+};
+
+struct _LIST_ENTRY {
+    struct _LIST_ENTRY *Flink;
+    struct _LIST_ENTRY *Blink;
+};
+
+struct _RTL_CRITICAL_SECTION_DEBUG {
+    WORD Type;
+    WORD CreatorBackTraceIndex;
+    struct _RTL_CRITICAL_SECTION *CriticalSection;
+    LIST_ENTRY ProcessLocksList;
+    DWORD EntryCount;
+    DWORD ContentionCount;
+    DWORD Flags;
+    WORD CreatorBackTraceIndexHigh;
+    WORD SpareWORD;
+};
+
+typedef struct _CONTEXT _CONTEXT, *P_CONTEXT;
+
+typedef struct _CONTEXT CONTEXT;
+
+typedef CONTEXT *PCONTEXT;
+
+typedef PCONTEXT LPCONTEXT;
+
+typedef struct _FLOATING_SAVE_AREA _FLOATING_SAVE_AREA, *P_FLOATING_SAVE_AREA;
+
+typedef struct _FLOATING_SAVE_AREA FLOATING_SAVE_AREA;
+
+struct _FLOATING_SAVE_AREA {
+    DWORD ControlWord;
+    DWORD StatusWord;
+    DWORD TagWord;
+    DWORD ErrorOffset;
+    DWORD ErrorSelector;
+    DWORD DataOffset;
+    DWORD DataSelector;
+    BYTE RegisterArea[80];
+    DWORD Cr0NpxState;
+};
+
+struct _CONTEXT {
+    DWORD ContextFlags;
+    DWORD Dr0;
+    DWORD Dr1;
+    DWORD Dr2;
+    DWORD Dr3;
+    DWORD Dr6;
+    DWORD Dr7;
+    FLOATING_SAVE_AREA FloatSave;
+    DWORD SegGs;
+    DWORD SegFs;
+    DWORD SegEs;
+    DWORD SegDs;
+    DWORD Edi;
+    DWORD Esi;
+    DWORD Ebx;
+    DWORD Edx;
+    DWORD Ecx;
+    DWORD Eax;
+    DWORD Ebp;
+    DWORD Eip;
+    DWORD SegCs;
+    DWORD EFlags;
+    DWORD Esp;
+    DWORD SegSs;
+    BYTE ExtendedRegisters[512];
+};
+
+typedef struct _EXCEPTION_POINTERS _EXCEPTION_POINTERS, *P_EXCEPTION_POINTERS;
+
+typedef LONG (*PTOP_LEVEL_EXCEPTION_FILTER)(struct _EXCEPTION_POINTERS *);
+
+typedef struct _EXCEPTION_RECORD _EXCEPTION_RECORD, *P_EXCEPTION_RECORD;
+
+typedef struct _EXCEPTION_RECORD EXCEPTION_RECORD;
+
+typedef EXCEPTION_RECORD *PEXCEPTION_RECORD;
+
+struct _EXCEPTION_RECORD {
+    DWORD ExceptionCode;
+    DWORD ExceptionFlags;
+    struct _EXCEPTION_RECORD *ExceptionRecord;
+    PVOID ExceptionAddress;
+    DWORD NumberParameters;
+    ULONG_PTR ExceptionInformation[15];
+};
+
+struct _EXCEPTION_POINTERS {
+    PEXCEPTION_RECORD ExceptionRecord;
+    PCONTEXT ContextRecord;
+};
+
+typedef PTOP_LEVEL_EXCEPTION_FILTER LPTOP_LEVEL_EXCEPTION_FILTER;
+
+typedef double ULONGLONG;
+
+typedef char CHAR;
+
+typedef union _LARGE_INTEGER _LARGE_INTEGER, *P_LARGE_INTEGER;
+
+typedef struct _struct_19 _struct_19, *P_struct_19;
+
+typedef struct _struct_20 _struct_20, *P_struct_20;
+
+typedef double LONGLONG;
+
+struct _struct_20 {
+    DWORD LowPart;
+    LONG HighPart;
+};
+
+struct _struct_19 {
+    DWORD LowPart;
+    LONG HighPart;
+};
+
+union _LARGE_INTEGER {
+    struct _struct_19 s;
+    struct _struct_20 u;
+    LONGLONG QuadPart;
+};
+
+typedef union _LARGE_INTEGER LARGE_INTEGER;
+
+typedef union _SLIST_HEADER _SLIST_HEADER, *P_SLIST_HEADER;
+
+typedef struct _struct_299 _struct_299, *P_struct_299;
+
+typedef struct _SINGLE_LIST_ENTRY _SINGLE_LIST_ENTRY, *P_SINGLE_LIST_ENTRY;
+
+typedef struct _SINGLE_LIST_ENTRY SINGLE_LIST_ENTRY;
+
+struct _SINGLE_LIST_ENTRY {
+    struct _SINGLE_LIST_ENTRY *Next;
+};
+
+struct _struct_299 {
+    SINGLE_LIST_ENTRY Next;
+    WORD Depth;
+    WORD Sequence;
+};
+
+union _SLIST_HEADER {
+    ULONGLONG Alignment;
+    struct _struct_299 s;
+};
+
+typedef WCHAR *LPCWSTR;
+
+typedef union _SLIST_HEADER *PSLIST_HEADER;
+
+typedef CHAR *LPCSTR;
+
+typedef struct _OSVERSIONINFOA _OSVERSIONINFOA, *P_OSVERSIONINFOA;
+
+struct _OSVERSIONINFOA {
+    DWORD dwOSVersionInfoSize;
+    DWORD dwMajorVersion;
+    DWORD dwMinorVersion;
+    DWORD dwBuildNumber;
+    DWORD dwPlatformId;
+    CHAR szCSDVersion[128];
+};
+
+typedef CHAR *LPSTR;
+
+typedef struct _OSVERSIONINFOA *LPOSVERSIONINFOA;
+
+typedef struct IMAGE_DOS_HEADER IMAGE_DOS_HEADER, *PIMAGE_DOS_HEADER;
+
+struct IMAGE_DOS_HEADER {
+    char e_magic[2]; // Magic number
+    word e_cblp; // Bytes of last page
+    word e_cp; // Pages in file
+    word e_crlc; // Relocations
+    word e_cparhdr; // Size of header in paragraphs
+    word e_minalloc; // Minimum extra paragraphs needed
+    word e_maxalloc; // Maximum extra paragraphs needed
+    word e_ss; // Initial (relative) SS value
+    word e_sp; // Initial SP value
+    word e_csum; // Checksum
+    word e_ip; // Initial IP value
+    word e_cs; // Initial (relative) CS value
+    word e_lfarlc; // File address of relocation table
+    word e_ovno; // Overlay number
+    word e_res[4][4]; // Reserved words
+    word e_oemid; // OEM identifier (for e_oeminfo)
+    word e_oeminfo; // OEM information; e_oemid specific
+    word e_res2[10][10]; // Reserved words
+    dword e_lfanew; // File address of new exe header
+    byte e_program[64]; // Actual DOS program
+};
+
+typedef struct tm tm, *Ptm;
+
+struct tm {
+    int tm_sec;
+    int tm_min;
+    int tm_hour;
+    int tm_mday;
+    int tm_mon;
+    int tm_year;
+    int tm_wday;
+    int tm_yday;
+    int tm_isdst;
+};
+
+typedef uint UINT_PTR;
+
+typedef ULONG_PTR SIZE_T;
+
+typedef struct DotNetPdbInfo DotNetPdbInfo, *PDotNetPdbInfo;
+
+struct DotNetPdbInfo {
+    char signature[4];
+    GUID guid;
+    dword age;
+    char pdbpath[51];
+};
+
+typedef struct in_addr in_addr, *Pin_addr;
+
+typedef union _union_1226 _union_1226, *P_union_1226;
+
+typedef struct _struct_1227 _struct_1227, *P_struct_1227;
+
+typedef struct _struct_1228 _struct_1228, *P_struct_1228;
+
+typedef ulong ULONG;
+
+typedef uchar UCHAR;
+
+typedef ushort USHORT;
+
+struct _struct_1228 {
+    USHORT s_w1;
+    USHORT s_w2;
+};
+
+struct _struct_1227 {
+    UCHAR s_b1;
+    UCHAR s_b2;
+    UCHAR s_b3;
+    UCHAR s_b4;
+};
+
+union _union_1226 {
+    struct _struct_1227 S_un_b;
+    struct _struct_1228 S_un_w;
+    ULONG S_addr;
+};
+
+struct in_addr {
+    union _union_1226 S_un;
+};
+
+typedef struct _FILETIME *LPFILETIME;
+
+typedef int (*FARPROC)(void);
+
+typedef struct HICON__ HICON__, *PHICON__;
+
+struct HICON__ {
+    int unused;
+};
+
+typedef struct tagRECT tagRECT, *PtagRECT;
+
+struct tagRECT {
+    LONG left;
+    LONG top;
+    LONG right;
+    LONG bottom;
+};
+
+typedef DWORD *LPDWORD;
+
+typedef struct HINSTANCE__ HINSTANCE__, *PHINSTANCE__;
+
+struct HINSTANCE__ {
+    int unused;
+};
+
+typedef struct tagRECT *LPRECT;
+
+typedef struct HICON__ *HICON;
+
+typedef uint *PUINT;
+
+typedef void *LPCVOID;
+
+typedef struct HINSTANCE__ *HINSTANCE;
+
+typedef struct HWND__ HWND__, *PHWND__;
+
+typedef struct HWND__ *HWND;
+
+struct HWND__ {
+    int unused;
+};
+
+typedef HINSTANCE HMODULE;
+
+typedef HICON HCURSOR;
+
+typedef uint UINT;
+
+typedef struct IMAGE_OPTIONAL_HEADER32 IMAGE_OPTIONAL_HEADER32, *PIMAGE_OPTIONAL_HEADER32;
+
+typedef struct IMAGE_DATA_DIRECTORY IMAGE_DATA_DIRECTORY, *PIMAGE_DATA_DIRECTORY;
+
+struct IMAGE_DATA_DIRECTORY {
+    ImageBaseOffset32 VirtualAddress;
+    dword Size;
+};
+
+struct IMAGE_OPTIONAL_HEADER32 {
+    word Magic;
+    byte MajorLinkerVersion;
+    byte MinorLinkerVersion;
+    dword SizeOfCode;
+    dword SizeOfInitializedData;
+    dword SizeOfUninitializedData;
+    ImageBaseOffset32 AddressOfEntryPoint;
+    ImageBaseOffset32 BaseOfCode;
+    ImageBaseOffset32 BaseOfData;
+    pointer32 ImageBase;
+    dword SectionAlignment;
+    dword FileAlignment;
+    word MajorOperatingSystemVersion;
+    word MinorOperatingSystemVersion;
+    word MajorImageVersion;
+    word MinorImageVersion;
+    word MajorSubsystemVersion;
+    word MinorSubsystemVersion;
+    dword Win32VersionValue;
+    dword SizeOfImage;
+    dword SizeOfHeaders;
+    dword CheckSum;
+    word Subsystem;
+    word DllCharacteristics;
+    dword SizeOfStackReserve;
+    dword SizeOfStackCommit;
+    dword SizeOfHeapReserve;
+    dword SizeOfHeapCommit;
+    dword LoaderFlags;
+    dword NumberOfRvaAndSizes;
+    struct IMAGE_DATA_DIRECTORY DataDirectory[16];
+};
+
+typedef struct Var Var, *PVar;
+
+struct Var {
+    word wLength;
+    word wValueLength;
+    word wType;
+};
+
+typedef struct IMAGE_RESOURCE_DIRECTORY_ENTRY_NameStruct IMAGE_RESOURCE_DIRECTORY_ENTRY_NameStruct, *PIMAGE_RESOURCE_DIRECTORY_ENTRY_NameStruct;
+
+struct IMAGE_RESOURCE_DIRECTORY_ENTRY_NameStruct {
+    dword NameOffset:31;
+    dword NameIsString:1;
+};
+
+typedef struct IMAGE_THUNK_DATA32 IMAGE_THUNK_DATA32, *PIMAGE_THUNK_DATA32;
+
+struct IMAGE_THUNK_DATA32 {
+    dword StartAddressOfRawData;
+    dword EndAddressOfRawData;
+    dword AddressOfIndex;
+    dword AddressOfCallBacks;
+    dword SizeOfZeroFill;
+    dword Characteristics;
+};
+
+typedef struct IMAGE_LOAD_CONFIG_CODE_INTEGRITY IMAGE_LOAD_CONFIG_CODE_INTEGRITY, *PIMAGE_LOAD_CONFIG_CODE_INTEGRITY;
+
+struct IMAGE_LOAD_CONFIG_CODE_INTEGRITY {
+    word Flags;
+    word Catalog;
+    dword CatalogOffset;
+    dword Reserved;
+};
+
+typedef struct IMAGE_DEBUG_DIRECTORY IMAGE_DEBUG_DIRECTORY, *PIMAGE_DEBUG_DIRECTORY;
+
+struct IMAGE_DEBUG_DIRECTORY {
+    dword Characteristics;
+    dword TimeDateStamp;
+    word MajorVersion;
+    word MinorVersion;
+    dword Type;
+    dword SizeOfData;
+    dword AddressOfRawData;
+    dword PointerToRawData;
+};
+
+typedef struct IMAGE_FILE_HEADER IMAGE_FILE_HEADER, *PIMAGE_FILE_HEADER;
+
+struct IMAGE_FILE_HEADER {
+    word Machine; // 332
+    word NumberOfSections;
+    dword TimeDateStamp;
+    dword PointerToSymbolTable;
+    dword NumberOfSymbols;
+    word SizeOfOptionalHeader;
+    word Characteristics;
+};
+
+typedef struct IMAGE_NT_HEADERS32 IMAGE_NT_HEADERS32, *PIMAGE_NT_HEADERS32;
+
+struct IMAGE_NT_HEADERS32 {
+    char Signature[4];
+    struct IMAGE_FILE_HEADER FileHeader;
+    struct IMAGE_OPTIONAL_HEADER32 OptionalHeader;
+};
+
+typedef struct StringFileInfo StringFileInfo, *PStringFileInfo;
+
+struct StringFileInfo {
+    word wLength;
+    word wValueLength;
+    word wType;
+};
+
+typedef struct IMAGE_RESOURCE_DIRECTORY_ENTRY IMAGE_RESOURCE_DIRECTORY_ENTRY, *PIMAGE_RESOURCE_DIRECTORY_ENTRY;
+
+typedef union IMAGE_RESOURCE_DIRECTORY_ENTRY_NameUnion IMAGE_RESOURCE_DIRECTORY_ENTRY_NameUnion, *PIMAGE_RESOURCE_DIRECTORY_ENTRY_NameUnion;
+
+union IMAGE_RESOURCE_DIRECTORY_ENTRY_NameUnion {
+    struct IMAGE_RESOURCE_DIRECTORY_ENTRY_NameStruct IMAGE_RESOURCE_DIRECTORY_ENTRY_NameStruct;
+    dword Name;
+    word Id;
+};
+
+struct IMAGE_RESOURCE_DIRECTORY_ENTRY {
+    union IMAGE_RESOURCE_DIRECTORY_ENTRY_NameUnion NameUnion;
+    union IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryUnion DirectoryUnion;
+};
+
+typedef struct StringTable StringTable, *PStringTable;
+
+struct StringTable {
+    word wLength;
+    word wValueLength;
+    word wType;
+};
+
+typedef struct IMAGE_RESOURCE_DIR_STRING_U_18 IMAGE_RESOURCE_DIR_STRING_U_18, *PIMAGE_RESOURCE_DIR_STRING_U_18;
+
+struct IMAGE_RESOURCE_DIR_STRING_U_18 {
+    word Length;
+    wchar16 NameString[9];
+};
+
+typedef struct IMAGE_SECTION_HEADER IMAGE_SECTION_HEADER, *PIMAGE_SECTION_HEADER;
+
+typedef union Misc Misc, *PMisc;
+
+typedef enum SectionFlags {
+    IMAGE_SCN_TYPE_NO_PAD=8,
+    IMAGE_SCN_RESERVED_0001=16,
+    IMAGE_SCN_CNT_CODE=32,
+    IMAGE_SCN_CNT_INITIALIZED_DATA=64,
+    IMAGE_SCN_CNT_UNINITIALIZED_DATA=128,
+    IMAGE_SCN_LNK_OTHER=256,
+    IMAGE_SCN_LNK_INFO=512,
+    IMAGE_SCN_RESERVED_0040=1024,
+    IMAGE_SCN_LNK_REMOVE=2048,
+    IMAGE_SCN_LNK_COMDAT=4096,
+    IMAGE_SCN_GPREL=32768,
+    IMAGE_SCN_MEM_16BIT=131072,
+    IMAGE_SCN_MEM_PURGEABLE=131072,
+    IMAGE_SCN_MEM_LOCKED=262144,
+    IMAGE_SCN_MEM_PRELOAD=524288,
+    IMAGE_SCN_ALIGN_1BYTES=1048576,
+    IMAGE_SCN_ALIGN_2BYTES=2097152,
+    IMAGE_SCN_ALIGN_4BYTES=3145728,
+    IMAGE_SCN_ALIGN_8BYTES=4194304,
+    IMAGE_SCN_ALIGN_16BYTES=5242880,
+    IMAGE_SCN_ALIGN_32BYTES=6291456,
+    IMAGE_SCN_ALIGN_64BYTES=7340032,
+    IMAGE_SCN_ALIGN_128BYTES=8388608,
+    IMAGE_SCN_ALIGN_256BYTES=9437184,
+    IMAGE_SCN_ALIGN_512BYTES=10485760,
+    IMAGE_SCN_ALIGN_1024BYTES=11534336,
+    IMAGE_SCN_ALIGN_2048BYTES=12582912,
+    IMAGE_SCN_ALIGN_4096BYTES=13631488,
+    IMAGE_SCN_ALIGN_8192BYTES=14680064,
+    IMAGE_SCN_LNK_NRELOC_OVFL=16777216,
+    IMAGE_SCN_MEM_DISCARDABLE=33554432,
+    IMAGE_SCN_MEM_NOT_CACHED=67108864,
+    IMAGE_SCN_MEM_NOT_PAGED=134217728,
+    IMAGE_SCN_MEM_SHARED=268435456,
+    IMAGE_SCN_MEM_EXECUTE=536870912,
+    IMAGE_SCN_MEM_READ=1073741824,
+    IMAGE_SCN_MEM_WRITE=2147483648
+} SectionFlags;
+
+union Misc {
+    dword PhysicalAddress;
+    dword VirtualSize;
+};
+
+struct IMAGE_SECTION_HEADER {
+    char Name[8];
+    union Misc Misc;
+    ImageBaseOffset32 VirtualAddress;
+    dword SizeOfRawData;
+    dword PointerToRawData;
+    dword PointerToRelocations;
+    dword PointerToLinenumbers;
+    word NumberOfRelocations;
+    word NumberOfLinenumbers;
+    enum SectionFlags Characteristics;
+};
+
+typedef struct VS_VERSION_INFO VS_VERSION_INFO, *PVS_VERSION_INFO;
+
+struct VS_VERSION_INFO {
+    word StructLength;
+    word ValueLength;
+    word StructType;
+    wchar16 Info[16];
+    byte Padding[2];
+    dword Signature;
+    word StructVersion[2];
+    word FileVersion[4];
+    word ProductVersion[4];
+    dword FileFlagsMask[2];
+    dword FileFlags;
+    dword FileOS;
+    dword FileType;
+    dword FileSubtype;
+    dword FileTimestamp;
+};
+
+typedef struct IMAGE_BASE_RELOCATION IMAGE_BASE_RELOCATION, *PIMAGE_BASE_RELOCATION;
+
+struct IMAGE_BASE_RELOCATION {
+    dword VirtualAddress;
+    dword SizeOfBlock;
+};
+
+typedef struct IMAGE_RESOURCE_DATA_ENTRY IMAGE_RESOURCE_DATA_ENTRY, *PIMAGE_RESOURCE_DATA_ENTRY;
+
+struct IMAGE_RESOURCE_DATA_ENTRY {
+    dword OffsetToData;
+    dword Size;
+    dword CodePage;
+    dword Reserved;
+};
+
+typedef struct VarFileInfo VarFileInfo, *PVarFileInfo;
+
+struct VarFileInfo {
+    word wLength;
+    word wValueLength;
+    word wType;
+};
+
+typedef enum IMAGE_GUARD_FLAGS {
+    IMAGE_GUARD_CF_INSTRUMENTED=256,
+    IMAGE_GUARD_CFW_INSTRUMENTED=512,
+    IMAGE_GUARD_CF_FUNCTION_TABLE_PRESENT=1024,
+    IMAGE_GUARD_SECURITY_COOKIE_UNUSED=2048,
+    IMAGE_GUARD_PROTECT_DELAYLOAD_IAT=4096,
+    IMAGE_GUARD_DELAYLOAD_IAT_IN_ITS_OWN_SECTION=8192,
+    IMAGE_GUARD_CF_EXPORT_SUPPRESSION_INFO_PRESENT=16384,
+    IMAGE_GUARD_CF_ENABLE_EXPORT_SUPPRESSION=32768,
+    IMAGE_GUARD_CF_LONGJUMP_TABLE_PRESENT=65536,
+    IMAGE_GUARD_RF_INSTRUMENTED=131072,
+    IMAGE_GUARD_RF_ENABLE=262144,
+    IMAGE_GUARD_RF_STRICT=524288,
+    IMAGE_GUARD_CF_FUNCTION_TABLE_SIZE_MASK_1=268435456,
+    IMAGE_GUARD_CF_FUNCTION_TABLE_SIZE_MASK_2=536870912,
+    IMAGE_GUARD_CF_FUNCTION_TABLE_SIZE_MASK_4=1073741824,
+    IMAGE_GUARD_CF_FUNCTION_TABLE_SIZE_MASK_8=2147483648
+} IMAGE_GUARD_FLAGS;
+
+typedef struct IMAGE_RESOURCE_DIRECTORY IMAGE_RESOURCE_DIRECTORY, *PIMAGE_RESOURCE_DIRECTORY;
+
+struct IMAGE_RESOURCE_DIRECTORY {
+    dword Characteristics;
+    dword TimeDateStamp;
+    word MajorVersion;
+    word MinorVersion;
+    word NumberOfNamedEntries;
+    word NumberOfIdEntries;
+};
+
+typedef struct IMAGE_DIRECTORY_ENTRY_EXPORT IMAGE_DIRECTORY_ENTRY_EXPORT, *PIMAGE_DIRECTORY_ENTRY_EXPORT;
+
+struct IMAGE_DIRECTORY_ENTRY_EXPORT {
+    dword Characteristics;
+    dword TimeDateStamp;
+    word MajorVersion;
+    word MinorVersion;
+    ImageBaseOffset32 Name;
+    dword Base;
+    dword NumberOfFunctions;
+    dword NumberOfNames;
+    ImageBaseOffset32 AddressOfFunctions;
+    ImageBaseOffset32 AddressOfNames;
+    ImageBaseOffset32 AddressOfNameOrdinals;
+};
+
+typedef struct StringInfo StringInfo, *PStringInfo;
+
+struct StringInfo {
+    word wLength;
+    word wValueLength;
+    word wType;
+};
+
+typedef struct IMAGE_LOAD_CONFIG_DIRECTORY32 IMAGE_LOAD_CONFIG_DIRECTORY32, *PIMAGE_LOAD_CONFIG_DIRECTORY32;
+
+struct IMAGE_LOAD_CONFIG_DIRECTORY32 {
+    dword Size;
+    dword TimeDateStamp;
+    word MajorVersion;
+    word MinorVersion;
+    dword GlobalFlagsClear;
+    dword GlobalFlagsSet;
+    dword CriticalSectionDefaultTimeout;
+    dword DeCommitFreeBlockThreshold;
+    dword DeCommitTotalFreeThreshold;
+    pointer32 LockPrefixTable;
+    dword MaximumAllocationSize;
+    dword VirtualMemoryThreshold;
+    dword ProcessHeapFlags;
+    dword ProcessAffinityMask;
+    word CsdVersion;
+    word DependentLoadFlags;
+    pointer32 EditList;
+    pointer32 SecurityCookie;
+    pointer32 SEHandlerTable;
+    dword SEHandlerCount;
+    pointer32 GuardCFCCheckFunctionPointer;
+    pointer32 GuardCFDispatchFunctionPointer;
+    pointer32 GuardCFFunctionTable;
+    dword GuardCFFunctionCount;
+    enum IMAGE_GUARD_FLAGS GuardFlags;
+    struct IMAGE_LOAD_CONFIG_CODE_INTEGRITY CodeIntegrity;
+    pointer32 GuardAddressTakenIatEntryTable;
+    dword GuardAddressTakenIatEntryCount;
+    pointer32 GuardLongJumpTargetTable;
+    dword GuardLongJumpTargetCount;
+    pointer32 DynamicValueRelocTable;
+    pointer32 CHPEMetadataPointer;
+    pointer32 GuardRFFailureRoutine;
+    pointer32 GuardRFFailureRoutineFunctionPointer;
+    dword DynamicValueRelocTableOffset;
+    word DynamicValueRelocTableSection;
+    word Reserved1;
+    pointer32 GuardRFVerifyStackPointerFunctionPointer;
+    dword HotPatchTableOffset;
+    dword Reserved2;
+    dword Reserved3;
+};
+
+typedef struct _iobuf _iobuf, *P_iobuf;
+
+struct _iobuf {
+    char *_ptr;
+    int _cnt;
+    char *_base;
+    int _flag;
+    int _file;
+    int _charbuf;
+    int _bufsiz;
+    char *_tmpfname;
+};
+
+typedef struct _iobuf FILE;
+
+typedef void (*PMFN)(void *);
+
+typedef struct _s_CatchableType _s_CatchableType, *P_s_CatchableType;
+
+
+// WARNING! conflicting data type names: /ehdata.h/TypeDescriptor - /TypeDescriptor
+
+struct _s_CatchableType {
+    uint properties;
+    struct TypeDescriptor *pType;
+    struct PMD thisDisplacement;
+    int sizeOrOffset;
+    PMFN copyFunction;
+};
+
+typedef struct _s_CatchableType CatchableType;
+
+typedef struct _s_CatchableTypeArray _s_CatchableTypeArray, *P_s_CatchableTypeArray;
+
+typedef struct _s_CatchableTypeArray CatchableTypeArray;
+
+struct _s_CatchableTypeArray {
+    int nCatchableTypes;
+    CatchableType *arrayOfCatchableTypes[0];
+};
+
+typedef struct _s_ThrowInfo _s_ThrowInfo, *P_s_ThrowInfo;
+
+typedef struct _s_ThrowInfo ThrowInfo;
+
+struct _s_ThrowInfo {
+    uint attributes;
+    PMFN pmfnUnwind;
+    int (*pForwardCompat)(void);
+    CatchableTypeArray *pCatchableTypeArray;
+};
+
+typedef uint uintptr_t;
+
+typedef ulong u_long;
+
+typedef struct WSAData WSAData, *PWSAData;
+
+typedef struct WSAData WSADATA;
+
+struct WSAData {
+    WORD wVersion;
+    WORD wHighVersion;
+    char szDescription[257];
+    char szSystemStatus[129];
+    ushort iMaxSockets;
+    ushort iMaxUdpDg;
+    char *lpVendorInfo;
+};
+
+typedef UINT_PTR SOCKET;
+
+typedef ushort u_short;
+
+typedef WSADATA *LPWSADATA;
+
+typedef struct sockaddr sockaddr, *Psockaddr;
+
+struct sockaddr {
+    u_short sa_family;
+    char sa_data[14];
+};
+
+typedef struct hostent hostent, *Phostent;
+
+struct hostent {
+    char *h_name;
+    char **h_aliases;
+    short h_addrtype;
+    short h_length;
+    char **h_addr_list;
+};
+
+typedef struct _IMAGE_SECTION_HEADER _IMAGE_SECTION_HEADER, *P_IMAGE_SECTION_HEADER;
+
+struct _IMAGE_SECTION_HEADER { // PlaceHolder Structure
+};
+
+typedef struct MemMapReadOnly MemMapReadOnly, *PMemMapReadOnly;
+
+struct MemMapReadOnly { // PlaceHolder Structure
+};
+
+typedef struct GLContextAttrs GLContextAttrs, *PGLContextAttrs;
+
+struct GLContextAttrs { // PlaceHolder Structure
+};
+
+typedef struct CDebugSOldSectionReader CDebugSOldSectionReader, *PCDebugSOldSectionReader;
+
+struct CDebugSOldSectionReader { // PlaceHolder Structure
+};
+
+typedef struct SimpleString SimpleString, *PSimpleString;
+
+struct SimpleString { // PlaceHolder Structure
+};
+
+typedef enum FMOD_RESULT {
+} FMOD_RESULT;
+
+typedef struct FMOD_CREATESOUNDEXINFO FMOD_CREATESOUNDEXINFO, *PFMOD_CREATESOUNDEXINFO;
+
+struct FMOD_CREATESOUNDEXINFO { // PlaceHolder Structure
+};
+
+typedef struct _Tree_unchecked_const_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<unsigned_int>_>,struct_std::_Iterator_base0> _Tree_unchecked_const_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<unsigned_int>_>,struct_std::_Iterator_base0>, *P_Tree_unchecked_const_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<unsigned_int>_>,struct_std::_Iterator_base0>;
+
+struct _Tree_unchecked_const_iterator<class_std::_Tree_val<struct_std::_Tree_simple_types<unsigned_int>_>,struct_std::_Iterator_base0> { // PlaceHolder Structure
+};
+
+typedef struct basic_string<char,struct_std::char_traits<char>,class_std::allocator<char>_> basic_string<char,struct_std::char_traits<char>,class_std::allocator<char>_>, *Pbasic_string<char,struct_std::char_traits<char>,class_std::allocator<char>_>;
+
+struct basic_string<char,struct_std::char_traits<char>,class_std::allocator<char>_> { // PlaceHolder Structure
+};
+
+typedef struct _String_iterator<std::_String_val<std::_Simple_types<char>_>_> _String_iterator<std::_String_val<std::_Simple_types<char>_>_>, *P_String_iterator<std::_String_val<std::_Simple_types<char>_>_>;
+
+struct _String_iterator<std::_String_val<std::_Simple_types<char>_>_> { // PlaceHolder Structure
+};
+
+typedef struct basic_string<char,std::char_traits<char>,std::allocator<char>_> basic_string<char,std::char_traits<char>,std::allocator<char>_>, *Pbasic_string<char,std::char_traits<char>,std::allocator<char>_>;
+
+struct basic_string<char,std::char_traits<char>,std::allocator<char>_> { // PlaceHolder Structure
+};
+
+typedef struct vector<class_std::basic_string<char,struct_std::char_traits<char>,class_std::allocator<char>_>,class_fuzzer::fuzzer_allocator<class_std::basic_string<char,struct_std::char_traits<char>,class_std::allocator<char>_>_>_> vector<class_std::basic_string<char,struct_std::char_traits<char>,class_std::allocator<char>_>,class_fuzzer::fuzzer_allocator<class_std::basic_string<char,struct_std::char_traits<char>,class_std::allocator<char>_>_>_>, *Pvector<class_std::basic_string<char,struct_std::char_traits<char>,class_std::allocator<char>_>,class_fuzzer::fuzzer_allocator<class_std::basic_string<char,struct_std::char_traits<char>,class_std::allocator<char>_>_>_>;
+
+struct vector<class_std::basic_string<char,struct_std::char_traits<char>,class_std::allocator<char>_>,class_fuzzer::fuzzer_allocator<class_std::basic_string<char,struct_std::char_traits<char>,class_std::allocator<char>_>_>_> { // PlaceHolder Structure
+};
+
+typedef struct function<bool___cdecl(cocos2d::Node*)> function<bool___cdecl(cocos2d::Node*)>, *Pfunction<bool___cdecl(cocos2d::Node*)>;
+
+struct function<bool___cdecl(cocos2d::Node*)> { // PlaceHolder Structure
+};
+
+typedef struct _Tree_unchecked_const_iterator<std::_Tree_val<std::_Tree_simple_types<unsigned_int>_>,std::_Iterator_base0> _Tree_unchecked_const_iterator<std::_Tree_val<std::_Tree_simple_types<unsigned_int>_>,std::_Iterator_base0>, *P_Tree_unchecked_const_iterator<std::_Tree_val<std::_Tree_simple_types<unsigned_int>_>,std::_Iterator_base0>;
+
+struct _Tree_unchecked_const_iterator<std::_Tree_val<std::_Tree_simple_types<unsigned_int>_>,std::_Iterator_base0> { // PlaceHolder Structure
+};
+
+typedef struct function<void___cdecl(void)> function<void___cdecl(void)>, *Pfunction<void___cdecl(void)>;
+
+struct function<void___cdecl(void)> { // PlaceHolder Structure
+};
+
+typedef struct vector<cocos2d::Touch*,std::allocator<cocos2d::Touch*>_> vector<cocos2d::Touch*,std::allocator<cocos2d::Touch*>_>, *Pvector<cocos2d::Touch*,std::allocator<cocos2d::Touch*>_>;
+
+struct vector<cocos2d::Touch*,std::allocator<cocos2d::Touch*>_> { // PlaceHolder Structure
+};
+
+typedef struct vector<std::basic_string<char,std::char_traits<char>,std::allocator<char>_>,fuzzer::fuzzer_allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char>_>_>_> vector<std::basic_string<char,std::char_traits<char>,std::allocator<char>_>,fuzzer::fuzzer_allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char>_>_>_>, *Pvector<std::basic_string<char,std::char_traits<char>,std::allocator<char>_>,fuzzer::fuzzer_allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char>_>_>_>;
+
+struct vector<std::basic_string<char,std::char_traits<char>,std::allocator<char>_>,fuzzer::fuzzer_allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char>_>_>_> { // PlaceHolder Structure
+};
+
+typedef struct _Facet_base _Facet_base, *P_Facet_base;
+
+struct _Facet_base { // PlaceHolder Structure
+};
+
+typedef struct Sound Sound, *PSound;
+
+struct Sound { // PlaceHolder Structure
+};
+
+typedef struct Channel Channel, *PChannel;
+
+struct Channel { // PlaceHolder Structure
+};
+
+typedef struct ChannelGroup ChannelGroup, *PChannelGroup;
+
+struct ChannelGroup { // PlaceHolder Structure
+};
+
+typedef struct V3F_C4B_T2F_Quad V3F_C4B_T2F_Quad, *PV3F_C4B_T2F_Quad;
+
+struct V3F_C4B_T2F_Quad { // PlaceHolder Structure
+};
+
+typedef struct SpriteFrameCache SpriteFrameCache, *PSpriteFrameCache;
+
+struct SpriteFrameCache { // PlaceHolder Structure
+};
+
+typedef struct Component Component, *PComponent;
+
+struct Component { // PlaceHolder Structure
+};
+
+typedef struct __Set __Set, *P__Set;
+
+struct __Set { // PlaceHolder Structure
+};
+
+typedef struct FileUtils FileUtils, *PFileUtils;
+
+struct FileUtils { // PlaceHolder Structure
+};
+
+typedef struct Size Size, *PSize;
+
+struct Size { // PlaceHolder Structure
+};
+
+typedef struct Node Node, *PNode;
+
+struct Node { // PlaceHolder Structure
+};
+
+typedef struct Color3B Color3B, *PColor3B;
+
+struct Color3B { // PlaceHolder Structure
+};
+
+typedef struct Ray Ray, *PRay;
+
+struct Ray { // PlaceHolder Structure
+};
+
+typedef struct Scheduler Scheduler, *PScheduler;
+
+struct Scheduler { // PlaceHolder Structure
+};
+
+typedef struct Ref Ref, *PRef;
+
+struct Ref { // PlaceHolder Structure
+};
+
+typedef struct Mat4 Mat4, *PMat4;
+
+struct Mat4 { // PlaceHolder Structure
+};
+
+typedef struct __Double __Double, *P__Double;
+
+struct __Double { // PlaceHolder Structure
+};
+
+typedef struct Vector<cocos2d::Node*> Vector<cocos2d::Node*>, *PVector<cocos2d::Node*>;
+
+struct Vector<cocos2d::Node*> { // PlaceHolder Structure
+};
+
+typedef struct Vec2 Vec2, *PVec2;
+
+struct Vec2 { // PlaceHolder Structure
+};
+
+typedef struct Vec3 Vec3, *PVec3;
+
+struct Vec3 { // PlaceHolder Structure
+};
+
+typedef struct FadeIn FadeIn, *PFadeIn;
+
+struct FadeIn { // PlaceHolder Structure
+};
+
+typedef struct __Float __Float, *P__Float;
+
+struct __Float { // PlaceHolder Structure
+};
+
+typedef struct Animate3D Animate3D, *PAnimate3D;
+
+struct Animate3D { // PlaceHolder Structure
+};
+
+typedef struct EventDispatcher EventDispatcher, *PEventDispatcher;
+
+struct EventDispatcher { // PlaceHolder Structure
+};
+
+typedef struct Scene Scene, *PScene;
+
+struct Scene { // PlaceHolder Structure
+};
+
+typedef struct Rect Rect, *PRect;
+
+struct Rect { // PlaceHolder Structure
+};
+
+typedef struct __Integer __Integer, *P__Integer;
+
+struct __Integer { // PlaceHolder Structure
+};
+
+typedef struct RotateTo RotateTo, *PRotateTo;
+
+struct RotateTo { // PlaceHolder Structure
+};
+
+typedef struct Director Director, *PDirector;
+
+struct Director { // PlaceHolder Structure
+};
+
+typedef struct Event Event, *PEvent;
+
+struct Event { // PlaceHolder Structure
+};
+
+typedef struct Renderer Renderer, *PRenderer;
+
+struct Renderer { // PlaceHolder Structure
+};
+
+typedef struct Mesh Mesh, *PMesh;
+
+struct Mesh { // PlaceHolder Structure
+};
+
+typedef struct EventListener EventListener, *PEventListener;
+
+struct EventListener { // PlaceHolder Structure
+};
+
+typedef struct RepeatForever RepeatForever, *PRepeatForever;
+
+struct RepeatForever { // PlaceHolder Structure
+};
+
+typedef struct PolygonInfo PolygonInfo, *PPolygonInfo;
+
+struct PolygonInfo { // PlaceHolder Structure
+};
+
+typedef struct GLView GLView, *PGLView;
+
+struct GLView { // PlaceHolder Structure
+};
+
+typedef struct Clonable Clonable, *PClonable;
+
+struct Clonable { // PlaceHolder Structure
+};
+
+typedef struct DirectionLight DirectionLight, *PDirectionLight;
+
+struct DirectionLight { // PlaceHolder Structure
+};
+
+typedef struct FadeOut FadeOut, *PFadeOut;
+
+struct FadeOut { // PlaceHolder Structure
+};
+
+typedef struct AffineTransform AffineTransform, *PAffineTransform;
+
+struct AffineTransform { // PlaceHolder Structure
+};
+
+typedef struct EaseInOut EaseInOut, *PEaseInOut;
+
+struct EaseInOut { // PlaceHolder Structure
+};
+
+typedef struct Application Application, *PApplication;
+
+struct Application { // PlaceHolder Structure
+};
+
+typedef struct Animation3D Animation3D, *PAnimation3D;
+
+struct Animation3D { // PlaceHolder Structure
+};
+
+typedef struct SpotLight SpotLight, *PSpotLight;
+
+struct SpotLight { // PlaceHolder Structure
+};
+
+typedef struct Texture2D Texture2D, *PTexture2D;
+
+struct Texture2D { // PlaceHolder Structure
+};
+
+typedef struct Layer Layer, *PLayer;
+
+struct Layer { // PlaceHolder Structure
+};
+
+typedef struct GLProgram GLProgram, *PGLProgram;
+
+struct GLProgram { // PlaceHolder Structure
+};
+
+typedef struct BlendFunc BlendFunc, *PBlendFunc;
+
+struct BlendFunc { // PlaceHolder Structure
+};
+
+typedef struct ActionManager ActionManager, *PActionManager;
+
+struct ActionManager { // PlaceHolder Structure
+};
+
+typedef struct SpriteFrame SpriteFrame, *PSpriteFrame;
+
+struct SpriteFrame { // PlaceHolder Structure
+};
+
+typedef struct ActionInterval ActionInterval, *PActionInterval;
+
+struct ActionInterval { // PlaceHolder Structure
+};
+
+typedef struct Sprite3D Sprite3D, *PSprite3D;
+
+struct Sprite3D { // PlaceHolder Structure
+};
+
+typedef struct Quaternion Quaternion, *PQuaternion;
+
+struct Quaternion { // PlaceHolder Structure
+};
+
+typedef enum TextHAlignment {
+} TextHAlignment;
+
+typedef struct RenderTexture RenderTexture, *PRenderTexture;
+
+struct RenderTexture { // PlaceHolder Structure
+};
+
+typedef struct Acceleration Acceleration, *PAcceleration;
+
+struct Acceleration { // PlaceHolder Structure
+};
+
+typedef struct GLViewImpl GLViewImpl, *PGLViewImpl;
+
+struct GLViewImpl { // PlaceHolder Structure
+};
+
+typedef struct AABB AABB, *PAABB;
+
+struct AABB { // PlaceHolder Structure
+};
+
+typedef struct Label Label, *PLabel;
+
+struct Label { // PlaceHolder Structure
+};
+
+typedef struct FiniteTimeAction FiniteTimeAction, *PFiniteTimeAction;
+
+struct FiniteTimeAction { // PlaceHolder Structure
+};
+
+typedef struct GLProgramState GLProgramState, *PGLProgramState;
+
+struct GLProgramState { // PlaceHolder Structure
+};
+
+typedef struct PointLight PointLight, *PPointLight;
+
+struct PointLight { // PlaceHolder Structure
+};
+
+typedef struct SpriteBatchNode SpriteBatchNode, *PSpriteBatchNode;
+
+struct SpriteBatchNode { // PlaceHolder Structure
+};
+
+typedef struct Camera Camera, *PCamera;
+
+struct Camera { // PlaceHolder Structure
+};
+
+typedef struct __Bool __Bool, *P__Bool;
+
+struct __Bool { // PlaceHolder Structure
+};
+
+typedef struct Sequence Sequence, *PSequence;
+
+struct Sequence { // PlaceHolder Structure
+};
+
+typedef struct DelayTime DelayTime, *PDelayTime;
+
+struct DelayTime { // PlaceHolder Structure
+};
+
+typedef struct CallFunc CallFunc, *PCallFunc;
+
+struct CallFunc { // PlaceHolder Structure
+};
+
+typedef struct BaseLight BaseLight, *PBaseLight;
+
+struct BaseLight { // PlaceHolder Structure
+};
+
+typedef struct AmbientLight AmbientLight, *PAmbientLight;
+
+struct AmbientLight { // PlaceHolder Structure
+};
+
+typedef struct EventListenerMouse EventListenerMouse, *PEventListenerMouse;
+
+struct EventListenerMouse { // PlaceHolder Structure
+};
+
+typedef struct Action Action, *PAction;
+
+struct Action { // PlaceHolder Structure
+};
+
+typedef struct Touch Touch, *PTouch;
+
+struct Touch { // PlaceHolder Structure
+};
+
+typedef enum LanguageType {
+} LanguageType;
+
+typedef struct EventListenerKeyboard EventListenerKeyboard, *PEventListenerKeyboard;
+
+struct EventListenerKeyboard { // PlaceHolder Structure
+};
+
+typedef enum TextVAlignment {
+} TextVAlignment;
+
+typedef struct Sprite Sprite, *PSprite;
+
+struct Sprite { // PlaceHolder Structure
+};
+
+typedef enum SetIntervalReason {
+} SetIntervalReason;
+
+typedef struct _TexParams _TexParams, *P_TexParams;
+
+struct _TexParams { // PlaceHolder Structure
+};
+
+typedef enum Platform {
+} Platform;
+
+typedef enum DispatchMode {
+} DispatchMode;
+
+typedef struct Scale9Sprite Scale9Sprite, *PScale9Sprite;
+
+struct Scale9Sprite { // PlaceHolder Structure
+};
+
+typedef enum KeyCode {
+} KeyCode;
+
+typedef int (*_onexit_t)(void);
+
+typedef uint size_t;
+
+typedef longlong __time64_t;
+
+typedef int errno_t;
+
+typedef size_t rsize_t;
+
 
 
 undefined4 DAT_0065500c;
 undefined DAT_00655560;
 undefined DAT_00655564;
 undefined DAT_00655550;
+void *ExceptionList;
 undefined DAT_00655578;
 undefined DAT_0065557c;
 undefined DAT_00655568;
@@ -13,7 +1687,6 @@ undefined DAT_00655594;
 undefined DAT_00655580;
 undefined LAB_005af73e;
 undefined LAB_005cbd50;
-void *ExceptionList;
 undefined4 DAT_00655538;
 undefined DAT_006555c0;
 undefined DAT_006555c4;
@@ -64,7 +1737,6 @@ undefined4 *DAT_0065b394;
 undefined4 DAT_006557c8;
 char DAT_0065b39a;
 int DAT_0065b3c8;
-FileUtils *this_006558b8;
 int DAT_0065b444;
 pointer[200] vftable;
 int DAT_0065b3c4;
@@ -72,6 +1744,7 @@ float DAT_0065ba24;
 float DAT_0065ba20;
 float DAT_0065ba28;
 undefined4 DAT_0065ba2c;
+FileUtils *this_006558b8;
 float DAT_006550a8;
 float DAT_006550a4;
 undefined DAT_0065b39c;
@@ -114,8 +1787,8 @@ undefined4 DAT_00655810;
 void *DAT_0065b5cc;
 int DAT_0065b3d4;
 undefined4 *DAT_0065c2a4;
-char DAT_0065b3d1;
 void *_DstBuf_0065b3dc;
+char DAT_0065b3d1;
 undefined LAB_005afaea;
 uint *DAT_0065c2a0;
 undefined LAB_005afb10;
@@ -161,9 +1834,9 @@ undefined DAT_005de00c;
 int *DAT_0065b444;
 undefined4 DAT_0065c310;
 int DAT_0065c28c;
-void *ThreadLocalStoragePointer;
 int *DAT_0065c2b0;
 undefined LAB_005b0036;
+void *ThreadLocalStoragePointer;
 undefined *PTR_rand_005cd2d0;
 undefined LAB_005b0068;
 undefined LAB_005b00a2;
@@ -215,10 +1888,10 @@ undefined4 *DAT_0065c2a0;
 undefined4 *DAT_0065c29c;
 undefined4 *DAT_0065c290;
 undefined1 *DAT_0065c2b8;
+undefined FUN_00401b20;
 undefined4 *DAT_0065c2cc;
 undefined LAB_00403160;
 undefined LAB_005b07b2;
-undefined FUN_00401b20;
 undefined LAB_005b07df;
 int DAT_0065c2ac;
 undefined LAB_005b081a;
@@ -273,8 +1946,8 @@ undefined LAB_005b0ca0;
 undefined LAB_005b0cd8;
 undefined LAB_005b0d10;
 TypeDescriptor RTTI_Type_Descriptor;
-undefined LAB_005b0d38;
 pointer[6] vftable;
+undefined LAB_005b0d38;
 undefined LAB_005b0d68;
 undefined LAB_005b0d90;
 undefined LAB_005b0de3;
@@ -830,8 +2503,8 @@ undefined LAB_005bb0a8;
 undefined LAB_005bb0f4;
 undefined LAB_005bb118;
 undefined LAB_005bb150;
-undefined LAB_005bb1ac;
 pointer[8] vftable;
+undefined LAB_005bb1ac;
 undefined LAB_005bb23b;
 undefined LAB_005bb2af;
 undefined LAB_005bb2e8;
@@ -918,9 +2591,9 @@ undefined1 DAT_0065b39b;
 undefined4 UNK_006557cc;
 undefined4 DAT_0065b628;
 undefined4 DAT_00655074;
-char *_Mode_0060eae0;
 undefined LAB_005bc5d0;
 pointer PTR_s__TOGGLE_005defa4;
+char *_Mode_0060eae0;
 uint DAT_006558cc;
 uint DAT_006558c8;
 char DAT_0065b39b;
@@ -969,15 +2642,15 @@ undefined LAB_005bc7e0;
 undefined LAB_005bc88f;
 pointer[7] vftable;
 undefined LAB_005bc8df;
-undefined FUN_004b49a0;
 undefined LAB_005bc967;
+undefined FUN_004b49a0;
 undefined LAB_005bc9b1;
 undefined LAB_005bc9f8;
 undefined FUN_004b5670;
 undefined LAB_005bca48;
 undefined FUN_004b62a0;
-undefined FUN_004b4910;
 undefined LAB_005bca98;
+undefined FUN_004b4910;
 byte *DAT_0065c270;
 undefined LAB_005bcb08;
 undefined FUN_004b62f0;
@@ -985,8 +2658,8 @@ undefined LAB_005bcb39;
 undefined LAB_005bcb68;
 undefined LAB_005bcba0;
 char *_Mode_0060f660;
-char *_Mode_0060f6d4;
 undefined LAB_005bcbd8;
+char *_Mode_0060f6d4;
 undefined LAB_005bcc10;
 undefined LAB_005bcc48;
 undefined LAB_005bcc80;
@@ -999,8 +2672,8 @@ undefined *PTR_fread_005cd28c;
 undefined LAB_005bce00;
 undefined LAB_005bcea1;
 undefined LAB_005bcf22;
-undefined FUN_0042b080;
 undefined LAB_005bcf50;
+undefined FUN_0042b080;
 undefined FUN_00412930;
 undefined *PTR_fwrite_005cd288;
 undefined LAB_005bcf80;
@@ -1031,8 +2704,8 @@ undefined LAB_005bd690;
 undefined LAB_005bd743;
 uint *DAT_0065b5cc;
 undefined LAB_005bd7dc;
-undefined LAB_005bd913;
 undefined FUN_00413270;
+undefined LAB_005bd913;
 undefined LAB_005bd930;
 pointer PTR_s_tutorial_005de0d0;
 pointer PTR_DAT_005de0b0;
@@ -1069,98 +2742,6 @@ undefined LAB_005bdf4a;
 undefined LAB_005bdf80;
 undefined LAB_005bdfb8;
 undefined LAB_005be008;
-undefined FUN_004d3a10;
-undefined FUN_004d3a90;
-undefined FUN_004d3b20;
-undefined FUN_004d3d80;
-undefined FUN_004d3e50;
-undefined FUN_004d9090;
-undefined FUN_004d91c0;
-undefined FUN_004d9260;
-undefined FUN_004da160;
-undefined FUN_0052aeb0;
-undefined FUN_004cb7d0;
-undefined FUN_004cb9e0;
-undefined FUN_004cbc80;
-undefined FUN_004cc180;
-undefined FUN_004cc250;
-undefined FUN_004cc320;
-undefined FUN_004cc410;
-undefined FUN_004cc510;
-undefined FUN_004cc5e0;
-undefined FUN_004cc6c0;
-undefined FUN_004cc870;
-undefined FUN_004cd270;
-undefined FUN_004cd750;
-undefined FUN_004cdb10;
-undefined FUN_004cddd0;
-undefined FUN_004ce240;
-undefined FUN_004ce590;
-undefined FUN_004ceeb0;
-undefined FUN_004cef80;
-undefined FUN_004d00e0;
-undefined FUN_004d2940;
-undefined FUN_004d2a00;
-undefined FUN_004d2ad0;
-undefined FUN_004d2b90;
-undefined FUN_004d3ba0;
-undefined FUN_004d3c40;
-undefined FUN_004d3ce0;
-undefined FUN_004d8f60;
-undefined FUN_004cb480;
-undefined FUN_004cb4f0;
-undefined FUN_004cb540;
-undefined FUN_004cb5a0;
-undefined FUN_004cb610;
-undefined FUN_004cb680;
-undefined FUN_004cb6f0;
-undefined FUN_004cb760;
-undefined FUN_004cb900;
-undefined FUN_004cbc20;
-undefined FUN_004cbd20;
-undefined FUN_004cbd90;
-undefined FUN_004cbdf0;
-undefined FUN_004cbe30;
-undefined FUN_004cbe90;
-undefined FUN_004cbf20;
-undefined FUN_004cbf80;
-undefined FUN_004cbfe0;
-undefined FUN_004cc040;
-undefined FUN_004cc0c0;
-undefined FUN_004cc7b0;
-undefined FUN_004cc810;
-undefined FUN_004cc910;
-undefined FUN_004cc9c0;
-undefined FUN_004cca70;
-undefined FUN_004ccb30;
-undefined FUN_004ccbf0;
-undefined FUN_004cccb0;
-undefined FUN_004ccd70;
-undefined FUN_004cce30;
-undefined FUN_004ccef0;
-undefined FUN_004ccfb0;
-undefined FUN_004cd070;
-undefined FUN_004cd0d0;
-undefined FUN_004cd130;
-undefined FUN_004cd210;
-undefined FUN_004cd2d0;
-undefined FUN_004cd330;
-undefined FUN_004cd390;
-undefined FUN_004cd3f0;
-undefined FUN_004cd450;
-undefined FUN_004cd4b0;
-undefined FUN_004cd510;
-undefined FUN_004cd570;
-undefined FUN_004cd5d0;
-undefined FUN_004cd630;
-undefined FUN_004cd690;
-undefined FUN_004cd6f0;
-undefined FUN_004cd840;
-undefined FUN_004cd930;
-undefined FUN_004cda20;
-undefined FUN_004cdc70;
-undefined FUN_004cdec0;
-undefined FUN_004cdfb0;
 undefined FUN_004ce040;
 undefined FUN_004ce100;
 undefined FUN_004ce2f0;
@@ -1281,6 +2862,98 @@ undefined FUN_004d3820;
 undefined FUN_004d3890;
 undefined FUN_004d3900;
 undefined FUN_004d3980;
+undefined FUN_004d3a10;
+undefined FUN_004d3a90;
+undefined FUN_004d3b20;
+undefined FUN_004d3d80;
+undefined FUN_004d3e50;
+undefined FUN_004d9090;
+undefined FUN_004d91c0;
+undefined FUN_004d9260;
+undefined FUN_004da160;
+undefined FUN_0052aeb0;
+undefined FUN_004cb7d0;
+undefined FUN_004cb9e0;
+undefined FUN_004cbc80;
+undefined FUN_004cc180;
+undefined FUN_004cc250;
+undefined FUN_004cc320;
+undefined FUN_004cc410;
+undefined FUN_004cc510;
+undefined FUN_004cc5e0;
+undefined FUN_004cc6c0;
+undefined FUN_004cc870;
+undefined FUN_004cd270;
+undefined FUN_004cd750;
+undefined FUN_004cdb10;
+undefined FUN_004cddd0;
+undefined FUN_004ce240;
+undefined FUN_004ce590;
+undefined FUN_004ceeb0;
+undefined FUN_004cef80;
+undefined FUN_004d00e0;
+undefined FUN_004d2940;
+undefined FUN_004d2a00;
+undefined FUN_004d2ad0;
+undefined FUN_004d2b90;
+undefined FUN_004d3ba0;
+undefined FUN_004d3c40;
+undefined FUN_004d3ce0;
+undefined FUN_004d8f60;
+undefined FUN_004cb480;
+undefined FUN_004cb4f0;
+undefined FUN_004cb540;
+undefined FUN_004cb5a0;
+undefined FUN_004cb610;
+undefined FUN_004cb680;
+undefined FUN_004cb6f0;
+undefined FUN_004cb760;
+undefined FUN_004cb900;
+undefined FUN_004cbc20;
+undefined FUN_004cbd20;
+undefined FUN_004cbd90;
+undefined FUN_004cbdf0;
+undefined FUN_004cbe30;
+undefined FUN_004cbe90;
+undefined FUN_004cbf20;
+undefined FUN_004cbf80;
+undefined FUN_004cbfe0;
+undefined FUN_004cc040;
+undefined FUN_004cc0c0;
+undefined FUN_004cc7b0;
+undefined FUN_004cc810;
+undefined FUN_004cc910;
+undefined FUN_004cc9c0;
+undefined FUN_004cca70;
+undefined FUN_004ccb30;
+undefined FUN_004ccbf0;
+undefined FUN_004cccb0;
+undefined FUN_004ccd70;
+undefined FUN_004cce30;
+undefined FUN_004ccef0;
+undefined FUN_004ccfb0;
+undefined FUN_004cd070;
+undefined FUN_004cd0d0;
+undefined FUN_004cd130;
+undefined FUN_004cd210;
+undefined FUN_004cd2d0;
+undefined FUN_004cd330;
+undefined FUN_004cd390;
+undefined FUN_004cd3f0;
+undefined FUN_004cd450;
+undefined FUN_004cd4b0;
+undefined FUN_004cd510;
+undefined FUN_004cd570;
+undefined FUN_004cd5d0;
+undefined FUN_004cd630;
+undefined FUN_004cd690;
+undefined FUN_004cd6f0;
+undefined FUN_004cd840;
+undefined FUN_004cd930;
+undefined FUN_004cda20;
+undefined FUN_004cdc70;
+undefined FUN_004cdec0;
+undefined FUN_004cdfb0;
 pointer PTR_DAT_005de118;
 pointer PTR_DAT_005deca8;
 undefined LAB_005be048;
@@ -1338,13 +3011,6 @@ undefined LAB_005bec44;
 undefined LAB_005bec70;
 uint DAT_0065b624;
 undefined LAB_005becc0;
-undefined FUN_004dea70;
-undefined FUN_004e1e70;
-undefined FUN_004deb90;
-undefined FUN_004df6f0;
-undefined FUN_004dfc00;
-undefined FUN_004dfd90;
-undefined FUN_004dfeb0;
 undefined FUN_004e2db0;
 undefined FUN_004e2f30;
 undefined FUN_004e30f0;
@@ -1433,6 +3099,13 @@ undefined FUN_004de7e0;
 undefined FUN_004e1b40;
 undefined FUN_004de940;
 undefined FUN_004e1d40;
+undefined FUN_004dea70;
+undefined FUN_004e1e70;
+undefined FUN_004deb90;
+undefined FUN_004df6f0;
+undefined FUN_004dfc00;
+undefined FUN_004dfd90;
+undefined FUN_004dfeb0;
 undefined LAB_005becf8;
 undefined LAB_005bed20;
 undefined LAB_004ec100;
@@ -1454,7 +3127,6 @@ undefined FUN_004ec500;
 undefined FUN_004ec520;
 undefined FUN_004ec590;
 undefined FUN_004ec6e0;
-undefined FUN_004ebd60;
 undefined FUN_004ec710;
 undefined FUN_004ec750;
 undefined FUN_004ebe60;
@@ -1467,12 +3139,23 @@ undefined FUN_004ec170;
 undefined FUN_004ec820;
 undefined FUN_004ec370;
 undefined FUN_004ec8b0;
+undefined FUN_004ebd60;
 undefined FUN_004ec600;
 undefined FUN_004ec970;
 undefined FUN_004ec9a0;
 undefined FUN_004eca20;
 undefined FUN_004eca50;
 undefined LAB_005bed6d;
+undefined FUN_004f9960;
+undefined FUN_004f9990;
+undefined FUN_004f99b0;
+undefined FUN_004f9b00;
+undefined FUN_004fa420;
+undefined FUN_004fa460;
+undefined FUN_004fa5f0;
+undefined FUN_004fab90;
+undefined FUN_004fb1c0;
+undefined FUN_004fb1e0;
 undefined FUN_004ed570;
 undefined FUN_004ed590;
 undefined FUN_004ed5c0;
@@ -1532,6 +3215,7 @@ undefined FUN_004f6060;
 undefined FUN_004f7440;
 undefined FUN_004f84a0;
 undefined FUN_004f84f0;
+undefined FUN_004ed550;
 undefined FUN_004f8540;
 undefined FUN_004f8590;
 undefined FUN_004f85e0;
@@ -1558,17 +3242,6 @@ undefined FUN_004f9230;
 undefined FUN_004f92e0;
 undefined FUN_004f9410;
 undefined FUN_004f94c0;
-undefined FUN_004f9960;
-undefined FUN_004f9990;
-undefined FUN_004f99b0;
-undefined FUN_004f9b00;
-undefined FUN_004fa420;
-undefined FUN_004fa460;
-undefined FUN_004fa5f0;
-undefined FUN_004fab90;
-undefined FUN_004fb1c0;
-undefined FUN_004fb1e0;
-undefined FUN_004ed550;
 undefined *PTR_s_Standard_005dec9c;
 undefined LAB_005bedd0;
 undefined LAB_005bee28;
@@ -1812,8 +3485,8 @@ undefined *PTR_ZERO_005cd490;
 undefined LAB_005c2dc8;
 undefined LAB_005c2e01;
 undefined LAB_005c2e4b;
-char *_Src_0061e3bc;
 undefined LAB_005c3846;
+char *_Src_0061e3bc;
 undefined LAB_005c387f;
 undefined *PTR_DAT_005df8a8;
 undefined *PTR_Color3B_005cd45c;
@@ -1825,8 +3498,8 @@ undefined4 *DAT_0065c300;
 undefined LAB_005c3d89;
 undefined *PTR_s_Testing_005dfc04;
 undefined DAT_0061e910;
-undefined DAT_0061e91c;
 undefined FUN_00529360;
+undefined DAT_0061e91c;
 undefined FUN_00529380;
 undefined FUN_00529820;
 undefined FUN_005299d0;
@@ -1848,10 +3521,6 @@ float DAT_0065bf1c;
 float DAT_0065bf20;
 char DAT_0065507e;
 char DAT_0065507d;
-undefined FUN_004e9630;
-undefined FUN_004e96e0;
-undefined FUN_004e9790;
-undefined FUN_004e9840;
 undefined FUN_004e9b80;
 undefined FUN_004e9ba0;
 undefined FUN_004e9c40;
@@ -1872,9 +3541,13 @@ undefined FUN_004e93b0;
 undefined FUN_004e93f0;
 undefined FUN_004e9470;
 undefined FUN_004e94b0;
+undefined FUN_004e9630;
+undefined FUN_004e96e0;
+undefined FUN_004e9790;
+undefined FUN_004e9840;
 undefined LAB_005c41e9;
-Layer *DAT_0065c304;
 undefined FUN_0052f9f0;
+Layer *DAT_0065c304;
 undefined FUN_00530000;
 undefined FUN_00530400;
 undefined FUN_005304b0;
@@ -1984,20 +3657,20 @@ undefined LAB_005c55d0;
 undefined LAB_005c55f0;
 pointer[12] vftable;
 undefined LAB_005c5610;
-undefined FUN_0053d8c0;
-undefined LAB_005c5709;
-undefined FUN_0053dc00;
-undefined FUN_0053e200;
 undefined FUN_0053e5b0;
 undefined FUN_0053e720;
 undefined FUN_0053ea30;
+undefined LAB_005c5709;
 undefined FUN_0053e820;
-undefined DAT_006204f4;
 undefined FUN_0053ee10;
 undefined FUN_0053f080;
 undefined FUN_0053f5a0;
+undefined DAT_006204f4;
 undefined DAT_00620510;
 undefined DAT_00620518;
+undefined FUN_0053d8c0;
+undefined FUN_0053dc00;
+undefined FUN_0053e200;
 undefined LAB_005c5758;
 undefined LAB_005c57c0;
 undefined DAT_00620618;
@@ -2048,8 +3721,8 @@ undefined DAT_00621010;
 undefined DAT_0062102c;
 undefined DAT_00621034;
 undefined DAT_0062103c;
-undefined LAB_005c6651;
 undefined FUN_00546020;
+undefined LAB_005c6651;
 undefined FUN_005460e0;
 undefined FUN_00546740;
 undefined FUN_00546760;
@@ -2068,10 +3741,10 @@ undefined LAB_005c6836;
 undefined LAB_005c688e;
 undefined LAB_005c68b8;
 undefined LAB_005c6929;
-undefined FUN_00549020;
-undefined FUN_005494d0;
 undefined LAB_005c6a26;
 undefined DAT_00621464;
+undefined FUN_00549020;
+undefined FUN_005494d0;
 undefined DAT_006215f4;
 undefined DAT_00621610;
 undefined DAT_006217ac;
@@ -2080,22 +3753,22 @@ undefined LAB_005c6ad9;
 undefined LAB_005c6b08;
 undefined DAT_00621a0c;
 undefined DAT_00621a40;
-undefined FUN_0054cc40;
-undefined FUN_0054cd20;
-undefined FUN_0054d440;
-undefined LAB_005c6c2f;
-undefined FUN_0054d740;
-undefined DAT_0060e210;
 undefined FUN_0054bbd0;
+undefined LAB_005c6c2f;
 undefined FUN_0054c300;
 undefined FUN_0054c890;
 undefined FUN_0054cdb0;
+undefined DAT_0060e210;
 undefined FUN_0054d210;
-undefined DAT_00621c38;
 undefined FUN_0054d890;
+undefined DAT_00621c38;
 undefined DAT_00621c54;
 undefined FUN_0054b460;
 undefined FUN_0054ba30;
+undefined FUN_0054cc40;
+undefined FUN_0054cd20;
+undefined FUN_0054d440;
+undefined FUN_0054d740;
 undefined LAB_005c6c88;
 undefined DAT_00621b20;
 undefined DAT_00621ba8;
@@ -2108,9 +3781,9 @@ undefined FUN_0054e870;
 undefined FUN_0054edd0;
 undefined FUN_00551000;
 undefined FUN_00551240;
-undefined DAT_006224fc;
 undefined FUN_005512d0;
 undefined FUN_00551430;
+undefined DAT_006224fc;
 undefined FUN_0054f720;
 undefined FUN_0054f9f0;
 undefined FUN_0054fe20;
@@ -2124,13 +3797,13 @@ undefined DAT_00622988;
 pointer PTR_DAT_005df614;
 pointer PTR_DAT_005dfdb0;
 undefined LAB_005c6e24;
-undefined FUN_005527f0;
-undefined FUN_00552b50;
 undefined LAB_005c6edd;
 undefined FUN_00551d60;
 undefined FUN_005522c0;
 undefined FUN_00552460;
 undefined FUN_00552680;
+undefined FUN_005527f0;
+undefined FUN_00552b50;
 pointer PTR_DAT_005dfec8;
 undefined *PTR_DAT_005dfed8;
 undefined DAT_005e1be0;
@@ -2184,8 +3857,8 @@ undefined LAB_005c7980;
 undefined LAB_005c79d0;
 pointer[198] vftable;
 pointer[5] vftable;
-char DAT_0065b3e9;
 Texture2D *this_0065b3f4;
+char DAT_0065b3e9;
 undefined LAB_005c7a68;
 undefined LAB_005c7aaa;
 undefined LAB_005c7aea;
@@ -2398,8 +4071,8 @@ undefined LAB_005cad84;
 undefined LAB_005cada0;
 undefined LAB_005cadc0;
 undefined *PTR_log_005cd8fc;
-undefined DAT_0065c428;
 FILE *_File_0065b3f8;
+undefined DAT_0065c428;
 undefined LAB_005cae02;
 undefined DAT_0062dd78;
 undefined LAB_005cae48;
@@ -2418,9 +4091,9 @@ undefined LAB_005cb1a9;
 undefined LAB_005cb1e2;
 undefined LAB_005cb21b;
 char DAT_00656310;
+undefined *PTR_GetProcAddress_005cd084;
 char *_Src_0062e638;
 char *_Src_0062e3b8;
-undefined *PTR_GetProcAddress_005cd084;
 undefined4 DAT_0065c248;
 undefined4 DAT_0065c244;
 undefined FUN_00594ae0;
@@ -2431,13 +4104,13 @@ undefined lpTopLevelExceptionFilter_00594ff0;
 undefined4 DAT_0066086c;
 u_long DAT_00660868;
 undefined LAB_005cb2ed;
-undefined FUN_004dcac0;
 undefined guard_check_icall;
+undefined FUN_004dcac0;
 undefined LAB_0059bee0;
-undefined FUN_0059b970;
 undefined LAB_005cb404;
 undefined FUN_00595bd0;
 undefined FUN_00595c00;
+undefined FUN_0059b970;
 undefined LAB_005cb420;
 undefined LAB_005cb453;
 undefined *PTR_malloc_005cd1e4;
@@ -2464,32 +4137,32 @@ undefined4 DAT_0065590c;
 undefined2 DAT_00655910;
 pointer[4] vftable;
 pointer[87] vftable;
+undefined FUN_005ac7c0;
 int DAT_0065b414;
 undefined8 *DAT_0065b410;
+undefined FUN_005ac7b0;
 undefined DAT_006558f4;
-undefined FUN_005ac7c0;
 undefined2 DAT_00655906;
 undefined2 DAT_00655904;
-undefined FUN_005ac7b0;
 undefined4 DAT_006558f8;
 undefined LAB_005cb6ba;
 undefined4 UNK_006558fc;
 undefined4 UNK_00655900;
+undefined FUN_005ac220;
 int DAT_0065b404;
 undefined LAB_005cb6e0;
-undefined FUN_005ac220;
 void *DAT_00655908;
-undefined _StartAddress_005a9c80;
+undefined _StartAddress_005abca0;
 undefined DAT_006562e0;
-undefined FUN_005aadf0;
 undefined DAT_00655918;
 u_short DAT_006558f6;
-undefined _StartAddress_005abca0;
 int DAT_006558f8;
 undefined LAB_005aae90;
 undefined LAB_005cb72d;
 undefined DAT_0062ef64;
 undefined4 DAT_0065591c;
+undefined _StartAddress_005a9c80;
+undefined FUN_005aadf0;
 undefined LAB_005cb768;
 undefined LAB_005cb790;
 undefined DAT_006550b0;
@@ -2566,10 +4239,10 @@ int DAT_0065500c;
 ThrowInfo *pThrowInfo_0064d258;
 undefined LAB_005cbd30;
 undefined DAT_005adcba;
-undefined DAT_0065b024;
-undefined DAT_0065b028;
 LPCRITICAL_SECTION lpCriticalSection_0065b004;
+undefined DAT_0065b024;
 HANDLE hHandle_0065b020;
+undefined DAT_0065b028;
 undefined DAT_0065b01c;
 int DAT_00655000;
 undefined4 _tls_index;
@@ -8944,12 +10617,11 @@ void FUN_00409650(int param_1)
   int aiStack_e8 [4];
   undefined4 uStack_d8;
   int iStack_d0;
-  undefined4 uStack_cc;
   byte *pbVar23;
   byte *pbVar24;
-  uint in_stack_ffffff48;
   char *pcVar25;
-  float fVar26;
+  uint in_stack_ffffff48;
+  int **ppiVar26;
   undefined8 local_90;
   byte ***local_88 [4];
   uint local_78;
@@ -8998,7 +10670,7 @@ void FUN_00409650(int param_1)
     }
   }
   local_58 = (double)CONCAT44(&stack0xffffff48,(undefined4)local_58);
-  pbVar24 = (byte *)(in_stack_ffffff48 & 0xffffff00);
+  pbVar23 = (byte *)(in_stack_ffffff48 & 0xffffff00);
   FUN_00402690(&stack0xffffff48,"stock",5);
   local_50 = &iStack_d0;
   local_8 = 0;
@@ -9032,12 +10704,12 @@ void FUN_00409650(int param_1)
     }
     FUN_00402690(this + 0x20,puVar6,*(uint *)(param_1 + 0x21c));
   }
-  pbVar23 = (byte *)(this + 0x20);
+  pbVar24 = (byte *)(this + 0x20);
   if (iVar5 == 0) {
     if (0xf < (uint)this[0x25]) {
-      pbVar23 = *(byte **)pbVar23;
+      pbVar24 = *(byte **)pbVar24;
     }
-    uVar3 = FUN_004031f0(pbVar23,this[0x24],(byte *)&PTR_005ce008,0);
+    uVar3 = FUN_004031f0(pbVar24,this[0x24],(byte *)&PTR_005ce008,0);
     if ((char)uVar3 != '\0') {
       FUN_00402690(this + 0x20,"CERESPILOT",10);
     }
@@ -9072,11 +10744,11 @@ void FUN_00409650(int param_1)
           if (0xf < local_1c) {
             ppppbVar13 = (byte ****)local_5c;
           }
-          pbVar23 = (byte *)(iVar5 + 0x50);
+          pbVar24 = (byte *)(iVar5 + 0x50);
           if (0xf < *(uint *)(iVar5 + 100)) {
-            pbVar23 = *(byte **)(iVar5 + 0x50);
+            pbVar24 = *(byte **)(iVar5 + 0x50);
           }
-          uVar4 = FUN_004031f0(pbVar23,*(uint *)(iVar5 + 0x60),(byte *)ppppbVar13,local_20);
+          uVar4 = FUN_004031f0(pbVar24,*(uint *)(iVar5 + 0x60),(byte *)ppppbVar13,local_20);
           iVar15 = this[0x10];
           if ((char)uVar4 != '\0') {
             puVar1 = *(undefined1 **)(*(int *)(iVar15 + 0x3c) + uVar3 * 4);
@@ -9126,7 +10798,7 @@ LAB_0040995e:
       local_8 = 3;
       FUN_004024e0(&stack0xffffff48,(undefined4 *)(*(int *)(param_1 + 0x230) + (int)local_40._4_4_))
       ;
-      iVar5 = FUN_004a8020(pbVar24);
+      iVar5 = FUN_004a8020(pbVar23);
       puVar6 = FUN_004adec0(this_00,iVar5);
       local_8 = 0xffffffff;
       FUN_00437260((void *)puVar6[3],**(int **)(puVar6[2] + 0x120));
@@ -9184,19 +10856,18 @@ LAB_0040995e:
   local_4c = (undefined4 *)0x0;
   local_31 = '\0';
   local_50 = (int *)local_64[*(int *)(param_1 + 0xd4) + 0x15];
-  pbVar23 = (byte *)DAT_0065b5cc[0x33];
-  if (*(int *)(pbVar23 + 0x70) == 2) {
-    pbVar17 = pbVar23;
-    if (0xf < *(uint *)(pbVar23 + 0x14)) {
-      pbVar17 = *(byte **)pbVar23;
+  pbVar24 = (byte *)DAT_0065b5cc[0x33];
+  if (*(int *)(pbVar24 + 0x70) == 2) {
+    pbVar17 = pbVar24;
+    if (0xf < *(uint *)(pbVar24 + 0x14)) {
+      pbVar17 = *(byte **)pbVar24;
     }
-    uVar3 = FUN_004031f0(pbVar17,*(uint *)(pbVar23 + 0x10),(byte *)"objectsinspace",0xe);
+    uVar3 = FUN_004031f0(pbVar17,*(uint *)(pbVar24 + 0x10),(byte *)"objectsinspace",0xe);
     if ((((char)uVar3 == '\0') || (*(char *)(this + 0x8d) == '\0')) ||
        (*(char *)(DAT_0065b444 + 0x11b) == '\0')) goto LAB_00409f5c;
     if (*(undefined1 **)(&DAT_00655020 + local_64[0x3f] * 4) == (undefined1 *)0xffffffff) {
       iVar5 = rand();
       FUN_0050c090(this,*(undefined1 **)(&DAT_00655020 + (iVar5 % 0xb) * 4));
-      fVar26 = 0.0;
       fVar18 = 5.933653e-39;
       iVar5 = FUN_00521010((void *)this[9],0);
       local_60 = *(float *)(iVar5 + 8);
@@ -9218,11 +10889,12 @@ LAB_0040995e:
       libm_sse2_cos_precise();
       local_48 = local_44;
       local_44 = (int *)(float)(dVar22 * local_40);
+      ppiVar26 = &local_48;
       local_8 = CONCAT31(local_8._1_3_,6);
       cocos2d::Vec2::operator+((Vec2 *)&local_60,(Vec2 *)&stack0xffffff58);
       this = local_68;
       local_8 = 0xffffffff;
-      FUN_004a8850(local_68 + 2,fVar18,fVar26);
+      FUN_004a8850(local_68 + 2,(float)ppiVar26,fVar18);
       iVar5 = rand();
       local_31 = '\x01';
       this[0x48] = (float)(iVar5 % 0x168);
@@ -9256,8 +10928,8 @@ LAB_00409de2:
         piVar19 = local_44;
       }
       FUN_004024e0(&stack0xffffff48,piVar19 + 5);
-      pbVar23 = (byte *)0x409e18;
-      puVar6 = (undefined4 *)FUN_004a6de0(pbVar24);
+      pbVar24 = (byte *)0x409e18;
+      puVar6 = (undefined4 *)FUN_004a6de0(pbVar23);
       local_4c = puVar6;
       if (puVar6 != (undefined4 *)0x0) {
         FUN_004a8850(this + 2,(float)*(double *)(puVar6 + 10),(float)*(double *)(puVar6 + 0xc));
@@ -9293,7 +10965,7 @@ LAB_00409de2:
           local_8._0_1_ = 8;
           puVar6 = FUN_00412df0();
           local_8 = CONCAT31(local_8._1_3_,7);
-          FUN_004a0ee0(puVar6,pbVar23);
+          FUN_004a0ee0(puVar6,pbVar24);
           local_8 = 0xffffffff;
           if (0xf < local_1c) {
             ppppbVar13 = (byte ****)local_30[0];
@@ -9313,15 +10985,15 @@ LAB_00409f43:
   }
   else {
 LAB_00409f5c:
-    pbVar23 = (byte *)(param_1 + 0x58);
-    pbVar17 = pbVar23;
+    pbVar24 = (byte *)(param_1 + 0x58);
+    pbVar17 = pbVar24;
     if (0xf < *(uint *)(param_1 + 0x6c)) {
-      pbVar17 = *(byte **)pbVar23;
+      pbVar17 = *(byte **)pbVar24;
     }
     uVar3 = FUN_004031f0(pbVar17,*(uint *)(param_1 + 0x68),(byte *)&PTR_005ce008,0);
     if ((char)uVar3 == '\0') {
-      FUN_004024e0(&stack0xffffff48,(undefined4 *)pbVar23);
-      iVar5 = FUN_004a6de0(pbVar24);
+      FUN_004024e0(&stack0xffffff48,(undefined4 *)pbVar24);
+      iVar5 = FUN_004a6de0(pbVar23);
       if (iVar5 != 0) {
         *(undefined8 *)(this + 10) = *(undefined8 *)(iVar5 + 0x28);
         dVar22 = *(double *)(iVar5 + 0x30);
@@ -9361,18 +11033,18 @@ LAB_0040a045:
     }
   }
   pcVar25 = "DETAIL";
-  pbVar24 = (byte *)0x40a064;
+  pbVar23 = (byte *)0x40a064;
   FUN_00591070("DETAIL","  Spawn location: %f, %f");
   if (local_31 == '\0') {
-    pbVar23 = (byte *)(param_1 + 0x118);
-    pbVar17 = pbVar23;
+    pbVar24 = (byte *)(param_1 + 0x118);
+    pbVar17 = pbVar24;
     if (0xf < *(uint *)(param_1 + 300)) {
-      pbVar17 = *(byte **)pbVar23;
+      pbVar17 = *(byte **)pbVar24;
     }
     uVar3 = FUN_004031f0(pbVar17,*(uint *)(param_1 + 0x128),(byte *)&PTR_005ce008,0);
     if ((char)uVar3 == '\0') {
-      FUN_004024e0(&stack0xffffff48,(undefined4 *)pbVar23);
-      pbVar24 = (byte *)0x40a0af;
+      FUN_004024e0(&stack0xffffff44,(undefined4 *)pbVar24);
+      pbVar23 = (byte *)0x40a0af;
       puVar6 = (undefined4 *)FUN_004a7100((byte *)pcVar25);
       local_4c = puVar6;
       if ((puVar6 == (undefined4 *)0x0) || (puVar6[8] != this[8])) {
@@ -9426,8 +11098,8 @@ LAB_0040a0ee:
               this = local_68;
             } while (iVar15 != iVar5);
           }
-          local_58 = (double)CONCAT44(&stack0xffffff44,(undefined4)local_58);
-          FUN_004024e0(&stack0xffffff44,local_30);
+          local_58 = (double)CONCAT44(&stack0xffffff40,(undefined4)local_58);
+          FUN_004024e0(&stack0xffffff40,local_30);
           local_8._0_1_ = 10;
           piVar9 = DAT_0065c274;
           if (DAT_0065c274 == (int *)0x0) {
@@ -9449,7 +11121,7 @@ LAB_0040a0ee:
             piVar9 = local_44;
           }
           local_8 = CONCAT31(local_8._1_3_,9);
-          FUN_004a0ee0(piVar9,pbVar24);
+          FUN_004a0ee0(piVar9,pbVar23);
           local_8 = 0xffffffff;
           if (0xf < local_1c) {
             ppppbVar13 = (byte ****)local_30[0];
@@ -9505,7 +11177,7 @@ LAB_0040a0ee:
           *(int *)(param_1 + 0x70 + (int)local_50 * 0xc) >> 3;
   if ((iVar5 != 0) && (uVar3 = 0, iVar5 != 0)) {
     do {
-      pbVar24 = (byte *)0x40a465;
+      pbVar23 = (byte *)0x40a465;
       FUN_00591070("DETAIL","  Waypoint added: %f, %f");
       uVar3 = uVar3 + 1;
       this = local_68;
@@ -9519,8 +11191,8 @@ LAB_0040a0ee:
     iVar5 = 0;
     do {
       uVar3 = 0xffffffff;
-      FUN_004024e0(&stack0xffffff44,(undefined4 *)(*(int *)(param_1 + 0xec) + iVar5));
-      iVar15 = FUN_004a8180(pbVar24);
+      FUN_004024e0(&stack0xffffff40,(undefined4 *)(*(int *)(param_1 + 0xec) + iVar5));
+      iVar15 = FUN_004a8180(pbVar23);
       FUN_0050f740(this,iVar15,uVar3);
       iVar5 = iVar5 + 0x18;
       uVar3 = (int)local_40._4_4_ + 1;
@@ -9625,9 +11297,9 @@ LAB_0040a71f:
       } while (uVar3 < (uint)(*(int *)(iVar5 + 0x6c) - *(int *)(iVar5 + 0x68) >> 2));
     }
     FUN_004b63c0((void *)local_64[3],(void *)piVar9[0x4b],this[8]);
-    local_58 = (double)CONCAT44(&stack0xffffff44,(undefined4)local_58);
-    uStack_cc = 0x40a825;
-    FUN_00591e00(&stack0xffffff44,"has_%s");
+    local_58 = (double)CONCAT44(&stack0xffffff40,(undefined4)local_58);
+    iStack_d0 = 0x40a825;
+    FUN_00591e00(&stack0xffffff40,"has_%s");
     local_8 = 0x10;
     piVar9 = DAT_0065c274;
     if (DAT_0065c274 == (int *)0x0) {
@@ -9649,24 +11321,24 @@ LAB_0040a71f:
       piVar9 = local_50;
     }
     local_8 = 0xffffffff;
-    FUN_004a0ee0(piVar9,pbVar24);
+    FUN_004a0ee0(piVar9,pbVar23);
   }
   uVar3 = 0;
   puVar6 = FUN_00412870();
-  pbVar24 = local_6c;
+  pbVar23 = local_6c;
   if ((int)(puVar6[0x10] - puVar6[0xf]) >> 2 != 0) {
     do {
       puVar6 = FUN_00412870();
       iVar5 = *(int *)(uVar3 * 4 + puVar6[0xf]);
-      pbVar23 = pbVar24;
-      if (0xf < *(uint *)(pbVar24 + 0x14)) {
-        pbVar23 = *(byte **)pbVar24;
+      pbVar24 = pbVar23;
+      if (0xf < *(uint *)(pbVar23 + 0x14)) {
+        pbVar24 = *(byte **)pbVar23;
       }
       pbVar17 = (byte *)(iVar5 + 4);
       if (0xf < *(uint *)(iVar5 + 0x18)) {
         pbVar17 = *(byte **)(iVar5 + 4);
       }
-      uVar4 = FUN_004031f0(pbVar17,*(uint *)(iVar5 + 0x14),pbVar23,*(uint *)(pbVar24 + 0x10));
+      uVar4 = FUN_004031f0(pbVar17,*(uint *)(iVar5 + 0x14),pbVar24,*(uint *)(pbVar23 + 0x10));
       if ((char)uVar4 != '\0') {
         puVar11 = FUN_00412870();
         puVar6 = (undefined4 *)this[0xdb];
@@ -9733,12 +11405,12 @@ LAB_0040a71f:
           if (0xf < local_74) {
             ppppbVar13 = (byte ****)pppbVar2;
           }
-          pbVar24 = (byte *)(iVar5 + 0x38);
+          pbVar23 = (byte *)(iVar5 + 0x38);
           if (0xf < *(uint *)(iVar5 + 0x4c)) {
-            pbVar24 = *(byte **)(iVar5 + 0x38);
+            pbVar23 = *(byte **)(iVar5 + 0x38);
           }
           local_64 = piVar9;
-          uVar3 = FUN_004031f0(pbVar24,*(uint *)(iVar5 + 0x48),(byte *)ppppbVar13,local_78);
+          uVar3 = FUN_004031f0(pbVar23,*(uint *)(iVar5 + 0x48),(byte *)ppppbVar13,local_78);
           if ((char)uVar3 != '\0') {
             local_44 = *(int **)(*local_44 + (int)local_40._4_4_ * 4);
             local_8 = 0xffffffff;
@@ -9750,11 +11422,11 @@ LAB_0040a71f:
             FUN_005adb3f(ppppbVar13);
             goto LAB_0040aab8;
           }
-          pbVar24 = (byte *)((int)local_40._4_4_ + 1);
+          pbVar23 = (byte *)((int)local_40._4_4_ + 1);
           piVar9 = local_64 + 1;
-          local_40 = (double)CONCAT44(pbVar24,(uint)local_40);
+          local_40 = (double)CONCAT44(pbVar23,(uint)local_40);
           local_64 = piVar9;
-        } while (pbVar24 < local_6c);
+        } while (pbVar23 < local_6c);
       }
       local_8 = 0xffffffff;
       if (0xf < local_74) {
@@ -9802,7 +11474,7 @@ LAB_0040ab1e:
     *(undefined1 *)(this[0x10] + 0x34) = 1;
   }
   FUN_00502600(this[0x11]);
-  uStack_cc = 0x40ac35;
+  iStack_d0 = 0x40ac35;
   FUN_00591070("WORLD","Spawned ship: \'%s\' (team %d), %s, registered as %s, at location %f, %f");
   ExceptionList = local_10;
   __security_check_cookie(local_18 ^ (uint)&stack0xfffffffc);
@@ -133572,13 +135244,13 @@ void __thiscall FUN_004aedc0(void *this,undefined1 *param_1)
   float in_XMM1_Da;
   float fVar23;
   float fVar24;
-  void *in_stack_ffffff48;
-  int aiStack_a0 [2];
-  undefined4 uStack_98;
-  int in_stack_ffffff78;
+  void *in_stack_ffffff44;
+  int aiStack_a4 [2];
+  undefined4 uStack_9c;
+  int in_stack_ffffff74;
   uint3 uVar26;
   byte *pbVar25;
-  byte *in_stack_ffffff7c;
+  byte *in_stack_ffffff78;
   char *pcVar27;
   undefined4 *local_5c;
   int local_58;
@@ -133690,14 +135362,14 @@ LAB_004aeedd:
     (**(code **)(*(int *)this + 8))();
     iVar9 = *(int *)((int)this + 8);
   }
-  uVar26 = (uint3)((uint)in_stack_ffffff78 >> 8);
+  uVar26 = (uint3)((uint)in_stack_ffffff74 >> 8);
   if (*(char *)((int)this + 0x62) == '\0') {
     if ((((*(int *)(DAT_0065b5cc + 0xcc) != 0) &&
          (*(int *)(*(int *)(DAT_0065b5cc + 0xcc) + 0x70) == 1)) && (*(int *)(iVar9 + 4) == 9)) &&
        (*(char *)((int)this + 0x70) != '\0')) {
-      local_40 = (int *)&stack0xffffff78;
+      local_40 = (int *)&stack0xffffff74;
       pbVar25 = (byte *)((uint)uVar26 << 8);
-      FUN_00402690(&stack0xffffff78,"is_rotating",0xb);
+      FUN_00402690(&stack0xffffff74,"is_rotating",0xb);
       local_8 = 2;
       puVar10 = FUN_00412df0();
       local_8 = 0xffffffff;
@@ -133711,16 +135383,16 @@ LAB_004aeedd:
     if (((*(int *)(DAT_0065b5cc + 0xcc) != 0) &&
         (*(int *)(*(int *)(DAT_0065b5cc + 0xcc) + 0x70) == 1)) &&
        ((*(int *)(iVar9 + 4) == 9 && (*(char *)((int)this + 0x70) == '\0')))) {
-      local_40 = (int *)&stack0xffffff78;
+      local_40 = (int *)&stack0xffffff74;
       pbVar25 = (byte *)((uint)uVar26 << 8);
-      FUN_00402690(&stack0xffffff78,"is_rotating",0xb);
+      FUN_00402690(&stack0xffffff74,"is_rotating",0xb);
       local_8 = 0;
       puVar10 = FUN_00412df0();
       local_8 = 0xffffffff;
       FUN_004a0ee0(puVar10,pbVar25);
       pbVar25 = (byte *)((uint)pbVar25 & 0xffffff00);
-      local_40 = (int *)&stack0xffffff78;
-      FUN_00402690(&stack0xffffff78,"has_rotated",0xb);
+      local_40 = (int *)&stack0xffffff74;
+      FUN_00402690(&stack0xffffff74,"has_rotated",0xb);
       local_8 = 1;
       puVar10 = FUN_00412df0();
       local_8 = 0xffffffff;
@@ -133898,11 +135570,11 @@ LAB_004af473:
   if (((*(int *)(*(int *)((int)this + 8) + 4) == 0xc) &&
       (cVar5 = (**(code **)(*(int *)this + 0x10))(), cVar5 != '\0')) &&
      ((*(char *)((int)this + 0x62) != '\0' && (*(float *)((int)this + 0x6c) == -1.0)))) {
-    local_40 = (int *)&stack0xffffff8c;
+    local_40 = (int *)&stack0xffffff88;
     local_8 = 3;
     FUN_00437c60(*(int **)((int)this + 0xc));
     local_8 = 0xffffffff;
-    in_stack_ffffff7c = (byte *)0x4af607;
+    in_stack_ffffff78 = (byte *)0x4af607;
     local_40 = (int *)FUN_004a6be0(*(int *)(param_1 + 0x20),(int)param_1,'\x01');
     if (local_40 != (int *)0x0) {
       local_18 = (undefined1 *)(float)*(double *)(param_1 + 0x30);
@@ -133914,46 +135586,46 @@ LAB_004af473:
       local_8 = 0xffffffff;
       FUN_00591070(&DAT_005cdc70,"%s: firing point defence laser at %s, at range %f");
       local_44 = (int *)FUN_00591370((int *)(*(int *)((int)this + 8) + 0xe8));
-      in_stack_ffffff7c = (byte *)0x4af6e6;
+      in_stack_ffffff78 = (byte *)0x4af6e6;
       FUN_00591070("DETAIL","%s: %d/%d");
       if (local_44 == (int *)0x1) {
         FUN_00591070(&DAT_005cdc70,"%s: hit PDL target. Delivering heat damage.");
         piVar17 = local_40;
-        in_stack_ffffff7c = (byte *)(float)*(double *)(local_40 + 0xc);
-        FUN_00592f80((float)*(double *)(local_40 + 10),in_stack_ffffff7c,
+        in_stack_ffffff78 = (byte *)(float)*(double *)(local_40 + 0xc);
+        FUN_00592f80((float)*(double *)(local_40 + 10),in_stack_ffffff78,
                      (float)*(double *)(param_1 + 0x28));
         (**(code **)(*piVar17 + 0xc))();
         if ((*(char *)(*(int *)(*(int *)((int)this + 4) + 0x48) + 0x234) != '\0') &&
            (cVar5 = (**(code **)(*piVar17 + 0x20))(), cVar5 != '\0')) {
-          local_40 = (int *)&stack0xffffff7c;
-          in_stack_ffffff7c = (byte *)((uint)in_stack_ffffff7c & 0xffffff00);
-          FUN_00402690(&stack0xffffff7c,"pdl_kills",9);
+          local_40 = (int *)&stack0xffffff78;
+          in_stack_ffffff78 = (byte *)((uint)in_stack_ffffff78 & 0xffffff00);
+          FUN_00402690(&stack0xffffff78,"pdl_kills",9);
           local_8 = 6;
           FUN_00412770();
           local_8 = 0xffffffff;
-          FUN_0051e750(extraout_ECX,in_stack_ffffff7c);
-          local_40 = (int *)&stack0xffffff78;
-          FUN_00402690(&stack0xffffff78,&PTR_005ce008,0);
-          local_44 = aiStack_a0;
+          FUN_0051e750(extraout_ECX,in_stack_ffffff78);
+          local_40 = (int *)&stack0xffffff74;
+          FUN_00402690(&stack0xffffff74,&PTR_005ce008,0);
+          local_44 = aiStack_a4;
           local_8 = 7;
-          aiStack_a0[0]._0_1_ = 0;
-          FUN_00402690(aiStack_a0,"pdl_kills",9);
+          aiStack_a4[0]._0_1_ = 0;
+          FUN_00402690(aiStack_a4,"pdl_kills",9);
           local_8 = CONCAT31(local_8._1_3_,8);
-          in_stack_ffffff48 = (void *)((uint)in_stack_ffffff48 & 0xffffff00);
-          FUN_00402690(&stack0xffffff48,&DAT_0060d818,4);
+          in_stack_ffffff44 = (void *)((uint)in_stack_ffffff44 & 0xffffff00);
+          FUN_00402690(&stack0xffffff44,&DAT_0060d818,4);
           local_8 = 0xffffffff;
-          FUN_00401a50(in_stack_ffffff48);
+          FUN_00401a50(in_stack_ffffff44);
         }
       }
       else {
         FUN_00591070(&DAT_005cdc70,"%s: miss.");
       }
-      local_18 = &stack0xffffff7c;
-      FUN_004024e0(&stack0xffffff7c,(undefined4 *)(param_1 + 0x238));
+      local_18 = &stack0xffffff78;
+      FUN_004024e0(&stack0xffffff78,(undefined4 *)(param_1 + 0x238));
       local_8 = 9;
       pvVar13 = (void *)FUN_004023e0();
       local_8 = 0xffffffff;
-      FUN_00531140(pvVar13,in_stack_ffffff7c);
+      FUN_00531140(pvVar13,in_stack_ffffff78);
       iVar16 = -1;
       iVar9 = 0x21;
       puVar22 = param_1;
@@ -134012,26 +135684,26 @@ LAB_004af473:
         }
         FUN_00507ba0(param_1,*(void **)(DAT_0065b5cc + 300),*(int *)(DAT_0065b5cc + 0x124));
         if (*(char *)(*(int *)(*(int *)((int)this + 4) + 0x48) + 0x234) != '\0') {
-          local_18 = &stack0xffffff7c;
-          in_stack_ffffff7c = (byte *)((uint)in_stack_ffffff7c & 0xffffff00);
-          FUN_00402690(&stack0xffffff7c,"ships_hacked",0xc);
+          local_18 = &stack0xffffff78;
+          in_stack_ffffff78 = (byte *)((uint)in_stack_ffffff78 & 0xffffff00);
+          FUN_00402690(&stack0xffffff78,"ships_hacked",0xc);
           local_8 = 10;
           FUN_00412770();
           local_8 = 0xffffffff;
           uVar21 = extraout_ECX_00;
-          FUN_0051e750(extraout_ECX_00,in_stack_ffffff7c);
-          local_18 = &stack0xffffff78;
+          FUN_0051e750(extraout_ECX_00,in_stack_ffffff78);
+          local_18 = &stack0xffffff74;
           pbVar25 = (byte *)(uVar21 & 0xffffff00);
-          FUN_00402690(&stack0xffffff78,&PTR_005ce008,0);
-          local_40 = aiStack_a0;
+          FUN_00402690(&stack0xffffff74,&PTR_005ce008,0);
+          local_40 = aiStack_a4;
           local_8 = 0xb;
-          aiStack_a0[0]._0_1_ = 0;
-          FUN_00402690(aiStack_a0,"ships_hacked",0xc);
+          aiStack_a4[0]._0_1_ = 0;
+          FUN_00402690(aiStack_a4,"ships_hacked",0xc);
           local_8 = CONCAT31(local_8._1_3_,0xc);
-          in_stack_ffffff48 = (void *)((uint)in_stack_ffffff48 & 0xffffff00);
-          FUN_00402690(&stack0xffffff48,&DAT_0060d818,4);
+          in_stack_ffffff44 = (void *)((uint)in_stack_ffffff44 & 0xffffff00);
+          FUN_00402690(&stack0xffffff44,&DAT_0060d818,4);
           local_8 = 0xffffffff;
-          FUN_00401a50(in_stack_ffffff48);
+          FUN_00401a50(in_stack_ffffff44);
           FUN_004024e0(local_38,(undefined4 *)(*(int *)((int)this + 0x18) + 0x238));
           local_8 = 0xd;
           ppppcVar19 = local_38;
@@ -134044,9 +135716,9 @@ LAB_004af473:
           }
           FUN_00413ec0(&local_18,tolower_exref,(char *)ppppcVar18,
                        (char *)((int)ppppcVar19 + local_28),(undefined1 *)ppppcVar19);
-          local_18 = &stack0xffffff78;
-          uStack_98 = 0x4afac8;
-          FUN_00591e00(&stack0xffffff78,"hacked_%s");
+          local_18 = &stack0xffffff74;
+          uStack_9c = 0x4afac8;
+          FUN_00591e00(&stack0xffffff74,"hacked_%s");
           local_8._0_1_ = 0xe;
           puVar10 = FUN_00412df0();
           local_8 = CONCAT31(local_8._1_3_,0xd);
@@ -134101,24 +135773,24 @@ LAB_004af473:
               (*(int *)(*(int *)(*(int *)(param_1 + 0x174) + 0xe8) + 0xc + uVar21 * 4) + 8);
         local_20 = uVar1;
         FUN_00507170(*(void **)(*(int *)(param_1 + 0x174) + 0xe8),uVar21);
-        local_18 = &stack0xffffff7c;
-        puVar10 = (undefined4 *)((uint)in_stack_ffffff7c & 0xffffff00);
-        FUN_00402690(&stack0xffffff7c,"cargo_collected",0xf);
+        local_18 = &stack0xffffff78;
+        puVar10 = (undefined4 *)((uint)in_stack_ffffff78 & 0xffffff00);
+        FUN_00402690(&stack0xffffff78,"cargo_collected",0xf);
         local_8 = 0xf;
         FUN_00412770();
         local_8 = 0xffffffff;
         FUN_0051e750(extraout_ECX_01,puVar10);
-        local_18 = &stack0xffffff78;
-        FUN_00402690(&stack0xffffff78,&PTR_005ce008,0);
-        local_4c = (undefined1 *)aiStack_a0;
+        local_18 = &stack0xffffff74;
+        FUN_00402690(&stack0xffffff74,&PTR_005ce008,0);
+        local_4c = (undefined1 *)aiStack_a4;
         local_8 = 0x10;
-        aiStack_a0[0]._0_1_ = 0;
-        FUN_00402690(aiStack_a0,"cargo_collected",0xf);
+        aiStack_a4[0]._0_1_ = 0;
+        FUN_00402690(aiStack_a4,"cargo_collected",0xf);
         local_8 = CONCAT31(local_8._1_3_,0x11);
-        in_stack_ffffff48 = (void *)((uint)in_stack_ffffff48 & 0xffffff00);
-        FUN_00402690(&stack0xffffff48,&DAT_0060d818,4);
+        in_stack_ffffff44 = (void *)((uint)in_stack_ffffff44 & 0xffffff00);
+        FUN_00402690(&stack0xffffff44,&DAT_0060d818,4);
         local_8 = 0xffffffff;
-        FUN_00401a50(in_stack_ffffff48);
+        FUN_00401a50(in_stack_ffffff44);
         FUN_00591070("DETAIL","Transfered %dx goodID %d from moored object to ship");
         local_4c = *(undefined1 **)(param_1 + 0x174);
         pbVar25 = local_4c + 0x98;
@@ -134129,7 +135801,7 @@ LAB_004af473:
         uVar21 = FUN_004031f0(pbVar20,*(uint *)(local_4c + 0xa8),(byte *)&PTR_005ce008,0);
         puVar22 = local_4c;
         if ((char)uVar21 == '\0') {
-          FUN_004024e0(&stack0xffffff7c,(undefined4 *)pbVar25);
+          FUN_004024e0(&stack0xffffff78,(undefined4 *)pbVar25);
           FUN_00592d70(&local_5c,':',puVar10);
           local_8 = 0x12;
           iVar9 = (local_58 - (int)local_5c) / 0x18;
@@ -134144,8 +135816,8 @@ LAB_004b0014:
               puVar15 = local_5c;
               bVar6 = FUN_00507140(*(void **)(*(int *)(param_1 + 0x174) + 0xe8),iVar9);
               if (!bVar6) {
-                local_18 = &stack0xffffff7c;
-                FUN_004024e0(&stack0xffffff7c,puVar15);
+                local_18 = &stack0xffffff78;
+                FUN_004024e0(&stack0xffffff78,puVar15);
                 local_8._0_1_ = 0x13;
                 puVar15 = FUN_00412df0();
                 local_8._0_1_ = 0x12;
@@ -134153,8 +135825,8 @@ LAB_004b0014:
                 bVar7 = FUN_004a1150(puVar15,puVar10);
                 if (bVar7 == 0) {
                   FUN_00591070("DETAIL","Cargo with flag has been taken; setting flag \'%s\'.");
-                  local_18 = &stack0xffffff78;
-                  FUN_004024e0(&stack0xffffff78,local_5c);
+                  local_18 = &stack0xffffff74;
+                  FUN_004024e0(&stack0xffffff74,local_5c);
                   local_8._0_1_ = 0x14;
                   puVar10 = FUN_00412df0();
                   local_8 = CONCAT31(local_8._1_3_,0x12);
@@ -136158,7 +137830,6 @@ LAB_004b2b05:
     local_8._0_1_ = 0;
     FUN_004b07c0(_File,pvVar16);
     pcVar2 = *(char **)(&UNK_005ddc90 + DAT_00655078 * 4);
-    uVar5 = (uint)in_stack_ffffff7c & 0xffffff00;
     pcVar14 = pcVar2;
     do {
       cVar1 = *pcVar14;
@@ -136187,6 +137858,7 @@ LAB_004b2b05:
     FUN_00558540(iVar9);
     FUN_00591e00(&stack0xffffff7c,&DAT_005e1d38);
     local_8._0_1_ = 0xb;
+    uVar5 = 0;
     pvVar16 = (void *)((uint)pvVar16 & 0xffffff00);
     FUN_00402690(&stack0xffffff64,"musicvolume",0xb);
     local_8._0_1_ = 0;
@@ -136195,40 +137867,40 @@ LAB_004b2b05:
     FMOD::ChannelControl::isPlaying(*(bool **)(iVar9 + 100));
     FMOD::ChannelControl::setVolume(*(float *)(iVar9 + 100));
     pvVar16 = (void *)(uVar5 & 0xffffff00);
-    FUN_00402690(&stack0xffffff7c,"keysounds",9);
+    FUN_00402690(&stack0xffffff74,"keysounds",9);
     FUN_004b08b0(_File,extraout_ECX,pvVar16);
     pvVar16 = (void *)((uint)pvVar16 & 0xffffff00);
-    FUN_00402690(&stack0xffffff7c,"scrollwheel",0xb);
+    FUN_00402690(&stack0xffffff74,"scrollwheel",0xb);
     FUN_004b08b0(_File,extraout_ECX_00,pvVar16);
     pvVar16 = (void *)((uint)pvVar16 & 0xffffff00);
-    FUN_00402690(&stack0xffffff7c,"alwaysshowmenu",0xe);
+    FUN_00402690(&stack0xffffff74,"alwaysshowmenu",0xe);
     FUN_004b08b0(_File,extraout_ECX_01,pvVar16);
     pvVar16 = (void *)((uint)pvVar16 & 0xffffff00);
-    FUN_00402690(&stack0xffffff7c,"sendanalytics",0xd);
+    FUN_00402690(&stack0xffffff74,"sendanalytics",0xd);
     FUN_004b08b0(_File,extraout_ECX_02,pvVar16);
     pvVar16 = (void *)((uint)pvVar16 & 0xffffff00);
-    FUN_00402690(&stack0xffffff7c,"hardware",8);
+    FUN_00402690(&stack0xffffff74,"hardware",8);
     FUN_004b08b0(_File,extraout_ECX_03,pvVar16);
     pvVar16 = (void *)((uint)pvVar16 & 0xffffff00);
-    FUN_00402690(&stack0xffffff7c,"hardwarecrlf",0xc);
+    FUN_00402690(&stack0xffffff74,"hardwarecrlf",0xc);
     FUN_004b08b0(_File,extraout_ECX_04,pvVar16);
     pvVar16 = (void *)((uint)pvVar16 & 0xffffff00);
-    FUN_00402690(&stack0xffffff7c,"ignorecom12",0xb);
+    FUN_00402690(&stack0xffffff74,"ignorecom12",0xb);
     FUN_004b08b0(_File,extraout_ECX_05,pvVar16);
     pvVar16 = (void *)((uint)pvVar16 & 0xffffff00);
-    FUN_00402690(&stack0xffffff7c,"nocameramotion",0xe);
+    FUN_00402690(&stack0xffffff74,"nocameramotion",0xe);
     FUN_004b08b0(_File,extraout_ECX_06,pvVar16);
     pvVar16 = (void *)((uint)pvVar16 & 0xffffff00);
-    FUN_00402690(&stack0xffffff7c,"tooltips",8);
+    FUN_00402690(&stack0xffffff74,"tooltips",8);
     FUN_004b08b0(_File,extraout_ECX_07,pvVar16);
     pvVar16 = (void *)((uint)pvVar16 & 0xffffff00);
-    FUN_00402690(&stack0xffffff7c,"skipintro",9);
+    FUN_00402690(&stack0xffffff74,"skipintro",9);
     FUN_004b08b0(_File,extraout_ECX_08,pvVar16);
     pvVar16 = (void *)((uint)pvVar16 & 0xffffff00);
-    FUN_00402690(&stack0xffffff7c,"multiplayerverbosedebug",0x17);
+    FUN_00402690(&stack0xffffff74,"multiplayerverbosedebug",0x17);
     FUN_004b08b0(_File,extraout_ECX_09,pvVar16);
     puVar8 = (undefined4 *)((uint)pvVar16 & 0xffffff00);
-    FUN_00402690(&stack0xffffff7c,"alternatetextrendering",0x16);
+    FUN_00402690(&stack0xffffff74,"alternatetextrendering",0x16);
     FUN_004b08b0(_File,extraout_ECX_10,puVar8);
     if (DAT_0065c2fc == (undefined4 *)0x0) {
       puVar10 = (undefined4 *)FUN_005adb0f(0x24);
@@ -136275,7 +137947,7 @@ LAB_004b2b05:
         }
 LAB_004b3134:
         local_8._0_1_ = 0xe;
-        FUN_00591e00(&stack0xffffff7c,"key=%s,%s");
+        FUN_00591e00(&stack0xffffff74,"key=%s,%s");
         FUN_004b0720(_File,puVar8);
         local_8._0_1_ = 0;
         puVar10 = DAT_0065c2fc;
@@ -172538,10 +174210,10 @@ undefined4 __cdecl FUN_004dfd90(void *param_1)
   undefined4 *this_00;
   undefined4 uVar2;
   uint uVar3;
-  uint in_stack_ffffffc8;
+  uint in_stack_ffffffc4;
   byte *pbVar4;
-  int iVar5;
-  char cVar6;
+  char cVar5;
+  int iVar6;
   int iVar7;
   void *local_10;
   undefined1 *puStack_c;
@@ -172555,22 +174227,22 @@ undefined4 __cdecl FUN_004dfd90(void *param_1)
     uVar3 = *(uint *)((int)param_1 + 0x254);
     if ((*(char *)(uVar3 + 0xdf) != '\0') && (*(int *)((int)param_1 + 0xd4) != 3)) {
       iVar7 = -1;
-      iVar5 = 3;
+      iVar6 = 3;
       ExceptionList = &local_10;
       *(undefined1 *)(*(int *)((int)param_1 + 0x40) + 0x34) = 0;
       pvVar1 = param_1;
       this = (void *)FUN_00402f60();
-      FUN_00557fb0(this,(int)pvVar1,iVar5,iVar7);
+      FUN_00557fb0(this,(int)pvVar1,iVar6,iVar7);
       FUN_0050bd90(param_1,'\x01');
-      iVar5 = FUN_00402f60();
-      if ((*(char *)(iVar5 + 0x44) != '\0') && (*(int *)(iVar5 + 100) != 0)) {
-        FMOD::ChannelControl::setPaused(SUB41(*(int *)(iVar5 + 100),0));
+      iVar6 = FUN_00402f60();
+      if ((*(char *)(iVar6 + 0x44) != '\0') && (*(int *)(iVar6 + 100) != 0)) {
+        FMOD::ChannelControl::setPaused(SUB41(*(int *)(iVar6 + 100),0));
       }
-      cVar6 = '\x01';
+      cVar5 = '\x01';
       pvVar1 = (void *)FUN_004023e0();
-      FUN_00531430(pvVar1,cVar6);
-      pbVar4 = (byte *)(in_stack_ffffffc8 & 0xffffff00);
-      FUN_00402690(&stack0xffffffc8,"in_emcon_mode",0xd);
+      FUN_00531430(pvVar1,cVar5);
+      pbVar4 = (byte *)(in_stack_ffffffc4 & 0xffffff00);
+      FUN_00402690(&stack0xffffffc4,"in_emcon_mode",0xd);
       local_8 = 0;
       this_00 = FUN_00412df0();
       local_8 = 0xffffffff;
@@ -177725,9 +179397,9 @@ void __cdecl FUN_004e6520(int param_1)
   int iVar10;
   double dVar11;
   float fVar12;
-  uint in_stack_ffffff54;
-  undefined1 local_94 [12];
-  undefined4 uStack_88;
+  uint in_stack_ffffff50;
+  undefined1 local_98 [12];
+  undefined4 uStack_8c;
   uint in_stack_ffffff88;
   float local_50;
   float local_4c;
@@ -177840,16 +179512,16 @@ void __cdecl FUN_004e6520(int param_1)
       }
       FUN_005adb3f(pvVar9);
     }
-    local_40 = (double)CONCAT44(&stack0xffffff84,(float)local_40);
-    uStack_88 = 0x4e6868;
-    FUN_00402690(&stack0xffffff84,&PTR_005ce008,0);
-    local_38 = local_94;
+    local_40 = (double)CONCAT44(&stack0xffffff80,(float)local_40);
+    uStack_8c = 0x4e6868;
+    FUN_00402690(&stack0xffffff80,&PTR_005ce008,0);
+    local_38 = local_98;
     local_8._0_1_ = 6;
-    local_94[0] = 0;
-    FUN_00402690(local_94,"cargo_jettisons",0xf);
+    local_98[0] = 0;
+    FUN_00402690(local_98,"cargo_jettisons",0xf);
     local_8._0_1_ = 7;
-    pvVar9 = (void *)(in_stack_ffffff54 & 0xffffff00);
-    FUN_00402690(&stack0xffffff54,&DAT_0060d818,4);
+    pvVar9 = (void *)(in_stack_ffffff50 & 0xffffff00);
+    FUN_00402690(&stack0xffffff50,&DAT_0060d818,4);
     local_8 = CONCAT31(local_8._1_3_,2);
     FUN_00401a50(pvVar9);
     iVar7 = -1;
@@ -210544,20 +212216,21 @@ void __fastcall FUN_00512f20(void *param_1)
   Layer *pLVar3;
   undefined4 *puVar4;
   void *pvVar5;
-  int iVar6;
+  void *this;
   undefined4 extraout_ECX;
-  int *piVar7;
-  int iVar8;
+  int *piVar6;
+  int iVar7;
+  uint uVar8;
   uint uVar9;
-  uint uVar10;
-  bool bVar11;
-  float fVar12;
-  double dVar13;
+  bool bVar10;
+  float fVar11;
+  double dVar12;
   float in_XMM1_Da;
-  double dVar14;
-  undefined4 uVar15;
-  byte *pbVar16;
-  byte *in_stack_ffffff98;
+  double dVar13;
+  undefined4 uVar14;
+  byte *pbVar15;
+  byte *in_stack_ffffff94;
+  int iVar16;
   undefined4 local_38;
   undefined4 local_34;
   undefined8 local_30;
@@ -210578,10 +212251,10 @@ void __fastcall FUN_00512f20(void *param_1)
   if (*(float *)((int)param_1 + 0x54) == -1.0) {
     return;
   }
-  fVar12 = *(float *)((int)param_1 + 0x54) - in_XMM1_Da;
+  fVar11 = *(float *)((int)param_1 + 0x54) - in_XMM1_Da;
   ExceptionList = &local_10;
-  *(float *)((int)param_1 + 0x54) = fVar12;
-  if (0.0 < fVar12) {
+  *(float *)((int)param_1 + 0x54) = fVar11;
+  if (0.0 < fVar11) {
     ExceptionList = pvVar5;
     return;
   }
@@ -210591,35 +212264,35 @@ void __fastcall FUN_00512f20(void *param_1)
   local_24 = (Layer *)0x0;
   local_8 = 0;
   uStack_7 = 0;
-  iVar6 = *(int *)((int)param_1 + 0x178);
-  if (iVar6 != 0) {
-    bVar11 = false;
-    if (*(int *)(iVar6 + 0x254) != 0) {
-      bVar11 = *(int *)(*(int *)(iVar6 + 0x254) + 0x158) == 2;
+  iVar16 = *(int *)((int)param_1 + 0x178);
+  if (iVar16 != 0) {
+    bVar10 = false;
+    if (*(int *)(iVar16 + 0x254) != 0) {
+      bVar10 = *(int *)(*(int *)(iVar16 + 0x254) + 0x158) == 2;
     }
-    if (bVar11) {
-      local_1c = (Layer *)FUN_004a7280(DAT_0065b5cc,*(int *)(iVar6 + 0x38c));
-      uVar10 = 0;
-      piVar7 = *(int **)((int)local_1c + 0xcc);
-      uVar9 = *(int *)((int)local_1c + 0xd0) - (int)piVar7 >> 2;
-      if (uVar9 != 0) {
+    if (bVar10) {
+      local_1c = (Layer *)FUN_004a7280(DAT_0065b5cc,*(int *)(iVar16 + 0x38c));
+      uVar9 = 0;
+      piVar6 = *(int **)((int)local_1c + 0xcc);
+      uVar8 = *(int *)((int)local_1c + 0xd0) - (int)piVar6 >> 2;
+      if (uVar8 != 0) {
         do {
-          iVar6 = *piVar7;
-          if ((*(int *)(*(int *)(iVar6 + 0x254) + 0x158) == 2) &&
-             (*(int *)(iVar6 + 0x38c) == *(int *)((int)param_1 + 0x20))) {
-            local_28 = (float)*(double *)(iVar6 + 0x28);
-            local_24 = (Layer *)(float)*(double *)(iVar6 + 0x30);
+          iVar16 = *piVar6;
+          if ((*(int *)(*(int *)(iVar16 + 0x254) + 0x158) == 2) &&
+             (*(int *)(iVar16 + 0x38c) == *(int *)((int)param_1 + 0x20))) {
+            local_28 = (float)*(double *)(iVar16 + 0x28);
+            local_24 = (Layer *)(float)*(double *)(iVar16 + 0x30);
             goto LAB_0051303c;
           }
-          uVar10 = uVar10 + 1;
-          piVar7 = piVar7 + 1;
-        } while (uVar10 < uVar9);
+          uVar9 = uVar9 + 1;
+          piVar6 = piVar6 + 1;
+        } while (uVar9 < uVar8);
       }
       FUN_00591070(&DAT_005cdc70,"WARNING: tried to travel to system \'%s\' but no jumpgate found");
       local_24 = (Layer *)0x0;
       local_28 = 0.0;
 LAB_0051303c:
-      in_stack_ffffff98 = &DAT_005cdc70;
+      in_stack_ffffff94 = (byte *)0x513075;
       local_20 = local_28;
       local_1c = local_24;
       FUN_00591070(&DAT_005cdc70,"Arriving at position %f, %f thanks to jumpgate");
@@ -210629,33 +212302,33 @@ LAB_0051303c:
   if ((*(int *)((int)DAT_0065b5cc + 0xcc) == 0) ||
      (*(int *)(*(int *)((int)DAT_0065b5cc + 0xcc) + 0x70) != 1)) {
     local_1c = (Layer *)(1.0 - *(float *)((int)param_1 + 0x5c) / 100.0);
-    iVar6 = rand();
+    iVar16 = rand();
     local_38 = *(undefined4 *)((int)param_1 + 0x48);
     local_34 = *(undefined4 *)((int)param_1 + 0x4c);
     local_30 = (double)(int)((float)local_1c * 120.0);
-    dVar14 = (double)(iVar6 % 0x168) * 0.017453292519943295;
-    dVar13 = dVar14;
+    dVar13 = (double)(iVar16 % 0x168) * 0.017453292519943295;
+    dVar12 = dVar13;
     libm_sse2_sin_precise();
-    local_14 = (Layer *)(float)(dVar13 * local_30);
+    local_14 = (Layer *)(float)(dVar12 * local_30);
     libm_sse2_cos_precise();
-    local_30 = (double)CONCAT44((float)(dVar14 * local_30),local_14);
+    local_30 = (double)CONCAT44((float)(dVar13 * local_30),local_14);
     local_8 = 2;
     cocos2d::Vec2::operator+((Vec2 *)&local_38,(Vec2 *)&local_18);
     local_8 = 0;
     local_28 = local_18;
     local_24 = local_14;
-    fVar12 = cocos2d::Vec2::getDistanceSq((Vec2 *)&local_28,(Vec2 *)((int)param_1 + 0x48));
-    local_14 = (Layer *)(0x5f3759df - ((uint)fVar12 >> 1));
-    in_stack_ffffff98 = SUB84((double)*(float *)((int)param_1 + 0x4c),0);
+    fVar11 = cocos2d::Vec2::getDistanceSq((Vec2 *)&local_28,(Vec2 *)((int)param_1 + 0x48));
+    local_14 = (Layer *)(0x5f3759df - ((uint)fVar11 >> 1));
+    in_stack_ffffff94 = SUB84((double)*(float *)((int)param_1 + 0x4c),0);
     FUN_00591070(&DAT_005cdc70,"%s: Misjump offset: %f, dist = %.2f, %f,%f -> %f, %f");
     if (*(char *)((int)param_1 + 0x234) != '\0') {
-      local_1c = (Layer *)&stack0xffffff98;
-      in_stack_ffffff98 = (byte *)((uint)in_stack_ffffff98 & 0xffffff00);
-      FUN_00402690(&stack0xffffff98,"jumpdrive_uses",0xe);
+      local_1c = (Layer *)&stack0xffffff94;
+      in_stack_ffffff94 = (byte *)((uint)in_stack_ffffff94 & 0xffffff00);
+      FUN_00402690(&stack0xffffff94,"jumpdrive_uses",0xe);
       local_8 = 3;
       FUN_00412770();
       local_8 = 0;
-      FUN_0051e750(extraout_ECX,in_stack_ffffff98);
+      FUN_0051e750(extraout_ECX,in_stack_ffffff94);
     }
   }
   else {
@@ -210692,71 +212365,72 @@ LAB_0051328e:
     }
     if ((*(int *)((int)pvVar5 + 0xcc) == 0) || (*(int *)(*(int *)((int)pvVar5 + 0xcc) + 0x70) != 1))
     {
-      local_1c = (Layer *)&stack0xffffff98;
-      FUN_004024e0(&stack0xffffff98,(undefined4 *)((int)param_1 + 0x238));
+      local_1c = (Layer *)&stack0xffffff94;
+      FUN_004024e0(&stack0xffffff94,(undefined4 *)((int)param_1 + 0x238));
       local_8 = 9;
       pvVar5 = (void *)FUN_004023e0();
       local_8 = 0;
-      FUN_00531140(pvVar5,in_stack_ffffff98);
+      FUN_00531140(pvVar5,in_stack_ffffff94);
     }
     else {
-      local_1c = (Layer *)&stack0xffffff98;
-      FUN_004024e0(&stack0xffffff98,(undefined4 *)((int)param_1 + 0x238));
+      local_1c = (Layer *)&stack0xffffff94;
+      FUN_004024e0(&stack0xffffff94,(undefined4 *)((int)param_1 + 0x238));
       local_8 = 4;
       pvVar5 = (void *)FUN_004023e0();
       local_8 = 0;
-      uVar15 = 0x5133db;
-      FUN_00531140(pvVar5,in_stack_ffffff98);
-      iVar6 = *(int *)((int)param_1 + 0x40);
-      if (*(int *)(iVar6 + 0x24) != 0) {
-        iVar8 = 0;
+      uVar14 = 0x5133db;
+      FUN_00531140(pvVar5,in_stack_ffffff94);
+      iVar16 = *(int *)((int)param_1 + 0x40);
+      if (*(int *)(iVar16 + 0x24) != 0) {
+        iVar7 = 0;
         do {
-          iVar6 = *(int *)((int)param_1 + 0x40);
-          puVar4 = *(undefined4 **)(*(int *)(*(int *)(iVar6 + 0x24) + 0xc) + 4 + iVar8);
+          iVar16 = *(int *)((int)param_1 + 0x40);
+          puVar4 = *(undefined4 **)(*(int *)(*(int *)(iVar16 + 0x24) + 0xc) + 4 + iVar7);
           if ((puVar4 != (undefined4 *)0x0) && (*(int *)(puVar4[1] + 0x80) == 6)) {
             *puVar4 = 0x40000000;
-            iVar6 = *(int *)((int)param_1 + 0x40);
+            iVar16 = *(int *)((int)param_1 + 0x40);
           }
-          iVar8 = iVar8 + 4;
-        } while (iVar8 < 0x50);
+          iVar7 = iVar7 + 4;
+        } while (iVar7 < 0x50);
       }
-      if (*(int *)(iVar6 + 0x18) != 0) {
-        *(undefined4 *)(*(int *)(iVar6 + 0x18) + 0x34) = 1;
+      if (*(int *)(iVar16 + 0x18) != 0) {
+        *(undefined4 *)(*(int *)(iVar16 + 0x18) + 0x34) = 1;
         *(undefined1 *)(*(int *)(*(int *)((int)param_1 + 0x40) + 0x18) + 0x62) = 1;
       }
-      local_1c = (Layer *)&stack0xffffff94;
-      pbVar16 = (byte *)(CONCAT35((int3)((uint)uVar15 >> 8),0xf) >> 0x20);
-      FUN_00402690(&stack0xffffff94,"tutorial_jumped",0xf);
+      local_1c = (Layer *)&stack0xffffff90;
+      pbVar15 = (byte *)(CONCAT35((int3)((uint)uVar14 >> 8),0xf) >> 0x20);
+      FUN_00402690(&stack0xffffff90,"tutorial_jumped",0xf);
       local_8 = 5;
       puVar4 = FUN_00412df0();
       local_8 = 0;
-      FUN_004a0ee0(puVar4,pbVar16);
-      pbVar16 = (byte *)(CONCAT35((int3)((uint)pbVar16 >> 8),0x14) >> 0x20);
-      local_1c = (Layer *)&stack0xffffff94;
-      FUN_00402690(&stack0xffffff94,"only_plot_to_beacons",0x14);
+      FUN_004a0ee0(puVar4,pbVar15);
+      pbVar15 = (byte *)(CONCAT35((int3)((uint)pbVar15 >> 8),0x14) >> 0x20);
+      local_1c = (Layer *)&stack0xffffff90;
+      FUN_00402690(&stack0xffffff90,"only_plot_to_beacons",0x14);
       local_8 = 6;
       puVar4 = FUN_00412df0();
       local_8 = 0;
-      FUN_004a0ee0(puVar4,pbVar16);
-      pbVar16 = (byte *)(CONCAT35((int3)((uint)pbVar16 >> 8),0x14) >> 0x20);
-      local_1c = (Layer *)&stack0xffffff94;
-      FUN_00402690(&stack0xffffff94,"only_plot_to_op-lago",0x14);
+      FUN_004a0ee0(puVar4,pbVar15);
+      pbVar15 = (byte *)(CONCAT35((int3)((uint)pbVar15 >> 8),0x14) >> 0x20);
+      local_1c = (Layer *)&stack0xffffff90;
+      FUN_00402690(&stack0xffffff90,"only_plot_to_op-lago",0x14);
       local_8 = 7;
       puVar4 = FUN_00412df0();
       local_8 = 0;
-      FUN_004a0ee0(puVar4,pbVar16);
-      pbVar16 = (byte *)(CONCAT35((int3)((uint)pbVar16 >> 8),8) >> 0x20);
-      local_1c = (Layer *)&stack0xffffff94;
-      FUN_00402690(&stack0xffffff94,"angle_50",8);
+      FUN_004a0ee0(puVar4,pbVar15);
+      pbVar15 = (byte *)(CONCAT35((int3)((uint)pbVar15 >> 8),8) >> 0x20);
+      local_1c = (Layer *)&stack0xffffff90;
+      FUN_00402690(&stack0xffffff90,"angle_50",8);
       local_8 = 8;
       puVar4 = FUN_00412df0();
       local_8 = 0;
-      FUN_004a0ee0(puVar4,pbVar16);
+      FUN_004a0ee0(puVar4,pbVar15);
     }
-    iVar8 = -1;
-    iVar6 = 0xc;
-    pvVar5 = (void *)FUN_00402f60();
-    FUN_00557fb0(pvVar5,(int)param_1,iVar6,iVar8);
+    iVar7 = -1;
+    iVar16 = 0xc;
+    pvVar5 = param_1;
+    this = (void *)FUN_00402f60();
+    FUN_00557fb0(this,(int)pvVar5,iVar16,iVar7);
     if (DAT_0065c25c == (Layer *)0x0) {
       local_1c = (Layer *)FUN_005adb0f(0x418);
       local_8 = 10;
@@ -210768,8 +212442,8 @@ LAB_0051328e:
     pCVar2 = (Color3B *)(DAT_0065c25c + 0x3cc);
     *(undefined2 *)pCVar2 = *(undefined2 *)(*(int *)pLVar1 + 0x8c);
     pLVar3[0x3ce] = *(Layer *)(*(int *)pLVar1 + 0x8e);
-    bVar11 = cocos2d::Color3B::operator==((Color3B *)(pLVar3 + 0x3cf),pCVar2);
-    if (!bVar11) {
+    bVar10 = cocos2d::Color3B::operator==((Color3B *)(pLVar3 + 0x3cf),pCVar2);
+    if (!bVar10) {
       *(undefined4 *)(pLVar3 + 0x3c4) = 0;
       *(undefined4 *)(pLVar3 + 0x3c8) = 0x40000000;
       pLVar3[0x3c0] = (Layer)0x1;
@@ -210779,8 +212453,8 @@ LAB_0051328e:
   }
   *(undefined4 *)((int)param_1 + 0x50) = 0xffffffff;
   if (*(char *)((int)param_1 + 0x234) != '\0') {
-    iVar6 = FUN_004023e0();
-    FUN_0052f580(iVar6);
+    iVar16 = FUN_004023e0();
+    FUN_0052f580(iVar16);
     *(undefined1 *)((int)param_1 + 0x345) = 1;
   }
   *(undefined4 *)((int)param_1 + 0xd4) = 0;
@@ -213699,7 +215373,7 @@ void __thiscall FUN_005181f0(void *this,undefined4 *param_1)
   int *piVar7;
   double dVar8;
   double dVar9;
-  undefined4 *in_stack_ffffff20;
+  undefined4 *in_stack_ffffff1c;
   undefined4 *in_stack_ffffff24;
   float local_98;
   float local_94;
@@ -213823,9 +215497,9 @@ void __thiscall FUN_005181f0(void *this,undefined4 *param_1)
              0x1f < (uint)((int)local_54[0] + (-4 - (int)pvVar5)))) goto LAB_0051879f;
           FUN_005adb3f(pvVar5);
         }
-        in_stack_ffffff20 = (undefined4 *)((uint)in_stack_ffffff20 & 0xffffff00);
-        FUN_00402690(&stack0xffffff20,"WP #%d: %f,%f (np #%d, %s)",0x1a);
-        FUN_0050ae50(this,in_stack_ffffff20);
+        in_stack_ffffff1c = (undefined4 *)((uint)in_stack_ffffff1c & 0xffffff00);
+        FUN_00402690(&stack0xffffff1c,"WP #%d: %f,%f (np #%d, %s)",0x1a);
+        FUN_0050ae50(this,in_stack_ffffff1c);
         local_14 = CONCAT31(local_14._1_3_,1);
         piVar7 = local_60;
       }
@@ -213852,7 +215526,7 @@ void __thiscall FUN_005181f0(void *this,undefined4 *param_1)
           }
           in_stack_ffffff24 = (undefined4 *)((uint)in_stack_ffffff24 & 0xffffff00);
           FUN_00402690(&stack0xffffff24,"WP #%d: %f,%f %s",0x10);
-          in_stack_ffffff20 = this;
+          in_stack_ffffff1c = (undefined4 *)0x5183f4;
           FUN_0050ae50(this,in_stack_ffffff24);
           piVar7 = local_60;
         }
@@ -213989,6 +215663,7 @@ void __fastcall FUN_00518940(void *param_1)
   double dVar2;
   undefined4 in_XMM1_Da;
   undefined4 in_XMM1_Db;
+  float *pfVar3;
   double local_2c;
   double local_24;
   float local_1c;
@@ -214005,6 +215680,7 @@ void __fastcall FUN_00518940(void *param_1)
   local_2c = (double)CONCAT44(in_XMM1_Db,in_XMM1_Da);
   local_1c = (float)*(double *)((int)param_1 + 0x28);
   local_18 = (float)*(double *)((int)param_1 + 0x30);
+  pfVar3 = &local_1c;
   local_8 = 0;
   cocos2d::Vec2::operator+((Vec2 *)((int)param_1 + 0x118),(Vec2 *)&local_24);
   dVar2 = (double)((ulonglong)local_24 >> 0x20);
@@ -214021,7 +215697,7 @@ void __fastcall FUN_00518940(void *param_1)
   }
   dVar2 = (double)*(float *)((int)param_1 + 0x120) * 0.017453292519943295;
   local_24 = dVar2;
-  libm_sse2_cos_precise(uVar1);
+  libm_sse2_cos_precise(pfVar3,uVar1);
   local_14 = (float)(dVar2 * local_2c);
   dVar2 = local_24;
   libm_sse2_sin_precise();
@@ -227493,15 +229169,16 @@ void __fastcall FUN_0052aa50(int param_1)
   uint uVar1;
   Vec3 *pVVar2;
   undefined8 *puVar3;
-  undefined4 *puVar4;
-  int *piVar5;
-  uint uVar6;
-  int iVar7;
-  uint uVar8;
-  int *piVar9;
-  undefined4 *puVar10;
+  undefined4 uVar4;
+  undefined4 *puVar5;
+  int *piVar6;
+  uint uVar7;
+  int iVar8;
+  uint uVar9;
+  int *piVar10;
+  undefined4 *puVar11;
   size_t _Size;
-  int *piVar11;
+  int *piVar12;
   int *in_XMM1_Da;
   Vec3 local_74 [12];
   Vec3 local_68 [12];
@@ -227526,126 +229203,127 @@ void __fastcall FUN_0052aa50(int param_1)
   local_10 = ExceptionList;
   uVar1 = DAT_0065500c ^ (uint)&stack0xfffffffc;
   ExceptionList = &local_10;
-  puVar10 = (undefined4 *)0x0;
+  puVar11 = (undefined4 *)0x0;
   local_20 = (int *)0x0;
   local_38 = (int *)0x0;
   local_34 = (undefined4 *)0x0;
   local_1c = (undefined4 *)0x0;
   local_30 = (undefined4 *)0x0;
   local_8 = 0;
-  iVar7 = *(int *)(param_1 + 0x278);
+  iVar8 = *(int *)(param_1 + 0x278);
   local_24 = 0;
   local_18 = in_XMM1_Da;
   local_14 = param_1;
-  if (*(int *)(param_1 + 0x27c) - iVar7 >> 2 != 0) {
+  if (*(int *)(param_1 + 0x27c) - iVar8 >> 2 != 0) {
     do {
-      iVar7 = *(int *)(iVar7 + local_24 * 4);
+      iVar8 = *(int *)(iVar8 + local_24 * 4);
       local_28 = local_24 * 4;
-      local_20 = (int *)iVar7;
+      local_20 = (int *)iVar8;
       pVVar2 = (Vec3 *)cocos2d::Vec3::Vec3(local_5c,0.0,-800.0,0.0);
       local_8._0_1_ = 1;
       cocos2d::Vec3::operator*(pVVar2,(float)local_50);
       local_8._0_1_ = 2;
-      puVar3 = (undefined8 *)cocos2d::Vec3::operator+((Vec3 *)(iVar7 + 0x278),local_44);
-      *(undefined8 *)(iVar7 + 0x278) = *puVar3;
-      *(undefined4 *)(iVar7 + 0x280) = *(undefined4 *)(puVar3 + 1);
+      puVar3 = (undefined8 *)cocos2d::Vec3::operator+((Vec3 *)(iVar8 + 0x278),local_44);
+      *(undefined8 *)(iVar8 + 0x278) = *puVar3;
+      *(undefined4 *)(iVar8 + 0x280) = *(undefined4 *)(puVar3 + 1);
       cocos2d::Vec3::~Vec3(local_44);
       cocos2d::Vec3::~Vec3(local_50);
       local_8._0_1_ = 0;
       cocos2d::Vec3::~Vec3(local_5c);
-      if (*(float *)(iVar7 + 0x27c) <= -400.0 && *(float *)(iVar7 + 0x27c) != -400.0) {
-        *(undefined4 *)(iVar7 + 0x27c) = 0xc3c80000;
+      if (*(float *)(iVar8 + 0x27c) <= -400.0 && *(float *)(iVar8 + 0x27c) != -400.0) {
+        *(undefined4 *)(iVar8 + 0x27c) = 0xc3c80000;
       }
-      cocos2d::Vec3::operator*((Vec3 *)(iVar7 + 0x278),(float)local_74);
+      piVar10 = local_18;
+      uVar4 = cocos2d::Vec3::operator*((Vec3 *)(iVar8 + 0x278),(float)local_74);
       local_8._0_1_ = 3;
-      pVVar2 = (Vec3 *)(iVar7 + 0x290);
+      pVVar2 = (Vec3 *)(iVar8 + 0x290);
       puVar3 = (undefined8 *)cocos2d::Vec3::operator+(pVVar2,local_68);
       *(undefined8 *)pVVar2 = *puVar3;
-      *(undefined4 *)(iVar7 + 0x298) = *(undefined4 *)(puVar3 + 1);
+      *(undefined4 *)(iVar8 + 0x298) = *(undefined4 *)(puVar3 + 1);
       cocos2d::Vec3::~Vec3(local_68);
       local_8 = (uint)local_8._1_3_ << 8;
       cocos2d::Vec3::~Vec3(local_74);
-      (**(code **)(**(int **)((int)local_20 + 0x29c) + 0x78))(pVVar2);
+      (**(code **)(**(int **)((int)local_20 + 0x29c) + 0x78))(pVVar2,uVar4,piVar10);
       if (*(float *)((int)local_20 + 0x294) <= 0.0 && *(float *)((int)local_20 + 0x294) != 0.0) {
         FUN_00591070("RENDER","Particle journey complete.");
-        puVar4 = (undefined4 *)(*(int *)(param_1 + 0x278) + local_28);
-        if (local_1c == puVar10) {
-          FUN_00414080(&local_38,puVar10,puVar4);
+        puVar5 = (undefined4 *)(*(int *)(param_1 + 0x278) + local_28);
+        if (local_1c == puVar11) {
+          FUN_00414080(&local_38,puVar11,puVar5);
           local_1c = local_30;
-          puVar10 = local_34;
+          puVar11 = local_34;
         }
         else {
-          *puVar10 = *puVar4;
-          local_34 = puVar10 + 1;
-          puVar10 = local_34;
+          *puVar11 = *puVar5;
+          local_34 = puVar11 + 1;
+          puVar11 = local_34;
         }
       }
-      iVar7 = *(int *)(param_1 + 0x278);
+      iVar8 = *(int *)(param_1 + 0x278);
       local_24 = local_24 + 1;
-    } while (local_24 < (uint)(*(int *)(param_1 + 0x27c) - iVar7 >> 2));
+    } while (local_24 < (uint)(*(int *)(param_1 + 0x27c) - iVar8 >> 2));
     local_20 = local_38;
   }
-  local_24 = (int)puVar10 - (int)local_20 >> 2;
-  piVar9 = local_20;
+  local_24 = (int)puVar11 - (int)local_20 >> 2;
+  piVar10 = local_20;
   local_38 = local_20;
   if (local_24 != 0) {
     do {
-      iVar7 = *piVar9;
-      piVar11 = *(int **)(iVar7 + 0x29c);
-      local_18 = piVar9;
-      if (piVar11 != (int *)0x0) {
-        (**(code **)(*piVar11 + 0x138))(1,uVar1);
-        *(undefined4 *)(iVar7 + 0x29c) = 0;
+      iVar8 = *piVar10;
+      piVar12 = *(int **)(iVar8 + 0x29c);
+      local_18 = piVar10;
+      if (piVar12 != (int *)0x0) {
+        (**(code **)(*piVar12 + 0x138))(1,uVar1);
+        *(undefined4 *)(iVar8 + 0x29c) = 0;
       }
-      (**(code **)(*(int *)*piVar9 + 0x138))(1);
+      (**(code **)(*(int *)*piVar10 + 0x138))(1);
       local_2c = *(int **)(param_1 + 0x27c);
-      piVar11 = *(int **)(param_1 + 0x278);
-      if (piVar11 != local_2c) {
+      piVar12 = *(int **)(param_1 + 0x278);
+      if (piVar12 != local_2c) {
         do {
-          if (*piVar11 == *piVar9) break;
-          piVar11 = piVar11 + 1;
-        } while (piVar11 != local_2c);
-        if (piVar11 != local_2c) {
-          piVar5 = piVar11 + 1;
-          uVar6 = 0;
-          uVar8 = (uint)((int)local_2c + (3 - (int)piVar5)) >> 2;
-          if (local_2c < piVar5) {
-            uVar8 = 0;
+          if (*piVar12 == *piVar10) break;
+          piVar12 = piVar12 + 1;
+        } while (piVar12 != local_2c);
+        if (piVar12 != local_2c) {
+          piVar6 = piVar12 + 1;
+          uVar7 = 0;
+          uVar9 = (uint)((int)local_2c + (3 - (int)piVar6)) >> 2;
+          if (local_2c < piVar6) {
+            uVar9 = 0;
           }
-          if (uVar8 != 0) {
+          if (uVar9 != 0) {
             do {
-              if (*piVar5 != *local_18) {
-                *piVar11 = *piVar5;
-                piVar11 = piVar11 + 1;
+              if (*piVar6 != *local_18) {
+                *piVar12 = *piVar6;
+                piVar12 = piVar12 + 1;
               }
-              uVar6 = uVar6 + 1;
-              piVar5 = piVar5 + 1;
-              piVar9 = local_18;
-            } while (uVar6 != uVar8);
+              uVar7 = uVar7 + 1;
+              piVar6 = piVar6 + 1;
+              piVar10 = local_18;
+            } while (uVar7 != uVar9);
           }
-          if (piVar11 != local_2c) {
+          if (piVar12 != local_2c) {
             _Size = *(int *)(local_14 + 0x27c) - (int)local_2c;
-            memmove(piVar11,local_2c,_Size);
-            *(size_t *)(local_14 + 0x27c) = _Size + (int)piVar11;
-            piVar9 = local_18;
+            memmove(piVar12,local_2c,_Size);
+            *(size_t *)(local_14 + 0x27c) = _Size + (int)piVar12;
+            piVar10 = local_18;
           }
         }
       }
-      local_18 = piVar9 + 1;
+      local_18 = piVar10 + 1;
       local_24 = local_24 + -1;
-      piVar9 = local_18;
+      piVar10 = local_18;
       param_1 = local_14;
     } while (local_24 != 0);
     local_24 = 0;
   }
   if (local_20 != (int *)0x0) {
-    piVar9 = local_20;
+    piVar10 = local_20;
     if ((0xfff < ((int)local_1c - (int)local_20 & 0xfffffffcU)) &&
-       (piVar9 = (int *)local_20[-1], 0x1f < (uint)((int)local_20 + (-4 - (int)piVar9)))) {
+       (piVar10 = (int *)local_20[-1], 0x1f < (uint)((int)local_20 + (-4 - (int)piVar10)))) {
                     // WARNING: Subroutine does not return
       _invalid_parameter_noinfo_noreturn();
     }
-    FUN_005adb3f(piVar9);
+    FUN_005adb3f(piVar10);
   }
   ExceptionList = local_10;
   return;
@@ -229674,6 +231352,7 @@ void __thiscall FUN_0052df00(void *this,int param_1)
   int iVar9;
   uint uVar10;
   int *piVar11;
+  undefined4 uVar12;
   Vec3 local_3c [20];
   undefined8 local_28;
   undefined4 local_20;
@@ -229696,6 +231375,7 @@ void __thiscall FUN_0052df00(void *this,int param_1)
   FUN_00534a40(*(void **)((int)this + 0x2d4),this);
   cocos2d::Vec3::Vec3(local_3c,(Vec3 *)(*(int *)((int)this + 0x2d4) + 0x74));
   local_8 = 0;
+  uVar12 = DAT_006550a8;
   cocos2d::Vec3::operator*(local_3c,(float)&local_28);
   local_8 = 0xffffffff;
   cocos2d::Vec3::~Vec3(local_3c);
@@ -229743,7 +231423,7 @@ void __thiscall FUN_0052df00(void *this,int param_1)
     *(undefined4 *)(iVar9 + 0x58) = 0;
     uVar7 = 0;
   }
-  (**(code **)(**(int **)((int)this + 0x364) + 0xb4))(uVar7);
+  (**(code **)(**(int **)((int)this + 0x364) + 0xb4))(uVar7,uVar12);
   iVar9 = DAT_0065b5cc;
   pvVar2 = *(void **)((int)this + 0x2d4);
   if ((*(int *)(*(int *)(*(int *)(DAT_0065b5cc + 0xd0) + 0x224) + 0x58) == 0) &&
@@ -231380,7 +233060,7 @@ void __thiscall FUN_00530750(void *this,uint param_1)
   byte *pbVar12;
   byte ****ppppbVar13;
   float in_XMM2_Da;
-  ulonglong in_stack_ffffff44;
+  ulonglong in_stack_ffffff40;
   undefined4 local_6c;
   undefined4 uStack_68;
   undefined4 local_64;
@@ -231497,15 +233177,15 @@ LAB_00530d26:
       }
       uVar10 = FUN_004031f0(pbVar12,*(uint *)(iVar9 + 0x28),(byte *)"c_nav",5);
       if ((char)uVar10 != '\0') {
-        in_stack_ffffff44 = in_stack_ffffff44 & 0xffffffffffffff00;
-        FUN_00402690(&stack0xffffff44,"has_viewed_nav_screen",0x15);
+        in_stack_ffffff40 = in_stack_ffffff40 & 0xffffffffffffff00;
+        FUN_00402690(&stack0xffffff40,"has_viewed_nav_screen",0x15);
         local_8 = 1;
         puVar11 = FUN_00412df0();
         local_8 = 0xffffffff;
-        FUN_004a0ee0(puVar11,(byte *)in_stack_ffffff44);
+        FUN_004a0ee0(puVar11,(byte *)in_stack_ffffff40);
       }
     }
-    puVar11 = (undefined4 *)(in_stack_ffffff44 >> 0x20);
+    puVar11 = (undefined4 *)(in_stack_ffffff40 >> 0x20);
     iVar9 = *(int *)(*(int *)((int)this + 0x34c) + 0x3c);
     if ((iVar9 == 5) || (iVar9 == 6)) {
       uStack_68 = 0;
@@ -231578,12 +233258,12 @@ LAB_00530a97:
         if ((((piVar2 == (int *)0x0) || (*piVar2 == 0)) || (*(int *)(*piVar2 + 0x5c) < 0)) ||
            ((char)piVar2[0x24] != '\0')) goto LAB_00530cdf;
         puVar11 = (undefined4 *)(CONCAT35((int3)((uint)puVar11 >> 8),9) >> 0x20);
-        FUN_00402690(&stack0xffffff48,"passenger",9);
+        FUN_00402690(&stack0xffffff44,"passenger",9);
         FUN_005325c0(this,*(int *)(**(int **)(DAT_0065b5cc + 0x128) + 0x5c),puVar11);
         *(undefined1 *)(*(int *)(DAT_0065b5cc + 0x128) + 0x90) = 1;
       }
       else {
-        FUN_004024e0(&stack0xffffff48,
+        FUN_004024e0(&stack0xffffff44,
                      (undefined4 *)
                      (*(int *)(*(int *)(*(int *)((int)this + 0x34c) + 0x100) + 0x1c) + 0xf8));
         cVar5 = FUN_005325c0(this,-1,puVar11);
@@ -231939,6 +233619,7 @@ void __fastcall FUN_005314b0(int param_1)
   float fVar14;
   double dVar15;
   float in_XMM1_Da;
+  undefined8 uVar16;
   Vec3 local_64 [12];
   Vec3 local_58 [12];
   Vec3 local_4c [12];
@@ -232146,9 +233827,10 @@ LAB_005317e7:
     cocos2d::Vec3::~Vec3(local_58);
   }
   pCVar7 = cocos2d::Camera::getDefaultCamera();
-  local_34 = (float *)(**(code **)(*(int *)pCVar7 + 200))(local_64);
+  local_34 = (float *)(**(code **)(*(int *)pCVar7 + 200))();
   local_8 = 2;
   pVVar10 = (Vec3 *)cocos2d::Vec3::operator+((Vec3 *)(param_1 + 0x308),local_4c);
+  iVar11 = param_1 + 0x3dc;
   local_8 = CONCAT31(local_8._1_3_,3);
   pfVar8 = (float *)cocos2d::Vec3::operator+(pVVar10,local_58);
   if (((*pfVar8 != *local_34) || (pfVar8[1] != local_34[1])) ||
@@ -232161,11 +233843,13 @@ LAB_005317e7:
   (*pcVar12)();
   if (local_11 != '\0') {
     pCVar7 = cocos2d::Camera::getDefaultCamera();
+    uVar16 = CONCAT44(iVar11,param_1 + 1000);
     pVVar10 = (Vec3 *)cocos2d::Vec3::operator+((Vec3 *)(param_1 + 0x308),local_58);
+    iVar11 = param_1 + 0x3dc;
     local_8 = 4;
-    cocos2d::Vec3::operator+(pVVar10,local_64);
+    uVar9 = cocos2d::Vec3::operator+(pVVar10,local_64);
     local_8 = CONCAT31(local_8._1_3_,5);
-    (**(code **)(*(int *)pCVar7 + 0xc4))();
+    (**(code **)(*(int *)pCVar7 + 0xc4))(uVar9,iVar11,uVar16);
     cocos2d::Vec3::~Vec3(local_64);
     local_8 = 0xffffffff;
     cocos2d::Vec3::~Vec3(local_58);
@@ -237210,10 +238894,11 @@ LAB_00538922:
 void __fastcall FUN_00538940(int param_1)
 
 {
-  int iVar1;
-  undefined8 *puVar2;
-  Vec3 *pVVar3;
-  undefined4 uVar4;
+  undefined8 *puVar1;
+  Vec3 *pVVar2;
+  undefined4 uVar3;
+  int iVar5;
+  undefined8 uVar4;
   Vec3 local_4c [12];
   Vec3 local_40 [12];
   Vec3 local_34 [16];
@@ -237227,21 +238912,21 @@ void __fastcall FUN_00538940(int param_1)
   local_10 = ExceptionList;
   ExceptionList = &local_10;
   if (*(char *)(param_1 + 0x3f4) != '\0') {
-    iVar1 = *(int *)(param_1 + 0x3f0);
-    *(undefined8 *)(param_1 + 0x428) = *(undefined8 *)(iVar1 + 0x80);
-    *(undefined4 *)(param_1 + 0x430) = *(undefined4 *)(iVar1 + 0x88);
+    iVar5 = *(int *)(param_1 + 0x3f0);
+    *(undefined8 *)(param_1 + 0x428) = *(undefined8 *)(iVar5 + 0x80);
+    *(undefined4 *)(param_1 + 0x430) = *(undefined4 *)(iVar5 + 0x88);
     if (((*(float *)(param_1 + 0x428) == 0.0) && (*(float *)(param_1 + 0x42c) == 0.0)) &&
        (*(float *)(param_1 + 0x430) == 0.0)) {
-      *(undefined8 *)(param_1 + 0x41c) = *(undefined8 *)(iVar1 + 0x74);
-      *(undefined4 *)(param_1 + 0x424) = *(undefined4 *)(iVar1 + 0x7c);
+      *(undefined8 *)(param_1 + 0x41c) = *(undefined8 *)(iVar5 + 0x74);
+      *(undefined4 *)(param_1 + 0x424) = *(undefined4 *)(iVar5 + 0x7c);
     }
     else {
       cocos2d::Vec3::Vec3(local_24);
       local_8 = 0;
-      puVar2 = (undefined8 *)
+      puVar1 = (undefined8 *)
                cocos2d::Vec3::operator-((Vec3 *)(*(int *)(param_1 + 0x3f0) + 0x74),local_34);
-      *(undefined8 *)(param_1 + 0x41c) = *puVar2;
-      *(undefined4 *)(param_1 + 0x424) = *(undefined4 *)(puVar2 + 1);
+      *(undefined8 *)(param_1 + 0x41c) = *puVar1;
+      *(undefined4 *)(param_1 + 0x424) = *(undefined4 *)(puVar1 + 1);
       cocos2d::Vec3::~Vec3(local_34);
       FUN_00591070("DETAIL","relative object pos = %f, %f, %f");
       local_8 = 0xffffffff;
@@ -237256,30 +238941,33 @@ void __fastcall FUN_00538940(int param_1)
       cocos2d::Vec3::~Vec3(local_34);
       local_8 = 5;
       (**(code **)(**(int **)(param_1 + 0x3dc) + 0x78))();
-      pVVar3 = local_24;
+      pVVar2 = local_24;
     }
     else {
-      pVVar3 = (Vec3 *)cocos2d::Vec3::operator+((Vec3 *)(param_1 + 0x2f0),local_40);
+      iVar5 = param_1 + 0x350;
+      pVVar2 = (Vec3 *)cocos2d::Vec3::operator+((Vec3 *)(param_1 + 0x2f0),local_40);
       local_8 = 1;
-      cocos2d::Vec3::operator+(pVVar3,local_24);
+      uVar4 = CONCAT44(iVar5,param_1 + 0x41c);
+      cocos2d::Vec3::operator+(pVVar2,local_24);
       local_8._0_1_ = 2;
+      uVar3 = DAT_006550a4;
       cocos2d::Vec3::operator*(local_24,(float)local_34);
       cocos2d::Vec3::~Vec3(local_24);
       local_8 = CONCAT31(local_8._1_3_,3);
-      (**(code **)(**(int **)(param_1 + 0x3dc) + 0x78))();
+      (**(code **)(**(int **)(param_1 + 0x3dc) + 0x78))(local_34,uVar3,uVar4);
       cocos2d::Vec3::~Vec3(local_34);
-      pVVar3 = local_40;
+      pVVar2 = local_40;
     }
     local_8 = 0xffffffff;
-    cocos2d::Vec3::~Vec3(pVVar3);
+    cocos2d::Vec3::~Vec3(pVVar2);
     if (*(char *)(param_1 + 0x318) != '\0') {
-      (**(code **)(**(int **)(param_1 + 0x3dc) + 0xcc))(param_1 + 0x308);
+      (**(code **)(**(int **)(param_1 + 0x3dc) + 0xcc))();
       ExceptionList = local_10;
       return;
     }
-    uVar4 = cocos2d::Vec3::operator+((Vec3 *)(param_1 + 0x2fc),local_4c);
+    uVar3 = cocos2d::Vec3::operator+((Vec3 *)(param_1 + 0x2fc),local_4c);
     local_8 = 6;
-    (**(code **)(**(int **)(param_1 + 0x3dc) + 0xc4))(uVar4);
+    (**(code **)(**(int **)(param_1 + 0x3dc) + 0xc4))(uVar3);
     cocos2d::Vec3::~Vec3(local_4c);
   }
   ExceptionList = local_10;
@@ -237322,10 +239010,10 @@ void __thiscall FUN_00538bd0(void *this,int *param_1)
   Color3B *pCVar28;
   code *pcVar29;
   int iVar30;
-  undefined4 *puVar31;
-  byte *in_stack_fffffef8;
+  byte *in_stack_fffffeec;
   undefined4 *in_stack_ffffff04;
   undefined4 *in_stack_ffffff08;
+  undefined4 *puVar31;
   float fVar32;
   float fVar33;
   float fVar34;
@@ -237693,6 +239381,7 @@ LAB_00539a20:
     local_14 = 0xffffffff;
     (*pcVar29)();
     if (*(char *)((int)this + 0x318) == '\0') {
+      puVar31 = (undefined4 *)((int)this + 0x428);
       cocos2d::Vec3::operator+((Vec3 *)((int)this + 0x2fc),(Vec3 *)&local_3c);
       local_14 = 0x12;
       (**(code **)(**(int **)((int)this + 0x3dc) + 0xc4))();
@@ -237700,6 +239389,7 @@ LAB_00539a20:
       (*pcVar29)();
     }
     else {
+      puVar31 = (undefined4 *)((int)this + 0x308);
       (**(code **)(**(int **)((int)this + 0x3dc) + 0xcc))();
     }
     (**(code **)(**(int **)((int)this + 0x3dc) + 200))();
@@ -237712,8 +239402,8 @@ LAB_00539a20:
       }
       uVar16 = FUN_004031f0(pbVar25,*(uint *)((int)this + 0x68),(byte *)&PTR_005ce008,0);
       if ((char)uVar16 == '\0') {
-        FUN_004024e0(&stack0xfffffef8,(undefined4 *)pbVar22);
-        iVar6 = FUN_005116d0(DAT_0065b3d4,in_stack_fffffef8);
+        FUN_004024e0(&stack0xfffffeec,(undefined4 *)pbVar22);
+        iVar6 = FUN_005116d0(DAT_0065b3d4,in_stack_fffffeec);
         if ((iVar6 != 0) && (*(int *)(iVar6 + 0x24) != 0)) {
           local_b8 = (float)*(int *)(iVar6 + 0x24) + local_b8;
           (**(code **)(**(int **)((int)this + 0x3dc) + 0xc4))();
@@ -237733,7 +239423,6 @@ LAB_00539a20:
       *(undefined4 *)(iVar6 + 0x31c) = 4;
     }
     (**(code **)(**(int **)((int)this + 0x3dc) + 0x24))();
-    puVar31 = (undefined4 *)(*(float *)((int)this + 0x2e8) * DAT_006550a4);
     (**(code **)(**(int **)((int)this + 0x3dc) + 0x2c))();
     (**(code **)(**(int **)((int)this + 0x3dc) + 0x34))();
     (**(code **)(**(int **)((int)this + 0x3dc) + 0x244))();
@@ -237946,7 +239635,7 @@ LAB_00539241:
     else {
       pVVar9 = (Vec3 *)cocos2d::Vec3::operator+((Vec3 *)((int)this + 0x2f0),local_d0);
       local_14._0_1_ = 0x1e;
-      cocos2d::Vec3::operator-(pVVar9,(Vec3 *)&stack0xffffff10);
+      cocos2d::Vec3::operator-(pVVar9,(Vec3 *)&stack0xffffff0c);
       FUN_0058f560((float)local_84);
       local_14._0_1_ = 0x1f;
       (**(code **)(**(int **)((int)this + 0x3dc) + 0x78))();
@@ -239269,7 +240958,10 @@ LAB_0053bcbe:
 void __fastcall FUN_0053bce0(int param_1)
 
 {
-  Vec3 *pVVar1;
+  undefined4 uVar1;
+  Vec3 *pVVar2;
+  undefined4 uVar3;
+  int iVar4;
   Vec3 local_70 [12];
   Vec3 local_64 [12];
   Vec3 local_58 [12];
@@ -239287,32 +240979,36 @@ void __fastcall FUN_0053bce0(int param_1)
   local_10 = ExceptionList;
   ExceptionList = &local_10;
   if (*(char *)(param_1 + 0x34c) != '\0') {
-    cocos2d::Vec3::operator*((Vec3 *)(param_1 + 0x340),(float)local_58);
+    uVar1 = cocos2d::Vec3::operator*((Vec3 *)(param_1 + 0x340),(float)local_58);
+    iVar4 = param_1 + 0x41c;
     local_8 = 0;
-    pVVar1 = (Vec3 *)cocos2d::Vec3::operator+((Vec3 *)(param_1 + 800),local_4c);
+    pVVar2 = (Vec3 *)cocos2d::Vec3::operator+((Vec3 *)(param_1 + 800),local_4c);
     local_8._0_1_ = 1;
-    cocos2d::Vec3::operator+(pVVar1,local_1c);
+    cocos2d::Vec3::operator+(pVVar2,local_1c);
     local_8._0_1_ = 2;
+    uVar3 = DAT_006550a4;
     cocos2d::Vec3::operator*(local_1c,(float)local_28);
     cocos2d::Vec3::~Vec3(local_1c);
     local_8 = CONCAT31(local_8._1_3_,3);
-    (**(code **)(**(int **)(param_1 + 0x3dc) + 0x78))(local_28);
+    (**(code **)(**(int **)(param_1 + 0x3dc) + 0x78))(local_28,uVar3,uVar1,iVar4);
     cocos2d::Vec3::~Vec3(local_28);
     cocos2d::Vec3::~Vec3(local_4c);
     cocos2d::Vec3::~Vec3(local_58);
     ExceptionList = local_10;
     return;
   }
-  cocos2d::Vec3::operator*((Vec3 *)(param_1 + 0x340),(float)local_70);
+  uVar1 = cocos2d::Vec3::operator*((Vec3 *)(param_1 + 0x340),(float)local_70);
+  iVar4 = param_1 + 0x41c;
   local_8 = 4;
-  pVVar1 = (Vec3 *)cocos2d::Vec3::operator+((Vec3 *)(param_1 + 800),local_64);
+  pVVar2 = (Vec3 *)cocos2d::Vec3::operator+((Vec3 *)(param_1 + 800),local_64);
   local_8._0_1_ = 5;
-  cocos2d::Vec3::operator+(pVVar1,local_34);
+  cocos2d::Vec3::operator+(pVVar2,local_34);
   local_8._0_1_ = 6;
+  uVar3 = DAT_006550a4;
   cocos2d::Vec3::operator*(local_34,(float)local_40);
   cocos2d::Vec3::~Vec3(local_34);
   local_8 = CONCAT31(local_8._1_3_,7);
-  (**(code **)(**(int **)(param_1 + 0x3dc) + 0x78))(local_40);
+  (**(code **)(**(int **)(param_1 + 0x3dc) + 0x78))(local_40,uVar3,uVar1,iVar4);
   cocos2d::Vec3::~Vec3(local_40);
   cocos2d::Vec3::~Vec3(local_64);
   cocos2d::Vec3::~Vec3(local_70);
@@ -258618,7 +260314,8 @@ FUN_00557af0(void *this,undefined4 param_1,int param_2,int param_3,byte param_4,
   char *pcVar6;
   uint in_stack_ffffff5c;
   undefined4 *puVar7;
-  float fVar8;
+  undefined1 uVar8;
+  float fVar9;
   undefined1 *local_60;
   void *local_5c [4];
   undefined4 local_4c;
@@ -258650,7 +260347,7 @@ FUN_00557af0(void *this,undefined4 param_1,int param_2,int param_3,byte param_4,
       cVar1 = *pcVar6;
       pcVar6 = pcVar6 + 1;
     } while (cVar1 != '\0');
-    fVar8 = param_6;
+    fVar9 = param_6;
     FUN_00402690(&stack0xffffff5c,pcVar3,(int)pcVar6 - (int)(pcVar3 + 1));
     pcVar3 = FUN_0058ec90(local_2c,puVar7);
     local_8 = CONCAT31(local_8._1_3_,1);
@@ -258658,7 +260355,8 @@ FUN_00557af0(void *this,undefined4 param_1,int param_2,int param_3,byte param_4,
     if (0xf < *(uint *)(pcVar3 + 0x14)) {
       pcVar3 = *(char **)pcVar3;
     }
-    puVar4 = FUN_00557890(pvVar2,param_1,pcVar3,param_4,fVar8);
+    puVar4 = FUN_00557890(pvVar2,param_1,pcVar3,param_4,fVar9);
+    uVar8 = (undefined1)param_1;
     local_8 = 0xffffffff;
     local_60 = puVar4;
     if (0xf < local_18) {
@@ -258677,7 +260375,7 @@ FUN_00557af0(void *this,undefined4 param_1,int param_2,int param_3,byte param_4,
   }
   else {
     local_8 = 3;
-    fVar8 = param_6;
+    fVar9 = param_6;
     pcVar3 = (char *)FUN_00591e00((undefined1 *)local_5c,(&PTR_PTR_005e0080)[param_2]);
     local_8 = CONCAT31(local_8._1_3_,4);
     local_60 = (undefined1 *)0x2;
@@ -258697,7 +260395,8 @@ FUN_00557af0(void *this,undefined4 param_1,int param_2,int param_3,byte param_4,
     if (0xf < *(uint *)(pcVar3 + 0x14)) {
       pcVar3 = *(char **)pcVar3;
     }
-    puVar4 = FUN_00557890(pvVar2,param_1,pcVar3,param_4,fVar8);
+    puVar4 = FUN_00557890(pvVar2,param_1,pcVar3,param_4,fVar9);
+    uVar8 = (undefined1)param_1;
     local_8 = 6;
     local_60 = puVar4;
     if (0xf < local_30) {
@@ -258734,8 +260433,7 @@ FUN_00557af0(void *this,undefined4 param_1,int param_2,int param_3,byte param_4,
          *(float *)(*(int *)((int)this + 0x28) + *(int *)(puVar4 + 0x2c) * 4) * param_6;
   }
   if (*(ChannelGroup **)(puVar4 + 0x34) != (ChannelGroup *)0x0) {
-    fVar8 = *(float *)(puVar4 + 0x30);
-    if (fVar8 == 0.0) {
+    if (*(int *)(puVar4 + 0x30) == 0) {
       FVar5 = FMOD::System::playSound
                         ((Sound *)param_1_0065b3f0,*(ChannelGroup **)(puVar4 + 0x34),false,
                          (Channel **)0x1);
@@ -258744,9 +260442,9 @@ FUN_00557af0(void *this,undefined4 param_1,int param_2,int param_3,byte param_4,
         goto LAB_00557e0e;
       }
       FMOD::ChannelControl::setVolume(*(float *)(puVar4 + 0x30));
-      fVar8 = *(float *)(puVar4 + 0x30);
+      uVar8 = SUB41(*(float *)(puVar4 + 0x30),0);
     }
-    FMOD::ChannelControl::setPaused(SUB41(fVar8,0));
+    FMOD::ChannelControl::setPaused((bool)uVar8);
   }
 LAB_00557e0e:
   if ((param_5 == '\0') && (*(int *)(puVar4 + 0x34) != 0)) {
@@ -259024,7 +260722,7 @@ void __fastcall FUN_00558290(int param_1)
   uint uVar9;
   int *piVar10;
   size_t _Size;
-  undefined4 *in_stack_ffffff88;
+  undefined4 *in_stack_ffffff84;
   FMOD_CREATESOUNDEXINFO *pFVar11;
   Sound **ppSVar12;
   int *local_44;
@@ -259103,8 +260801,8 @@ void __fastcall FUN_00558290(int param_1)
   FUN_00591070(&DAT_005cdc70,"Playing new track: %s by %s");
   ppSVar12 = (Sound **)0x0;
   pFVar11 = (FMOD_CREATESOUNDEXINFO *)0x0;
-  FUN_004024e0(&stack0xffffff88,*(undefined4 **)(iVar3 + 0x48));
-  puVar5 = (undefined4 *)FUN_0058ec90(local_2c,in_stack_ffffff88);
+  FUN_004024e0(&stack0xffffff84,*(undefined4 **)(iVar3 + 0x48));
+  puVar5 = (undefined4 *)FUN_0058ec90(local_2c,in_stack_ffffff84);
   local_8 = 1;
   if (0xf < (uint)puVar5[5]) {
     puVar5 = (undefined4 *)*puVar5;

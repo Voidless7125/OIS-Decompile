@@ -1,2 +1,28 @@
+# Python caches
 __pycache__/
 *.py[cod]
+
+# Ghidra / reverse engineering artifacts
+*.gpr
+*.rep/
+*.lock
+*.lock~
+*.swp
+*.tmp
+*.log
+
+# Local build and analysis outputs
+build/
+out/
+bin/
+obj/
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Temporary backups
+*.bak
+*.orig
