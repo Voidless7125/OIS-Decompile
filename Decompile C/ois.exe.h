@@ -8115,7 +8115,7 @@ struct localeinfo_struct {
 
 
 
-void FUN_00401020(void);
+void _dynamic_initializer_for__firstTimeBonusStr__(void);
 void FUN_00401110(void);
 void FUN_00401230(void);
 void FUN_00401370(void);
