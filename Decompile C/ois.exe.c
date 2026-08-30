@@ -2552,13 +2552,15 @@ undefined DAT_000000b0;
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void FUN_00401020(void)
+// Dynamic initializer for the 4-element firstTimeBonusStr label array,
+// consumed by GameLogic::setStartBonus(int).
+void _dynamic_initializer_for__firstTimeBonusStr__(void)
 
 {
   void *local_10;
   undefined *puStack_c;
   undefined4 local_8;
-  
+
   local_8 = 0xffffffff;
   puStack_c = &DAT_005b151e;
   local_10 = ExceptionList;
