@@ -1,0 +1,16 @@
+void __thiscall std::allocator<>::deallocate(allocator<> *this,basic_string<> *param_1,uint param_2);
+void __thiscall std::allocator<>::deallocate(allocator<> *this,PrivateCommElement *param_1,uint param_2);
+void __thiscall std::allocator<>::deallocate(allocator<> *this,PrivateCommOption *param_1,uint param_2);
+void __thiscall std::allocator<ListData>::deallocate(allocator<ListData> *this,ListData *param_1,uint param_2);
+void __thiscall std::allocator<NavMarker>::deallocate(allocator<NavMarker> *this,NavMarker *param_1,uint param_2);
+void __thiscall std::allocator<Widget>::deallocate(allocator<Widget> *this,Widget *param_1,uint param_2);
+void __thiscall std::allocator<ScreenData>::deallocate(allocator<ScreenData> *this,ScreenData *param_1,uint param_2);
+void __thiscall std::allocator<>::deallocate(allocator<> *this,Destination *param_1,uint param_2);
+void __thiscall std::allocator<>::deallocate(allocator<> *this,DockProcessElement *param_1,uint param_2);
+void __thiscall std::allocator<word>::deallocate(allocator<word> *this,word *param_1,uint param_2);
+void __thiscall std::allocator<CameraPos>::deallocate(allocator<CameraPos> *this,CameraPos *param_1,uint param_2);
+void __thiscall std::allocator<>::deallocate(allocator<> *this,UpgradeCommand *param_1,uint param_2);
+void __thiscall std::allocator<>::deallocate(allocator<> *this,CommsCommand *param_1,uint param_2);
+void __thiscall std::allocator<>::deallocate(allocator<> *this,vector<> *param_1,uint param_2);
+void __thiscall std::allocator<>::deallocate(allocator<> *this,Rect *param_1,uint param_2);
+void __thiscall std::allocator<>::deallocate(allocator<> *this,JumpGateRoute *param_1,uint param_2);

@@ -1,0 +1,11 @@
+void FUN_00408110(void);
+void FUN_004083e0(char param_1);
+void FUN_004085b0(void);
+void FUN_00408760(char param_1);
+void FUN_00409490(void);
+void FUN_00409650(int param_1);
+void FUN_0040ac60(undefined4 param_1);
+uint FUN_0040acc0(int *param_1,char param_2);
+uint FUN_0040b7a0(undefined4 *param_1);
+void FUN_0040bc20(void);
+void __fastcall FUN_0040bf70(int param_1);

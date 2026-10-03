@@ -1,0 +1,10 @@
+int __cdecl RakNet::SplitPacketChannelComp(ushort *param_1,SplitPacketChannel **param_2);
+TimeAndValue2 * __cdecl RakNet::OP_NEW_ARRAY<>(int param_1,char *param_2,uint param_3);
+RangeNode<> * __cdecl RakNet::OP_NEW_ARRAY<>(int param_1,char *param_2,uint param_3);
+bool __cdecl RakNet::ProcessOfflineNetworkPacket(SystemAddress param_1,char *param_2,int param_3,RakPeer *param_4,RakNetSocket2 *param_5,bool *param_6,__uint64 param_7);
+void __cdecl RakNet::ProcessNetworkPacket(SystemAddress param_1,char *param_2,int param_3,RakPeer *param_4,RakNetSocket2 *param_5,__uint64 param_6,BitStream *param_7);
+uint RakNet::UpdateNetworkLoop(void *param_1);
+SystemAddress * __cdecl RakNet::OP_NEW_ARRAY<>(int param_1,char *param_2,uint param_3);
+void * __cdecl RakNet::_RakMalloc_Ex(uint param_1,char *param_2,uint param_3);
+void * __cdecl RakNet::_RakRealloc_Ex(void *param_1,uint param_2,char *param_3,uint param_4);
+void __cdecl RakNet::_RakFree_Ex(void *param_1,char *param_2,uint param_3);

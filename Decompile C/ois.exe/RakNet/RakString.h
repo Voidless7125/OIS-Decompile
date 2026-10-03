@@ -1,0 +1,10 @@
+RakString * __thiscall RakNet::RakString::RakString(RakString *this);
+char * __thiscall RakNet::RakString::RakString(RakString *this,char *param_1,...);
+void __thiscall RakNet::RakString::~RakString(RakString *this);
+bool __thiscall RakNet::RakString::IPAddressMatch(RakString *this,char *param_1);
+void __cdecl RakNet::RakString::FreeMemoryNoMutex(void);
+void __thiscall RakNet::RakString::Allocate(RakString *this,uint param_1);
+void __thiscall RakNet::RakString::Assign(RakString *this,char *param_1);
+void __thiscall RakNet::RakString::Assign(RakString *this,char *param_1,char *param_2);
+void __thiscall RakNet::RakString::Free(RakString *this);
+void __cdecl RakNet::RakString::`dynamic_atexit_destructor_for_'cleanup''(void);

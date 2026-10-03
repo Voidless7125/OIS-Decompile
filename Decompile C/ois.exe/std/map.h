@@ -1,0 +1,18 @@
+void __thiscall std::map<>::~map<>(map<> *this);
+int * __thiscall std::map<>::operator[](map<> *this,basic_string<> *param_1);
+basic_string<> * __thiscall std::map<>::operator[](map<> *this,int *param_1);
+void __thiscall std::map<>::~map<>(map<> *this);
+basic_string<> * __thiscall std::map<>::operator[](map<> *this,basic_string<> *param_1);
+void __thiscall std::map<>::_Try_emplace<>(map<> *this,basic_string<> *param_1);
+int * __thiscall std::map<>::operator[](map<> *this,int *param_1);
+vector<> * __thiscall std::map<>::operator[](map<> *this,basic_string<> *param_1);
+vector<> * __thiscall std::map<>::operator[](map<> *this,basic_string<> *param_1);
+basic_string<> * __thiscall std::map<>::operator[](map<> *this,basic_string<> *param_1);
+void __thiscall std::map<>::_Try_emplace<>(map<> *this,basic_string<> *param_1);
+void __thiscall std::map<>::_Try_emplace<int_const&>(map<> *this,int *param_1);
+float * __thiscall std::map<>::operator[](map<> *this,basic_string<> *param_1);
+bool * __thiscall std::map<>::operator[](map<> *this,basic_string<> *param_1);
+void __thiscall std::map<>::~map<>(map<> *this);
+void __thiscall std::map<>::~map<>(map<> *this);
+int * __thiscall std::map<>::operator[](map<> *this,basic_string<> *param_1);
+char * __thiscall std::map<>::operator[](map<> *this,KeyCode *param_1);

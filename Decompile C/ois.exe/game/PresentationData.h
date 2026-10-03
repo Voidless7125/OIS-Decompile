@@ -1,0 +1,13 @@
+bool __cdecl PresentationData::checkRoomObjectState(int param_1,int param_2,void *param_3);
+bool __cdecl PresentationData::checkHasSelectedDirection(int param_1,undefined4 param_2,void *param_3);
+bool __cdecl PresentationData::checkNavMapLockedToShip(int param_1,int param_2,void *param_3);
+bool __cdecl PresentationData::doMoveMapLeft(Ship *param_1,double param_2,double param_3,double param_4);
+bool __cdecl PresentationData::doMoveMapRight(Ship *param_1,double param_2,double param_3,double param_4);
+bool __cdecl PresentationData::doMoveMapUp(Ship *param_1,double param_2,double param_3,double param_4);
+bool __cdecl PresentationData::doMoveMapDown(Ship *param_1,double param_2,double param_3,double param_4);
+bool __cdecl PresentationData::doMapZoomIn(Ship *param_1,double param_2,double param_3,double param_4);
+bool __cdecl PresentationData::doMapZoomOut(Ship *param_1,double param_2,double param_3,double param_4);
+bool __cdecl PresentationData::doRecenterMapOnShip(Ship *param_1,double param_2,double param_3,double param_4);
+void __cdecl PresentationData::moveMap(float param_1,float param_2);
+bool __cdecl PresentationData::isLocalCommand(int param_1);
+void __cdecl PresentationData::getShipCommandFunction(int param_1);

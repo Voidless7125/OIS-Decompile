@@ -1,0 +1,15 @@
+void __thiscall DataStructures::List<>::Insert(List<> *this,uint *param_1,char *param_2,uint param_3);
+void __thiscall DataStructures::List<>::Preallocate(List<> *this,uint param_1,char *param_2,uint param_3);
+void __thiscall DataStructures::List<>::RemoveAtIndex(List<> *this,uint param_1);
+void __thiscall DataStructures::List<bool>::Push(List<bool> *this,bool *param_1,char *param_2,uint param_3);
+void __thiscall DataStructures::List<>::Preallocate(List<> *this,uint param_1,char *param_2,uint param_3);
+void __thiscall DataStructures::List<>::Insert(List<> *this,HeapNode *param_1,char *param_2,uint param_3);
+void __thiscall DataStructures::List<>::Insert(List<> *this,RangeNode<> *param_1,char *param_2,uint param_3);
+void __thiscall DataStructures::List<>::Insert(List<> *this,RangeNode<> *param_1,uint param_2,char *param_3,uint param_4);
+void __thiscall DataStructures::List<>::Push(List<> *this,SystemAddress *param_1,char *param_2,uint param_3);
+void __thiscall DataStructures::List<>::Push(List<> *this,RakNetGUID *param_1,char *param_2,uint param_3);
+List<> * __thiscall DataStructures::List<>::operator=(List<> *this,List<> *param_1);
+void __thiscall DataStructures::List<>::RemoveAtIndex(List<> *this,uint param_1);
+void __thiscall DataStructures::List<>::~List<>(List<> *this);
+void __thiscall DataStructures::List<>::Insert(List<> *this,RakString *param_1,char *param_2,uint param_3);
+void __thiscall DataStructures::List<>::Insert(List<> *this,SharedString **param_1,char *param_2,uint param_3);
