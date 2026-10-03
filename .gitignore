@@ -26,3 +26,6 @@ Thumbs.db
 # Temporary backups
 *.bak
 *.orig
+
+# Fetched by scripts/fetch_cocos2d.sh
+third_party/cocos2d-x/
