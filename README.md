@@ -33,6 +33,14 @@ Press ISSUE to report bugs, PULL_REQUEST to submit code
 This is an attempt (and successful so far) of decompiling the game Objects in Space.
 The assets folder won't be provided; you will need to get your own copy. (Either take it from a downloaded copy of the game from Steam or get it another way)
 
+## Where is the code?
+
+Everything lives under `Decompile C/`, split into one directory per binary
+(`ois.exe/`, `ois_server.exe/`) with a file per class, e.g.
+`Decompile C/ois.exe/game/ShipData.c`. See
+[`Decompile C/README.md`](Decompile%20C/README.md) for the layout and the
+`scripts/split_decompile.py` tool that produces it.
+
 ## How clean is the code?
 
 It needs improvement. There are over 5k undefined functions, but that's about it. We don't have comments, and lots of code needs to be fixed.

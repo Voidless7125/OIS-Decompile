@@ -1,0 +1,18 @@
+Node * __thiscall FUN_00524010(void *this,byte param_1);
+void __fastcall FUN_00524040(int param_1);
+void __fastcall FUN_00524080(int param_1);
+void FUN_00524240(void);
+void __fastcall FUN_00524430(int param_1);
+undefined4 * __thiscall FUN_00524960(void *this,undefined4 param_1,void *param_2);
+void * __thiscall FUN_00524a50(void *this,void *param_1);
+undefined4 * __fastcall FUN_00524b00(undefined4 *param_1);
+void __thiscall FUN_00526c90(void *this,int param_1,char *param_2);
+void __thiscall FUN_00526e30(void *this,int *param_1);
+void __fastcall FUN_005270e0(int *param_1);
+void __fastcall FUN_005273a0(int param_1);
+void __cdecl FUN_00527550(int *param_1,int param_2,undefined4 param_3);
+void * __fastcall FUN_00527890(void *param_1);
+void __fastcall FUN_005278f0(int param_1);
+void __thiscall FUN_00527930(void *this,uint param_1);
+undefined1 * __thiscall FUN_005279e0(void *this,undefined1 *param_1);
+void FUN_00527af0(void);

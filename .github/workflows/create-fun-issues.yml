@@ -21,7 +21,15 @@ jobs:
             const fs = require('fs');
             const path = require('path');
 
-            const targetFiles = ['Decompile C/ois.exe.c', 'Decompile C/ois.exe.h'];
+            // The Ghidra export is split into one directory per binary (see
+            // "Decompile C/README.md"); scan every .c/.h under ois.exe/.
+            const walk = (dir) => fs.readdirSync(dir, { withFileTypes: true }).flatMap((e) => {
+              const p = path.join(dir, e.name);
+              return e.isDirectory() ? walk(p) : (/\.[ch]$/.test(e.name) ? [p] : []);
+            });
+            const rootDir = process.env.GITHUB_WORKSPACE || '.';
+            const targetFiles = walk(path.join(rootDir, 'Decompile C', 'ois.exe'))
+              .map((p) => path.relative(rootDir, p));
             const serverNamePattern = /server/i;
             const funPattern = /\bFUN_[A-Za-z0-9_]+\b/g;
 
@@ -103,7 +111,7 @@ jobs:
                 `Auto-generated decompilation tracking issue for \`${funName}\`.`,
                 '',
                 '### Source',
-                '- Detected in `OIS.exe.c` / `OIS.exe.h`',
+                '- Detected in `Decompile C/ois.exe/`',
                 '',
                 '### Tasks',
                 '- [ ] Rename and map purpose',

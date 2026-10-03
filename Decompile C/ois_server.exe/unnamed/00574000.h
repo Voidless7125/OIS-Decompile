@@ -1,0 +1,17 @@
+void __fastcall FUN_00574350(int param_1);
+void __fastcall FUN_00574380(int param_1);
+void __fastcall FUN_005743b0(int *param_1);
+void __fastcall FUN_00574bf0(int *param_1);
+void __thiscall FUN_00575680(void *this,float param_1,float param_2);
+void __thiscall FUN_005759b0(void *this,float param_1,float param_2);
+void __thiscall FUN_005763c0(void *this,float param_1,float param_2);
+void __thiscall FUN_00576460(void *this,float param_1,float param_2);
+void __thiscall FUN_00576810(void *this,float param_1);
+undefined1 * FUN_00576b90(undefined1 *param_1,int param_2);
+undefined1 * FUN_00576f30(undefined1 *param_1,int param_2);
+undefined1 * FUN_005772f0(undefined1 *param_1,int param_2);
+void FUN_00577530(float *param_1);
+float * __thiscall FUN_00577670(void *this,float *param_1,float param_2,float param_3);
+float * __thiscall FUN_005777f0(void *this,float *param_1,float param_2,float param_3);
+void __thiscall FUN_00577a00(void *this,void *param_1,int param_2);
+void __thiscall FUN_00577e00(void *this,void *param_1);

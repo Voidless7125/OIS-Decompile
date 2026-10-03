@@ -1,0 +1,12 @@
+void __cdecl FUN_004f40a0(uint *param_1,int param_2);
+void __cdecl FUN_004f44a0(uint *param_1,int param_2);
+void __cdecl FUN_004f47e0(uint *param_1,int param_2);
+void __cdecl FUN_004f4c10(uint *param_1,void *param_2);
+void __cdecl FUN_004f50f0(uint *param_1,int param_2);
+void __cdecl FUN_004f54d0(uint *param_1,int param_2);
+undefined1 * __cdecl FUN_004f5690(undefined1 *param_1);
+void __cdecl FUN_004f56e0(uint *param_1,int param_2);
+void __cdecl FUN_004f5870(uint *param_1,int param_2);
+void __cdecl FUN_004f5c90(undefined4 *param_1,int param_2);
+void __cdecl FUN_004f6060(uint *param_1,void *param_2);
+void __cdecl FUN_004f7440(uint *param_1,byte *param_2);

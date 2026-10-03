@@ -1,0 +1,1 @@
+void terminate(void);

@@ -1,0 +1,16 @@
+void __fastcall FUN_004bc350(FILE *param_1);
+void __fastcall FUN_004bc5c0(FILE *param_1);
+void __fastcall FUN_004bca30(FILE *param_1,void *param_2);
+void __fastcall FUN_004bcb30(FILE *param_1);
+void __fastcall FUN_004bcf70(FILE *param_1);
+void __fastcall FUN_004bd530(FILE *param_1);
+void __fastcall FUN_004bdce0(FILE *param_1,int *param_2);
+void __fastcall FUN_004bddf0(FILE *param_1);
+void __fastcall FUN_004be040(FILE *param_1,undefined4 *param_2);
+void __fastcall FUN_004be160(FILE *param_1);
+void __fastcall FUN_004be5e0(FILE *param_1,int param_2);
+void FUN_004be750(void);
+void __fastcall FUN_004beae0(FILE *param_1,int param_2);
+void __fastcall FUN_004befa0(FILE *param_1);
+void __fastcall FUN_004bfca0(FILE *param_1);
+void __fastcall FUN_004bfe80(FILE *param_1);

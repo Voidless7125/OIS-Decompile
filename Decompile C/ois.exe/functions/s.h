@@ -1,0 +1,16 @@
+bool __cdecl stringStartsWith(uchar *param_1,char *param_2);
+bool __cdecl shipDataCanPrev(ShipDataInputType param_1);
+bool __cdecl shipDataCanNext(ShipDataInputType param_1);
+void __cdecl shipDataChangePrev(ShipDataInputType param_1);
+void __cdecl shipDataChangeNext(ShipDataInputType param_1);
+void __cdecl shipDataChangeTo(ShipDataInputType param_1,int param_2);
+int __cdecl shipDataMax(ShipDataInputType param_1);
+void __cdecl SteamInternal_OnContextInit(void *param_1);
+void __cdecl safeStrCpy(char *param_1);
+void __cdecl strWithMaxLength(word *param_1);
+void __cdecl setTexParams(Texture2D *param_1);
+void __cdecl strUsingArgs(char *param_1,...);
+void __cdecl stripWhiteSpaceFromBeginning(char *param_1);
+bool __cdecl stringContains(void *param_1);
+void __cdecl splitStringBy(undefined4 *param_1);
+uint __cdecl SuperFastHashIncremental(char *param_1,int param_2,uint param_3);

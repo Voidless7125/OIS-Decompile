@@ -1,0 +1,15 @@
+void * __thiscall FUN_00404000(void *this,byte param_1);
+void __fastcall FUN_004040b0(undefined4 *param_1);
+undefined4 * __fastcall FUN_00404240(undefined4 *param_1);
+void __fastcall FUN_00404bb0(int *param_1);
+float FUN_00404c20(void);
+void FUN_00405130(void);
+void FUN_00405590(char param_1);
+void FUN_00405c30(void);
+void * __fastcall FUN_00405e80(void *param_1);
+void FUN_00405f70(void);
+void __fastcall FUN_00406b80(int param_1);
+void FUN_00406cf0(int param_1);
+void FUN_00406f80(char param_1);
+void FUN_00407510(void);
+void __fastcall FUN_004077b0(int param_1);
